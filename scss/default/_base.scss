@@ -1,0 +1,27 @@
+// -------- colors --------
+
+$clr-main_body: rgb(27, 27, 27);
+
+// -------- style ----------
+
+// -------- mixins ----------
+
+@mixin pos_absolute($t, $r, $b, $l) {
+    position: absolute;
+    right: $r;
+    bottom: $b;
+    top: $t;
+    left: $l;
+}
+
+@mixin flex_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin grid($gap, $i) {
+    display: grid;
+    grid-gap: $gap;
+    grid-template-columns: repeat($i, minmax(0px, 1fr));
+}
