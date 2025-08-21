@@ -7,10 +7,19 @@ $clr-blue_dark: rgba(1, 74, 255, 1);
 $clr-red: rgb(204, 30, 30);
 $clr-red_close: rgb(170, 22, 22);
 
-// $mainGradient_0: linear-gradient(to bottom, rgba(1, 162, 255, 0), rgba(1, 74, 255, 0));
-// $mainGradient_100: linear-gradient(to bottom, rgba(1, 162, 255, 1), rgba(1, 74, 255, 1));
+$clr-grad_blue_0: linear-gradient(to bottom, rgba(1, 162, 255, 0), rgba(1, 74, 255, 0));
+$clr-grad_blue_100: linear-gradient(to bottom, rgba(1, 162, 255, 1), rgba(1, 74, 255, 1));
+$clr-grad_red: linear-gradient(to bottom, rgba(255, 73, 73, 1), rgba(167, 0, 0, 1));
+
+$clr-gray_dark: rgb(27, 27, 27);
+$clr-gray_37: rgb(33, 33, 33);
+$clr-gray_43: rgb(43, 43, 43);
+$clr-gray_47_hover: rgb(47, 47, 47);
+$clr-gray_55: rgb(55, 55, 55);
+
 // $lightGray: rgba(45, 45, 45, 1);
-// $redGradient: linear-gradient(to bottom, rgba(255, 73, 73, 1), rgba(167, 0, 0, 1));
+
+// -------- for mixins --------
 
 // -------- style --------
 
@@ -46,6 +55,43 @@ $fnt-all: robotoFlex, sans-serif;
 
 // -------- mixins --------
 
+$clr-blue_light_glassShadow: rgba(1, 162, 255, .5);
+$shadow_out: 0 5px 10px -2px rgba(0, 0, 0, .2);
+
+@mixin style-glass_circ {
+    // border: {
+    //     top: 1px solid rgba(255, 255, 255, 0.3);
+    //     bottom: 1px solid rgba(255, 255, 255, 0.5);
+    // }
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: inset -10px 0 20px -10px  rgba(255, 255, 255, .3), $shadow_out;
+}
+
+@mixin style-glass_circ_hover {
+    @include style-glass_circ;
+    &:hover {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-bottom: 1px solid $clr-blue_light;
+        box-shadow: inset 0px -10px 20px 0px $clr-blue_light_glassShadow, $shadow_out;
+    }
+}
+
+@mixin style-glass_square {
+    box-shadow: inset -10px 0 20px -10px  rgba(255, 255, 255, .3), $shadow_out;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+@mixin style-glass_square_hover {
+    @include style-glass_square;
+    &:hover {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-bottom: 1px solid $clr-blue_light;
+        box-shadow: inset 0px -10px 20px -10px $clr-blue_light_glassShadow, $shadow_out;
+    }
+}
+
 @mixin absolute_zero {
     position: absolute;
     right: 0;
@@ -72,4 +118,9 @@ $fnt-all: robotoFlex, sans-serif;
     display: grid;
     grid-gap: $gap;
     grid-template-columns: repeat($i, minmax(0px, 1fr));
+}
+
+@mixin game_banner_size($w) {
+    width: $w;
+    height: calc($w / 0.82);
 }

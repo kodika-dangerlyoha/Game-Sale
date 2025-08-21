@@ -3,9 +3,9 @@
 .salesHits {
     position: relative;
     z-index: 10;
-    height: 550px;
-    padding: 20px 150px 15px 150px;
-    overflow: hidden;
+    // height: 550px;
+    padding: 20px 150px 35px 150px;
+    // overflow: hidden;
     &__bg {
         top: 35px;
         left: -20px;
@@ -29,122 +29,6 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        // &__game {
-        //     width: 280px;
-        //     height: 340px;
-        //     &__banner {
-        //         width: 100%;
-        //         height: 100%;
-        //         position: relative;
-        //         border-radius: 10px;
-        //         overflow: hidden;
-        //         background-size: cover;
-        //         transition: 0.15s;
-        //         cursor: pointer;
-        //         & img {
-        //             width: 100%;
-        //         }
-        //         &__discount {
-        //             position: absolute;
-        //             bottom: 0px;
-        //             left: 0;
-        //             padding: 4px 4px 0 0;
-        //             border-radius: 0 10px 0 10px;
-        //             background-color: base.$colorBody;
-        //             cursor: pointer;
-        //             &__inner {
-        //                 padding: 5px 10px 5px 10px;
-        //                 border-radius: 0 10px 0 10px;
-        //                 background: base.$mainGradient_100;
-        //                 font-family: base.$fonts;
-        //                 font-size: 15px;
-        //                 font-weight: 700;
-        //                 cursor: pointer;
-        //             }
-        //         }
-        //     }
-        //     &__info {
-        //         position: relative;
-        //         padding-top: 16px;
-        //         display: flex;
-        //         justify-content: space-between;
-        //         transition: 0.15s;
-        //         &__name {
-        //             position: relative;
-        //             z-index: 1;
-        //             font-family: base.$fonts;
-        //         }
-        //         &__price {
-        //             position: relative;
-        //             z-index: 2;
-        //             font-family: base.$fonts;
-        //             font-weight: 700;
-        //             transition: 0.15s;
-        //         }
-        //         &__buttons {
-        //             right: 0;
-        //             left: 0;
-        //             top: 10px;
-        //             position: absolute;
-        //             z-index: 2;
-        //             display: flex;
-        //             justify-content: end;
-        //             transform: translateY(-10px);
-        //             opacity: 0;
-        //             transition: 0.15s;
-        //             background: linear-gradient(to right, rgba(39, 39, 39, 0.2), rgba(39, 39, 39, 1), rgba(39, 39, 39, 1));
-        //             &__button {
-        //                 position: relative;
-        //                 height: 35px;
-        //                 width: 35px;
-        //                 margin-left: 5px;
-        //                 background: linear-gradient(to bottom, rgba(89, 89, 89, 1), rgba(64, 64, 64, 1));
-        //                 border-radius: 7px;
-        //                 display: flex;
-        //                 align-items: center;
-        //                 justify-content: center;
-        //                 cursor: pointer;
-        //                 overflow: hidden;
-        //                 transition: 0.15s;
-        //                 & img {
-        //                     height: 18px;
-        //                     filter: invert(1);
-        //                 }
-        //                 &__forHover {
-        //                     opacity: 0;
-        //                     transition: 0.15s;
-        //                     &_blue {
-        //                         background: base.$mainGradient_100;
-        //                     }
-        //                     &_red {
-        //                         background: linear-gradient(to bottom, rgba(255, 73, 73, 1), rgba(167, 0, 0, 1));
-        //                     }
-        //                 }
-        //                 &:hover &__forHover{
-        //                     opacity: 1;
-        //                 }
-        //                 &:active {
-        //                     transform: scale(0.90);
-        //                 }
-        //             }
-        //         }
-        //     }
-
-        //     &:hover &__banner{
-        //         transform: scale(1.05);
-        //     }
-        //     &:hover &__info{
-        //         transform: translateY(8px);
-        //     }
-        //     &:hover &__info__buttons{
-        //         transform: translateY(-2px);
-        //         opacity: 1;
-        //     }
-        //     &:hover &__info__price{
-        //         transform: translateX(-85px);
-        //         text-shadow: 0 0 10px base.$colorBody;
-        //     }
-        // }
     }
     &__blockButtonMore {
         position: relative;
@@ -173,26 +57,29 @@
             }
         }
     }
-    &_loading > h3{
-        display: none;
-    }
-    &_loading &__blockButtonMore{
-        display: none;
-    }
-    &_loading &__blockButtonMore{
-        display: none;
-    }
-    &_loading .loadingBlock{
-        width: 200px;
-        margin: auto;
-        transform: translateY(60px);
-        position: relative;
-        z-index: 2;
-        padding: 30px;
-        border-radius: 4px;
-        background-color: rgb(55, 55, 55);
-    }
-    &_loading &__bg {
-        border-top: 2px solid rgb(85, 85, 85);
-    }
+
+    // ! ----------------------------
+    // &_loading > h3{
+    //     display: none;
+    // }
+    // &_loading &__blockButtonMore{
+    //     display: none;
+    // }
+    // &_loading &__blockButtonMore{
+    //     display: none;
+    // }
+    // &_loading .loadingBlock{
+    //     width: 200px;
+    //     margin: auto;
+    //     transform: translateY(60px);
+    //     position: relative;
+    //     z-index: 2;
+    //     padding: 30px;
+    //     border-radius: 4px;
+    //     background-color: rgb(55, 55, 55);
+    // }
+    // &_loading &__bg {
+    //     border-top: 2px solid rgb(85, 85, 85);
+    // }
+    // ! ----------------------------
 }

@@ -1,0 +1,190 @@
+@use '../default/base';
+
+.gameH {
+    display: block;
+    &__banner {
+        width: 100%;
+        position: relative;
+        border-radius: 10px;
+        // background-image: src('img/banner/img1.jpg');
+        background-size: cover;
+        transition: 0.15s;
+        cursor: pointer;
+        overflow: hidden;
+        & img {
+            position: relative;
+            z-index: 2;
+            border-radius: 10px;
+            width: 100%;
+            transition: 0.15s;
+        }
+        &__videoBlock {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            opacity: 0;
+            // background-color: rgb(0, 0, 0);
+            background: linear-gradient(to bottom, base.$clr-main_body, rgb(0, 0, 0), rgb(0, 0, 0), base.$clr-main_body);
+            transition: 0.15s;
+            & video {
+                width: 100%;
+                display: none;
+            }
+        }
+        &__discount {
+            position: absolute;
+            z-index: 4;
+            bottom: 4px;
+            left: 0;
+            padding: 4px 4px 0 0;
+            border-radius: 0 10px 0 10px;
+            background-color: base.$clr-main_body;
+            cursor: pointer;
+            transition: .15s;
+            opacity: 1;
+            &__inner {
+                padding: 5px 10px 5px 10px;
+                border-radius: 0 10px 0 10px;
+                background: base.$clr-grad_blue_100;
+                font-family: base.$fnt-all;
+                font-size: 15px;
+                font-weight: 700;
+                cursor: pointer;
+            }
+        }
+    }
+    &__info {
+        position: relative;
+        padding-top: 8px;
+        display: flex;
+        justify-content: space-between;
+        transition: 0.15s;
+        &__name {
+            position: relative;
+            z-index: 1;
+            font-family: base.$fnt-all;
+        }
+        &__price {
+            position: relative;
+            z-index: 2;
+            font-family: base.$fnt-all;
+            font-weight: 700;
+            transition: 0.15s;
+        }
+        &__buttons {
+            right: 0;
+            left: 0;
+            top: 4px;
+            position: absolute;
+            z-index: 2;
+            display: flex;
+            justify-content: end;
+            transform: translateY(-10px);
+            opacity: 0;
+            transition: 0.15s;
+            background: linear-gradient(to right, rgba(39, 39, 39, 0.2), rgba(39, 39, 39, 1), rgba(39, 39, 39, 1));
+            &__button {
+                position: relative;
+                height: 35px;
+                width: 35px;
+                margin-left: 5px;
+                background: linear-gradient(to bottom, rgba(89, 89, 89, 1), rgba(64, 64, 64, 1));
+                border-radius: 7px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                overflow: hidden;
+                transition: 0.15s;
+                & img {
+                    height: 18px;
+                    filter: invert(1);
+                }
+                &__forHover {
+                    opacity: 0;
+                    transition: 0.15s;
+                    &_blue {
+                        background: base.$clr-grad_blue_100;
+                    }
+                    &_red {
+                        background: base.$clr-grad_red;
+                    }
+                }
+                &:hover &__forHover{
+                    opacity: 1;
+                }
+                &:active {
+                    transform: scale(0.90);
+                }
+            }
+        }
+    }
+
+    // &:hover &__banner__discount{
+    //     opacity: 0;
+    // }
+    // &:hover &__banner{
+    //     transform: scale(1.05);
+    // }
+    // &:hover &__info{
+    //     transform: translateY(8px);
+    // }
+    // &:hover &__info__buttons{
+    //     transform: translateY(-2px);
+    //     opacity: 1;
+    // }
+    // &:hover &__info__price{
+    //     transform: translateX(-85px);
+    //     text-shadow: 0 0 10px base.$clr-main_body;
+    // }
+    // &:hover &__banner img{
+    //     opacity: 0;
+    //     transition-delay: 1s;
+    // }
+    // &:hover &__banner__videoBlock video{
+    //     display: block;
+    //     transition-delay: 1s;
+    // }
+    // &:hover &__banner__videoBlock{
+    //     opacity: 1;
+    //     transition-delay: 1s;
+    // }
+
+    &:hover &{
+        &__banner {
+            transform: scale(1.05);
+            &__discount {
+                opacity: 0;
+            }
+            &__videoBlock {
+                opacity: 1;
+                transition-delay: 1s;
+                & video {
+                    display: block;
+                    transition-delay: 1s;
+                }
+            }
+            & img {
+                opacity: 0;
+                transition-delay: 1s;
+            }
+        }
+        &__info {
+            transform: translateY(8px);
+            &__buttons {
+                transform: translateY(-2px);
+                opacity: 1;
+            }
+            &__price {
+                transform: translateX(-85px);
+                text-shadow: 0 0 10px base.$clr-main_body;
+            }
+        }
+    }
+}

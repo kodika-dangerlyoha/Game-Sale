@@ -315,8 +315,137 @@
 				</div>
 			</div>
 		</section>
+		<section class="banner">
+			<h2 class="hidden">Баннер</h2>
+			<div class="banner__game">
+				<div class="banner__game__imgBlock">
+					<img src="img/banners/image 10.png" alt="">
+				</div>
+				<div class="banner__game__interaction">
+					<div class="banner__game__interaction__info">
+						<div class="banner__game__interaction__info__title txt">Call Of Duty: Warzone 2</div>
+						<div class="banner__game__interaction__info__shopInfo">
+							<div class="banner__game__interaction__info__shopInfo__buttons">
+								<div class="banner__game__interaction__info__shopInfo__buttons__button banner__game__interaction__info__shopInfo__buttons__button_basket">
+									<img src="img/icons/basket32.png" alt="">
+								</div>
+								<div class="banner__game__interaction__info__shopInfo__buttons__button banner__game__interaction__info__shopInfo__buttons__button_favorite">
+									<img src="img/icons/heart32.png" alt="">
+								</div>
+							</div>
+							<div class="banner__game__interaction__info__shopInfo__priceTag">
+								<div class="banner__game__interaction__info__shopInfo__priceTag__prices">
+									<div class="banner__game__interaction__info__shopInfo__priceTag__prices__newPrice txt">3290 ₽</div>
+									<div class="banner__game__interaction__info__shopInfo__priceTag__prices__oldPrice txt">3990 ₽</div>
+								</div>
+								<div class="banner__game__interaction__info__shopInfo__priceTag__discount flex-center txt">15%</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="offers offers_loading loadingContent" id="offers">
+			<h2 class="hidden">Предложения</h2>
+			<div class="offers__head">
+				<div class="offers__head__nav" onclick="open_offers_games('new')">
+					<div class="offers__head__nav__text txt">Новинки</div>
+					<div class="offers__head__nav__strip strip_new offers__head__nav__strip_active"></div>
+				</div>
+				<div class="offers__head__nav" onclick="open_offers_games('expected')">
+					<div class="offers__head__nav__text txt">Ожидаемое</div>
+					<div class="offers__head__nav__strip strip_expected"></div>
+				</div>
+				<div class="offers__head__nav" onclick="open_offers_games('ourChoice')">
+					<div class="offers__head__nav__text txt">Наш выбор</div>
+					<div class="offers__head__nav__strip strip_ourChoice"></div>
+				</div>
+			</div>
+	
+			<section class="offers__grid offers__grid_new offers__grid_active gridHorizontalGames" id="offers_grid_new">
+				<h2 class="hidden">Новый игры</h2>
+			</section>
+			<section class="offers__grid offers__grid_expected gridHorizontalGames" id="offers_grid_expected">
+				<h2 class="hidden">Ожидаемые игры</h2>
+			</section>
+			<section class="offers__grid offers__grid_ourChoice gridHorizontalGames" id="offers_grid_ourChoice">
+				<h2 class="hidden">Наш выбор</h2>
+			</section>
+	
+			<div class="offers__blockButtonMore">
+				<div class="offers__blockButtonMore__button txt">
+					Показать еще
+					<img src="img/icons/arrRight32.png" alt="">
+				</div>
+			</div>
+		</section>
 	</main>
-	<footer class="footer"></footer>
+	
+	<footer class="footer">
+        <div class="inner inner_oneSec">
+            <div class="footer__head">
+                <div class="footer__head__left">
+                    <div class="footer__head__logo">
+                        <img src="img/logos/logo.png" alt="">
+                    </div>
+                    <nav class="footer__head__nav">
+                        <a class="txt" href="">Частые вопросы</a>
+                        <a class="txt" href="">Политика обработки персональных данных</a>
+                        <a class="txt" href="">Помощь</a>
+                    </nav>
+                </div>
+                <button class="txt flex-center" type="button">Как сделать ставку?</button>
+            </div>
+            <div class="footer__separator"></div>
+            <div class="footer__body">
+                <div class="footer__body__links">
+                    <div class="footer__body__links__contacts">
+                        <div class="footer__body__links__title">
+                            <h4 class="txt">Контакты</h4>
+                        </div>
+                        <div class="footer__body__links__container">
+                            <a href="" class="txt">
+                                <img src="img/icons/social/chat.svg" alt="">
+                                <span>Онлайн чат</span>
+                            </a>
+                            <a href="" class="txt">
+                                <img src="img/icons/social/mail.svg" alt="">
+                                <span>bogatstvo@mail.ru</span>
+                            </a>
+                            <a href="" class="txt">
+                                <img src="img/icons/social/vk.png" alt="">
+                                <span>Вконтакте</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer__body__links__social">
+                        <div class="footer__body__links__title">
+                            <h4 class="txt">Социальные сети</h4>
+                        </div>
+                        <div class="footer__body__links__container">
+                            <a href="" title="tg">
+                                <img src="img/icons/social/tg.svg" alt="">
+                            </a>
+                            <a href="" title="tg">
+                                <img src="img/icons/social/vk.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__separator"></div>
+                <div class="footer__body__info">
+                    <div class="footer__body__info__copyright txt">
+                        © 2025 Все права защищены. Фирма ООО «Бнал»
+                        <br>Ставки на спорт в букмекерской компании «Чунгачхук»
+                    </div>
+                    <div class="footer__body__info__banks">
+                        <img src="img/icons/banks/all.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 	<script type="text/javascript" src="scripts/lists.js"></script>
 	<script type="text/javascript" src="elements/elements.js"></script>
 	<script type="text/javascript" src="scripts/makeContentFunctions.js"></script>

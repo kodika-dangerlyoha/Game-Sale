@@ -1,52 +1,52 @@
 const get_horizont_game_html = (game, discount) => {
-    return `<a href = "${game.link}" class = "gridHorizontalGames__game">
-                <div class="gridHorizontalGames__game__banner">
+    return `<a href = "${game.link}" class = "gameH">
+                <div class="gameH__banner">
                     <img src="${game.imgH}" alt="${game.name}">
-                    <div class="gridHorizontalGames__game__banner__videoBlock">
+                    <div class="gameH__banner__videoBlock">
                         <video src="${game.treilerSrc}" autoplay loop muted>
                     </div>   
-                    <div class="gridHorizontalGames__game__banner__discount">
-                        <div class="gridHorizontalGames__game__banner__discount__inner txt">${discount}%</div>
+                    <div class="gameH__banner__discount">
+                        <div class="gameH__banner__discount__inner txt">${discount}%</div>
                     </div>
                 </div>
-                <div class="gridHorizontalGames__game__info">
-                    <div class="gridHorizontalGames__game__info__buttons">
-                        <div class="gridHorizontalGames__game__info__buttons__button">
-                            <div class="gridHorizontalGames__game__info__buttons__button__forHover gridHorizontalGames__game__info__buttons__button__forHover_blue absolute-zero"></div>
-                            <img src="img/icons/basket64.png" alt="">
+                <div class="gameH__info">
+                    <div class="gameH__info__buttons">
+                        <div class="gameH__info__buttons__button">
+                            <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+                            <img src="img/icons/main/basket64.png" alt="">
                         </div>
-                        <div class="gridHorizontalGames__game__info__buttons__button">
-                            <div class="gridHorizontalGames__game__info__buttons__button__forHover gridHorizontalGames__game__info__buttons__button__forHover_red absolute-zero"></div>
-                            <img src="img/icons/like64.png" alt="">
+                        <div class="gameH__info__buttons__button">
+                            <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+                            <img src="img/icons/main/like64.png" alt="">
                         </div>
                     </div>
-                    <div class="gridHorizontalGames__game__info__name txt">${game.name}</div>
-                    <div class="gridHorizontalGames__game__info__price txt">${game.newPrice}₽</div>
+                    <div class="gameH__info__name txt">${game.name}</div>
+                    <div class="gameH__info__price txt">${game.newPrice}₽</div>
                 </div>
             </a>`
 };
 
 const get_vertical_game_html = (game, discount) => {
-    return `<div class = "catalog__grid__game">
-                <a href = "${game.link}" class="catalog__grid__game__banner">
+    return `<div class = "gameV">
+                <a href = "${game.link}" class="gameV__banner">
                     <img src="${game.imgW}" alt="${game.name}">
-                    <div class="catalog__grid__game__banner__discount">
-                        <div class="catalog__grid__game__banner__discount__inner txt">${discount}%</div>
+                    <div class="gameV__banner__discount">
+                        <div class="gameV__banner__discount__inner txt">${discount}%</div>
                     </div>
                 </a>
-                <div class="catalog__grid__game__info">
-                    <div class="catalog__grid__game__info__buttons">
-                        <div class="catalog__grid__game__info__buttons__button" onclick="add_game_basket(${game.id}, '${game.name}')">
-                            <div class="catalog__grid__game__info__buttons__button__forHover catalog__grid__game__info__buttons__button__forHover_blue absolute-zero"></div>
-                            <img src="img/icons/basket64.png" alt="">
+                <div class="gameV__info">
+                    <div class="gameV__info__buttons">
+                        <div class="gameV__info__buttons__button" onclick="add_game_basket(${game.id}, '${game.name}')">
+                            <div class="gameV__info__buttons__button__forHover gameV__info__buttons__button__forHover_blue absolute-zero"></div>
+                            <img src="img/icons/main/basket64.png" alt="">
                         </div>
-                        <div class="catalog__grid__game__info__buttons__button" onclick="add_game_favorite(${game.id}, '${game.name}')">
-                            <div class="catalog__grid__game__info__buttons__button__forHover catalog__grid__game__info__buttons__button__forHover_red absolute-zero"></div>
-                            <img src="img/icons/like64.png" alt="">
+                        <div class="gameV__info__buttons__button" onclick="add_game_favorite(${game.id}, '${game.name}')">
+                            <div class="gameV__info__buttons__button__forHover gameV__info__buttons__button__forHover_red absolute-zero"></div>
+                            <img src="img/icons/main/like64.png" alt="">
                         </div>
                     </div>
-                    <div class="catalog__grid__game__info__name txt">${game.name}</div>
-                    <div class="catalog__grid__game__info__price txt">${game.newPrice} ₽</div>
+                    <div class="gameV__info__name txt">${game.name}</div>
+                    <div class="gameV__info__price txt">${game.newPrice} ₽</div>
                 </div>
             </div>`
 }

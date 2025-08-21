@@ -66,6 +66,14 @@ label {
 	align-items: center;
 }
 
+.absolute-zero{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
 .def-optimize_img {
     max-width: 100%;
     max-height: 100%;
@@ -74,4 +82,17 @@ label {
 .inner {
     width: 1000px;
     margin: auto;
+}
+
+// -------------- animations
+
+@keyframes open_offers_games {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
