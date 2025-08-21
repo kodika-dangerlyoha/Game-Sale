@@ -68,8 +68,8 @@ const get_carousel_game_html = (n, game, discount) => {
                     </div>
                 </div>
                 <div class="banner__content__arrows">
-                    <div class="banner__content__arrows__arrow banner__content__arrows__arrow_left flex-center" onclick = "makeCarousel_index(${n - 1})"><img src="img/icons/arrRight32.png" alt=""></div>
-                    <div class="banner__content__arrows__arrow banner__content__arrows__arrow_right flex-center" onclick = "makeCarousel_index(${n + 1})"><img src="img/icons/arrRight32.png" alt=""></div>
+                    <div class="banner__content__arrows__arrow banner__content__arrows__arrow_left flex-center" onclick = "makeCarousel_index(${n - 1})"><img src="img/icons/main/arrRight32.png" alt=""></div>
+                    <div class="banner__content__arrows__arrow banner__content__arrows__arrow_right flex-center" onclick = "makeCarousel_index(${n + 1})"><img src="img/icons/main/arrRight32.png" alt=""></div>
                 </div>
             </div>`
 }
@@ -187,10 +187,10 @@ const get_carousel_banner_html = (game, discount, cout) => {
                         <div class="carousel__banner__interaction__info__shopInfo">
                             <div class="carousel__banner__interaction__info__shopInfo__buttons">
                                 <div class="carousel__banner__interaction__info__shopInfo__buttons__button carousel__banner__interaction__info__shopInfo__buttons__button_basket">
-                                    <img src="img/icons/basket32.png" alt="">
+                                    <img src="img/icons/main/basket32.png" alt="">
                                 </div>
                                 <div class="carousel__banner__interaction__info__shopInfo__buttons__button carousel__banner__interaction__info__shopInfo__buttons__button_favorite">
-                                    <img src="img/icons/heart32.png" alt="">
+                                    <img src="img/icons/main/heart32.png" alt="">
                                 </div>
                             </div>
                             <div class="carousel__banner__interaction__info__shopInfo__priceTag">

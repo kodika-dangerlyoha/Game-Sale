@@ -6,6 +6,7 @@
     opacity: 0;
     display: none;
     &_active {
+        display: block;
         opacity: 1;
     }
 }

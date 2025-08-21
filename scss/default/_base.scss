@@ -71,8 +71,9 @@ $shadow_out: 0 5px 10px -2px rgba(0, 0, 0, .2);
 @mixin style-glass_circ_hover {
     @include style-glass_circ;
     &:hover {
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        border-bottom: 1px solid $clr-blue_light;
+        // border: 1px solid rgba(255, 255, 255, 0.3);
+        // border-bottom: 1px solid $clr-blue_light;
+        border: 1px solid $clr-blue_light;
         box-shadow: inset 0px -10px 20px 0px $clr-blue_light_glassShadow, $shadow_out;
     }
 }
@@ -86,8 +87,9 @@ $shadow_out: 0 5px 10px -2px rgba(0, 0, 0, .2);
 @mixin style-glass_square_hover {
     @include style-glass_square;
     &:hover {
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        border-bottom: 1px solid $clr-blue_light;
+        // border: 1px solid rgba(255, 255, 255, 0.3);
+        // border-bottom: 1px solid $clr-blue_light;
+        border: 1px solid $clr-blue_light;
         box-shadow: inset 0px -10px 20px -10px $clr-blue_light_glassShadow, $shadow_out;
     }
 }
