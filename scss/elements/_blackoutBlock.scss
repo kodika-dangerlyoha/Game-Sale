@@ -1,0 +1,11 @@
+.blackoutBlock {
+    z-index: 45;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 0.15s;
+
+    opacity: 0;
+    display: none;
+    &_active {
+        opacity: 1;
+    }
+}

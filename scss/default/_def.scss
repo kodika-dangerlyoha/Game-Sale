@@ -36,8 +36,8 @@ input {
 input[type="text"] {
 	width: 100%;
 	display: block;
-	border: none;
-	outline: none;
+	// border: none;
+	// outline: none;
 }
 
 label {
@@ -46,7 +46,7 @@ label {
 
 // -------------- classes
 
-.hide {
+.hidden {
 	display: none;
 	visibility: hidden;
 	width: 0;

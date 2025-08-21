@@ -1,0 +1,215 @@
+@use '../default/base';
+
+.carousel {
+    display: flex;
+    padding: 100px 150px 15px 150px;
+    position: relative;
+    &__bg {
+        @include base.absolute-zero;
+        transition: 1s;
+        opacity: 0;
+        filter: blur(50px);
+        & > img {
+            width: 100%;
+            height: 100%;
+        }
+        &_active {
+            opacity: 0.4;
+        }
+    }
+    &__buttons {
+        position: absolute;
+        bottom: 45px;
+        right: 175px;
+        z-index: 8;
+
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        padding: 15px;
+        &__button {
+            width: 55px;
+            height: 55px;
+            padding: 16px;
+            background-color: rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(30px);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transition: .15s;
+            cursor: pointer;
+            & > img {
+                width: 100%;
+                filter: invert(1);
+            }
+            &:nth-child(1) img {
+                transform: rotate(180deg) translateX(2px);
+            }
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+            &:active {
+                transform: scale(0.95);
+            }
+            &_disactive {
+                cursor: default;
+                opacity: 0.5;
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+                &:active {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+    &__grid {
+        width: 100%;
+        display: flex;
+        position: relative;
+    }
+    &__gridBG {
+        @include base.pos_absolute(-100px, 0px, -100px, 0px);
+        z-index: 1;
+    }
+    &__banner {
+        width: 100%;
+        height: 515px;
+        margin-left: -100%;
+        box-sizing: border-box;
+        transition: 0.5s;
+        position: relative;
+        overflow: hidden;
+        &__imgBlock {
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            // box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            & > img {
+                width: 100%;
+                display: block;
+                transition: 0.3s;
+            }
+        }
+        &__interaction {
+            transform: translateY(-100%);
+            padding-left: 25px;
+            padding-bottom: 25px;
+            margin-bottom: -159px;
+            &__info {
+                display: inline-block;
+                &__link {
+                    position: absolute;
+                    top: -1000px;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    z-index: 2;
+                    display: block;
+                }
+                &__title {
+                    font-family: robotoFlex;
+                    font-size: 28px;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                    margin-bottom: 10px;
+                    position: relative;
+                    z-index: 1;
+                }
+                &__shopInfo {
+                    display: flex;
+                    justify-content: space-between;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    -webkit-backdrop-filter: blur(30px);
+                    backdrop-filter: blur(30px);
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+                    border-radius: 20px;
+                    padding: 15px;
+                    width: 350px;
+                    position: relative;
+                    z-index: 3;
+                    &__buttons {
+                        display: flex;
+                        gap: 10px;
+                        &__button {
+                            width: 55px;
+                            height: 55px;
+                            padding: 12px;
+                            background-color: rgba(255, 255, 255, 0.1);
+                            border: 1px solid rgba(255, 255, 255, 0.3);
+                            border-radius: 50%;
+                            transition: .15s;
+                            cursor: pointer;
+                            & > img {
+                                width: 100%;
+                                filter: invert(1);
+                            }
+                            &:hover {
+                                background-color: rgba(255, 255, 255, 0.2);
+                            }
+                            &:hover img {
+                                animation: header_nav_hover .25s ease-out 1;
+                            }
+                            &:active {
+                                transform: scale(0.95);
+                            }
+                            &_active.banner__interaction__info__shopInfo__buttons__button_favorite {
+                                // background-color: base.$lightRed;
+                                // ! background: base.$redGradient;
+                            }
+                            &_active.banner__interaction__info__shopInfo__buttons__button_basket {
+                                // background-color: base.$lightBlue;
+                                // ! background: base.$mainGradient_100;
+                            }
+                        }
+                    }   
+                    &__priceTag {
+                        display: flex;
+                        gap: 10px;
+                        &__prices {
+                            &__newPrice {
+                                font-size: 20px;
+                                font-weight: 500;
+                            }
+                            &__oldPrice {
+                                font-size: 18px;
+                                font-weight: 400;
+                                color: rgb(200, 200, 200);
+                                text-decoration: line-through;
+                                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                            }
+                        }
+                        &__discount {
+                            background-color: rgba(255, 255, 255, 0.1);
+                            // border: 1px solid rgba(255, 255, 255, 0.5);
+                            border-radius: 10px;
+                            height: 100%;
+                            font-size: 22px;
+                            font-weight: 500;
+                            padding: {
+                                left: 15px;
+                                right: 15px;
+                            }
+                        }
+                    }
+                    &_dark {
+                        border: 1px solid rgba(255, 255, 255, 0.5);
+                        background-color: rgba(0, 0, 0, 0.2);
+                    }
+                    &_dark &__buttons__button {
+                        border: 1px solid rgba(255, 255, 255, 0.5);
+                        background-color: rgba(255, 255, 255, 0.15);
+                    }
+                    &_dark &__priceTag__discount {
+                        background-color: rgba(255, 255, 255, 0.2);
+                    }
+                }
+            }
+        }
+    }
+}

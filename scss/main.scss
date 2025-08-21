@@ -1,1 +1,7 @@
-@import "default/def", "elements/header", "elements/footer";
+@use "default/def";
+@use "fonts/fonts.scss";
+@use "elements/header";
+@use "elements/footer";
+@use "elements/blackoutBlock";
+@use "elements/carousel";
+@use "elements/salesHits.scss";
