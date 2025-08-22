@@ -96,7 +96,7 @@
             &:focus {
                 //! background-color: rgba(186, 186, 186, .7);
                 background-color: rgba(255, 255, 255, .2);
-                border: 1px solid base.$clr-blue_light;
+                @include base.style-glass_hover_style;
             }
         }
         &__button {
@@ -116,7 +116,6 @@
             transition: 0.15s;
             transform: translateX(-100%);
             @include base.style-glass_hover;
-            border-color: transparent;
             // & > img {
             //     display: block;
             //     width: 18px;
@@ -213,7 +212,7 @@
         backdrop-filter: blur(10px);
         transition: 0.15s;
         box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        // border: 1px solid rgba(255, 255, 255, 0.2);
 
         opacity: 1;
         transform: translateY(0px);
