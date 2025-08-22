@@ -3,9 +3,9 @@
 .header {
     position: fixed;
     z-index: 50;
-    top: 0;
-    right: 0;
-    left: 0;
+    top: 8px;
+    right: 8px;
+    left: 8px;
     display: flex;
     justify-content: space-between;
     padding: 15px;
@@ -16,12 +16,14 @@
         right: 0;
         left: 0;
         z-index: 1;
-
-        background-color: rgba(39, 39, 39, .9);
+        border-radius: 25px;
+        background-color: rgba(56, 56, 56, 0.8);
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-        box-shadow: 0 0 40px -2px rgba(0, 0, 0, 0.5);
+        // border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        // box-shadow: 0 0 40px -2px rgba(0, 0, 0, 0.5);
+        // background-color: rgba(255, 255, 255, .1);
+        @include base.style-glass;
         opacity: 0;
         transition: 0.5s;
     }
@@ -71,7 +73,7 @@
             width: 600px;
             //! background-color: rgba(186, 186, 186, .5);
             background-color: rgba(255, 255, 255, .15);
-            border: 1px solid rgba(186, 186, 186, .6);
+            // border: 1px solid rgba(186, 186, 186, .6);
             box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.2);
             border-radius: 23px;
             // -webkit-backdrop-filter: blur(5px);
@@ -90,7 +92,7 @@
             // &:hover {
             //     background-color: rgba(186, 186, 186, 70%);
             // }
-            @include base.style-glass_square_hover;
+            @include base.style-glass_hover;
             &:focus {
                 //! background-color: rgba(186, 186, 186, .7);
                 background-color: rgba(255, 255, 255, .2);
@@ -109,18 +111,21 @@
             cursor: pointer;
             
             border-radius: 50%;
-            background-color: rgba(1, 162, 255, 0);
+            // background-color: rgba(1, 162, 255, 0);
+            background-color: rgba(255, 255, 255, 0.05);
             transition: 0.15s;
             transform: translateX(-100%);
+            @include base.style-glass_hover;
+            border-color: transparent;
             // & > img {
             //     display: block;
             //     width: 18px;
             //     height: 18px;
             //     filter: invert(1);
             // }
-            &:hover {
-                background-color: rgba(1, 162, 255, 1);
-            }
+            // &:hover {
+            //     background-color: rgba(1, 162, 255, 1);
+            // }
         }
     }
     &__buttonCatalog {
@@ -131,25 +136,22 @@
         box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.2);
         //! background-color: rgba(186, 186, 186, 0.5);
         background-color: rgba(255, 255, 255, 0.15);
-        border: 1px solid rgba(186, 186, 186, 0.6);
+        // border: 1px solid rgba(186, 186, 186, 0.6);
         // backdrop-filter: blur(5px);
         transition: 0.15s;
         cursor: pointer;
         margin-right: 10px;
-        @include base.style-glass_circ_hover;
-        & > svg {
-            transition: 0.25s;
-        }
+        @include base.style-glass_hover;
         // &:hover {
         //     background-color: base.$clr-blue_light;
         // }
-        &:active > svg {
-            transform: scale(.8);
+        &:active {
+            transform: scale(.95);
         }
         &_active {
-            background-color: base.$clr-blue_light;
+            @include base.style-glass_active;
             &:hover {
-                background-color: base.$clr-red_close;
+                @include base.style-glass_active;
             }
         }
     }
@@ -159,7 +161,8 @@
         display: flex;
         align-items: center;
         justify-content: end;
-        gap: 5px;
+        gap: 10px;
+        margin-right: 5px;
         &__button {
             height: 45px;
             width: 45px;
@@ -171,19 +174,21 @@
             // border: 1px solid rgba(186, 186, 186, 0.6);
             transition: 0.15s;
             cursor: pointer;
+            background-color: rgba(255, 255, 255, .1);
+            @include base.style-glass_hover;
             & > img {
                 width: 100%;
                 filter: invert(1);
-                transition: 0.25s;
+                // transition: 0.25s;
             }
-            &:hover {
-                background-color: base.$clr-blue_light;
-            }
+            // &:hover {
+            //     background-color: base.$clr-blue_light;
+            // }
             // &:hover & > img {
             //     animation: header_nav_hover 0.25s ease-out 1;
             // }
-            &:active & > img {
-                transform: scale(0.8);
+            &:active {
+                transform: scale(0.95);
             }
             &_active {
                 background-color: base.$clr-blue_light;
@@ -200,26 +205,30 @@
         padding: 15px;
         padding-bottom: 5px;
         border-radius: 15px;
-        background: rgba(255, 255, 255, 0.10);
-        -webkit-backdrop-filter: blur(30px);
-        backdrop-filter: blur(30px);
+        // background: rgba(255, 255, 255, 0.10);
+        // -webkit-backdrop-filter: blur(30px);
+        // backdrop-filter: blur(30px);
+        background-color: rgba(56, 56, 56, 0.8);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
         transition: 0.15s;
         box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.1);
         border: 1px solid rgba(255, 255, 255, 0.2);
 
         opacity: 1;
         transform: translateY(0px);
-        @include base.style-glass_square;
+        @include base.style-glass;
         &__head {
             border-radius: 7px;
-            background: rgba(16, 16, 16, 0.30);
+            // background: rgba(16, 16, 16, 0.30);
+            background: rgba(255, 255, 255, 0.05);
             display: flex;
             justify-content: space-between;
             align-items: center;
             // gap: 1px;
             padding: 10px;
             cursor: pointer;
-            @include base.style-glass_square;
+            @include base.style-glass;
             & > svg {
                 width: 20px;
                 opacity: 0.5;
@@ -245,7 +254,8 @@
             margin-bottom: 10px;
             &__nav {
                 border-radius: 7px;
-                background: rgba(16, 16, 16, 0.30);
+                // background: rgba(16, 16, 16, 0.30);
+                background: rgba(255, 255, 255, 0.05);
                 font-family: base.$fnt-all;
                 font-size: 14px;
                 padding: 7px;
@@ -263,7 +273,7 @@
                 &:active {
                     transform: scale(0.97);
                 }
-                @include base.style-glass_square_hover;
+                @include base.style-glass_hover;
             }
         }
         &_hidden {

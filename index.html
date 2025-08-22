@@ -148,10 +148,10 @@
 			
 			<div class="carousel__buttons">
 				<button type="button" title="button" class="carousel__buttons__button carousel__buttons__button_disactive" onclick="scroll_carousel(false)" id="carousel_button_left" disabled>
-					<img src="img/icons/arrRight32.png" alt="">
+					<img src="img/icons/main/arrRight32.png" alt="">
 				</button>
 				<button type="button" title="button2" class="carousel__buttons__button" onclick="scroll_carousel(true)" id="carousel_button_right">
-					<img src="img/icons/arrRight32.png" alt="">
+					<img src="img/icons/main/arrRight32.png" alt="">
 				</button>
 			</div>
 			<div class="carousel__grid" id="grid_banners">
@@ -348,17 +348,17 @@
 		<section class="offers offers_loading loadingContent" id="offers">
 			<h2 class="hidden">Предложения</h2>
 			<div class="offers__head">
-				<div class="offers__head__nav" onclick="open_offers_games('new')">
+				<div class="offers__head__nav offers__head__nav_active" onclick="open_offers_games('new')" id="offers_nav-new">
 					<div class="offers__head__nav__text txt">Новинки</div>
-					<div class="offers__head__nav__strip strip_new offers__head__nav__strip_active"></div>
+					<!-- <div class="offers__head__nav__strip strip_new offers__head__nav__strip_active"></div> -->
 				</div>
-				<div class="offers__head__nav" onclick="open_offers_games('expected')">
+				<div class="offers__head__nav" onclick="open_offers_games('expected')" id="offers_nav-expected">
 					<div class="offers__head__nav__text txt">Ожидаемое</div>
-					<div class="offers__head__nav__strip strip_expected"></div>
+					<!-- <div class="offers__head__nav__strip strip_expected"></div> -->
 				</div>
-				<div class="offers__head__nav" onclick="open_offers_games('ourChoice')">
+				<div class="offers__head__nav" onclick="open_offers_games('ourChoice')" id="offers_nav-ourChoice">
 					<div class="offers__head__nav__text txt">Наш выбор</div>
-					<div class="offers__head__nav__strip strip_ourChoice"></div>
+					<!-- <div class="offers__head__nav__strip strip_ourChoice"></div> -->
 				</div>
 			</div>
 	

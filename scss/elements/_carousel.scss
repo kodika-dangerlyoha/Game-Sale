@@ -35,7 +35,7 @@
             background-color: rgba(255, 255, 255, 0.1);
             -webkit-backdrop-filter: blur(30px);
             backdrop-filter: blur(30px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            // border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             transition: .15s;
             cursor: pointer;
@@ -49,7 +49,7 @@
             // &:hover {
             //     background-color: rgba(255, 255, 255, 0.2);
             // }
-            @include base.style-glass_circ_hover;
+            @include base.style-glass_hover;
             &:active {
                 transform: scale(0.95);
             }
@@ -81,21 +81,37 @@
         box-sizing: border-box;
         transition: 0.5s;
         position: relative;
+        z-index: 2;
         overflow: hidden;
         &__imgBlock {
             width: 100%;
             height: 100%;
             border-radius: 25px;
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            // border: 2px solid rgba(255, 255, 255, 0.1);
             // box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
             overflow: hidden;
+            &__glass {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                z-index: 2;
+                border-radius: 25px;
+                @include base.style-glass_banner;
+            }
             & > img {
+                position: relative;
+                z-index: 1;
                 width: 100%;
                 display: block;
                 transition: 0.3s;
             }
         }
         &__interaction {
+            position: relative;
+            z-index: 3;
             transform: translateY(-100%);
             padding-left: 25px;
             padding-bottom: 25px;
@@ -134,7 +150,7 @@
                     width: 350px;
                     position: relative;
                     z-index: 3;
-                    @include base.style-glass_square;
+                    @include base.style-glass;
                     &__buttons {
                         display: flex;
                         gap: 10px;
@@ -168,7 +184,7 @@
                                 // background-color: base.$lightBlue;
                                 // ! background: base.$mainGradient_100;
                             }
-                            @include base.style-glass_circ_hover;
+                            @include base.style-glass_hover;
                         }
                     }
                     &__priceTag {
@@ -182,7 +198,7 @@
                             gap: 0px;
                             &__newPrice {
                                 font-size: 22px;
-                                font-weight: 500;
+                                font-weight: 700;
                                 // border-bottom: 1px solid rgba(255, 255, 255, 0.2);
                             }
                             &__oldPrice {
@@ -203,7 +219,7 @@
                                 left: 15px;
                                 right: 15px;
                             }
-                            @include base.style-glass_square;
+                            @include base.style-glass;
                         }
                     }
                     &_dark {

@@ -55,43 +55,124 @@ $fnt-all: robotoFlex, sans-serif;
 
 // -------- mixins --------
 
-$clr-blue_light_glassShadow: rgba(1, 162, 255, .5);
+// @mixin style-glass_circ {
+//     // border: {
+//     //     top: 1px solid rgba(255, 255, 255, 0.3);
+//     //     bottom: 1px solid rgba(255, 255, 255, 0.5);
+//     // }
+//     border: 1px solid rgba(255, 255, 255, 0.3);
+//     border-right: 1px solid rgba(255, 255, 255, 0.5);
+//     box-shadow: inset -10px 0 20px -10px  rgba(255, 255, 255, .3), $shadow_out;
+// }
+
+// @mixin style-glass_circ_hover_style {
+//         // border: 1px solid rgba(255, 255, 255, 0.3);
+//         // border-bottom: 1px solid $clr-blue_light;
+//         border: 1px solid $clr-blue_light;
+//         box-shadow: inset 0px -10px 20px 0px $clr-blue_light_glassShadow, $shadow_out;
+// }
+
+// @mixin style-glass_circ_hover {
+//     @include style-glass_circ;
+//     &:hover {
+//         @include style-glass_circ_hover_style;
+//     }
+// }
+
+// @mixin style-glass_square {
+//     box-shadow: inset -10px 0 20px -10px  rgba(255, 255, 255, .3), $shadow_out;
+//     border: 1px solid rgba(255, 255, 255, 0.3);
+//     border-right: 1px solid rgba(255, 255, 255, 0.5);
+// }
+
+// @mixin style-glass_square_hover_style {
+//         // border: 1px solid rgba(255, 255, 255, 0.3);
+//         // border-bottom: 1px solid $clr-blue_light;
+//         border: 1px solid $clr-blue_light;
+//         box-shadow: inset 0px -10px 20px -10px $clr-blue_light_glassShadow, $shadow_out;
+// }
+
+// @mixin style-glass_square_hover {
+//     @include style-glass_square;
+//     &:hover {
+//         @include style-glass_square_hover_style;
+//     }
+// }
+
+$clr-blue_light_glassShadow: rgba(1, 162, 255, .7);
 $shadow_out: 0 5px 10px -2px rgba(0, 0, 0, .2);
 
-@mixin style-glass_circ {
-    // border: {
-    //     top: 1px solid rgba(255, 255, 255, 0.3);
-    //     bottom: 1px solid rgba(255, 255, 255, 0.5);
-    // }
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-right: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: inset -10px 0 20px -10px  rgba(255, 255, 255, .3), $shadow_out;
+// @mixin style-glass {
+//     box-shadow: inset -10px 0 20px -10px  rgba(255, 255, 255, .3), $shadow_out;
+//     border: 1px solid rgba(255, 255, 255, 0.3);
+//     border-right: 1px solid rgba(255, 255, 255, 0.7);
+// }
+
+// @mixin style-glass_game {
+//     box-shadow: inset -20px 0 30px -10px  rgba(255, 255, 255, .3), $shadow_out;
+//     border: 1px solid rgba(255, 255, 255, 0.3);
+//     border-right: 1px solid rgba(255, 255, 255, 0.5);
+// }
+
+// @mixin style-glass_banner {
+//     box-shadow: inset -40px 0 80px -20px  rgba(255, 255, 255, .3), $shadow_out;
+//     border: inset 1px solid rgba(255, 255, 255, 0.3);
+//     border-right: 1px solid rgba(255, 255, 255, 0.5);
+// }
+
+// @mixin style-glass_hover_style {
+//         // border: 1px solid rgba(255, 255, 255, 0.3);
+//         // border-bottom: 1px solid $clr-blue_light;
+//         border: 1px solid $clr-blue_light;
+//         box-shadow: inset 0px -10px 20px -10px $clr-blue_light_glassShadow, $shadow_out;
+// }
+
+// @mixin style-glass_hover {
+//     @include style-glass;
+//     &:hover {
+//         @include style-glass_hover_style;
+//     }
+// }
+
+// @mixin style-glass_active {
+//     border: 1px solid $clr-blue_light;
+//     box-shadow: inset 0px -20px 40px -10px $clr-blue_light_glassShadow, $shadow_out;
+// }
+
+
+@mixin style-glass {
+    box-shadow: inset -10px 0 20px -10px  rgba(255, 255, 255, .3), $shadow_out, inset 0 0 0 1px rgba(255, 255, 255, .2), inset -1px 0 0 1px rgba(255, 255, 255, .2);
 }
 
-@mixin style-glass_circ_hover {
-    @include style-glass_circ;
-    &:hover {
+@mixin style-glass_game {
+    box-shadow: inset -20px 0 30px -10px  rgba(255, 255, 255, .3), $shadow_out, inset 0 0 0 1px rgba(255, 255, 255, .2), inset -1px 0 0 1px rgba(255, 255, 255, .2);
+}
+
+@mixin style-glass_banner {
+    box-shadow: inset -40px 0 80px -20px  rgba(255, 255, 255, .3), $shadow_out, inset 0 0 0 1px rgba(255, 255, 255, .2), inset -1px 0 0 1px rgba(255, 255, 255, .2);
+}
+
+@mixin style-glass_hover_style {
         // border: 1px solid rgba(255, 255, 255, 0.3);
         // border-bottom: 1px solid $clr-blue_light;
-        border: 1px solid $clr-blue_light;
-        box-shadow: inset 0px -10px 20px 0px $clr-blue_light_glassShadow, $shadow_out;
+        // border: 1px solid $clr-blue_light;
+        // box-shadow: inset 0px -10px 20px -10px $clr-blue_light_glassShadow, $shadow_out;
+
+        box-shadow: inset 0px -10px 20px -10px $clr-blue_light_glassShadow, $shadow_out, inset 0 0 0 1px $clr-blue_light;
+}
+
+@mixin style-glass_hover {
+    @include style-glass;
+    &:hover {
+        @include style-glass_hover_style;
     }
 }
 
-@mixin style-glass_square {
-    box-shadow: inset -10px 0 20px -10px  rgba(255, 255, 255, .3), $shadow_out;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-right: 1px solid rgba(255, 255, 255, 0.5);
-}
+@mixin style-glass_active {
+    // border: 1px solid $clr-blue_light;
+    // box-shadow: inset 0px -20px 40px -10px $clr-blue_light_glassShadow, $shadow_out;
 
-@mixin style-glass_square_hover {
-    @include style-glass_square;
-    &:hover {
-        // border: 1px solid rgba(255, 255, 255, 0.3);
-        // border-bottom: 1px solid $clr-blue_light;
-        border: 1px solid $clr-blue_light;
-        box-shadow: inset 0px -10px 20px -10px $clr-blue_light_glassShadow, $shadow_out;
-    }
+    box-shadow: inset 0px -20px 40px -10px $clr-blue_light_glassShadow, $shadow_out, inset 0 0 0 1px $clr-blue_light;
 }
 
 @mixin absolute_zero {

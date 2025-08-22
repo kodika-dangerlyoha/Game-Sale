@@ -7,38 +7,51 @@
         align-items: center;
         justify-content: start;
         margin-bottom: 30px;
+        gap: 10px;
         &__nav {
             position: relative;
-            padding: 5px 0 5px 0;
-            margin-right: 20px;
+            padding: 7px 12px 7px 12px;
             cursor: pointer;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, .05);
+            @include base.style-glass_hover;
+            transition: .2s;
             &__text {
                 font-size: 20px;
                 font-weight: 600;
                 cursor: pointer;
             }
-            &__strip {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                height: 3px;
-                border-radius: 2px;
-                background: transparent;
-                transition: 0.15s;
-                transform: translateY(3px);
-                &_active {
-                    transform: translateY(0px);
-                    background: base.$clr-blue_light;
+            &_active {
+                @include base.style-glass_active;
+                &:hover {
+                    @include base.style-glass_active;
                 }
             }
-            &:hover &__strip{
-                transform: translateY(0px);
-                background: rgb(255, 255, 255);
+            &:active {
+                transform: scale(.95);
             }
-            &:hover &__strip_active{
-                background: base.$clr-blue_light;
-            }
+            // &__strip {
+            //     position: absolute;
+            //     bottom: 0;
+            //     left: 0;
+            //     right: 0;
+            //     height: 3px;
+            //     border-radius: 2px;
+            //     background: transparent;
+            //     transition: 0.15s;
+            //     transform: translateY(3px);
+            //     &_active {
+            //         transform: translateY(0px);
+            //         background: base.$clr-blue_light;
+            //     }
+            // }
+            // &:hover &__strip{
+            //     transform: translateY(0px);
+            //     background: rgb(255, 255, 255);
+            // }
+            // &:hover &__strip_active{
+            //     background: base.$clr-blue_light;
+            // }
         }
     }
     &__grid {

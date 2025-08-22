@@ -1,6 +1,7 @@
 const get_horizont_game_html = (game, discount) => {
     return `<a href = "${game.link}" class = "gameH">
                 <div class="gameH__banner">
+                    <div class="gameH__banner__glass"></div>
                     <img src="${game.imgH}" alt="${game.name}">
                     <div class="gameH__banner__videoBlock">
                         <video src="${game.treilerSrc}" autoplay loop muted>
@@ -29,6 +30,7 @@ const get_horizont_game_html = (game, discount) => {
 const get_vertical_game_html = (game, discount) => {
     return `<div class = "gameV">
                 <a href = "${game.link}" class="gameV__banner">
+                    <div class="gameV__banner__glass"></div>
                     <img src="${game.imgW}" alt="${game.name}">
                     <div class="gameV__banner__discount">
                         <div class="gameV__banner__discount__inner txt">${discount}%</div>
@@ -178,6 +180,7 @@ const get_basket_game_html = (game) => {
 const get_carousel_banner_html = (game, discount, cout) => {
     return `<div class="carousel__banner carousel__banner_${cout}">
                 <div class="carousel__banner__imgBlock">
+                    <div class="carousel__banner__imgBlock__glass"></div>
                     <img src="${game.bigBanner}" alt="">
                 </div>
                 <div class="carousel__banner__interaction">

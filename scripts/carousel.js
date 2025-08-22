@@ -32,6 +32,7 @@ function make_carousel() {
                                                                                                 filter: blur(${count}px);
                                                                                                 }">
             <div class="carousel__banner__imgBlock">
+            <div class="carousel__banner__imgBlock__glass"></div>
                 <img src="${game_info.bigBanner}" alt="">
             </div>
             <div class="carousel__banner__interaction">
@@ -41,10 +42,10 @@ function make_carousel() {
                     <div class="carousel__banner__interaction__info__shopInfo">
                         <div class="carousel__banner__interaction__info__shopInfo__buttons">
                             <div class="carousel__banner__interaction__info__shopInfo__buttons__button carousel__banner__interaction__info__shopInfo__buttons__button_basket">
-                                <img src="img/icons/basket32.png" alt="">
+                                <img src="img/icons/main/basket32.png" alt="">
                             </div>
                             <div class="carousel__banner__interaction__info__shopInfo__buttons__button carousel__banner__interaction__info__shopInfo__buttons__button_favorite">
-                                <img src="img/icons/heart32.png" alt="">
+                                <img src="img/icons/main/heart32.png" alt="">
                             </div>
                         </div>
                         <div class="carousel__banner__interaction__info__shopInfo__priceTag">

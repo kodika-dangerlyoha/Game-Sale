@@ -22,6 +22,15 @@
             margin-bottom: -159px;
             &__info {
                 display: inline-block;
+                &__link {
+                    position: absolute;
+                    top: -1000px;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    z-index: 2;
+                    display: block;
+                }
                 &__title {
                     font-family: robotoFlex;
                     font-size: 28px;
@@ -29,6 +38,8 @@
                     letter-spacing: 1px;
                     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
                     margin-bottom: 10px;
+                    position: relative;
+                    z-index: 1;
                 }
                 &__shopInfo {
                     display: flex;
@@ -36,11 +47,14 @@
                     background-color: rgba(255, 255, 255, 0.1);
                     -webkit-backdrop-filter: blur(30px);
                     backdrop-filter: blur(30px);
-                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    // border: 1px solid rgba(255, 255, 255, 0.3);
                     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
                     border-radius: 20px;
                     padding: 15px;
-                    min-width: 350px;
+                    width: 350px;
+                    position: relative;
+                    z-index: 3;
+                    @include base.style-glass;
                     &__buttons {
                         display: flex;
                         gap: 10px;
@@ -49,7 +63,7 @@
                             height: 55px;
                             padding: 12px;
                             background-color: rgba(255, 255, 255, 0.1);
-                            border: 1px solid rgba(255, 255, 255, 0.3);
+                            // border: 1px solid rgba(255, 255, 255, 0.3);
                             border-radius: 50%;
                             transition: .15s;
                             cursor: pointer;
@@ -60,36 +74,42 @@
                             &:hover {
                                 background-color: rgba(255, 255, 255, 0.2);
                             }
-                            // &:hover img {
-                            //     animation: header_nav_hover .25s ease-out 1;
-                            // }
+                            &:hover img {
+                                animation: header_nav_hover .25s ease-out 1;
+                            }
                             &:active {
                                 transform: scale(0.95);
                             }
                             &_active.banner__interaction__info__shopInfo__buttons__button_favorite {
                                 // background-color: base.$lightRed;
-                                background: base.$clr-grad_red;
+                                // ! background: base.$redGradient;
                             }
                             &_active.banner__interaction__info__shopInfo__buttons__button_basket {
                                 // background-color: base.$lightBlue;
-                                background: base.$clr-grad_blue_100;
+                                // ! background: base.$mainGradient_100;
                             }
+                            @include base.style-glass_hover;
                         }
-                    }   
+                    }
                     &__priceTag {
                         display: flex;
                         gap: 10px;
                         &__prices {
+                            display: flex;
+                            align-items: end;
+                            justify-content: center;
+                            flex-direction: column;
+                            gap: 0px;
                             &__newPrice {
-                                font-size: 20px;
-                                font-weight: 500;
+                                font-size: 22px;
+                                font-weight: 700;
+                                // border-bottom: 1px solid rgba(255, 255, 255, 0.2);
                             }
                             &__oldPrice {
-                                font-size: 18px;
+                                font-size: 16px;
                                 font-weight: 400;
                                 color: rgb(200, 200, 200);
                                 text-decoration: line-through;
-                                border-top: 1px solid rgba(255, 255, 255, 0.2);
                             }
                         }
                         &__discount {
@@ -103,6 +123,7 @@
                                 left: 15px;
                                 right: 15px;
                             }
+                            @include base.style-glass;
                         }
                     }
                     &_dark {
