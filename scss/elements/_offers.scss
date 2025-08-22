@@ -10,14 +10,14 @@
         gap: 10px;
         &__nav {
             position: relative;
-            padding: 7px 12px 7px 12px;
+            padding: 12px 16px 12px 16px;
             cursor: pointer;
-            border-radius: 20px;
+            border-radius: 21px;
             background-color: rgba(255, 255, 255, .05);
             @include base.style-glass_hover;
             transition: .2s;
             &__text {
-                font-size: 20px;
+                font-size: 16px;
                 font-weight: 600;
                 cursor: pointer;
             }
@@ -74,9 +74,15 @@
             display: flex;
             align-items: center;
             font-family: base.$fnt-all;
-            font-size: 18px;
-            font-weight: 500;
+            font-size: 16px;
+            font-weight: 400;
             cursor: pointer;
+
+            padding: 12px 16px 12px 16px;
+            border-radius: 21px;
+            background-color: rgba(255, 255, 255, .05);
+            @include base.style-glass_hover;
+            transition: .2s;
             & img {
                 margin-left: 5px;
                 height: 16px;
@@ -88,6 +94,9 @@
             &:hover img{
                 opacity: 1;
                 transform: translateY(1px) translateX(5px);
+            }
+            &:active {
+                transform: scale(.95);
             }
         }
     }

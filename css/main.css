@@ -1046,19 +1046,25 @@ label {
   justify-content: space-between;
 }
 .salesHits__blockButtonMore {
-  position: relative;
-  z-index: 2;
   display: flex;
   justify-content: end;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .salesHits__blockButtonMore__button {
   display: flex;
   align-items: center;
   font-family: robotoFlex, sans-serif;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
   cursor: pointer;
+  padding: 12px 16px 12px 16px;
+  border-radius: 21px;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  transition: 0.2s;
+}
+.salesHits__blockButtonMore__button:hover {
+  box-shadow: inset 0px -10px 20px -10px rgba(1, 162, 255, 0.7), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgb(1, 162, 255);
 }
 .salesHits__blockButtonMore__button img {
   margin-left: 5px;
@@ -1071,6 +1077,9 @@ label {
 .salesHits__blockButtonMore__button:hover img {
   opacity: 1;
   transform: translateY(1px) translateX(5px);
+}
+.salesHits__blockButtonMore__button:active {
+  transform: scale(0.95);
 }
 
 .banner__game {
@@ -1215,9 +1224,9 @@ label {
 }
 .offers__head__nav {
   position: relative;
-  padding: 7px 12px 7px 12px;
+  padding: 12px 16px 12px 16px;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 21px;
   background-color: rgba(255, 255, 255, 0.05);
   box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
   transition: 0.2s;
@@ -1226,7 +1235,7 @@ label {
   box-shadow: inset 0px -10px 20px -10px rgba(1, 162, 255, 0.7), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgb(1, 162, 255);
 }
 .offers__head__nav__text {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -1259,9 +1268,17 @@ label {
   display: flex;
   align-items: center;
   font-family: robotoFlex, sans-serif;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
   cursor: pointer;
+  padding: 12px 16px 12px 16px;
+  border-radius: 21px;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  transition: 0.2s;
+}
+.offers__blockButtonMore__button:hover {
+  box-shadow: inset 0px -10px 20px -10px rgba(1, 162, 255, 0.7), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgb(1, 162, 255);
 }
 .offers__blockButtonMore__button img {
   margin-left: 5px;
@@ -1274,6 +1291,9 @@ label {
 .offers__blockButtonMore__button:hover img {
   opacity: 1;
   transform: translateY(1px) translateX(5px);
+}
+.offers__blockButtonMore__button:active {
+  transform: scale(0.95);
 }
 .offers_loading {
   display: none;
