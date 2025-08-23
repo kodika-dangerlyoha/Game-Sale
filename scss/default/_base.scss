@@ -17,6 +17,10 @@ $clr-gray_43: rgb(43, 43, 43);
 $clr-gray_47_hover: rgb(47, 47, 47);
 $clr-gray_55: rgb(55, 55, 55);
 
+// -------- timing function --------
+
+$tf-main: cubic-bezier(0, 0, 0, 0.75);
+
 // $lightGray: rgba(45, 45, 45, 1);
 
 // -------- for mixins --------
@@ -55,53 +59,6 @@ $fnt-all: robotoFlex, sans-serif;
 
 // -------- mixins --------
 
-// @mixin style-glass_circ {
-//     // border: {
-//     //     top: 1px solid rgba(255, 255, 255, 0.3);
-//     //     bottom: 1px solid rgba(255, 255, 255, 0.5);
-//     // }
-//     border: 1px solid rgba(255, 255, 255, 0.3);
-//     border-right: 1px solid rgba(255, 255, 255, 0.5);
-//     box-shadow: inset -10px 0 20px -10px  rgba(255, 255, 255, .3), $shadow_out;
-// }
-
-// @mixin style-glass_circ_hover_style {
-//         // border: 1px solid rgba(255, 255, 255, 0.3);
-//         // border-bottom: 1px solid $clr-blue_light;
-//         border: 1px solid $clr-blue_light;
-//         box-shadow: inset 0px -10px 20px 0px $clr-blue_light_glassShadow, $shadow_out;
-// }
-
-// @mixin style-glass_circ_hover {
-//     @include style-glass_circ;
-//     &:hover {
-//         @include style-glass_circ_hover_style;
-//     }
-// }
-
-// @mixin style-glass_square {
-//     box-shadow: inset -10px 0 20px -10px  rgba(255, 255, 255, .3), $shadow_out;
-//     border: 1px solid rgba(255, 255, 255, 0.3);
-//     border-right: 1px solid rgba(255, 255, 255, 0.5);
-// }
-
-// @mixin style-glass_square_hover_style {
-//         // border: 1px solid rgba(255, 255, 255, 0.3);
-//         // border-bottom: 1px solid $clr-blue_light;
-//         border: 1px solid $clr-blue_light;
-//         box-shadow: inset 0px -10px 20px -10px $clr-blue_light_glassShadow, $shadow_out;
-// }
-
-// @mixin style-glass_square_hover {
-//     @include style-glass_square;
-//     &:hover {
-//         @include style-glass_square_hover_style;
-//     }
-// }
-
-$clr-blue_light_glassShadow: rgba(1, 162, 255, .7);
-$shadow_out: 0 5px 10px -2px rgba(0, 0, 0, .2);
-
 // @mixin style-glass {
 //     box-shadow: inset -10px 0 20px -10px  rgba(255, 255, 255, .3), $shadow_out;
 //     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -139,17 +96,24 @@ $shadow_out: 0 5px 10px -2px rgba(0, 0, 0, .2);
 //     box-shadow: inset 0px -20px 40px -10px $clr-blue_light_glassShadow, $shadow_out;
 // }
 
+// $shadow_light_b: inset -1px 0 0 0px rgba(80, 176, 255, .25);
+// $shadow_border_b: inset 0 0 0 1px rgba(80, 176, 255, 0.2);
+
+$clr-blue_light_glassShadow: rgba(1, 162, 255, .7);
+$shadow_out: 0 5px 10px -2px rgba(0, 0, 0, .2);
+$shadow_border: inset 0 0 0 1px rgba(255, 255, 255, .2);
+$shadow_light: inset -1px 0 0 0px rgba(255, 255, 255, .25);
 
 @mixin style-glass {
-    box-shadow: inset -10px 0 20px -10px  rgba(255, 255, 255, .3), $shadow_out, inset 0 0 0 1px rgba(255, 255, 255, .2), inset -1px 0 0 1px rgba(255, 255, 255, .2);
+    box-shadow: inset -20px 0 20px -20px  rgba(255, 255, 255, .3), $shadow_out, $shadow_border, $shadow_light;  //! Изменить внутреннюю белую тень, так чтоб она была только справа
 }
 
 @mixin style-glass_game {
-    box-shadow: inset -20px 0 30px -10px  rgba(255, 255, 255, .3), $shadow_out, inset 0 0 0 1px rgba(255, 255, 255, .2), inset -1px 0 0 1px rgba(255, 255, 255, .2);
+    box-shadow: inset -30px 0 30px -30px  rgba(255, 255, 255, .3), $shadow_out, $shadow_border, $shadow_light;
 }
 
 @mixin style-glass_banner {
-    box-shadow: inset -40px 0 80px -20px  rgba(255, 255, 255, .3), $shadow_out, inset 0 0 0 1px rgba(255, 255, 255, .2), inset -1px 0 0 1px rgba(255, 255, 255, .2);
+    box-shadow: inset -80px 0 80px -80px  rgba(255, 255, 255, .3), $shadow_out, $shadow_border, $shadow_light;
 }
 
 @mixin style-glass_hover_style {

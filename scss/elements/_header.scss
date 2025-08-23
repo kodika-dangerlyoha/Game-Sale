@@ -112,10 +112,12 @@
             
             border-radius: 50%;
             // background-color: rgba(1, 162, 255, 0);
-            background-color: rgba(255, 255, 255, 0.05);
             transition: 0.15s;
             transform: translateX(-100%);
-            @include base.style-glass_hover;
+            &:hover {
+                background-color: rgba(255, 255, 255, .2);
+                // @include base.style-glass_hover_style;
+            }
             // & > img {
             //     display: block;
             //     width: 18px;
@@ -213,6 +215,7 @@
         transition: 0.15s;
         box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.1);
         // border: 1px solid rgba(255, 255, 255, 0.2);
+        animation: open .2s base.$tf-main 1;
 
         opacity: 1;
         transform: translateY(0px);

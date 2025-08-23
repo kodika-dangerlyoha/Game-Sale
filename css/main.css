@@ -49,7 +49,7 @@ label {
 }
 
 .txt {
-  font-family: sans-serif;
+  font-family: robotoFlex, sans-serif;
   color: white;
   cursor: default;
 }
@@ -96,6 +96,24 @@ label {
     transform: translateY(0px);
   }
 }
+@keyframes open {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes open_blackout {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @font-face {
   font-family: "robotoFlex";
   src: url("../fonts/RobotoFlex.ttf");
@@ -125,7 +143,7 @@ label {
   background-color: rgba(56, 56, 56, 0.8);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -20px 0 20px -20px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
   opacity: 0;
   transition: 0.5s;
 }
@@ -183,7 +201,7 @@ label {
   font-size: 16px;
   color: rgb(255, 255, 255);
   transition: 0.15s;
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -20px 0 20px -20px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
 }
 .header__searchBlock > input:hover {
   box-shadow: inset 0px -10px 20px -10px rgba(1, 162, 255, 0.7), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgb(1, 162, 255);
@@ -203,13 +221,11 @@ label {
   justify-content: center;
   cursor: pointer;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.05);
   transition: 0.15s;
   transform: translateX(-100%);
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
 }
 .header__searchBlock__button:hover {
-  box-shadow: inset 0px -10px 20px -10px rgba(1, 162, 255, 0.7), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgb(1, 162, 255);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .header__buttonCatalog {
   height: 45px;
@@ -221,7 +237,7 @@ label {
   transition: 0.15s;
   cursor: pointer;
   margin-right: 10px;
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -20px 0 20px -20px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
 }
 .header__buttonCatalog:hover {
   box-shadow: inset 0px -10px 20px -10px rgba(1, 162, 255, 0.7), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgb(1, 162, 255);
@@ -254,7 +270,7 @@ label {
   transition: 0.15s;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -20px 0 20px -20px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
 }
 .header__nav__button:hover {
   box-shadow: inset 0px -10px 20px -10px rgba(1, 162, 255, 0.7), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgb(1, 162, 255);
@@ -284,9 +300,10 @@ label {
   backdrop-filter: blur(10px);
   transition: 0.15s;
   box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.1);
+  animation: open 0.2s cubic-bezier(0, 0, 0, 0.75) 1;
   opacity: 1;
   transform: translateY(0px);
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -20px 0 20px -20px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
 }
 .header__catalogNavs__head {
   border-radius: 7px;
@@ -296,7 +313,7 @@ label {
   align-items: center;
   padding: 10px;
   cursor: pointer;
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -20px 0 20px -20px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
 }
 .header__catalogNavs__head > svg {
   width: 20px;
@@ -332,7 +349,7 @@ label {
   border: 1px solid rgba(255, 255, 255, 0);
   cursor: pointer;
   transition: 0.15s;
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -20px 0 20px -20px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
 }
 .header__catalogNavs__grid__nav img {
   margin-right: 7px;
@@ -496,13 +513,11 @@ label {
 .blackoutBlock {
   z-index: 45;
   background-color: rgba(0, 0, 0, 0.5);
-  transition: 0.15s;
-  opacity: 0;
   display: none;
 }
 .blackoutBlock_active {
   display: block;
-  opacity: 1;
+  animation: open_blackout 0.2s ease-in-out 1;
 }
 
 .carousel {
@@ -547,7 +562,7 @@ label {
   border-radius: 50%;
   transition: 0.15s;
   cursor: pointer;
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -20px 0 20px -20px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
 }
 .carousel__buttons__button > img {
   width: 100%;
@@ -591,6 +606,7 @@ label {
   margin-left: -100%;
   box-sizing: border-box;
   transition: 0.5s;
+  animation-timing-function: cubic-bezier(0, 0, 0, 0.75);
   position: relative;
   z-index: 2;
   overflow: hidden;
@@ -610,7 +626,7 @@ label {
   left: 0;
   z-index: 2;
   border-radius: 25px;
-  box-shadow: inset -40px 0 80px -20px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -80px 0 80px -80px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
 }
 .carousel__banner__imgBlock > img {
   position: relative;
@@ -661,7 +677,7 @@ label {
   width: 350px;
   position: relative;
   z-index: 3;
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -20px 0 20px -20px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
 }
 .carousel__banner__interaction__info__shopInfo__buttons {
   display: flex;
@@ -675,7 +691,7 @@ label {
   border-radius: 50%;
   transition: 0.15s;
   cursor: pointer;
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -20px 0 20px -20px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
 }
 .carousel__banner__interaction__info__shopInfo__buttons__button > img {
   width: 100%;
@@ -722,7 +738,7 @@ label {
   font-weight: 500;
   padding-left: 15px;
   padding-right: 15px;
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -20px 0 20px -20px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
 }
 .carousel__banner__interaction__info__shopInfo_dark {
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -752,6 +768,7 @@ label {
   background-size: cover;
   background-color: rgb(55, 55, 55);
   transition: 0.15s;
+  animation-timing-function: cubic-bezier(0, 0, 0, 0.75);
   cursor: pointer;
 }
 .gameV__banner img {
@@ -767,26 +784,25 @@ label {
   right: 0;
   z-index: 3;
   border-radius: inherit;
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -30px 0 30px -30px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
 }
 .gameV__banner__discount {
   position: absolute;
-  bottom: 0px;
-  left: 0;
-  padding: 4px 4px 0 0;
-  border-radius: 0 14px 0 14px;
-  background-color: rgb(39, 39, 39);
+  z-index: 4;
+  bottom: 8px;
+  right: 8px;
+  padding: 5px 8px 5px 8px;
+  border-radius: 7px;
   cursor: pointer;
-  z-index: 2;
-}
-.gameV__banner__discount__inner {
-  padding: 5px 10px 5px 10px;
-  border-radius: 0 10px 0 10px;
-  background: linear-gradient(to bottom, rgb(1, 162, 255), rgb(1, 74, 255));
+  transition: 0.15s;
+  opacity: 1;
   font-family: robotoFlex, sans-serif;
   font-size: 15px;
   font-weight: 700;
-  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0px -20px 40px -10px rgba(1, 162, 255, 0.7), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgb(1, 162, 255);
 }
 .gameV__info {
   position: relative;
@@ -833,7 +849,7 @@ label {
   cursor: pointer;
   overflow: hidden;
   transition: 0.15s;
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -20px 0 20px -20px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
 }
 .gameV__info__buttons__button img {
   height: 18px;
@@ -865,13 +881,15 @@ label {
   display: block;
 }
 .gameH__banner {
-  width: 100%;
+  height: 222px;
+  display: block;
   position: relative;
-  border-radius: 10px;
+  border-radius: 15px;
   background-size: cover;
   transition: 0.15s;
   cursor: pointer;
   overflow: hidden;
+  animation-timing-function: cubic-bezier(0, 0, 0, 0.75);
 }
 .gameH__banner__glass {
   position: absolute;
@@ -881,14 +899,21 @@ label {
   right: 0;
   z-index: 5;
   border-radius: inherit;
-  box-shadow: inset -20px 0 30px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -30px 0 30px -30px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
 }
-.gameH__banner > img {
-  position: relative;
+.gameH__banner__imgBlock {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   z-index: 2;
+  opacity: 1;
+  transition: 0.15s;
+}
+.gameH__banner__imgBlock > img {
   border-radius: 10px;
   height: 100%;
-  transition: 0.15s;
 }
 .gameH__banner__videoBlock {
   display: flex;
@@ -911,27 +936,24 @@ label {
 .gameH__banner__discount {
   position: absolute;
   z-index: 4;
-  bottom: 4px;
-  left: 0;
-  padding: 4px 4px 0 0;
-  border-radius: 0 10px 0 10px;
-  background-color: rgb(39, 39, 39);
+  bottom: 8px;
+  right: 8px;
+  padding: 5px 8px 5px 8px;
+  border-radius: 7px;
   cursor: pointer;
   transition: 0.15s;
   opacity: 1;
-}
-.gameH__banner__discount__inner {
-  padding: 5px 10px 5px 10px;
-  border-radius: 0 10px 0 10px;
-  background: linear-gradient(to bottom, rgb(1, 162, 255), rgb(1, 74, 255));
   font-family: robotoFlex, sans-serif;
   font-size: 15px;
   font-weight: 700;
-  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0px -20px 40px -10px rgba(1, 162, 255, 0.7), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgb(1, 162, 255);
 }
 .gameH__info {
   position: relative;
-  padding-top: 8px;
+  padding-top: 10px;
   display: flex;
   justify-content: space-between;
   transition: 0.15s;
@@ -951,7 +973,7 @@ label {
 .gameH__info__buttons {
   right: 0;
   left: 0;
-  top: 4px;
+  top: 6px;
   position: absolute;
   z-index: 2;
   display: flex;
@@ -974,7 +996,7 @@ label {
   cursor: pointer;
   overflow: hidden;
   transition: 0.15s;
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -20px 0 20px -20px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
 }
 .gameH__info__buttons__button img {
   height: 18px;
@@ -1000,7 +1022,7 @@ label {
   display: block;
   transition-delay: 1s;
 }
-.gameH:hover .gameH__banner img {
+.gameH:hover .gameH__banner__imgBlock {
   opacity: 0;
   transition-delay: 1s;
 }
@@ -1060,7 +1082,7 @@ label {
   padding: 12px 16px 12px 16px;
   border-radius: 21px;
   background-color: rgba(255, 255, 255, 0.05);
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -20px 0 20px -20px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
   transition: 0.2s;
 }
 .salesHits__blockButtonMore__button:hover {
@@ -1137,7 +1159,7 @@ label {
   width: 350px;
   position: relative;
   z-index: 3;
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -20px 0 20px -20px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
 }
 .banner__game__interaction__info__shopInfo__buttons {
   display: flex;
@@ -1151,7 +1173,7 @@ label {
   border-radius: 50%;
   transition: 0.15s;
   cursor: pointer;
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -20px 0 20px -20px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
 }
 .banner__game__interaction__info__shopInfo__buttons__button > img {
   width: 100%;
@@ -1198,7 +1220,7 @@ label {
   font-weight: 500;
   padding-left: 15px;
   padding-right: 15px;
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -20px 0 20px -20px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
 }
 .banner__game__interaction__info__shopInfo_dark {
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -1228,7 +1250,7 @@ label {
   cursor: pointer;
   border-radius: 21px;
   background-color: rgba(255, 255, 255, 0.05);
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -20px 0 20px -20px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
   transition: 0.2s;
 }
 .offers__head__nav:hover {
@@ -1274,7 +1296,7 @@ label {
   padding: 12px 16px 12px 16px;
   border-radius: 21px;
   background-color: rgba(255, 255, 255, 0.05);
-  box-shadow: inset -10px 0 20px -10px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset -20px 0 20px -20px rgba(255, 255, 255, 0.3), 0 5px 10px -2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset -1px 0 0 0px rgba(255, 255, 255, 0.25);
   transition: 0.2s;
 }
 .offers__blockButtonMore__button:hover {

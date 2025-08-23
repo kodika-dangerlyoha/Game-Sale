@@ -1,12 +1,10 @@
 .blackoutBlock {
     z-index: 45;
     background-color: rgba(0, 0, 0, 0.5);
-    transition: 0.15s;
-
-    opacity: 0;
+    // transition: 0.15s;
     display: none;
     &_active {
         display: block;
-        opacity: 1;
+        animation: open_blackout .2s ease-in-out 1;
     }
 }

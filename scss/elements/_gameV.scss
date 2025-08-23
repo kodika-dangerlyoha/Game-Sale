@@ -13,6 +13,7 @@
         background-size: cover;
         background-color: rgb(55, 55, 55);
         transition: 0.15s;
+        animation-timing-function: base.$tf-main;
         cursor: pointer;
         & img {
             position: relative;
@@ -27,27 +28,45 @@
             right: 0;
             z-index: 3;
             border-radius: inherit;
-            @include base.style-glass;
+            @include base.style-glass_game;
         }
         &__discount {
             position: absolute;
-            bottom: 0px;
-            left: 0;
-            padding: 4px 4px 0 0;
-            border-radius: 0 14px 0 14px;
-            background-color: base.$clr-main_body;
+            z-index: 4;
+            bottom: 8px;
+            right: 8px;
+            padding: 5px 8px 5px 8px;
+            border-radius: 7px;
             cursor: pointer;
-            z-index: 2;
-            &__inner {
-                padding: 5px 10px 5px 10px;
-                border-radius: 0 10px 0 10px;
-                background: base.$clr-grad_blue_100;
-                font-family: base.$fnt-all;
-                font-size: 15px;
-                font-weight: 700;
-                cursor: pointer;
-            }
+            transition: .15s;
+            opacity: 1;
+            font-family: base.$fnt-all;
+            font-size: 15px;
+            font-weight: 700;
+            background-color: rgba(255, 255, 255, .1);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            @include base.style-glass_active;
         }
+        // &__discount {
+        //     position: absolute;
+        //     bottom: 0px;
+        //     left: 0;
+        //     padding: 4px 4px 0 0;
+        //     border-radius: 0 14px 0 14px;
+        //     background-color: base.$clr-main_body;
+        //     cursor: pointer;
+        //     z-index: 2;
+        //     &__inner {
+        //         padding: 5px 10px 5px 10px;
+        //         border-radius: 0 10px 0 10px;
+        //         background: base.$clr-grad_blue_100;
+        //         font-family: base.$fnt-all;
+        //         font-size: 15px;
+        //         font-weight: 700;
+        //         cursor: pointer;
+        //     }
+        // }
     }
     &__info {
         position: relative;

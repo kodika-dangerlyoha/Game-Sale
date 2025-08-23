@@ -1,15 +1,13 @@
 const get_horizont_game_html = (game, discount) => {
-    return `<a href = "${game.link}" class = "gameH">
-                <div class="gameH__banner">
+    return `<article class = "gameH">
+                <a href = "${game.link}" class="gameH__banner">
                     <div class="gameH__banner__glass"></div>
-                    <img src="${game.imgH}" alt="${game.name}">
+                    <div class="gameH__banner__imgBlock"><img src="${game.imgH}" alt="${game.name}"></div>
                     <div class="gameH__banner__videoBlock">
                         <video src="${game.treilerSrc}" autoplay loop muted>
                     </div>   
-                    <div class="gameH__banner__discount">
-                        <div class="gameH__banner__discount__inner txt">${discount}%</div>
-                    </div>
-                </div>
+                    <div class="gameH__banner__discount txt">${discount}%</div>
+                </a>
                 <div class="gameH__info">
                     <div class="gameH__info__buttons">
                         <div class="gameH__info__buttons__button">
@@ -24,17 +22,15 @@ const get_horizont_game_html = (game, discount) => {
                     <div class="gameH__info__name txt">${game.name}</div>
                     <div class="gameH__info__price txt">${game.newPrice}₽</div>
                 </div>
-            </a>`
+            </article>`
 };
 
 const get_vertical_game_html = (game, discount) => {
-    return `<div class = "gameV">
+    return `<article class = "gameV">
                 <a href = "${game.link}" class="gameV__banner">
                     <div class="gameV__banner__glass"></div>
                     <img src="${game.imgW}" alt="${game.name}">
-                    <div class="gameV__banner__discount">
-                        <div class="gameV__banner__discount__inner txt">${discount}%</div>
-                    </div>
+                    <div class="gameV__banner__discount txt">${discount}%</div>
                 </a>
                 <div class="gameV__info">
                     <div class="gameV__info__buttons">
@@ -50,7 +46,7 @@ const get_vertical_game_html = (game, discount) => {
                     <div class="gameV__info__name txt">${game.name}</div>
                     <div class="gameV__info__price txt">${game.newPrice} ₽</div>
                 </div>
-            </div>`
+            </article>`
 }
 
 const get_carousel_game_html = (n, game, discount) => {
