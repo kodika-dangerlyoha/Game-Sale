@@ -1,0 +1,144 @@
+@use '../../default/base';
+
+.similar {
+    position: relative;
+    z-index: 3;
+    margin: auto;
+    width: 1220px;
+    margin-top: 50px;
+    & > h3 {
+        font-size: 24px;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    &__grid {
+        display: grid;
+        grid-gap: 35px;
+        grid-template-columns: repeat(3, minmax(0px, 1fr));
+        align-items: center;
+        justify-content: space-between;
+        // &__game {
+        //     &__banner {
+        //         width: 100%;
+        //         position: relative;
+        //         border-radius: 10px;
+        //         background-image: src('img/banner/img1.jpg');
+        //         background-size: cover;
+        //         transition: 0.15s;
+        //         cursor: pointer;
+        //         & img {
+        //             border-radius: 10px;
+        //             width: 100%;
+        //         }
+        //         &__discount {
+        //             position: absolute;
+        //             bottom: 4px;
+        //             left: 0;
+        //             padding: 4px 4px 0 0;
+        //             border-radius: 0 10px 0 10px;
+        //             background-color: base.$colorBody;
+        //             cursor: pointer;
+        //             transition: .15s;
+        //             opacity: 1;
+        //             &__inner {
+        //                 padding: 5px 10px 5px 10px;
+        //                 border-radius: 0 10px 0 10px;
+        //                 background: base.$mainGradient_100;
+        //                 font-family: base.$fonts;
+        //                 font-size: 15px;
+        //                 font-weight: 700;
+        //                 cursor: pointer;
+        //             }
+        //         }
+        //     }
+        //     &__info {
+        //         position: relative;
+        //         padding-top: 8px;
+        //         display: flex;
+        //         justify-content: space-between;
+        //         transition: 0.15s;
+        //         &__name {
+        //             position: relative;
+        //             z-index: 1;
+        //             font-family: base.$fonts;
+        //         }
+        //         &__price {
+        //             position: relative;
+        //             z-index: 2;
+        //             font-family: base.$fonts;
+        //             font-weight: 700;
+        //             transition: 0.15s;
+        //         }
+        //         &__buttons {
+        //             right: 0;
+        //             left: 0;
+        //             top: 4px;
+        //             position: absolute;
+        //             z-index: 2;
+        //             display: flex;
+        //             justify-content: end;
+        //             transform: translateY(-10px);
+        //             opacity: 0;
+        //             transition: 0.15s;
+        //             background: linear-gradient(to right, rgba(39, 39, 39, 0.2), rgba(39, 39, 39, 1), rgba(39, 39, 39, 1));
+        //             &__button {
+        //                 position: relative;
+        //                 height: 35px;
+        //                 width: 35px;
+        //                 margin-left: 5px;
+        //                 background: linear-gradient(to bottom, rgba(89, 89, 89, 1), rgba(64, 64, 64, 1));
+        //                 border-radius: 7px;
+        //                 display: flex;
+        //                 align-items: center;
+        //                 justify-content: center;
+        //                 cursor: pointer;
+        //                 overflow: hidden;
+        //                 transition: 0.15s;
+        //                 & img {
+        //                     height: 18px;
+        //                     filter: invert(1);
+        //                 }
+        //                 &__forHover {
+        //                     opacity: 0;
+        //                     transition: 0.15s;
+        //                     &_blue {
+        //                         background: base.$mainGradient_100;
+        //                     }
+        //                     &_red {
+        //                         background: linear-gradient(to bottom, rgba(255, 73, 73, 1), rgba(167, 0, 0, 1));
+        //                     }
+        //                 }
+        //                 &:hover &__forHover{
+        //                     opacity: 1;
+        //                 }
+        //                 &:active {
+        //                     transform: scale(0.90);
+        //                 }
+        //             }
+        //         }
+        //     }
+
+        //     &:hover &__banner__discount{
+        //         opacity: 0;
+        //     }
+        //     &:hover &__banner{
+        //         transform: scale(1.05);
+        //     }
+        //     &:hover &__info{
+        //         transform: translateY(8px);
+        //     }
+        //     &:hover &__info__buttons{
+        //         transform: translateY(-2px);
+        //         opacity: 1;
+        //     }
+        //     &:hover &__info__price{
+        //         transform: translateX(-85px);
+        //         text-shadow: 0 0 10px base.$colorBody;
+        //     }
+        // }
+    }
+    &_loading {
+        display: none;
+    }
+}

@@ -2,7 +2,7 @@ let games = [
     {
         'id': 0,
         'name': "Call Of Duty: Cold War 2",
-        'link': "gameCard.html",
+        'link': "game.html",
         'steamLink': "",
         'imgH': "img/banners/farmsim.png",
         'imgW': "img/banners/img1.png",
@@ -12,21 +12,21 @@ let games = [
         'oldPrice': 5120,
         'editions': [
             {
-                'title': "Cold War 2: mamamia",
+                'title': "Cold War 2: First Edition",
                 'newPrice': 5000,
                 'oldPrice': 5500,
                 'link': "",
                 'img': "img/banners/farmsim.png",
             },
             {
-                'title': "Cold War 2: mamamia 2",
+                'title': "Cold War 2: Bronze Edition",
                 'newPrice': 5200,
                 'oldPrice': 5600,
                 'link': "",
                 'img': "img/banners/farmsim.png",
             },
             {
-                'title': "Cold War 2: mamamia 3",
+                'title': "Cold War 2: Gold Edition",
                 'newPrice': 5000,
                 'oldPrice': 7000,
                 'link': "",
@@ -127,7 +127,7 @@ let games = [
     {
         'id': 1,
         'name': "Valorant",
-        'link': "",
+        'link': "game.html",
         'imgH': "img/banners/1.jpg",
         'imgW': "img/banners/a1.jpg",
         'treilerSrc': "video/2.MP4",
@@ -140,7 +140,7 @@ let games = [
     {
         'id': 2,
         'name': "Counter Strike 2",
-        'link': "",
+        'link': "game.html",
         'imgH': "img/banners/2.jpg",
         'imgW': "img/banners/a2.jpg",
         'treilerSrc': "video/3.MP4",
@@ -153,7 +153,7 @@ let games = [
     {
         'id': 3,
         'name': "Player Unknowns Buttle Grounds",
-        'link': "",
+        'link': "game.html",
         'imgH': "img/banners/3.jpg",
         'imgW': "img/banners/a3.jpg",
         'treilerSrc': "video/4.MP4",
@@ -166,7 +166,7 @@ let games = [
     {
         'id': 4,
         'name': "Ghosts",
-        'link': "",
+        'link': "game.html",
         'imgH': "img/banners/4.jpg",
         'imgW': "img/banners/a4.jpg",
         'treilerSrc': "video/2.MP4",
@@ -265,7 +265,7 @@ let basketProducts = [
     {
         'id': 0,
         'name': "Call Of Duty: Cold War 2",
-        'link': "gameCard.html",
+        'link': "game.html",
         'steamLink': "",
         'imgH': "img/banners/farmsim.png",
         'imgW': "img/banners/img1.png",

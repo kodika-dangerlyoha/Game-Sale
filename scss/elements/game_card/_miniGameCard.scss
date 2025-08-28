@@ -1,0 +1,149 @@
+@use '../../default/base';
+
+.miniGameCard {
+    position: absolute;
+    z-index: 3;
+    top: 10px;
+    bottom: 10px;
+    left: 50%;
+    width: 800px;
+    transform: translateX(-50%) translateY(80px) scale(1.5);
+    display: none;
+    opacity: 0;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.2s;
+    
+    &__left {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &__imgBlock {
+            height: 60px;
+            margin-right: 10px;
+            border-radius: 7px;
+            overflow: hidden;
+            & img {
+                height: 100%;
+            }
+        }
+        &__info {
+            &__title {
+                font-size: 18px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+            &__price {
+                font-size: 16px;
+                font-weight: 600;
+                color: base.$clr-blue_light;
+                cursor: pointer;
+                & span {
+                    margin-left: 5px;
+                    font-size: 14px;
+                    font-weight: 300;
+                    color: rgb(210, 210, 210);
+                    text-decoration: line-through;
+                }
+            }
+        }
+    }
+    &__right {
+        display: flex;
+        gap: 7px;
+        height: 40px;
+        &__button {
+            height: 100%;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 7px;
+            background-color: rgb(67, 67, 67);
+            cursor: pointer;
+            transition: 0.15s;
+            & img {
+                height: 26px;
+                filter: invert(1);
+            }
+            &:hover {
+                transform: scale(0.98);
+                background-color: rgb(60, 60, 60);
+            }
+            &:active {
+                transform: scale(0.95);
+            }
+            &_active {
+                background: base.$clr-grad_blue_100;
+                border: 0px solid transparent;
+                &:hover {
+                    border: 0px solid transparent;
+                    filter: contrast(0.6);
+                }
+            }
+            &_basket > img {
+                transform: translateX(-2px);
+            }
+        }
+        &__buttonBuy {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 7px;
+            background: base.$clr-grad_blue_100;
+            overflow: hidden;
+            cursor: pointer;
+            transition: 0.15s;
+            padding-left: 20px;
+            padding-right: 20px;
+            &__text {
+                position: relative;
+                z-index: 2;
+                font-size: 18px;
+                font-weight: 500;
+                cursor: pointer;
+            }
+            &__forHover {
+                z-index: 1;
+                opacity: 0;
+                background: base.$clr-blue_light;
+                transition: 0.15s;
+            }
+            &:hover &__forHover{
+                opacity: 1;
+            }
+            &:active {
+                transform: scale(0.98);
+            }
+        }
+    }
+    &_show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0px) scale(1);
+    }
+    &_loading &__left__imgBlock {
+        width: 100px;
+        animation: loading_block 1s ease infinite;
+    }
+    &_loading &__left__info__title {
+        height: 16px;
+        width: 120px;
+        animation: loading_block 1s ease infinite;
+        margin-bottom: 3px;
+        border-radius: 3px;
+    }
+    &_loading &__left__info__price {
+        height: 14px;
+        width: 60px;
+        animation: loading_block 1s ease infinite;
+        border-radius: 3px;
+    }
+    &_loading &__left__info__price > span {
+        display: none;
+    }
+    &_loading &__right {
+        display: none;
+    }
+}

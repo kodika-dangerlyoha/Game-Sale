@@ -73,7 +73,7 @@
             font-family: base.$fnt-all;
             font-size: 15px;
             font-weight: 700;
-            background-color: rgba(255, 255, 255, .1);
+            background-color: rgba(0, 0, 0, .4);
             -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             @include base.style-glass_active;

@@ -1,0 +1,126 @@
+@use '../../default/base';
+
+.editions {
+    position: relative;
+    z-index: 3;
+    margin: auto;
+    width: 1220px;
+    &__grid {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(4, minmax(0px, 1fr));
+        &__edition {
+            // border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            // background-color: base.$clr-gray_light;
+            // box-shadow: 0 0 30px -10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: 0.15s;
+            @include base.style-glass_hover;
+            background-color: rgba(255, 255, 255, .05);
+            &__imgBlock {
+                width: 100%;
+                padding: 7px;
+                padding-bottom: 0;
+                & > img {
+                    box-sizing: border-box;
+                    border-radius: 8px;
+                    width: 100%;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    box-shadow: 0 2px 10px -1px rgba(0, 0, 0, 0.1);
+                    transition: 0.15s;
+                }
+            }
+            &__info {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+                &__left {
+                    &__title {
+                        font-size: 18px;
+                        font-weight: 600;
+                        cursor: pointer;
+                    }
+                    &__price {
+                        color: rgb(200, 200, 200);
+                        font-size: 18px;
+                        font-weight: 400;
+                        cursor: pointer;
+                    }
+                }
+                &__percent {
+                    height: 50px;
+                    width: 50px;
+                    padding: 10px;
+                    // border: 2px solid rgb(100, 100, 100);
+                    border-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    @include base.style-glass;
+                    background-color: rgba(255, 255, 255, .05);
+                    & > span {
+                        font-size: 16px;
+                        font-weight: 600;
+                        transform: translateY(-1px);
+                    }
+                    &_active {
+                        border: 2px solid base.$clr-blue_light;
+                    }
+                }
+            }
+            
+            &:hover &__imgBlock > img {
+                transform: scale(0.985);
+            }
+            &:active {
+                // box-shadow: 0 0 30px -10px rgba(0, 0, 0, 0);
+                transform: scale(0.95);
+            }
+            &_active {
+                // background-color: rgba(53, 118, 255, 0.4);
+                // border: 1px solid base.$clr-blue_light;
+                // box-shadow: 0 0 10px -2px rgba(1, 162, 255, 0.5);
+                @include base.style-glass_active;
+                cursor: default;
+                &:hover {
+                    @include base.style-glass_active;
+                }
+                &:hover .editions__grid__edition__imgBlock > img {
+                    transform: scale(1);
+                }
+                &:active {
+                    box-shadow: 0 0 10px -2px rgba(1, 162, 255, 0.5);
+                    transform: scale(1);
+                }
+            }
+            &_active &__info__left__price {
+                cursor: default;
+            }
+            &_active &__info__left__title {
+                cursor: default;
+            }
+            &_active &__info__percent {
+                cursor: default;
+            }
+        }
+        &_loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        &_loading > a {
+            display: none;
+        }
+        &_loading > .loadingBlock {
+            width: 10%;
+            min-width: 200px;
+            padding: 30px;
+            border-radius: 5px;
+            background-color: rgb(55, 55, 55);
+        }
+    }
+}

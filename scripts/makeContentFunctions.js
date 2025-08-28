@@ -169,9 +169,9 @@ function make_game_card_info() {
 
     document.querySelector('#game_info').innerHTML = gameList;
 
-    makeSimilar_gameCard();
     make_editions();
     make_desscription();
+    makeSimilar_gameCard();
 
     document.querySelectorAll('.loadingContent').forEach(elem => {
         if (elem.classList[1].search('_loading')) {

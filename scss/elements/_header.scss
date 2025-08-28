@@ -42,9 +42,16 @@
         height: 50px;
         position: relative;
         z-index: 2;
+        opacity: 1;
+        transform: translateY(0px);
+        transition: .15s;
         // & > * {
         //     height: 100%;
         // }
+        &_hidden {
+            opacity: 0;
+            transform: translateY(-40px);
+        }
     }
     &__right {
         width: 100%;
@@ -76,8 +83,8 @@
             // border: 1px solid rgba(186, 186, 186, .6);
             box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.2);
             border-radius: 23px;
-            // -webkit-backdrop-filter: blur(5px);
-            // backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
             box-sizing: border-box;
             padding:  {
                 left: 20px;
@@ -138,7 +145,8 @@
         //! background-color: rgba(186, 186, 186, 0.5);
         background-color: rgba(255, 255, 255, 0.15);
         // border: 1px solid rgba(186, 186, 186, 0.6);
-        // backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
         transition: 0.15s;
         cursor: pointer;
         margin-right: 10px;

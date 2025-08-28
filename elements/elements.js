@@ -49,6 +49,48 @@ const get_vertical_game_html = (game, discount) => {
             </article>`
 }
 
+const get_banner_html = (count, game_info, carousel_banner_list, discount) => {
+    return `<div class = "carousel__banner" order = ${count} game_id = '${game_info.id}' style = "${count === 0 ? 'margin-left: 0' : ''};
+                                                                                                    z-index: ${carousel_banner_list.length - count + 1};
+                                                                                                    transform: scale(${1 - count * 0.05});
+                                                                                                    filter: blur(${count}px);
+                                                                                                    }">
+                <div class="carousel__banner__imgBlock">
+                <div class="carousel__banner__imgBlock__glass"></div>
+                    <img src="${game_info.bigBanner}" alt="">
+                </div>
+                <div class="carousel__banner__interaction">
+                    <div class="carousel__banner__interaction__info">
+                        <a href="${game_info.link}" class="carousel__banner__interaction__info__link" style = "${count === 0 ? 'display: block' : 'display: none'}"></a>
+                        <div class="carousel__banner__interaction__info__title txt">${game_info.name}</div>
+                        <div class="carousel__banner__interaction__info__shopInfo">
+                            <div class="carousel__banner__interaction__info__shopInfo__buttons">
+                                <div class="carousel__banner__interaction__info__shopInfo__buttons__button carousel__banner__interaction__info__shopInfo__buttons__button_basket">
+                                    <img src="img/icons/main/basket32.png" alt="">
+                                </div>
+                                <div class="carousel__banner__interaction__info__shopInfo__buttons__button carousel__banner__interaction__info__shopInfo__buttons__button_favorite">
+                                    <img src="img/icons/main/heart32.png" alt="">
+                                </div>
+                            </div>
+                            <div class="carousel__banner__interaction__info__shopInfo__priceTag">
+                                <div class="carousel__banner__interaction__info__shopInfo__priceTag__prices">
+                                    <div class="carousel__banner__interaction__info__shopInfo__priceTag__prices__newPrice txt">${game_info.newPrice} ₽</div>
+                                    <div class="carousel__banner__interaction__info__shopInfo__priceTag__prices__oldPrice txt">${game_info.oldPrice} ₽</div>
+                                </div>
+                                <div class="carousel__banner__interaction__info__shopInfo__priceTag__discount flex-center txt">${discount}%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`
+}
+
+const get_banner_bg_html = (count, game_info) => {
+    return `<div class="carousel__bg ${count === 0 ? 'carousel__bg_active' : ''}" order = "${count}">
+                <img src="${game_info.bigBanner}" alt="">
+            </div>`
+}
+
 const get_carousel_game_html = (n, game, discount) => {
     return `<div class="banner__imgBlock absolute-zero">
                 <img src="${game.bigBanner}" alt="">
@@ -97,7 +139,7 @@ const get_edition_game_html = (edition, discount) => {
                         <div class="editions__grid__edition__info__left__title txt">${edition.title}</div>
                         <div class="editions__grid__edition__info__left__price txt">${edition.newPrice} ₽</div>
                     </div>
-                    <div class="editions__grid__edition__info__percent txt">${discount}%</div>
+                    <div class="editions__grid__edition__info__percent txt"><span>${discount}%</span></div>
                 </div>
             </a>`
 }
