@@ -135,11 +135,8 @@ const get_edition_game_html = (edition, discount) => {
     return `<a href="${edition.link}" class="editions__grid__edition">
                 <div class="editions__grid__edition__imgBlock"><img src="${edition.img}" alt="${edition.title}"></div>
                 <div class="editions__grid__edition__info">
-                    <div class="editions__grid__edition__info__left">
-                        <div class="editions__grid__edition__info__left__title txt">${edition.title}</div>
-                        <div class="editions__grid__edition__info__left__price txt">${edition.newPrice} ₽</div>
-                    </div>
-                    <div class="editions__grid__edition__info__percent txt"><span>${discount}%</span></div>
+                    <div class="editions__grid__edition__info__title txt">${edition.title}</div>
+                    <div class="editions__grid__edition__info__price txt"><span>${edition.newPrice} ₽</span><div class="editions__grid__edition__info__price__percent">${discount}%</div></div>
                 </div>
             </a>`
 }

@@ -132,7 +132,7 @@ function make_editions() {
 
     document.querySelector('#edition #edition_grid').innerHTML += editions.reduce((summ_game, edition) => summ_game + get_edition_game_html(edition, Math.round((edition.oldPrice - edition.newPrice) / edition.oldPrice * 100)), "");
     document.getElementsByClassName('editions__grid__edition')[0].classList.add('editions__grid__edition_active');
-    document.getElementsByClassName('editions__grid__edition__info__percent')[0].classList.add('editions__grid__edition__percent_active');
+    // document.getElementsByClassName('editions__grid__edition__info__percent')[0].classList.add('editions__grid__edition__percent_active');
 }
 
 function make_desscription() {

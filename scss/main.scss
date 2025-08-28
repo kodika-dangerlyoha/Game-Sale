@@ -3,13 +3,13 @@
 @use "elements/header";
 @use "elements/footer";
 @use "elements/blackoutBlock";
-@use "elements/carousel";
 @use "elements/gameV";
 @use "elements/gameH";
 @use "elements/blockButtonMore";
-@use "elements/salesHits";
-@use "elements/banner";
-@use "elements/offers";
+@use "elements/index/carousel";
+@use "elements/index/salesHits";
+@use "elements/index/banner";
+@use "elements/index/offers";
 @use "elements/game_card/miniGameCard";
 @use "elements/game_card/bigImgBlock";
 @use "elements/game_card/forScroll";
