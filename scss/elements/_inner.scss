@@ -1,0 +1,16 @@
+.inner {
+    padding-top: 100px;
+    &_oneSec {
+        width: 1400px;
+        padding-top: 100px;
+        display: block;
+    }
+    &_footer {
+        max-width: 1905px;
+        margin: auto;
+    }
+    &_profile {
+        width: 1380px;
+        margin: auto;
+    }
+}

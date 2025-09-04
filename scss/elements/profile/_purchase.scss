@@ -1,0 +1,172 @@
+@use '../../default/base';
+
+$-clr-end: rgba(163, 215, 112, 1);
+$-clr-end_grad: rgba(163, 215, 112, .3);
+
+.purchase {
+    &__header {
+        position: relative;
+        height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 25px;
+        overflow: hidden;
+        margin-bottom: 15px;
+        @include base.style-main_base;
+        &__bg {
+            position: absolute;
+            top: 0; bottom: 0; right: 0;
+            width: 400px;
+            z-index: 1;
+        }
+        &__left {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        &__right {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            padding-right: 40px;
+        }
+        &__info {
+            display: flex;
+            align-items: center;
+            gap: 70px;
+            padding-left: 20px;
+            &__point {
+                &__title {
+                    color: rgb(180, 180, 180);
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                }
+                &__value {
+                    font-size: 18px;
+                }
+                &_right {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: end;
+                }
+            }
+        }
+        &__button {
+            height: 100%;
+            width: 60px;
+            background-color: rgba(0, 0, 0, .1);
+            cursor: pointer;
+            & > svg {
+                height: 30px;
+                transform: rotate(90deg);
+            }
+        }
+    }
+    &__gamelist {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        &__game {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 15px 0px 0px 15px;
+            overflow: hidden;
+            @include base.style-main_base;
+            &__bg {
+                position: absolute;
+                top: 0; bottom: 0; right: 0;
+                width: 400px;
+                z-index: 1;
+            }
+            &__left {
+                position: relative;
+                z-index: 2;
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
+            &__right {
+                position: relative;
+                z-index: 2;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                padding-right: 40px;
+            }
+            &__title {
+                display: flex;
+                &__img {
+                    & > img {
+
+                    }
+                }
+                &__info {
+                    &__title {
+
+                    }
+                    &__price {
+                        &__new {
+
+                        }
+                        &__old {
+
+                        }
+                    }
+                }
+            }
+            &__info {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                padding-left: 20px;
+                &__point {
+                    &__title {
+                        color: rgb(180, 180, 180);
+                        margin-bottom: 10px;
+                        font-size: 16px;
+                    }
+                    &__value {
+                        font-size: 18px;
+                    }
+                    &_right {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: end;
+                    }
+                }
+            }
+            &_end &__header{
+                box-shadow: 2px 0 0 0 $-clr-end;
+                &__text {
+                    color: $-clr-end;
+                }
+                &__bg {
+                    background: linear-gradient(to left, $-clr-end_grad, transparent);
+                }
+            }
+        }
+    }
+    &_open &{
+        &__header {
+            border-radius: 25px 25px 0px 15px;
+        }
+    }
+    &_end &__header{
+        box-shadow: 2px 0 0 0 $-clr-end;
+        &__text {
+            color: $-clr-end;
+        }
+        &__bg {
+            background: linear-gradient(to left, $-clr-end_grad, transparent);
+        }
+    }
+}

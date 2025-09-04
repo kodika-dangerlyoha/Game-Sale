@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Главная</title>
+	<title>Профиль</title>
 	<link rel="stylesheet" href="css\main.min.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
 				<img src="img/logos/logo.png" alt="">
 			</a>
 		</div>
-		<div class="header__center" id="centerHeader_gameCard">
+		<div class="header__center">
 			<button type="button" title="кнопка открыть закрыть каталог" class="header__buttonCatalog" onclick="open_catalogNavs()">
 				<svg viewBox="0 -0.5 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -109,9 +109,9 @@
 		</div>
 		<div class="header__right">
 			<nav class="header__nav">
-				<button title="Профиль" type="button" class="header__nav__button">
+				<a  href="profile.html" title="Профиль" type="button" class="header__nav__button">
 					<img src="img/icons/main/user64.png" alt="">
-				</button>
+				</a>
 				<a title="Избранное" href="#" class="header__nav__button">
 					<img src="img/icons/main/like64.png" alt="">
 				</a>
@@ -123,158 +123,178 @@
 				</a>
 			</nav>
 		</div>
-        <div class="miniGameCard miniGameCard_loading loadingContent" id="miniGameCard">
-            <a href="#" class="miniGameCard__left">
-                <div class="miniGameCard__left__imgBlock">
-                    <img src="" alt="" id="img_miniGameCard">
-                </div>
-                <div class="miniGameCard__left__info">
-                    <div class="miniGameCard__left__info__title txt" id="title_game"></div>
-                    <div class="miniGameCard__left__info__price txt" id="price_game"><span></span></div>
-                </div>
-            </a>
-            <div class="miniGameCard__right">
-                <div class="miniGameCard__right__button miniGameCard__right__button_favorite">
-                    <img src="img/icons/main/like64.png" alt="">
-                </div>
-                <div class="miniGameCard__right__button miniGameCard__right__button_basket">
-                    <img src="img/icons/main/basket64_2.png" alt="">
-                </div>
-                <div class="miniGameCard__right__buttonBuy txt">
-                    <div class="miniGameCard__right__buttonBuy__text -text txt">Купить</div>
-                    <div class="miniGameCard__right__buttonBuy__forHover -forHover"></div>
-                </div>
-            </div>
-        </div>
 	</header>
-	<div class="blackoutBlock fixed-zero" onclick="open_catalogNavs()"></div>
-    <div class="forScroll"></div>
-	<main id="main">
-        <div class="bigImgBlock bigImgBlock_loading loadingContent">
-            <div class="bigImgBlock__bg"></div>
-            <div class="bigImgBlock__border"></div>
-            <img src="" alt="" id="game_banner">
-        </div>
-        <div class="mainInfo">
-            <div class="mainInfo__banner mainInfo__banner_loading loadingContent">
-                <!-- <div class="mainInfo__banner__discount txt">52%</div> -->
-                <div class="mainInfo__banner__imgBlock"><img src="" alt="" id="game_img"></div>
-                <div class="mainInfo__banner__playButton absolute-zero flex-center" onclick="play_pause_treiler()">
-                    <div class="mainInfo__banner__playButton__icon">
-                        <img src="img/icons/play-button64.png" alt="">
-                    </div>
-                    <div class="mainInfo__banner__playButton__text txt">Смотреть трейлер</div>
-                </div>
-                <div class="mainInfo__banner__treilerBlock absolute-zero">
-                    <video src="" id="treiler" loop></video>
-                    <div class="mainInfo__banner__treilerBlock__interface">
-                        <div class="mainInfo__banner__treilerBlock__interface__button mainInfo__banner__treilerBlock__interface__button_hover" onclick="play_pause_treiler()">
-                            <img src="img/icons/pause24.png" alt="" id="button_icon_play_pause">
-                        </div>
-                        <div class="mainInfo__banner__treilerBlock__interface__race" id="race">
-                            <div class="mainInfo__banner__treilerBlock__interface__race__valueRace" id="value_race"></div>
-                            <div class="mainInfo__banner__treilerBlock__interface__race__hoverRace" id="hover_race"></div>
-                        </div>
-                        <div class="mainInfo__banner__treilerBlock__interface__button mainInfo__banner__treilerBlock__interface__button_volume">
-                            <img src="img/icons/volume24.png" alt="">
-                            <div class="mainInfo__banner__treilerBlock__interface__volumeRace" id="volume_race">
-                                <div class="mainInfo__banner__treilerBlock__interface__volumeRace__value" id="volume_race_value"></div>
-                            </div>
-                        </div>
-                        <div class="mainInfo__banner__treilerBlock__interface__button mainInfo__banner__treilerBlock__interface__button_hover">
-                            <img src="img/icons/fullscreen24.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mainInfo__info mainInfo__info_loading loadingContent" id="game_info">
-                <div>
-                    <div class="mainInfo__info__title txt"></div>
-                    <div class="mainInfo__info__category">
-                        <a href="" class="mainInfo__info__category__nav">
-                            <img src="img/icons/game32.png" alt="">
-                            <div class="mainInfo__info__category__nav__forHover">
-                                <div class="mainInfo__info__category__nav__forHover__text txt">Делу время</div>
-                            </div>
-                        </a>
-                        <a href="" class="mainInfo__info__category__nav">
-                            <img src="img/icons/game32.png" alt="">
-                            <div class="mainInfo__info__category__nav__forHover">
-                                <div class="mainInfo__info__category__nav__forHover__text txt">Потехе хехехе</div>
-                            </div>
-                        </a>
-                        <a href="" class="mainInfo__info__category__nav">
-                            <img src="img/icons/game32.png" alt="">
-                            <div class="mainInfo__info__category__nav__forHover">
-                                <div class="mainInfo__info__category__nav__forHover__text txt">Кристофоро Коломбо</div>
-                            </div>
-                        </a>
-                        <a href="" class="mainInfo__info__category__nav">
-                            <img src="img/icons/game32.png" alt="">
-                            <div class="mainInfo__info__category__nav__forHover">
-                                <div class="mainInfo__info__category__nav__forHover__text txt">Винтер щит</div>
-                            </div>
-                        </a>
-                        <a href="" class="mainInfo__info__category__nav">
-                            <img src="img/icons/game32.png" alt="">
-                            <div class="mainInfo__info__category__nav__forHover">
-                                <div class="mainInfo__info__category__nav__forHover__text txt">Он зе ран</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="mainInfo__info__interactions">
-                    <div class="mainInfo__info__interactions__top">
-                        <div class="mainInfo__info__interactions__percent">52%</div>
-                        <div class="mainInfo__info__interactions__price txt">1812 ₽ <span>/</span><span>2499 ₽</span></div>
-                        <div class="mainInfo__info__interactions__buttonFavorite mainInfo__info__interactions__buttonFavorite_active" onclick="addInFavorite()">
-                            <img src="img/icons/like64.png" alt="">
-                        </div>
-                    </div>
-                    <div class="mainInfo__info__interactions__bottom">
-                        <div class="mainInfo__info__interactions__buttonBuy">
-                            <div class="-text txt">Купить</div>
-                            <div class="-forHover"></div>
-                        </div>
-                        <div class="mainInfo__info__interactions__buttonBasket" onclick="addInBasket()">
-                            <img src="img/icons/basket64_2.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <section class="editions" id="edition">
-            <div class="editions__grid editions__grid_loading loadingContent" id="edition_grid">
-                <div class="loadingBlock flex-center">
-                    <div class="loadingBlock__point"></div>
-                    <div class="loadingBlock__point"></div>
-                    <div class="loadingBlock__point"></div>
-                </div>
-            </div>
-        </section>
-        <section class="information information_loading loadingContent">
-            <div class="information__description information_block" >
-                <h2 class="txt">Описание</h2>
-                <div id="description"></div>
-            </div>
-            <div class="information__rightColumn">
-                <div class="information__rightColumn__systemRequirements information_block">
-                    <h2 class="txt">Системные требования</h2>
-                    <div id="systemRequirements"></div>
-                </div>
-                <div class="information__rightColumn__activation information_block">
-                    <h2 class="txt">Активация</h2>
-                    <div class="information__rightColumn__activation__block txt">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque mollitia earum, debitis, vel animi provident dignissimos porro, dolorem libero laboriosam autem aperiam. Doloribus, repudiandae soluta! Laboriosam et at tempore eligendi.</div>
-                </div>
-            </div>
-        </section>
 
-        <section class="similar similar_loading loadingContent" id="similar">
-            <h3 class="txt">Похожие игры</h3>
-            <div class="similar__grid gridHorizontalGames" id="content">
-                
-            </div>
-        </section>
+	<div class="blackoutBlock fixed-zero" onclick="open_catalogNavs()"></div>
+
+	<main id="main">
+		<div class="inner inner_profile">
+            <section class="profile">
+                <div class="profile__left">
+                    <div class="profile__avatar"><img src="img/pic/avatars/4135772dda9fabaa7e37b0428374dab7.jpg" alt=""></div>
+                    <div class="profile__info">
+                        <div class="profile__info__nickname txt">
+                            <span>+W ХЛОООРКА (бустер)</span>
+                            <div class="profile__info__nickname__steamLink">
+                                <svg viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.6599 0.674316C14.2629 0.674316 12.3072 2.67093 12.2887 5.13235L9.56635 9.15087C8.80691 9.08003 8.1519 9.24196 7.5729 9.60557L1.07325 6.39596C-0.392348 8.63835 1.07325 10.88 1.07325 10.88L6.04976 13.2063C6.36803 14.7171 7.68018 15.8549 9.23245 15.8549C10.9204 15.8549 12.3192 14.5197 12.4727 12.8195L16.6635 9.66557C19.0675 9.66557 21.0233 7.65811 21.0233 5.1685L21.0226 5.16777C21.0233 2.68972 19.0675 0.674316 16.6599 0.674316ZM9.23245 14.9607C8.31103 14.9607 7.5182 14.4272 7.11539 13.6487L8.29256 14.1308C9.27081 14.5458 10.3826 14.0513 10.7734 13.0436C10.9624 12.5622 10.957 12.0243 10.7582 11.5469C10.5594 11.0695 10.1834 10.6914 9.71198 10.4947L8.71455 10.0798C8.88445 10.0403 9.05818 10.0204 9.23245 10.0205C10.5631 10.0205 11.6287 11.1186 11.6287 12.4899C11.6287 13.8612 10.5631 14.96 9.23245 14.96V14.9607ZM16.6642 8.18076C15.0458 8.18076 13.7308 6.83692 13.7308 5.16922C13.7308 3.50875 15.0423 2.15768 16.6642 2.15768C18.2712 2.15768 19.5861 3.50947 19.5861 5.16922C19.5861 6.84125 18.2704 8.1851 16.6642 8.18076ZM16.672 2.75189C15.3797 2.75189 14.3333 3.83116 14.3333 5.16199C14.3333 6.49282 15.3762 7.57209 16.672 7.57209C17.9564 7.57209 19.0107 6.49716 19.0107 5.16199C19.0107 3.82682 17.9564 2.75189 16.672 2.75189Z" fill="white"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="profile__info__points">
+                            <div class="profile__info__points__point txt">
+                                <span>ID:</span>#434667
+                            </div>
+                            <div class="profile__info__points__point txt">
+                                <span>Регион:</span>RU
+                            </div>
+                            <div class="profile__info__points__point txt">
+                                <span>На сайте с:</span>06.03.2022
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile__right">
+                    <button class="txt" type="button">Выйти</button>
+                </div>
+            </section>
+            <section class="settings">
+                <form class="txt" action="">
+                    <div class="settings__left">
+                        <div class="settings__conf">
+                            <label for="">
+                                <span>Трейд ссылка</span>
+                                <div>?</div>
+                            </label>
+                            <input class="txt" type="text" name="inp-traid_link" title="inp-traid_link" placeholder="https://www.faceit.com/ru/players/ppr1zers">
+                        </div>
+                        <div class="settings__conf">
+                            <label for="">
+                                <span>Регион</span>
+                                <div>?</div>
+                            </label>
+                            <input class="txt" type="text" name="inp-region" title="inp-region">
+                        </div>
+                    </div>
+                    <div class="settings__right">
+                        <div class="settings__buttons">
+                            <button class="settings__buttons__button settings__buttons__button_back txt" type="button">Отменить</button>
+                            <button class="settings__buttons__button settings__buttons__button_save">
+                                <div class="-text txt">Сохранить</div>
+                                <div class="-forHover absolute-zero"></div>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+			<section class="more">
+				<div class="more__header">
+					<div class="more__header__nav" id="more_nav-forU" onclick="change_more_sections('forU')">
+						<div class="more__header__nav__text txt">Для вас</div>
+					</div>
+					<div class="more__header__nav more__header__nav_active" id="more_nav-historyPurchase" onclick="change_more_sections('historyPurchase')">
+						<div class="more__header__nav__text txt">История покупок</div>
+					</div>
+					<div class="more__header__nav" id="more_nav-favorite" onclick="change_more_sections('favorite')">
+						<div class="more__header__nav__text txt">Избранное</div>
+					</div>
+				</div>
+				<section class="more__section" id="more_section-forU"></section>
+				<section class="more__section more__section_active" id="more_section-historyPurchase">
+					<div class="purchase purchase_open purchase_end">
+						<div class="purchase__header">
+							<div class="purchase__header__bg"></div>
+							<div class="purchase__header__left">
+								<button class="purchase__header__button flex-center" type="button" title="button_open">
+									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
+									</svg>
+								</button>
+								<div class="purchase__header__info">
+									<div class="purchase__header__info__point txt">
+										<div class="purchase__header__info__point__title">ID Заказа</div>
+										<div class="purchase__header__info__point__value">#54324</div>
+									</div>
+									<div class="purchase__header__info__point txt">
+										<div class="purchase__header__info__point__title">Дата покупки</div>
+										<div class="purchase__header__info__point__value">08.03.2025</div>
+									</div>
+									<div class="purchase__header__info__point txt">
+										<div class="purchase__header__info__point__title">Способ оплаты</div>
+										<div class="purchase__header__info__point__value">
+											LAVA 
+											<span>
+												<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M3.40091 2.2666C2.77499 2.2666 2.26758 2.77402 2.26758 3.39993V13.5999C2.26758 14.2259 2.77499 14.7333 3.40091 14.7333H13.6009C14.2269 14.7333 14.7342 14.2259 14.7342 13.5999V9.63327C14.7342 9.32031 14.4805 9.0666 14.1676 9.0666C13.8547 9.0666 13.6009 9.32031 13.6009 9.63327V13.5999H3.40091V3.39993H7.36758C7.68054 3.39993 7.93424 3.14623 7.93424 2.83327C7.93424 2.52031 7.68054 2.2666 7.36758 2.2666H3.40091ZM14.5683 2.43258C14.6226 2.48691 14.6636 2.54953 14.6913 2.61636C14.7185 2.68218 14.7338 2.75427 14.7342 2.82987V2.83327V6.23327C14.7342 6.54623 14.4805 6.79993 14.1676 6.79993C13.8547 6.79993 13.6009 6.54623 13.6009 6.23327V4.20133L7.76827 10.034C7.54697 10.2553 7.18818 10.2553 6.96689 10.034C6.74558 9.81266 6.74558 9.45387 6.96689 9.23258L12.7995 3.39993H10.7676C10.4546 3.39993 10.2009 3.14623 10.2009 2.83327C10.2009 2.52031 10.4546 2.2666 10.7676 2.2666H14.1675C14.2443 2.2666 14.3176 2.28189 14.3845 2.3096C14.4514 2.33725 14.5139 2.37825 14.5683 2.43258Z" fill="#ADADAD" stroke="#ADADAD"/>
+												</svg>
+											</span>
+										</div>
+									</div>
+									<div class="purchase__header__info__point txt">
+										<div class="purchase__header__info__point__title">Позиций</div>
+										<div class="purchase__header__info__point__value">2</div>
+									</div>
+									<div class="purchase__header__info__point txt">
+										<div class="purchase__header__info__point__title">Итого</div>
+										<div class="purchase__header__info__point__value">4559 ₽</div>
+									</div>
+								</div>
+							</div>
+							<div class="purchase__header__right">
+								<div class="purchase__header__info">
+									<div class="purchase__header__info__point purchase__header__info__point_right txt">
+										<div class="purchase__header__info__point__title">Статус</div>
+										<div class="purchase__header__info__point__value purchase__header__text">Завершено</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="purchase__gamelist">
+							<div class="purchase__gamelist__game">
+								<div class="purchase__gamelist__game__bg"></div>
+								<div class="purchase__gamelist__game__left">
+									<div class="purchase__gamelist__game__title">
+										<div class="purchase__gamelist__game__title__img">
+											<img src="img/banners/8.jpg" alt="">
+										</div>
+										<div class="purchase__gamelist__game__title__info txt">
+											<div class="purchase__gamelist__game__title__info__title">Call Of Duty: Cold War 2</div>
+											<div class="purchase__gamelist__game__title__info__price">
+												<span class="purchase__gamelist__game__title__info__price__new">4559 ₽</span>
+												<span class="purchase__gamelist__game__title__info__price__old">5300 ₽</span>
+											</div>
+										</div>
+									</div>
+									<div class="purchase__gamelist__game__info">
+										<div class="purchase__gamelist__game__info__point txt">
+											<div class="purchase__gamelist__game__info__point__title">ID Отправки</div>
+											<div class="purchase__gamelist__game__info__point__value">#1234456</div>
+										</div>
+										<div class="purchase__gamelist__game__info__point txt">
+											<div class="purchase__gamelist__game__info__point__title">Время отправки</div>
+											<div class="purchase__gamelist__game__info__point__value">08.12.2024 16:45:43</div>
+										</div>
+										<div class="purchase__gamelist__game__info__point txt">
+											<div class="purchase__gamelist__game__info__point__title">Имя бота</div>
+											<div class="purchase__gamelist__game__info__point__value">Kilot456</div>
+										</div>
+									</div>
+								</div>
+								<div class="purchase__gamelist__game__right">
+									<div class="purchase__gamelist__game__info">
+										<div class="purchase__gamelist__game__info__point txt">
+											<div class="purchase__gamelist__game__info__point__title">ID Отправки</div>
+											<div class="purchase__gamelist__game__info__point__value">#1234456</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="more__section" id="more_section-favorite"></section>
+			</section>
+        </div>
 	</main>
 	
 	<footer class="footer">
@@ -346,6 +366,5 @@
 	<script type="text/javascript" src="elements/elements.js"></script>
 	<script type="text/javascript" src="scripts/makeContentFunctions.js"></script>
 	<script type="text/javascript" src="scripts/script.js"></script>
-	<script type="text/javascript" src="scripts/script_gameCard.js"></script>
 </body>
 </html>

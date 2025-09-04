@@ -30,8 +30,8 @@
         & > div {
             line-height: 26px;
             // @include base.information_game_style;
-            @include base.style-glass;
-            background-color: rgba(255, 255, 255, .05);
+            @include base.style-main_base;
+            // background-color: rgba(255, 255, 255, .05);
             padding: 10px 20px 20px 20px;
             border-radius: 20px;
             & h2 {
@@ -94,8 +94,8 @@
             }
             & > div {
                 // @include base.information_game_style;
-                @include base.style-glass;
-                background-color: rgba(255, 255, 255, .05);
+                @include base.style-main_base;
+                // background-color: rgba(255, 255, 255, .05);
                 padding: 10px 20px 20px 20px;
                 border-radius: 20px;
                 display: flex;
@@ -166,8 +166,8 @@
             }
             &__block {
                 // @include base.information_game_style;
-                @include base.style-glass;
-                background-color: rgba(255, 255, 255, .05);
+                @include base.style-main_base;
+                // background-color: rgba(255, 255, 255, .05);
                 border-radius: 20px;
                 padding: 20px;
             }

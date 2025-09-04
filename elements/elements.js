@@ -150,27 +150,26 @@ const get_info_game_html = (game, discount, categoriesHTML) => {
             </div>
             <div class="mainInfo__info__interactions">
                 <div class="mainInfo__info__interactions__top">
-                    <div class="mainInfo__info__interactions__top__percent">
-                        <div class="mainInfo__info__interactions__top__percent__valueRow">
-                            <div class="mainInfo__info__interactions__top__percent__valueRow__race">
-                                <div class="mainInfo__info__interactions__top__percent__valueRow__race__point"></div>
+                    <div class="mainInfo__info__interactions__percent">
+                        <div class="mainInfo__info__interactions__percent__valueRow">
+                            <div class="mainInfo__info__interactions__percent__valueRow__race">
+                                <div class="mainInfo__info__interactions__percent__valueRow__race__point"></div>
                             </div>
                         </div>
-                        <div class="mainInfo__info__interactions__top__percent__valueNamber txt">${discount}%</div>
+                        <div class="mainInfo__info__interactions__percent__valueNamber txt">${discount}%</div>
                     </div>
-                    <div class="mainInfo__info__interactions__top__price txt">${game.newPrice} ₽ <span>/</span><span>${game.oldPrice} ₽</span></div>
-                    <div class="mainInfo__info__interactions__top__buttonFavorite mainInfo__info__interactions__top__buttonFavorite_active" onclick="addInFavorite(${game.id})">
-                        <img src="img/icons/like64.png" alt="">
+                    <div class="mainInfo__info__interactions__price txt">${game.newPrice} ₽ <span>/</span><span>${game.oldPrice} ₽</span></div>
+                    <div class="mainInfo__info__interactions__button mainInfo__info__interactions__button_favorite mainInfo__info__interactions__button_active" onclick="addInFavorite(${game.id})">
+                        <img src="img/icons/main/like64.png" alt="">
                     </div>
                 </div>
                 <div class="mainInfo__info__interactions__bottom">
-                    <div class="mainInfo__info__interactions__bottom__buttonBuy">
-                        <div class="mainInfo__info__interactions__bottom__buttonBuy__text txt">Купить</div>
-                        <div class="mainInfo__info__interactions__bottom__buttonBuy__forHover absolute-zero"></div>
-						<div class="mainInfo__info__interactions__bottom__buttonBuy__forActive absolute-zero"></div>
+                    <div class="mainInfo__info__interactions__buttonBuy">
+                        <div class="-text txt">Купить</div>
+                        <div class="-forHover absolute-zero"></div>
                     </div>
-                    <div class="mainInfo__info__interactions__bottom__buttonBasket" onclick="addInBasket(${game.id})">
-                        <img src="img/icons/basket64_2.png" alt="">
+                    <div class="mainInfo__info__interactions__button mainInfo__info__interactions__button_basket" onclick="addInBasket(${game.id})">
+                        <img src="img/icons/main/basket64_2.png" alt="">
                     </div>
                 </div>
             </div>`

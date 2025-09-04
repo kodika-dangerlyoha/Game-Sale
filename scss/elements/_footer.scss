@@ -1,25 +1,9 @@
 @use '../default/base';
 
-.inner {
-    max-width: 1905px;
-    margin: auto;
-    &_oneSec {
-        width: 1400px;
-        padding-top: 100px;
-        display: block;
-    }
-}
-
 .footer {
-    // background-color: base.$clr-gray_37;
-    // border-top: 1px solid base.$clr-gray_55;
-    background-color: rgba(0, 0, 0, .1);
-    border-radius: 25px;
-    @include base.style_glass;
+    background-color: rgba(255, 255, 255, .01);
+    @include base.style_main_base;
     margin-top: 50px;
-    margin-bottom: 8px;
-    margin-right: 8px;
-    margin-left: 8px;
     & > .inner {
         padding-top: 25px;
         padding-bottom: 25px;
@@ -65,9 +49,6 @@
             }
         }
         & > button {
-            // background-color: base.$clr-gray_43;
-            // border: 1px solid base.$clr-gray_55;
-            background-color: rgba(255, 255, 255, .05);
             border-radius: 22px;
 
             height: 45px;
@@ -78,13 +59,14 @@
             font-weight: 700;
             cursor: pointer;
             transition: .2s;
-            @include base.style_glass_hover;
-            &:hover {
-                background-color: base.$clr-gray_47_hover;
-            }
-            &:active {
-                transform: scale(0.98);
-            }
+            @include base.style-main_click;
+            background-color: rgba(255, 255, 255, .05);
+            // &:hover {
+            //     background-color: base.$clr-gray_47_hover;
+            // }
+            // &:active {
+            //     transform: scale(0.98);
+            // }
         }
     }
     &__body {
@@ -117,10 +99,8 @@
                     height: 75px;
                     border-radius: 15px;
 
-                    // background-color: base.$clr-gray_43;
-                    // border: 1px solid base.$clr-gray_55;
+                    @include base.style-main_click;
                     background-color: rgba(255, 255, 255, .05);
-                    @include base.style_glass_hover;
                     cursor: pointer;
                     transition: .2s;
                     & > img {
@@ -130,12 +110,6 @@
                         display: block;
                         text-align: center;
                         font-size: 12px;
-                    }
-                    &:hover {   
-                        background-color: base.$clr-gray_47_hover;
-                    }
-                    &:active {
-                        transform: scale(.98);
                     }
                 }
             }

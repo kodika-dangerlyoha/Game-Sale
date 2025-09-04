@@ -1,6 +1,5 @@
 make_game_card_info();
 
-
 const for_scroll = document.querySelector('.forScroll');
 const header_center = document.querySelector('#centerHeader_gameCard');
 const mini_game_card = document.querySelector('.miniGameCard');
@@ -11,7 +10,7 @@ window.addEventListener("scroll", function(){
     for_scroll.style.opacity = (this.scrollY) / 300;
     for_scroll.style.transform = "translateY(" + (this.scrollY) / 2 + "px)";
     
-    if (this.scrollY > 550) {
+    if (this.scrollY > 490) {
         if (!document.querySelector('.miniGameCard_show')) {
             mini_game_card.style.display = "flex";
             header_center.classList.add('header__center_hidden');

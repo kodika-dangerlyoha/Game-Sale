@@ -43,10 +43,9 @@
             font-family: base.$fnt-all;
             font-size: 15px;
             font-weight: 700;
-            background-color: rgba(255, 255, 255, .1);
+            @include base.style-percentBlock;
             -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
-            @include base.style-glass_active;
         }
         // &__discount {
         //     position: absolute;
@@ -103,8 +102,6 @@
                 height: 35px;
                 width: 35px;
                 margin-left: 5px;
-                // background: linear-gradient(to bottom, rgba(89, 89, 89, 1), rgba(64, 64, 64, 1));
-                background-color: rgba(255, 255, 255, .05);
                 border-radius: 7px;
                 display: flex;
                 align-items: center;
@@ -116,24 +113,7 @@
                     height: 18px;
                     filter: invert(1);
                 }
-                // &__forHover {
-                //     opacity: 0;
-                //     transition: 0.15s;
-                //     &_blue {
-                //         background: base.$clr-grad_blue_100;
-                //     }
-                //     &_red {
-                //         // background: linear-gradient(to bottom, rgba(255, 73, 73, 1), rgba(167, 0, 0, 1));
-                //         background: base.$clr-grad_red;
-                //     }
-                // }
-                // &:hover &__forHover{
-                //     opacity: 1;
-                // }
-                @include base.style-glass_hover;
-                &:active {
-                    transform: scale(0.90);
-                }
+                @include base.style-main_click;
             }
         }
     }

@@ -81,11 +81,6 @@ label {
   max-height: 100%;
 }
 
-.inner {
-  width: 1000px;
-  margin: auto;
-}
-
 @keyframes open_offers_games {
   0% {
     opacity: 0;
@@ -122,12 +117,29 @@ label {
   font-family: "robotoConc";
   src: url("../fonts/RobotoCondensed-Regular.ttf");
 }
+.inner {
+  padding-top: 100px;
+}
+.inner_oneSec {
+  width: 1400px;
+  padding-top: 100px;
+  display: block;
+}
+.inner_footer {
+  max-width: 1905px;
+  margin: auto;
+}
+.inner_profile {
+  width: 1380px;
+  margin: auto;
+}
+
 .header {
   position: fixed;
   z-index: 50;
-  top: 8px;
-  right: 8px;
-  left: 8px;
+  top: 0px;
+  right: 0px;
+  left: 0px;
   display: flex;
   justify-content: space-between;
   padding: 15px;
@@ -139,157 +151,14 @@ label {
   right: 0;
   left: 0;
   z-index: 1;
-  border-radius: 25px;
-  background-color: rgba(56, 56, 56, 0.5);
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(50, 50, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   opacity: 0;
   transition: 0.5s;
   overflow: hidden;
-}
-.header__bg__top {
-  padding-top: 1px;
-  height: 39px;
-}
-.header__bg__top > div {
-  width: 100%;
-  height: 2px;
-  -webkit-backdrop-filter: blur(70px);
-  backdrop-filter: blur(70px);
-}
-.header__bg__top > div:nth-child(20) {
-  opacity: 0;
-}
-.header__bg__top > div:nth-child(19) {
-  opacity: 0.1;
-}
-.header__bg__top > div:nth-child(18) {
-  opacity: 0.15;
-}
-.header__bg__top > div:nth-child(17) {
-  opacity: 0.2;
-}
-.header__bg__top > div:nth-child(16) {
-  opacity: 0.25;
-}
-.header__bg__top > div:nth-child(15) {
-  opacity: 0.3;
-}
-.header__bg__top > div:nth-child(14) {
-  opacity: 0.35;
-}
-.header__bg__top > div:nth-child(13) {
-  opacity: 0.4;
-}
-.header__bg__top > div:nth-child(12) {
-  opacity: 0.45;
-}
-.header__bg__top > div:nth-child(11) {
-  opacity: 0.5;
-}
-.header__bg__top > div:nth-child(10) {
-  opacity: 0.55;
-}
-.header__bg__top > div:nth-child(9) {
-  opacity: 0.6;
-}
-.header__bg__top > div:nth-child(8) {
-  opacity: 0.65;
-}
-.header__bg__top > div:nth-child(7) {
-  opacity: 0.7;
-}
-.header__bg__top > div:nth-child(6) {
-  opacity: 0.75;
-}
-.header__bg__top > div:nth-child(5) {
-  opacity: 0.8;
-}
-.header__bg__top > div:nth-child(4) {
-  opacity: 0.85;
-}
-.header__bg__top > div:nth-child(3) {
-  opacity: 0.9;
-}
-.header__bg__top > div:nth-child(2) {
-  opacity: 0.95;
-}
-.header__bg__top > div:nth-child(1) {
-  opacity: 1;
-}
-.header__bg__center {
-  height: 0px;
-}
-.header__bg__bottom {
-  padding-bottom: 1px;
-  height: 39px;
-}
-.header__bg__bottom > div {
-  width: 100%;
-  height: 2px;
-  background-color: rgba(255, 255, 255, 0.05);
-  -webkit-backdrop-filter: blur(70px);
-  backdrop-filter: blur(70px);
-}
-.header__bg__bottom > div:nth-child(1) {
-  opacity: 0.1;
-}
-.header__bg__bottom > div:nth-child(2) {
-  opacity: 0.1;
-}
-.header__bg__bottom > div:nth-child(3) {
-  opacity: 0.15;
-}
-.header__bg__bottom > div:nth-child(4) {
-  opacity: 0.2;
-}
-.header__bg__bottom > div:nth-child(5) {
-  opacity: 0.25;
-}
-.header__bg__bottom > div:nth-child(6) {
-  opacity: 0.3;
-}
-.header__bg__bottom > div:nth-child(7) {
-  opacity: 0.35;
-}
-.header__bg__bottom > div:nth-child(8) {
-  opacity: 0.4;
-}
-.header__bg__bottom > div:nth-child(9) {
-  opacity: 0.45;
-}
-.header__bg__bottom > div:nth-child(10) {
-  opacity: 0.5;
-}
-.header__bg__bottom > div:nth-child(11) {
-  opacity: 0.55;
-}
-.header__bg__bottom > div:nth-child(12) {
-  opacity: 0.6;
-}
-.header__bg__bottom > div:nth-child(13) {
-  opacity: 0.65;
-}
-.header__bg__bottom > div:nth-child(14) {
-  opacity: 0.7;
-}
-.header__bg__bottom > div:nth-child(15) {
-  opacity: 0.75;
-}
-.header__bg__bottom > div:nth-child(16) {
-  opacity: 0.8;
-}
-.header__bg__bottom > div:nth-child(17) {
-  opacity: 0.85;
-}
-.header__bg__bottom > div:nth-child(18) {
-  opacity: 0.9;
-}
-.header__bg__bottom > div:nth-child(19) {
-  opacity: 0.95;
-}
-.header__bg__bottom > div:nth-child(20) {
-  opacity: 1;
 }
 .header__left {
   width: 100%;
@@ -354,12 +223,14 @@ label {
   font-size: 16px;
   color: rgb(255, 255, 255);
   transition: 0.15s;
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
 }
 .header__searchBlock > input:hover {
-  box-shadow: inset 0px -30px 30px -30px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 .header__searchBlock > input:focus {
   background-color: rgba(255, 255, 255, 0.2);
@@ -395,23 +266,27 @@ label {
   transition: 0.15s;
   cursor: pointer;
   margin-right: 10px;
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
 }
 .header__buttonCatalog:hover {
-  box-shadow: inset 0px -30px 30px -30px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.header__buttonCatalog:active {
+  transform: scale(0.95);
 }
 .header__buttonCatalog:active {
   transform: scale(0.95);
 }
 .header__buttonCatalog_active {
-  box-shadow: inset 0px -60px 60px -60px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
+  transform: scale(0.95);
 }
 .header__buttonCatalog_active:hover {
-  box-shadow: inset 0px -60px 60px -60px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
+  transform: scale(0.95);
 }
 .header__nav {
   position: relative;
@@ -432,12 +307,17 @@ label {
   transition: 0.15s;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
 }
 .header__nav__button:hover {
-  box-shadow: inset 0px -30px 30px -30px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.header__nav__button:active {
+  transform: scale(0.95);
 }
 .header__nav__button > img {
   width: 100%;
@@ -460,15 +340,16 @@ label {
   padding-bottom: 5px;
   border-radius: 15px;
   background-color: rgba(56, 56, 56, 0.8);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
   transition: 0.15s;
   box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.1);
   animation: open 0.2s cubic-bezier(0, 0, 0, 0.75) 1;
   opacity: 1;
   transform: translateY(0px);
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(50, 50, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 .header__catalogNavs__head {
   border-radius: 10px;
@@ -478,8 +359,18 @@ label {
   align-items: center;
   padding: 10px;
   cursor: pointer;
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.header__catalogNavs__head:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.header__catalogNavs__head:active {
+  transform: scale(0.95);
 }
 .header__catalogNavs__head > svg {
   width: 20px;
@@ -506,27 +397,28 @@ label {
 }
 .header__catalogNavs__grid__nav {
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.05);
   font-family: robotoFlex, sans-serif;
   font-size: 14px;
   padding: 7px;
   display: flex;
   align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0);
   cursor: pointer;
   transition: 0.15s;
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
 }
 .header__catalogNavs__grid__nav img {
   margin-right: 7px;
 }
-.header__catalogNavs__grid__nav:active {
-  transform: scale(0.97);
-}
 .header__catalogNavs__grid__nav:hover {
-  box-shadow: inset 0px -30px 30px -30px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.header__catalogNavs__grid__nav:active {
+  transform: scale(0.95);
 }
 .header__catalogNavs_hidden {
   transform: translateY(-10px);
@@ -534,25 +426,14 @@ label {
   display: none;
 }
 
-.inner {
-  max-width: 1905px;
-  margin: auto;
-}
-.inner_oneSec {
-  width: 1400px;
-  padding-top: 100px;
-  display: block;
-}
-
 .footer {
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 25px;
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(255, 255, 255, 0.01);
+  background-color: rgba(50, 50, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   margin-top: 50px;
-  margin-bottom: 8px;
-  margin-right: 8px;
-  margin-left: 8px;
 }
 .footer > .inner {
   padding-top: 25px;
@@ -599,7 +480,6 @@ label {
   color: rgb(220, 220, 220);
 }
 .footer__head > button {
-  background-color: rgba(255, 255, 255, 0.05);
   border-radius: 22px;
   height: 45px;
   padding-left: 15px;
@@ -608,18 +488,19 @@ label {
   font-weight: 700;
   cursor: pointer;
   transition: 0.2s;
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 .footer__head > button:hover {
-  box-shadow: inset 0px -30px 30px -30px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
-}
-.footer__head > button:hover {
-  background-color: rgb(47, 47, 47);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 .footer__head > button:active {
-  transform: scale(0.98);
+  transform: scale(0.95);
 }
 .footer__body__links {
   display: flex;
@@ -648,15 +529,21 @@ label {
   width: 125px;
   height: 75px;
   border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
   background-color: rgba(255, 255, 255, 0.05);
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
   cursor: pointer;
   transition: 0.2s;
 }
 .footer__body__links__contacts a:hover {
-  box-shadow: inset 0px -30px 30px -30px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.footer__body__links__contacts a:active {
+  transform: scale(0.95);
 }
 .footer__body__links__contacts a > img {
   height: 23px;
@@ -665,12 +552,6 @@ label {
   display: block;
   text-align: center;
   font-size: 12px;
-}
-.footer__body__links__contacts a:hover {
-  background-color: rgb(47, 47, 47);
-}
-.footer__body__links__contacts a:active {
-  transform: scale(0.98);
 }
 .footer__body__links__social a > img {
   height: 25px;
@@ -757,11 +638,11 @@ label {
   font-family: robotoFlex, sans-serif;
   font-size: 15px;
   font-weight: 700;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgb(1, 162, 255);
+  box-shadow: inset 0 -5px 15px -5px rgb(1, 162, 255);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  box-shadow: inset 0px -60px 60px -60px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
 }
 .gameV__info {
   position: relative;
@@ -800,7 +681,6 @@ label {
   height: 35px;
   width: 35px;
   margin-left: 5px;
-  background-color: rgba(255, 255, 255, 0.05);
   border-radius: 7px;
   display: flex;
   align-items: center;
@@ -808,19 +688,22 @@ label {
   cursor: pointer;
   overflow: hidden;
   transition: 0.15s;
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
 }
 .gameV__info__buttons__button img {
   height: 18px;
   filter: invert(1);
 }
 .gameV__info__buttons__button:hover {
-  box-shadow: inset 0px -30px 30px -30px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 .gameV__info__buttons__button:active {
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 .gameV:hover .gameV__banner {
   transform: scale(1.05);
@@ -908,11 +791,11 @@ label {
   font-family: robotoFlex, sans-serif;
   font-size: 15px;
   font-weight: 700;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgb(1, 162, 255);
+  box-shadow: inset 0 -5px 15px -5px rgb(1, 162, 255);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  box-shadow: inset 0px -60px 60px -60px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
 }
 .gameH__info {
   position: relative;
@@ -951,7 +834,6 @@ label {
   height: 35px;
   width: 35px;
   margin-left: 5px;
-  background-color: rgba(255, 255, 255, 0.05);
   border-radius: 7px;
   display: flex;
   align-items: center;
@@ -959,19 +841,22 @@ label {
   cursor: pointer;
   overflow: hidden;
   transition: 0.15s;
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
 }
 .gameH__info__buttons__button img {
   height: 18px;
   filter: invert(1);
 }
 .gameH__info__buttons__button:hover {
-  box-shadow: inset 0px -30px 30px -30px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 .gameH__info__buttons__button:active {
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 .gameH:hover .gameH__banner {
   transform: scale(1.05);
@@ -1015,13 +900,19 @@ label {
   padding: 12px 12px 12px 16px;
   border-radius: 25px;
   background-color: rgba(255, 255, 255, 0.05);
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
   transition: 0.2s;
 }
 .blockButtonMore__button:hover {
-  box-shadow: inset 0px -30px 30px -30px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.blockButtonMore__button:active {
+  transform: scale(0.95);
 }
 .blockButtonMore__button > span {
   display: block;
@@ -1051,7 +942,7 @@ label {
 
 .carousel {
   display: flex;
-  padding: 100px 150px 15px 150px;
+  padding: 0 150px 15px 150px;
   position: relative;
 }
 .carousel__bg {
@@ -1091,8 +982,11 @@ label {
   border-radius: 50%;
   transition: 0.15s;
   cursor: pointer;
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
 }
 .carousel__buttons__button > img {
   width: 100%;
@@ -1102,8 +996,11 @@ label {
   transform: rotate(180deg) translateX(2px);
 }
 .carousel__buttons__button:hover {
-  box-shadow: inset 0px -30px 30px -30px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.carousel__buttons__button:active {
+  transform: scale(0.95);
 }
 .carousel__buttons__button:active {
   transform: scale(0.95);
@@ -1209,8 +1106,9 @@ label {
   width: 350px;
   position: relative;
   z-index: 3;
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
 }
 .carousel__banner__interaction__info__shopInfo__buttons {
   display: flex;
@@ -1220,12 +1118,14 @@ label {
   width: 55px;
   height: 55px;
   padding: 12px;
-  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   transition: 0.15s;
   cursor: pointer;
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
 }
 .carousel__banner__interaction__info__shopInfo__buttons__button > img {
   width: 100%;
@@ -1233,16 +1133,10 @@ label {
 }
 .carousel__banner__interaction__info__shopInfo__buttons__button:hover {
   background-color: rgba(255, 255, 255, 0.2);
-}
-.carousel__banner__interaction__info__shopInfo__buttons__button:hover img {
-  animation: header_nav_hover 0.25s ease-out 1;
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 .carousel__banner__interaction__info__shopInfo__buttons__button:active {
   transform: scale(0.95);
-}
-.carousel__banner__interaction__info__shopInfo__buttons__button:hover {
-  box-shadow: inset 0px -30px 30px -30px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
 }
 .carousel__banner__interaction__info__shopInfo__priceTag {
   display: flex;
@@ -1266,15 +1160,15 @@ label {
   text-decoration: line-through;
 }
 .carousel__banner__interaction__info__shopInfo__priceTag__discount {
-  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   height: 100%;
   font-size: 22px;
   font-weight: 500;
   padding-left: 15px;
   padding-right: 15px;
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
 }
 .carousel__banner__interaction__info__shopInfo_dark {
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -1470,13 +1364,19 @@ label {
   cursor: pointer;
   border-radius: 23px;
   background-color: rgba(255, 255, 255, 0.05);
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
   transition: 0.2s;
 }
 .offers__head__nav:hover {
-  box-shadow: inset 0px -30px 30px -30px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.offers__head__nav:active {
+  transform: scale(0.95);
 }
 .offers__head__nav__text {
   font-size: 16px;
@@ -1484,12 +1384,10 @@ label {
   cursor: pointer;
 }
 .offers__head__nav_active {
-  box-shadow: inset 0px -60px 60px -60px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
+  transform: scale(0.95);
 }
 .offers__head__nav_active:hover {
-  box-shadow: inset 0px -60px 60px -60px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
+  transform: scale(0.95);
 }
 .offers__head__nav:active {
   transform: scale(0.95);
@@ -1604,21 +1502,25 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 7px;
-  background-color: rgb(67, 67, 67);
+  border-radius: 10px;
   cursor: pointer;
   transition: 0.15s;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.miniGameCard__right__button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.miniGameCard__right__button:active {
+  transform: scale(0.95);
 }
 .miniGameCard__right__button img {
   height: 26px;
   filter: invert(1);
-}
-.miniGameCard__right__button:hover {
-  transform: scale(0.98);
-  background-color: rgb(60, 60, 60);
-}
-.miniGameCard__right__button:active {
-  transform: scale(0.95);
 }
 .miniGameCard__right__button_active {
   background: linear-gradient(to bottom, rgb(1, 162, 255), rgb(1, 74, 255));
@@ -1632,37 +1534,51 @@ label {
   transform: translateX(-2px);
 }
 .miniGameCard__right__buttonBuy {
-  position: relative;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 7px;
-  background: linear-gradient(to bottom, rgb(1, 162, 255), rgb(1, 74, 255));
+  border-radius: 10px;
   overflow: hidden;
-  cursor: pointer;
-  transition: 0.15s;
   padding-left: 20px;
   padding-right: 20px;
-}
-.miniGameCard__right__buttonBuy__text {
   position: relative;
-  z-index: 2;
-  font-size: 18px;
-  font-weight: 500;
+  background: linear-gradient(to bottom, rgb(1, 162, 255), rgb(1, 74, 255));
   cursor: pointer;
+  transition: 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.miniGameCard__right__buttonBuy__forHover {
-  z-index: 1;
+.miniGameCard__right__buttonBuy .-forHover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
   opacity: 0;
+  border-radius: inherit;
   background: rgb(1, 162, 255);
   transition: 0.15s;
 }
-.miniGameCard__right__buttonBuy:hover .miniGameCard__right__buttonBuy__forHover {
+.miniGameCard__right__buttonBuy .-text {
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+}
+.miniGameCard__right__buttonBuy:hover .-forHover {
   opacity: 1;
 }
 .miniGameCard__right__buttonBuy:active {
   transform: scale(0.98);
+}
+.miniGameCard__right__buttonBuy .-text {
+  position: relative;
+  z-index: 3;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
 }
 .miniGameCard_show {
   opacity: 1;
@@ -1697,7 +1613,7 @@ label {
   z-index: 1;
   height: 520px;
   overflow: hidden;
-  margin-bottom: -200px;
+  margin-bottom: -260px;
   transform: translateY(0px);
   box-sizing: border-box;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -1917,13 +1833,14 @@ label {
 .mainInfo__info {
   width: 500px;
   align-self: flex-end;
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
   border-radius: 20px;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.05);
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(50, 50, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.3);
 }
 .mainInfo__info__title {
   font-size: 30px;
@@ -1989,7 +1906,12 @@ label {
   height: 70px;
   margin-bottom: 12px;
 }
-.mainInfo__info__interactions__top__percent {
+.mainInfo__info__interactions__bottom {
+  display: flex;
+  gap: 12px;
+  height: 70px;
+}
+.mainInfo__info__interactions__percent {
   width: 108px;
   height: 100%;
   display: flex;
@@ -1999,11 +1921,11 @@ label {
   border-radius: 15px;
   font-size: 26px;
   font-weight: 600;
-  background-color: rgba(255, 255, 255, 0.05);
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
 }
-.mainInfo__info__interactions__top__price {
+.mainInfo__info__interactions__price {
   flex-grow: 1;
   height: 100%;
   display: flex;
@@ -2012,128 +1934,86 @@ label {
   border-radius: 15px;
   font-size: 26px;
   font-weight: 600;
-  background-color: rgba(255, 255, 255, 0.05);
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
 }
-.mainInfo__info__interactions__top__price span {
+.mainInfo__info__interactions__price span {
   color: #A7A7A7;
   margin-left: 5px;
 }
-.mainInfo__info__interactions__top__price span:nth-child(2) {
+.mainInfo__info__interactions__price span:nth-child(2) {
   font-size: 16px;
   transform: translateY(3px);
   text-decoration: line-through;
 }
-.mainInfo__info__interactions__top__buttonFavorite {
+.mainInfo__info__interactions__button {
   height: 100%;
   width: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 15px;
-  background-color: rgba(255, 255, 255, 0.05);
   cursor: pointer;
   transition: 0.15s;
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
 }
-.mainInfo__info__interactions__top__buttonFavorite:hover {
-  box-shadow: inset 0px -30px 30px -30px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
+.mainInfo__info__interactions__button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
-.mainInfo__info__interactions__top__buttonFavorite img {
+.mainInfo__info__interactions__button:active {
+  transform: scale(0.95);
+}
+.mainInfo__info__interactions__button img {
   height: 38px;
   filter: invert(1);
 }
-.mainInfo__info__interactions__top__buttonFavorite:hover {
-  transform: scale(0.97);
-}
-.mainInfo__info__interactions__top__buttonFavorite:active {
-  transform: scale(0.95);
-}
-.mainInfo__info__interactions__top__buttonFavorite_active {
-  box-shadow: inset 0px -60px 60px -60px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
-}
-.mainInfo__info__interactions__bottom {
-  display: flex;
-  gap: 12px;
-  height: 70px;
-}
-.mainInfo__info__interactions__bottom__buttonBuy {
-  position: relative;
+.mainInfo__info__interactions__buttonBuy {
   flex-grow: 1;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 15px;
+  position: relative;
   background: linear-gradient(to bottom, rgb(1, 162, 255), rgb(1, 74, 255));
   cursor: pointer;
   transition: 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.mainInfo__info__interactions__bottom__buttonBuy__text {
-  position: relative;
-  z-index: 3;
-  font-size: 26px;
-  font-weight: 600;
-  cursor: pointer;
-}
-.mainInfo__info__interactions__bottom__buttonBuy__forHover {
+.mainInfo__info__interactions__buttonBuy .-forHover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   z-index: 2;
   opacity: 0;
   border-radius: inherit;
   background: rgb(1, 162, 255);
   transition: 0.15s;
 }
-.mainInfo__info__interactions__bottom__buttonBuy__forActive {
-  opacity: 0;
-  z-index: 1;
-  border-radius: inherit;
-  transition: 0.15s;
-  background-color: rgb(1, 162, 255);
+.mainInfo__info__interactions__buttonBuy .-text {
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
 }
-.mainInfo__info__interactions__bottom__buttonBuy:hover .mainInfo__info__interactions__bottom__buttonBuy__forHover {
+.mainInfo__info__interactions__buttonBuy:hover .-forHover {
   opacity: 1;
 }
-.mainInfo__info__interactions__bottom__buttonBuy:active {
+.mainInfo__info__interactions__buttonBuy:active {
   transform: scale(0.98);
 }
-.mainInfo__info__interactions__bottom__buttonBuy:active .mainInfo__info__interactions__bottom__buttonBuy__forActive {
-  animation: button_active 0.15s ease-in-out 1;
-}
-.mainInfo__info__interactions__bottom__buttonBasket {
-  height: 100%;
-  width: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 15px;
-  background-color: rgba(255, 255, 255, 0.05);
-  cursor: pointer;
-  transition: 0.15s;
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
-}
-.mainInfo__info__interactions__bottom__buttonBasket:hover {
-  box-shadow: inset 0px -30px 30px -30px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
-}
-.mainInfo__info__interactions__bottom__buttonBasket img {
-  height: 38px;
-  filter: invert(1);
-  transform: translateX(-2px);
-}
-.mainInfo__info__interactions__bottom__buttonBasket:hover {
-  transform: scale(0.97);
-}
-.mainInfo__info__interactions__bottom__buttonBasket:active {
-  transform: scale(0.95);
-}
-.mainInfo__info__interactions__bottom__buttonBasket_active {
-  box-shadow: inset 0px -60px 60px -60px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
+.mainInfo__info__interactions__buttonBuy .-text {
+  font-size: 26px;
+  font-weight: 600;
 }
 .mainInfo__info_loading .mainInfo__info__title {
   height: 26px;
@@ -2211,9 +2091,9 @@ label {
   margin-top: -45px;
   border-radius: 15px;
   padding: 5px 7px 7px 12px;
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   transition: 0.2s;
@@ -2241,15 +2121,12 @@ label {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
   background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgb(1, 162, 255);
+  box-shadow: inset 0 -5px 15px -5px rgb(1, 162, 255);
   font-size: 16px;
   font-weight: 600;
   transform: translateY(-1px);
-}
-.editions__grid__edition__info__price__percent_active {
-  border: 2px solid rgb(1, 162, 255);
 }
 .editions__grid__edition:hover .editions__grid__edition__imgBlock {
   transform: translateY(-19px);
@@ -2265,8 +2142,7 @@ label {
 }
 .editions__grid__edition_active .editions__grid__edition__info {
   cursor: default;
-  box-shadow: inset 0px -60px 60px -60px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
+  transform: scale(0.95);
 }
 .editions__grid__edition_active .editions__grid__edition__info * {
   cursor: default;
@@ -2333,9 +2209,11 @@ label {
 }
 .information__description > div {
   line-height: 26px;
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(50, 50, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   padding: 10px 20px 20px 20px;
   border-radius: 20px;
 }
@@ -2388,9 +2266,11 @@ label {
   padding-left: 20px;
 }
 .information__rightColumn__systemRequirements > div {
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(50, 50, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   padding: 10px 20px 20px 20px;
   border-radius: 20px;
   display: flex;
@@ -2453,9 +2333,11 @@ label {
   padding-left: 20px;
 }
 .information__rightColumn__activation__block {
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(50, 50, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 20px;
 }
@@ -2485,4 +2367,429 @@ label {
 }
 .similar_loading {
   display: none;
+}
+
+.profile {
+  background-color: rgba(50, 50, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.profile__left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.profile__right {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.profile__right > button {
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 7px 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.profile__right > button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.profile__right > button:active {
+  transform: scale(0.95);
+}
+.profile__avatar {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+.profile__avatar > img {
+  width: 100%;
+  height: 100%;
+}
+.profile__info__nickname {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 7px;
+}
+.profile__info__nickname > span {
+  font-size: 24px;
+  font-weight: 600;
+}
+.profile__info__nickname__steamLink {
+  background-color: rgba(255, 255, 255, 0.05);
+  width: 32px;
+  height: 32px;
+  padding: 5px;
+  border-radius: 50%;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.profile__info__nickname__steamLink > svg {
+  transform: translateY(2px);
+}
+.profile__info__nickname__steamLink > svg > path {
+  fill: rgb(180, 180, 180);
+  transition: 0.2s;
+}
+.profile__info__nickname__steamLink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.profile__info__nickname__steamLink:hover > svg > path {
+  fill: rgb(255, 255, 255);
+}
+.profile__info__points {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.profile__info__points__point {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  border-radius: 13px;
+  padding: 3px 10px;
+  font-size: 14px;
+  text-align: center;
+}
+.profile__info__points__point > span {
+  color: rgb(200, 200, 200);
+  margin-right: 5px;
+}
+
+.settings {
+  background-color: rgba(50, 50, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 25px;
+  margin-bottom: 30px;
+}
+.settings > form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+.settings__left {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+.settings__right {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+.settings__conf {
+  width: 50%;
+}
+.settings__conf > label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+.settings__conf > label > div {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: rgb(70, 70, 70);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(170, 170, 170);
+}
+.settings__conf > input {
+  display: block;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  padding-left: 17px;
+  font-size: 16px;
+  outline: none;
+  cursor: text;
+  transition: 0.1s;
+}
+.settings__conf > input:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.settings__buttons {
+  display: flex;
+  gap: 10px;
+}
+.settings__buttons__button {
+  font-size: 18px;
+  height: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+}
+.settings__buttons__button_save {
+  position: relative;
+  background: linear-gradient(to bottom, rgb(1, 162, 255), rgb(1, 74, 255));
+  cursor: pointer;
+  transition: 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.settings__buttons__button_save .-forHover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  opacity: 0;
+  border-radius: inherit;
+  background: rgb(1, 162, 255);
+  transition: 0.15s;
+}
+.settings__buttons__button_save .-text {
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+}
+.settings__buttons__button_save:hover .-forHover {
+  opacity: 1;
+}
+.settings__buttons__button_save:active {
+  transform: scale(0.98);
+}
+.settings__buttons__button_back {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.settings__buttons__button_back:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.settings__buttons__button_back:active {
+  transform: scale(0.95);
+}
+
+.more__header {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+.more__header__nav {
+  position: relative;
+  padding: 12px 16px 12px 16px;
+  cursor: pointer;
+  border-radius: 23px;
+  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.more__header__nav:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.more__header__nav:active {
+  transform: scale(0.95);
+}
+.more__header__nav__text {
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.more__header__nav_active {
+  transform: scale(0.95);
+}
+.more__header__nav_active:hover {
+  transform: scale(0.95);
+}
+.more__header__nav:active {
+  transform: scale(0.95);
+}
+.more__section {
+  display: none;
+}
+.more__section_active {
+  display: block;
+}
+
+.purchase__header {
+  position: relative;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 25px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  background-color: rgba(50, 50, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.purchase__header__bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  z-index: 1;
+}
+.purchase__header__left {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.purchase__header__right {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 40px;
+}
+.purchase__header__info {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  padding-left: 20px;
+}
+.purchase__header__info__point__title {
+  color: rgb(180, 180, 180);
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.purchase__header__info__point__value {
+  font-size: 18px;
+}
+.purchase__header__info__point_right {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.purchase__header__button {
+  height: 100%;
+  width: 60px;
+  background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.purchase__header__button > svg {
+  height: 30px;
+  transform: rotate(90deg);
+}
+.purchase__gamelist {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.purchase__gamelist__game {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px 0px 0px 15px;
+  overflow: hidden;
+  background-color: rgba(50, 50, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.purchase__gamelist__game__bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  z-index: 1;
+}
+.purchase__gamelist__game__left {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.purchase__gamelist__game__right {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 40px;
+}
+.purchase__gamelist__game__title {
+  display: flex;
+}
+.purchase__gamelist__game__info {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding-left: 20px;
+}
+.purchase__gamelist__game__info__point__title {
+  color: rgb(180, 180, 180);
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.purchase__gamelist__game__info__point__value {
+  font-size: 18px;
+}
+.purchase__gamelist__game__info__point_right {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.purchase__gamelist__game_end .purchase__gamelist__game__header {
+  box-shadow: 2px 0 0 0 rgb(163, 215, 112);
+}
+.purchase__gamelist__game_end .purchase__gamelist__game__header__text {
+  color: rgb(163, 215, 112);
+}
+.purchase__gamelist__game_end .purchase__gamelist__game__header__bg {
+  background: linear-gradient(to left, rgba(163, 215, 112, 0.3), transparent);
+}
+.purchase_open .purchase__header {
+  border-radius: 25px 25px 0px 15px;
+}
+.purchase_end .purchase__header {
+  box-shadow: 2px 0 0 0 rgb(163, 215, 112);
+}
+.purchase_end .purchase__header__text {
+  color: rgb(163, 215, 112);
+}
+.purchase_end .purchase__header__bg {
+  background: linear-gradient(to left, rgba(163, 215, 112, 0.3), transparent);
 }/*# sourceMappingURL=main.css.map */

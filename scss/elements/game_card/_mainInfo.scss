@@ -201,17 +201,10 @@
     &__info {
         width: 500px;
         align-self: flex-end;
-        // background: rgba(40, 40, 40, 0.6);
-        -webkit-backdrop-filter: blur(20px);
-        backdrop-filter: blur(20px);
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: space-between;
         border-radius: 20px;
         padding: 20px;
-        //! box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.3);
-        background-color: rgba(255, 255, 255, .05);
-        @include base.style-glass;
+        @include base.style-main_base;
+        box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.3);
         &__title {
             font-size: 30px;
             font-weight: 600;
@@ -274,158 +267,73 @@
                 gap: 12px;
                 height: 70px;
                 margin-bottom: 12px;
-                &__percent {
-                    width: 108px;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    height: 100%;
-                    border-radius: 15px;
-                    font-size: 26px;
-                    font-weight: 600;
-                    // background-color: rgb(58, 58, 58);
-                    background-color: rgba(255, 255, 255, .05);
-                    @include base.style-glass;
-                }
-                &__price {
-                    flex-grow: 1;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    // border: 2px solid rgb(152, 152, 152);
-                    border-radius: 15px; //! 10 old
-                    font-size: 26px;
-                    font-weight: 600;
-                    // background-color: rgb(58, 58, 58);
-                    background-color: rgba(255, 255, 255, .05);
-                    @include base.style-glass;
-                    & span {
-                        color: #A7A7A7;
-                        margin-left: 5px;
-                    }
-                    & span:nth-child(2) {
-                        font-size: 16px;
-                        transform: translateY(3px);
-                        text-decoration: line-through;
-                    }
-                }
-                &__buttonFavorite {
-                    height: 100%;
-                    width: 70px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 15px;
-                    // background-color: rgb(58, 58, 58);
-                    background-color: rgba(255, 255, 255, .05);
-                    cursor: pointer;
-                    transition: 0.15s;
-                    @include base.style-glass_hover;
-                    & img {
-                        height: 38px;
-                        filter: invert(1);
-                    }
-                    &:hover {
-                        transform: scale(0.97);
-                        // background-color: rgb(54, 54, 54);
-                    }
-                    &:active {
-                        transform: scale(0.95);
-                    }
-                    // &_active {
-                    //     // background: base.$redGradient;
-                    //     border: 0px solid transparent;
-                    //     &:hover {
-                    //         border: 0px solid transparent;
-                    //         filter: contrast(0.6);
-                    //     }
-                    // }
-                    &_active {
-                        @include base.style-glass_active;
-                    }
-                }
             }
             &__bottom {
                 display: flex;
                 gap: 12px;
                 height: 70px;
-                &__buttonBuy {
-                    position: relative;
-                    flex-grow: 1;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 15px;
-                    background: base.$clr-grad_blue_100;
-                    cursor: pointer;
-                    transition: 0.15s;
-                    &__text {
-                        position: relative;
-                        z-index: 3;
-                        font-size: 26px;
-                        font-weight: 600;
-                        cursor: pointer;
-                    }
-                    &__forHover {
-                        z-index: 2;
-                        opacity: 0;
-                        border-radius: inherit;
-                        background: base.$clr-blue_light;
-                        transition: 0.15s;
-                    }
-                    &__forActive {
-                        opacity: 0;
-                        z-index: 1;
-                        border-radius: inherit;
-                        transition: 0.15s;
-                        background-color: base.$clr-blue_light;
-                    }
-                    &:hover &__forHover{
-                        opacity: 1;
-                    }
-                    &:active {
-                        transform: scale(0.98);
-                    }
-                    &:active &__forActive{
-                        animation: button_active 0.15s ease-in-out 1;
-                    }
+            }
+            &__percent {
+                width: 108px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                border-radius: 15px;
+                font-size: 26px;
+                font-weight: 600;
+                @include base.style-main;
+            }
+            &__price {
+                flex-grow: 1;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 15px; //! 10 old
+                font-size: 26px;
+                font-weight: 600;
+                @include base.style-main;
+                & span {
+                    color: #A7A7A7;
+                    margin-left: 5px;
                 }
-                &__buttonBasket {
-                    height: 100%;
-                    width: 70px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 15px;
-                    background-color: rgba(255, 255, 255, .05);
-                    cursor: pointer;
-                    transition: 0.15s;
-                    @include base.style-glass_hover;
-                    & img {
-                        height: 38px;
-                        filter: invert(1);
-                        transform: translateX(-2px);
-                    }
-                    &:hover {
-                        transform: scale(0.97);
-                    }
-                    &:active {
-                        transform: scale(0.95);
-                    }
-                    // &_active {
-                    //     background: base.$clr-grad_blue_100;
-                    //     border: 0px solid transparent;
-                    //     &:hover {
-                    //         border: 0px solid transparent;
-                    //         filter: contrast(0.6);
-                    //     }
-                    // }
-                    &_active {
-                        @include base.style-glass_active;
-                    }
+                & span:nth-child(2) {
+                    font-size: 16px;
+                    transform: translateY(3px);
+                    text-decoration: line-through;
+                }
+            }
+            &__button {
+                height: 100%;
+                width: 70px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 15px;
+                cursor: pointer;
+                transition: 0.15s;
+                @include base.style-main_click;
+                & img {
+                    height: 38px;
+                    filter: invert(1);
+                }
+                &_active {
+                    
+                }
+            }
+            &__buttonBuy {
+                flex-grow: 1;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 15px;
+                @include base.style-primaryBTN;
+                & .-text {
+                    font-size: 26px;
+                    font-weight: 600;
                 }
             }
         }

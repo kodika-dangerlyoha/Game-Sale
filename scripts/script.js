@@ -1,3 +1,7 @@
+// ----------------------- footer всегда снизу
+
+document.querySelector("#main").style.minHeight = `${window.innerHeight - 331}px`;
+
 // ----------------------- Изменение фона шапки при скролле 
 const header_bg = document.querySelector('#header__bg');
 
@@ -11,11 +15,15 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// ----------------------- Открытиие меню каталога в шапке 
+
 const open_catalogNavs = () => {
     document.querySelector('.header__buttonCatalog').classList.toggle('header__buttonCatalog_active');
     document.querySelector('.blackoutBlock').classList.toggle('blackoutBlock_active');
     document.querySelector('.header__catalogNavs').classList.toggle('header__catalogNavs_hidden');
 }
+
+// ----------------------- Смена категории игр в offers 
 
 const open_offers_games = (category) => {
     document.querySelector('.offers__grid_active').classList.remove("offers__grid_active");

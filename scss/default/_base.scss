@@ -25,6 +25,7 @@ $tf-main: cubic-bezier(0, 0, 0, 0.75);
 // $lightGray: rgba(45, 45, 45, 1);
 
 // -------- styles --------
+// ~ Glass
 
 $clr-blue_light_glassShadow: rgba(1, 162, 255, .7);
 // $shadow_out: 0 5px 10px -2px rgba(0, 0, 0, .2);
@@ -119,15 +120,110 @@ $shadow_light: inset -1px 0 0 0 rgba(255, 255, 255, .25);
 //     box-shadow: inset 0px -20px 40px -10px $clr-blue_light_glassShadow, $shadow_out, inset 0 0 0 1px $clr-blue_light;
 // }
 
-@mixin style-glass_active {
-    box-shadow: inset 0px -60px 60px -60px $clr-blue_light_glassShadow, 
-    $shadow_out, 
-    inset -1px 0 0 0 rgba(82, 98, 112, 0.5), 
-    inset 1px 0 0 0 rgba(82, 98, 112, 0.5), 
-    inset 0 1px 0 0 $clr-blue_light_glassShadow, 
-    inset 0 -1px 0 0 $clr-blue_light_glassShadow;
-    border: 1px solid $clr-blue_light_glassShadow;
+// @mixin style-glass_active {
+//     box-shadow: inset 0px -60px 60px -60px $clr-blue_light_glassShadow, 
+//     $shadow_out, 
+//     inset -1px 0 0 0 rgba(82, 98, 112, 0.5), 
+//     inset 1px 0 0 0 rgba(82, 98, 112, 0.5), 
+//     inset 0 1px 0 0 $clr-blue_light_glassShadow, 
+//     inset 0 -1px 0 0 $clr-blue_light_glassShadow;
+//     border: 1px solid $clr-blue_light_glassShadow;
+// }
+
+// ~ Gray on glass
+
+@mixin style-main {
+    // background: linear-gradient(to top, rgba(255, 255, 255, .15), rgba(255, 255, 255, .05));
+    background-color: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, .15);
+    box-shadow: 0 5px 15px -2px rgba(0, 0, 0, .2);
 }
+
+@mixin style-main_base {
+    // background: linear-gradient(to top, rgba(255, 255, 255, .15), rgba(255, 255, 255, .05));
+    background-color: rgba(50, 50, 50, 0.75);
+    border: 1px solid rgba(255, 255, 255, .15);
+    box-shadow: 0 5px 15px -2px rgba(0, 0, 0, .2);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+@mixin style-main_active {
+    transform: scale(.95);
+}
+
+@mixin style-main_hover {
+    // background: linear-gradient(to top, rgba(255, 255, 255, .15), rgba(255, 255, 255, .15));
+    background-color: rgba(255, 255, 255, .2);
+    border: 1px solid rgba(255, 255, 255, .25);
+}
+
+@mixin style-main_click {
+    @include style-main;
+    transition: .2s;
+    cursor: pointer;
+    
+    &:hover {
+        @include style-main_hover;
+    }
+    &:active {
+        @include style-main_active;
+    }
+}
+
+@mixin style-main_mouse {
+    @include style-main;
+    transition: .2s;
+    &:hover {
+        @include style-main_hover;
+    }
+}
+
+// ~ Primary button
+
+@mixin style-primaryBTN {
+    position: relative;
+    background: $clr-grad_blue_100;
+    cursor: pointer;
+    transition: 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & .-forHover {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 2;
+        opacity: 0;
+        border-radius: inherit;
+        background: $clr-blue_light;
+        transition: 0.15s;
+    }
+    & .-text {
+        position: relative;
+        z-index: 3;
+        cursor: pointer;
+    }
+    &:hover .-forHover{
+        opacity: 1;
+    }
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+// ~ Percent block
+
+@mixin style-percentBlock {
+    background-color: rgba(255, 255, 255, .05);
+    border: 1px solid $clr-blue_light;
+    box-shadow: inset 0 -5px 15px -5px $clr-blue_light;
+}
+
+
+
 
 @mixin information_game_style {
     border: 2px solid rgb(50, 50, 50);

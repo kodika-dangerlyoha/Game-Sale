@@ -2,7 +2,7 @@
 
 .carousel {
     display: flex;
-    padding: 100px 150px 15px 150px;
+    padding: 0 150px 15px 150px;
     position: relative;
     &__bg {
         @include base.absolute-zero;
@@ -49,7 +49,7 @@
             // &:hover {
             //     background-color: rgba(255, 255, 255, 0.2);
             // }
-            @include base.style-glass_hover;
+            @include base.style-main_click;
             &:active {
                 transform: scale(0.95);
             }
@@ -151,7 +151,7 @@
                     width: 350px;
                     position: relative;
                     z-index: 3;
-                    @include base.style-glass;
+                    @include base.style-main;
                     &__buttons {
                         display: flex;
                         gap: 10px;
@@ -159,7 +159,7 @@
                             width: 55px;
                             height: 55px;
                             padding: 12px;
-                            background-color: rgba(255, 255, 255, 0.1);
+                            // background-color: rgba(255, 255, 255, 0.1);
                             // border: 1px solid rgba(255, 255, 255, 0.3);
                             border-radius: 50%;
                             transition: .15s;
@@ -168,15 +168,15 @@
                                 width: 100%;
                                 filter: invert(1);
                             }
-                            &:hover {
-                                background-color: rgba(255, 255, 255, 0.2);
-                            }
-                            &:hover img {
-                                animation: header_nav_hover .25s ease-out 1;
-                            }
-                            &:active {
-                                transform: scale(0.95);
-                            }
+                            // &:hover {
+                            //     background-color: rgba(255, 255, 255, 0.2);
+                            // }
+                            // &:hover img {
+                            //     animation: header_nav_hover .25s ease-out 1;
+                            // }
+                            // &:active {
+                            //     transform: scale(0.95);
+                            // }
                             // &_active.banner__interaction__info__shopInfo__buttons__button_favorite {
                             //     // background-color: base.$lightRed;
                             //     // ! background: base.$redGradient;
@@ -185,7 +185,7 @@
                             //     // background-color: base.$lightBlue;
                             //     // ! background: base.$mainGradient_100;
                             // }
-                            @include base.style-glass_hover;
+                            @include base.style-main_click;
                         }
                     }
                     &__priceTag {
@@ -210,7 +210,7 @@
                             }
                         }
                         &__discount {
-                            background-color: rgba(255, 255, 255, 0.1);
+                            // background-color: rgba(255, 255, 255, 0.1);
                             // border: 1px solid rgba(255, 255, 255, 0.5);
                             border-radius: 10px;
                             height: 100%;
@@ -220,7 +220,7 @@
                                 left: 15px;
                                 right: 15px;
                             }
-                            @include base.style-glass;
+                            @include base.style-main;
                         }
                     }
                     &_dark {

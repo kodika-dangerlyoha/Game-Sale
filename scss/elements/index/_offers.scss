@@ -14,7 +14,7 @@
             cursor: pointer;
             border-radius: 23px;
             background-color: rgba(255, 255, 255, .05);
-            @include base.style-glass_hover;
+            @include base.style-main_click;
             transition: .2s;
             &__text {
                 font-size: 16px;
@@ -22,9 +22,9 @@
                 cursor: pointer;
             }
             &_active {
-                @include base.style-glass_active;
+                @include base.style-main_active;
                 &:hover {
-                    @include base.style-glass_active;
+                    @include base.style-main_active;
                 }
             }
             &:active {
