@@ -130,7 +130,7 @@ label {
   margin: auto;
 }
 .inner_profile {
-  width: 1380px;
+  width: 1200px;
   margin: auto;
 }
 
@@ -2515,7 +2515,7 @@ label {
   justify-content: center;
   color: rgb(170, 170, 170);
 }
-.settings__conf > input {
+.settings__conf input {
   display: block;
   box-sizing: border-box;
   height: 50px;
@@ -2530,9 +2530,53 @@ label {
   cursor: text;
   transition: 0.1s;
 }
-.settings__conf > input:focus {
+.settings__conf input:focus {
   background-color: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.settings__conf__regionInput {
+  height: 50px;
+  position: relative;
+}
+.settings__conf__regionInput > input {
+  position: relative;
+  z-index: 1;
+}
+.settings__conf__regionInput__regions {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+}
+.settings__conf__regionInput__regions__header {
+  height: 50px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.2s;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 12px;
+}
+.settings__conf__regionInput__regions__header > svg {
+  height: 24px;
+  transform: rotate(90deg);
+}
+.settings__conf__regionInput__regions__header:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+}
+.settings__conf__regionInput__regions__list {
+  display: none;
+  width: 100%;
+}
+.settings__conf__regionInput_open .settings__conf__regionInput__regions__header {
+  border-radius: 15px 15px 0px 0px;
+}
+.settings__conf__regionInput_open input {
+  border-radius: 15px 15px 0px 0px;
 }
 .settings__buttons {
   display: flex;
@@ -2640,6 +2684,9 @@ label {
   display: block;
 }
 
+.purchase {
+  margin-bottom: 30px;
+}
 .purchase__header {
   position: relative;
   height: 110px;
@@ -2648,7 +2695,8 @@ label {
   justify-content: space-between;
   border-radius: 25px;
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
+  transition: 0.3s;
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
@@ -2691,7 +2739,26 @@ label {
   font-size: 16px;
 }
 .purchase__header__info__point__value {
+  display: flex;
+  align-items: center;
   font-size: 18px;
+  gap: 5px;
+}
+.purchase__header__info__point__value > a {
+  display: flex;
+  align-items: end;
+  cursor: pointer;
+}
+.purchase__header__info__point__value > a > svg {
+  transform: translateY(1px);
+  height: 16px;
+}
+.purchase__header__info__point__value > a > svg > path {
+  transition: 0.15s;
+}
+.purchase__header__info__point__value > a:hover path {
+  fill: #fff;
+  stroke: #fff;
 }
 .purchase__header__info__point_right {
   display: flex;
@@ -2703,23 +2770,30 @@ label {
   width: 60px;
   background-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  transition: 0.2s;
 }
 .purchase__header__button > svg {
   height: 30px;
   transform: rotate(90deg);
+  transition: 0.2s;
 }
 .purchase__gamelist {
+  max-height: 0px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
+  transition: 0.4s;
 }
 .purchase__gamelist__game {
+  height: 0px;
+  opacity: 0;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 15px 0px 0px 15px;
+  border-radius: 10px 0px 0px 10px;
   overflow: hidden;
+  transition: all 0.4s, opacity 0.3s;
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
@@ -2751,7 +2825,42 @@ label {
   padding-right: 40px;
 }
 .purchase__gamelist__game__title {
+  width: 450px;
   display: flex;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+}
+.purchase__gamelist__game__title__img {
+  height: 100%;
+  margin-right: 20px;
+}
+.purchase__gamelist__game__title__img > img {
+  height: 100%;
+  border-radius: 10px;
+}
+.purchase__gamelist__game__title__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+}
+.purchase__gamelist__game__title__info__title {
+  font-size: 20px;
+}
+.purchase__gamelist__game__title__info__price__new {
+  font-weight: 600;
+  font-size: 20px;
+  color: rgb(1, 162, 255);
+  margin-right: 5px;
+}
+.purchase__gamelist__game__title__info__price__old {
+  font-size: 16px;
+  text-decoration: line-through;
+  color: rgb(200, 200, 200);
 }
 .purchase__gamelist__game__info {
   display: flex;
@@ -2772,17 +2881,31 @@ label {
   flex-direction: column;
   align-items: end;
 }
-.purchase__gamelist__game_end .purchase__gamelist__game__header {
+.purchase__gamelist__game:last-child {
+  border-radius: 10px 0px 25px 25px;
+}
+.purchase__gamelist__game_end {
   box-shadow: 2px 0 0 0 rgb(163, 215, 112);
 }
-.purchase__gamelist__game_end .purchase__gamelist__game__header__text {
+.purchase__gamelist__game_end .purchase__gamelist__game__text {
   color: rgb(163, 215, 112);
 }
-.purchase__gamelist__game_end .purchase__gamelist__game__header__bg {
+.purchase__gamelist__game_end .purchase__gamelist__game__bg {
   background: linear-gradient(to left, rgba(163, 215, 112, 0.3), transparent);
 }
 .purchase_open .purchase__header {
-  border-radius: 25px 25px 0px 15px;
+  border-radius: 25px 25px 0px 10px;
+  margin-bottom: 10px;
+}
+.purchase_open .purchase__header__button > svg {
+  transform: rotate(270deg);
+}
+.purchase_open .purchase__gamelist {
+  max-height: 700px;
+}
+.purchase_open .purchase__gamelist__game {
+  opacity: 1;
+  height: 110px;
 }
 .purchase_end .purchase__header {
   box-shadow: 2px 0 0 0 rgb(163, 215, 112);
