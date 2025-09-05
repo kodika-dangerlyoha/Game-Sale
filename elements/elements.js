@@ -176,12 +176,7 @@ const get_info_game_html = (game, discount, categoriesHTML) => {
 }
 
 const get_categories_game_html = (category) => {
-    return `<a href="${category.link}" class="mainInfo__info__category__nav">
-                <img src="img/icons/game32.png" alt="">
-                <div class="mainInfo__info__category__nav__forHover">
-                    <div class="mainInfo__info__category__nav__forHover__text txt">${category.name}</div>
-                </div>
-            </a>`
+    return `<a href="${category.link}" class="mainInfo__info__category__point txt">${category.name}</a>`
 }
 
 const get_basket_game_html = (game) => {

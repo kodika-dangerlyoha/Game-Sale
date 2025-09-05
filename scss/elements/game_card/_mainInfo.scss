@@ -208,11 +208,11 @@
         &__title {
             font-size: 30px;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         &__category {
             display: flex;
-            gap: 10px;
+            gap: 7px;
             flex-wrap: wrap;
             &__nav {
                 background-color: rgba(0, 0, 0, 0.2);
@@ -258,6 +258,18 @@
                     z-index: 5;
                     border: 2px solid rgba(255, 255, 255, 0.2);
                 }
+            }
+            &__point {
+                @include base.style-main;
+                border-radius: 13px;
+                padding: 3px 10px;
+                font-size: 14px;
+                text-align: center;
+                cursor: pointer;
+                & > span {
+                    color: rgb(200, 200, 200);
+                    margin-right: 5px;
+                }   
             }
         }
         &__interactions {

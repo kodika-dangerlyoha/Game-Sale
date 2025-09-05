@@ -4,6 +4,8 @@ $-clr-end: rgba(163, 215, 112, 1);
 $-clr-end_grad: rgba(163, 215, 112, .3);
 
 .purchase {
+    position: relative;
+    z-index: 1;
     margin-bottom: 30px;
     &__header {
         position: relative;
@@ -176,7 +178,7 @@ $-clr-end_grad: rgba(163, 215, 112, .3);
             &__info {
                 display: flex;
                 align-items: center;
-                gap: 30px;
+                gap: 50px;
                 padding-left: 20px;
                 &__point {
                     &__title {

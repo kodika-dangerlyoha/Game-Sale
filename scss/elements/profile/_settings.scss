@@ -1,10 +1,12 @@
 @use '../../default/base';
 
 .settings {
+    position: relative;
+    z-index: 3;
     @include base.style-main_base;
     padding: 20px;
     border-radius: 25px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     & > form {
         width: 100%;
         display: flex;
@@ -74,6 +76,8 @@
                 left: 0;
                 z-index: 3;
                 &__header {
+                    position: relative;
+                    z-index: 2;
                     height: 50px;
                     cursor: pointer;
                     background-color: transparent;
@@ -86,16 +90,36 @@
                     & > svg {
                         height: 24px;
                         transform: rotate(90deg);
+                        transition: .2s;
                     }
                     &:hover {
                         background-color: rgba(255, 255, 255, .07);
                     }
                 }
                 &__list {
+                    position: relative;
+                    z-index: 1;
                     display: none;
+                    flex-direction: column;
                     width: 100%;
+                    border-radius: 0px 0px 15px 15px;
+                    @include base.style-main;
+                    background-color: #444;
+                    border-top: none;
+                    padding-top: 7px;
+                    padding-bottom: 7px;
+                    padding-right: 7px;
+                    padding-left: 7px;
+                    animation: open .25s base.$tf-main 1;
                     &__region {
-
+                        padding-left: 10px;
+                        padding-top: 7px;
+                        padding-bottom: 7px;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: #555;
+                        }
                     }
                 }
             }
@@ -103,9 +127,12 @@
                 &__regions {
                     &__header {
                         border-radius: 15px 15px 0px 0px;
+                        & > svg {
+                            transform: rotate(270deg);
+                        }
                     }
                     &__list {
-                        
+                        display: flex;
                     }
                 }
             }
