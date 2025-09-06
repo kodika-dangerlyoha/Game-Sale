@@ -135,6 +135,16 @@ function make_editions() {
     // document.getElementsByClassName('editions__grid__edition__info__percent')[0].classList.add('editions__grid__edition__percent_active');
 }
 
+function make_regions_list(selected, str) {
+    let regions_list = document.querySelector('#regions_list');
+    regions_list.innerHTML = '';
+    regions.forEach(e => {
+        if (e.region_id != selected && e.full_title.toLowerCase().includes(str.toLowerCase())) {
+            regions_list.innerHTML += get_region_html(e);
+        }
+    });
+}
+
 function make_desscription() {
     document.querySelector('#description').innerHTML += games[0].description.replace(/<br>/g, '');
     document.querySelector('#systemRequirements').innerHTML += games[0].systemRequirements;

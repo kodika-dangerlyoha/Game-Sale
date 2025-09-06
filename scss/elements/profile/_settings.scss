@@ -96,11 +96,10 @@
                         background-color: rgba(255, 255, 255, .07);
                     }
                 }
-                &__list {
+                &__inner {
+                    display: none;
                     position: relative;
                     z-index: 1;
-                    display: none;
-                    flex-direction: column;
                     width: 100%;
                     border-radius: 0px 0px 15px 15px;
                     @include base.style-main;
@@ -111,14 +110,30 @@
                     padding-right: 7px;
                     padding-left: 7px;
                     animation: open .25s base.$tf-main 1;
-                    &__region {
-                        padding-left: 10px;
-                        padding-top: 7px;
-                        padding-bottom: 7px;
-                        border-radius: 10px;
-                        cursor: pointer;
-                        &:hover {
-                            background-color: #555;
+                    &__search {
+                        & > input {
+                            height: 40px;
+                            font-size: 14px;
+                            border-radius: 10px;
+                            padding-left: 14px;
+                        }
+                        margin-bottom: 5px;
+                    }
+                    &__list {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                        max-height: 210px;
+                        overflow: auto;
+                        &__region {
+                            padding-left: 10px;
+                            padding-top: 7px;
+                            padding-bottom: 7px;
+                            border-radius: 10px;
+                            cursor: pointer;
+                            &:hover {
+                                background-color: #555;
+                            }
                         }
                     }
                 }
@@ -131,13 +146,13 @@
                             transform: rotate(270deg);
                         }
                     }
-                    &__list {
-                        display: flex;
+                    &__inner {
+                        display: block;
                     }
                 }
             }
             &_open {
-                input {
+                input[name="inp-region"] {
                     border-radius: 15px 15px 0px 0px;
                 }
             }

@@ -269,6 +269,10 @@ const get_favorite_game_html = (game, discount) => {
             </div>`
 }
 
+const get_region_html = (region) => {
+    return `<div class="settings__conf__regionInput__regions__inner__list__region" onclick="change_region('${region.full_title}', '${region.region_id}')">${region.full_title}</div>`
+}
+
 
 // ----------------------- notification ---------------------------------
 

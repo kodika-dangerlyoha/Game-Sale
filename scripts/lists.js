@@ -323,3 +323,61 @@ let basketProducts = [
         'oldPrice': 1812,
     },
 ]
+
+let regions = [
+  {
+    'id': 0,
+    'region_id': "RU",
+    'full_title': "RU (Россия)"
+  },
+  {
+    'id': 1,
+    'region_id': "KZ",
+    'full_title': "KZ (Казахстан)"
+  },
+  {
+    'id': 2,
+    'region_id': "HTS",
+    'full_title': "HTS (ХудТрепСтар)"
+  },
+  {
+    'id': 3,
+    'region_id': "LV",
+    'full_title': "LV (Латвия)"
+  },
+  {
+    'id': 4,
+    'region_id': "RO",
+    'full_title': "RO (Румыния)"
+  },
+  {
+    'id': 5,
+    'region_id': "TR",
+    'full_title': "TR (Турция)"
+  },
+  {
+    'id': 6,
+    'region_id': "EN",
+    'full_title': "EN (Англия)"
+  },
+  {
+    'id': 7,
+    'region_id': "RB",
+    'full_title': "RB (Беларусь)"
+  },
+  {
+    'id': 8,
+    'region_id': "SPB",
+    'full_title': "SPB (Санкт-Петербург)"
+  },
+  {
+    'id': 9,
+    'region_id': "KR",
+    'full_title': "KR (Крым)"
+  },
+  {
+    'id': 10,
+    'region_id': "CR",
+    'full_title': "CR (Ronaldo)"
+  }
+]
