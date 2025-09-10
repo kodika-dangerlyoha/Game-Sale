@@ -1,5 +1,6 @@
 .inner {
     padding-top: 100px;
+    margin: auto;
     &_oneSec {
         width: 1400px;
         padding-top: 100px;
@@ -12,5 +13,9 @@
     &_profile {
         width: 1200px;
         margin: auto;
+    }
+    &_main {
+        padding-top: 0;
+        width: 1605px;
     }
 }

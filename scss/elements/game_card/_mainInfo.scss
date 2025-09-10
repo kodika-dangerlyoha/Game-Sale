@@ -203,6 +203,7 @@
         align-self: flex-end;
         border-radius: 20px;
         padding: 20px;
+        padding-top: 12px;
         @include base.style-main_base;
         box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.3);
         &__title {
@@ -260,7 +261,7 @@
                 }
             }
             &__point {
-                @include base.style-main;
+                @include base.style-main_click;
                 border-radius: 13px;
                 padding: 3px 10px;
                 font-size: 14px;

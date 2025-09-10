@@ -119,6 +119,7 @@ label {
 }
 .inner {
   padding-top: 100px;
+  margin: auto;
 }
 .inner_oneSec {
   width: 1400px;
@@ -132,6 +133,10 @@ label {
 .inner_profile {
   width: 1200px;
   margin: auto;
+}
+.inner_main {
+  padding-top: 0;
+  width: 1605px;
 }
 
 .header {
@@ -424,6 +429,170 @@ label {
   transform: translateY(-10px);
   opacity: 0;
   display: none;
+}
+.header__catalog {
+  position: absolute;
+  z-index: 3;
+  top: 85px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  animation: open 0.5s cubic-bezier(0, 0, 0, 0.75) 1;
+}
+.header__catalog__head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  height: 45px;
+  padding-left: 15px;
+  border-radius: 10px;
+}
+.header__catalog__head__title {
+  font-weight: 600;
+}
+.header__catalog__head__more {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
+  cursor: pointer;
+  padding-right: 15px;
+  padding-left: 15px;
+  transition: 0.15s;
+}
+.header__catalog__head__more:hover {
+  opacity: 1;
+}
+.header__catalog__navs {
+  display: flex;
+  gap: 30px;
+}
+.header__catalog__navs__genres {
+  width: 50%;
+}
+.header__catalog__navs__genres__list {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, minmax(0px, 1fr));
+}
+.header__catalog__navs__genres__list__genre {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 5px;
+  overflow: hidden;
+}
+.header__catalog__navs__genres__list__genre:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.header__catalog__navs__genres__list__genre:active {
+  transform: scale(0.95);
+}
+.header__catalog__navs__genres__list__genre__icon {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+}
+.header__catalog__navs__genres__list__genre__icon > img {
+  height: 100%;
+}
+.header__catalog__navs__genres__list__genre__title {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+.header__catalog__navs__genres__list__genre:hover .header__catalog__navs__indicator {
+  transition: 1s;
+  width: 100%;
+}
+.header__catalog__navs__authors {
+  width: 50%;
+}
+.header__catalog__navs__authors__list {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(5, minmax(0px, 1fr));
+}
+.header__catalog__navs__authors__list__author {
+  position: relative;
+  height: 104px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.header__catalog__navs__authors__list__author:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.header__catalog__navs__authors__list__author:active {
+  transform: scale(0.95);
+}
+.header__catalog__navs__authors__list__author__img {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 50px;
+}
+.header__catalog__navs__authors__list__author__img > img {
+  max-height: 100%;
+  max-width: 100%;
+}
+.header__catalog__navs__authors__list__author__title {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+.header__catalog__navs__authors__list__author:hover .header__catalog__navs__indicator {
+  transition: 1s;
+  width: 100%;
+}
+.header__catalog__navs__indicator {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  z-index: 1;
+  background-color: rgb(1, 162, 255);
+  opacity: 0.3;
+  transition-timing-function: cubic-bezier(0, 0, 0, 0.75);
+}
+.header__catalog_open {
+  display: block;
+}
+.header_open .header__bg {
+  opacity: 1;
+  bottom: -313px;
 }
 
 .footer {
@@ -891,13 +1060,12 @@ label {
 .blockButtonMore {
   display: flex;
   justify-content: end;
-  margin-top: 30px;
 }
 .blockButtonMore__button {
   display: flex;
   align-items: center;
   cursor: pointer;
-  padding: 12px 12px 12px 16px;
+  padding: 10px 10px 10px 14px;
   border-radius: 25px;
   background-color: rgba(255, 255, 255, 0.05);
   background-color: rgba(255, 255, 255, 0.1);
@@ -917,9 +1085,8 @@ label {
 .blockButtonMore__button > span {
   display: block;
   font-family: robotoFlex, sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
-  transform: translateY(-1px);
   transition: 0.2s;
 }
 .blockButtonMore__button > svg {
@@ -934,7 +1101,7 @@ label {
   transform: translateY(1px) translateX(20px);
 }
 .blockButtonMore__button:hover > span {
-  transform: translateY(-1px) translateX(13px);
+  transform: translateX(13px);
 }
 .blockButtonMore__button:active {
   transform: scale(0.95);
@@ -966,7 +1133,7 @@ label {
   position: absolute;
   bottom: 45px;
   right: 175px;
-  z-index: 8;
+  z-index: 15;
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -1216,7 +1383,6 @@ label {
 
 .banner__game {
   box-sizing: border-box;
-  padding: 20px 150px 15px 150px;
 }
 .banner__game__imgBlock {
   width: 100%;
@@ -1230,6 +1396,8 @@ label {
   display: block;
 }
 .banner__game__interaction {
+  position: relative;
+  z-index: 3;
   transform: translateY(-100%);
   padding-left: 25px;
   padding-bottom: 25px;
@@ -1261,16 +1429,17 @@ label {
   display: flex;
   justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   padding: 15px;
   width: 350px;
   position: relative;
   z-index: 3;
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
 }
 .banner__game__interaction__info__shopInfo__buttons {
   display: flex;
@@ -1280,12 +1449,14 @@ label {
   width: 55px;
   height: 55px;
   padding: 12px;
-  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   transition: 0.15s;
   cursor: pointer;
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
 }
 .banner__game__interaction__info__shopInfo__buttons__button > img {
   width: 100%;
@@ -1293,16 +1464,10 @@ label {
 }
 .banner__game__interaction__info__shopInfo__buttons__button:hover {
   background-color: rgba(255, 255, 255, 0.2);
-}
-.banner__game__interaction__info__shopInfo__buttons__button:hover img {
-  animation: header_nav_hover 0.25s ease-out 1;
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 .banner__game__interaction__info__shopInfo__buttons__button:active {
   transform: scale(0.95);
-}
-.banner__game__interaction__info__shopInfo__buttons__button:hover {
-  box-shadow: inset 0px -30px 30px -30px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
 }
 .banner__game__interaction__info__shopInfo__priceTag {
   display: flex;
@@ -1326,15 +1491,15 @@ label {
   text-decoration: line-through;
 }
 .banner__game__interaction__info__shopInfo__priceTag__discount {
-  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   height: 100%;
   font-size: 22px;
   font-weight: 500;
   padding-left: 15px;
   padding-right: 15px;
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
 }
 .banner__game__interaction__info__shopInfo_dark {
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -1346,6 +1511,31 @@ label {
 }
 .banner__game__interaction__info__shopInfo_dark .banner__game__interaction__info__shopInfo__priceTag__discount {
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+.games {
+  width: 1605px;
+  margin: auto;
+  margin-bottom: 70px;
+}
+.games__head {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.games__head > h2 {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: robotoFlex, sans-serif;
+}
+.games__grid {
+  display: grid;
+  grid-gap: 35px;
+  grid-template-columns: repeat(4, minmax(0px, 1fr));
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
 }
 
 .offers {
@@ -1835,6 +2025,7 @@ label {
   align-self: flex-end;
   border-radius: 20px;
   padding: 20px;
+  padding-top: 12px;
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
@@ -1901,11 +2092,20 @@ label {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
   border-radius: 13px;
   padding: 3px 10px;
   font-size: 14px;
   text-align: center;
   cursor: pointer;
+}
+.mainInfo__info__category__point:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.mainInfo__info__category__point:active {
+  transform: scale(0.95);
 }
 .mainInfo__info__category__point > span {
   color: rgb(200, 200, 200);

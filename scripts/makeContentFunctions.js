@@ -63,11 +63,11 @@ function makeOffers_index() {
 
     // records.filter(({gender}) => gender === 'BOYS').reduce((sum, record) => sum + record.value)
 
-    document.querySelector('#offers #offers_grid_new').innerHTML += games_list.filter(({status}) => status == "new").reduce(
+    document.querySelector('#offers_grid_new').innerHTML += games_list.filter(({status}) => status == "new").reduce(
         (summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
-    document.querySelector('#offers #offers_grid_expected').innerHTML += games_list.filter(({status}) => status == "expected").reduce(
+    document.querySelector('#offers_grid_expected').innerHTML += games_list.filter(({status}) => status == "expected").reduce(
         (summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");;
-    document.querySelector('#offers #offers_grid_ourChoice').innerHTML += games_list.filter(({status}) => status == "ourChoice").reduce(
+    document.querySelector('#offers_grid_ourChoice').innerHTML += games_list.filter(({status}) => status == "ourChoice").reduce(
         (summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");;
 }
 
