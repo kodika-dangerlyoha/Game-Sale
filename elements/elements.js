@@ -5,8 +5,16 @@ const get_horizont_game_html = (game, discount) => {
                     <div class="gameH__banner__imgBlock"><img src="${game.imgH}" alt="${game.name}"></div>
                     <div class="gameH__banner__videoBlock">
                         <video src="${game.treilerSrc}" autoplay loop muted>
-                    </div>   
-                    <div class="gameH__banner__discount txt">${discount}%</div>
+                    </div>
+                    <div class="gameH__banner__info txt">
+                        <div class="gameH__banner__info__left">
+                            <div class="gameH__banner__info__point gameH__banner__info__point_more gameH__banner__info__point_preOrder"><span>Предзаказ</span>03.04.2026</div>
+                        </div>
+                        <div class="gameH__banner__info__right">
+                            <div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>
+                            <div class="gameH__banner__info__point gameH__banner__info__point_discount">${discount}%</div>
+                        </div>
+                    </div>
                 </a>
                 <div class="gameH__info">
                     <div class="gameH__info__buttons">
@@ -74,8 +82,8 @@ const get_banner_html = (count, game_info, carousel_banner_list, discount) => {
                             </div>
                             <div class="carousel__banner__interaction__info__shopInfo__priceTag">
                                 <div class="carousel__banner__interaction__info__shopInfo__priceTag__prices">
-                                    <div class="carousel__banner__interaction__info__shopInfo__priceTag__prices__newPrice txt">${game_info.newPrice} ₽</div>
                                     <div class="carousel__banner__interaction__info__shopInfo__priceTag__prices__oldPrice txt">${game_info.oldPrice} ₽</div>
+                                    <div class="carousel__banner__interaction__info__shopInfo__priceTag__prices__newPrice txt">${game_info.newPrice} ₽</div>
                                 </div>
                                 <div class="carousel__banner__interaction__info__shopInfo__priceTag__discount flex-center txt">${discount}%</div>
                             </div>
@@ -87,7 +95,7 @@ const get_banner_html = (count, game_info, carousel_banner_list, discount) => {
 
 const get_banner_bg_html = (count, game_info) => {
     return `<div class="carousel__bg ${count === 0 ? 'carousel__bg_active' : ''}" order = "${count}">
-                <img src="${game_info.bigBanner}" alt="">
+                <img src="${game_info.bigBanner_blur}" alt="">
             </div>`
 }
 

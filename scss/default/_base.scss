@@ -3,6 +3,9 @@
 $clr-main_body: rgba(39, 39, 39, 1);
 
 $clr-blue_light: rgba(1, 162, 255, 1);
+$clr-blue_light_transparent: rgba(1, 162, 255, .4);
+$clr-blue_light_hover: rgba(1, 162, 255, .25);
+$clr-blue_light_hover_border: rgba(1, 162, 255, .6);
 $clr-blue_dark: rgba(1, 74, 255, 1);
 $clr-red: rgb(204, 30, 30);
 $clr-red_close: rgb(170, 22, 22);
@@ -140,7 +143,6 @@ $shadow_light: inset -1px 0 0 0 rgba(255, 255, 255, .25);
 }
 
 @mixin style-main_base {
-    // background: linear-gradient(to top, rgba(255, 255, 255, .15), rgba(255, 255, 255, .05));
     background-color: rgba(50, 50, 50, 0.75);
     border: 1px solid rgba(255, 255, 255, .15);
     box-shadow: 0 5px 15px -2px rgba(0, 0, 0, .2);
@@ -149,13 +151,13 @@ $shadow_light: inset -1px 0 0 0 rgba(255, 255, 255, .25);
 }
 
 @mixin style-main_active {
-    transform: scale(.95);
+    background-color: $clr-blue_light_transparent;
+    border: 1px solid $clr-blue_light;
 }
 
 @mixin style-main_hover {
-    // background: linear-gradient(to top, rgba(255, 255, 255, .15), rgba(255, 255, 255, .15));
-    background-color: rgba(255, 255, 255, .2);
-    border: 1px solid rgba(255, 255, 255, .25);
+    background-color: $clr-blue_light_hover;
+    border: 1px solid $clr-blue_light_hover_border;
 }
 
 @mixin style-main_click {
@@ -167,7 +169,7 @@ $shadow_light: inset -1px 0 0 0 rgba(255, 255, 255, .25);
         @include style-main_hover;
     }
     &:active {
-        @include style-main_active;
+        transform: scale(.95)
     }
 }
 
@@ -217,9 +219,9 @@ $shadow_light: inset -1px 0 0 0 rgba(255, 255, 255, .25);
 // ~ Percent block
 
 @mixin style-percentBlock {
-    background-color: rgba(255, 255, 255, .05);
+    background-color: $clr-blue_light_transparent;
     border: 1px solid $clr-blue_light;
-    box-shadow: inset 0 -5px 15px -5px $clr-blue_light;
+    // box-shadow: inset 0 -5px 15px -5px $clr-blue_light;
 }
 
 

@@ -53,14 +53,12 @@ function scroll_carousel(bool) {
             html_elem.style = count < 0 ? 
                 `z-index: ${carusel_items.length + 2};
                 transform: scale(1.1) translateX(80%);
-                filter: blur(10px);
                 opacity: 0;
                 visibility: hidden;` :
 
                 `${count === 0 ? 'margin-left: 0' : ''};
                 z-index: ${carousel_banner_list.length - count + 1};
                 transform: scale(${1 - count * 0.05});
-                filter: blur(${count}px);
                 }`
             html_elem.getElementsByTagName('a')[0].style = `${count === 0 ? 'display: block' : 'display: none'}`;
 
@@ -81,14 +79,12 @@ function scroll_carousel(bool) {
             html_elem.style = count < 0 ? 
                 `z-index: ${carusel_items.length + 2};
                 transform: scale(1.1) translateX(80%);
-                filter: blur(10px);
                 opacity: 0;
                 visibility: hidden;` :
 
                 `${count === 0 ? 'margin-left: 0' : ''};
                 z-index: ${carousel_banner_list.length - count + 1};
                 transform: scale(${1 - count * 0.05});
-                filter: blur(${count}px);
                 }`
             html_elem.getElementsByTagName('a')[0].style = `${count === 0 ? 'display: block' : 'display: none'}`;
 

@@ -101,6 +101,20 @@ label {
     transform: translateY(0px);
   }
 }
+@keyframes open_catalog_header {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  30% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 @keyframes open_blackout {
   0% {
     opacity: 0;
@@ -133,6 +147,7 @@ label {
 .inner_profile {
   width: 1200px;
   margin: auto;
+  padding-top: 120px;
 }
 .inner_main {
   padding-top: 0;
@@ -164,6 +179,9 @@ label {
   opacity: 0;
   transition: 0.5s;
   overflow: hidden;
+}
+.header__bg_profile {
+  opacity: 1;
 }
 .header__left {
   width: 100%;
@@ -234,13 +252,12 @@ label {
   transition: 0.2s;
 }
 .header__searchBlock > input:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .header__searchBlock > input:focus {
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: inset 0px -30px 30px -30px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
 }
 .header__searchBlock__button {
   padding: 12px;
@@ -278,8 +295,8 @@ label {
   cursor: pointer;
 }
 .header__buttonCatalog:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .header__buttonCatalog:active {
   transform: scale(0.95);
@@ -288,10 +305,12 @@ label {
   transform: scale(0.95);
 }
 .header__buttonCatalog_active {
-  transform: scale(0.95);
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
 }
 .header__buttonCatalog_active:hover {
-  transform: scale(0.95);
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
 }
 .header__nav {
   position: relative;
@@ -308,7 +327,6 @@ label {
   box-sizing: border-box;
   padding: 8px;
   border-radius: 50%;
-  background-color: transparent;
   transition: 0.15s;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.1);
@@ -318,8 +336,8 @@ label {
   cursor: pointer;
 }
 .header__nav__button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .header__nav__button:active {
   transform: scale(0.95);
@@ -328,14 +346,13 @@ label {
   width: 100%;
   filter: invert(1);
 }
-.header__nav__button:active {
-  transform: scale(0.95);
-}
 .header__nav__button_active {
-  background-color: rgb(1, 162, 255);
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
 }
 .header__nav__button_active:hover {
-  background-color: rgb(170, 22, 22);
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
 }
 .header__catalogNavs {
   position: absolute;
@@ -371,8 +388,8 @@ label {
   cursor: pointer;
 }
 .header__catalogNavs__head:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .header__catalogNavs__head:active {
   transform: scale(0.95);
@@ -419,8 +436,8 @@ label {
   margin-right: 7px;
 }
 .header__catalogNavs__grid__nav:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .header__catalogNavs__grid__nav:active {
   transform: scale(0.95);
@@ -438,7 +455,7 @@ label {
   right: 0;
   bottom: 0;
   display: none;
-  animation: open 0.5s cubic-bezier(0, 0, 0, 0.75) 1;
+  animation: open_catalog_header 0.6s cubic-bezier(0, 0, 0, 0.75) 1;
 }
 .header__catalog__head {
   width: 100%;
@@ -497,8 +514,8 @@ label {
   overflow: hidden;
 }
 .header__catalog__navs__genres__list__genre:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .header__catalog__navs__genres__list__genre:active {
   transform: scale(0.95);
@@ -548,8 +565,8 @@ label {
   overflow: hidden;
 }
 .header__catalog__navs__authors__list__author:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .header__catalog__navs__authors__list__author:active {
   transform: scale(0.95);
@@ -583,8 +600,7 @@ label {
   left: 0;
   width: 0%;
   z-index: 1;
-  background-color: rgb(1, 162, 255);
-  opacity: 0.3;
+  background-color: rgba(1, 162, 255, 0.4);
   transition-timing-function: cubic-bezier(0, 0, 0, 0.75);
 }
 .header__catalog_open {
@@ -665,8 +681,8 @@ label {
   background-color: rgba(255, 255, 255, 0.05);
 }
 .footer__head > button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .footer__head > button:active {
   transform: scale(0.95);
@@ -708,8 +724,8 @@ label {
   transition: 0.2s;
 }
 .footer__body__links__contacts a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .footer__body__links__contacts a:active {
   transform: scale(0.95);
@@ -807,9 +823,8 @@ label {
   font-family: robotoFlex, sans-serif;
   font-size: 15px;
   font-weight: 700;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(1, 162, 255, 0.4);
   border: 1px solid rgb(1, 162, 255);
-  box-shadow: inset 0 -5px 15px -5px rgb(1, 162, 255);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
@@ -868,8 +883,8 @@ label {
   filter: invert(1);
 }
 .gameV__info__buttons__button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .gameV__info__buttons__button:active {
   transform: scale(0.95);
@@ -960,11 +975,51 @@ label {
   font-family: robotoFlex, sans-serif;
   font-size: 15px;
   font-weight: 700;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(1, 162, 255, 0.4);
   border: 1px solid rgb(1, 162, 255);
-  box-shadow: inset 0 -5px 15px -5px rgb(1, 162, 255);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+}
+.gameH__banner__info {
+  position: absolute;
+  z-index: 4;
+  bottom: 8px;
+  right: 8px;
+  left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.15s;
+}
+.gameH__banner__info__right {
+  display: flex;
+  justify-content: end;
+  gap: 5px;
+}
+.gameH__banner__info__point {
+  padding: 5px 8px 5px 8px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: 0.15s;
+  opacity: 1;
+  font-family: robotoFlex, sans-serif;
+  font-size: 15px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.gameH__banner__info__point_discount {
+  font-weight: 700;
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
+}
+.gameH__banner__info__point_preOrder > span {
+  font-weight: 700;
+  margin-right: 7px;
+}
+.gameH__banner__info__point_more {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
 }
 .gameH__info {
   position: relative;
@@ -1021,8 +1076,8 @@ label {
   filter: invert(1);
 }
 .gameH__info__buttons__button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .gameH__info__buttons__button:active {
   transform: scale(0.95);
@@ -1030,7 +1085,7 @@ label {
 .gameH:hover .gameH__banner {
   transform: scale(1.05);
 }
-.gameH:hover .gameH__banner__discount {
+.gameH:hover .gameH__banner__info {
   opacity: 0;
 }
 .gameH:hover .gameH__banner__videoBlock {
@@ -1076,8 +1131,8 @@ label {
   transition: 0.2s;
 }
 .blockButtonMore__button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .blockButtonMore__button:active {
   transform: scale(0.95);
@@ -1120,7 +1175,6 @@ label {
   left: 0;
   transition: 1s;
   opacity: 0;
-  filter: blur(50px);
 }
 .carousel__bg > img {
   width: 100%;
@@ -1163,8 +1217,8 @@ label {
   transform: rotate(180deg) translateX(2px);
 }
 .carousel__buttons__button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .carousel__buttons__button:active {
   transform: scale(0.95);
@@ -1178,6 +1232,8 @@ label {
 }
 .carousel__buttons__button_disactive:hover {
   background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
 }
 .carousel__buttons__button_disactive:active {
   transform: scale(1);
@@ -1299,8 +1355,8 @@ label {
   filter: invert(1);
 }
 .carousel__banner__interaction__info__shopInfo__buttons__button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .carousel__banner__interaction__info__shopInfo__buttons__button:active {
   transform: scale(0.95);
@@ -1317,8 +1373,9 @@ label {
   gap: 0px;
 }
 .carousel__banner__interaction__info__shopInfo__priceTag__prices__newPrice {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 700;
+  margin-top: -2px;
 }
 .carousel__banner__interaction__info__shopInfo__priceTag__prices__oldPrice {
   font-size: 16px;
@@ -1463,8 +1520,8 @@ label {
   filter: invert(1);
 }
 .banner__game__interaction__info__shopInfo__buttons__button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .banner__game__interaction__info__shopInfo__buttons__button:active {
   transform: scale(0.95);
@@ -1516,7 +1573,7 @@ label {
 .games {
   width: 1605px;
   margin: auto;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 .games__head {
   margin-bottom: 20px;
@@ -1562,8 +1619,8 @@ label {
   transition: 0.2s;
 }
 .offers__head__nav:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .offers__head__nav:active {
   transform: scale(0.95);
@@ -1574,10 +1631,12 @@ label {
   cursor: pointer;
 }
 .offers__head__nav_active {
-  transform: scale(0.95);
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
 }
 .offers__head__nav_active:hover {
-  transform: scale(0.95);
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
 }
 .offers__head__nav:active {
   transform: scale(0.95);
@@ -1702,8 +1761,8 @@ label {
   cursor: pointer;
 }
 .miniGameCard__right__button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .miniGameCard__right__button:active {
   transform: scale(0.95);
@@ -2101,8 +2160,8 @@ label {
   cursor: pointer;
 }
 .mainInfo__info__category__point:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .mainInfo__info__category__point:active {
   transform: scale(0.95);
@@ -2177,8 +2236,8 @@ label {
   cursor: pointer;
 }
 .mainInfo__info__interactions__button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .mainInfo__info__interactions__button:active {
   transform: scale(0.95);
@@ -2335,9 +2394,8 @@ label {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(1, 162, 255, 0.4);
   border: 1px solid rgb(1, 162, 255);
-  box-shadow: inset 0 -5px 15px -5px rgb(1, 162, 255);
   font-size: 16px;
   font-weight: 600;
   transform: translateY(-1px);
@@ -2356,7 +2414,8 @@ label {
 }
 .editions__grid__edition_active .editions__grid__edition__info {
   cursor: default;
-  transform: scale(0.95);
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
 }
 .editions__grid__edition_active .editions__grid__edition__info * {
   cursor: default;
@@ -2616,8 +2675,8 @@ label {
   cursor: pointer;
 }
 .profile__right > button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .profile__right > button:active {
   transform: scale(0.95);
@@ -2747,8 +2806,8 @@ label {
   transition: 0.1s;
 }
 .settings__conf input:focus {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .settings__conf__regionInput {
   height: 50px;
@@ -2893,8 +2952,8 @@ label {
   cursor: pointer;
 }
 .settings__buttons__button_back:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .settings__buttons__button_back:active {
   transform: scale(0.95);
@@ -2921,8 +2980,8 @@ label {
   transition: 0.2s;
 }
 .more__header__nav:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .more__header__nav:active {
   transform: scale(0.95);
@@ -2933,10 +2992,12 @@ label {
   cursor: pointer;
 }
 .more__header__nav_active {
-  transform: scale(0.95);
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
 }
 .more__header__nav_active:hover {
-  transform: scale(0.95);
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
 }
 .more__header__nav:active {
   transform: scale(0.95);

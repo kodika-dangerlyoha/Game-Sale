@@ -21,6 +21,9 @@
         opacity: 0;
         transition: 0.5s;
         overflow: hidden;
+        &_profile {
+            opacity: 1;
+        }
     }
     &__left {
         width: 100%;
@@ -91,14 +94,9 @@
             font-size: 16px;
             color: rgb(255, 255, 255);
             transition: 0.15s;
-            // &:hover {
-            //     background-color: rgba(186, 186, 186, 70%);
-            // }
             @include base.style-main_mouse;
             &:focus {
-                //! background-color: rgba(186, 186, 186, .7);
-                background-color: rgba(255, 255, 255, .2);
-                @include base.style-glass_hover_style;
+                @include base.style-main_active;
             }
         }
         &__button {
@@ -173,31 +171,17 @@
             box-sizing: border-box;
             padding: 8px;
             border-radius: 50%;
-            background-color: transparent;
-            // background-color: rgba(186, 186, 186, 50%);
-            // border: 1px solid rgba(186, 186, 186, 0.6);
             transition: 0.15s;
             cursor: pointer;
-            // background-color: rgba(255, 255, 255, .1);
             @include base.style-main_click;
             & > img {
                 width: 100%;
                 filter: invert(1);
-                // transition: 0.25s;
-            }
-            // &:hover {
-            //     background-color: base.$clr-blue_light;
-            // }
-            // &:hover & > img {
-            //     animation: header_nav_hover 0.25s ease-out 1;
-            // }
-            &:active {
-                transform: scale(0.95);
             }
             &_active {
-                background-color: base.$clr-blue_light;
+                @include base.style-main_active;
                 &:hover {
-                    background-color: base.$clr-red_close;
+                    @include base.style-main_active;
                 }
             }
         }
@@ -284,7 +268,7 @@
         right: 0;
         bottom: 0;
         display: none;
-        animation: open .5s base.$tf-main 1;
+        animation: open_catalog_header .6s base.$tf-main 1;
         &__head {
             width: 100%;
             display: flex;
@@ -400,8 +384,8 @@
                 width: 0%;
                 z-index: 1;
                 // background-color: rgba(255, 255, 255, .07);
-                background-color: base.$clr-blue_light;
-                opacity: .3;
+                background-color: base.$clr-blue_light_transparent;
+                // opacity: .3;
                 transition-timing-function: base.$tf-main;
             }
         }

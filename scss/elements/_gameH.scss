@@ -77,6 +77,49 @@
             -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
         }
+        &__info {
+            position: absolute;
+            z-index: 4;
+            bottom: 8px;
+            right: 8px;
+            left: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: .15s;
+            &__left {
+
+            }
+            &__right {
+                display: flex;
+                justify-content: end;
+                gap: 5px;
+            }
+            &__point {
+                padding: 5px 8px 5px 8px;
+                border-radius: 7px;
+                cursor: pointer;
+                transition: .15s;
+                opacity: 1;
+                font-family: base.$fnt-all;
+                font-size: 15px;
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+                &_discount {
+                    font-weight: 700;
+                    @include base.style-percentBlock;
+                }
+                &_preOrder {
+                    & > span {
+                        font-weight: 700;
+                        margin-right: 7px;
+                    }
+                }
+                &_more {
+                    @include base.style-main;
+                }
+            }
+        }
     }
     &__info {
         position: relative;
@@ -162,7 +205,7 @@
     &:hover &{
         &__banner {
             transform: scale(1.05);
-            &__discount {
+            &__info {
                 opacity: 0;
             }
             &__videoBlock {
