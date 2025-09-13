@@ -3,7 +3,6 @@ let old_category = "";
 
 function get_games_for_header_games(genre) {
     let array = games_list.filter(game => game.genres?.includes(genre)).slice(0, 5);
-    console.log(array);
     return array;
 }
 
