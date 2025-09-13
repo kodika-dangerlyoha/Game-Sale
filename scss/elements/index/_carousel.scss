@@ -89,19 +89,9 @@
             height: 100%;
             border-radius: 25px;
             position: relative;
-            // border: 2px solid rgba(255, 255, 255, 0.1);
-            // box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
             overflow: hidden;
-            &__glass {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                right: 0;
-                left: 0;
-                z-index: 2;
-                border-radius: 25px;
-                @include base.style-glass_banner;
-            }
             & > img {
                 position: relative;
                 z-index: 1;

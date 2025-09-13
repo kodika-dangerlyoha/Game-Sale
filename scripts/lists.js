@@ -122,6 +122,7 @@ let games = [
             'link': ""
           },
         ],
+        'genres': ["shooter", "horror"],
         'status': "new",
         'carousel': true,
     },
@@ -136,6 +137,7 @@ let games = [
         'bigBanner_blur': "img/banners/blur/b3.png",
         'newPrice': 500,
         'oldPrice': 799,
+        'genres': ["shooter", "g3"],
         'status': "ourChoice",
         'carousel': true,
     },
@@ -150,6 +152,7 @@ let games = [
         'bigBanner_blur': "img/banners/blur/b5.png",
         'newPrice': 679,
         'oldPrice': 800,
+        'genres': ["g5", "g3"],
         'status': "expected",
         'carousel': true,
     },
@@ -164,6 +167,7 @@ let games = [
         'bigBanner_blur': "img/banners/blur/image 10.png",
         'newPrice': 120,
         'oldPrice': 350,
+        'genres': ["g7", "g6"],
         'status': "ourChoice",
         'carousel': true,
     },
@@ -177,6 +181,7 @@ let games = [
         'bigBanner': "",
         'newPrice': 1255,
         'oldPrice': 1600,
+        'genres': ["g7", "g6", "g1"],
         'status': "new",
     },
     {
@@ -189,6 +194,7 @@ let games = [
         'bigBanner': "",
         'newPrice': 3678,
         'oldPrice': 4000,
+        'genres': ["g7", "g6", "g1"],
         'status': "new",
     },
     {
@@ -201,6 +207,7 @@ let games = [
         'bigBanner': "",
         'newPrice': 7952,
         'oldPrice': 8812,
+        'genres': ["g7", "g6", "g1"],
         'status': "ourChoice",
     },
     {
@@ -213,6 +220,7 @@ let games = [
         'bigBanner': "",
         'newPrice': 812,
         'oldPrice': 1812,
+        'genres': ["g7", "g6", "g1"],
         'status': "ourChoice",
     },
     {
@@ -225,6 +233,7 @@ let games = [
         'bigBanner': "",
         'newPrice': 4599,
         'oldPrice': 5120,
+        'genres': ["g6", "g3", "g2"],
         'status': "expected",
     },
     {
@@ -237,6 +246,7 @@ let games = [
         'bigBanner': "",
         'newPrice': 6700,
         'oldPrice': 7000,
+        'genres': ["g7", "g6", "g1"],
         'status': "new",
     },
     {
@@ -249,6 +259,7 @@ let games = [
         'bigBanner': "",
         'newPrice': 4355,
         'oldPrice': 4500,
+        'genres': ["g7", "g6", "g1"],
         'status': "expected",
     },
     {
@@ -261,6 +272,7 @@ let games = [
         'bigBanner': "",
         'newPrice': 2344,
         'oldPrice': 3050,
+        'genres': ["shooter", "g3"],
         'status': "new",
     },
     {
@@ -274,6 +286,7 @@ let games = [
         'bigBanner_blur': "img/banners/blur/b4.png",
         'newPrice': 500,
         'oldPrice': 799,
+        'genres': ["shooter", "g3"],
         'status': "ourChoice",
         'carousel': true,
     },
@@ -288,6 +301,7 @@ let games = [
         'bigBanner_blur': "img/banners/blur/b5.png",
         'newPrice': 679,
         'oldPrice': 800,
+        'genres': ["shooter", "g3"],
         'status': "expected",
         'carousel': true,
     },
@@ -302,6 +316,7 @@ let games = [
         'bigBanner_blur': "img/banners/blur/image 10.png",
         'newPrice': 120,
         'oldPrice': 350,
+        'genres': ["shooter", "g3"],
         'status': "ourChoice",
         'carousel': true,
     },
@@ -315,6 +330,7 @@ let games = [
         'bigBanner': "",
         'newPrice': 1255,
         'oldPrice': 1600,
+        'genres': ["shooter", "g3"],
         'status': "new",
     },
     {
@@ -327,6 +343,7 @@ let games = [
         'bigBanner': "",
         'newPrice': 3678,
         'oldPrice': 4000,
+        'genres': ["shooter", "g3"],
         'status': "new",
     },
     {
@@ -339,6 +356,7 @@ let games = [
         'bigBanner': "",
         'newPrice': 7952,
         'oldPrice': 8812,
+        'genres': ["shooter", "g3"],
         'status': "ourChoice",
     },
     {
@@ -351,6 +369,7 @@ let games = [
         'bigBanner': "",
         'newPrice': 812,
         'oldPrice': 1812,
+        'genres': ["g13", "g3"],
         'status': "ourChoice",
     },
     {
@@ -363,6 +382,7 @@ let games = [
         'bigBanner': "",
         'newPrice': 4599,
         'oldPrice': 5120,
+        'genres': ["shooter", "g3"],
         'status': "expected",
     },
     {
@@ -375,6 +395,7 @@ let games = [
         'bigBanner': "",
         'newPrice': 6700,
         'oldPrice': 7000,
+        'genres': ["g12", "g3"],
         'status': "expected",
     },
     {
@@ -387,6 +408,7 @@ let games = [
         'bigBanner': "",
         'newPrice': 4355,
         'oldPrice': 4500,
+        'genres': ["g10", "g3"],
         'status': "expected",
     },
     {
@@ -399,6 +421,7 @@ let games = [
         'bigBanner': "",
         'newPrice': 2344,
         'oldPrice': 3050,
+        'genres': ["g11", "g3"],
         'status': "new",
     },
     {
@@ -411,6 +434,7 @@ let games = [
         'bigBanner': "",
         'newPrice': 2344,
         'oldPrice': 3050,
+        'genres': ["shooter", "g9"],
         'status': "expected",
     },
 ]

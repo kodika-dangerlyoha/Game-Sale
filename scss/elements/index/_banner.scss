@@ -2,20 +2,23 @@
 
 .banner {
     &__game {
+        position: relative;
         box-sizing: border-box;
-        // padding: 20px 150px 15px 150px;
+        overflow: hidden;
         &__imgBlock {
             width: 100%;
             border-radius: 25px;
             border: 2px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
             overflow: hidden;
+            position: relative;
+            z-index: 2;
             & > img {
                 width: 100%;
                 display: block;
             }
         }
-        &__interaction {
+        &__interaction { 
             position: relative;
             z-index: 3;
             transform: translateY(-100%);
@@ -24,15 +27,6 @@
             margin-bottom: -159px;
             &__info {
                 display: inline-block;
-                &__link {
-                    position: absolute;
-                    top: -1000px;
-                    bottom: 0;
-                    right: 0;
-                    left: 0;
-                    z-index: 2;
-                    display: block;
-                }
                 &__title {
                     font-family: robotoFlex;
                     font-size: 28px;
@@ -42,6 +36,15 @@
                     margin-bottom: 10px;
                     position: relative;
                     z-index: 1;
+                }
+                &__link {
+                    position: absolute;
+                    top: -1000px;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    z-index: 2;
+                    display: block;
                 }
                 &__shopInfo {
                     display: flex;

@@ -217,7 +217,6 @@ const get_basket_game_html = (game) => {
 const get_carousel_banner_html = (game, discount, cout) => {
     return `<div class="carousel__banner carousel__banner_${cout}">
                 <div class="carousel__banner__imgBlock">
-                    <div class="carousel__banner__imgBlock__glass"></div>
                     <img src="${game.bigBanner}" alt="">
                 </div>
                 <div class="carousel__banner__interaction">
