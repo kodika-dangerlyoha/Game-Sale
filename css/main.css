@@ -444,25 +444,6 @@ label {
   z-index: 2;
   cursor: pointer;
 }
-.header__catalog__navs__genres__list__genre_active {
-  background-color: rgba(1, 162, 255, 0.4);
-  border: 1px solid rgb(1, 162, 255);
-}
-.header__catalog__navs__genres__list__genre_active .header__catalog__navs__indicator {
-  opacity: 0;
-}
-.header__catalog__navs__genres__list__genre:hover .header__catalog__navs__indicator {
-  transition: 1s;
-  width: 100%;
-}
-.header__catalog__navs__genres__list__genre_active:hover {
-  background-color: rgba(1, 162, 255, 0.4);
-  border: 1px solid rgb(1, 162, 255);
-}
-.header__catalog__navs__genres__list__genre_active:hover .header__catalog__navs__indicator {
-  width: 100%;
-  opacity: 0;
-}
 .header__catalog__navs__authors {
   width: 50%;
 }
@@ -512,9 +493,24 @@ label {
   z-index: 2;
   cursor: pointer;
 }
-.header__catalog__navs__authors__list__author:hover .header__catalog__navs__indicator {
+.header__catalog__navs__nav_active {
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
+}
+.header__catalog__navs__nav_active .header__catalog__navs__indicator {
+  opacity: 0;
+}
+.header__catalog__navs__nav:hover .header__catalog__navs__indicator {
   transition: 1s;
   width: 100%;
+}
+.header__catalog__navs__nav_active:hover {
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
+}
+.header__catalog__navs__nav_active:hover .header__catalog__navs__indicator {
+  width: 100%;
+  opacity: 0;
 }
 .header__catalog__navs__indicator {
   position: absolute;
@@ -847,6 +843,7 @@ label {
   cursor: pointer;
   overflow: hidden;
   animation-timing-function: cubic-bezier(0, 0, 0, 0.75);
+  box-shadow: 0 0 15px rgb(25, 25, 25);
 }
 .gameH__banner__glass {
   position: absolute;
@@ -918,7 +915,6 @@ label {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: 0.15s;
 }
 .gameH__banner__info__right {
   display: flex;
@@ -929,12 +925,12 @@ label {
   padding: 5px 8px;
   border-radius: 7px;
   cursor: pointer;
-  transition: 0.15s;
   opacity: 1;
   font-family: robotoFlex, sans-serif;
   font-size: 15px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  transition: 0.15s;
 }
 .gameH__banner__info__point_discount {
   font-weight: 700;
@@ -1021,7 +1017,7 @@ label {
 .gameH:hover .gameH__banner {
   transform: scale(1.05);
 }
-.gameH:hover .gameH__banner__info {
+.gameH:hover .gameH__banner__info__point {
   opacity: 0;
 }
 .gameH:hover .gameH__banner__videoBlock {
@@ -1369,6 +1365,8 @@ label {
   position: relative;
   box-sizing: border-box;
   overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 0 0 15px rgb(25, 25, 25);
 }
 .banner__game__imgBlock {
   width: 100%;

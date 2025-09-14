@@ -1,4 +1,15 @@
 const get_horizont_game_html = (game, discount) => {
+    let preOrder_html = "";
+    let dls_html = "";
+
+    if (game.preOrder != "") {
+        preOrder_html = `<div class="gameH__banner__info__point gameH__banner__info__point_more gameH__banner__info__point_preOrder"><span>Предзаказ</span>${game.preOrder}</div>`;
+    }
+
+    if (game.dls) {
+        dls_html = `<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>`;
+    }
+
     return `<article class = "gameH">
                 <a href = "${game.link}" class="gameH__banner">
                     <div class="gameH__banner__glass"></div>
@@ -8,10 +19,10 @@ const get_horizont_game_html = (game, discount) => {
                     </div>
                     <div class="gameH__banner__info txt">
                         <div class="gameH__banner__info__left">
-                            <div class="gameH__banner__info__point gameH__banner__info__point_more gameH__banner__info__point_preOrder"><span>Предзаказ</span>03.04.2026</div>
+                            ${preOrder_html}
                         </div>
                         <div class="gameH__banner__info__right">
-                            <div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>
+                            ${dls_html}
                             <div class="gameH__banner__info__point gameH__banner__info__point_discount">${discount}%</div>
                         </div>
                     </div>
@@ -34,6 +45,17 @@ const get_horizont_game_html = (game, discount) => {
 };
 
 const get_horizont_game_headerCatalog_html = (game, discount) => {
+    let preOrder_html = "";
+    let dls_html = "";
+
+    if (game.preOrder != "") {
+        preOrder_html = `<div class="gameH__banner__info__point gameH__banner__info__point_more gameH__banner__info__point_preOrder"><span>Предзаказ</span>${game.preOrder}</div>`;
+    }
+
+    if (game.dls) {
+        dls_html = `<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>`;
+    }
+
     return `<article class = "gameH gameH_headerCatalog">
                 <a href = "${game.link}" class="gameH__banner">
                     <div class="gameH__banner__glass"></div>
@@ -43,10 +65,10 @@ const get_horizont_game_headerCatalog_html = (game, discount) => {
                     </div>
                     <div class="gameH__banner__info txt">
                         <div class="gameH__banner__info__left">
-                            <div class="gameH__banner__info__point gameH__banner__info__point_more gameH__banner__info__point_preOrder"><span>Предзаказ</span>03.04.2026</div>
+                            ${preOrder_html}
                         </div>
                         <div class="gameH__banner__info__right">
-                            <div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>
+                            ${dls_html}
                             <div class="gameH__banner__info__point gameH__banner__info__point_discount">${discount}%</div>
                         </div>
                     </div>

@@ -256,23 +256,23 @@
                             z-index: 2;
                             cursor: pointer;
                         }
-                        &_active {
-                            @include base.style-main_active;
-                            .header__catalog__navs__indicator {
-                                opacity: 0;
-                            }
-                        }
-                        &:hover .header__catalog__navs__indicator {
-                            transition: 1s;
-                            width: 100%;
-                        }
-                        &_active:hover{
-                            @include base.style-main_active;
-                            .header__catalog__navs__indicator {
-                                width: 100%;
-                                opacity: 0;
-                            }
-                        }
+                        // &_active {
+                        //     @include base.style-main_active;
+                        //     .header__catalog__navs__indicator {
+                        //         opacity: 0;
+                        //     }
+                        // }
+                        // &:hover .header__catalog__navs__indicator {
+                        //     transition: 1s;
+                        //     width: 100%;
+                        // }
+                        // &_active:hover{
+                        //     @include base.style-main_active;
+                        //     .header__catalog__navs__indicator {
+                        //         width: 100%;
+                        //         opacity: 0;
+                        //     }
+                        // }
                     }
                 }
             }
@@ -309,10 +309,42 @@
                             z-index: 2;
                             cursor: pointer;
                         }   
-                        &:hover .header__catalog__navs__indicator {
-                            transition: 1s;
-                            width: 100%;
-                        }
+                        // &_active {
+                        //     @include base.style-main_active;
+                        //     .header__catalog__navs__indicator {
+                        //         opacity: 0;
+                        //     }
+                        // }
+                        // &:hover .header__catalog__navs__indicator {
+                        //     transition: 1s;
+                        //     width: 100%;
+                        // }
+                        // &_active:hover{
+                        //     @include base.style-main_active;
+                        //     .header__catalog__navs__indicator {
+                        //         width: 100%;
+                        //         opacity: 0;
+                        //     }
+                        // }
+                    }
+                }
+            }
+            &__nav {
+                &_active {
+                    @include base.style-main_active;
+                    .header__catalog__navs__indicator {
+                        opacity: 0;
+                    }
+                }
+                &:hover .header__catalog__navs__indicator {
+                    transition: 1s;
+                    width: 100%;
+                }
+                &_active:hover{
+                    @include base.style-main_active;
+                    .header__catalog__navs__indicator {
+                        width: 100%;
+                        opacity: 0;
                     }
                 }
             }

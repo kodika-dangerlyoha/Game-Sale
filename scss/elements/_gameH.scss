@@ -2,19 +2,17 @@
 
 .gameH {
     display: block;
-    // height: 100%;
     &__banner {
         height: 222px;
         display: block;
-        // width: 100%;
         position: relative;
         border-radius: 15px;
-        // background-image: src('img/banner/img1.jpg');
         background-size: cover;
         transition: 0.15s;
         cursor: pointer;
         overflow: hidden;
         animation-timing-function: base.$tf-main;
+        box-shadow: 0 0 15px rgba(25, 25, 25, 1);
         &__glass {
             position: absolute;
             top: 0;
@@ -85,10 +83,9 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            transition: .15s;
-            &__left {
+            // &__left {
 
-            }
+            // }
             &__right {
                 display: flex;
                 justify-content: end;
@@ -98,12 +95,12 @@
                 padding: 5px 8px;
                 border-radius: 7px;
                 cursor: pointer;
-                transition: .15s;
                 opacity: 1;
                 font-family: base.$fnt-all;
                 font-size: 15px;
                 -webkit-backdrop-filter: blur(10px);
                 backdrop-filter: blur(10px);
+                transition: .15s;
                 &_discount {
                     font-weight: 700;
                     @include base.style-percentBlock;
@@ -185,7 +182,7 @@
     &:hover &{
         &__banner {
             transform: scale(1.05);
-            &__info {
+            &__info__point {
                 opacity: 0;
             }
             &__videoBlock {
