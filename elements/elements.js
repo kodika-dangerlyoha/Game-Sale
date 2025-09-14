@@ -33,6 +33,41 @@ const get_horizont_game_html = (game, discount) => {
             </article>`
 };
 
+const get_horizont_game_headerCatalog_html = (game, discount) => {
+    return `<article class = "gameH gameH_headerCatalog">
+                <a href = "${game.link}" class="gameH__banner">
+                    <div class="gameH__banner__glass"></div>
+                    <div class="gameH__banner__imgBlock"><img src="${game.imgH}" alt="${game.name}"></div>
+                    <div class="gameH__banner__videoBlock">
+                        <video src="${game.treilerSrc}" autoplay loop muted>
+                    </div>
+                    <div class="gameH__banner__info txt">
+                        <div class="gameH__banner__info__left">
+                            <div class="gameH__banner__info__point gameH__banner__info__point_more gameH__banner__info__point_preOrder"><span>Предзаказ</span>03.04.2026</div>
+                        </div>
+                        <div class="gameH__banner__info__right">
+                            <div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>
+                            <div class="gameH__banner__info__point gameH__banner__info__point_discount">${discount}%</div>
+                        </div>
+                    </div>
+                </a>
+                <div class="gameH__info">
+                    <div class="gameH__info__buttons">
+                        <div class="gameH__info__buttons__button">
+                            <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+                            <img src="img/icons/main/basket64.png" alt="">
+                        </div>
+                        <div class="gameH__info__buttons__button">
+                            <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+                            <img src="img/icons/main/like64.png" alt="">
+                        </div>
+                    </div>
+                    <div class="gameH__info__name txt">${game.name}</div>
+                    <div class="gameH__info__price txt">${game.newPrice}₽</div>
+                </div>
+            </article>`
+};
+
 const get_vertical_game_html = (game, discount) => {
     return `<article class = "gameV">
                 <a href = "${game.link}" class="gameV__banner">

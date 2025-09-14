@@ -10,7 +10,7 @@ function make_game_list_header(genre) {
     const game_list_header = get_games_for_header_games(genre);
     let game_list_html = "";
     game_list_header.forEach(e => {
-        game_list_html += get_horizont_game_html(e, Math.round((e.oldPrice - e.newPrice) / e.oldPrice * 100));
+        game_list_html += get_horizont_game_headerCatalog_html(e, Math.round((e.oldPrice - e.newPrice) / e.oldPrice * 100));
     })
     document.querySelector('#catalog_game_list').innerHTML = game_list_html;
 }

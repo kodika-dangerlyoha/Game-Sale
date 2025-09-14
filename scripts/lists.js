@@ -7,7 +7,7 @@ let games = [
         'imgH': "img/banners/farmsim.png",
         'imgW': "img/banners/img1.png",
         'treilerSrc': "video/50.MP4",
-        'bigBanner': "img/banners/big.png",        
+        'bigBanner': "img/banners/big.png",
         'bigBanner_blur': "img/banners/blur/big.png",
         'newPrice': 4599,
         'oldPrice': 5120,
@@ -125,6 +125,8 @@ let games = [
         'genres': ["shooter", "horror"],
         'status': "new",
         'carousel': true,
+        'publisher': "",
+        'developer': ""
     },
     {
         'id': 1,

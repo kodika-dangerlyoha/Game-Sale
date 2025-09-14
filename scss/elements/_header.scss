@@ -186,80 +186,6 @@
             }
         }
     }
-    // &__catalogNavs {
-    //     position: absolute;
-    //     top: 75px;
-    //     left: 0;
-    //     padding: 15px;
-    //     padding-bottom: 5px;
-    //     border-radius: 15px;
-    //     // background: rgba(255, 255, 255, 0.10);
-    //     // -webkit-backdrop-filter: blur(30px);
-    //     // backdrop-filter: blur(30px);
-    //     background-color: rgba(56, 56, 56, 0.8);
-    //     transition: 0.15s;
-    //     box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.1);
-    //     // border: 1px solid rgba(255, 255, 255, 0.2);
-    //     animation: open .2s base.$tf-main 1;
-
-    //     opacity: 1;
-    //     transform: translateY(0px);
-    //     @include base.style-main_base;
-    //     &__head {
-    //         border-radius: 10px;
-    //         // background: rgba(16, 16, 16, 0.30);
-    //         background: rgba(255, 255, 255, 0.05);
-    //         display: flex;
-    //         justify-content: space-between;
-    //         align-items: center;
-    //         // gap: 1px;
-    //         padding: 10px;
-    //         cursor: pointer;
-    //         @include base.style-main_click;
-    //         & > svg {
-    //             width: 20px;
-    //             opacity: 0.5;
-    //             transform: translateY(0px);
-    //             transition: 0.15s;
-    //         }
-    //         & > h3 {
-    //             font-family: base.$fnt-all;
-    //             font-weight: 600;
-    //             font-size: 14px;
-    //             cursor: pointer;
-    //         }
-    //         &:hover > svg{
-    //             opacity: 1;
-    //             transform: translateX(5px) translateY(0px);
-    //         }
-    //     }
-    //     &__grid {
-    //         display: grid;
-    //         grid-gap: 10px;
-    //         grid-template-columns: repeat(3, minmax(0px, 1fr));
-    //         margin-top: 10px;
-    //         margin-bottom: 10px;
-    //         &__nav {
-    //             border-radius: 10px;
-    //             font-family: base.$fnt-all;
-    //             font-size: 14px;
-    //             padding: 7px;
-    //             display: flex;
-    //             align-items: center;
-    //             cursor: pointer;
-    //             transition: 0.15s;
-    //             & img {
-    //                 margin-right: 7px;
-    //             }
-    //             @include base.style-main_click;
-    //         }
-    //     }
-    //     &_hidden {
-    //         transform: translateY(-10px);
-    //         opacity: 0;
-    //         display: none;
-    //     }
-    // }
     &__catalog {
         position: absolute;
         z-index: 3;
@@ -415,6 +341,6 @@
     }
     &_open &__bg{
         opacity: 1;
-        bottom: -596px;
+        bottom: -546px;
     }
 }
