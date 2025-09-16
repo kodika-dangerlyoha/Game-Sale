@@ -1,0 +1,6 @@
+@use '../../default/base';
+
+.formFilters {
+    position: relative;
+    @include base.grid(15px, 5);
+}

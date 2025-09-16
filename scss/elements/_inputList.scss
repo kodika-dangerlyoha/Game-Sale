@@ -1,0 +1,118 @@
+@use '../default/base';
+
+.inputList {
+    height: 50px;
+    position: relative;
+    z-index: 2;
+    & input {
+        display: block;
+        box-sizing: border-box;
+        height: 50px;
+        width: 100%;
+        border-radius: 15px;
+        @include base.style-main;
+        padding-left: 17px;
+        font-size: 16px;
+        outline: none;
+        cursor: text;
+        transition: 0.1s;
+        &:focus {
+            @include base.style-main_hover;
+        }
+    }
+    & > input {
+        position: relative;
+        z-index: 1;
+    }
+    &__list {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 3;
+        &__header {
+            position: relative;
+            z-index: 2;
+            height: 50px;
+            cursor: pointer;
+            background-color: transparent;
+            transition: .2s;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            padding-right: 12px;
+            & > svg {
+                height: 24px;
+                transform: rotate(90deg);
+                transition: .2s;
+            }
+            &:hover {
+                background-color: rgba(255, 255, 255, .07);
+            }
+        }
+        &__body {
+            display: none;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            border-radius: 0px 0px 15px 15px;
+            @include base.style-main;
+            background-color: #444;
+            border-top: none;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            padding-right: 7px;
+            padding-left: 7px;
+            animation: open .25s base.$tf-main 1;
+            &__search {
+                & > input {
+                    height: 40px;
+                    font-size: 14px;
+                    border-radius: 10px;
+                    padding-left: 14px;
+                }
+                margin-bottom: 5px;
+            }
+            &__points {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                max-height: 210px;
+                overflow: auto;
+                &__point {
+                    padding-left: 10px;
+                    padding-top: 7px;
+                    padding-bottom: 7px;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    transition: .15s;
+                    &:hover {
+                        background-color: #555;
+                    }
+                }
+            }
+        }
+    }
+
+    &_open &{
+        &__list {
+            &__header {
+                border-radius: 15px 15px 0px 0px;
+                & > svg {
+                    transform: rotate(270deg);
+                }
+            }
+            &__body {
+                display: block;
+            }
+        }
+    }
+    &_open {
+        z-index: 4;
+        & > input {
+            border-radius: 15px 15px 0px 0px;
+        }
+    }
+}

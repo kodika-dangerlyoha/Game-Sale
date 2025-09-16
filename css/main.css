@@ -153,6 +153,10 @@ label {
   padding-top: 0;
   width: 1605px;
 }
+.inner_catalog {
+  padding-top: 100px;
+  width: 1605px;
+}
 
 .header {
   position: fixed;
@@ -1092,6 +1096,123 @@ label {
 }
 .blockButtonMore__button:active {
   transform: scale(0.95);
+}
+
+.inputList {
+  height: 50px;
+  position: relative;
+  z-index: 2;
+}
+.inputList input {
+  display: block;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  padding-left: 17px;
+  font-size: 16px;
+  outline: none;
+  cursor: text;
+  transition: 0.1s;
+}
+.inputList input:focus {
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
+}
+.inputList > input {
+  position: relative;
+  z-index: 1;
+}
+.inputList__list {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+}
+.inputList__list__header {
+  position: relative;
+  z-index: 2;
+  height: 50px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.2s;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 12px;
+}
+.inputList__list__header > svg {
+  height: 24px;
+  transform: rotate(90deg);
+  transition: 0.2s;
+}
+.inputList__list__header:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+}
+.inputList__list__body {
+  display: none;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border-radius: 0px 0px 15px 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  background-color: #444;
+  border-top: none;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 7px;
+  padding-left: 7px;
+  animation: open 0.25s cubic-bezier(0, 0, 0, 0.75) 1;
+}
+.inputList__list__body__search {
+  margin-bottom: 5px;
+}
+.inputList__list__body__search > input {
+  height: 40px;
+  font-size: 14px;
+  border-radius: 10px;
+  padding-left: 14px;
+}
+.inputList__list__body__points {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 210px;
+  overflow: auto;
+}
+.inputList__list__body__points__point {
+  padding-left: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.inputList__list__body__points__point:hover {
+  background-color: #555;
+}
+.inputList_open .inputList__list__header {
+  border-radius: 15px 15px 0px 0px;
+}
+.inputList_open .inputList__list__header > svg {
+  transform: rotate(270deg);
+}
+.inputList_open .inputList__list__body {
+  display: block;
+}
+.inputList_open {
+  z-index: 4;
+}
+.inputList_open > input {
+  border-radius: 15px 15px 0px 0px;
 }
 
 .carousel {
@@ -3171,4 +3292,11 @@ label {
 }
 .purchase_end .purchase__header__bg {
   background: linear-gradient(to left, rgba(163, 215, 112, 0.3), transparent);
+}
+
+.formFilters {
+  position: relative;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(5, minmax(0px, 1fr));
 }/*# sourceMappingURL=main.css.map */
