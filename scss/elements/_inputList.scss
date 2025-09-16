@@ -59,7 +59,9 @@
             width: 100%;
             border-radius: 0px 0px 15px 15px;
             @include base.style-main;
-            background-color: #444;
+            background-color: rgba(68, 68, 68, .8);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
             border-top: none;
             padding-top: 7px;
             padding-bottom: 7px;
@@ -81,15 +83,71 @@
                 width: 100%;
                 max-height: 210px;
                 overflow: auto;
+
+                // scrollbar-width: thin; /* auto | thin | none */
+                // scrollbar-color: rgba(255, 255, 255, .15) rgba(0, 0, 0, .15);
+                &::-webkit-scrollbar {
+                    width: 8px;
+                }
+                &::-webkit-scrollbar-track {
+                    background: rgba(0, 0, 0, .15); /* Цвет фона трека */
+                    border-radius: 10px;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background: rgba(255, 255, 255, .15); /* Цвет ползунка */
+                    border-radius: 10px;
+                    &:hover {
+                        background: rgba(255, 255, 255, .2);
+                    }
+                }
                 &__point {
+                    position: relative;
                     padding-left: 10px;
                     padding-top: 7px;
                     padding-bottom: 7px;
                     border-radius: 10px;
                     cursor: pointer;
                     transition: .15s;
+                    &__checkBlock {
+                        position: absolute;
+                        z-index: 1;
+                        left: -10px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 4px;
+                        height: 24px;
+                        // width: 10px;
+                        // height: 10px;
+                        border-radius: 5px;
+                        opacity: 0;
+                        transition: .2s;
+                        transition-timing-function: base.$tf-main;
+                        @include base.style-main_active;
+                        box-shadow: 5px 0 15px base.$clr-blue_light;
+                    }
+                    &__value {
+                        position: relative;
+                        z-index: 2;
+                        display: block;
+                        transition: .15s;
+                        transition-timing-function: base.$tf-main;
+                    }
                     &:hover {
-                        background-color: #555;
+                        // background-color: #555;
+                        background-color: rgba(255, 255, 255, .1);
+                    }
+                    &_hiden {
+                        display: none;
+                    }
+                    &_check &{
+                        &__value {
+                            padding-left: 10px;
+                            // color: base.$clr-blue_light;
+                        }
+                        &__checkBlock {
+                            opacity: 1;
+                            left: 5px;
+                        }
                     }
                 }
             }

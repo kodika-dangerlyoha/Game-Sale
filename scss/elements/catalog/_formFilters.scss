@@ -3,4 +3,5 @@
 .formFilters {
     position: relative;
     @include base.grid(15px, 5);
+    margin-bottom: 50px;
 }

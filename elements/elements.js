@@ -377,3 +377,12 @@ const get_notification_html = (status, message, id) => {
 }
 
 // export {get_horizont_game_html}
+
+const get_inputList_point = (id, value, type_function, i) => {
+    let checkBlock_html = type_function == 'checkbox' ? '<div class="inputList__list__body__points__point__checkBlock"></div>' : '';
+
+    return `<div class="inputList__list__body__points__point inputList_point-${i}" onclick="change_value_list('${id}', '${value}', '${type_function}', ${i})">
+                <span class="inputList__list__body__points__point__value">${value}</span>
+                ${checkBlock_html}
+            </div>`
+}

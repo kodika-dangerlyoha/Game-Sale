@@ -347,7 +347,7 @@
 		<div class="inner inner_catalog">
             <form class="formFilters" action="" name="form-filter">
                 <div class="inputList" id="inputList-sorting">
-                    <input class="txt" type="text" name="inp-sorting" title="inp-sorting" value="RU (Россия)" id="inp-sorting">
+                    <input class="txt" type="text" name="inp-sorting" title="inp-sorting" value="По популярности" id="inp-sorting">
                     <div class="inputList__list">
                         <div class="inputList__list__header" onclick="toggle_list('sorting')">
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -358,20 +358,20 @@
                             <div class="inputList__list__body__search">
                                 <input class="txt" type="text" name="inp_search_sorting" title="inp-search_sorting" placeholder="Поиск">
                             </div>
-                            <div class="inputList__list__body__points txt" id="list-sorting_points">
-                                <div class="inputList__list__body__points__point" onclick="change_sorting()">По умолчанию</div>
-                                <div class="inputList__list__body__points__point" onclick="change_sorting()">По умолчанию</div>
-                                <div class="inputList__list__body__points__point" onclick="change_sorting()">По умолчанию</div>
-                                <div class="inputList__list__body__points__point" onclick="change_sorting()">По умолчанию</div>
-                                <div class="inputList__list__body__points__point" onclick="change_sorting()">По умолчанию</div>
-                                <div class="inputList__list__body__points__point" onclick="change_sorting()">По умолчанию</div>
-                                <div class="inputList__list__body__points__point" onclick="change_sorting()">По умолчанию</div>
+                            <div class="inputList__list__body__points txt" id="inputList_points-sorting">
+                                <div class="inputList__list__body__points__point" onclick="change_value_list('sorting', 'По популярности')">По популярности</div>
+                                <div class="inputList__list__body__points__point" onclick="change_value_list('sorting', 'По названию')">По названию</div>
+                                <div class="inputList__list__body__points__point" onclick="change_value_list('sorting', 'Сначала дешёвые')">Сначала дешёвые</div>
+                                <div class="inputList__list__body__points__point" onclick="change_value_list('sorting', 'Сначала Дорогие')">Сначала Дорогие</div>
+                                <div class="inputList__list__body__points__point" onclick="change_value_list('sorting', 'По дате выхода')">По дате выхода</div>
+                                <div class="inputList__list__body__points__point" onclick="change_value_list('sorting', 'По величине скидки')">По величине скидки</div>
+                                <div class="inputList__list__body__points__point" onclick="change_value_list('sorting', 'По рейтингу')">По рейтингу</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="inputList" id="inputList-genres">
-                    <input class="txt" type="text" name="inp-genres" title="inp-genres" value="RU (Россия)" id="inp-genres">
+                    <input class="txt" type="text" name="inp-genres" title="inp-genres" value="Жанры" id="inp-genres">
                     <div class="inputList__list">
                         <div class="inputList__list__header" onclick="toggle_list('genres')">
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -382,8 +382,13 @@
                             <div class="inputList__list__body__search">
                                 <input class="txt" type="text" name="inp_search_genres" title="inp-search_genres" placeholder="Поиск">
                             </div>
-                            <div class="inputList__list__body__points txt" id="list-genres_points">
-                                <div class="inputList__list__body__points__point" onclick="change_sorting()">По умолчанию</div>
+                            <div class="inputList__list__body__points txt" id="inputList_points-genres">
+                                <div class="inputList__list__body__points__point" onclick="change_value_list('genres', 'Шутер')">Шутер</div>
+                                <div class="inputList__list__body__points__point" onclick="change_value_list('genres', '')"></div>
+                                <div class="inputList__list__body__points__point" onclick="change_value_list('genres', '')"></div>
+                                <div class="inputList__list__body__points__point" onclick="change_value_list('genres', '')"></div>
+                                <div class="inputList__list__body__points__point" onclick="change_value_list('genres', '')"></div>
+                                <div class="inputList__list__body__points__point" onclick="change_value_list('genres', '')"></div>
                             </div>
                         </div>
                     </div>
@@ -400,8 +405,8 @@
                             <div class="inputList__list__body__search">
                                 <input class="txt" type="text" name="inp_search_developers" title="inp-search_developers" placeholder="Поиск">
                             </div>
-                            <div class="inputList__list__body__points txt" id="list-developers_points">
-                                <div class="inputList__list__body__points__point" onclick="change_sorting()">По умолчанию</div>
+                            <div class="inputList__list__body__points txt" id="inputList_points-developers">
+                                <div class="inputList__list__body__points__point" onclick="change_value_list('', '')">По умолчанию</div>
                             </div>
                         </div>
                     </div>
@@ -418,8 +423,8 @@
                             <div class="inputList__list__body__search">
                                 <input class="txt" type="text" name="inp_search_regions" title="inp-search_regions" placeholder="Поиск">
                             </div>
-                            <div class="inputList__list__body__points txt" id="list-regions_points">
-                                <div class="inputList__list__body__points__point" onclick="change_regions()">По умолчанию</div>
+                            <div class="inputList__list__body__points txt" id="inputList_points-regions">
+                                <div class="inputList__list__body__points__point" onclick="change_value_list('', '')">По умолчанию</div>
                             </div>
                         </div>
                     </div>
@@ -436,8 +441,8 @@
                             <div class="inputList__list__body__search">
                                 <input class="txt" type="text" name="inp_search_publisher" title="inp-search_publisher" placeholder="Поиск">
                             </div>
-                            <div class="inputList__list__body__points txt" id="list-publisher_points">
-                                <div class="inputList__list__body__points__point" onclick="change_publisher()">По умолчанию</div>
+                            <div class="inputList__list__body__points txt" id="inputList_points-publisher">
+                                <div class="inputList__list__body__points__point" onclick="change_value_list('', '')">По умолчанию</div>
                             </div>
                         </div>
                     </div>
@@ -454,8 +459,8 @@
                             <div class="inputList__list__body__search">
                                 <input class="txt" type="text" name="inp_search_prices" title="inp-search_prices" placeholder="Поиск">
                             </div>
-                            <div class="inputList__list__body__points txt" id="list-prices_points">
-                                <div class="inputList__list__body__points__point" onclick="change_prices()">По умолчанию</div>
+                            <div class="inputList__list__body__points txt" id="inputList_points-prices">
+                                <div class="inputList__list__body__points__point" onclick="change_value_list('', '')">По умолчанию</div>
                             </div>
                         </div>
                     </div>
@@ -472,8 +477,8 @@
                             <div class="inputList__list__body__search">
                                 <input class="txt" type="text" name="inp_search_more" title="inp-search_more" placeholder="Поиск">
                             </div>
-                            <div class="inputList__list__body__points txt" id="list-more_points">
-                                <div class="inputList__list__body__points__point" onclick="change_more()">По умолчанию</div>
+                            <div class="inputList__list__body__points txt" id="inputList_points-more">
+                                <div class="inputList__list__body__points__point" onclick="change_value_list('', '')">По умолчанию</div>
                             </div>
                         </div>
                     </div>
@@ -490,8 +495,8 @@
                             <div class="inputList__list__body__search">
                                 <input class="txt" type="text" name="inp_search_pop" title="inp-search_pop" placeholder="Поиск">
                             </div>
-                            <div class="inputList__list__body__points txt" id="list-pop_points">
-                                <div class="inputList__list__body__points__point" onclick="change_pop()">По умолчанию</div>
+                            <div class="inputList__list__body__points txt" id="inputList_points-pop">
+                                <div class="inputList__list__body__points__point" onclick="change_value_list('', '')">По умолчанию</div>
                             </div>
                         </div>
                     </div>
@@ -508,28 +513,266 @@
                             <div class="inputList__list__body__search">
                                 <input class="txt" type="text" name="inp_search_maps" title="inp-search_maps" placeholder="Поиск">
                             </div>
-                            <div class="inputList__list__body__points txt" id="list-maps_points">
-                                <div class="inputList__list__body__points__point" onclick="change_maps()">По умолчанию</div>
+                            <div class="inputList__list__body__points txt" id="inputList_points-maps">
+                                <div class="inputList__list__body__points__point" onclick="change_value_list('', '')">По умолчанию</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </form>
 			<section class="games">
-				<div class="games__head">
-					<h2 class="txt">Новинки</h2>
-					<div class="blockButtonMore">
-					<div class="blockButtonMore__button txt">
-						<span>Показать еще</span>
-						<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
-						</svg>
-					</div>
-				</div>
-				</div>
 				<div class="games__grid" id="offers_grid_new">
 
-				</div>
+					<article class="gameH">
+					<a href="game.html" class="gameH__banner">
+						<div class="gameH__banner__glass"></div>
+						<div class="gameH__banner__imgBlock"><img src="img/banners/farmsim.png" alt="Call Of Duty: Cold War 2"></div>
+						<div class="gameH__banner__videoBlock">
+							<video src="video/50.MP4" autoplay="" loop="" muted="">
+						</video></div>
+						<div class="gameH__banner__info txt">
+							<div class="gameH__banner__info__left">
+								<div class="gameH__banner__info__point gameH__banner__info__point_more gameH__banner__info__point_preOrder"><span>Предзаказ</span>03.04.2026</div>
+							</div>
+							<div class="gameH__banner__info__right">
+								
+								<div class="gameH__banner__info__point gameH__banner__info__point_discount">10%</div>
+							</div>
+						</div>
+					</a>
+					<div class="gameH__info">
+						<div class="gameH__info__buttons">
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+								<img src="img/icons/main/basket64.png" alt="">
+							</div>
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+								<img src="img/icons/main/like64.png" alt="">
+							</div>
+						</div>
+						<div class="gameH__info__name txt">Call Of Duty: Cold War 2</div>
+						<div class="gameH__info__price txt">4599₽</div>
+					</div>
+				</article><article class="gameH">
+					<a href="game.html" class="gameH__banner">
+						<div class="gameH__banner__glass"></div>
+						<div class="gameH__banner__imgBlock"><img src="img/banners/4.jpg" alt="Ghosts"></div>
+						<div class="gameH__banner__videoBlock">
+							<video src="video/2.MP4" autoplay="" loop="" muted="">
+						</video></div>
+						<div class="gameH__banner__info txt">
+							<div class="gameH__banner__info__left">
+								<div class="gameH__banner__info__point gameH__banner__info__point_more gameH__banner__info__point_preOrder"><span>Предзаказ</span>03.04.2026</div>
+							</div>
+							<div class="gameH__banner__info__right">
+								
+								<div class="gameH__banner__info__point gameH__banner__info__point_discount">22%</div>
+							</div>
+						</div>
+					</a>
+					<div class="gameH__info">
+						<div class="gameH__info__buttons">
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+								<img src="img/icons/main/basket64.png" alt="">
+							</div>
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+								<img src="img/icons/main/like64.png" alt="">
+							</div>
+						</div>
+						<div class="gameH__info__name txt">Ghosts</div>
+						<div class="gameH__info__price txt">1255₽</div>
+					</div>
+				</article><article class="gameH">
+					<a href="" class="gameH__banner">
+						<div class="gameH__banner__glass"></div>
+						<div class="gameH__banner__imgBlock"><img src="img/banners/5.jpg" alt="Drill Aviasion"></div>
+						<div class="gameH__banner__videoBlock">
+							<video src="video/4.MP4" autoplay="" loop="" muted="">
+						</video></div>
+						<div class="gameH__banner__info txt">
+							<div class="gameH__banner__info__left">
+								
+							</div>
+							<div class="gameH__banner__info__right">
+								<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>
+								<div class="gameH__banner__info__point gameH__banner__info__point_discount">8%</div>
+							</div>
+						</div>
+					</a>
+					<div class="gameH__info">
+						<div class="gameH__info__buttons">
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+								<img src="img/icons/main/basket64.png" alt="">
+							</div>
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+								<img src="img/icons/main/like64.png" alt="">
+							</div>
+						</div>
+						<div class="gameH__info__name txt">Drill Aviasion</div>
+						<div class="gameH__info__price txt">3678₽</div>
+					</div>
+				</article><article class="gameH">
+					<a href="" class="gameH__banner">
+						<div class="gameH__banner__glass"></div>
+						<div class="gameH__banner__imgBlock"><img src="img/banners/9.jpg" alt="Call Of Duty: Cold War 2"></div>
+						<div class="gameH__banner__videoBlock">
+							<video src="video/IMG_6148.MP4" autoplay="" loop="" muted="">
+						</video></div>
+						<div class="gameH__banner__info txt">
+							<div class="gameH__banner__info__left">
+								
+							</div>
+							<div class="gameH__banner__info__right">
+								<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>
+								<div class="gameH__banner__info__point gameH__banner__info__point_discount">4%</div>
+							</div>
+						</div>
+					</a>
+					<div class="gameH__info">
+						<div class="gameH__info__buttons">
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+								<img src="img/icons/main/basket64.png" alt="">
+							</div>
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+								<img src="img/icons/main/like64.png" alt="">
+							</div>
+						</div>
+						<div class="gameH__info__name txt">Call Of Duty: Cold War 2</div>
+						<div class="gameH__info__price txt">6700₽</div>
+					</div>
+				</article><article class="gameH">
+					<a href="" class="gameH__banner">
+						<div class="gameH__banner__glass"></div>
+						<div class="gameH__banner__imgBlock"><img src="img/banners/11.jpg" alt="On The Run 2"></div>
+						<div class="gameH__banner__videoBlock">
+							<video src="video/IMG_6148.MP4" autoplay="" loop="" muted="">
+						</video></div>
+						<div class="gameH__banner__info txt">
+							<div class="gameH__banner__info__left">
+								
+							</div>
+							<div class="gameH__banner__info__right">
+								
+								<div class="gameH__banner__info__point gameH__banner__info__point_discount">23%</div>
+							</div>
+						</div>
+					</a>
+					<div class="gameH__info">
+						<div class="gameH__info__buttons">
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+								<img src="img/icons/main/basket64.png" alt="">
+							</div>
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+								<img src="img/icons/main/like64.png" alt="">
+							</div>
+						</div>
+						<div class="gameH__info__name txt">On The Run 2</div>
+						<div class="gameH__info__price txt">2344₽</div>
+					</div>
+				</article><article class="gameH">
+					<a href="game.html" class="gameH__banner">
+						<div class="gameH__banner__glass"></div>
+						<div class="gameH__banner__imgBlock"><img src="img/banners/4.jpg" alt="Ghosts"></div>
+						<div class="gameH__banner__videoBlock">
+							<video src="video/2.MP4" autoplay="" loop="" muted="">
+						</video></div>
+						<div class="gameH__banner__info txt">
+							<div class="gameH__banner__info__left">
+								
+							</div>
+							<div class="gameH__banner__info__right">
+								<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>
+								<div class="gameH__banner__info__point gameH__banner__info__point_discount">22%</div>
+							</div>
+						</div>
+					</a>
+					<div class="gameH__info">
+						<div class="gameH__info__buttons">
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+								<img src="img/icons/main/basket64.png" alt="">
+							</div>
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+								<img src="img/icons/main/like64.png" alt="">
+							</div>
+						</div>
+						<div class="gameH__info__name txt">Ghosts</div>
+						<div class="gameH__info__price txt">1255₽</div>
+					</div>
+				</article><article class="gameH">
+					<a href="" class="gameH__banner">
+						<div class="gameH__banner__glass"></div>
+						<div class="gameH__banner__imgBlock"><img src="img/banners/5.jpg" alt="Drill Aviasion"></div>
+						<div class="gameH__banner__videoBlock">
+							<video src="video/4.MP4" autoplay="" loop="" muted="">
+						</video></div>
+						<div class="gameH__banner__info txt">
+							<div class="gameH__banner__info__left">
+								
+							</div>
+							<div class="gameH__banner__info__right">
+								<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>
+								<div class="gameH__banner__info__point gameH__banner__info__point_discount">8%</div>
+							</div>
+						</div>
+					</a>
+					<div class="gameH__info">
+						<div class="gameH__info__buttons">
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+								<img src="img/icons/main/basket64.png" alt="">
+							</div>
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+								<img src="img/icons/main/like64.png" alt="">
+							</div>
+						</div>
+						<div class="gameH__info__name txt">Drill Aviasion</div>
+						<div class="gameH__info__price txt">3678₽</div>
+					</div>
+				</article><article class="gameH">
+					<a href="" class="gameH__banner">
+						<div class="gameH__banner__glass"></div>
+						<div class="gameH__banner__imgBlock"><img src="img/banners/11.jpg" alt="On The Run 2"></div>
+						<div class="gameH__banner__videoBlock">
+							<video src="video/IMG_6148.MP4" autoplay="" loop="" muted="">
+						</video></div>
+						<div class="gameH__banner__info txt">
+							<div class="gameH__banner__info__left">
+								
+							</div>
+							<div class="gameH__banner__info__right">
+								
+								<div class="gameH__banner__info__point gameH__banner__info__point_discount">23%</div>
+							</div>
+						</div>
+					</a>
+					<div class="gameH__info">
+						<div class="gameH__info__buttons">
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+								<img src="img/icons/main/basket64.png" alt="">
+							</div>
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+								<img src="img/icons/main/like64.png" alt="">
+							</div>
+						</div>
+						<div class="gameH__info__name txt">On The Run 2</div>
+						<div class="gameH__info__price txt">2344₽</div>
+					</div>
+				</article>
+			</div>
 			</section>
 		</div>
 	</main>
@@ -608,5 +851,6 @@
 	<!-- <script type="text/javascript" src="scripts/script_index.js"></script> -->
 	<script type="text/javascript" src="scripts/header_catalog.js"></script>
 	<script type="text/javascript" src="scripts/input_list.js"></script>
+	<script type="text/javascript" src="scripts/catalog.js"></script>
 </body>
 </html>

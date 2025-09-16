@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background-color: rgb(39, 39, 39);
   margin: 0;
@@ -855,7 +856,7 @@ label {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 5;
+  z-index: 3;
   border-radius: inherit;
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(40, 40, 40, 0.7);
@@ -1164,7 +1165,9 @@ label {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  background-color: #444;
+  background-color: rgba(68, 68, 68, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border-top: none;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -1188,7 +1191,22 @@ label {
   max-height: 210px;
   overflow: auto;
 }
+.inputList__list__body__points::-webkit-scrollbar {
+  width: 8px;
+}
+.inputList__list__body__points::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.15); /* Цвет фона трека */
+  border-radius: 10px;
+}
+.inputList__list__body__points::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15); /* Цвет ползунка */
+  border-radius: 10px;
+}
+.inputList__list__body__points::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
 .inputList__list__body__points__point {
+  position: relative;
   padding-left: 10px;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -1196,8 +1214,41 @@ label {
   cursor: pointer;
   transition: 0.15s;
 }
+.inputList__list__body__points__point__checkBlock {
+  position: absolute;
+  z-index: 1;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 24px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+  transition-timing-function: cubic-bezier(0, 0, 0, 0.75);
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
+  box-shadow: 5px 0 15px rgb(1, 162, 255);
+}
+.inputList__list__body__points__point__value {
+  position: relative;
+  z-index: 2;
+  display: block;
+  transition: 0.15s;
+  transition-timing-function: cubic-bezier(0, 0, 0, 0.75);
+}
 .inputList__list__body__points__point:hover {
-  background-color: #555;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.inputList__list__body__points__point_hiden {
+  display: none;
+}
+.inputList__list__body__points__point_check .inputList__list__body__points__point__value {
+  padding-left: 10px;
+}
+.inputList__list__body__points__point_check .inputList__list__body__points__point__checkBlock {
+  opacity: 1;
+  left: 5px;
 }
 .inputList_open .inputList__list__header {
   border-radius: 15px 15px 0px 0px;
@@ -3299,4 +3350,5 @@ label {
   display: grid;
   grid-gap: 15px;
   grid-template-columns: repeat(5, minmax(0px, 1fr));
+  margin-bottom: 50px;
 }/*# sourceMappingURL=main.css.map */
