@@ -655,3 +655,97 @@ let regions = [
     'full_title': "CR (Ronaldo)"
   }
 ]
+
+let genres = [  
+  {
+    'id': 'shooter',
+    'title': 'Шутер'
+  },
+  {
+    'id': 'g2',
+    'title': 'Хоррор'
+  },
+  {
+    'id': 'g3',
+    'title': 'Гонки'
+  },
+  {
+    'id': 'g1',
+    'title': 'Стратегии'
+  },
+  {
+    'id': 'g5',
+    'title': 'Симулятор'
+  },
+  {
+    'id': 'g6',
+    'title': 'Космос и полёты'
+  },
+  {
+    'id': 'g7',
+    'title': 'Приключения'
+  },
+  {
+    'id': 'horror',
+    'title': 'Военное'
+  },
+  {
+    'id': 'g9',
+    'title': 'Песочница'
+  },
+  {
+    'id': 'g10',
+    'title': 'Выживание'
+  },
+  {
+    'id': 'g11',
+    'title': 'Головоломка'
+  },
+  {
+    'id': 'g12',
+    'title': 'Строительство'
+  },
+]
+
+let authors = [  
+  {
+    'id': 'p1',
+    'title': 'Activison'
+  },
+  {
+    'id': 'p2',
+    'title': 'Ubisoft'
+  },
+  {
+    'id': 'p3',
+    'title': 'Gaijin'
+  },
+  {
+    'id': 'p4',
+    'title': 'Lesta'
+  },
+  {
+    'id': 'p5',
+    'title': 'Pimpuk'
+  },
+  {
+    'id': 'p6',
+    'title': 'Arnold'
+  },
+  {
+    'id': 'p7',
+    'title': 'Shwarczeneger'
+  },
+  {
+    'id': 'p8',
+    'title': 'Haisenberg'
+  },
+  {
+    'id': 'p9',
+    'title': 'Kakostavitugol'
+  },
+  {
+    'id': 'p10',
+    'title': 'Sladki Snov'
+  },
+]

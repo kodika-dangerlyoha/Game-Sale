@@ -35,21 +35,20 @@
             background-color: rgba(255, 255, 255, 0.1);
             -webkit-backdrop-filter: blur(3px);
             backdrop-filter: blur(3px);
-            // border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             transition: .15s;
             cursor: pointer;
+            @include base.style-main_click;
             & > img {
                 width: 100%;
                 filter: invert(1);
             }
             &:nth-child(1) img {
-                transform: rotate(180deg) translateX(2px);
+                transform: rotate(180deg) translateX(1.5px);
             }
-            // &:hover {
-            //     background-color: rgba(255, 255, 255, 0.2);
-            // }
-            @include base.style-main_click;
+            &:nth-child(2) img {
+                transform: translateX(1.5px);
+            }
             &:active {
                 transform: scale(0.95);
             }

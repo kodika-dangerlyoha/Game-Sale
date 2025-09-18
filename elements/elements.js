@@ -386,3 +386,23 @@ const get_inputList_point = (id, value, type_function, i) => {
                 ${checkBlock_html}
             </div>`
 }
+
+const get_genresNav_headerCatalog_html = (genre) => {
+    return `<div class="header__catalog__navs__genres__list__genre header__catalog__navs__nav" id="header__catalog__nav-${genre.id}">
+                <div class="header__catalog__navs__genres__list__genre__icon"><img src="img/icons/ganres/6.svg" alt=""></div>
+                <div class="header__catalog__navs__genres__list__genre__title txt">${genre.title}</div>
+                <div class="header__catalog__navs__indicator"></div>
+                <div class="header__catalog__navs__clickBlock" onmouseover="change_game_category('${genre.id}')" onmouseout="stop_change_game_category()"></div>
+            </div>`
+}
+
+const get_authorNav_headerCatalog_html = (author) => {
+    return `<div class="header__catalog__navs__authors__list__author header__catalog__navs__nav" id="header__catalog__nav-${author.id}">
+                <div class="header__catalog__navs__authors__list__author__img">
+                    <img src="img/logos/authors/Activision.svg" alt="">
+                </div>
+                <div class="header__catalog__navs__authors__list__author__title txt">${author.title}</div>
+                <div class="header__catalog__navs__indicator"></div>
+                <div class="header__catalog__navs__clickBlock" onmouseover="change_game_category('${author.id}')" onmouseout="stop_change_game_category()"></div>
+            </div>`
+}

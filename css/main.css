@@ -107,7 +107,7 @@ label {
     opacity: 0;
     transform: translateY(-30px);
   }
-  30% {
+  40% {
     opacity: 0;
     transform: translateY(-30px);
   }
@@ -506,7 +506,7 @@ label {
   opacity: 0;
 }
 .header__catalog__navs__nav:hover .header__catalog__navs__indicator {
-  transition: 1s;
+  transition: 0.6s;
   width: 100%;
 }
 .header__catalog__navs__nav_active:hover {
@@ -526,6 +526,14 @@ label {
   z-index: 1;
   background-color: rgba(1, 162, 255, 0.4);
   transition-timing-function: cubic-bezier(0, 0, 0, 0.75);
+}
+.header__catalog__navs__clickBlock {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 4;
 }
 .header__catalog__gamelist {
   display: grid;
@@ -1019,6 +1027,30 @@ label {
   font-size: 14px;
   padding: 4px 7px;
 }
+.gameH_headerCatalog {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: 0.2s;
+}
+.gameH_open {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.gameH_open:nth-child(1) {
+  transition-delay: 0s;
+}
+.gameH_open:nth-child(2) {
+  transition-delay: 0.05s;
+}
+.gameH_open:nth-child(3) {
+  transition-delay: 0.1s;
+}
+.gameH_open:nth-child(4) {
+  transition-delay: 0.2s;
+}
+.gameH_open:nth-child(5) {
+  transition-delay: 0.25s;
+}
 .gameH:hover .gameH__banner {
   transform: scale(1.05);
 }
@@ -1313,19 +1345,22 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.carousel__buttons__button > img {
-  width: 100%;
-  filter: invert(1);
-}
-.carousel__buttons__button:nth-child(1) img {
-  transform: rotate(180deg) translateX(2px);
-}
 .carousel__buttons__button:hover {
   background-color: rgba(1, 162, 255, 0.25);
   border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .carousel__buttons__button:active {
   transform: scale(0.95);
+}
+.carousel__buttons__button > img {
+  width: 100%;
+  filter: invert(1);
+}
+.carousel__buttons__button:nth-child(1) img {
+  transform: rotate(180deg) translateX(1.5px);
+}
+.carousel__buttons__button:nth-child(2) img {
+  transform: translateX(1.5px);
 }
 .carousel__buttons__button:active {
   transform: scale(0.95);

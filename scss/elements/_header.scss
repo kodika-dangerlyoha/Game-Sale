@@ -337,7 +337,7 @@
                     }
                 }
                 &:hover .header__catalog__navs__indicator {
-                    transition: 1s;
+                    transition: .6s;
                     width: 100%;
                 }
                 &_active:hover{
@@ -359,6 +359,14 @@
                 background-color: base.$clr-blue_light_transparent;
                 // opacity: .3;
                 transition-timing-function: base.$tf-main;
+            }
+            &__clickBlock {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                z-index: 4;
             }
         }
         &__gamelist {
