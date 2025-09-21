@@ -1,14 +1,14 @@
 let games = [
     {
         'id': 0,
-        'name': "Call Of Duty: Cold War 2",
+        'name': "War Thunder",
         'link': "game.html",
         'steamLink': "",
-        'imgH': "img/banners/farmsim.png",
+        'imgH': "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236390/2138d08fc22dbf6a20ebff4cfa4632b359de8daf/header.jpg?t=1756824022",
         'imgW': "img/banners/img1.png",
         'treilerSrc': "video/50.MP4",
-        'bigBanner': "img/banners/big.png",
-        'bigBanner_blur': "img/banners/blur/big.png",
+        'bigBanner': "img/banners/wt2.png",
+        'bigBanner_blur': "img/banners/blur/wt2_blur.png",
         'newPrice': 4599,
         'oldPrice': 5120,
         'editions': [
@@ -129,6 +129,17 @@ let games = [
         'developer': "Activision",
         'preOrder': "03.04.2026",
         'dls': false,
+        'screenshots': [
+          'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236390/ss_3801dc6ae62e793aee2f073c2ac755c85edf0bb7.1920x1080.jpg?t=1756824022',
+          'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236390/ss_15343f845523e07d5fc51c6208f362b7bcaa1fbe.1920x1080.jpg?t=1756824022',
+          'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236390/ss_ab307923f93a44acea6ef3314048c7404b1fe654.1920x1080.jpg?t=1756824022',
+          'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236390/ss_8c5c57e42894258fd4e8f2898eb6b87284f7ffdc.1920x1080.jpg?t=1756824022',
+          'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236390/ss_8c28d914813b82f36d306e5ea322a70f9050f9bc.1920x1080.jpg?t=1756824022',
+          'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236390/ss_a2d9ec25f81e89139efaf49378e7b33b6f64e0cc.1920x1080.jpg?t=1756824022',
+          'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236390/ss_258eede8c5ee4ccd73216bb24c7b5db8a2b214ed.1920x1080.jpg?t=1756824022',
+          'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236390/ss_318da56acde01dd085fa93881da41033dd098e7d.1920x1080.jpg?t=1756824022',
+          'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236390/ss_367ad85e6d1c10b611a6f0360cdbae4cb29707fa.1920x1080.jpg?t=1756824022',
+        ]
     },
     {
         'id': 1,

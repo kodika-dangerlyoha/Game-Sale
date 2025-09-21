@@ -731,22 +731,13 @@ label {
   transition: 0.15s;
   animation-timing-function: cubic-bezier(0, 0, 0, 0.75);
   cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 .gameV__banner img {
   position: relative;
   z-index: 1;
   width: 100%;
-}
-.gameV__banner__glass {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 3;
-  border-radius: inherit;
-  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
 }
 .gameV__banner__discount {
   position: absolute;
@@ -856,18 +847,8 @@ label {
   cursor: pointer;
   overflow: hidden;
   animation-timing-function: cubic-bezier(0, 0, 0, 0.75);
-  box-shadow: 0 0 15px rgb(25, 25, 25);
-}
-.gameH__banner__glass {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 3;
-  border-radius: inherit;
-  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 .gameH__banner__imgBlock {
   position: absolute;
@@ -1997,9 +1978,9 @@ label {
 .bigImgBlock {
   position: relative;
   z-index: 1;
-  height: 520px;
+  height: 550px;
   overflow: hidden;
-  margin-bottom: -260px;
+  margin-bottom: -285px;
   transform: translateY(0px);
   box-sizing: border-box;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -2019,7 +2000,7 @@ label {
   left: 0;
   background-color: rgb(39, 39, 39);
   opacity: 0;
-  height: 525px;
+  height: 600px;
   transform: translateY(0px);
 }
 
@@ -2045,17 +2026,18 @@ label {
   box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
-.mainInfo__banner__imgBlock {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-.mainInfo__banner__imgBlock img {
-  width: 100%;
-}
 .mainInfo__banner__visual {
   position: relative;
   z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+.mainInfo__banner__visual__imgBlock {
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* или contain */
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .mainInfo__banner__interface {
   position: absolute;
@@ -2097,10 +2079,10 @@ label {
   background-color: rgba(0, 0, 0, 0.3);
 }
 .mainInfo__banner__interface__top__point_steam {
-  background-color: rgba(19, 77, 153, 0.3);
+  background-color: rgba(29, 117, 218, 0.8);
 }
 .mainInfo__banner__interface__top__point_metacritic {
-  background-color: rgba(16, 168, 84, 0.3);
+  background-color: rgba(27, 214, 89, 0.8);
 }
 .mainInfo__banner__interface__top__point__key {
   font-weight: 700;
@@ -2151,6 +2133,13 @@ label {
 }
 .mainInfo__banner__interface__bottom__medialist__media > * {
   width: 100%;
+}
+.mainInfo__banner__interface__bottom__medialist__media__screenshot {
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* или contain */
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .mainInfo__banner__interface__bottom__medialist__media:hover {
   transform: scale(1.05);

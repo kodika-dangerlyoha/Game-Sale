@@ -236,7 +236,6 @@
     
 	<div class="blackoutBlock fixed-zero" onclick="open_catalogNavs()"></div>
     <div class="forScroll"></div>
-
 	<main id="main">
         <div class="bigImgBlock bigImgBlock_loading loadingContent">
             <div class="bigImgBlock__bg"></div>
@@ -245,8 +244,8 @@
         </div>
         <div class="mainInfo">
             <div class="mainInfo__banner mainInfo__banner_loading loadingContent">
-				<div class="mainInfo__banner__visual">
-					<div class="mainInfo__banner__imgBlock"><img src="" alt="" id="game_img"></div>
+				<div class="mainInfo__banner__visual" id="game_visual">
+					<div class="mainInfo__banner__visual__imgBlock" id="visual_main_screenshot"><img src="" alt="" id="game_img"></div>
 				</div>
 				<div class="mainInfo__banner__interface">
 					<div class="mainInfo__banner__interface__top">
@@ -266,23 +265,23 @@
 						</div>
 					</div>
 					<div class="mainInfo__banner__interface__bottom">
-						<div class="mainInfo__banner__interface__bottom__medialist">
-							<div class="mainInfo__banner__interface__bottom__medialist__media mainInfo__banner__interface__bottom__medialist__media_active" id="media_block-1" onclick="change_media('1')">
+						<div class="mainInfo__banner__interface__bottom__medialist" id="game_medialist">
+							<div class="mainInfo__banner__interface__bottom__medialist__media mainInfo__banner__interface__bottom__medialist__media_active" id="media_block-1" onclick="change_media(false, '1')">
 								<img src="img/banners/1.jpg" alt="">
 							</div>
-							<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-10" onclick="change_media('10')">
+							<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-10" onclick="change_media(false, '10')">
 								<img src="img/banners/10.jpg" alt="">
 							</div>
-							<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-3" onclick="change_media('3')">
+							<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-3" onclick="change_media(false, '3')">
 								<img src="img/banners/3.jpg" alt="">
 							</div>
-							<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-4" onclick="change_media('4')">
+							<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-4" onclick="change_media(false, '4')">
 								<img src="img/banners/4.jpg" alt="">
 							</div>
-							<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-5" onclick="change_media('5')">
+							<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-5" onclick="change_media(false, '5')">
 								<img src="img/banners/5.jpg" alt="">
 							</div>
-							<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-52nahuy" onclick="change_media('52nahuy')">
+							<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-52nahuy" onclick="change_media(false, '52nahuy')">
 								<img src="img/banners/52nahuy.jpg" alt="">
 							</div>
 						</div>

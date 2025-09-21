@@ -12,17 +12,8 @@
         cursor: pointer;
         overflow: hidden;
         animation-timing-function: base.$tf-main;
-        box-shadow: 0 0 15px rgba(25, 25, 25, 1);
-        &__glass {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 3;
-            border-radius: inherit;
-            @include base.style-glass_game;
-        }
+        box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+        border: 1px solid rgba(255, 255, 255, .15);
         &__imgBlock {
             position: absolute;
             top: 0;

@@ -20,17 +20,26 @@
         border-radius: 20px;
         box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.3);
         border: 1px solid rgba(255, 255, 255, 0.15);
-        &__imgBlock {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            & img {
-                width: 100%;
-            }
-        }
         &__visual {
             position: relative;
             z-index: 1;
+            height: 100%;
+            width: 100%;
+            &__imgBlock {
+                width: 100%;
+                height: 100%;
+                // overflow: hidden;
+                background-size: cover; /* или contain */
+                background-position: center;
+                background-repeat: no-repeat;
+                // & img {
+                //     // min-width: 100%;
+                //     max-width: 100%;
+                //     min-height: 100%;
+                //     // max-height: 100%;
+                //     // min-height: 100%;
+                // }
+            }
         }
         &__interface {
             position: absolute;
@@ -67,10 +76,10 @@
                     @include base.style-main;
                     background-color: rgba(0, 0, 0, .3);
                     &_steam {
-                        background-color: rgba(19, 77, 153, 0.3);
+                        background-color: base.$clr-steam_transparent;
                     }
                     &_metacritic {
-                        background-color: rgba(16, 168, 84, 0.3);
+                        background-color: base.$clr-metacritic_green;
                     }
                     &__key {
                         font-weight: 700;
@@ -125,6 +134,13 @@
                         cursor: pointer;
                         & > * {
                             width: 100%;
+                        }
+                        &__screenshot {
+                            width: 100%;
+                            height: 100%;
+                            background-size: cover; /* или contain */
+                            background-position: center;
+                            background-repeat: no-repeat;
                         }
                         &:hover {
                             transform: scale(1.05);

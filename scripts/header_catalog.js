@@ -16,6 +16,33 @@ function make_catalog_navs() {
 
 make_catalog_navs();
 
+// ----------------------- Открытиие меню каталога в шапке 
+
+const open_catalogNavs = () => {
+    document.querySelector('.header__buttonCatalog').classList.toggle('header__buttonCatalog_active');
+    document.querySelector('.blackoutBlock').classList.toggle('blackoutBlock_active');
+    // document.querySelector('.header__catalogNavs').classList.toggle('header__catalogNavs_hidden');
+    document.querySelector('.header__catalog').classList.toggle('header__catalog_open');
+    document.querySelector('.header').classList.toggle('header_open');
+
+    scrollTop = window.pageYOffset;
+    if (document.querySelector('.header_open')) {
+        header_bg.style.opacity = "1";
+        header_bg_visible = true;
+    }
+    else {
+        if (window.pageYOffset == 0) {
+            header_bg.style.opacity = "0";
+            header_bg_visible = false;
+        }
+        else {
+            header_bg.style.opacity = "1";
+            header_bg_visible = true;
+        }
+    }
+}
+
+// ----------------------- Выбор категории 
 
 let onmouse = false;
 let old_category = "";

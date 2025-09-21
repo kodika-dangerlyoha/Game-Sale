@@ -15,20 +15,12 @@
         transition: 0.15s;
         animation-timing-function: base.$tf-main;
         cursor: pointer;
+        box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+        border: 1px solid rgba(255, 255, 255, .15);
         & img {
             position: relative;
             z-index: 1;
             width: 100%;
-        }
-        &__glass {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 3;
-            border-radius: inherit;
-            @include base.style-glass_game;
         }
         &__discount {
             position: absolute;

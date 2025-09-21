@@ -1,3 +1,5 @@
+// -------- mini game card --------
+
 const get_horizont_game_html = (game, discount) => {
     let preOrder_html = "";
     let dls_html = "";
@@ -12,7 +14,6 @@ const get_horizont_game_html = (game, discount) => {
 
     return `<article class = "gameH">
                 <a href = "${game.link}" class="gameH__banner">
-                    <div class="gameH__banner__glass"></div>
                     <div class="gameH__banner__imgBlock"><img src="${game.imgH}" alt="${game.name}"></div>
                     <div class="gameH__banner__videoBlock">
                         <video src="${game.treilerSrc}" autoplay loop muted>
@@ -58,7 +59,6 @@ const get_horizont_game_headerCatalog_html = (game, discount) => {
 
     return `<article class = "gameH gameH_headerCatalog">
                 <a href = "${game.link}" class="gameH__banner">
-                    <div class="gameH__banner__glass"></div>
                     <div class="gameH__banner__imgBlock"><img src="${game.imgH}" alt="${game.name}"></div>
                     <div class="gameH__banner__videoBlock">
                         <video src="${game.treilerSrc}" autoplay loop muted>
@@ -113,6 +113,8 @@ const get_vertical_game_html = (game, discount) => {
                 </div>
             </article>`
 }
+
+// --------  --------
 
 const get_banner_html = (count, game_info, carousel_banner_list, discount) => {
     return `<div class = "carousel__banner" order = ${count} game_id = '${game_info.id}' style = "${count === 0 ? 'margin-left: 0' : ''};
@@ -378,6 +380,8 @@ const get_notification_html = (status, message, id) => {
 
 // export {get_horizont_game_html}
 
+// -------- input list > point in list html --------
+
 const get_inputList_point = (id, value, type_function, i) => {
     let checkBlock_html = type_function == 'checkbox' ? '<div class="inputList__list__body__points__point__checkBlock"></div>' : '';
 
@@ -386,6 +390,8 @@ const get_inputList_point = (id, value, type_function, i) => {
                 ${checkBlock_html}
             </div>`
 }
+
+// -------- header catalog navs --------
 
 const get_genresNav_headerCatalog_html = (genre) => {
     return `<div class="header__catalog__navs__genres__list__genre header__catalog__navs__nav" id="header__catalog__nav-${genre.id}">
@@ -404,5 +410,17 @@ const get_authorNav_headerCatalog_html = (author) => {
                 <div class="header__catalog__navs__authors__list__author__title txt">${author.title}</div>
                 <div class="header__catalog__navs__indicator"></div>
                 <div class="header__catalog__navs__clickBlock" onmouseover="change_game_category('${author.id}')" onmouseout="stop_change_game_category()"></div>
+            </div>`
+}
+
+// -------- game card visual --------
+
+const get_pic_gameCard_html = (link) => {
+    return `<div class="mainInfo__banner__visual__imgBlock" style="background-image: url('${link}')"></div>`
+}
+
+const get_media_screenshot = (link, id) => {
+    return `<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-${id}" onclick="change_media(false, '${id}', '${link}')">
+                <div class="mainInfo__banner__interface__bottom__medialist__media__screenshot" style="background-image: url('${link}')"></div>
             </div>`
 }

@@ -2,6 +2,7 @@
 const header_bg = document.querySelector('#header__bg');
 
 let header_bg_visible = false;
+
 window.addEventListener('scroll', function() {
     scrollTop = window.pageYOffset;
     if (scrollTop == 0) {

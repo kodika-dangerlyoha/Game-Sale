@@ -21,6 +21,9 @@ $clr-gray_43: rgb(43, 43, 43);
 $clr-gray_47_hover: rgb(47, 47, 47);
 $clr-gray_55: rgb(55, 55, 55);
 
+$clr-steam_transparent: rgba(29, 117, 218, 0.8);
+$clr-metacritic_green: rgba(27, 214, 89, 0.8);
+
 // -------- timing function --------
 
 $tf-main: cubic-bezier(0, 0, 0, 0.75);
@@ -186,6 +189,8 @@ $shadow_light: inset -1px 0 0 0 rgba(255, 255, 255, .25);
     box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.3);
     background: rgb(45, 45, 45);
 }
+
+// ~ webkit_scrollbar
 
 @mixin style-webkit_scrollbar {
     // scrollbar-width: thin; /* auto | thin | none */

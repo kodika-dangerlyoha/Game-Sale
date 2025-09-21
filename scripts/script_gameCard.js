@@ -43,12 +43,36 @@ window.addEventListener("scroll", function(){
     }
 });
 
-function change_media(title) {
+function make_mediaList(game) {
+    let mediaList_html = "";
+    let i = 0;
+    
+    mediaList_html += get_media_screenshot(game.imgH, i);
+    i++;
+    game.screenshots.forEach(link => {
+        mediaList_html += get_media_screenshot(link, i);
+        i++;
+    })
+    document.querySelector(`#game_medialist`).innerHTML = mediaList_html;
+}
+
+make_mediaList(games[0]);
+
+function change_media(this_treiler, id, link) {
     const active_block = document.querySelector('.mainInfo__banner__interface__bottom__medialist__media_active');
     if (active_block) {
         active_block.classList.remove('mainInfo__banner__interface__bottom__medialist__media_active');
     }
-    document.querySelector(`#media_block-${title}`).classList.add('mainInfo__banner__interface__bottom__medialist__media_active');
+    document.querySelector(`#media_block-${id}`).classList.add('mainInfo__banner__interface__bottom__medialist__media_active');
 
-    document.querySelector('#game_img').src = `img/banners/${title}.jpg`;
+    let game_visual_inner = "";
+
+    if (this_treiler) {
+
+    }
+    else {
+        game_visual_inner = get_pic_gameCard_html(link);
+    }
+
+    document.querySelector('#game_visual').innerHTML = game_visual_inner;
 }
