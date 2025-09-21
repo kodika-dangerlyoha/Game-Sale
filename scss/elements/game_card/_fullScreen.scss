@@ -1,0 +1,26 @@
+@use '../../default/base';
+
+.fullScreen {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, .7);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: .2s;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    & > img {
+        animation: open .3s base.$tf-main 1;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    }
+    &_active {
+        display: flex;
+    }
+}

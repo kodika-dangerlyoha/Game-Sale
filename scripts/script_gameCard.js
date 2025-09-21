@@ -4,6 +4,8 @@ const for_scroll = document.querySelector('.forScroll');
 const header_center = document.querySelector('#centerHeader_gameCard');
 const mini_game_card = document.querySelector('.miniGameCard');
 const main_info = document.querySelector('.mainInfo');
+let screenshots_count = 0;
+let this_count = 0;
 
 window.addEventListener("scroll", function(){
     document.querySelector('.bigImgBlock').style.transform = "translateY(" + (this.scrollY) / 2 + "px)";
@@ -47,13 +49,26 @@ function make_mediaList(game) {
     let mediaList_html = "";
     let i = 0;
     
-    mediaList_html += get_media_screenshot(game.imgH, i);
+    mediaList_html += get_media_screenshot(game.imgH, i, screenshots_count);
     i++;
+    screenshots_count++;
     game.screenshots.forEach(link => {
-        mediaList_html += get_media_screenshot(link, i);
+        mediaList_html += get_media_screenshot(link, i, screenshots_count);
         i++;
+        screenshots_count++;
     })
     document.querySelector(`#game_medialist`).innerHTML = mediaList_html;
+
+    console.log(screenshots_count);
+
+    // let k = 0;
+
+    // document.querySelectorAll('.mainInfo__banner__interface__bottom__medialist__media_screenshot').forEach(e => {
+    //     e.addEventListener('click', () => change_media(false, k, game.screenshots[k]));
+    //     k++;
+    // });
+
+    document.querySelectorAll('.mainInfo__banner__interface__bottom__medialist__media')[0].classList.add('mainInfo__banner__interface__bottom__medialist__media_active');
 }
 
 make_mediaList(games[0]);
@@ -63,6 +78,8 @@ function change_media(this_treiler, id, link) {
     if (active_block) {
         active_block.classList.remove('mainInfo__banner__interface__bottom__medialist__media_active');
     }
+    // console.log(id);
+    // console.log(document.querySelector(`#media_block-${id}`));
     document.querySelector(`#media_block-${id}`).classList.add('mainInfo__banner__interface__bottom__medialist__media_active');
 
     let game_visual_inner = "";
@@ -71,8 +88,56 @@ function change_media(this_treiler, id, link) {
 
     }
     else {
+        this_count = id;
+        // console.log(this_count);
         game_visual_inner = get_pic_gameCard_html(link);
+        document.querySelector('#buttonFullScreenBlock').innerHTML = get_fullScreen_button(link);
     }
 
     document.querySelector('#game_visual').innerHTML = game_visual_inner;
+}
+
+// console.log(document.querySelector(`.screenshot-${this_count}`));
+
+
+function scroll_screenshots(n) {
+    document.querySelector('.mainInfo__banner__interface__bottom__medialist__media_active').classList.remove('mainInfo__banner__interface__bottom__medialist__media_active');
+    this_count += n;
+    // console.log(this_count);
+    if (this_count == screenshots_count) {
+        this_count = 0;
+        document.querySelector(`.screenshot-${this_count}`).click();
+        document.querySelector(`.screenshot-${this_count}`).classList.add('mainInfo__banner__interface__bottom__medialist__media_active');
+    }
+
+    else if (this_count < 0) {
+        this_count = screenshots_count - 1;
+        document.querySelector(`.screenshot-${this_count}`).click();
+        document.querySelector(`.screenshot-${this_count}`).classList.add('mainInfo__banner__interface__bottom__medialist__media_active');
+    }
+
+    else {
+        document.querySelector(`.screenshot-${this_count}`).click();
+        document.querySelector(`.screenshot-${this_count}`).classList.add('mainInfo__banner__interface__bottom__medialist__media_active');
+    }
+}
+
+// -------- Картинка во весь экран --------
+
+function toggle_fullScreen() {
+    const active = document.querySelector('.fullScreen_active');
+    const block = document.querySelector('.fullScreen');
+    if (active) {
+        block.classList.remove('fullScreen_active');
+        document.body.style.overflow = 'auto';
+    }
+    else {
+        block.classList.add('fullScreen_active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function change_img_fullScreen(link) {
+    document.querySelector('#fullScreen_img').src = link;
+    toggle_fullScreen();
 }

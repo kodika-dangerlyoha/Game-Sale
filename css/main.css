@@ -2092,24 +2092,114 @@ label {
   bottom: 0px;
   left: 0px;
   right: 0px;
-  overflow-y: auto;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
   opacity: 0;
   transform: translateY(20px);
   transition: 0.2s;
 }
-.mainInfo__banner__interface__bottom::-webkit-scrollbar {
+.mainInfo__banner__interface__bottom__scroll {
+  overflow-y: auto;
+  width: 100%;
+}
+.mainInfo__banner__interface__bottom__scroll::-webkit-scrollbar {
   height: 10px;
 }
-.mainInfo__banner__interface__bottom::-webkit-scrollbar-track {
+.mainInfo__banner__interface__bottom__scroll::-webkit-scrollbar-track {
   background: rgba(92, 92, 92, 0.8); /* Цвет фона трека */
 }
-.mainInfo__banner__interface__bottom::-webkit-scrollbar-thumb {
+.mainInfo__banner__interface__bottom__scroll::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.2); /* Цвет ползунка */
   border-radius: 10px;
 }
-.mainInfo__banner__interface__bottom::-webkit-scrollbar-thumb:hover {
+.mainInfo__banner__interface__bottom__scroll::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.2);
+}
+.mainInfo__banner__interface__bottom__screenshotsIF {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+}
+.mainInfo__banner__interface__bottom__screenshotsIF__arrows {
+  display: flex;
+  gap: 7px;
+}
+.mainInfo__banner__interface__bottom__screenshotsIF__arrows__arrow {
+  width: 35px;
+  height: 35px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  border-radius: 50%;
+  transition: 0.15s;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.mainInfo__banner__interface__bottom__screenshotsIF__arrows__arrow:hover {
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
+}
+.mainInfo__banner__interface__bottom__screenshotsIF__arrows__arrow:active {
+  transform: scale(0.95);
+}
+.mainInfo__banner__interface__bottom__screenshotsIF__arrows__arrow > img {
+  width: 100%;
+  filter: invert(1);
+}
+.mainInfo__banner__interface__bottom__screenshotsIF__arrows__arrow:nth-child(1) img {
+  transform: rotate(180deg) translateX(1px);
+}
+.mainInfo__banner__interface__bottom__screenshotsIF__arrows__arrow:nth-child(2) img {
+  transform: translateX(1px);
+}
+.mainInfo__banner__interface__bottom__screenshotsIF__arrows__arrow:active {
+  transform: scale(0.95);
+}
+.mainInfo__banner__interface__bottom__screenshotsIF__arrows__arrow_disactive {
+  cursor: default;
+  opacity: 0.5;
+}
+.mainInfo__banner__interface__bottom__screenshotsIF__arrows__arrow_disactive:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+}
+.mainInfo__banner__interface__bottom__screenshotsIF__arrows__arrow_disactive:active {
+  transform: scale(1);
+}
+.mainInfo__banner__interface__bottom__screenshotsIF__buttonFullScreenBlock__button {
+  height: 35px;
+  width: 35px;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  border-radius: 50%;
+  transition: 0.15s;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.mainInfo__banner__interface__bottom__screenshotsIF__buttonFullScreenBlock__button:hover {
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
+}
+.mainInfo__banner__interface__bottom__screenshotsIF__buttonFullScreenBlock__button:active {
+  transform: scale(0.95);
+}
+.mainInfo__banner__interface__bottom__screenshotsIF__buttonFullScreenBlock__button > svg {
+  width: 100%;
+  height: 100%;
 }
 .mainInfo__banner__interface__bottom__medialist {
   display: flex;
@@ -2733,6 +2823,31 @@ label {
 }
 .similar_loading {
   display: none;
+}
+
+.fullScreen {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: 0.2s;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.fullScreen > img {
+  animation: open 0.3s cubic-bezier(0, 0, 0, 0.75) 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.fullScreen_active {
+  display: flex;
 }
 
 .profile {
