@@ -181,7 +181,7 @@
     &_headerCatalog {
         opacity: 0;
         transform: translateY(-10px);
-        transition: .2s;
+        transition: transform .4s, opacity .4s;
     }
     &_open {
         // transition: .2s;

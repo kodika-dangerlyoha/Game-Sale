@@ -16,178 +16,143 @@
         position: relative;
         width: 700px;
         height: 400px;
-        // overflow: hidden;
+        overflow: hidden;
         border-radius: 20px;
         box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.3);
-        &__discount {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            z-index: 10;
-            background-color: base.$clr-blue_light;
-            border-radius: 10px;
-            padding: 10px 20px 10px 20px;
-            font-size: 20px;
-            font-weight: 600;
-            transition: 0.15s;
-            opacity: 1;
-            &_hidden {
-                opacity: 0;
-            }
-        }
+        border: 1px solid rgba(255, 255, 255, 0.15);
         &__imgBlock {
             width: 100%;
             height: 100%;
             overflow: hidden;
-            border-radius: inherit;
             & img {
                 width: 100%;
             }
         }
-        &__playButton {
-            opacity: 0;
-            z-index: 3;
-            background-color: rgba(0, 0, 0, 0.4);
-            -webkit-backdrop-filter: blur(1px);
-            backdrop-filter: blur(1px);
-            flex-direction: column;
-            transition: 0.15s;
-            cursor: pointer;
-            overflow: hidden;
-            border-radius: inherit;
-            &__icon {
-                transform: scale(1.3);
-                transition: 0.15s;
-                margin-bottom: 5px;
-                & img {
-                    width: 54px;
-                    filter: invert(1);
-                }
-            }
-            &__text {
-                font-size: 18px;
-                font-weight: 700;
-                text-align: center;
-                text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-                transform: translateY(-10px);
-                transition: 0.15s;
-                cursor: pointer;
-            }
+        &__visual {
+            position: relative;
+            z-index: 1;
         }
-        &__treilerBlock {
-            opacity: 0;
+        &__interface {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
             z-index: 2;
-            transition: .15s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 1);
-            overflow: hidden;
-            border-radius: inherit;
-            & > video {
-                width: 100%;
-            }
-            &__interface {
+            background-color: transparent;
+            transition: .2s;
+            &__top {
                 position: absolute;
-                bottom: -30px;
-                left: 5px;
-                right: 5px;
-                padding: 5px;
+                top: 10px;
+                left: 10px;
+                right: 10px;
                 display: flex;
                 align-items: center;
-                gap: 5px;
-                background-color: rgba(0, 0, 0, .7);
-                -webkit-backdrop-filter: blur(30px);
-                backdrop-filter: blur(30px);
-                border-radius: 4px;
+                justify-content: space-between;
+                &__rating {
+                    display: flex;
+                    gap: 10px;
+                }
+                &__point {
+                    display: flex;
+                    gap: 5px;
+                    align-items: center;
+                    padding: 5px 8px;
+                    border-radius: 7px;
+                    font-family: base.$fnt-all;
+                    font-size: 15px;
+                    -webkit-backdrop-filter: blur(10px);
+                    backdrop-filter: blur(10px);
+                    transition: .15s;
+                    @include base.style-main;
+                    background-color: rgba(0, 0, 0, .3);
+                    &_steam {
+                        background-color: rgba(19, 77, 153, 0.3);
+                    }
+                    &_metacritic {
+                        background-color: rgba(16, 168, 84, 0.3);
+                    }
+                    &__key {
+                        font-weight: 700;
+                    }
+                    // &__value {
+                    // }
+                }
+            }
+            &__bottom {
+                position: absolute;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+                overflow-y: auto;
+                background: linear-gradient(to top, rgba(0, 0, 0, .5), transparent);
                 opacity: 0;
-                transition: 0.15s;
-                &__button {
-                    width: 18px;
-                    height: 18px;
-                    cursor: pointer;
-                    transition: .1s;
-                    & > img {
-                        filter: invert(1);
-                        height: 100%;
-                        transition: 0.15s;
-                    }
-                    &_volume {
-                        &:hover .mainInfo__banner__treilerBlock__interface__volumeRace{
-                            opacity: 1;
-                        }
-                    }
-                    &_hover {
-                        &:hover {
-                            transform: scale(0.95);
-                            opacity: 0.85;
-                        }
-                        &:active img {
-                            transform: scale(0.7);
-                        }
-                    }
-                }
-                &__race {
-                    flex-grow: 1;
+                transform: translateY(20px);
+                transition: .2s;
+                &::-webkit-scrollbar {
                     height: 10px;
-                    padding: 2px;
-                    display: flex;
-                    background-color: rgba(70, 70, 70, .7);
-                    border-radius: 2px;
-                    transition: 0.15s;
-                    cursor: pointer;
-                    &__valueRace {
-                        width: 0%;
-                        background-color: rgb(217, 217, 217);
-                        border-radius: 1px;
-                    }
-                    &__hoverRace {
-                        width: 0%;
-                        background-color: rgb(80, 80, 80);
-                        border-radius: 1px;
-                    }
+                }
+                &::-webkit-scrollbar-track {
+                    background: rgba(92, 92, 92, 0.8); /* Цвет фона трека */
+                    // border-radius: 10px;
+                    // margin-left: 10px;
+                    // margin-right: 10px;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background: rgba(255, 255, 255, .2); /* Цвет ползунка */
+                    border-radius: 10px;
                     &:hover {
-                        height: 12px;
+                        background: rgba(255, 255, 255, .2);
                     }
                 }
-                &__volumeRace {
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                    height: 14px;
-                    padding: 3px;
-                    width: 100px;
-                    margin-bottom: 5px;
+                &__medialist {
                     display: flex;
-                    transform: translateY(-19px);
-                    background-color: rgba(0, 0, 0, .7);
-                    -webkit-backdrop-filter: blur(30px);
-                    backdrop-filter: blur(30px);
-                    border-radius: 4px;
-                    opacity: 0;
-                    transition: 0.15s;
-                    &__value {
-                        width: 20%;
-                        background-color: rgb(217, 217, 217);
-                        border-radius: 1px;
+                    width: max-content;
+                    gap: 10px;
+                    padding-bottom: 10px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    &__media {
+                        width: 140px;
+                        height: 82px;
+                        border-radius: 10px;
+                        // background-color: rgba(255, 255, 255, .5);
+                        border: 2px solid transparent;
+                        display: flex;
+                        align-items: center;
+                        overflow: hidden;
+                        transition: .2s;
+                        cursor: pointer;
+                        & > * {
+                            width: 100%;
+                        }
+                        &:hover {
+                            transform: scale(1.05);
+                        }
+                        &:active {
+                            transform: scale(.95);
+                        }
+                        &_active {
+                            border-color: base.$clr-blue_light;
+                            &:hover {
+                                transform: scale(1);
+                            }
+                            &:active {
+                                transform: scale(1);
+                            }
+                        }
                     }
                 }
             }
-        }
-        &:hover &__playButton {
-            opacity: 1;
+            &:hover {
+                background-color: rgba(0, 0, 0, .3);
+            }
+            &:hover &__bottom {
+                opacity: 1;
+                transform: translateY(0px);
+            }
         }
 
-        &:hover &__playButton__icon {
-            transform: scale(1);
-        }
-        &:hover &__playButton__text{
-            transform: translateY(0px);
-        }
-        &:hover &__treilerBlock__interface{
-            bottom: 5px;
-            opacity: 1;
-        }
         &_loading {
             animation: loading_block 1.5s ease infinite;
         }

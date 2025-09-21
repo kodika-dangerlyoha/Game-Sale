@@ -187,6 +187,26 @@ $shadow_light: inset -1px 0 0 0 rgba(255, 255, 255, .25);
     background: rgb(45, 45, 45);
 }
 
+@mixin style-webkit_scrollbar {
+    // scrollbar-width: thin; /* auto | thin | none */
+    // scrollbar-color: rgba(255, 255, 255, .15) rgba(0, 0, 0, .15);
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, .15); /* Цвет фона трека */
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, .15); /* Цвет ползунка */
+        border-radius: 10px;
+        &:hover {
+            background: rgba(255, 255, 255, .2);
+        }
+    }
+}
+
 // -------- fonts --------
 
 $fnt-all: robotoFlex, sans-serif;

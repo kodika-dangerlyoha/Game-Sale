@@ -163,7 +163,7 @@ function make_game_card_info() {
 
     document.getElementById('game_banner').src = games[0].bigBanner;
     document.getElementById('game_banner').alt = games[0].name;
-    document.getElementById('treiler').src = games[0].treilerSrc;
+    // document.getElementById('treiler').src = games[0].treilerSrc;
     document.getElementById('game_img').src = games[0].imgH;
     document.getElementById('game_img').alt = games[0].name;
 

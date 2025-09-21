@@ -42,3 +42,13 @@ window.addEventListener("scroll", function(){
         }, 210)
     }
 });
+
+function change_media(title) {
+    const active_block = document.querySelector('.mainInfo__banner__interface__bottom__medialist__media_active');
+    if (active_block) {
+        active_block.classList.remove('mainInfo__banner__interface__bottom__medialist__media_active');
+    }
+    document.querySelector(`#media_block-${title}`).classList.add('mainInfo__banner__interface__bottom__medialist__media_active');
+
+    document.querySelector('#game_img').src = `img/banners/${title}.jpg`;
+}

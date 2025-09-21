@@ -1030,7 +1030,7 @@ label {
 .gameH_headerCatalog {
   opacity: 0;
   transform: translateY(-10px);
-  transition: 0.2s;
+  transition: transform 0.4s, opacity 0.4s;
 }
 .gameH_open {
   opacity: 1;
@@ -1225,6 +1225,7 @@ label {
 }
 .inputList__list__body__points::-webkit-scrollbar {
   width: 8px;
+  height: 10px;
 }
 .inputList__list__body__points::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.15); /* Цвет фона трека */
@@ -2039,172 +2040,139 @@ label {
   position: relative;
   width: 700px;
   height: 400px;
+  overflow: hidden;
   border-radius: 20px;
   box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.3);
-}
-.mainInfo__banner__discount {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  z-index: 10;
-  background-color: rgb(1, 162, 255);
-  border-radius: 10px;
-  padding: 10px 20px 10px 20px;
-  font-size: 20px;
-  font-weight: 600;
-  transition: 0.15s;
-  opacity: 1;
-}
-.mainInfo__banner__discount_hidden {
-  opacity: 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 .mainInfo__banner__imgBlock {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-radius: inherit;
 }
 .mainInfo__banner__imgBlock img {
   width: 100%;
 }
-.mainInfo__banner__playButton {
-  opacity: 0;
-  z-index: 3;
-  background-color: rgba(0, 0, 0, 0.4);
-  -webkit-backdrop-filter: blur(1px);
-  backdrop-filter: blur(1px);
-  flex-direction: column;
-  transition: 0.15s;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: inherit;
+.mainInfo__banner__visual {
+  position: relative;
+  z-index: 1;
 }
-.mainInfo__banner__playButton__icon {
-  transform: scale(1.3);
-  transition: 0.15s;
-  margin-bottom: 5px;
-}
-.mainInfo__banner__playButton__icon img {
-  width: 54px;
-  filter: invert(1);
-}
-.mainInfo__banner__playButton__text {
-  font-size: 18px;
-  font-weight: 700;
-  text-align: center;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  transform: translateY(-10px);
-  transition: 0.15s;
-  cursor: pointer;
-}
-.mainInfo__banner__treilerBlock {
-  opacity: 0;
+.mainInfo__banner__interface {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   z-index: 2;
-  transition: 0.15s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(0, 0, 0);
-  overflow: hidden;
-  border-radius: inherit;
+  background-color: transparent;
+  transition: 0.2s;
 }
-.mainInfo__banner__treilerBlock > video {
+.mainInfo__banner__interface__top {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mainInfo__banner__interface__top__rating {
+  display: flex;
+  gap: 10px;
+}
+.mainInfo__banner__interface__top__point {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding: 5px 8px;
+  border-radius: 7px;
+  font-family: robotoFlex, sans-serif;
+  font-size: 15px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: 0.15s;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.mainInfo__banner__interface__top__point_steam {
+  background-color: rgba(19, 77, 153, 0.3);
+}
+.mainInfo__banner__interface__top__point_metacritic {
+  background-color: rgba(16, 168, 84, 0.3);
+}
+.mainInfo__banner__interface__top__point__key {
+  font-weight: 700;
+}
+.mainInfo__banner__interface__bottom {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  overflow-y: auto;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.2s;
+}
+.mainInfo__banner__interface__bottom::-webkit-scrollbar {
+  height: 10px;
+}
+.mainInfo__banner__interface__bottom::-webkit-scrollbar-track {
+  background: rgba(92, 92, 92, 0.8); /* Цвет фона трека */
+}
+.mainInfo__banner__interface__bottom::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2); /* Цвет ползунка */
+  border-radius: 10px;
+}
+.mainInfo__banner__interface__bottom::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.mainInfo__banner__interface__bottom__medialist {
+  display: flex;
+  width: -moz-max-content;
+  width: max-content;
+  gap: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.mainInfo__banner__interface__bottom__medialist__media {
+  width: 140px;
+  height: 82px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.mainInfo__banner__interface__bottom__medialist__media > * {
   width: 100%;
 }
-.mainInfo__banner__treilerBlock__interface {
-  position: absolute;
-  bottom: -30px;
-  left: 5px;
-  right: 5px;
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  background-color: rgba(0, 0, 0, 0.7);
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
-  border-radius: 4px;
-  opacity: 0;
-  transition: 0.15s;
+.mainInfo__banner__interface__bottom__medialist__media:hover {
+  transform: scale(1.05);
 }
-.mainInfo__banner__treilerBlock__interface__button {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-  transition: 0.1s;
-}
-.mainInfo__banner__treilerBlock__interface__button > img {
-  filter: invert(1);
-  height: 100%;
-  transition: 0.15s;
-}
-.mainInfo__banner__treilerBlock__interface__button_volume:hover .mainInfo__banner__treilerBlock__interface__volumeRace {
-  opacity: 1;
-}
-.mainInfo__banner__treilerBlock__interface__button_hover:hover {
+.mainInfo__banner__interface__bottom__medialist__media:active {
   transform: scale(0.95);
-  opacity: 0.85;
 }
-.mainInfo__banner__treilerBlock__interface__button_hover:active img {
-  transform: scale(0.7);
+.mainInfo__banner__interface__bottom__medialist__media_active {
+  border-color: rgb(1, 162, 255);
 }
-.mainInfo__banner__treilerBlock__interface__race {
-  flex-grow: 1;
-  height: 10px;
-  padding: 2px;
-  display: flex;
-  background-color: rgba(70, 70, 70, 0.7);
-  border-radius: 2px;
-  transition: 0.15s;
-  cursor: pointer;
-}
-.mainInfo__banner__treilerBlock__interface__race__valueRace {
-  width: 0%;
-  background-color: rgb(217, 217, 217);
-  border-radius: 1px;
-}
-.mainInfo__banner__treilerBlock__interface__race__hoverRace {
-  width: 0%;
-  background-color: rgb(80, 80, 80);
-  border-radius: 1px;
-}
-.mainInfo__banner__treilerBlock__interface__race:hover {
-  height: 12px;
-}
-.mainInfo__banner__treilerBlock__interface__volumeRace {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 14px;
-  padding: 3px;
-  width: 100px;
-  margin-bottom: 5px;
-  display: flex;
-  transform: translateY(-19px);
-  background-color: rgba(0, 0, 0, 0.7);
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
-  border-radius: 4px;
-  opacity: 0;
-  transition: 0.15s;
-}
-.mainInfo__banner__treilerBlock__interface__volumeRace__value {
-  width: 20%;
-  background-color: rgb(217, 217, 217);
-  border-radius: 1px;
-}
-.mainInfo__banner:hover .mainInfo__banner__playButton {
-  opacity: 1;
-}
-.mainInfo__banner:hover .mainInfo__banner__playButton__icon {
+.mainInfo__banner__interface__bottom__medialist__media_active:hover {
   transform: scale(1);
 }
-.mainInfo__banner:hover .mainInfo__banner__playButton__text {
-  transform: translateY(0px);
+.mainInfo__banner__interface__bottom__medialist__media_active:active {
+  transform: scale(1);
 }
-.mainInfo__banner:hover .mainInfo__banner__treilerBlock__interface {
-  bottom: 5px;
+.mainInfo__banner__interface:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.mainInfo__banner__interface:hover .mainInfo__banner__interface__bottom {
   opacity: 1;
+  transform: translateY(0px);
 }
 .mainInfo__banner_loading {
   animation: loading_block 1.5s ease infinite;
