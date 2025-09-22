@@ -2052,9 +2052,6 @@ label {
   background-repeat: no-repeat;
 }
 .mainInfo__banner__visual > video {
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
 }
