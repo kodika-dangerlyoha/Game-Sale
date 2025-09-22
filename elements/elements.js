@@ -214,6 +214,20 @@ const get_info_game_html = (game, discount, categoriesHTML) => {
                 <div class="mainInfo__info__category">
                     ${categoriesHTML}
                 </div>
+                <div class="mainInfo__info__about">
+                    <div class="mainInfo__info__about__point txt">
+                        <div class="mainInfo__info__about__point__key">Дата выхода:</div>
+                        <div class="mainInfo__info__about__point__value">15 авг. 2013 г.</div>
+                    </div>
+                    <div class="mainInfo__info__about__point txt">
+                        <div class="mainInfo__info__about__point__key">Разработчик:</div>
+                        <a href="#" class="mainInfo__info__about__point__value mainInfo__info__about__point__value_link txt">Gaijin Entertainment</a>
+                    </div>
+                    <div class="mainInfo__info__about__point txt">
+                        <div class="mainInfo__info__about__point__key">Издатель:</div>
+                        <a href="#" class="mainInfo__info__about__point__value mainInfo__info__about__point__value_link txt">Gaijin Network Ltd</a>
+                    </div>
+                </div>
             </div>
             <div class="mainInfo__info__interactions">
                 <div class="mainInfo__info__interactions__top">
@@ -419,9 +433,35 @@ const get_pic_gameCard_html = (link) => {
     return `<div class="mainInfo__banner__visual__imgBlock" style="background-image: url('${link}')"></div>`
 }
 
+const get_video_gameCard_html = (link) => {
+    return `<video src="${link}" id="video" loop autoplay>
+            </video>`
+}
+
 const get_media_screenshot = (link, id, n) => {
-    return `<div class="mainInfo__banner__interface__bottom__medialist__media mainInfo__banner__interface__bottom__medialist__media_screenshot screenshot-${n}" id="media_block-${id}" onclick="change_media(false, ${id}, '${link}')">
+    return `<div class="mainInfo__banner__interface__bottom__medialist__media mainInfo__banner__interface__bottom__medialist__media_screenshot screenshot-${n}" id="media_block-${id}" onclick="change_media(false, ${n}, '${link}')">
                 <div class="mainInfo__banner__interface__bottom__medialist__media__screenshot" style="background-image: url('${link}')"></div>
+            </div>`
+}
+
+const get_media_video = (preview, id, n, video) => {
+    return `<div class="mainInfo__banner__interface__bottom__medialist__media mainInfo__banner__interface__bottom__medialist__media_video video-${n}" 
+                id="media_block-${id}" onclick="change_media(true, ${n}, '${video}')">
+                <div class="mainInfo__banner__interface__bottom__medialist__media__playButton">
+                    <div class="mainInfo__banner__interface__bottom__medialist__media__playButton__icon">
+                        <svg viewBox="-0.5 0 7 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-347.000000, -3766.000000)" fill="#fff">
+                                    <g transform="translate(56.000000, 160.000000)">
+                                        <path d="M296.494737,3608.57322 L292.500752,3606.14219 C291.83208,3605.73542 291,3606.25002 291,3607.06891 L291,3611.93095 C291,3612.7509 291.83208,3613.26444 292.500752,3612.85767 L296.494737,3610.42771 C297.168421,3610.01774 297.168421,3608.98319 296.494737,3608.57322">
+                                        </path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="mainInfo__banner__interface__bottom__medialist__media__preview" style="background-image: url('${preview}')"></div>
             </div>`
 }
 

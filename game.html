@@ -237,8 +237,28 @@
 	<div class="blackoutBlock fixed-zero" onclick="open_catalogNavs()"></div>
     <div class="forScroll"></div>
 	<main id="main">
-		<div class="fullScreen" onclick="toggle_fullScreen()">
-			<img class="def-optimize_img" src="" alt="" id="fullScreen_img">
+		<div class="fullScreen">
+			<div class="fullScreen__imgBlock">
+				<img class="def-optimize_img" src="" alt="" id="fullScreen_img" onclick="toggle_fullScreen()">
+			</div>
+			<div class="fullScreen__buttons">
+				<button type="button" title="button555" class="fullScreen__buttons__arrow" onclick="scroll_screenshots(-1)">
+					<img src="img/icons/main/arrRight32.png" alt="">
+				</button>
+				<button type="button" title="button6666" class="fullScreen__buttons__arrow" onclick="scroll_screenshots(1)">
+					<img src="img/icons/main/arrRight32.png" alt="">
+				</button>
+				<button type="button" class="fullScreen__buttons__arrow" title="full screen button 2" onclick="toggle_fullScreen()">
+					<svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g id="ic_fluent_full_screen_zoom_24_filled" fill="#fff" fill-rule="nonzero">
+								<path d="M20,15 C20.5522847,15 21,15.4477153 21,16 C21,16.5522847 20.5522847,17 20,17 L17,17 L17,20 C17,20.5522847 16.5522847,21 16,21 C15.4477153,21 15,20.5522847 15,20 L15,16 C15,15.4477153 15.4477153,15 16,15 L20,15 Z M4,15 L8,15 C8.51283584,15 8.93550716,15.3860402 8.99327227,15.8833789 L9,16 L9,20 C9,20.5522847 8.55228475,21 8,21 C7.48716416,21 7.06449284,20.6139598 7.00672773,20.1166211 L7,20 L7,17 L4,17 C3.44771525,17 3,16.5522847 3,16 C3,15.4871642 3.38604019,15.0644928 3.88337887,15.0067277 L4,15 L8,15 L4,15 Z M16,3 C16.5128358,3 16.9355072,3.38604019 16.9932723,3.88337887 L17,4 L17,7 L20,7 C20.5522847,7 21,7.44771525 21,8 C21,8.51283584 20.6139598,8.93550716 20.1166211,8.99327227 L20,9 L16,9 C15.4871642,9 15.0644928,8.61395981 15.0067277,8.11662113 L15,8 L15,4 C15,3.44771525 15.4477153,3 16,3 Z M8,3 C8.55228475,3 9,3.44771525 9,4 L9,8 C9,8.55228475 8.55228475,9 8,9 L4,9 C3.44771525,9 3,8.55228475 3,8 C3,7.44771525 3.44771525,7 4,7 L7,7 L7,4 C7,3.44771525 7.44771525,3 8,3 Z">
+								</path>
+							</g>
+						</g>
+					</svg>
+				</button>
+			</div>
 		</div>
         <div class="bigImgBlock bigImgBlock_loading loadingContent">
             <div class="bigImgBlock__bg"></div>
@@ -278,7 +298,7 @@
 								</button>
 							</div>
 							<div class="mainInfo__banner__interface__bottom__screenshotsIF__buttonFullScreenBlock" id="buttonFullScreenBlock">
-								<button type="button" class="mainInfo__banner__interface__bottom__screenshotsIF__buttonFullScreenBlock__button" id="fullScreen_btn" title="full screen button" onclick="change_img_fullScreen('')">
+								<button type="button" class="mainInfo__banner__interface__bottom__screenshotsIF__buttonFullScreenBlock__button" id="fullScreen_btn" title="full screen button" onclick="toggle_fullScreen()">
 									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M23 4C23 2.34315 21.6569 1 20 1H16C15.4477 1 15 1.44772 15 2C15 2.55228 15.4477 3 16 3H20C20.5523 3 21 3.44772 21 4V8C21 8.55228 21.4477 9 22 9C22.5523 9 23 8.55228 23 8V4Z" fill="#fff"/>
 										<path d="M23 16C23 15.4477 22.5523 15 22 15C21.4477 15 21 15.4477 21 16V20C21 20.5523 20.5523 21 20 21H16C15.4477 21 15 21.4477 15 22C15 22.5523 15.4477 23 16 23H20C21.6569 23 23 21.6569 23 20V16Z" fill="#fff"/>
@@ -287,6 +307,42 @@
 									</svg>
 								</button>
 							</div>
+						</div>
+						<div class="videoIF videoIF_hidden">
+							<button type="button" title="button" class="videoIF__button videoIF__playButton videoIF__playButton_pause" onclick="toggle_video()">
+								<svg class="_play" viewBox="-0.5 0 7 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+										<g transform="translate(-347.000000, -3766.000000)" fill="#fff">
+											<g transform="translate(56.000000, 160.000000)">
+												<path d="M296.494737,3608.57322 L292.500752,3606.14219 C291.83208,3605.73542 291,3606.25002 291,3607.06891 L291,3611.93095 C291,3612.7509 291.83208,3613.26444 292.500752,3612.85767 L296.494737,3610.42771 C297.168421,3610.01774 297.168421,3608.98319 296.494737,3608.57322">
+												</path>
+											</g>
+										</g>
+									</g>
+								</svg>
+								<svg class="_pause" viewBox="-1 0 8 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+										<g transform="translate(-227.000000, -3765.000000)" fill="#fff">
+											<g transform="translate(56.000000, 160.000000)">
+												<path d="M172,3605 C171.448,3605 171,3605.448 171,3606 L171,3612 C171,3612.552 171.448,3613 172,3613 C172.552,3613 173,3612.552 173,3612 L173,3606 C173,3605.448 172.552,3605 172,3605 M177,3606 L177,3612 C177,3612.552 176.552,3613 176,3613 C175.448,3613 175,3612.552 175,3612 L175,3606 C175,3605.448 175.448,3605 176,3605 C176.552,3605 177,3605.448 177,3606">
+												</path>
+											</g>
+										</g>
+									</g>
+								</svg>
+							</button>
+							<div class="videoIF__race">
+								<div class="videoIF__race__mouse"></div>
+								<div class="videoIF__race__value"></div>
+							</div>
+							<button type="button" class="videoIF__button videoIF__buttonFullScreen" title="fullScreen" onclick="toggle_fullScreen()">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M23 4C23 2.34315 21.6569 1 20 1H16C15.4477 1 15 1.44772 15 2C15 2.55228 15.4477 3 16 3H20C20.5523 3 21 3.44772 21 4V8C21 8.55228 21.4477 9 22 9C22.5523 9 23 8.55228 23 8V4Z" fill="#fff"/>
+									<path d="M23 16C23 15.4477 22.5523 15 22 15C21.4477 15 21 15.4477 21 16V20C21 20.5523 20.5523 21 20 21H16C15.4477 21 15 21.4477 15 22C15 22.5523 15.4477 23 16 23H20C21.6569 23 23 21.6569 23 20V16Z" fill="#fff"/>
+									<path d="M4 21H8C8.55228 21 9 21.4477 9 22C9 22.5523 8.55228 23 8 23H4C2.34315 23 1 21.6569 1 20V16C1 15.4477 1.44772 15 2 15C2.55228 15 3 15.4477 3 16V20C3 20.5523 3.44772 21 4 21Z" fill="#fff"/>
+									<path d="M1 8C1 8.55228 1.44772 9 2 9C2.55228 9 3 8.55228 3 8L3 4C3 3.44772 3.44772 3 4 3H8C8.55228 3 9 2.55228 9 2C9 1.44772 8.55228 1 8 1H4C2.34315 1 1 2.34315 1 4V8Z" fill="#fff"/>
+								</svg>
+							</button>
 						</div>
 						<div class="mainInfo__banner__interface__bottom__scroll">
 							<div class="mainInfo__banner__interface__bottom__medialist" id="game_medialist">
@@ -327,6 +383,20 @@
                             Хоррор
                         </div>
                     </div>
+					<!-- <div class="mainInfo__info__about">
+						<div class="mainInfo__info__about__point txt">
+							<div class="mainInfo__info__about__point__key">Дата выхода:</div>
+							<div class="mainInfo__info__about__point__value">15 авг. 2013 г.</div>
+						</div>
+						<div class="mainInfo__info__about__point txt">
+							<div class="mainInfo__info__about__point__key">Разработчик:</div>
+							<div class="mainInfo__info__about__point__value">Gaijin Entertainment</div>
+						</div>
+						<div class="mainInfo__info__about__point txt">
+							<div class="mainInfo__info__about__point__key">Издатель:</div>
+							<div class="mainInfo__info__about__point__value">Gaijin Network Ltd</div>
+						</div>
+					</div> -->
                 </div>
                 <div class="mainInfo__info__interactions">
                     <div class="mainInfo__info__interactions__top">
@@ -454,5 +524,6 @@
     <script type="text/javascript" src="scripts/header_bg.js"></script>
     <script type="text/javascript" src="scripts/header_catalog.js"></script>
 	<script type="text/javascript" src="scripts/script_gameCard.js"></script>
+	<script type="text/javascript" src="scripts/video_player.js"></script>
 </body>
 </html>

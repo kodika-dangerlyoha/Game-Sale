@@ -5,6 +5,7 @@ const header_center = document.querySelector('#centerHeader_gameCard');
 const mini_game_card = document.querySelector('.miniGameCard');
 const main_info = document.querySelector('.mainInfo');
 let screenshots_count = 0;
+let video_count = 0;
 let this_count = 0;
 
 window.addEventListener("scroll", function(){
@@ -52,6 +53,13 @@ function make_mediaList(game) {
     mediaList_html += get_media_screenshot(game.imgH, i, screenshots_count);
     i++;
     screenshots_count++;
+
+    game.trailers.forEach(e => {
+        mediaList_html += get_media_video(e.preview, i, video_count, e.video);
+        i++;
+        video_count++;
+    })
+
     game.screenshots.forEach(link => {
         mediaList_html += get_media_screenshot(link, i, screenshots_count);
         i++;
@@ -78,47 +86,50 @@ function change_media(this_treiler, id, link) {
     if (active_block) {
         active_block.classList.remove('mainInfo__banner__interface__bottom__medialist__media_active');
     }
-    // console.log(id);
-    // console.log(document.querySelector(`#media_block-${id}`));
-    document.querySelector(`#media_block-${id}`).classList.add('mainInfo__banner__interface__bottom__medialist__media_active');
 
     let game_visual_inner = "";
 
     if (this_treiler) {
+        game_visual_inner = get_video_gameCard_html(link);
+        document.querySelector('.mainInfo__banner__interface__top').classList.add('mainInfo__banner__interface__top_hidden');
+        document.querySelector(`.video-${id}`).classList.add('mainInfo__banner__interface__bottom__medialist__media_active');
+        document.querySelector('.mainInfo__banner__interface__bottom__screenshotsIF').classList.add('mainInfo__banner__interface__bottom__screenshotsIF_hidden');
+        document.querySelector('.videoIF').classList.remove('videoIF_hidden');
+        
+        document.querySelector('#game_visual').innerHTML = game_visual_inner;
 
+        get_video();
+        set_volume();
     }
     else {
+        document.querySelector('.mainInfo__banner__interface__top').classList.remove('mainInfo__banner__interface__top_hidden');
+        document.querySelector(`.screenshot-${id}`).classList.add('mainInfo__banner__interface__bottom__medialist__media_active');
         this_count = id;
-        // console.log(this_count);
         game_visual_inner = get_pic_gameCard_html(link);
-        document.querySelector('#buttonFullScreenBlock').innerHTML = get_fullScreen_button(link);
-    }
+        change_img_fullScreen(link);
+        document.querySelector('.mainInfo__banner__interface__bottom__screenshotsIF').classList.remove('mainInfo__banner__interface__bottom__screenshotsIF_hidden');
+        document.querySelector('.videoIF').classList.add('videoIF_hidden');
 
-    document.querySelector('#game_visual').innerHTML = game_visual_inner;
+        document.querySelector('#game_visual').innerHTML = game_visual_inner;
+    }
 }
 
-// console.log(document.querySelector(`.screenshot-${this_count}`));
-
-
 function scroll_screenshots(n) {
-    document.querySelector('.mainInfo__banner__interface__bottom__medialist__media_active').classList.remove('mainInfo__banner__interface__bottom__medialist__media_active');
+    // document.querySelector('.mainInfo__banner__interface__bottom__medialist__media_active').classList.remove('mainInfo__banner__interface__bottom__medialist__media_active');
     this_count += n;
-    // console.log(this_count);
+    
     if (this_count == screenshots_count) {
         this_count = 0;
         document.querySelector(`.screenshot-${this_count}`).click();
-        document.querySelector(`.screenshot-${this_count}`).classList.add('mainInfo__banner__interface__bottom__medialist__media_active');
     }
 
     else if (this_count < 0) {
         this_count = screenshots_count - 1;
         document.querySelector(`.screenshot-${this_count}`).click();
-        document.querySelector(`.screenshot-${this_count}`).classList.add('mainInfo__banner__interface__bottom__medialist__media_active');
     }
 
     else {
         document.querySelector(`.screenshot-${this_count}`).click();
-        document.querySelector(`.screenshot-${this_count}`).classList.add('mainInfo__banner__interface__bottom__medialist__media_active');
     }
 }
 
@@ -139,5 +150,4 @@ function toggle_fullScreen() {
 
 function change_img_fullScreen(link) {
     document.querySelector('#fullScreen_img').src = link;
-    toggle_fullScreen();
 }

@@ -25,6 +25,7 @@
             z-index: 1;
             height: 100%;
             width: 100%;
+            background-color: rgb(0, 0, 0);
             &__imgBlock {
                 width: 100%;
                 height: 100%;
@@ -39,6 +40,13 @@
                 //     // max-height: 100%;
                 //     // min-height: 100%;
                 // }
+            }
+            & > video {
+                background-size: contain; 
+                background-position: center;
+                background-repeat: no-repeat;
+                width: 100%;
+                height: 100%;
             }
         }
         &__interface {
@@ -58,6 +66,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                transition: .2s;
                 &__rating {
                     display: flex;
                     gap: 10px;
@@ -86,6 +95,10 @@
                     }
                     // &__value {
                     // }
+                }
+                &_hidden {
+                    opacity: 0;
+                    transform: translateY(-10px);
                 }
             }
             &__bottom {
@@ -122,6 +135,7 @@
                     padding-left: 10px;
                     padding-right: 10px;
                     margin-bottom: 10px;
+                    animation: open_invert .25s base.$tf-main 1;
                     &__arrows {
                         display: flex;
                         gap: 7px;
@@ -179,6 +193,9 @@
                             }
                         }
                     }
+                    &_hidden {
+                        display: none;
+                    }
                 }
                 &__medialist {
                     display: flex;
@@ -188,6 +205,7 @@
                     padding-left: 10px;
                     padding-right: 10px;
                     &__media {
+                        position: relative;
                         width: 140px;
                         height: 82px;
                         border-radius: 10px;
@@ -201,7 +219,45 @@
                         & > * {
                             width: 100%;
                         }
+                        &__playButton {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            right: 0;
+                            left: 0;
+                            z-index: 2;
+                            &__icon {
+                                height: 45px;
+                                width: 45px;
+                                border-radius: 50%;
+                                @include base.style-main;
+                                background-color: rgba(0, 0, 0, .5);
+                                -webkit-backdrop-filter: blur(10px);
+                                backdrop-filter: blur(10px);
+                                padding: 14px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                transition: .2s;
+                                & > svg {
+                                    transform: translateX(.5px);
+                                    height: 100%;
+                                }
+                            }
+                        }
                         &__screenshot {
+                            width: 100%;
+                            height: 100%;
+                            background-size: cover; /* или contain */
+                            background-position: center;
+                            background-repeat: no-repeat;
+                        }
+                        &__preview {
+                            position: relative;
+                            z-index: 1;
                             width: 100%;
                             height: 100%;
                             background-size: cover; /* или contain */
@@ -221,6 +277,11 @@
                             }
                             &:active {
                                 transform: scale(1);
+                            }
+                        }
+                        &_active &{
+                            &__playButton__icon {
+                                @include base.style-main_active;
                             }
                         }
                     }
@@ -397,6 +458,39 @@
                 }
             }
         }
+        &__about {
+            margin-top: 10px;
+            border-radius: 10px;
+            @include base.style-main;
+            max-width: max-content;
+            &__point {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 14px;
+                padding: 5px 8px;
+                &__key {
+                    color: rgb(200, 200, 200);
+                    margin-right: 15px;
+                }
+                &__value {
+                    display: flex;
+                    justify-content: end;
+                    &_link {
+                        display: flex;
+                        transition: .15s;
+                        cursor: pointer;
+                        &:hover {
+                            color: base.$clr-blue_light;
+                        }
+                    }
+                }
+                &:nth-child(2n) {
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+            }
+        }
+
         &_loading &__title{
             height: 26px;
             width: 60%;

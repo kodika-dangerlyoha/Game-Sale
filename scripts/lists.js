@@ -139,6 +139,16 @@ let games = [
           'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236390/ss_258eede8c5ee4ccd73216bb24c7b5db8a2b214ed.1920x1080.jpg?t=1756824022',
           'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236390/ss_318da56acde01dd085fa93881da41033dd098e7d.1920x1080.jpg?t=1756824022',
           'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236390/ss_367ad85e6d1c10b611a6f0360cdbae4cb29707fa.1920x1080.jpg?t=1756824022',
+        ],
+        'trailers': [
+          {
+            'preview': "https://i.ytimg.com/vi/5tJurzxQNMQ/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCgO6rbzwGMQ9FIVhu7fNtUTWGuAA",
+            'video': "http://video.akamai.steamstatic.com/store_trailers/257160784/movie_max_vp9.webm?t=1750845270",
+          },
+          {
+            'preview': "https://i.ytimg.com/vi/tFPIJ2Kkc_s/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDeFUeqFHBBfZctG0nKiu9HTWBRWg",
+            'video': "http://video.akamai.steamstatic.com/store_trailers/257073838/movie_max_vp9.webm?t=1731612183",
+          },
         ]
     },
     {

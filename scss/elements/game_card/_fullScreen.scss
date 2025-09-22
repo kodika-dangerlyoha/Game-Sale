@@ -2,7 +2,7 @@
 
 .fullScreen {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
@@ -11,14 +11,63 @@
     background-color: rgba(0, 0, 0, .7);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    cursor: pointer;
     transition: .2s;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    & > img {
-        animation: open .3s base.$tf-main 1;
-        box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    flex-direction: column;
+    &__imgBlock {
+        padding: 10px;
+        padding-bottom: 0;
+        height: calc(100% - 100px);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & > img {
+            cursor: pointer;
+            border-radius: 10px;
+            animation: open .3s base.$tf-main 1;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        }
+    }
+    &__buttons {
+        height: 100px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        &__arrow {
+            width: 45px;
+            height: 45px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+            border-radius: 50%;
+            transition: .15s;
+            cursor: pointer;
+            @include base.style-main_click;
+            & > img {
+                width: 100%;
+                filter: invert(1);
+            }
+            &:nth-child(1), &:nth-child(2) {
+                padding: 13px;
+            }
+            &:nth-child(3) {
+                padding: 9px;
+            }
+            &:nth-child(1) img {
+                transform: rotate(180deg) translateX(1px);
+            }
+            &:nth-child(2) img {
+                transform: translateX(1px);
+            }
+            &:active {
+                transform: scale(0.95);
+            }
+        }
     }
     &_active {
         display: flex;
