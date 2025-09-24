@@ -4,7 +4,7 @@
     position: relative;
     z-index: 3;
     display: flex;
-    align-content: flex-end;
+    align-content: flex-start;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
@@ -40,6 +40,7 @@
                 // background-repeat: no-repeat;
                 width: 100%;
                 height: 100%;
+                transform: scale(1.015) translateY(-1px);
             }
         }
         &__interface {
@@ -279,6 +280,9 @@
                         }
                     }
                 }
+                &_hidden {
+                    transform: translateY(102px) !important;
+                }
             }
             &:hover {
                 background-color: rgba(0, 0, 0, .3);
@@ -311,6 +315,7 @@
             font-size: 30px;
             font-weight: 600;
             margin-bottom: 5px;
+            max-width: 100%;
         }
         &__category {
             display: flex;
@@ -455,7 +460,7 @@
             margin-top: 10px;
             border-radius: 10px;
             @include base.style-main;
-            max-width: max-content;
+            // max-width: max-content;
             &__point {
                 display: flex;
                 align-items: center;

@@ -10,8 +10,8 @@
     margin-bottom: 10px;
     animation: open .25s base.$tf-main 1;
     &__button {
-        height: 35px !important;
-        width: 35px !important;
+        height: 35px;
+        width: 35px;
         padding: 8px;
         background-color: rgba(255, 255, 255, 0.1);
         -webkit-backdrop-filter: blur(3px);
@@ -27,7 +27,7 @@
     }
     &__race {
         position: relative;
-        width: calc(100% - 90px);
+        width: calc(100% - 245px);
         height: 12px;
         border-radius: 6px;
         -webkit-backdrop-filter: blur(3px);
@@ -53,6 +53,7 @@
             width: 0%;
             border-radius: 6px;
             @include base.style-main_active;
+            border: none;
         }
         &:hover &{
             &__mouse {
@@ -60,7 +61,96 @@
             }
         }
     }
+    &__volume {
+        height: 35px;
+        width: 100px;
+        position: relative;
+        -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
+        @include base.style-main;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 7px;
+        padding-right: 10px;
+        border-radius: 17.5px;
+        &__mouse {
+            opacity: 0;
+            position: absolute;
+            z-index: 2;
+            top: 0; 
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            background-color: rgba(255, 255, 255, .3);
+            border-radius: 6px;
+            transition: opacity .15s;
+        }
+        &__value {
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            width: 0%;
+            border-radius: 6px;
+            @include base.style-main_active;
+            border: none;
+        }
+        &__forMouse {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            z-index: 5;
+        }
+        &__num {
+            position: relative;
+            z-index: 4;
+            transform: translateY(-1px);
+            font-size: 12px;
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+        }
+        &:hover &{
+            &__mouse {
+                opacity: 1;
+            }
+        }
+        & > svg {
+            position: relative;
+            z-index: 4;
+            height: 20px;
+            animation: open .2s base.$tf-main 1;
+        }
+        & > ._volume_muted {
+            display: none;
+        }
+        & > ._volume_on {
+            display: block;
+        }
+        &_muted {
+            & > ._volume_muted {
+                display: block;
+            }
+            & > ._volume_on {
+                display: none;
+            }
+        }
+    }
     &__playButton {
+        padding: 10px;
+        overflow: hidden;
+        & > svg {
+            animation: open .2s base.$tf-main 1;
+        }
         & > ._pause {
             display: none;
         }
@@ -73,6 +163,18 @@
             }
             & > ._play {
                 display: none;
+            }
+        }
+    }
+    &__buttonTglScrList {
+        padding: 4px;
+        & > svg {
+            transition: .2s;
+            transform: rotate(90deg);
+        }
+        &_closed {
+            & > svg {
+                transform: rotate(270deg);
             }
         }
     }

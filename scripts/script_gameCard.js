@@ -133,6 +133,11 @@ function scroll_screenshots(n) {
     }
 }
 
+function toggle_screenshots_list() {
+    document.querySelector('.videoIF__buttonTglScrList').classList.toggle('videoIF__buttonTglScrList_closed');
+    document.querySelector('.mainInfo__banner__interface__bottom').classList.toggle('mainInfo__banner__interface__bottom_hidden');
+}
+
 // -------- Картинка во весь экран --------
 
 function toggle_fullScreen() {

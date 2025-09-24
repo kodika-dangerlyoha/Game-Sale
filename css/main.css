@@ -2019,7 +2019,7 @@ label {
   position: relative;
   z-index: 3;
   display: flex;
-  align-content: flex-end;
+  align-content: flex-start;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
@@ -2054,6 +2054,7 @@ label {
 .mainInfo__banner__visual > video {
   width: 100%;
   height: 100%;
+  transform: scale(1.015) translateY(-1px);
 }
 .mainInfo__banner__interface {
   position: absolute;
@@ -2316,6 +2317,9 @@ label {
   background-color: rgba(1, 162, 255, 0.4);
   border: 1px solid rgb(1, 162, 255);
 }
+.mainInfo__banner__interface__bottom_hidden {
+  transform: translateY(102px) !important;
+}
 .mainInfo__banner__interface:hover {
   background-color: rgba(0, 0, 0, 0.3);
 }
@@ -2349,6 +2353,7 @@ label {
   font-size: 30px;
   font-weight: 600;
   margin-bottom: 5px;
+  max-width: 100%;
 }
 .mainInfo__info__category {
   display: flex;
@@ -2547,8 +2552,6 @@ label {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  max-width: -moz-max-content;
-  max-width: max-content;
 }
 .mainInfo__info__about__point {
   display: flex;
@@ -3026,8 +3029,8 @@ label {
   animation: open 0.25s cubic-bezier(0, 0, 0, 0.75) 1;
 }
 .videoIF__button {
-  height: 35px !important;
-  width: 35px !important;
+  height: 35px;
+  width: 35px;
   padding: 8px;
   background-color: rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(3px);
@@ -3054,7 +3057,7 @@ label {
 }
 .videoIF__race {
   position: relative;
-  width: calc(100% - 90px);
+  width: calc(100% - 245px);
   height: 12px;
   border-radius: 6px;
   -webkit-backdrop-filter: blur(3px);
@@ -3084,9 +3087,98 @@ label {
   border-radius: 6px;
   background-color: rgba(1, 162, 255, 0.4);
   border: 1px solid rgb(1, 162, 255);
+  border: none;
 }
 .videoIF__race:hover .videoIF__race__mouse {
   opacity: 1;
+}
+.videoIF__volume {
+  height: 35px;
+  width: 100px;
+  position: relative;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 7px;
+  padding-right: 10px;
+  border-radius: 17.5px;
+}
+.videoIF__volume__mouse {
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  transition: opacity 0.15s;
+}
+.videoIF__volume__value {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 0%;
+  border-radius: 6px;
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
+  border: none;
+}
+.videoIF__volume__forMouse {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 5;
+}
+.videoIF__volume__num {
+  position: relative;
+  z-index: 4;
+  transform: translateY(-1px);
+  font-size: 12px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */ /* Internet Explorer/Edge */
+  user-select: none;
+}
+.videoIF__volume:hover .videoIF__volume__mouse {
+  opacity: 1;
+}
+.videoIF__volume > svg {
+  position: relative;
+  z-index: 4;
+  height: 20px;
+  animation: open 0.2s cubic-bezier(0, 0, 0, 0.75) 1;
+}
+.videoIF__volume > ._volume_muted {
+  display: none;
+}
+.videoIF__volume > ._volume_on {
+  display: block;
+}
+.videoIF__volume_muted > ._volume_muted {
+  display: block;
+}
+.videoIF__volume_muted > ._volume_on {
+  display: none;
+}
+.videoIF__playButton {
+  padding: 10px;
+  overflow: hidden;
+}
+.videoIF__playButton > svg {
+  animation: open 0.2s cubic-bezier(0, 0, 0, 0.75) 1;
 }
 .videoIF__playButton > ._pause {
   display: none;
@@ -3099,6 +3191,16 @@ label {
 }
 .videoIF__playButton_pause > ._play {
   display: none;
+}
+.videoIF__buttonTglScrList {
+  padding: 4px;
+}
+.videoIF__buttonTglScrList > svg {
+  transition: 0.2s;
+  transform: rotate(90deg);
+}
+.videoIF__buttonTglScrList_closed > svg {
+  transform: rotate(270deg);
 }
 .videoIF_hidden {
   display: none;
