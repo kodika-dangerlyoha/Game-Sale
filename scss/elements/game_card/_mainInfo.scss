@@ -6,20 +6,100 @@
     display: flex;
     align-content: flex-start;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     flex-wrap: wrap;
     margin-bottom: 20px;
     transform: translateY(0px) scale(1);
     opacity: 1;
     transition: 0.2s;
+    &__left {
+        width: 700px;
+    }
+    &__title {
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        text-shadow: 0 0 15px rgba(0, 0, 0, .7);
+    }
+    &__interaction {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        border-radius: 20px;
+        @include base.style-main_base;
+        &__button {
+            height: 60px;
+            width: 60px;
+            padding: 10px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include base.style-main_click;
+            & > img {
+                height: 100%;
+                filter: invert(1);
+            }
+            &_fav {
+                padding: 9px;
+            }
+            &_basket {
+                padding: 13px;
+            }
+            &_buy {
+                width: auto;
+                padding: 10px 20px;
+                font-size: 18px;
+                font-weight: 700;
+                @include base.style-main_active;
+            }
+        }
+        &__prices {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            justify-content: center;
+            &__old {
+                text-decoration: line-through;
+                font-size: 16px;
+                color: rgb(200, 200, 200);
+            }
+            &__new {
+                font-weight: 700;
+                font-size: 24px;
+            }
+        }
+        &__discount {
+            font-size: 20px;
+            font-weight: 700;
+            height: 60px;
+            width: 75px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include base.style-main;
+        }
+        &__left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        &__right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
     &__banner {
         position: relative;
-        width: 700px;
         height: 400px;
         overflow: hidden;
         border-radius: 20px;
         box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.3);
         border: 1px solid rgba(255, 255, 255, 0.15);
+        margin-bottom: 10px;
         &__visual {
             position: relative;
             z-index: 1;
@@ -304,18 +384,22 @@
         }
     }
     &__info {
-        width: 500px;
+        width: 400px;
         align-self: flex-end;
         border-radius: 20px;
-        padding: 20px;
-        padding-top: 12px;
+        padding: 15px;
         @include base.style-main_base;
         box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.3);
-        &__title {
-            font-size: 30px;
-            font-weight: 600;
-            margin-bottom: 5px;
-            max-width: 100%;
+        &__img {
+            width: 100%;
+            & > img {
+                width: 100%;
+                border-radius: 10px;
+                border: 1px solid rgba(255, 255, 255, .2);
+            }
+        }
+        &__smallDescription {
+            margin-bottom: 10px;
         }
         &__category {
             display: flex;
@@ -377,83 +461,6 @@
                     color: rgb(200, 200, 200);
                     margin-right: 5px;
                 }   
-            }
-        }
-        &__interactions {
-            margin-top: 20px;
-            &__top {
-                display: flex;
-                gap: 12px;
-                height: 70px;
-                margin-bottom: 12px;
-            }
-            &__bottom {
-                display: flex;
-                gap: 12px;
-                height: 70px;
-            }
-            &__percent {
-                width: 108px;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 100%;
-                border-radius: 15px;
-                font-size: 26px;
-                font-weight: 600;
-                @include base.style-main;
-            }
-            &__price {
-                flex-grow: 1;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 15px; //! 10 old
-                font-size: 26px;
-                font-weight: 600;
-                @include base.style-main;
-                & span {
-                    color: #A7A7A7;
-                    margin-left: 5px;
-                }
-                & span:nth-child(2) {
-                    font-size: 16px;
-                    transform: translateY(3px);
-                    text-decoration: line-through;
-                }
-            }
-            &__button {
-                height: 100%;
-                width: 70px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 15px;
-                cursor: pointer;
-                transition: 0.15s;
-                @include base.style-main_click;
-                & img {
-                    height: 38px;
-                    filter: invert(1);
-                }
-                &_active {
-                    
-                }
-            }
-            &__buttonBuy {
-                flex-grow: 1;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 15px;
-                @include base.style-primaryBTN;
-                & .-text {
-                    font-size: 26px;
-                    font-weight: 600;
-                }
             }
         }
         &__about {

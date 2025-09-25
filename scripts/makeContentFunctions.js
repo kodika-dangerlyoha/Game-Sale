@@ -150,35 +150,52 @@ function make_desscription() {
     document.querySelector('#systemRequirements').innerHTML += games[0].systemRequirements;
 }
 
-function make_game_card_info() {
-    let gameList = "";
-    let categories_list = "";
+function make_mainInfo(game) {
+    document.querySelector('#game_img_right').src = game.imgH;
+    document.querySelector('#game_title').innerHTML = game.name;
+    // document.querySelector('#game_title_top').innerHTML = game.name;
+    document.querySelector('#game_smallDescription').innerHTML = game.small_description;
+    document.querySelector('#game_date').innerHTML = game.date;
+    document.querySelector('#game_developer').innerHTML = game.developer;
+    document.querySelector('#game_publisher').innerHTML = game.publisher;
+
+    let categories_html = "";
+    game.categories.forEach(category => {
+        categories_html += get_categories_game_html(category);
+    });
+    document.querySelector('#game_categories').innerHTML = categories_html;
+}
+
+function make_game_card_info(game) {
+    // let gameList = "";
+    // let categories_list = "";
 
     document.querySelector('#miniGameCard').classList.remove('miniGameCard_loading');
 
-    document.getElementById('img_miniGameCard').src = games[0].imgH;
-    document.getElementById('img_miniGameCard').alt = games[0].name;
-    document.getElementById('price_game').innerHTML = `${games[0].newPrice}₽ <span>${games[0].oldPrice} ₽</span>`;
-    document.getElementById('title_game').innerHTML = games[0].name;
+    document.getElementById('img_miniGameCard').src = game.imgH;
+    document.getElementById('img_miniGameCard').alt = game.name;
+    document.getElementById('price_game').innerHTML = `${game.newPrice}₽ <span>${game.oldPrice} ₽</span>`;
+    document.getElementById('title_game').innerHTML = game.name;
 
-    document.getElementById('game_banner').src = games[0].bigBanner;
-    document.getElementById('game_banner').alt = games[0].name;
+    document.getElementById('game_banner').src = game.bigBanner;
+    document.getElementById('game_banner').alt = game.name;
     // document.getElementById('treiler').src = games[0].treilerSrc;
-    document.getElementById('visual_main_screenshot').style.backgroundImage = `url('${games[0].imgH}')`;
+    // document.getElementById('visual_main_screenshot').style.backgroundImage = `url('${game.imgH}')`;
     // document.getElementById('game_img').alt = games[0].name;
 
-    get_categories_game().forEach(category => {
-        categories_list += get_categories_game_html(category);
-    })
+    // get_categories_game().forEach(category => {
+    //     categories_list += get_categories_game_html(category);
+    // })
     
-    gameList += get_info_game_html(
-        games[0], 
-        Math.round((games[0].oldPrice - games[0].newPrice) / games[0].oldPrice * 100),
-        categories_list
-    )
+    // gameList += get_info_game_html(
+    //     game, 
+    //     Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100),
+    //     categories_list
+    // )
 
-    document.querySelector('#game_info').innerHTML = gameList;
+    // document.querySelector('#game_info').innerHTML = gameList;
 
+    make_mainInfo(game);
     make_editions();
     make_desscription();
     makeSimilar_gameCard();

@@ -11,6 +11,7 @@ let games = [
         'bigBanner_blur': "img/banners/blur/wt2_blur.png",
         'newPrice': 4599,
         'oldPrice': 5120,
+        'small_description': "War Thunder – самая масштабная бесплатная кроссплатформенная многопользовательская онлайн-игра, посвященная боевой технике самых разных войн и конфликтов – с начала XX века и до наших дней. Авиация, наземные силы и флот сражаются вместе в одном бою.",
         'editions': [
             {
                 'title': "Cold War 2: First Edition",
@@ -125,8 +126,9 @@ let games = [
         'genres': ["shooter", "horror"],
         'status': "new",
         'carousel': true,
-        'publisher': "Activision",
-        'developer': "Activision",
+        'publisher': "Gaijin Network Ltd",
+        'developer': "Gaijin Entertainment",
+        'date': "23.04.2018",
         'preOrder': "03.04.2026",
         'dls': false,
         'screenshots': [

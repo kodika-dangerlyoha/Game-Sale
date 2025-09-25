@@ -210,7 +210,6 @@ const get_edition_game_html = (edition, discount) => {
 
 const get_info_game_html = (game, discount, categoriesHTML) => {
     return `<div>
-                <div class="mainInfo__info__title txt">${game.name}</div>
                 <div class="mainInfo__info__category">
                     ${categoriesHTML}
                 </div>
@@ -226,31 +225,6 @@ const get_info_game_html = (game, discount, categoriesHTML) => {
                     <div class="mainInfo__info__about__point txt">
                         <div class="mainInfo__info__about__point__key">Издатель:</div>
                         <a href="#" class="mainInfo__info__about__point__value mainInfo__info__about__point__value_link txt">Gaijin Network Ltd</a>
-                    </div>
-                </div>
-            </div>
-            <div class="mainInfo__info__interactions">
-                <div class="mainInfo__info__interactions__top">
-                    <div class="mainInfo__info__interactions__percent">
-                        <div class="mainInfo__info__interactions__percent__valueRow">
-                            <div class="mainInfo__info__interactions__percent__valueRow__race">
-                                <div class="mainInfo__info__interactions__percent__valueRow__race__point"></div>
-                            </div>
-                        </div>
-                        <div class="mainInfo__info__interactions__percent__valueNamber txt">${discount}%</div>
-                    </div>
-                    <div class="mainInfo__info__interactions__price txt">${game.newPrice} ₽ <span>/</span><span>${game.oldPrice} ₽</span></div>
-                    <div class="mainInfo__info__interactions__button mainInfo__info__interactions__button_favorite mainInfo__info__interactions__button_active" onclick="addInFavorite(${game.id})">
-                        <img src="img/icons/main/like64.png" alt="">
-                    </div>
-                </div>
-                <div class="mainInfo__info__interactions__bottom">
-                    <div class="mainInfo__info__interactions__buttonBuy">
-                        <div class="-text txt">Купить</div>
-                        <div class="-forHover absolute-zero"></div>
-                    </div>
-                    <div class="mainInfo__info__interactions__button mainInfo__info__interactions__button_basket" onclick="addInBasket(${game.id})">
-                        <img src="img/icons/main/basket64_2.png" alt="">
                     </div>
                 </div>
             </div>`

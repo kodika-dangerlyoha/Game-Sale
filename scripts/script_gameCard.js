@@ -1,4 +1,4 @@
-make_game_card_info();
+make_game_card_info(games[0]);
 
 const for_scroll = document.querySelector('.forScroll');
 const header_center = document.querySelector('#centerHeader_gameCard');
@@ -50,9 +50,9 @@ function make_mediaList(game) {
     let mediaList_html = "";
     let i = 0;
     
-    mediaList_html += get_media_screenshot(game.imgH, i, screenshots_count);
-    i++;
-    screenshots_count++;
+    // mediaList_html += get_media_screenshot(game.imgH, i, screenshots_count);
+    // i++;
+    // screenshots_count++;
 
     game.trailers.forEach(e => {
         mediaList_html += get_media_video(e.preview, i, video_count, e.video);
@@ -67,16 +67,17 @@ function make_mediaList(game) {
     })
     document.querySelector(`#game_medialist`).innerHTML = mediaList_html;
 
-    console.log(screenshots_count);
-
-    // let k = 0;
-
-    // document.querySelectorAll('.mainInfo__banner__interface__bottom__medialist__media_screenshot').forEach(e => {
-    //     e.addEventListener('click', () => change_media(false, k, game.screenshots[k]));
-    //     k++;
-    // });
-
-    document.querySelectorAll('.mainInfo__banner__interface__bottom__medialist__media')[0].classList.add('mainInfo__banner__interface__bottom__medialist__media_active');
+    // document.querySelectorAll('.mainInfo__banner__interface__bottom__medialist__media')[0].classList.add('mainInfo__banner__interface__bottom__medialist__media_active');
+    
+    const video_0 = document.querySelector('.video-0');
+    const screenshot_0 = document.querySelector('.screenshot-0');
+    
+    if (video_0) {
+        video_0.click();
+    }
+    else if (screenshot_0) {
+        screenshot_0.click();
+    }
 }
 
 make_mediaList(games[0]);
@@ -102,6 +103,12 @@ function change_media(this_treiler, id, link) {
         set_volume();
     }
     else {
+        const videoIF__buttonTglScrList_closed = document.querySelector('.videoIF__buttonTglScrList_closed');
+        if (videoIF__buttonTglScrList_closed) {
+            videoIF__buttonTglScrList_closed.classList.remove('videoIF__buttonTglScrList_closed');
+            document.querySelector('.mainInfo__banner__interface__bottom').classList.remove('mainInfo__banner__interface__bottom_hidden');
+        }
+
         document.querySelector('.mainInfo__banner__interface__top').classList.remove('mainInfo__banner__interface__top_hidden');
         document.querySelector(`.screenshot-${id}`).classList.add('mainInfo__banner__interface__bottom__medialist__media_active');
         this_count = id;

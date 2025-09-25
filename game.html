@@ -264,41 +264,108 @@
             <div class="bigImgBlock__bg"></div>
             <div class="bigImgBlock__border"></div>
             <img src="" alt="" id="game_banner">
+			<!-- <div class="bigImgBlock__title txt" id="game_title_top"></div> -->
         </div>
         <div class="mainInfo">
-            <div class="mainInfo__banner mainInfo__banner_loading loadingContent">
-				<div class="mainInfo__banner__visual" id="game_visual">
-					<div class="mainInfo__banner__visual__imgBlock" id="visual_main_screenshot"><img src="" alt="" id="game_img"></div>
-				</div>
-				<div class="mainInfo__banner__interface">
-					<div class="mainInfo__banner__interface__top">
-						<div class="mainInfo__banner__interface__top__rating txt">
-							<div class="mainInfo__banner__interface__top__point mainInfo__banner__interface__top__point_steam">
-								<img src="img/icons/social/steam.png" alt="">
-								<div class="mainInfo__banner__interface__top__point__rating">70%</div>
-							</div>
-							<div class="mainInfo__banner__interface__top__point mainInfo__banner__interface__top__point_metacritic">
-								<img src="img/icons/social/m.png" alt="">
-								<div class="mainInfo__banner__interface__top__point__rating">4.7</div>
-							</div>
-						</div>
-						<div class="mainInfo__banner__interface__top__point mainInfo__banner__interface__top__point_preOrder txt">
-							<div class="mainInfo__banner__interface__top__point__key">Предзаказ</div>
-							<div class="mainInfo__banner__interface__top__point__value">03.04.2026</div>
-						</div>
+			<div class="mainInfo__left">
+				<div class="mainInfo__title txt" id="game_title"></div>
+				<div class="mainInfo__banner mainInfo__banner_loading loadingContent">
+					<div class="mainInfo__banner__visual" id="game_visual">
+						<div class="mainInfo__banner__visual__imgBlock" id="visual_main_screenshot"><img src="" alt="" id="game_img"></div>
 					</div>
-					<div class="mainInfo__banner__interface__bottom">
-						<div class="mainInfo__banner__interface__bottom__screenshotsIF">
-							<div class="mainInfo__banner__interface__bottom__screenshotsIF__arrows">
-								<button type="button" title="button" class="mainInfo__banner__interface__bottom__screenshotsIF__arrows__arrow" onclick="scroll_screenshots(-1)" id="screenshots_button_left">
-									<img src="img/icons/main/arrRight32.png" alt="">
-								</button>
-								<button type="button" title="button2" class="mainInfo__banner__interface__bottom__screenshotsIF__arrows__arrow" onclick="scroll_screenshots(1)" id="screenshots_button_right">
-									<img src="img/icons/main/arrRight32.png" alt="">
-								</button>
+					<div class="mainInfo__banner__interface">
+						<div class="mainInfo__banner__interface__top">
+							<div class="mainInfo__banner__interface__top__rating txt">
+								<div class="mainInfo__banner__interface__top__point mainInfo__banner__interface__top__point_steam">
+									<img src="img/icons/social/steam.png" alt="">
+									<div class="mainInfo__banner__interface__top__point__rating">70%</div>
+								</div>
+								<div class="mainInfo__banner__interface__top__point mainInfo__banner__interface__top__point_metacritic">
+									<img src="img/icons/social/m.png" alt="">
+									<div class="mainInfo__banner__interface__top__point__rating">4.7</div>
+								</div>
 							</div>
-							<div class="mainInfo__banner__interface__bottom__screenshotsIF__buttonFullScreenBlock" id="buttonFullScreenBlock">
-								<button type="button" class="mainInfo__banner__interface__bottom__screenshotsIF__buttonFullScreenBlock__button" id="fullScreen_btn" title="full screen button" onclick="toggle_fullScreen()">
+							<div class="mainInfo__banner__interface__top__point mainInfo__banner__interface__top__point_preOrder txt">
+								<div class="mainInfo__banner__interface__top__point__key">Предзаказ</div>
+								<div class="mainInfo__banner__interface__top__point__value">03.04.2026</div>
+							</div>
+						</div>
+						<div class="mainInfo__banner__interface__bottom">
+							<div class="mainInfo__banner__interface__bottom__screenshotsIF">
+								<div class="mainInfo__banner__interface__bottom__screenshotsIF__arrows">
+									<button type="button" title="button" class="mainInfo__banner__interface__bottom__screenshotsIF__arrows__arrow" onclick="scroll_screenshots(-1)" id="screenshots_button_left">
+										<img src="img/icons/main/arrRight32.png" alt="">
+									</button>
+									<button type="button" title="button2" class="mainInfo__banner__interface__bottom__screenshotsIF__arrows__arrow" onclick="scroll_screenshots(1)" id="screenshots_button_right">
+										<img src="img/icons/main/arrRight32.png" alt="">
+									</button>
+								</div>
+								<div class="mainInfo__banner__interface__bottom__screenshotsIF__buttonFullScreenBlock" id="buttonFullScreenBlock">
+									<button type="button" class="mainInfo__banner__interface__bottom__screenshotsIF__buttonFullScreenBlock__button" id="fullScreen_btn" title="full screen button" onclick="toggle_fullScreen()">
+										<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M23 4C23 2.34315 21.6569 1 20 1H16C15.4477 1 15 1.44772 15 2C15 2.55228 15.4477 3 16 3H20C20.5523 3 21 3.44772 21 4V8C21 8.55228 21.4477 9 22 9C22.5523 9 23 8.55228 23 8V4Z" fill="#fff"/>
+											<path d="M23 16C23 15.4477 22.5523 15 22 15C21.4477 15 21 15.4477 21 16V20C21 20.5523 20.5523 21 20 21H16C15.4477 21 15 21.4477 15 22C15 22.5523 15.4477 23 16 23H20C21.6569 23 23 21.6569 23 20V16Z" fill="#fff"/>
+											<path d="M4 21H8C8.55228 21 9 21.4477 9 22C9 22.5523 8.55228 23 8 23H4C2.34315 23 1 21.6569 1 20V16C1 15.4477 1.44772 15 2 15C2.55228 15 3 15.4477 3 16V20C3 20.5523 3.44772 21 4 21Z" fill="#fff"/>
+											<path d="M1 8C1 8.55228 1.44772 9 2 9C2.55228 9 3 8.55228 3 8L3 4C3 3.44772 3.44772 3 4 3H8C8.55228 3 9 2.55228 9 2C9 1.44772 8.55228 1 8 1H4C2.34315 1 1 2.34315 1 4V8Z" fill="#fff"/>
+										</svg>
+									</button>
+								</div>
+							</div>
+							<div class="videoIF videoIF_hidden">
+								<button type="button" title="button" class="videoIF__button videoIF__playButton videoIF__playButton_pause" onclick="toggle_video()">
+									<svg class="_play" viewBox="-0.5 0 7 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+										<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+											<g transform="translate(-347.000000, -3766.000000)" fill="#fff">
+												<g transform="translate(56.000000, 160.000000)">
+													<path d="M296.494737,3608.57322 L292.500752,3606.14219 C291.83208,3605.73542 291,3606.25002 291,3607.06891 L291,3611.93095 C291,3612.7509 291.83208,3613.26444 292.500752,3612.85767 L296.494737,3610.42771 C297.168421,3610.01774 297.168421,3608.98319 296.494737,3608.57322">
+													</path>
+												</g>
+											</g>
+										</g>
+									</svg>
+									<svg class="_pause" viewBox="-1 0 8 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+										<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+											<g transform="translate(-227.000000, -3765.000000)" fill="#fff">
+												<g transform="translate(56.000000, 160.000000)">
+													<path d="M172,3605 C171.448,3605 171,3605.448 171,3606 L171,3612 C171,3612.552 171.448,3613 172,3613 C172.552,3613 173,3612.552 173,3612 L173,3606 C173,3605.448 172.552,3605 172,3605 M177,3606 L177,3612 C177,3612.552 176.552,3613 176,3613 C175.448,3613 175,3612.552 175,3612 L175,3606 C175,3605.448 175.448,3605 176,3605 C176.552,3605 177,3605.448 177,3606">
+													</path>
+												</g>
+											</g>
+										</g>
+									</svg>
+								</button>
+								<div class="videoIF__race">
+									<div class="videoIF__race__mouse"></div>
+									<div class="videoIF__race__value"></div>
+								</div>
+								<div class="videoIF__volume videoIF__volume_muted">
+									<svg class="_volume_muted" viewBox="0 -3 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+										<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+											<g sketch:type="MSLayerGroup" transform="translate(-311.000000, -573.000000)" fill="#fff">
+												<path d="M336.444,585 L340.617,580.827 C341.067,580.377 341.109,579.688 340.711,579.289 C340.312,578.891 339.623,578.933 339.173,579.383 L335,583.556 L330.827,579.383 C330.377,578.933 329.688,578.891 329.289,579.289 C328.891,579.688 328.933,580.377 329.383,580.827 L333.556,585 L329.383,589.173 C328.933,589.623 328.891,590.312 329.289,590.711 C329.688,591.109 330.377,591.067 330.827,590.617 L335,586.444 L339.173,590.617 C339.623,591.067 340.312,591.109 340.711,590.711 C341.109,590.312 341.067,589.623 340.617,589.173 L336.444,585 L336.444,585 Z M325,573 L318,577.667 L318,592.333 L325,597 C326.104,597 327,596.104 327,595 L327,575 C327,573.896 326.104,573 325,573 L325,573 Z M311,581 L311,589 C311,590.104 311.896,591 313,591 L316,591 L316,579 L313,579 C311.896,579 311,579.896 311,581 L311,581 Z" sketch:type="MSShapeGroup">
+												</path>
+											</g>
+										</g>
+									</svg>
+									<svg class="_volume_on" viewBox="0 -0.5 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+										<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+											<g sketch:type="MSLayerGroup" transform="translate(-209.000000, -573.000000)" fill="#fff">
+												<path d="M228,578.101 L228,580.101 C230.282,580.564 232,582.581 232,585 C232,587.419 230.282,589.436 228,589.899 L228,591.899 C231.388,591.41 234,588.523 234,585 C234,581.477 231.388,578.59 228,578.101 L228,578.101 Z M209,581 L209,589 C209,590.104 209.896,591 211,591 L214,591 L214,579 L211,579 C209.896,579 209,579.896 209,581 L209,581 Z M223,573 L216,577.667 L216,592.333 L223,597 C224.104,597 225,596.104 225,595 L225,575 C225,573.896 224.104,573 223,573 L223,573 Z" sketch:type="MSShapeGroup">
+												</path>
+											</g>
+										</g>
+									</svg>
+									<div class="videoIF__volume__num txt">0</div>
+									<div class="videoIF__volume__mouse"></div>
+									<div class="videoIF__volume__value"></div>
+									<div class="videoIF__volume__forMouse"></div>
+								</div>
+								<button type="button" class="videoIF__button videoIF__buttonTglScrList" title="TglScrList" onclick="toggle_screenshots_list()">
+									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
+									</svg>
+								</button>
+								<button type="button" class="videoIF__button videoIF__buttonFullScreen" title="fullScreen" onclick="toggle_fullScreen()">
 									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M23 4C23 2.34315 21.6569 1 20 1H16C15.4477 1 15 1.44772 15 2C15 2.55228 15.4477 3 16 3H20C20.5523 3 21 3.44772 21 4V8C21 8.55228 21.4477 9 22 9C22.5523 9 23 8.55228 23 8V4Z" fill="#fff"/>
 										<path d="M23 16C23 15.4477 22.5523 15 22 15C21.4477 15 21 15.4477 21 16V20C21 20.5523 20.5523 21 20 21H16C15.4477 21 15 21.4477 15 22C15 22.5523 15.4477 23 16 23H20C21.6569 23 23 21.6569 23 20V16Z" fill="#fff"/>
@@ -307,142 +374,87 @@
 									</svg>
 								</button>
 							</div>
-						</div>
-						<div class="videoIF videoIF_hidden">
-							<button type="button" title="button" class="videoIF__button videoIF__playButton videoIF__playButton_pause" onclick="toggle_video()">
-								<svg class="_play" viewBox="-0.5 0 7 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-										<g transform="translate(-347.000000, -3766.000000)" fill="#fff">
-											<g transform="translate(56.000000, 160.000000)">
-												<path d="M296.494737,3608.57322 L292.500752,3606.14219 C291.83208,3605.73542 291,3606.25002 291,3607.06891 L291,3611.93095 C291,3612.7509 291.83208,3613.26444 292.500752,3612.85767 L296.494737,3610.42771 C297.168421,3610.01774 297.168421,3608.98319 296.494737,3608.57322">
-												</path>
-											</g>
-										</g>
-									</g>
-								</svg>
-								<svg class="_pause" viewBox="-1 0 8 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-										<g transform="translate(-227.000000, -3765.000000)" fill="#fff">
-											<g transform="translate(56.000000, 160.000000)">
-												<path d="M172,3605 C171.448,3605 171,3605.448 171,3606 L171,3612 C171,3612.552 171.448,3613 172,3613 C172.552,3613 173,3612.552 173,3612 L173,3606 C173,3605.448 172.552,3605 172,3605 M177,3606 L177,3612 C177,3612.552 176.552,3613 176,3613 C175.448,3613 175,3612.552 175,3612 L175,3606 C175,3605.448 175.448,3605 176,3605 C176.552,3605 177,3605.448 177,3606">
-												</path>
-											</g>
-										</g>
-									</g>
-								</svg>
-							</button>
-							<div class="videoIF__race">
-								<div class="videoIF__race__mouse"></div>
-								<div class="videoIF__race__value"></div>
-							</div>
-							<div class="videoIF__volume videoIF__volume_muted">
-								<svg class="_volume_muted" viewBox="0 -3 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-										<g sketch:type="MSLayerGroup" transform="translate(-311.000000, -573.000000)" fill="#fff">
-											<path d="M336.444,585 L340.617,580.827 C341.067,580.377 341.109,579.688 340.711,579.289 C340.312,578.891 339.623,578.933 339.173,579.383 L335,583.556 L330.827,579.383 C330.377,578.933 329.688,578.891 329.289,579.289 C328.891,579.688 328.933,580.377 329.383,580.827 L333.556,585 L329.383,589.173 C328.933,589.623 328.891,590.312 329.289,590.711 C329.688,591.109 330.377,591.067 330.827,590.617 L335,586.444 L339.173,590.617 C339.623,591.067 340.312,591.109 340.711,590.711 C341.109,590.312 341.067,589.623 340.617,589.173 L336.444,585 L336.444,585 Z M325,573 L318,577.667 L318,592.333 L325,597 C326.104,597 327,596.104 327,595 L327,575 C327,573.896 326.104,573 325,573 L325,573 Z M311,581 L311,589 C311,590.104 311.896,591 313,591 L316,591 L316,579 L313,579 C311.896,579 311,579.896 311,581 L311,581 Z" sketch:type="MSShapeGroup">
-											</path>
-										</g>
-									</g>
-								</svg>
-								<svg class="_volume_on" viewBox="0 -0.5 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-										<g sketch:type="MSLayerGroup" transform="translate(-209.000000, -573.000000)" fill="#fff">
-											<path d="M228,578.101 L228,580.101 C230.282,580.564 232,582.581 232,585 C232,587.419 230.282,589.436 228,589.899 L228,591.899 C231.388,591.41 234,588.523 234,585 C234,581.477 231.388,578.59 228,578.101 L228,578.101 Z M209,581 L209,589 C209,590.104 209.896,591 211,591 L214,591 L214,579 L211,579 C209.896,579 209,579.896 209,581 L209,581 Z M223,573 L216,577.667 L216,592.333 L223,597 C224.104,597 225,596.104 225,595 L225,575 C225,573.896 224.104,573 223,573 L223,573 Z" sketch:type="MSShapeGroup">
-											</path>
-										</g>
-									</g>
-								</svg>
-								<div class="videoIF__volume__num txt">0</div>
-								<div class="videoIF__volume__mouse"></div>
-								<div class="videoIF__volume__value"></div>
-								<div class="videoIF__volume__forMouse"></div>
-							</div>
-							<button type="button" class="videoIF__button videoIF__buttonTglScrList" title="TglScrList" onclick="toggle_screenshots_list()">
-								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
-								</svg>
-							</button>
-							<button type="button" class="videoIF__button videoIF__buttonFullScreen" title="fullScreen" onclick="toggle_fullScreen()">
-								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M23 4C23 2.34315 21.6569 1 20 1H16C15.4477 1 15 1.44772 15 2C15 2.55228 15.4477 3 16 3H20C20.5523 3 21 3.44772 21 4V8C21 8.55228 21.4477 9 22 9C22.5523 9 23 8.55228 23 8V4Z" fill="#fff"/>
-									<path d="M23 16C23 15.4477 22.5523 15 22 15C21.4477 15 21 15.4477 21 16V20C21 20.5523 20.5523 21 20 21H16C15.4477 21 15 21.4477 15 22C15 22.5523 15.4477 23 16 23H20C21.6569 23 23 21.6569 23 20V16Z" fill="#fff"/>
-									<path d="M4 21H8C8.55228 21 9 21.4477 9 22C9 22.5523 8.55228 23 8 23H4C2.34315 23 1 21.6569 1 20V16C1 15.4477 1.44772 15 2 15C2.55228 15 3 15.4477 3 16V20C3 20.5523 3.44772 21 4 21Z" fill="#fff"/>
-									<path d="M1 8C1 8.55228 1.44772 9 2 9C2.55228 9 3 8.55228 3 8L3 4C3 3.44772 3.44772 3 4 3H8C8.55228 3 9 2.55228 9 2C9 1.44772 8.55228 1 8 1H4C2.34315 1 1 2.34315 1 4V8Z" fill="#fff"/>
-								</svg>
-							</button>
-						</div>
-						<div class="mainInfo__banner__interface__bottom__scroll">
-							<div class="mainInfo__banner__interface__bottom__medialist" id="game_medialist">
-								<div class="mainInfo__banner__interface__bottom__medialist__media mainInfo__banner__interface__bottom__medialist__media_active" id="media_block-1" onclick="change_media(false, '1')">
-									<img src="img/banners/1.jpg" alt="">
-								</div>
-								<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-10" onclick="change_media(false, '10')">
-									<img src="img/banners/10.jpg" alt="">
-								</div>
-								<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-3" onclick="change_media(false, '3')">
-									<img src="img/banners/3.jpg" alt="">
-								</div>
-								<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-4" onclick="change_media(false, '4')">
-									<img src="img/banners/4.jpg" alt="">
-								</div>
-								<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-5" onclick="change_media(false, '5')">
-									<img src="img/banners/5.jpg" alt="">
-								</div>
-								<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-52nahuy" onclick="change_media(false, '52nahuy')">
-									<img src="img/banners/52nahuy.jpg" alt="">
+							<div class="mainInfo__banner__interface__bottom__scroll">
+								<div class="mainInfo__banner__interface__bottom__medialist" id="game_medialist">
+									<div class="mainInfo__banner__interface__bottom__medialist__media mainInfo__banner__interface__bottom__medialist__media_active" id="media_block-1" onclick="change_media(false, '1')">
+										<img src="img/banners/1.jpg" alt="">
+									</div>
+									<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-10" onclick="change_media(false, '10')">
+										<img src="img/banners/10.jpg" alt="">
+									</div>
+									<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-3" onclick="change_media(false, '3')">
+										<img src="img/banners/3.jpg" alt="">
+									</div>
+									<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-4" onclick="change_media(false, '4')">
+										<img src="img/banners/4.jpg" alt="">
+									</div>
+									<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-5" onclick="change_media(false, '5')">
+										<img src="img/banners/5.jpg" alt="">
+									</div>
+									<div class="mainInfo__banner__interface__bottom__medialist__media" id="media_block-52nahuy" onclick="change_media(false, '52nahuy')">
+										<img src="img/banners/52nahuy.jpg" alt="">
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-            </div>
+				<div class="mainInfo__interaction">
+					<div class="mainInfo__interaction__left">
+						<button type="button" class="mainInfo__interaction__button mainInfo__interaction__button_fav" title="кнопка в избранное">
+							<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M12 19.7501C11.8012 19.7499 11.6105 19.6708 11.47 19.5301L4.70001 12.7401C3.78387 11.8054 3.27072 10.5488 3.27072 9.24006C3.27072 7.9313 3.78387 6.6747 4.70001 5.74006C5.6283 4.81186 6.88727 4.29042 8.20001 4.29042C9.51274 4.29042 10.7717 4.81186 11.7 5.74006L12 6.00006L12.28 5.72006C12.739 5.25606 13.2857 4.88801 13.8883 4.63736C14.4909 4.3867 15.1374 4.25845 15.79 4.26006C16.442 4.25714 17.088 4.38382 17.6906 4.63274C18.2931 4.88167 18.8402 5.24786 19.3 5.71006C20.2161 6.6447 20.7293 7.9013 20.7293 9.21006C20.7293 10.5188 20.2161 11.7754 19.3 12.7101L12.53 19.5001C12.463 19.5752 12.3815 19.636 12.2904 19.679C12.1994 19.7219 12.1006 19.7461 12 19.7501ZM8.21001 5.75006C7.75584 5.74675 7.30551 5.83342 6.885 6.00505C6.4645 6.17669 6.08215 6.42989 5.76001 6.75006C5.11088 7.40221 4.74646 8.28491 4.74646 9.20506C4.74646 10.1252 5.11088 11.0079 5.76001 11.6601L12 17.9401L18.23 11.6801C18.5526 11.3578 18.8086 10.9751 18.9832 10.5538C19.1578 10.1326 19.2477 9.68107 19.2477 9.22506C19.2477 8.76905 19.1578 8.31752 18.9832 7.89627C18.8086 7.47503 18.5526 7.09233 18.23 6.77006C17.9104 6.44929 17.5299 6.1956 17.1109 6.02387C16.6919 5.85215 16.2428 5.76586 15.79 5.77006C15.3358 5.76675 14.8855 5.85342 14.465 6.02505C14.0445 6.19669 13.6621 6.44989 13.34 6.77006L12.53 7.58006C12.3869 7.71581 12.1972 7.79149 12 7.79149C11.8028 7.79149 11.6131 7.71581 11.47 7.58006L10.66 6.77006C10.3395 6.44628 9.95791 6.18939 9.53733 6.01429C9.11675 5.83919 8.66558 5.74937 8.21001 5.75006Z" fill="#fff"/>
+							</svg>
+						</button>
+						<button type="button" class="mainInfo__interaction__button mainInfo__interaction__button_basket" title="кнопка в корзину">
+							<svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+									<g transform="translate(-74.000000, -239.000000)">
+										<g transform="translate(74.000000, 239.000000)">
+											<rect x="0" y="0" width="24" height="24"></rect>
+											<path d="M2.5,3.5 L4.57364,3.5 C4.81929,3.5 5.02855,3.67844 5.06736,3.921 L6.73058,14.3158 C6.88582,15.286 7.72287,15.9998 8.70546,15.9998 L17.3957,15.9998 C18.3331,15.9998 19.1447,15.3487 19.3481,14.4337 L20.7296,8.21674 C20.8684,7.59222 20.3932,6.9998 19.7534,6.9998 L5.83997,6.9998" stroke="#fff" stroke-width="2" stroke-linecap="round"></path>
+											<circle  stroke="#fff" stroke-width="2" stroke-linecap="round" cx="9.5" cy="21" r="1"></circle>
+											<circle stroke="#fff" stroke-width="2" stroke-linecap="round" cx="16.5" cy="21" r="1"></circle>
+										</g>
+									</g>
+								</g>
+							</svg>
+						</button>
+						<button type="button" class="mainInfo__interaction__button mainInfo__interaction__button_buy txt" title="кнопка купить">Купить</button>
+					</div>
+					<div class="mainInfo__interaction__right">
+						<div class="mainInfo__interaction__prices txt">
+							<div class="mainInfo__interaction__prices__old">1570₽</div>
+							<div class="mainInfo__interaction__prices__new">1235₽</div>
+						</div>
+						<div class="mainInfo__interaction__discount txt">52%</div>
+					</div>
+				</div>
+			</div>
             <div class="mainInfo__info mainInfo__info_loading loadingContent" id="game_info">
-                <div>
-                    <div class="mainInfo__info__title txt"></div>
-                    <div class="mainInfo__info__category">
-                        <div class="mainInfo__info__category__point txt">
-                            Шутеры
-                        </div>
-                        <div class="mainInfo__info__category__point txt">
-                            Приключения
-                        </div>
-                        <div class="mainInfo__info__category__point txt">
-                            Хоррор
-                        </div>
-                    </div>
-					<!-- <div class="mainInfo__info__about">
-						<div class="mainInfo__info__about__point txt">
-							<div class="mainInfo__info__about__point__key">Дата выхода:</div>
-							<div class="mainInfo__info__about__point__value">15 авг. 2013 г.</div>
-						</div>
-						<div class="mainInfo__info__about__point txt">
-							<div class="mainInfo__info__about__point__key">Разработчик:</div>
-							<div class="mainInfo__info__about__point__value">Gaijin Entertainment</div>
-						</div>
-						<div class="mainInfo__info__about__point txt">
-							<div class="mainInfo__info__about__point__key">Издатель:</div>
-							<div class="mainInfo__info__about__point__value">Gaijin Network Ltd</div>
-						</div>
-					</div> -->
-                </div>
-                <div class="mainInfo__info__interactions">
-                    <div class="mainInfo__info__interactions__top">
-                        <div class="mainInfo__info__interactions__percent">52%</div>
-                        <div class="mainInfo__info__interactions__price txt">1812 ₽ <span>/</span><span>2499 ₽</span></div>
-                        <div class="mainInfo__info__interactions__buttonFavorite mainInfo__info__interactions__buttonFavorite_active" onclick="addInFavorite()">
-                            <img src="img/icons/like64.png" alt="">
-                        </div>
-                    </div>
-                    <div class="mainInfo__info__interactions__bottom">
-                        <div class="mainInfo__info__interactions__buttonBuy">
-                            <div class="-text txt">Купить</div>
-                            <div class="-forHover"></div>
-                        </div>
-                        <div class="mainInfo__info__interactions__buttonBasket" onclick="addInBasket()">
-                            <img src="img/icons/basket64_2.png" alt="">
-                        </div>
-                    </div>
-                </div>
+				<div class="mainInfo__info__img">
+					<img src="" alt="" id="game_img_right">
+				</div>
+				<div class="mainInfo__info__smallDescription txt" id="game_smallDescription">
+
+				</div>
+				<div class="mainInfo__info__category" id="game_categories">
+					${categoriesHTML}
+				</div>
+				<div class="mainInfo__info__about">
+					<div class="mainInfo__info__about__point txt">
+						<div class="mainInfo__info__about__point__key">Дата выхода:</div>
+						<div class="mainInfo__info__about__point__value" id="game_date">15 авг. 2013 г.</div>
+					</div>
+					<div class="mainInfo__info__about__point txt">
+						<div class="mainInfo__info__about__point__key">Разработчик:</div>
+						<a href="#" class="mainInfo__info__about__point__value mainInfo__info__about__point__value_link txt" id="game_developer">Gaijin Entertainment</a>
+					</div>
+					<div class="mainInfo__info__about__point txt">
+						<div class="mainInfo__info__about__point__key">Издатель:</div>
+						<a href="#" class="mainInfo__info__about__point__value mainInfo__info__about__point__value_link txt" id="game_publisher">Gaijin Network Ltd</a>
+					</div>
+				</div>
             </div>
         </div>
         <section class="editions" id="edition">
@@ -550,7 +562,7 @@
 	<script type="text/javascript" src="scripts/script.js"></script>
     <script type="text/javascript" src="scripts/header_bg.js"></script>
     <script type="text/javascript" src="scripts/header_catalog.js"></script>
-	<script type="text/javascript" src="scripts/script_gameCard.js"></script>
 	<script type="text/javascript" src="scripts/video_player.js"></script>
+	<script type="text/javascript" src="scripts/script_gameCard.js"></script>
 </body>
 </html>

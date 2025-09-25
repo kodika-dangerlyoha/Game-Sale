@@ -7,20 +7,6 @@ let dragging = false;
 
 // -------- Events Function -------- 
 
-function update_volume() {
-    const videoIF_volume_block =  document.querySelector('.videoIF__volume')
-    if (current_volume < 0.15) {
-        current_volume = 0;
-        videoIF_volume_block?.classList.add('videoIF__volume_muted');
-    }
-    else {
-        videoIF_volume_block?.classList.remove('videoIF__volume_muted');
-    }
-    video.volume = current_volume;
-    document.querySelector('.videoIF__volume__num').innerHTML = Math.round(current_volume * 100);
-    document.querySelector('.videoIF__volume__value').style.width = current_volume * 100 + "%";
-}
-
 function handle_mouse_click_volume(e) {
     current_volume = e.offsetX / volume.clientWidth;
     update_volume();
@@ -64,6 +50,20 @@ function update_current_time() {
 }
 
 // -------- Function -------- 
+
+function update_volume() {
+    const videoIF_volume_block =  document.querySelector('.videoIF__volume')
+    if (current_volume < 0.15) {
+        current_volume = 0;
+        videoIF_volume_block?.classList.add('videoIF__volume_muted');
+    }
+    else {
+        videoIF_volume_block?.classList.remove('videoIF__volume_muted');
+    }
+    video.volume = current_volume;
+    document.querySelector('.videoIF__volume__num').innerHTML = Math.round(current_volume * 100);
+    document.querySelector('.videoIF__volume__value').style.width = current_volume * 100 + "%";
+}
 
 function get_video() {
     video = document.querySelector('#video');
