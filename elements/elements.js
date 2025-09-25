@@ -366,9 +366,7 @@ const get_notification_html = (status, message, id) => {
             </div>`
 }
 
-// export {get_horizont_game_html}
-
-// -------- input list > point in list html --------
+// -------- input list > point in list html -------- 
 
 const get_inputList_point = (id, value, type_function, i) => {
     let checkBlock_html = type_function == 'checkbox' ? '<div class="inputList__list__body__points__point__checkBlock"></div>' : '';
@@ -379,7 +377,7 @@ const get_inputList_point = (id, value, type_function, i) => {
             </div>`
 }
 
-// -------- header catalog navs --------
+// -------- header catalog navs -------- 
 
 const get_genresNav_headerCatalog_html = (genre) => {
     return `<div class="header__catalog__navs__genres__list__genre header__catalog__navs__nav" id="header__catalog__nav-${genre.id}">
@@ -401,7 +399,7 @@ const get_authorNav_headerCatalog_html = (author) => {
             </div>`
 }
 
-// -------- game card visual --------
+// -------- game card visual -------- 
 
 const get_pic_gameCard_html = (link) => {
     return `<div class="mainInfo__banner__visual__imgBlock" style="background-image: url('${link}')"></div>`

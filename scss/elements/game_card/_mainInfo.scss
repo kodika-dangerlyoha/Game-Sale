@@ -399,6 +399,7 @@
             }
         }
         &__smallDescription {
+            font-size: 15px;
             margin-bottom: 10px;
         }
         &__category {
@@ -454,7 +455,7 @@
                 @include base.style-main_click;
                 border-radius: 13px;
                 padding: 3px 10px;
-                font-size: 14px;
+                font-size: 13px;
                 text-align: center;
                 cursor: pointer;
                 & > span {
