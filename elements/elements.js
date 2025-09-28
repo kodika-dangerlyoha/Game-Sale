@@ -377,6 +377,13 @@ const get_inputList_point = (id, value, type_function, i) => {
             </div>`
 }
 
+const get_inputList_point_number = (values, i) => {
+    // console.log(values);
+    return `<div class="inputList__list__body__points__point inputList_point-${i}" onclick="change_number_value_list(${values.min}, ${values.max})">
+                <span class="inputList__list__body__points__point__value">${values.min} - ${values.max} ₽</span>
+            </div>`
+}
+
 // -------- header catalog navs -------- 
 
 const get_genresNav_headerCatalog_html = (genre) => {

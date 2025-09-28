@@ -109,6 +109,7 @@ $-main-border_radius: 12px;
             padding-left: 7px;
             animation: open .25s base.$tf-main 1;
             &__search {
+                margin-bottom: 5px;
                 & > input {
                     height: 35px;
                     font-size: 14px;
@@ -119,7 +120,29 @@ $-main-border_radius: 12px;
                         @include base.style-main_hover;
                     }
                 }
+            }
+            &__numbers {
+                display: flex;
+                align-items: center;
+                gap: 5px;
                 margin-bottom: 5px;
+                & > input {
+                    width: 50%;
+                    height: 35px;
+                    font-size: 14px;
+                    border-radius: 10px;
+                    padding-left: 14px;
+                    @include base.style-main;
+                    &:focus {
+                        @include base.style-main_hover;
+                    }
+                }
+                &__separator {
+                    width: 12px;
+                    height: 4px;
+                    background-color: rgba(255, 255, 255, 1);
+                    border-radius: 2px;
+                }
             }
             &__points {
                 display: flex;
@@ -199,6 +222,15 @@ $-main-border_radius: 12px;
                         }
                     }
                 }
+            }
+            &__button {
+                width: 100%;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                font-size: 14px;
+                text-align: center;
+                border-radius: 8px;
+                @include base.style-main_click;
             }
         }
     }

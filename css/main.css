@@ -1246,6 +1246,32 @@ label {
   background-color: rgba(1, 162, 255, 0.25);
   border: 1px solid rgba(1, 162, 255, 0.6);
 }
+.inputList__list__body__numbers {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+.inputList__list__body__numbers > input {
+  width: 50%;
+  height: 35px;
+  font-size: 14px;
+  border-radius: 10px;
+  padding-left: 14px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+}
+.inputList__list__body__numbers > input:focus {
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
+}
+.inputList__list__body__numbers__separator {
+  width: 12px;
+  height: 4px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+}
 .inputList__list__body__points {
   display: flex;
   flex-direction: column;
@@ -1316,6 +1342,26 @@ label {
 .inputList__list__body__points__point_check .inputList__list__body__points__point__checkBlock {
   opacity: 1;
   left: 5px;
+}
+.inputList__list__body__button {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.inputList__list__body__button:hover {
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
+}
+.inputList__list__body__button:active {
+  transform: scale(0.95);
 }
 .inputList_open .inputList__list__header {
   border-radius: 12px 12px 0px 0px;
@@ -2136,18 +2182,19 @@ label {
 }
 .mainInfo__interaction__prices {
   display: flex;
-  flex-direction: column;
-  align-items: end;
-  justify-content: center;
+  align-items: center;
+  justify-content: end;
+  gap: 5px;
 }
 .mainInfo__interaction__prices__old {
   text-decoration: line-through;
-  font-size: 16px;
+  font-size: 20px;
   color: rgb(200, 200, 200);
+  transform: translateY(5px);
 }
 .mainInfo__interaction__prices__new {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 32px;
 }
 .mainInfo__interaction__discount {
   font-size: 20px;
