@@ -41,7 +41,7 @@ $-main-border_radius: 12px;
             z-index: 2;
             height: $-main-height;
             cursor: pointer;
-            background-color: transparent;
+            // background-color: transparent;
             transition: .2s;
             border-radius: $-main-border_radius;
             display: flex;
@@ -180,8 +180,13 @@ $-main-border_radius: 12px;
                         // background-color: #555;
                         background-color: rgba(255, 255, 255, .1);
                     }
-                    &_hiden {
-                        display: none;
+                    &_hidden {
+                        // display: none;
+                        height: 0;
+                        opacity: 0;
+                        padding: 0;
+                        overflow: hidden;
+                        // transform: translateY(20px);
                     }
                     &_check &{
                         &__value {
@@ -202,7 +207,7 @@ $-main-border_radius: 12px;
         &__list {
             &__header {
                 border-radius: $-main-border_radius $-main-border_radius 0px 0px;
-                & > svg {
+                &__bg > svg {
                     transform: rotate(270deg);
                 }
             }

@@ -215,36 +215,33 @@
 	
 	<main id="main">
 		<div class="inner inner_catalog">
-            <form class="formFilters" action="" name="form-filter">
+            <form class="formFilters" action="" name="form_filter">
 				<div class="formFilters__row">
 					<div class="formFilters__sortingBlock">
-						<div class="formFilters__sortingBlock__icon">
-							<svg class="formFilters__sortingBlock__icon__svg formFilters__sortingBlock__icon__svg_toTop" width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<div class="formFilters__sortingBlock__icon" onclick="toggle_direction_sorting()">
+							<svg class="formFilters__sortingBlock__icon__svg formFilters__sortingBlock__icon__svg_topToBottom" width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<rect class="_r_top" width="19" height="3" rx="1.5" fill="white"/>
 								<rect y="6" width="13" height="3" rx="1.5" fill="white"/>
 								<rect class="_r_bottom"  y="12" width="7" height="3" rx="1.5" fill="white"/>
 							</svg>
 						</div>
 						<div class="inputList" id="inputList-sorting">
-							<input class="txt" type="text" name="inp-sorting" title="inp-sorting" value="По популярности" id="inp-sorting">
+							<input class="txt" type="text" name="inp-sorting" title="inp-sorting" value="Жанрыни5тгт" id="inp-sorting">
 							<div class="inputList__list">
 								<div class="inputList__list__header" onclick="toggle_list('sorting')">
-									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
-									</svg>
+									<div class="inputList__list__header__title txt">Сортировка</div>
+									<!-- <div class="inputList__list__header__values txt"></div> -->
+									<div class="inputList__list__header__bg">
+										<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
+										</svg>
+									</div>
 								</div>
 								<div class="inputList__list__body">
 									<div class="inputList__list__body__search">
 										<input class="txt" type="text" name="inp_search_sorting" title="inp-search_sorting" placeholder="Поиск">
 									</div>
 									<div class="inputList__list__body__points txt" id="inputList_points-sorting">
-										<div class="inputList__list__body__points__point" onclick="change_value_list('sorting', 'По популярности')">По популярности</div>
-										<div class="inputList__list__body__points__point" onclick="change_value_list('sorting', 'По названию')">По названию</div>
-										<div class="inputList__list__body__points__point" onclick="change_value_list('sorting', 'Сначала дешёвые')">Сначала дешёвые</div>
-										<div class="inputList__list__body__points__point" onclick="change_value_list('sorting', 'Сначала Дорогие')">Сначала Дорогие</div>
-										<div class="inputList__list__body__points__point" onclick="change_value_list('sorting', 'По дате выхода')">По дате выхода</div>
-										<div class="inputList__list__body__points__point" onclick="change_value_list('sorting', 'По величине скидки')">По величине скидки</div>
-										<div class="inputList__list__body__points__point" onclick="change_value_list('sorting', 'По рейтингу')">По рейтингу</div>
 									</div>
 								</div>
 							</div>
@@ -267,48 +264,48 @@
 									<input class="txt" type="text" name="inp_search_genres" title="inp-search_genres" placeholder="Поиск">
 								</div>
 								<div class="inputList__list__body__points txt" id="inputList_points-genres">
-									<div class="inputList__list__body__points__point" onclick="change_value_list('genres', 'Шутер')">Шутер</div>
-									<div class="inputList__list__body__points__point" onclick="change_value_list('genres', '')"></div>
-									<div class="inputList__list__body__points__point" onclick="change_value_list('genres', '')"></div>
-									<div class="inputList__list__body__points__point" onclick="change_value_list('genres', '')"></div>
-									<div class="inputList__list__body__points__point" onclick="change_value_list('genres', '')"></div>
-									<div class="inputList__list__body__points__point" onclick="change_value_list('genres', '')"></div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="inputList" id="inputList-prices">
-						<input class="txt" type="text" name="inp-prices" title="inp-prices" value="RU (Россия)" id="inp-prices">
+						<input class="txt" type="text" name="inp-prices" title="inp-prices" value="Жанрыни5тгт" id="inp-prices">
 						<div class="inputList__list">
 							<div class="inputList__list__header" onclick="toggle_list('prices')">
-								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
-								</svg>
+								<div class="inputList__list__header__title txt">Цена</div>
+								<div class="inputList__list__header__values txt"></div>
+								<div class="inputList__list__header__bg">
+									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
+									</svg>
+								</div>
 							</div>
 							<div class="inputList__list__body">
 								<div class="inputList__list__body__search">
 									<input class="txt" type="text" name="inp_search_prices" title="inp-search_prices" placeholder="Поиск">
 								</div>
 								<div class="inputList__list__body__points txt" id="inputList_points-prices">
-									<div class="inputList__list__body__points__point" onclick="change_value_list('', '')">По умолчанию</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="inputList" id="inputList-date">
-						<input class="txt" type="text" name="inp-date" title="inp-date" value="RU (Россия)" id="inp-date">
+						<input class="txt" type="text" name="inp-date" title="inp-date" value="Жанрыни5тгт" id="inp-date">
 						<div class="inputList__list">
 							<div class="inputList__list__header" onclick="toggle_list('date')">
-								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
-								</svg>
+								<div class="inputList__list__header__title txt">Год выпуска</div>
+								<div class="inputList__list__header__values txt"></div>
+								<div class="inputList__list__header__bg">
+									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
+									</svg>
+								</div>
 							</div>
 							<div class="inputList__list__body">
 								<div class="inputList__list__body__search">
 									<input class="txt" type="text" name="inp_search_date" title="inp-search_date" placeholder="Поиск">
 								</div>
 								<div class="inputList__list__body__points txt" id="inputList_points-date">
-									<div class="inputList__list__body__points__point" onclick="change_value_list('', '')">По умолчанию</div>
 								</div>
 							</div>
 						</div>
@@ -332,7 +329,7 @@
 						<button type="button" class="formFilters__menuButtons__reset txt" title="кнопка сбросить" onclick="reset_all_filters()">Сбросить</button>
 					</div>
 				</div>
-				<div class="formFilters__row formFilters__row_sub">
+				<div class="formFilters__row formFilters__row_sub formFilters__row_hidden">
 					<div class="inputList" id="inputList-theme">
 						<input class="txt" type="text" name="inp-theme" title="inp-theme" value="Teмы" id="inp-theme">
 						<div class="inputList__list">
@@ -444,7 +441,6 @@
 						</div>
 					</div>
 				</div>
-                
             </form>
 			<section class="games">
 				<div class="games__grid" id="offers_grid_new">

@@ -3,6 +3,7 @@
 .formFilters {
     position: relative;
     margin-bottom: 50px;
+    z-index: 5;
     &__row {
         width: 100%;
         display: flex;
@@ -12,6 +13,16 @@
         }
         &_sub {
             margin-top: 20px;
+            opacity: 1;
+            transition: .3s;
+            height: 40px;
+        }
+        &_hidden {
+            opacity: 0;
+            margin-top: 0;
+            height: 0px;
+            transition: .3s;
+            overflow: hidden;
         }
     }
     &__menuButtons {
@@ -32,6 +43,9 @@
             & > span {
                 font-size: 14px;
             }
+            &_active {
+                @include base.style-main_active;
+            }
         }
         &__reset {
             height: 100%;
@@ -47,15 +61,22 @@
     }
     &__sortingBlock {
         height: 40px;
+        display: flex;
         &__icon {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 40px;
             height: 40px;
+            padding: 10px;
+            cursor: pointer;
+            transition: .2s;
             &__svg {
-                height: 24px;
-                &_toTop {
+                height: 100%;
+                & rect {
+                    transition: .2s;
+                }
+                &_topToBottom {
                     & > ._r_top {
                         width: 19px;
                     }
@@ -63,7 +84,7 @@
                         width: 7px;
                     }
                 }
-                &_toBottom {
+                &_BottomToTop {
                     & > ._r_top {
                         width: 7px;
                     }
@@ -72,7 +93,9 @@
                     }
                 }
             }
+            &:hover rect{
+                fill: base.$clr-blue_light;
+            }
         }
-        display: flex;
     }
 }

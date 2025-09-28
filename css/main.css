@@ -1158,7 +1158,6 @@ label {
   z-index: 2;
   height: 40px;
   cursor: pointer;
-  background-color: transparent;
   transition: 0.2s;
   border-radius: 12px;
   display: flex;
@@ -1305,8 +1304,11 @@ label {
 .inputList__list__body__points__point:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-.inputList__list__body__points__point_hiden {
-  display: none;
+.inputList__list__body__points__point_hidden {
+  height: 0;
+  opacity: 0;
+  padding: 0;
+  overflow: hidden;
 }
 .inputList__list__body__points__point_check .inputList__list__body__points__point__value {
   padding-left: 10px;
@@ -1318,7 +1320,7 @@ label {
 .inputList_open .inputList__list__header {
   border-radius: 12px 12px 0px 0px;
 }
-.inputList_open .inputList__list__header > svg {
+.inputList_open .inputList__list__header__bg > svg {
   transform: rotate(270deg);
 }
 .inputList_open .inputList__list__body {
@@ -1942,7 +1944,7 @@ label {
   filter: invert(1);
 }
 .miniGameCard__right__button_active {
-  background: linear-gradient(to bottom, rgb(1, 162, 255), rgb(1, 74, 255));
+  background: linear-gradient(to top, rgba(1, 162, 255, 0.8), rgba(1, 162, 255, 0.2));
   border: 0px solid transparent;
 }
 .miniGameCard__right__button_active:hover {
@@ -1962,12 +1964,13 @@ label {
   padding-left: 20px;
   padding-right: 20px;
   position: relative;
-  background: linear-gradient(to bottom, rgb(1, 162, 255), rgb(1, 74, 255));
+  background: linear-gradient(to top, rgba(1, 162, 255, 0.8), rgba(1, 162, 255, 0.2));
   cursor: pointer;
   transition: 0.15s;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid rgb(1, 162, 255);
 }
 .miniGameCard__right__buttonBuy .-forHover {
   position: absolute;
@@ -1977,7 +1980,7 @@ label {
   bottom: 0;
   z-index: 2;
   opacity: 0;
-  border-radius: inherit;
+  border-radius: calc(inherit - 1px);
   background: rgb(1, 162, 255);
   transition: 0.15s;
 }
@@ -3506,12 +3509,13 @@ label {
 }
 .settings__buttons__button_save {
   position: relative;
-  background: linear-gradient(to bottom, rgb(1, 162, 255), rgb(1, 74, 255));
+  background: linear-gradient(to top, rgba(1, 162, 255, 0.8), rgba(1, 162, 255, 0.2));
   cursor: pointer;
   transition: 0.15s;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid rgb(1, 162, 255);
 }
 .settings__buttons__button_save .-forHover {
   position: absolute;
@@ -3521,7 +3525,7 @@ label {
   bottom: 0;
   z-index: 2;
   opacity: 0;
-  border-radius: inherit;
+  border-radius: calc(inherit - 1px);
   background: rgb(1, 162, 255);
   transition: 0.15s;
 }
@@ -3839,6 +3843,7 @@ label {
 .formFilters {
   position: relative;
   margin-bottom: 50px;
+  z-index: 5;
 }
 .formFilters__row {
   width: 100%;
@@ -3850,6 +3855,16 @@ label {
 }
 .formFilters__row_sub {
   margin-top: 20px;
+  opacity: 1;
+  transition: 0.3s;
+  height: 40px;
+}
+.formFilters__row_hidden {
+  opacity: 0;
+  margin-top: 0;
+  height: 0px;
+  transition: 0.3s;
+  overflow: hidden;
 }
 .formFilters__menuButtons {
   height: 40px;
@@ -3882,6 +3897,10 @@ label {
 .formFilters__menuButtons__allFilters > span {
   font-size: 14px;
 }
+.formFilters__menuButtons__allFilters_active {
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
+}
 .formFilters__menuButtons__reset {
   height: 100%;
   display: flex;
@@ -3903,19 +3922,28 @@ label {
   justify-content: center;
   width: 40px;
   height: 40px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 .formFilters__sortingBlock__icon__svg {
-  height: 24px;
+  height: 100%;
 }
-.formFilters__sortingBlock__icon__svg_toTop > ._r_top {
+.formFilters__sortingBlock__icon__svg rect {
+  transition: 0.2s;
+}
+.formFilters__sortingBlock__icon__svg_topToBottom > ._r_top {
   width: 19px;
 }
-.formFilters__sortingBlock__icon__svg_toTop > ._r_bottom {
+.formFilters__sortingBlock__icon__svg_topToBottom > ._r_bottom {
   width: 7px;
 }
-.formFilters__sortingBlock__icon__svg_toBottom > ._r_top {
+.formFilters__sortingBlock__icon__svg_BottomToTop > ._r_top {
   width: 7px;
 }
-.formFilters__sortingBlock__icon__svg_toBottom > ._r_bottom {
+.formFilters__sortingBlock__icon__svg_BottomToTop > ._r_bottom {
   width: 19px;
+}
+.formFilters__sortingBlock__icon:hover rect {
+  fill: rgb(1, 162, 255);
 }/*# sourceMappingURL=main.css.map */

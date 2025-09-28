@@ -12,22 +12,14 @@
         grid-gap: 20px;
         grid-template-columns: repeat(4, minmax(0px, 1fr));
         &__edition {
-            // border: 1px solid rgba(255, 255, 255, 0.1);
-            // border-radius: 15px;
-            // overflow: hidden;
-            // background-color: base.$clr-gray_light;
-            // box-shadow: 0 0 30px -10px rgba(0, 0, 0, 0.1);
             cursor: pointer;
             transition: 0.15s;
-            // @include base.style-glass_hover;
-            // background-color: rgba(255, 255, 255, .05);
             &__imgBlock {
                 width: 100%;
                 padding: 10px;
                 position: relative;
                 z-index: 1;
                 transition: .2s;
-                // padding-bottom: 0;
                 & > img {
                     box-sizing: border-box;
                     border-radius: 12px;
