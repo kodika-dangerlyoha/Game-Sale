@@ -4,6 +4,8 @@ let video;
 let volume;
 let race;
 let dragging = false;
+let time_curr_block;
+let time_all_block;
 
 // -------- Events Function -------- 
 
@@ -25,7 +27,10 @@ function handle_mouse_click(e) {
 }
 
 function handle_mouse_move(e) {
-    document.querySelector('.videoIF__race__mouse').style.width = e.offsetX * 100 / race.clientWidth + "%";
+    const percent = e.offsetX * 100 / race.clientWidth;
+    document.querySelector('.videoIF__race__mouse').style.width = percent + "%";
+    document.querySelector('.videoIF__race__time__point_hover').style.left = percent + "%";
+    document.querySelector('.videoIF__race__time__point_hover').innerHTML = set_time(video.duration * (percent / 100));
     if (dragging) {
         video.currentTime = (e.offsetX / race.clientWidth) * video.duration;
     }
@@ -44,10 +49,21 @@ function handle_mouse_leave() {
 }
 
 function update_current_time() {
+    time_curr_block.innerHTML = set_time(video.currentTime);
+    time_all_block.innerHTML = set_time(video.duration);
     document.querySelectorAll('.videoIF__race__value').forEach(e => {
         e.style.width = video.currentTime * 100 / video.duration  + "%";
     })
 }
+
+function handle_mouse_leave_hoverTime() {
+    document.querySelector('.videoIF__race__time__point_hover').classList.remove('videoIF__race__time__point_hover_active')
+}
+
+function handle_mouse_enter_hoverTime() {
+    document.querySelector('.videoIF__race__time__point_hover').classList.add('videoIF__race__time__point_hover_active')
+}
+
 
 // -------- Function -------- 
 
@@ -69,6 +85,8 @@ function get_video() {
     video = document.querySelector('#video');
     race = document.querySelector('.videoIF__race');
     volume = document.querySelector('.videoIF__volume__forMouse');
+    time_curr_block = document.querySelector('.videoIF__race__time__point_current');
+    time_all_block = document.querySelector('.videoIF__race__time__point_all');
 
     video.removeEventListener("timeupdate", update_current_time);
 
@@ -77,6 +95,8 @@ function get_video() {
     race.removeEventListener("mousedown", handle_mouse_down);
     race.removeEventListener("mouseup", handle_mouse_up);
     race.removeEventListener("mouseleave", handle_mouse_leave);
+    race.removeEventListener("mouseleave", handle_mouse_leave_hoverTime);
+    race.removeEventListener("mouseenter", handle_mouse_enter_hoverTime);
 
     volume.removeEventListener("mousemove", handle_mouse_move_volume);
     volume.removeEventListener("click", handle_mouse_click_volume);
@@ -96,6 +116,8 @@ function get_video() {
     race.addEventListener("mousedown", handle_mouse_down);
     race.addEventListener("mouseup", handle_mouse_up);
     race.addEventListener("mouseleave", handle_mouse_leave);
+    race.addEventListener("mouseleave", handle_mouse_leave_hoverTime);
+    race.addEventListener("mouseenter", handle_mouse_enter_hoverTime);
 
     volume.addEventListener("mousemove", handle_mouse_move_volume);
     volume.addEventListener("click", handle_mouse_click_volume);
@@ -117,4 +139,17 @@ function toggle_video() {
         video.play();
         document.querySelector('.videoIF__playButton').classList.add('videoIF__playButton_pause');
     }
+}
+
+function set_time(seconds) {
+    seconds = Number(seconds);
+    const minutes = Math.round(Math.floor(seconds / 60));
+    const remaining_seconds = Math.round(seconds % 60);
+
+    // const formattedMinutes = minutes.toString().padStart(2, '0');
+    const formattedSeconds = remaining_seconds.toString().padStart(2, '0');
+
+    if (minutes == 'NaN' || formattedSeconds == 'NaN') { return `0:00`; }
+
+    return `${minutes}:${formattedSeconds}`;
 }

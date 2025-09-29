@@ -11,11 +11,13 @@ const toggle_list = (id) => {
 // -------- Нажатия на point в выпадающем списке -------- 
 
 const change_value_list = (id, value, type, i) => {
-    if (type == 'radio') {
-        change_radio_value_list(id, value);
+    console.log(type);
+    if (type === 'radio') {
+        change_radio_value_list(id, value, i);
         return
     }
-    else if (type == 'chekbox') {
+    else if (type === 'checkbox') {
+        console.log("haha");
         change_chekbox_value_list(id, i, value);
     }
     // else if (type == 'number') {
@@ -24,6 +26,7 @@ const change_value_list = (id, value, type, i) => {
 }
 
 const change_chekbox_value_list = (id, i, value) => {
+    console.log("haha");
     document.querySelector(`#inputList_points-${id} .inputList_point-${i}`).classList.toggle('inputList__list__body__points__point_check');
     
     // ! КАК КОНСТ ПЕРЕМЕННАЯ МАССИВА МЕНЯЕТСЯ? И КАК МЕНЯЕТСЯ МАССИВ
@@ -46,10 +49,13 @@ const change_chekbox_value_list = (id, i, value) => {
     document.querySelector(`#inputList-${id} .inputList__list__header__values`).innerHTML = str;
 }
 
-const change_radio_value_list = (id, value) => {
+const change_radio_value_list = (id, value, i) => {
     filter_values[id] = value;
     // console.log(filter_values[id]);
     document.querySelector(`#inputList-${id} .inputList__list__header__title`).innerHTML = filter_values[id];
+
+    document.querySelector(`#inputList-${id} .inputList__list__body__points__point_active`)?.classList.remove('inputList__list__body__points__point_active');
+    document.querySelector(`#inputList-${id} .inputList_point-${i}`).classList.add('inputList__list__body__points__point_active');
 }
 
 const change_number_value_list = (value_min, value_max) => {

@@ -176,6 +176,7 @@ $-main-border_radius: 12px;
                     border-radius: 8px;
                     cursor: pointer;
                     transition: .15s;
+                    border: 1px solid transparent;
                     &__checkBlock {
                         position: absolute;
                         z-index: 1;
@@ -219,6 +220,13 @@ $-main-border_radius: 12px;
                         &__checkBlock {
                             opacity: 1;
                             left: 5px;
+                        }
+                    }
+                    &_active {
+                        @include base.style-main_active;
+                        cursor: default;
+                        &:hover {
+                            @include base.style-main_active;
                         }
                     }
                 }
