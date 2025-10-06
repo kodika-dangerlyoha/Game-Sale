@@ -18,6 +18,11 @@
         z-index: 1;
 
         @include base.style-main_base;
+        border: {
+            top: none;
+            left: none;
+            right: none;
+        }
         opacity: 0;
         transition: 0.5s;
         overflow: hidden;
@@ -382,5 +387,187 @@
     &_open &__bg{
         opacity: 1;
         bottom: -546px;
+    }
+    &__notification {
+        position: absolute;
+        top: 90px;
+        right: 15px;
+
+        width: 300px;
+        transition: 0.15s;
+
+        display: none;
+        opacity: 0;
+        transform: translateY(-10px);
+        &__grid {
+            overflow: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            &::-webkit-scrollbar {
+                width: 0;
+            }
+            &__notification {
+                // background: rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                // border: 3px solid base.$clr-main_body;
+                // background-color: rgb(55, 55, 55);
+                padding: 8px;
+                display: flex;
+                gap: 8px;
+                @include base.style-main_base;
+                &__point {
+                    @include base.flex-center;
+                    &__circle {
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background-color: base.$clr-blue_light;
+                        &_error {
+                            background-color: base.$clr-red_close;
+                        }
+                        &_nothing {
+                            background-color: rgb(255, 255, 255);
+                        }
+                    }
+                    &__smile {
+                        font-size: 14px;
+                        transform: rotate(90deg);
+                    }
+                }
+                &__text {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 19px;
+                    color: rgb(245, 245, 245);
+                    & > span {
+                        font-weight: 700;
+                        color: rgb(255, 255, 255);
+                    }
+                }
+                &__buttonClose {
+                    @include base.pos_absolute(0px, 0px, auto, auto);
+                    width: 20px;
+                    height: 20px;
+                    padding: 6px;
+                    border-radius: 50%;
+                    background-color: red;
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    background-color: rgba(255, 255, 255, 0.1);
+                    & > img {
+                        width: 100%;
+                    }
+                }
+            }
+            &__nothing {
+                height: 100%;
+                @include base.flex_center;
+                &__text {
+                    padding-bottom: 18px;
+                    font-size: 18px;
+                    font-weight: 800;
+                    color: rgb(100, 100, 100);
+                }
+            }
+        }
+        &_active {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+    &__notification_temporary {
+        position: absolute;
+        top: 100px;
+        right: 15px;
+        width: 300px;
+        transition: 0.15s;
+
+        display: block;
+        visibility: hidden;
+        opacity: 1;
+        transform: translateY(-10px);
+        &__grid {
+            overflow: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            &::-webkit-scrollbar {
+                width: 0;
+            }
+            &__notification {
+                // background: rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                // border: 3px solid base.$clr-main_body;
+                // background-color: rgb(55, 55, 55);
+                padding: 8px;
+                display: flex;
+                gap: 8px;
+                opacity: 0;
+                transition-delay: 5s;
+                animation: show_notification 5s ease-out 1;
+                @include base.style-main_base;
+                &__point {
+                    @include base.flex-center;
+                    &__circle {
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        &_false {
+                            background-color: base.$clr-red_close;
+                        }
+                        &_true {
+                            background-color: base.$clr-blue_light;
+                        }
+                        &_nothing {
+                            background-color: rgb(255, 255, 255);
+                        }
+                    }
+                    &__smile {
+                        font-size: 14px;
+                        transform: rotate(90deg);
+                    }
+                }
+                &__text {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 19px;
+                    color: rgb(245, 245, 245);
+                    & > span {
+                        font-weight: 700;
+                        color: rgb(255, 255, 255);
+                    }
+                }
+                &__buttonClose {
+                    @include base.pos_absolute(0px, 0px, auto, auto);
+                    width: 20px;
+                    height: 20px;
+                    padding: 6px;
+                    border-radius: 50%;
+                    background-color: red;
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    background-color: rgba(255, 255, 255, 0.1);
+                    & > img {
+                        width: 100%;
+                    }
+                }
+            }
+            &__nothing {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &__text {
+                    padding-bottom: 18px;
+                    font-size: 18px;
+                    font-weight: 800;
+                    color: rgb(100, 100, 100);
+                }
+            }
+        }
+        &_show {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0px);
+        }
     }
 }

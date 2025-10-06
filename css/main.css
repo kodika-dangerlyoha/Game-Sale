@@ -134,6 +134,47 @@ label {
     opacity: 1;
   }
 }
+@keyframes open_game {
+  0% {
+    /* transform: translateX(-70px); */
+    opacity: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  100% {
+    opacity: 1;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+@keyframes open_totalBlock {
+  0% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes show_notification {
+  0% {
+    visibility: visible;
+  }
+  10% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    visibility: hidden;
+    display: none;
+  }
+}
 @font-face {
   font-family: "robotoFlex";
   src: url("../fonts/RobotoFlex.ttf");
@@ -191,6 +232,9 @@ label {
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  border-top: none;
+  border-left: none;
+  border-right: none;
   opacity: 0;
   transition: 0.5s;
   overflow: hidden;
@@ -557,6 +601,201 @@ label {
 .header_open .header__bg {
   opacity: 1;
   bottom: -546px;
+}
+.header__notification {
+  position: absolute;
+  top: 90px;
+  right: 15px;
+  width: 300px;
+  transition: 0.15s;
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.header__notification__grid {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.header__notification__grid::-webkit-scrollbar {
+  width: 0;
+}
+.header__notification__grid__notification {
+  border-radius: 10px;
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+  background-color: rgba(50, 50, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.header__notification__grid__notification__point {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__notification__grid__notification__point__circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgb(1, 162, 255);
+}
+.header__notification__grid__notification__point__circle_error {
+  background-color: rgb(170, 22, 22);
+}
+.header__notification__grid__notification__point__circle_nothing {
+  background-color: rgb(255, 255, 255);
+}
+.header__notification__grid__notification__point__smile {
+  font-size: 14px;
+  transform: rotate(90deg);
+}
+.header__notification__grid__notification__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgb(245, 245, 245);
+}
+.header__notification__grid__notification__text > span {
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+}
+.header__notification__grid__notification__buttonClose {
+  position: absolute;
+  right: 0px;
+  bottom: auto;
+  top: 0px;
+  left: auto;
+  width: 20px;
+  height: 20px;
+  padding: 6px;
+  border-radius: 50%;
+  background-color: red;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.header__notification__grid__notification__buttonClose > img {
+  width: 100%;
+}
+.header__notification__grid__nothing {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__notification__grid__nothing__text {
+  padding-bottom: 18px;
+  font-size: 18px;
+  font-weight: 800;
+  color: rgb(100, 100, 100);
+}
+.header__notification_active {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.header__notification_temporary {
+  position: absolute;
+  top: 100px;
+  right: 15px;
+  width: 300px;
+  transition: 0.15s;
+  display: block;
+  visibility: hidden;
+  opacity: 1;
+  transform: translateY(-10px);
+}
+.header__notification_temporary__grid {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.header__notification_temporary__grid::-webkit-scrollbar {
+  width: 0;
+}
+.header__notification_temporary__grid__notification {
+  border-radius: 10px;
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  transition-delay: 5s;
+  animation: show_notification 5s ease-out 1;
+  background-color: rgba(50, 50, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.header__notification_temporary__grid__notification__point {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__notification_temporary__grid__notification__point__circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.header__notification_temporary__grid__notification__point__circle_false {
+  background-color: rgb(170, 22, 22);
+}
+.header__notification_temporary__grid__notification__point__circle_true {
+  background-color: rgb(1, 162, 255);
+}
+.header__notification_temporary__grid__notification__point__circle_nothing {
+  background-color: rgb(255, 255, 255);
+}
+.header__notification_temporary__grid__notification__point__smile {
+  font-size: 14px;
+  transform: rotate(90deg);
+}
+.header__notification_temporary__grid__notification__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgb(245, 245, 245);
+}
+.header__notification_temporary__grid__notification__text > span {
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+}
+.header__notification_temporary__grid__notification__buttonClose {
+  position: absolute;
+  right: 0px;
+  bottom: auto;
+  top: 0px;
+  left: auto;
+  width: 20px;
+  height: 20px;
+  padding: 6px;
+  border-radius: 50%;
+  background-color: red;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.header__notification_temporary__grid__notification__buttonClose > img {
+  width: 100%;
+}
+.header__notification_temporary__grid__nothing {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__notification_temporary__grid__nothing__text {
+  padding-bottom: 18px;
+  font-size: 18px;
+  font-weight: 800;
+  color: rgb(100, 100, 100);
+}
+.header__notification_temporary_show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 .footer {
@@ -2091,7 +2330,7 @@ label {
   z-index: 1;
   height: 550px;
   overflow: hidden;
-  margin-bottom: -285px;
+  margin-bottom: -380px;
   transform: translateY(0px);
   box-sizing: border-box;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -2326,16 +2565,39 @@ label {
 }
 .mainInfo__banner__interface__bottom__scroll::-webkit-scrollbar {
   height: 10px;
+  width: 10px;
 }
 .mainInfo__banner__interface__bottom__scroll::-webkit-scrollbar-track {
-  background: rgba(92, 92, 92, 0.8); /* Цвет фона трека */
-}
-.mainInfo__banner__interface__bottom__scroll::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2); /* Цвет ползунка */
+  background: rgba(92, 92, 92, 0.8);
   border-radius: 10px;
 }
-.mainInfo__banner__interface__bottom__scroll::-webkit-scrollbar-thumb:hover {
+.mainInfo__banner__interface__bottom__scroll::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+.mainInfo__banner__interface__bottom__scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+  background-clip: content-box;
+}
+.mainInfo__banner__interface__bottom__scroll::-webkit-scrollbar-thumb:active {
+  background: rgba(255, 255, 255, 0.4);
+  background-clip: content-box;
+}
+.mainInfo__banner__interface__bottom__scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) rgba(92, 92, 92, 0.8);
+}
+.mainInfo__banner__interface__bottom__scroll {
+  scrollbar-base-color: rgba(92, 92, 92, 0.8);
+  scrollbar-face-color: rgba(255, 255, 255, 0.2);
+  scrollbar-track-color: rgba(92, 92, 92, 0.8);
+  scrollbar-arrow-color: rgba(255, 255, 255, 0.2);
+  scrollbar-shadow-color: rgba(255, 255, 255, 0.2);
+}
+.mainInfo__banner__interface__bottom__scroll:hover {
+  scrollbar-face-color: rgba(255, 255, 255, 0.3);
 }
 .mainInfo__banner__interface__bottom__screenshotsIF {
   display: flex;
@@ -2539,6 +2801,7 @@ label {
 }
 .mainInfo__info {
   width: 400px;
+  height: 493px;
   align-self: flex-end;
   border-radius: 20px;
   padding: 15px;
@@ -4037,4 +4300,925 @@ label {
 }
 .formFilters__sortingBlock__icon:hover rect {
   fill: rgb(1, 162, 255);
+}
+
+.basketContainer {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 30px;
+  transition: 0.25s;
+}
+.basketContainer__gameList {
+  width: 740px;
+  transition: 0.2s;
+}
+.basketContainer__gameList__games {
+  position: relative;
+  border-radius: 20px;
+  background: rgb(50, 50, 50);
+  padding-left: 30px;
+  padding-right: 30px;
+  overflow: hidden;
+  background-color: rgba(50, 50, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.basketContainer__gameList__games__game {
+  position: relative;
+  z-index: 3;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 1000px;
+  transition: 0.2s;
+  animation: open_game 0.4s ease-in-out;
+}
+.basketContainer__gameList__games__game__left {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+.basketContainer__gameList__games__game__left__imgBlock {
+  height: 100px;
+  margin-right: 20px;
+}
+.basketContainer__gameList__games__game__left__imgBlock img {
+  border-radius: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 100%;
+}
+.basketContainer__gameList__games__game__left__nameBlock__name {
+  display: flex;
+  align-items: center;
+}
+.basketContainer__gameList__games__game__left__nameBlock__name__platformImg {
+  margin-right: 5px;
+}
+.basketContainer__gameList__games__game__left__nameBlock__name__platformImg img {
+  height: 29px;
+  width: 29px;
+}
+.basketContainer__gameList__games__game__left__nameBlock__name__text {
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.basketContainer__gameList__games__game__left__nameBlock__name__text:hover {
+  color: rgb(1, 162, 255);
+}
+.basketContainer__gameList__games__game__left__nameBlock__linkPlatform {
+  color: rgb(153, 153, 153);
+  font-weight: 300;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.basketContainer__gameList__games__game__left__nameBlock__linkPlatform:hover {
+  color: rgb(255, 255, 255);
+}
+.basketContainer__gameList__games__game__right {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+.basketContainer__gameList__games__game__right__price {
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.basketContainer__gameList__games__game__right__price > span {
+  border-top: 1px solid rgb(70, 70, 70);
+  font-size: 14px;
+  color: rgb(220, 220, 220);
+  font-weight: 300;
+  text-decoration: line-through;
+}
+.basketContainer__gameList__games__game__right__closeBlock {
+  height: 30px;
+  width: 30px;
+  padding: 4px;
+  box-sizing: content-box;
+  border-radius: 50%;
+  background-color: rgba(161, 40, 40, 0);
+  cursor: pointer;
+  transition: 0.2s;
+  margin-left: 10px;
+}
+.basketContainer__gameList__games__game__right__closeBlock svg {
+  height: 100%;
+  transition: 0.2s;
+}
+.basketContainer__gameList__games__game__right__closeBlock:hover svg {
+  transform: rotate(90deg) scale(0.75);
+}
+.basketContainer__gameList__games__game__right__closeBlock:hover {
+  background-color: rgb(170, 22, 22);
+}
+.basketContainer__gameList__games__game__right__closeBlock:active svg {
+  transform: rotate(90deg) scale(0.35);
+}
+.basketContainer__gameList__games__game__right__closeBlock_hidden {
+  margin-left: 0px;
+  width: 0px;
+  padding: 0;
+  transform: scale(0);
+  visibility: hidden;
+}
+.basketContainer__gameList__games__game_lastGame {
+  border-bottom: none;
+}
+.basketContainer__gameList__games__game__forHover {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  right: -30px;
+  left: -30px;
+  opacity: 0;
+  transition: 0.15s;
+}
+.basketContainer__gameList__games__game__forHover__bg {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  right: -30px;
+  left: -30px;
+  transition: 0.15s;
+}
+.basketContainer__gameList__games__game__forHover__bg_blue {
+  background: linear-gradient(to right, rgba(1, 162, 255, 0.25), transparent);
+  opacity: 1;
+}
+.basketContainer__gameList__games__game__forHover__bg_red {
+  background: linear-gradient(to right, transparent, rgba(255, 0, 0, 0.23));
+  opacity: 0;
+}
+.basketContainer__gameList__games__game:hover .basketContainer__gameList__games__game__forHover {
+  opacity: 1;
+}
+.basketContainer__gameList__games__game_hidden {
+  max-height: 0px;
+  padding: 0;
+  opacity: 0;
+  border-bottom: 0px solid rgba(255, 255, 255, 0.1);
+}
+.basketContainer__gameList__games__bg {
+  z-index: 1;
+  background: linear-gradient(to right, rgba(0, 255, 117, 0.25), transparent);
+  opacity: 0;
+  transition: 0.2s;
+}
+.basketContainer__gameList__games__border {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 4;
+  height: 1px;
+  background: inherit;
+}
+.basketContainer__gameList__games__empty {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  max-height: 0px;
+  opacity: 0;
+  overflow: hidden;
+  transition: 0.25s;
+}
+.basketContainer__gameList__games__empty > img {
+  filter: invert(0.5);
+}
+.basketContainer__gameList__games__empty__text {
+  font-size: 20px;
+  font-weight: 800;
+  color: #888888;
+}
+.basketContainer__gameList__games__empty > a {
+  margin-top: 10px;
+  padding: 0;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.basketContainer__gameList__games__empty > a:hover {
+  color: rgb(1, 162, 255);
+}
+.basketContainer__gameList__games__empty_active {
+  max-height: 1000px;
+  opacity: 1;
+  padding: 20px;
+}
+.basketContainer__gameList__games__loading {
+  display: block;
+  padding: 100px;
+}
+.basketContainer__info {
+  width: 400px;
+  max-height: 2000px;
+  position: sticky;
+  top: 85px;
+  transition: 0.25s;
+}
+.basketContainer__info__totalBlock {
+  padding: 20px;
+  border-radius: 20px;
+  background: rgb(50, 50, 50);
+  height: auto;
+  transition: 0.5s;
+  background-color: rgba(50, 50, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.basketContainer__info__totalBlock form {
+  display: none;
+  flex-direction: column;
+  justify-content: start;
+}
+.basketContainer__info__totalBlock form .for-input {
+  position: relative;
+  z-index: 1;
+}
+.basketContainer__info__totalBlock form .for-input input {
+  display: block;
+  box-sizing: border-box;
+  height: 45px;
+  width: 100%;
+  border-radius: 10px;
+  padding-left: 17px;
+  font-size: 16px;
+  outline: none;
+  cursor: text;
+  margin-bottom: 10px;
+  transition: 0.15s;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+}
+.basketContainer__info__totalBlock form .for-input__questionIconBlock {
+  position: absolute;
+  top: 0;
+  height: 45px;
+  right: 13px;
+  display: flex;
+  align-items: center;
+}
+.basketContainer__info__totalBlock form .for-input__questionIconBlock__icon {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  border: 2px solid rgb(61, 61, 61);
+  font-size: 16px;
+  cursor: help;
+}
+.basketContainer__info__totalBlock form .for-input__notification {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: calc(100% + 12px);
+  width: 220px;
+  padding: 10px;
+  border: 3px solid rgb(134, 58, 58);
+  border-radius: 7px;
+  background-color: rgb(50, 50, 50);
+  transform: translateY(calc(-50% - 5px));
+  visibility: hidden;
+}
+.basketContainer__info__totalBlock form .for-input__notification_gray {
+  border: 3px solid rgb(39, 39, 39);
+  z-index: 2;
+}
+.basketContainer__info__totalBlock form .for-input__notification__heading {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+.basketContainer__info__totalBlock form .for-input__notification__info {
+  color: rgb(237, 237, 237);
+  font-size: 12px;
+  font-weight: 300;
+}
+.basketContainer__info__totalBlock form .for-input__notification__triangleForm {
+  box-sizing: content-box;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 50%;
+  left: -12px;
+  transform: rotate(45deg) translateY(-50%);
+  height: 6px;
+  width: 6px;
+  border: 3px solid rgb(134, 58, 58);
+  background-color: rgb(50, 50, 50);
+}
+.basketContainer__info__totalBlock form .for-input__notification__triangleForm_gray {
+  border: 3px solid rgb(39, 39, 39);
+}
+.basketContainer__info__totalBlock form .for-input__notification__hideTriangle {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 50%;
+  left: -8px;
+  transform: rotate(45deg) translateY(-50%);
+  height: 12px;
+  width: 12px;
+  background-color: rgb(50, 50, 50);
+}
+.basketContainer__info__totalBlock form .for-input:nth-child(3) {
+  z-index: 2;
+}
+.basketContainer__info__totalBlock__nav {
+  position: relative;
+  z-index: 2;
+  height: 56px;
+  border-radius: 7px;
+  border: 2px solid #3D3D3D;
+  background: rgb(36, 36, 36);
+  padding-left: 17px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 17px;
+  transition: 0.15s;
+}
+.basketContainer__info__totalBlock__nav__border {
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  border: 2px solid rgb(150, 150, 150);
+  border-radius: 7px 7px 0 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.basketContainer__info__totalBlock__nav__floatBlock {
+  position: relative;
+  display: none;
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  top: 51px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  border-radius: 0px 0px 7px 7px;
+  border: 2px solid #969696;
+  border-top: none;
+  background: rgb(36, 36, 36);
+  box-shadow: 0 25px 25px -20px rgb(0, 0, 0);
+}
+.basketContainer__info__totalBlock__nav__floatBlock_paymentMethods__grid {
+  position: relative;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, minmax(0px, 1fr));
+}
+.basketContainer__info__totalBlock__nav__floatBlock_paymentMethods__grid__bank {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 7px;
+  background: rgb(61, 61, 61);
+  border: 2px solid rgba(100, 100, 100, 0);
+  cursor: pointer;
+  transition: 0.08s;
+}
+.basketContainer__info__totalBlock__nav__floatBlock_paymentMethods__grid__bank img {
+  height: 25px;
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
+}
+.basketContainer__info__totalBlock__nav__floatBlock_paymentMethods__grid__bank_ukassa img {
+  transform: scale(0.75);
+}
+.basketContainer__info__totalBlock__nav__floatBlock_paymentMethods__grid__bank_mc img {
+  transform: scale(1.2);
+}
+.basketContainer__info__totalBlock__nav__floatBlock_paymentMethods__grid__bank_mir img {
+  transform: scale(0.8);
+}
+.basketContainer__info__totalBlock__nav__floatBlock_paymentMethods__grid__bank_visa img {
+  transform: scale(0.9);
+}
+.basketContainer__info__totalBlock__nav__floatBlock_paymentMethods__grid__bank:hover {
+  transform: scale(0.98);
+  background: rgb(71, 71, 71);
+}
+.basketContainer__info__totalBlock__nav__floatBlock_paymentMethods__grid__bank:active {
+  transform: scale(0.95);
+}
+.basketContainer__info__totalBlock__nav__floatBlock_paymentMethods__grid__bank_active {
+  border: 2px solid rgb(150, 150, 150);
+}
+.basketContainer__info__totalBlock__nav_active {
+  border-radius: 7px 7px 0px 0px;
+}
+.basketContainer__info__totalBlock__nav_active > .basketContainer__info__totalBlock__nav__floatBlock {
+  display: block;
+}
+.basketContainer__info__totalBlock__nav_active > .basketContainer__info__totalBlock__nav__border {
+  opacity: 1;
+}
+.basketContainer__info__totalBlock__nav__text {
+  font-weight: 400;
+  font-size: 16px;
+  cursor: pointer;
+}
+.basketContainer__info__totalBlock__nav__img {
+  height: 14px;
+  filter: invert(0.8);
+  transform: rotate(90deg);
+}
+.basketContainer__info__totalBlock__nav:hover {
+  border: 2px solid #6C6C6C;
+}
+.basketContainer__info__totalBlock__paymentMethods {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  max-height: 45px;
+  transition: 0.3s;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.basketContainer__info__totalBlock__paymentMethods__header {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 9px;
+  padding-left: 15px;
+  cursor: pointer;
+}
+.basketContainer__info__totalBlock__paymentMethods__header > * {
+  cursor: pointer;
+}
+.basketContainer__info__totalBlock__paymentMethods__header > svg {
+  width: 26px;
+  transform: rotate(90deg);
+  transition: 0.2s;
+}
+.basketContainer__info__totalBlock__paymentMethods__body {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, minmax(0px, 1fr));
+  padding: 10px;
+  padding-top: 0;
+}
+.basketContainer__info__totalBlock__paymentMethods__body__bank {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.08s;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.basketContainer__info__totalBlock__paymentMethods__body__bank:hover {
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
+}
+.basketContainer__info__totalBlock__paymentMethods__body__bank:active {
+  transform: scale(0.95);
+}
+.basketContainer__info__totalBlock__paymentMethods__body__bank img {
+  height: 25px;
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
+}
+.basketContainer__info__totalBlock__paymentMethods__body__bank_ukassa img {
+  transform: scale(0.75);
+}
+.basketContainer__info__totalBlock__paymentMethods__body__bank_mc img {
+  transform: scale(1.2);
+}
+.basketContainer__info__totalBlock__paymentMethods__body__bank_mir img {
+  transform: scale(0.8);
+}
+.basketContainer__info__totalBlock__paymentMethods__body__bank_visa img {
+  transform: scale(0.9);
+}
+.basketContainer__info__totalBlock__paymentMethods__body__bank_active {
+  cursor: default;
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
+}
+.basketContainer__info__totalBlock__paymentMethods__body__bank_active:hover {
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
+}
+.basketContainer__info__totalBlock__paymentMethods_active {
+  max-height: 200px;
+}
+.basketContainer__info__totalBlock__paymentMethods_active .basketContainer__info__totalBlock__paymentMethods__header > svg {
+  transform: rotate(270deg);
+}
+.basketContainer__info__totalBlock__calcPrice {
+  margin-bottom: 10px;
+}
+.basketContainer__info__totalBlock__calcPrice__oldPrice {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+.basketContainer__info__totalBlock__calcPrice__oldPrice__this {
+  color: rgb(153, 153, 153);
+  font-size: 16px;
+  font-weight: 300;
+}
+.basketContainer__info__totalBlock__calcPrice__oldPrice__value {
+  color: rgb(153, 153, 153);
+  font-size: 16px;
+  font-weight: 300;
+}
+.basketContainer__info__totalBlock__calcPrice__discount {
+  display: flex;
+  justify-content: space-between;
+}
+.basketContainer__info__totalBlock__calcPrice__discount__this {
+  color: rgb(153, 153, 153);
+  font-size: 16px;
+  font-weight: 300;
+}
+.basketContainer__info__totalBlock__calcPrice__discount__value {
+  color: rgb(153, 153, 153);
+  font-size: 16px;
+  font-weight: 300;
+}
+.basketContainer__info__totalBlock__totalPrice {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.basketContainer__info__totalBlock__totalPrice__this {
+  font-size: 18px;
+  font-weight: 400;
+}
+.basketContainer__info__totalBlock__totalPrice__value {
+  font-size: 20px;
+  font-weight: 600;
+}
+.basketContainer__info__totalBlock__buyButton {
+  position: relative;
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.15s;
+  position: relative;
+  background: linear-gradient(to top, rgba(1, 162, 255, 0.8), rgba(1, 162, 255, 0.2));
+  cursor: pointer;
+  transition: 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(1, 162, 255);
+}
+.basketContainer__info__totalBlock__buyButton .-forHover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  opacity: 0;
+  border-radius: calc(inherit - 1px);
+  background: linear-gradient(to top, rgb(1, 162, 255), rgba(1, 162, 255, 0.5));
+  transition: 0.15s;
+}
+.basketContainer__info__totalBlock__buyButton .-text {
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+}
+.basketContainer__info__totalBlock__buyButton:hover .-forHover {
+  opacity: 1;
+}
+.basketContainer__info__totalBlock__buyButton:active {
+  transform: scale(0.98);
+}
+.basketContainer__info__totalBlock__buyButton__text {
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  cursor: pointer;
+}
+.basketContainer__info__totalBlock__buyButton__forHover {
+  z-index: 2;
+  border-radius: inherit;
+  background-color: rgb(1, 162, 255);
+  opacity: 0;
+  transition: 0.15s;
+}
+.basketContainer__info__totalBlock__buyButton:hover .basketContainer__info__totalBlock__buyButton__forHover {
+  opacity: 1;
+}
+.basketContainer__info__totalBlock__buyButton:active {
+  transform: scale(0.98);
+}
+.basketContainer__info__totalBlock__agreeBlock {
+  display: flex;
+  border: 3px solid transparent;
+  margin-bottom: 0;
+  transition: 0.15s;
+}
+.basketContainer__info__totalBlock__agreeBlock__checkBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+  width: 22px;
+  padding: 4px;
+  border: 2px solid #3D3D3D;
+  border-radius: 7px;
+  margin-right: 10px;
+  transition: 0.15s;
+  cursor: pointer;
+}
+.basketContainer__info__totalBlock__agreeBlock__checkBox__checkMark {
+  opacity: 0;
+  height: 14px;
+  width: 14px;
+  transform: translateY(-5px);
+  transition: 0.15s;
+}
+.basketContainer__info__totalBlock__agreeBlock__checkBox__checkMark img {
+  filter: invert(1);
+  height: 100%;
+}
+.basketContainer__info__totalBlock__agreeBlock__checkBox_active {
+  border-color: rgb(1, 162, 255);
+}
+.basketContainer__info__totalBlock__agreeBlock__checkBox_active .basketContainer__info__totalBlock__agreeBlock__checkBox__checkMark {
+  opacity: 1;
+  transform: translate(0px);
+}
+.basketContainer__info__totalBlock__agreeBlock__checkBox:hover {
+  border-color: rgb(1, 162, 255);
+}
+.basketContainer__info__totalBlock__agreeBlock__label {
+  color: #999;
+  font-weight: 300;
+  font-size: 14px;
+}
+.basketContainer__info__totalBlock__agreeBlock__label a {
+  text-decoration: underline;
+  color: rgb(255, 255, 255);
+  transition: 0.15s;
+}
+.basketContainer__info__totalBlock__agreeBlock__label a:hover {
+  color: rgb(1, 162, 255);
+}
+.basketContainer__info__totalBlock__agreeBlock_notification {
+  padding: 8px;
+  margin-bottom: -16px;
+  border-radius: 7px;
+  border: 3px solid rgb(134, 58, 58);
+  transform: scale(1.05);
+}
+.basketContainer__info__totalBlock__basketBlock {
+  min-height: 260px;
+  display: none;
+  animation: open_totalBlock 0.3s ease-in-out 1;
+}
+.basketContainer__info__totalBlock__basketBlock > img {
+  width: 120px;
+}
+.basketContainer__info__totalBlock__basketBlock__invertImg {
+  filter: invert(1);
+}
+.basketContainer__info__totalBlock__basketBlock__profile__avatar > img {
+  width: 120px;
+  border-radius: 20px;
+}
+.basketContainer__info__totalBlock__basketBlock__profile__nickname {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+.basketContainer__info__totalBlock__basketBlock:nth-child(1) {
+  display: flex;
+}
+.basketContainer__info__totalBlock__basketBlock_gif > img {
+  width: 60px;
+}
+.basketContainer__info__exitButton {
+  display: block;
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgb(50, 50, 50);
+  text-align: center;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.basketContainer__info__exitButton:hover {
+  background: rgb(47, 47, 47);
+}
+.basketContainer__info__exitButton:active {
+  transform: scale(0.95);
+}
+.basketContainer__info__exitButton_hidden {
+  transform: scale(0);
+  visibility: hidden;
+}
+.basketContainer__info_hidden {
+  opacity: 0;
+  max-height: 0;
+  width: 0;
+}
+.basketContainer__info_hidden > .basketContainer__info__totalBlock {
+  opacity: 0;
+  transform: scale(0.8);
+}
+.basketContainer__h2 {
+  margin-bottom: 15px;
+}
+.basketContainer_empty {
+  gap: 0;
+}
+
+.favorite {
+  position: relative;
+  z-index: 2;
+  padding: 0 150px 0 150px;
+}
+.favorite__nothing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  width: 200px;
+  padding: 50px;
+  box-sizing: content-box;
+  border-radius: 15px;
+  background-color: rgb(55, 55, 55);
+  gap: 10px;
+}
+.favorite__nothing__text {
+  font-weight: 700;
+  font-size: 20px;
+  color: rgb(100, 100, 100);
+}
+.favorite__nothing__link {
+  transition: 0.15s;
+  cursor: pointer;
+}
+.favorite__nothing__link:hover {
+  color: rgb(1, 162, 255);
+}
+.favorite__grid {
+  display: grid;
+  grid-gap: 35px;
+  grid-template-columns: repeat(5, minmax(0px, 1fr));
+  align-items: center;
+  justify-content: space-between;
+}
+.favorite__grid__game {
+  margin-bottom: 35px;
+}
+.favorite__grid__game__banner {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background-size: cover;
+  background-color: rgb(55, 55, 55);
+  transition: 0.15s;
+  cursor: pointer;
+}
+.favorite__grid__game__banner img {
+  width: 100%;
+}
+.favorite__grid__game__banner__discount {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  padding: 4px 4px 0 0;
+  border-radius: 0 10px 0 10px;
+  background-color: rgb(39, 39, 39);
+  cursor: pointer;
+}
+.favorite__grid__game__banner__discount__inner {
+  padding: 5px 10px 5px 10px;
+  border-radius: 0 10px 0 10px;
+  background: linear-gradient(to top, rgba(1, 162, 255, 0.8), rgba(1, 162, 255, 0.2));
+  font-family: robotoFlex, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.favorite__grid__game__info {
+  position: relative;
+  padding-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.15s;
+}
+.favorite__grid__game__info__name {
+  position: relative;
+  z-index: 1;
+  font-family: robotoFlex, sans-serif;
+}
+.favorite__grid__game__info__price {
+  position: relative;
+  z-index: 2;
+  font-family: robotoFlex, sans-serif;
+  font-weight: 700;
+  transition: 0.15s;
+}
+.favorite__grid__game__info__buttons {
+  right: 0;
+  left: 0;
+  top: 10px;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  justify-content: end;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: 0.15s;
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.2), rgb(39, 39, 39), rgb(39, 39, 39));
+}
+.favorite__grid__game__info__buttons__button {
+  position: relative;
+  height: 35px;
+  width: 35px;
+  margin-left: 5px;
+  background: linear-gradient(to bottom, rgb(89, 89, 89), rgb(64, 64, 64));
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.15s;
+}
+.favorite__grid__game__info__buttons__button img {
+  height: 18px;
+  filter: invert(1);
+}
+.favorite__grid__game__info__buttons__button__forHover {
+  opacity: 0;
+  transition: 0.15s;
+}
+.favorite__grid__game__info__buttons__button__forHover_blue {
+  background: linear-gradient(to top, rgba(1, 162, 255, 0.8), rgba(1, 162, 255, 0.2));
+}
+.favorite__grid__game__info__buttons__button__forHover_red {
+  background: linear-gradient(to bottom, rgb(255, 73, 73), rgb(167, 0, 0));
+}
+.favorite__grid__game__info__buttons__button:hover .favorite__grid__game__info__buttons__button__forHover {
+  opacity: 1;
+}
+.favorite__grid__game__info__buttons__button:active {
+  transform: scale(0.9);
+}
+.favorite__grid__game:hover .favorite__grid__game__banner {
+  transform: scale(1.05);
+}
+.favorite__grid__game:hover .favorite__grid__game__info {
+  transform: translateY(8px);
+}
+.favorite__grid__game:hover .favorite__grid__game__info__buttons {
+  transform: translateY(-2px);
+  opacity: 1;
+}
+.favorite__grid__game:hover .favorite__grid__game__info__price {
+  transform: translateX(-85px);
+  text-shadow: 0 0 10px rgb(39, 39, 39);
 }/*# sourceMappingURL=main.css.map */

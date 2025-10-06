@@ -1,3 +1,7 @@
+function contains(arr, elem) {
+    return arr.some((arrElem) => arrElem === elem)
+}
+
 // ----------------------- footer всегда снизу
 
 document.querySelector("#main").style.minHeight = `${window.innerHeight - 331}px`;

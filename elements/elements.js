@@ -12,7 +12,7 @@ const get_horizont_game_html = (game, discount) => {
         dls_html = `<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>`;
     }
 
-    return `<article class = "gameH">
+    return `<article class="gameH game_${game.id}">
                 <a href = "${game.link}" class="gameH__banner">
                     <div class="gameH__banner__imgBlock"><img src="${game.imgH}" alt="${game.name}"></div>
                     <div class="gameH__banner__videoBlock">
@@ -30,11 +30,11 @@ const get_horizont_game_html = (game, discount) => {
                 </a>
                 <div class="gameH__info">
                     <div class="gameH__info__buttons">
-                        <div class="gameH__info__buttons__button">
+                        <div class="gameH__info__buttons__button _buttonBasket">
                             <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
                             <img src="img/icons/main/basket64.png" alt="">
                         </div>
-                        <div class="gameH__info__buttons__button">
+                        <div class="gameH__info__buttons__button _buttonFavorite">
                             <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
                             <img src="img/icons/main/like64.png" alt="">
                         </div>
@@ -91,7 +91,7 @@ const get_horizont_game_headerCatalog_html = (game, discount) => {
 };
 
 const get_vertical_game_html = (game, discount) => {
-    return `<article class = "gameV">
+    return `<article class="gameV game_${game.id}">
                 <a href = "${game.link}" class="gameV__banner">
                     <div class="gameV__banner__glass"></div>
                     <img src="${game.imgW}" alt="${game.name}">
@@ -99,11 +99,11 @@ const get_vertical_game_html = (game, discount) => {
                 </a>
                 <div class="gameV__info">
                     <div class="gameV__info__buttons">
-                        <div class="gameV__info__buttons__button" onclick="add_game_basket(${game.id}, '${game.name}')">
+                        <div class="gameV__info__buttons__button _buttonBasket" onclick="add_game_basket(${game.id}, '${game.name}')">
                             <div class="gameV__info__buttons__button__forHover gameV__info__buttons__button__forHover_blue absolute-zero"></div>
                             <img src="img/icons/main/basket64.png" alt="">
                         </div>
-                        <div class="gameV__info__buttons__button" onclick="add_game_favorite(${game.id}, '${game.name}')">
+                        <div class="gameV__info__buttons__button _buttonFavorite" onclick="add_game_favorite(${game.id}, '${game.name}')">
                             <div class="gameV__info__buttons__button__forHover gameV__info__buttons__button__forHover_red absolute-zero"></div>
                             <img src="img/icons/main/like64.png" alt="">
                         </div>
@@ -255,7 +255,9 @@ const get_basket_game_html = (game) => {
                 <div class="basketContainer__gameList__games__game__right">
                     <div class="basketContainer__gameList__games__game__right__price txt">${game.newPrice} ₽<span>${game.oldPrice} ₽</span></div>
                     <div class="basketContainer__gameList__games__game__right__closeBlock" onclick="delete_game_basket(${game.id}, '${game.name}')" onmouseover="hover_close_basket(true, ${game.id})" onmouseout="hover_close_basket(false, ${game.id})">
-                        <img src="img/icons/cross2_32.png" alt="">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 8L8 16M8.00001 8L16 16" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
                 </div>
             </div>`
