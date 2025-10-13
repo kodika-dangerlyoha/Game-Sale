@@ -2431,19 +2431,19 @@ label {
 }
 .mainInfo__interaction__prices {
   display: flex;
-  align-items: center;
-  justify-content: end;
-  gap: 5px;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
 }
 .mainInfo__interaction__prices__old {
   text-decoration: line-through;
-  font-size: 20px;
+  font-size: 18px;
   color: rgb(200, 200, 200);
   transform: translateY(5px);
 }
 .mainInfo__interaction__prices__new {
   font-weight: 700;
-  font-size: 32px;
+  font-size: 28px;
 }
 .mainInfo__interaction__discount {
   font-size: 20px;
@@ -2801,10 +2801,13 @@ label {
 }
 .mainInfo__info {
   width: 400px;
-  height: 493px;
+  height: 494px;
   align-self: flex-end;
   border-radius: 20px;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
