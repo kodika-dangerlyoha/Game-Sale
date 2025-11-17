@@ -1575,6 +1575,7 @@ label {
   opacity: 0;
   padding: 0;
   overflow: hidden;
+  border: 0px solid transparent;
 }
 .inputList__list__body__points__point_check .inputList__list__body__points__point__value {
   padding-left: 10px;
@@ -5104,7 +5105,7 @@ label {
 .favorite__grid {
   display: grid;
   grid-gap: 35px;
-  grid-template-columns: repeat(5, minmax(0px, 1fr));
+  grid-template-columns: repeat(4, minmax(0px, 1fr));
   align-items: center;
   justify-content: space-between;
 }

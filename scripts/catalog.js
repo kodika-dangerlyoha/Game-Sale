@@ -142,6 +142,8 @@ make_input_list('genres');
 make_input_list('developers');
 make_input_list_number('prices');
 
+const inputList_sorting = new InputList('#inputList-sorting', 'checkbox');
+
 inp_search_genres.addEventListener('input', () => search_point(inp_search_genres.value, 'genres'));
 inp_search_sorting.addEventListener('input', () => search_point(inp_search_sorting.value, 'sorting'));
 inp_num_min_price.addEventListener('input', change_price_min);

@@ -1,3 +1,84 @@
+class Form_il {
+    all_inputList = [];
+
+    constructor(selector) {
+        this.form_il = document.querySelector(selector);
+    }
+
+    register(inputList) {
+        this.all_inputList.push(inputList);
+    }
+
+    close_all_except(current_inputList) {
+        this.all_inputList.forEach(inputList => {
+            if (inputList !== current_inputList) {
+                inputList.close();
+            }
+        });
+    }
+}
+
+class InputList {
+    constructor(selector, type, form_il) {
+        this.$inputList = document.querySelector(selector);
+        this.type = type;
+        this.init();
+        this.form_il = form_il;
+
+        this.form_il.register(this);
+    }
+
+    init() {
+        this.$inputList.querySelector('.inputList__list__header').addEventListener('click', () => this.toggle());
+        if (this.type === 'radio') {
+            this.$inputList.querySelectorAll('.inputList__list__body__points__point').forEach(point => {
+                point.addEventListener('click', () => this.change_value_radio());
+            })
+        }
+        else if (this.type === 'checkbox') {
+            this.$inputList.querySelectorAll('.inputList__list__body__points__point').forEach(point => {
+                point.addEventListener('click', () => this.change_value_checkbox());
+            })
+        }
+    }
+
+    toggle() {
+        console.log('toggle');
+        this.form_il.close_all_except(this);
+        if(this.$inputList.classList.contains('inputList_open')) {
+            this.close();
+        }
+        else {
+            this.open();
+        }
+    }
+
+    open() {
+        this.$inputList.classList.add('inputList_open');
+        console.log('open');
+    }
+
+    close() {
+        this.$inputList.classList.remove('inputList_open');
+        console.log('close');
+    }
+
+    change_value_checkbox() {
+
+    }
+    change_value_radio() {
+
+    }
+}
+
+class InputList_point {
+
+    change_value() {
+
+    }
+}
+
+
 const toggle_list = (id) => {
     const e_open = document.querySelector('.inputList_open');
     const e_this = document.querySelector(`#inputList-${id}`);
