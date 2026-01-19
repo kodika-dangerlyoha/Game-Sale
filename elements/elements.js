@@ -153,7 +153,7 @@ const get_banner_html = (count, game_info, carousel_banner_list, discount) => {
 }
 
 const get_banner_bg_html = (count, game_info) => {
-    return `<div class="carousel__bg ${count === 0 ? 'carousel__bg_active' : ''}" order = "${count}">
+    return `<div class="carousel__gridBG__bg ${count === 0 ? 'carousel__gridBG__bg_active' : ''}" order = "${count}">
                 <img src="${game_info.bigBanner_blur}" alt="">
             </div>`
 }

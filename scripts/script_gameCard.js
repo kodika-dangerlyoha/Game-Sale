@@ -8,13 +8,9 @@ let screenshots_count = 0;
 let video_count = 0;
 let this_count = 0;
 
-window.addEventListener("scroll", function(){
-    document.querySelector('.bigImgBlock').style.transform = "translateY(" + (this.scrollY) / 2 + "px)";
-    for_scroll.style.opacity = (this.scrollY) / 300;
-    for_scroll.style.transform = "translateY(" + (this.scrollY) / 2 + "px)";
-    
-    if (this.scrollY > 490) {
-        if (!document.querySelector('.miniGameCard_show')) {
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
             mini_game_card.style.display = "flex";
             header_center.classList.add('header__center_hidden');
 
@@ -26,24 +22,35 @@ window.addEventListener("scroll", function(){
                 mini_game_card.classList.add('miniGameCard_show');
                 main_info.classList.add('mainInfo_hidden');
             }, 60);
+        } 
+        else {
+            header_center.style.display = "flex";
+            mini_game_card.classList.remove('miniGameCard_show');
+            main_info.classList.remove('mainInfo_hidden');
+            
+            setTimeout(() => {
+                mini_game_card.style.display = "none";
+            }, 200)
+
+            setTimeout(() => {
+                header_center.classList.remove('header__center_hidden');
+            }, 210)
         }
-        return
-    }
+    });
+}, {
+    root: null, // отслеживаем относительно viewport
+    threshold: 0, // срабатывает при любом пересечении
+    rootMargin: '-120px 0px 0px 0px' // top, right, bottom, left
+});
 
-    if (document.querySelector('.miniGameCard_show')) {
-        header_center.style.display = "flex";
+// Начинаем наблюдать за элементом
+const element = document.querySelector('#main_info');
+observer.observe(element);
 
-        mini_game_card.classList.remove('miniGameCard_show');
-        main_info.classList.remove('mainInfo_hidden');
-        
-        setTimeout(() => {
-            mini_game_card.style.display = "none";
-        }, 200)
-
-        setTimeout(() => {
-            header_center.classList.remove('header__center_hidden');
-        }, 210)
-    }
+window.addEventListener("scroll", function(){
+    document.querySelector('.bigImgBlock').style.transform = "translateY(" + (this.scrollY) / 2 + "px)";
+    for_scroll.style.opacity = (this.scrollY) / 300;
+    for_scroll.style.transform = "translateY(" + (this.scrollY) / 2 + "px)";
 });
 
 function make_mediaList(game) {

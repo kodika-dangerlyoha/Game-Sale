@@ -16,7 +16,7 @@ class Form_il {
             }
         });
     }
-}
+}   
 
 class InputList {
     constructor(selector, type, form_il) {

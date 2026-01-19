@@ -142,6 +142,7 @@
                 position: relative;
                 height: 35px;
                 width: 35px;
+                z-index: 2;
                 margin-left: 5px;
                 border-radius: 7px;
                 display: flex;
@@ -158,6 +159,7 @@
             }
         }
     }
+
     &_headerCatalog &{
         &__banner {
             height: 173px;
@@ -168,12 +170,18 @@
                 }
             }
         }
+        &__info {
+            &__buttons {
+                background: transparent;
+            }
+        }
     }
     &_headerCatalog {
         opacity: 0;
         transform: translateY(-10px);
         transition: transform .4s, opacity .4s;
     }
+
     &_open {
         // transition: .2s;
         opacity: 1;

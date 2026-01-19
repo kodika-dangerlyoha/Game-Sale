@@ -205,6 +205,10 @@ label {
   padding-top: 0;
   width: 1605px;
 }
+.inner_index {
+  width: 1605px;
+  padding-top: 100px;
+}
 .inner_catalog {
   padding-top: 100px;
   width: 1405px;
@@ -1225,6 +1229,7 @@ label {
   position: relative;
   height: 35px;
   width: 35px;
+  z-index: 2;
   margin-left: 5px;
   border-radius: 7px;
   display: flex;
@@ -1256,6 +1261,9 @@ label {
 .gameH_headerCatalog .gameH__banner__info__point {
   font-size: 14px;
   padding: 4px 7px;
+}
+.gameH_headerCatalog .gameH__info__buttons {
+  background: transparent;
 }
 .gameH_headerCatalog {
   opacity: 0;
@@ -1631,29 +1639,13 @@ label {
 
 .carousel {
   display: flex;
-  padding: 0 150px 15px 150px;
-  position: relative;
-}
-.carousel__bg {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  transition: 1s;
-  opacity: 0;
-}
-.carousel__bg > img {
   width: 100%;
-  height: 100%;
-}
-.carousel__bg_active {
-  opacity: 0.4;
+  position: relative;
 }
 .carousel__buttons {
   position: absolute;
-  bottom: 45px;
-  right: 175px;
+  bottom: 25px;
+  right: 25px;
   z-index: 15;
   display: flex;
   justify-content: center;
@@ -1715,11 +1707,27 @@ label {
 }
 .carousel__gridBG {
   position: absolute;
-  right: 0px;
+  right: -100px;
   bottom: -100px;
   top: -100px;
-  left: 0px;
+  left: -100px;
   z-index: 1;
+}
+.carousel__gridBG__bg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  transition: 1s;
+  opacity: 0;
+}
+.carousel__gridBG__bg > img {
+  width: 100%;
+  height: 100%;
+}
+.carousel__gridBG__bg_active {
+  opacity: 0.4;
 }
 .carousel__banner {
   width: 100%;
@@ -1870,7 +1878,8 @@ label {
 .salesHits {
   position: relative;
   z-index: 10;
-  padding: 40px 150px 35px 150px;
+  padding: 40px 0 35px 0;
+  width: 100%;
 }
 .salesHits__bg {
   top: 35px;
@@ -2259,37 +2268,18 @@ label {
   overflow: hidden;
   padding-left: 20px;
   padding-right: 20px;
-  position: relative;
-  background: linear-gradient(to top, rgba(1, 162, 255, 0.8), rgba(1, 162, 255, 0.2));
-  cursor: pointer;
-  transition: 0.15s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: rgba(1, 162, 255, 0.4);
   border: 1px solid rgb(1, 162, 255);
-}
-.miniGameCard__right__buttonBuy .-forHover {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 2;
-  opacity: 0;
-  border-radius: calc(inherit - 1px);
-  background: linear-gradient(to top, rgb(1, 162, 255), rgba(1, 162, 255, 0.5));
-  transition: 0.15s;
-}
-.miniGameCard__right__buttonBuy .-text {
-  position: relative;
-  z-index: 3;
+  font-weight: 700;
+  transition: 0.2s;
   cursor: pointer;
 }
-.miniGameCard__right__buttonBuy:hover .-forHover {
-  opacity: 1;
+.miniGameCard__right__buttonBuy:hover {
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .miniGameCard__right__buttonBuy:active {
-  transform: scale(0.98);
+  transform: scale(0.95);
 }
 .miniGameCard__right__buttonBuy .-text {
   position: relative;
@@ -2339,7 +2329,8 @@ label {
 .bigImgBlock img {
   position: relative;
   z-index: 1;
-  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
 }
 .bigImgBlock_loading {
   background-color: rgb(55, 55, 55);
@@ -2372,6 +2363,7 @@ label {
 }
 .mainInfo__left {
   width: 700px;
+  transition: 0.2s;
 }
 .mainInfo__title {
   font-size: 30px;
@@ -2815,6 +2807,7 @@ label {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.3);
+  transition: 0.2s;
 }
 .mainInfo__info__img {
   width: 100%;
@@ -2967,7 +2960,7 @@ label {
 .mainInfo__info_loading .mainInfo__info__interactions__bottom > * {
   display: none;
 }
-.mainInfo_hidden {
+.mainInfo_hidden > * {
   opacity: 0;
   transform: translateY(-100px) scale(0.6);
 }
@@ -3866,37 +3859,18 @@ label {
   border-radius: 15px;
 }
 .settings__buttons__button_save {
-  position: relative;
-  background: linear-gradient(to top, rgba(1, 162, 255, 0.8), rgba(1, 162, 255, 0.2));
-  cursor: pointer;
-  transition: 0.15s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: rgba(1, 162, 255, 0.4);
   border: 1px solid rgb(1, 162, 255);
-}
-.settings__buttons__button_save .-forHover {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 2;
-  opacity: 0;
-  border-radius: calc(inherit - 1px);
-  background: linear-gradient(to top, rgb(1, 162, 255), rgba(1, 162, 255, 0.5));
-  transition: 0.15s;
-}
-.settings__buttons__button_save .-text {
-  position: relative;
-  z-index: 3;
+  font-weight: 700;
+  transition: 0.2s;
   cursor: pointer;
 }
-.settings__buttons__button_save:hover .-forHover {
-  opacity: 1;
+.settings__buttons__button_save:hover {
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .settings__buttons__button_save:active {
-  transform: scale(0.98);
+  transform: scale(0.95);
 }
 .settings__buttons__button_back {
   background-color: rgba(255, 255, 255, 0.1);
@@ -4896,37 +4870,18 @@ label {
   border: none;
   cursor: pointer;
   transition: 0.15s;
-  position: relative;
-  background: linear-gradient(to top, rgba(1, 162, 255, 0.8), rgba(1, 162, 255, 0.2));
-  cursor: pointer;
-  transition: 0.15s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: rgba(1, 162, 255, 0.4);
   border: 1px solid rgb(1, 162, 255);
-}
-.basketContainer__info__totalBlock__buyButton .-forHover {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 2;
-  opacity: 0;
-  border-radius: calc(inherit - 1px);
-  background: linear-gradient(to top, rgb(1, 162, 255), rgba(1, 162, 255, 0.5));
-  transition: 0.15s;
-}
-.basketContainer__info__totalBlock__buyButton .-text {
-  position: relative;
-  z-index: 3;
+  font-weight: 700;
+  transition: 0.2s;
   cursor: pointer;
 }
-.basketContainer__info__totalBlock__buyButton:hover .-forHover {
-  opacity: 1;
+.basketContainer__info__totalBlock__buyButton:hover {
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
 }
 .basketContainer__info__totalBlock__buyButton:active {
-  transform: scale(0.98);
+  transform: scale(0.95);
 }
 .basketContainer__info__totalBlock__buyButton__text {
   font-size: 18px;
