@@ -3,6 +3,8 @@
 body {
 	background-color: base.$clr-main_body;
 	margin: 0;
+    overflow-y: scroll; /* Всегда показываем скроллбар */
+    // overscroll-behavior: none; /* Запрещаем прокрутку */ // ! не работает на ios < 16
 }
 
 a {

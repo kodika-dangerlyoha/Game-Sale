@@ -18,6 +18,10 @@ make_catalog_navs();
 
 // ----------------------- Открытиие меню каталога в шапке 
 
+function getScrollbarWidth() {
+    return window.innerWidth - document.documentElement.clientWidth;
+}
+
 const open_catalogNavs = () => {
     document.querySelector('.header__buttonCatalog').classList.toggle('header__buttonCatalog_active');
     document.querySelector('.blackoutBlock').classList.toggle('blackoutBlock_active');
@@ -29,8 +33,12 @@ const open_catalogNavs = () => {
     if (document.querySelector('.header_open')) {
         header_bg.style.opacity = "1";
         header_bg_visible = true;
+        // document.body.style.overflow = 'hidden';
+        // document.body.style.paddingRight = getScrollbarWidth() + 'px';
     }
     else {
+        // document.body.style.overflow = '';
+        // document.body.style.paddingRight = '';
         if (window.pageYOffset == 0) {
             header_bg.style.opacity = "0";
             header_bg_visible = false;

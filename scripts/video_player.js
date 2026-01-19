@@ -3,6 +3,8 @@ let value = 0;
 let video;
 let volume;
 let race;
+let race_width;
+let time_point_hover;
 let dragging = false;
 let time_curr_block;
 let time_all_block;
@@ -27,12 +29,22 @@ function handle_mouse_click(e) {
 }
 
 function handle_mouse_move(e) {
-    const percent = e.offsetX * 100 / race.clientWidth;
+    let offsetX = e.offsetX;
+    const percent = offsetX * 100 / race.clientWidth;
+    if (offsetX < 25) {
+        time_point_hover.style.transform = "translateX(0%)";
+    }
+    else if (race_width - offsetX < 25) {
+        time_point_hover.style.transform = "translateX(-100%)";
+    }
+    else {
+        time_point_hover.style.transform = "translateX(-50%)";
+    }
     document.querySelector('.videoIF__race__mouse').style.width = percent + "%";
-    document.querySelector('.videoIF__race__time__point_hover').style.left = percent + "%";
-    document.querySelector('.videoIF__race__time__point_hover').innerHTML = set_time(video.duration * (percent / 100));
+    time_point_hover.style.left = percent + "%";
+    time_point_hover.innerHTML = set_time(video.duration * (percent / 100));
     if (dragging) {
-        video.currentTime = (e.offsetX / race.clientWidth) * video.duration;
+        video.currentTime = (offsetX / race.clientWidth) * video.duration;
     }
 }
 
@@ -84,6 +96,8 @@ function update_volume() {
 function get_video() {
     video = document.querySelector('#video');
     race = document.querySelector('.videoIF__race');
+    race_width = race.offsetWidth;
+    time_point_hover = document.querySelector('.videoIF__race__time__point_hover');
     volume = document.querySelector('.videoIF__volume__forMouse');
     time_curr_block = document.querySelector('.videoIF__race__time__point_current');
     time_all_block = document.querySelector('.videoIF__race__time__point_all');

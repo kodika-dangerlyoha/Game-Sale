@@ -8,6 +8,55 @@ let screenshots_count = 0;
 let video_count = 0;
 let this_count = 0;
 
+const scroll_horizontal = document.querySelector('#interface_scroll_horizontal');
+
+scroll_horizontal.addEventListener('wheel', (e) => {
+    console.log('scroll');
+    e.preventDefault(); // Отменяем вертикальный скролл
+    scroll_horizontal.scrollLeft += e.deltaY; // deltaY - вертикальное движение колеса
+    console.log(scroll_horizontal.scrollLeft);
+});
+
+// const scroll_horizontal = document.querySelector('#interface_scroll_horizontal');
+// let target = scroll_horizontal.scrollLeft;
+
+// const maxScroll = scroll_horizontal.scrollWidth - scroll_horizontal.clientWidth;
+// const minScroll = 0;
+
+// scroll_horizontal.addEventListener('wheel', (e) => {
+//     e.preventDefault();
+//     target += e.deltaY;
+//     if (target < minScroll) target = minScroll;
+//     if (target > maxScroll) target = maxScroll;
+
+//     console.log(target);
+//     // Запускаем плавную прокрутку
+//     smoothScrollTo(target);
+// }, { passive: false });
+
+// function smoothScrollTo(targetPosition) {
+//     const start = scroll_horizontal.scrollLeft;
+//     const change = targetPosition - start;
+//     const duration = 100; // мс
+//     let startTime = null;
+    
+//     function animate(currentTime) {
+//         if (!startTime) startTime = currentTime;
+//         const elapsed = currentTime - startTime;
+//         const progress = Math.min(elapsed / duration, 1);
+        
+//         // Простая линейная анимация
+//         // Для лучшего эффекта используйте ease-функции из примера 3
+//         scroll_horizontal.scrollLeft = start + (change * progress);
+        
+//         if (progress < 1) {
+//             requestAnimationFrame(animate);
+//         }
+//     }
+    
+//     requestAnimationFrame(animate);
+// }
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (!entry.isIntersecting) {
@@ -44,8 +93,7 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 // Начинаем наблюдать за элементом
-const element = document.querySelector('#main_info');
-observer.observe(element);
+observer.observe(document.querySelector('#main_info'));
 
 window.addEventListener("scroll", function(){
     document.querySelector('.bigImgBlock').style.transform = "translateY(" + (this.scrollY) / 2 + "px)";

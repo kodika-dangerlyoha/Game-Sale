@@ -32,6 +32,8 @@
         gap: 5px;
         height: 35px;
         justify-content: center;
+        position: relative;
+        z-index: 1;
     }
     &__race {
         position: relative;
@@ -78,7 +80,7 @@
                     -webkit-backdrop-filter: blur(10px);
                     backdrop-filter: blur(10px);
                     opacity: 0;
-                    transition: opacity .15s;
+                    transition: opacity .15s, transform .2s;
                     transform: translateX(-50%);
                     @include base.style-main;
                     &_active {
@@ -180,6 +182,8 @@
     &__playButton {
         padding: 10px;
         overflow: hidden;
+        position: relative;
+        z-index: 2;
         & > svg {
             animation: open .2s base.$tf-main 1;
         }

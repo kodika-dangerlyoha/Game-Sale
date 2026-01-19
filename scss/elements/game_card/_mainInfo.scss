@@ -6,6 +6,7 @@
     display: flex;
     align-content: flex-start;
     justify-content: center;
+    width: 100%;
     gap: 10px;
     flex-wrap: wrap;
     margin-bottom: 20px;
@@ -191,6 +192,7 @@
                 &__scroll {
                     overflow-y: auto;
                     width: 100%;
+                    transition: .1s;
                     &::-webkit-scrollbar {
                         height: 10px;
                         width: 10px; // Добавляем ширину для вертикального скроллбара
