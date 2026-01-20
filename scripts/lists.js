@@ -473,7 +473,7 @@ let games = [
     },
     {
         'id': 19,
-        'name': "YA USTAL PISAT",
+        'name': "YA USTAL PISAT gold edition stul 13 pirozhochek vkusniy",
         'link': "",
         'imgH': "img/banners/8.jpg",
         'imgW': "img/banners/a8.jpg",

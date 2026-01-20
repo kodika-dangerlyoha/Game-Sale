@@ -35,7 +35,7 @@ make_carousel();
 
 function scroll_carousel(bool) {
     let carusel_items = document.querySelectorAll('.carousel__banner');
-    let carusel_bg = document.querySelectorAll('.carousel__bg');
+    let carusel_bg = document.querySelectorAll('.carousel__gridBG__bg');
 
     let btl = document.querySelector('#carousel_button_left')
     let btr = document.querySelector('#carousel_button_right')
@@ -43,7 +43,7 @@ function scroll_carousel(bool) {
     btl.disabled = true
     btr.disabled = true
 
-    document.querySelector('.carousel__bg_active').classList.remove('carousel__bg_active');
+    document.querySelector('.carousel__gridBG__bg_active').classList.remove('carousel__gridBG__bg_active');
 
     if (bool) {
         let i = 0;
@@ -64,7 +64,7 @@ function scroll_carousel(bool) {
 
             carusel_bg[i].setAttribute('order', count);
             if (count == 0) {
-                carusel_bg[i].classList.add('carousel__bg_active');
+                carusel_bg[i].classList.add('carousel__gridBG__bg_active');
             }
             i++
         })
@@ -91,7 +91,7 @@ function scroll_carousel(bool) {
 
             carusel_bg[i].setAttribute('order', count);
             if (count == 0) {
-                carusel_bg[i].classList.add('carousel__bg_active');
+                carusel_bg[i].classList.add('carousel__gridBG__bg_active');
             }
             i++
         })

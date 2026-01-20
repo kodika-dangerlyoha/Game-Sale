@@ -23,22 +23,26 @@ function getScrollbarWidth() {
 }
 
 const open_catalogNavs = () => {
+    const header = document.querySelector('.header');
     document.querySelector('.header__buttonCatalog').classList.toggle('header__buttonCatalog_active');
     document.querySelector('.blackoutBlock').classList.toggle('blackoutBlock_active');
     // document.querySelector('.header__catalogNavs').classList.toggle('header__catalogNavs_hidden');
     document.querySelector('.header__catalog').classList.toggle('header__catalog_open');
-    document.querySelector('.header').classList.toggle('header_open');
+    header.classList.toggle('header_open');
 
     scrollTop = window.pageYOffset;
     if (document.querySelector('.header_open')) {
         header_bg.style.opacity = "1";
         header_bg_visible = true;
-        // document.body.style.overflow = 'hidden';
-        // document.body.style.paddingRight = getScrollbarWidth() + 'px';
+        const w = getScrollbarWidth();
+        document.body.style.overflow = 'hidden';
+        document.body.style.paddingRight = `${w}px`;
+        header.style.paddingRight = `${w + 15}px`;
     }
     else {
-        // document.body.style.overflow = '';
-        // document.body.style.paddingRight = '';
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+        header.style.paddingRight = '15px';
         if (window.pageYOffset == 0) {
             header_bg.style.opacity = "0";
             header_bg_visible = false;

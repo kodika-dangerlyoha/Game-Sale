@@ -29,18 +29,22 @@ const get_horizont_game_html = (game, discount) => {
                     </div>
                 </a>
                 <div class="gameH__info">
-                    <div class="gameH__info__buttons">
-                        <div class="gameH__info__buttons__button _buttonBasket">
-                            <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
-                            <img src="img/icons/main/basket64.png" alt="">
-                        </div>
-                        <div class="gameH__info__buttons__button _buttonFavorite">
-                            <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
-                            <img src="img/icons/main/like64.png" alt="">
+                    <div class="gameH__info__left">
+                        <div class="gameH__info__name txt">${game.name}</div>
+                    </div>
+                    <div class="gameH__info__right">
+                        <div class="gameH__info__price txt">${game.newPrice}₽</div>
+                        <div class="gameH__info__buttons">
+                            <div class="gameH__info__buttons__button _buttonBasket">
+                                <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+                                <img src="img/icons/main/basket64.png" alt="">
+                            </div>
+                            <div class="gameH__info__buttons__button _buttonFavorite">
+                                <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+                                <img src="img/icons/main/like64.png" alt="">
+                            </div>
                         </div>
                     </div>
-                    <div class="gameH__info__name txt">${game.name}</div>
-                    <div class="gameH__info__price txt">${game.newPrice}₽</div>
                 </div>
             </article>`
 };
@@ -74,18 +78,22 @@ const get_horizont_game_headerCatalog_html = (game, discount) => {
                     </div>
                 </a>
                 <div class="gameH__info">
-                    <div class="gameH__info__buttons">
-                        <div class="gameH__info__buttons__button">
-                            <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
-                            <img src="img/icons/main/basket64.png" alt="">
-                        </div>
-                        <div class="gameH__info__buttons__button">
-                            <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
-                            <img src="img/icons/main/like64.png" alt="">
+                    <div class="gameH__info__left">
+                        <div class="gameH__info__name txt">${game.name}</div>
+                    </div>
+                    <div class="gameH__info__right">
+                        <div class="gameH__info__price txt">${game.newPrice}₽</div>
+                        <div class="gameH__info__buttons">
+                            <div class="gameH__info__buttons__button _buttonBasket">
+                                <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+                                <img src="img/icons/main/basket64.png" alt="">
+                            </div>
+                            <div class="gameH__info__buttons__button _buttonFavorite">
+                                <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+                                <img src="img/icons/main/like64.png" alt="">
+                            </div>
                         </div>
                     </div>
-                    <div class="gameH__info__name txt">${game.name}</div>
-                    <div class="gameH__info__price txt">${game.newPrice}₽</div>
                 </div>
             </article>`
 };
@@ -98,18 +106,22 @@ const get_vertical_game_html = (game, discount) => {
                     <div class="gameV__banner__discount txt">${discount}%</div>
                 </a>
                 <div class="gameV__info">
-                    <div class="gameV__info__buttons">
-                        <div class="gameV__info__buttons__button _buttonBasket" onclick="add_game_basket(${game.id}, '${game.name}')">
-                            <div class="gameV__info__buttons__button__forHover gameV__info__buttons__button__forHover_blue absolute-zero"></div>
-                            <img src="img/icons/main/basket64.png" alt="">
-                        </div>
-                        <div class="gameV__info__buttons__button _buttonFavorite" onclick="add_game_favorite(${game.id}, '${game.name}')">
-                            <div class="gameV__info__buttons__button__forHover gameV__info__buttons__button__forHover_red absolute-zero"></div>
-                            <img src="img/icons/main/like64.png" alt="">
+                    <div class="gameV__info__left">
+                        <div class="gameV__info__name txt">${game.name}</div>
+                    </div>
+                    <div class="gameV__info__right">
+                        <div class="gameV__info__price txt">${game.newPrice}₽</div>
+                        <div class="gameV__info__buttons">
+                            <div class="gameV__info__buttons__button _buttonBasket">
+                                <div class="gameV__info__buttons__button__forHover gameV__info__buttons__button__forHover_blue absolute-zero"></div>
+                                <img src="img/icons/main/basket64.png" alt="">
+                            </div>
+                            <div class="gameV__info__buttons__button _buttonFavorite">
+                                <div class="gameV__info__buttons__button__forHover gameV__info__buttons__button__forHover_red absolute-zero"></div>
+                                <img src="img/icons/main/like64.png" alt="">
+                            </div>
                         </div>
                     </div>
-                    <div class="gameV__info__name txt">${game.name}</div>
-                    <div class="gameV__info__price txt">${game.newPrice} ₽</div>
                 </div>
             </article>`
 }

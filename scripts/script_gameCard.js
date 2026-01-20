@@ -89,7 +89,7 @@ const observer = new IntersectionObserver((entries) => {
 }, {
     root: null, // отслеживаем относительно viewport
     threshold: 0, // срабатывает при любом пересечении
-    rootMargin: '-120px 0px 0px 0px' // top, right, bottom, left
+    rootMargin: '-100px 0px 0px 0px' // top, right, bottom, left
 });
 
 // Начинаем наблюдать за элементом

@@ -61,39 +61,53 @@
     }
     &__info {
         position: relative;
-        padding-top: 10px;
+        padding-top: 5px;
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        gap: 10px;
         transition: 0.15s;
+        &__left {
+            min-width: 0;
+        }
+        &__right {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            gap: 10px;
+            min-width: max-content;
+            margin-left: -50px;
+        }
         &__name {
             position: relative;
             z-index: 1;
             font-family: base.$fnt-all;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         &__price {
             position: relative;
             z-index: 2;
             font-family: base.$fnt-all;
             font-weight: 700;
+            transform: translateX(-100%);
             transition: 0.15s;
         }
         &__buttons {
-            right: 0;
-            left: 0;
-            top: 10px;
-            position: absolute;
             z-index: 2;
             display: flex;
             justify-content: end;
-            transform: translateY(-10px);
+            gap: 5px;
             opacity: 0;
+            transform: translateY(-15px);
+            margin-left: -100%;
             transition: 0.15s;
-            background: linear-gradient(to right, rgba(39, 39, 39, 0.2), rgba(39, 39, 39, 1), rgba(39, 39, 39, 1));
             &__button {
                 position: relative;
                 height: 35px;
                 width: 35px;
-                margin-left: 5px;
+                z-index: 2;
                 border-radius: 7px;
                 display: flex;
                 align-items: center;
@@ -109,19 +123,23 @@
             }
         }
     }
+
     &:hover &{
         &__banner {
             transform: scale(1.05);
         }
         &__info {
-            padding-top: 14px;
-            transform: translateY(8px);
+            transform: translateY(10px);
+            &__right {
+                margin-left: 0px;
+            }
             &__buttons {
-                transform: translateY(-2px);
+                margin-left: 0px;
                 opacity: 1;
+                transform: translateY(0px);
             }
             &__price {
-                transform: translateX(-85px);
+                transform: translateX(0);
                 text-shadow: 0 0 10px base.$clr-main_body;
             }
         }
