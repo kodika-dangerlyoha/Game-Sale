@@ -177,6 +177,7 @@
             padding: 8px;
             border-radius: 50%;
             transition: 0.15s;
+            position: relative;
             cursor: pointer;
             @include base.style-main_click;
             & > img {
@@ -187,6 +188,30 @@
                 @include base.style-main_active;
                 &:hover {
                     @include base.style-main_active;
+                }
+            }
+            &__counter {
+                position: absolute;
+                top: 0;
+                right: 0;
+                transform: translate(35%, -35%);
+
+                border-radius: 50%;
+                width: 19px;
+                height: 19px;
+                background-color: base.$clr-blue_light;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                animation: show_header_button_counter .3s base.$tf-main 1;
+                &__number {
+                    font-size: 12px;
+                    animation: update_header_counter_number .2s base.$tf-main 1;
+                }
+                &_hidden {
+                    display: none;
                 }
             }
         }
@@ -392,30 +417,49 @@
         position: absolute;
         top: 90px;
         right: 15px;
-
         width: 300px;
         transition: 0.15s;
-
+        border-radius: 15px;
+        max-height: 500px;
         display: none;
+        overflow: hidden;
         opacity: 0;
         transform: translateY(-10px);
+        @include base.style-main_base;
+        &__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 7px 13px;
+            background-color: rgba(255, 255, 255, .05);
+            border-bottom: 1px solid rgba(255, 255, 255, .1);
+            &__title {
+
+            }
+            &__link {
+                color: rgb(200, 200, 200);
+                font-size: 12px;
+                transition: .15s;
+                cursor: pointer;
+                &:hover {
+                    color: base.$clr-blue_light;
+                }
+            }
+        }
         &__grid {
-            overflow: auto;
             display: flex;
             flex-direction: column;
             gap: 5px;
-            &::-webkit-scrollbar {
-                width: 0;
-            }
+            padding: 10px;
+            overflow: auto;
+            max-height: calc(500px - 36px);
+            @include base.style-webkit_scrollbar;
             &__notification {
-                // background: rgba(0, 0, 0, 0.2);
                 border-radius: 10px;
-                // border: 3px solid base.$clr-main_body;
-                // background-color: rgb(55, 55, 55);
                 padding: 8px;
                 display: flex;
                 gap: 8px;
-                @include base.style-main_base;
+                @include base.style-main;
                 &__point {
                     @include base.flex-center;
                     &__circle {
@@ -487,13 +531,9 @@
         opacity: 1;
         transform: translateY(-10px);
         &__grid {
-            overflow: auto;
             display: flex;
             flex-direction: column;
             gap: 5px;
-            &::-webkit-scrollbar {
-                width: 0;
-            }
             &__notification {
                 // background: rgba(0, 0, 0, 0.2);
                 border-radius: 10px;

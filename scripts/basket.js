@@ -109,7 +109,7 @@ function delete_game_basket(game_id, game_name) {
     // document.querySelectorAll('.basketContainer__gameList__games__game')[n].classList.add('basketContainer__gameList__games__game_hidden');
 }
 
-function open_notifications(notification_list) {
+function open_alert(notification_list) {
     notification_list.forEach(error_info => {
         console.log(error_info.name);
         if (document.querySelector(`.for-input__notification_${error_info.name}`)) {
@@ -196,7 +196,7 @@ function goBuy() {
         });
     }
 
-    open_notifications(error_dict);
+    open_alert(error_dict);
 
     if (!error_dict.length) {
         open_stepBuy('bot_inviting');

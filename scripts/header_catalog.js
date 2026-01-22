@@ -1,3 +1,35 @@
+function update_favorite_counter_header() {
+    let cookie = JSON.parse(document.cookie);
+    let favorite_list = cookie.favorite_list;
+    let length_list = favorite_list.length;
+    const counter = document.querySelector('#header_favorite_counter');
+    // const number = counter.querySelector('.header__nav__button__counter__number');
+
+    console.log(length_list);
+    
+    if (length_list === 0) {
+        if (!document.querySelector('#header_favorite_counter.header__nav__button__counter_hidden')) {
+            counter.classList.add('header__nav__button__counter_hidden');
+        }
+    }
+    else if (length_list > 9) {
+        if (document.querySelector('#header_favorite_counter.header__nav__button__counter_hidden')) {
+            counter.classList.remove('header__nav__button__counter_hidden');
+        }
+        counter.innerHTML = '<div class="header__nav__button__counter__number txt">9+</div>';
+    }
+    else {
+        if (document.querySelector('#header_favorite_counter.header__nav__button__counter_hidden')) {
+            counter.classList.remove('header__nav__button__counter_hidden');
+        }
+        counter.innerHTML = `<div class="header__nav__button__counter__number txt">${length_list}</div>`;
+    }
+}
+
+update_favorite_counter_header();
+
+
+
 function make_catalog_navs() {
     let list_genres_HC_html = "";
     let list_authors_HC_html = "";

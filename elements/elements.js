@@ -112,11 +112,11 @@ const get_vertical_game_html = (game, discount) => {
                     <div class="gameV__info__right">
                         <div class="gameV__info__price txt">${game.newPrice}₽</div>
                         <div class="gameV__info__buttons">
-                            <div class="gameV__info__buttons__button _buttonBasket">
+                            <div class="gameV__info__buttons__button _buttonBasket" onclick="add_game_basket(${game.id}, '${game.name}')">
                                 <div class="gameV__info__buttons__button__forHover gameV__info__buttons__button__forHover_blue absolute-zero"></div>
                                 <img src="img/icons/main/basket64.png" alt="">
                             </div>
-                            <div class="gameV__info__buttons__button _buttonFavorite">
+                            <div class="gameV__info__buttons__button _buttonFavorite" onclick="add_game_favorite(${game.id}, '${game.name}')">
                                 <div class="gameV__info__buttons__button__forHover gameV__info__buttons__button__forHover_red absolute-zero"></div>
                                 <img src="img/icons/main/like64.png" alt="">
                             </div>
@@ -371,12 +371,21 @@ const get_region_html = (region) => {
 //             </div>`
 // }
 
-const get_notification_html = (status, message, id) => {
+const get_temp_notification_html = (status, message, id) => {
     return `<div class="header__notification_temporary__grid__notification notification_${status}" id="${id}">
                 <div class="header__notification_temporary__grid__notification__point txt">
                     <div class="header__notification_temporary__grid__notification__point__circle header__notification_temporary__grid__notification__point__circle_${status}"></div>
                 </div>
                 <div class="header__notification_temporary__grid__notification__text txt">${message}</div>
+            </div>`
+}
+
+const get_notification_html = (status, message) => {
+    return `<div class="header__notification__grid__notification notification_${status}">
+                <div class="header__notification__grid__notification__point txt">
+                    <div class="header__notification__grid__notification__point__circle header__notification__grid__notification__point__circle_${status}"></div>
+                </div>
+                <div class="header__notification__grid__notification__text txt">${message}</div>
             </div>`
 }
 

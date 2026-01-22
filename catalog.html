@@ -43,17 +43,20 @@
 		</div>
 		<div class="header__right">
 			<nav class="header__nav">
-				<a  href="profile.html" title="Профиль" type="button" class="header__nav__button">
+				<a href="profile.html" title="Профиль" type="button" class="header__nav__button">
 					<img src="img/icons/main/user64.png" alt="">
 				</a>
-				<a title="Избранное" href="#" class="header__nav__button">
+				<a href="favorite.html" title="Избранное" class="header__nav__button" id="header_favorite_button">
 					<img src="img/icons/main/like64.png" alt="">
+					<div class="header__nav__button__counter header__nav__button__counter_hidden" id="header_favorite_counter">
+						<div class="header__nav__button__counter__number txt">9+</div>
+					</div>
 				</a>
-				<a title="Корзина" href="#" class="header__nav__button">
-					<img src="img/icons/main/basket64.png" alt="">
-				</a>
-				<a title="Уведомления" href="#" class="header__nav__button">
+				<button type="button" title="Уведомления" class="header__nav__button" id="header_button_notification" onclick="open_notifications()">
 					<img src="img/icons/main/bell64.png" alt="">
+				</button>
+				<a href="basket.html" title="Корзина" class="header__nav__button">
+					<img src="img/icons/main/basket64.png" alt="">
 				</a>
 			</nav>
 		</div>
@@ -207,6 +210,47 @@
 						</div>
 					</article>
 				</div>
+			</div>
+		</div>
+		<div class="header__notification">
+			<div class="header__notification__header">
+				<div class="header__notification__header__title txt">Уведомления</div>
+				<a href="profile.html" class="header__notification__header__link txt">Показать все</a>
+			</div>
+			<div class="header__notification__grid" id="grid_notification">
+				<div class="header__notification__grid__notification notification_nothing">
+					<div class="header__notification__grid__notification__point txt">
+						<div class="header__notification__grid__notification__point__circle header__notification__grid__notification__point__circle_nothing"></div>
+					</div>
+					<div class="header__notification__grid__notification__text txt">Нет новый уведомлений</div>
+				</div>
+				<div class="header__notification__grid__notification notification_addGame">
+					<div class="header__notification__grid__notification__point txt">
+						<div class="header__notification__grid__notification__point__circle"></div>
+					</div>
+					<div class="header__notification__grid__notification__text txt">Игра <span>FPV Kamikadze Drone</span> добавлена в корзину</div>
+				</div>
+				<div class="header__notification__grid__notification notification_addGame">
+					<div class="header__notification__grid__notification__point txt">
+						<div class="header__notification__grid__notification__point__circle"></div>
+					</div>
+					<div class="header__notification__grid__notification__text txt">Игра <span>FPV Kamikadze Drone</span> добавлена в избранное</div>
+				</div>
+				<div class="header__notification__grid__notification notification_error">
+					<div class="header__notification__grid__notification__point txt">
+						<div class="header__notification__grid__notification__point__circle header__notification__grid__notification__point__circle_error"></div>
+					</div>
+					<div class="header__notification__grid__notification__text txt">Произошла ошибка</div>
+				</div>
+
+				<!-- <div class="header__notification__grid__nothing">
+					<div class="header__notification__grid__nothing__text txt">Тут пусто :(</div>
+				</div> -->
+			</div>
+		</div>
+
+		<div class="header__notification_temporary header__notification_temporary" id="temporary_notification">
+			<div class="header__notification_temporary__grid" id="grid_temporary_notification">
 			</div>
 		</div>
 	</header>

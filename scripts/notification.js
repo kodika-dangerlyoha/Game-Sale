@@ -36,23 +36,39 @@
 //     document.querySelector('#grid_notification').innerHTML = notification_list;
 // }
 
+let list_notifications = [];
+
+function update_notification() {
+    let notification_html = "";
+    list_notifications.forEach(elem => {
+        notification_html += get_notification_html(elem.status, elem.message);
+    })
+    document.querySelector('#grid_notification').innerHTML = notification_html;
+}
+
 function open_notifications() {
+    const temp_notification = document.querySelector('#temporary_notification');
     const notification = document.querySelector('.header__notification');
-    // const notification_button = document.getElementById('notification_button');
+    const notification_button = document.getElementById('header_button_notification');
     if (!document.querySelector('.header__notification_active')) {
+        temp_notification.style.right = '330px';
         notification.style.display = "block";
-        // notification_button.classList.add('navs__nav_active');
+        notification_button.classList.add('header__nav__button_active');
         setTimeout(() => notification.classList.add('header__notification_active'), 10);
         return
     }
     notification.classList.remove('header__notification_active');
-    // notification_button.classList.remove('navs__nav_active');
+    notification_button.classList.remove('header__nav__button_active');
+    temp_notification.style.right = '15px';
     setTimeout(() => notification.style.display = "none", 160);
 }
 
-function get_temporary_notification(message, status) {
+function add_notification(message, status) {
+    list_notifications.unshift({'status': status, 'message': message});
+    update_notification();
+
     const notification_id = `notification${document.querySelectorAll('.header__notification_temporary__grid__notification').length}`;
-    document.querySelector('#grid_temporary_notification').innerHTML += get_notification_html(status, message, notification_id);
+    document.querySelector('#grid_temporary_notification').innerHTML += get_temp_notification_html(status, message, notification_id);
     setTimeout(() => {
         document.querySelector(`#grid_temporary_notification #${notification_id}`).remove();
     }, 5000)

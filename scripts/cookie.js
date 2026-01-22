@@ -49,7 +49,7 @@ function add_game_basket(game_id, game_name) {
         cookie.basket_list.push(game_id);
         document.cookie = JSON.stringify(cookie);
         const answer = add_game_basket_request(game_id, game_name, 'add_basket');
-        get_temporary_notification(answer.messege, answer.status);
+        add_notification(answer.messege, answer.status);
         
         // updateBasket();
     }
@@ -69,7 +69,7 @@ function delete_game_in_basket(game_id, game_name) {
         cookie.basket_list = basket_list;
         document.cookie = JSON.stringify(cookie);
         const answer = add_game_basket_request(game_id, game_name, 'delete_basket');
-        get_temporary_notification(answer.messege, answer.status);
+        add_notification(answer.messege, answer.status);
         // updateBasket();
     }
 }
@@ -82,12 +82,13 @@ function add_game_favorite(game_id, game_name) {
         cookie.favorite_list.push(game_id);
         document.cookie = JSON.stringify(cookie);
         const answer = add_game_basket_request(game_id, game_name, 'add_favorite');
-        get_temporary_notification(answer.messege, answer.status);
+        add_notification(answer.messege, answer.status);
         // updateBasket();
     }
     else {
         delete_game_in_favorite(game_id, game_name);
     }
+    update_favorite_counter_header();
 }
 
 function delete_game_in_favorite(game_id, game_name) {
@@ -101,7 +102,7 @@ function delete_game_in_favorite(game_id, game_name) {
         cookie.favorite_list = favorite_list;
         document.cookie = JSON.stringify(cookie);
         const answer = add_game_basket_request(game_id, game_name, 'delete_favorite');
-        get_temporary_notification(answer.messege, answer.status);
+        add_notification(answer.messege, answer.status);
         // updateBasket();
     }
 }

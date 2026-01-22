@@ -14,18 +14,18 @@ make_index();
 
 const colorThief = new ColorThief();
 const imgs = document.querySelectorAll('.carousel__banner__imgBlock img');
-console.log(imgs);
+// console.log(imgs);
 
 imgs.forEach(img => {
     // Проверяем, загружено ли изображение
     if (img.complete) {
         const dominantColor = colorThief.getColor(img);
-        console.log(`RGB: ${dominantColor}`);
+        // console.log(`RGB: ${dominantColor}`);
     } 
     else {
         img.addEventListener('load', function() {
             const dominantColor = colorThief.getColor(img);
-            console.log(`RGB: ${dominantColor}`);
+            // console.log(`RGB: ${dominantColor}`);
         });
     }
 });

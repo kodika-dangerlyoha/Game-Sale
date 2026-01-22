@@ -76,7 +76,6 @@ function handle_mouse_enter_hoverTime() {
     document.querySelector('.videoIF__race__time__point_hover').classList.add('videoIF__race__time__point_hover_active')
 }
 
-
 // -------- Function -------- 
 
 function update_volume() {

@@ -176,6 +176,24 @@ label {
     display: none;
   }
 }
+@keyframes show_header_button_counter {
+  0% {
+    transform: translate(35%, -35%) scale(0);
+  }
+  100% {
+    transform: translate(35%, -35%) scale(1);
+  }
+}
+@keyframes update_header_counter_number {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 @font-face {
   font-family: "robotoFlex";
   src: url("../fonts/RobotoFlex.ttf");
@@ -396,6 +414,7 @@ label {
   padding: 8px;
   border-radius: 50%;
   transition: 0.15s;
+  position: relative;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -421,6 +440,27 @@ label {
 .header__nav__button_active:hover {
   background-color: rgba(1, 162, 255, 0.4);
   border: 1px solid rgb(1, 162, 255);
+}
+.header__nav__button__counter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(35%, -35%);
+  border-radius: 50%;
+  width: 19px;
+  height: 19px;
+  background-color: rgb(1, 162, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: show_header_button_counter 0.3s cubic-bezier(0, 0, 0, 0.75) 1;
+}
+.header__nav__button__counter__number {
+  font-size: 12px;
+  animation: update_header_counter_number 0.2s cubic-bezier(0, 0, 0, 0.75) 1;
+}
+.header__nav__button__counter_hidden {
+  display: none;
 }
 .header__catalog {
   position: absolute;
@@ -617,29 +657,66 @@ label {
   right: 15px;
   width: 300px;
   transition: 0.15s;
+  border-radius: 15px;
+  max-height: 500px;
   display: none;
+  overflow: hidden;
   opacity: 0;
   transform: translateY(-10px);
+  background-color: rgba(50, 50, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.header__notification__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 13px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.header__notification__header__link {
+  color: rgb(200, 200, 200);
+  font-size: 12px;
+  transition: 0.15s;
+  cursor: pointer;
+}
+.header__notification__header__link:hover {
+  color: rgb(1, 162, 255);
 }
 .header__notification__grid {
-  overflow: auto;
   display: flex;
   flex-direction: column;
   gap: 5px;
+  padding: 10px;
+  overflow: auto;
+  max-height: 464px;
 }
 .header__notification__grid::-webkit-scrollbar {
-  width: 0;
+  width: 8px;
+  height: 10px;
+}
+.header__notification__grid::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.15); /* Цвет фона трека */
+  border-radius: 10px;
+}
+.header__notification__grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15); /* Цвет ползунка */
+  border-radius: 10px;
+}
+.header__notification__grid::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 .header__notification__grid__notification {
   border-radius: 10px;
   padding: 8px;
   display: flex;
   gap: 8px;
-  background-color: rgba(50, 50, 50, 0.75);
+  background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
 }
 .header__notification__grid__notification__point {
   display: flex;
@@ -717,13 +794,9 @@ label {
   transform: translateY(-10px);
 }
 .header__notification_temporary__grid {
-  overflow: auto;
   display: flex;
   flex-direction: column;
   gap: 5px;
-}
-.header__notification_temporary__grid::-webkit-scrollbar {
-  width: 0;
 }
 .header__notification_temporary__grid__notification {
   border-radius: 10px;
@@ -1037,7 +1110,6 @@ label {
   gap: 10px;
   min-width: -moz-max-content;
   min-width: max-content;
-  margin-left: -50px;
 }
 .gameV__info__name {
   position: relative;
@@ -1052,7 +1124,6 @@ label {
   z-index: 2;
   font-family: robotoFlex, sans-serif;
   font-weight: 700;
-  transform: translateX(-100%);
   transition: 0.15s;
 }
 .gameV__info__buttons {
@@ -1062,7 +1133,8 @@ label {
   gap: 5px;
   opacity: 0;
   transform: translateY(-15px);
-  margin-left: -100%;
+  max-width: 0;
+  overflow: hidden;
   transition: 0.15s;
 }
 .gameV__info__buttons__button {
@@ -1104,9 +1176,9 @@ label {
   margin-left: 0px;
 }
 .gameV:hover .gameV__info__buttons {
-  margin-left: 0px;
   opacity: 1;
   transform: translateY(0px);
+  max-width: 200px;
 }
 .gameV:hover .gameV__info__price {
   transform: translateX(0);
@@ -1238,7 +1310,6 @@ label {
   gap: 10px;
   min-width: -moz-max-content;
   min-width: max-content;
-  margin-left: -50px;
 }
 .gameH__info__name {
   position: relative;
@@ -1253,7 +1324,6 @@ label {
   z-index: 2;
   font-family: robotoFlex, sans-serif;
   font-weight: 700;
-  transform: translateX(-100%);
   transition: 0.15s;
 }
 .gameH__info__buttons {
@@ -1263,7 +1333,8 @@ label {
   gap: 5px;
   opacity: 0;
   transform: translateY(-15px);
-  margin-left: -100%;
+  max-width: 0;
+  overflow: hidden;
   transition: 0.15s;
 }
 .gameH__info__buttons__button {
@@ -1371,9 +1442,9 @@ label {
   margin-left: 0px;
 }
 .gameH:hover .gameH__info__buttons {
-  margin-left: 0px;
   opacity: 1;
   transform: translateY(0px);
+  max-width: 200px;
 }
 .gameH:hover .gameH__info__price {
   transform: translateX(0);

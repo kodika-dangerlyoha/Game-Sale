@@ -46,15 +46,18 @@
 				<a href="profile.html" title="Профиль" type="button" class="header__nav__button">
 					<img src="img/icons/main/user64.png" alt="">
 				</a>
-				<a href="favorite.html" title="Избранное" class="header__nav__button header__nav__button_active">
+				<a href="favorite.html" title="Избранное" class="header__nav__button header__nav__button_active" id="header_favorite_button">
 					<img src="img/icons/main/like64.png" alt="">
+					<div class="header__nav__button__counter header__nav__button__counter_hidden" id="header_favorite_counter">
+						<div class="header__nav__button__counter__number txt">9+</div>
+					</div>
 				</a>
+				<button type="button" title="Уведомления" class="header__nav__button" id="header_button_notification" onclick="open_notifications()">
+					<img src="img/icons/main/bell64.png" alt="">
+				</button>
 				<a href="basket.html" title="Корзина" class="header__nav__button">
 					<img src="img/icons/main/basket64.png" alt="">
 				</a>
-				<button type="button" title="Уведомления" class="header__nav__button" onclick="open_notifications()">
-					<img src="img/icons/main/bell64.png" alt="">
-				</button>
 			</nav>
 		</div>
 		<div class="header__catalog">
@@ -210,6 +213,10 @@
 			</div>
 		</div>
 		<div class="header__notification">
+			<div class="header__notification__header">
+				<div class="header__notification__header__title txt">Уведомления</div>
+				<a href="profile.html" class="header__notification__header__link txt">Показать все</a>
+			</div>
 			<div class="header__notification__grid" id="grid_notification">
 				<div class="header__notification__grid__notification notification_nothing">
 					<div class="header__notification__grid__notification__point txt">
