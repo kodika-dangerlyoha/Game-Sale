@@ -11,6 +11,7 @@ function get_game_banner() {
 }
 
 make_index();
+update_basket_button();
 
 const colorThief = new ColorThief();
 const imgs = document.querySelectorAll('.carousel__banner__imgBlock img');

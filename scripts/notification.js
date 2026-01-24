@@ -51,6 +51,9 @@ function open_notifications() {
     const notification = document.querySelector('.header__notification');
     const notification_button = document.getElementById('header_button_notification');
     if (!document.querySelector('.header__notification_active')) {
+        if (document.querySelector('.header__basket').classList.contains('header__basket_active')) {
+            close_header_basket();
+        }
         temp_notification.style.right = '330px';
         notification.style.display = "block";
         notification_button.classList.add('header__nav__button_active');

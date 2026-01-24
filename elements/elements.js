@@ -261,7 +261,17 @@ const get_basket_game_html = (game) => {
 
                             <a href="${game.link}" class="basketContainer__gameList__games__game__left__nameBlock__name__text txt">${game.name}</a>
                         </div>
-                        <a href="${game.steamLink}" class="basketContainer__gameList__games__game__left__nameBlock__linkPlatform txt">Игра в Steam</a>
+                        <a href="${game.steamLink}" class="basketContainer__gameList__games__game__left__nameBlock__linkPlatform txt">
+                            <span>Игра в Steam</span>
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+                                <path style="fill:none;stroke-width:4;stroke-linecap:round;stroke-miterlimit:10;" d="M22,10h-9.5
+                                    C9.468,10,7,12.468,7,15.5v20c0,3.032,2.468,5.5,5.5,5.5h20c3.032,0,5.5-2.468,5.5-5.5V26"/>
+                                <line style="fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="24" y1="24" x2="41" y2="7"/>
+                                <polyline style="fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="
+                                    28,7 41,7 41,20 "/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div class="basketContainer__gameList__games__game__right">
@@ -271,6 +281,36 @@ const get_basket_game_html = (game) => {
                             <path d="M16 8L8 16M8.00001 8L16 16" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
+                </div>
+            </div>`
+}
+
+const get_header_basket_game = (game) => {
+    return `<div class="header__basket__grid__game" gameId="${game.id}">
+                <div class="header__basket__grid__game__top">
+                    <a href="${game.link}" class="header__basket__grid__game__title txt">${game.name}</a>
+                    <div type="button" class="header__basket__grid__game__delete flex-center" onclick="delete_game_basket(${game.id}, '${game.name}')">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 8L8 16M8.00001 8L16 16" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="header__basket__grid__game__bottom">
+                    <div class="header__basket__grid__game__prices txt">
+                        <div class="header__basket__grid__game__prices__new">${game.newPrice} ₽</div>
+                        <div class="header__basket__grid__game__prices__old">${game.oldPrice} ₽</div>
+                    </div>
+                    <a href="${game.steamLink}" class="header__basket__grid__game__bottom__link txt">
+                        <span>Игра в Steam</span>
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+                            <path style="fill:none;stroke-width:4;stroke-linecap:round;stroke-miterlimit:10;" d="M22,10h-9.5
+                                C9.468,10,7,12.468,7,15.5v20c0,3.032,2.468,5.5,5.5,5.5h20c3.032,0,5.5-2.468,5.5-5.5V26"/>
+                            <line style="fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="24" y1="24" x2="41" y2="7"/>
+                            <polyline style="fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="
+                                28,7 41,7 41,20 "/>
+                        </svg>
+                    </a>
                 </div>
             </div>`
 }

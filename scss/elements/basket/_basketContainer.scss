@@ -65,13 +65,25 @@
                             }
                         }
                         &__linkPlatform {
-                            color: rgba(153, 153, 153, 1);
+                            color: rgb(153, 153, 153);
                             font-weight: 300;
                             font-size: 16px;
                             cursor: pointer;
                             transition: 0.15s;
+                            display: flex;
+                            align-items: center;
+                            gap: 5px;
+                            & > svg {
+                                height: 16px;
+                                stroke: rgb(153, 153, 153);
+                                transition: 0.15s;
+                                transform: translateY(1px);
+                            }
                             &:hover {
-                                color: rgb(255, 255, 255);
+                                color: base.$clr-blue_light;
+                            }
+                            &:hover > svg {
+                                stroke: base.$clr-blue_light;
                             }
                         }
                     }

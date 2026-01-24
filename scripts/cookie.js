@@ -50,7 +50,7 @@ function add_game_basket(game_id, game_name) {
         document.cookie = JSON.stringify(cookie);
         const answer = add_game_basket_request(game_id, game_name, 'add_basket');
         add_notification(answer.messege, answer.status);
-        
+        update_header_basket();
         // updateBasket();
     }
     else {
@@ -70,6 +70,7 @@ function delete_game_in_basket(game_id, game_name) {
         document.cookie = JSON.stringify(cookie);
         const answer = add_game_basket_request(game_id, game_name, 'delete_basket');
         add_notification(answer.messege, answer.status);
+        update_header_basket();
         // updateBasket();
     }
 }

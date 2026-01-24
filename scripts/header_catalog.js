@@ -26,7 +26,119 @@ function update_favorite_counter_header() {
     }
 }
 
-update_favorite_counter_header();
+// function update_basket_button() {
+//     const header_basket_button = document.querySelector('#header_basket_button');
+//     let count_game = 0;
+    
+//     let cookie = JSON.parse(document.cookie);
+//     let basket_list = cookie.basket_list;
+
+//     count_game = basket_list.length;
+
+//     if (count_game === 0) {
+//         header_basket_button.querySelector('#header_basket_price').innerHTML = "0 ₽";
+//         header_basket_button.querySelector('#header_basket_counter').innerHTML = "0 Игр";
+//         header_basket_button.classList.add('header__nav__buttonBasket_closed');
+//     }
+//     else {
+//         let price = 0;
+
+//         let basket_list_infos = [];
+//         games.forEach(info => {
+//             if (contains(basket_list, info.id)) {
+//                 console.log(basket_list_infos[info.id]);
+//                 console.log(info);
+//                 basket_list_infos[info.id] = info;
+//             }
+//         });
+
+//         basket_list_infos.forEach(game => {
+//             price += game.newPrice;
+//         });
+
+//         header_basket_button.querySelector('#header_basket_price').innerHTML = `${price} ₽`;
+//         header_basket_button.querySelector('#header_basket_counter').innerHTML = `${count_game} Игр`;
+//         if (header_basket_button.classList.contains('header__nav__buttonBasket_closed')) {
+//             header_basket_button.classList.remove('header__nav__buttonBasket_closed');
+//         }
+//     }
+// }
+
+function update_header_basket() {
+    let cookie = JSON.parse(document.cookie);
+    let basket_list = cookie.basket_list;
+
+    let count_game = basket_list.length;
+    const header_basket_button = document.querySelector('#header_basket_button');
+
+    let games_html = "";
+    let basket_list_infos = [];
+    let price = 0;
+
+    games.forEach(info => {
+        if (contains(basket_list, info.id)) {
+            basket_list_infos[info.id] = info;
+        }
+    });
+
+    basket_list_infos.forEach(game => {
+        games_html += get_header_basket_game(game);
+        price += game.newPrice;
+    })
+
+    document.querySelector('#header_basket_grid').innerHTML = games_html;
+
+    if (count_game === 0) {
+        document.querySelector('#header_basket_grid').innerHTML = `<div class="header__basket__grid__nothing flex-center txt">
+                                                                        <div>Нет игр в корзине</div>
+                                                                    </div>`;
+        header_basket_button.querySelector('#header_basket_price').innerHTML = "0 ₽";
+        header_basket_button.querySelector('#header_basket_counter').innerHTML = "0 Игр";
+        header_basket_button.classList.add('header__nav__buttonBasket_closed');
+    }
+
+    else {
+        header_basket_button.querySelector('#header_basket_price').innerHTML = `${price} ₽`;
+        header_basket_button.querySelector('#header_basket_counter').innerHTML = `${count_game} Игр`;
+        if (header_basket_button.classList.contains('header__nav__buttonBasket_closed')) {
+            header_basket_button.classList.remove('header__nav__buttonBasket_closed');
+        }
+    }
+}
+
+function open_header_basket() {
+    if (document.querySelector('.header__notification_active')) {
+        const notification = document.querySelector('.header__notification');
+        notification.classList.remove('header__notification_active');
+        document.getElementById('header_button_notification').classList.remove('header__nav__button_active');
+        setTimeout(() => notification.style.display = "none", 160);
+    }
+    document.querySelector('#temporary_notification').style.right = '330px';
+    const header_basket = document.querySelector('.header__basket');
+    header_basket.style.display = "block";
+    document.querySelector('#header_basket_button').classList.add('header__nav__buttonBasket_active');
+    setTimeout(() => header_basket.classList.add('header__basket_active') = "none", 10);
+}
+
+function close_header_basket() {
+    const header_basket = document.querySelector('.header__basket');
+    header_basket.classList.remove('header__basket_active');
+    document.querySelector('#header_basket_button').classList.remove('header__nav__buttonBasket_active');
+    setTimeout(() => header_basket.style.display = "none", 160);
+    document.querySelector('#temporary_notification').style.right = '15px';
+}
+
+function toggle_header_basket() {
+    if (document.querySelector('.header__basket').classList.contains('header__basket_active')) {
+        close_header_basket();
+    }
+    else {
+        open_header_basket();
+    }
+}
+
+update_header_basket();
+update_favorite_counter_header()
 
 
 
