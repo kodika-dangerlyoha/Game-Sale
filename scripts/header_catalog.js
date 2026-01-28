@@ -138,7 +138,7 @@ function toggle_header_basket() {
 }
 
 update_header_basket();
-update_favorite_counter_header()
+update_favorite_counter_header();
 
 
 
@@ -159,6 +159,28 @@ function make_catalog_navs() {
 }
 
 make_catalog_navs();
+
+// ----------------------- Поиск get post 
+
+const search_input = document.querySelector('#search-input');
+
+function search_to_catalog(value) {
+    // Создание параметров
+    const params = new URLSearchParams();
+    params.append('title', `${value}`);
+
+    // Создание полного URL
+    const base_url = 'catalog.html';
+    const url_w_params = `${base_url}?${params.toString()}`;
+    window.location.href = url_w_params;
+}
+
+search_input.addEventListener('keydown', (evt) => {
+    if (evt.key === 'Enter' && evt.target.value !== '') {
+        search_to_catalog(evt.target.value);
+    }
+});
+
 
 // ----------------------- Открытиие меню каталога в шапке 
 

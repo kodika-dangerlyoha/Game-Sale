@@ -11,6 +11,20 @@ const inp_num_max_price = form_filter.inp_num_max_price;
 const inp_num_min_date = form_filter.inp_num_min_date;
 const inp_num_max_date = form_filter.inp_num_max_date;
 
+// --------------------- Получение паарметров из url 
+
+// Получить все параметры
+const urlParams = new URLSearchParams(window.location.search);
+
+// Получить все параметры как объект
+const params = Object.fromEntries(urlParams.entries());
+console.log(params);
+
+params.title ? search_input.value = params.title : search_input.value = '';
+// document.querySelector('#search-input').value = params.title;
+
+// ---------------------
+
 const points = [
     {
         'title': "genres",
