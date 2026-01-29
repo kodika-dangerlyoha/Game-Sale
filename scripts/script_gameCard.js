@@ -128,8 +128,13 @@ function make_mediaList(game) {
     const screenshot_0 = document.querySelector('.screenshot-0');
     
     if (video_0) {
-        video_0.click();
+        if (screenshot_0) {
+            screenshot_0.click();
+            document.querySelector('.mainInfo__banner__visual__imgBlock').style.backgroundImage = `url('${game.trailers[0].preview}')`;
+            document.querySelector('.mainInfo__banner__interface__bottom__medialist__media_active').classList.remove('mainInfo__banner__interface__bottom__medialist__media_active');
+        }
     }
+
     else if (screenshot_0) {
         screenshot_0.click();
     }
@@ -155,7 +160,7 @@ function change_media(this_treiler, id, link) {
         document.querySelector('#game_visual').innerHTML = game_visual_inner;
 
         get_video();
-        set_volume();
+        update_volume();
     }
     else {
         const videoIF__buttonTglScrList_closed = document.querySelector('.videoIF__buttonTglScrList_closed');
@@ -217,4 +222,5 @@ function toggle_fullScreen() {
 
 function change_img_fullScreen(link) {
     document.querySelector('#fullScreen_img').src = link;
+    document.querySelector('#game_banner').src = link;
 }

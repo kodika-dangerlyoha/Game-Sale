@@ -1002,17 +1002,13 @@ label {
 .header__notification__grid__notification__buttonClose > img {
   width: 100%;
 }
-.header__notification__grid__nothing {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.header__notification__grid__notification_new {
+  border-color: rgb(1, 162, 255);
 }
-.header__notification__grid__nothing__text {
-  padding-bottom: 18px;
-  font-size: 18px;
-  font-weight: 800;
-  color: rgb(100, 100, 100);
+.header__notification__grid__nothing {
+  height: 25px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
 }
 .header__notification_active {
   opacity: 1;
@@ -3893,20 +3889,26 @@ label {
   height: 35px;
   width: 100px;
   position: relative;
+  display: flex;
+  align-items: center;
+}
+.videoIF__volume__race {
+  height: 100%;
+  width: 100%;
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding-left: 7px;
   padding-right: 10px;
   border-radius: 17.5px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
 }
-.videoIF__volume__mouse {
+.videoIF__volume__race__mouse {
   opacity: 0;
   position: absolute;
   z-index: 2;
@@ -3918,7 +3920,7 @@ label {
   border-radius: 6px;
   transition: opacity 0.15s;
 }
-.videoIF__volume__value {
+.videoIF__volume__race__value {
   position: absolute;
   z-index: 1;
   left: 0;
@@ -3931,7 +3933,7 @@ label {
   border: 1px solid rgb(1, 162, 255);
   border: none;
 }
-.videoIF__volume__forMouse {
+.videoIF__volume__race__forMouse {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -3939,7 +3941,7 @@ label {
   left: 0;
   z-index: 5;
 }
-.videoIF__volume__num {
+.videoIF__volume__race__num {
   position: relative;
   z-index: 4;
   transform: translateY(-1px);
@@ -3949,25 +3951,40 @@ label {
   -moz-user-select: none; /* Old versions of Firefox */ /* Internet Explorer/Edge */
   user-select: none;
 }
-.videoIF__volume:hover .videoIF__volume__mouse {
+.videoIF__volume__race:hover .videoIF__volume__race__mouse {
   opacity: 1;
 }
-.videoIF__volume > svg {
+.videoIF__volume__icon {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.videoIF__volume__icon svg {
   position: relative;
   z-index: 4;
   height: 20px;
   animation: open 0.2s cubic-bezier(0, 0, 0, 0.75) 1;
 }
-.videoIF__volume > ._volume_muted {
+.videoIF__volume__icon svg > g > g {
+  fill: #fff;
+  transition: 0.15s;
+}
+.videoIF__volume__icon svg._volume_muted {
   display: none;
 }
-.videoIF__volume > ._volume_on {
+.videoIF__volume__icon svg._volume_on {
   display: block;
 }
-.videoIF__volume_muted > ._volume_muted {
+.videoIF__volume__icon:hover svg > g > g {
+  fill: rgb(1, 162, 255);
+}
+.videoIF__volume_muted .videoIF__volume__icon > svg._volume_muted {
   display: block;
 }
-.videoIF__volume_muted > ._volume_on {
+.videoIF__volume_muted .videoIF__volume__icon > svg._volume_on {
   display: none;
 }
 .videoIF__playButton {

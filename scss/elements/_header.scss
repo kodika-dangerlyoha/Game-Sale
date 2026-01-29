@@ -714,16 +714,15 @@
                         width: 100%;
                     }
                 }
+                &_new {
+                    // @include base.style-main_active;
+                    border-color: base.$clr-blue_light;
+                }
             }
             &__nothing {
-                height: 100%;
-                @include base.flex_center;
-                &__text {
-                    padding-bottom: 18px;
-                    font-size: 18px;
-                    font-weight: 800;
-                    color: rgb(100, 100, 100);
-                }
+                height: 25px;
+                color: rgba(255, 255, 255, .5);
+                text-align: center;
             }
         }
         &_active {

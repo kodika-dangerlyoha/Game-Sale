@@ -144,12 +144,12 @@ let games = [
         ],
         'trailers': [
           {
-            'preview': "https://i.ytimg.com/vi/5tJurzxQNMQ/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCgO6rbzwGMQ9FIVhu7fNtUTWGuAA",
-            'video': "http://video.akamai.steamstatic.com/store_trailers/257160784/movie_max_vp9.webm?t=1750845270",
+            'preview': "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257250692/2f6c2a966c6664de5673db1949a784539c8d2b00/movie_600x337.jpg?t=1765880368",
+            'video': "https://video.akamai.steamstatic.com/store_trailers/236390/972890900/67ea5ce2d2218223ae3b8954a34606046ec90bd5/1765871320/hls_264_master.m3u8?t=1765880368",
           },
           {
-            'preview': "https://i.ytimg.com/vi/tFPIJ2Kkc_s/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDeFUeqFHBBfZctG0nKiu9HTWBRWg",
-            'video': "http://video.akamai.steamstatic.com/store_trailers/257073838/movie_max_vp9.webm?t=1731612183",
+            'preview': "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257073838/c929aa0ab3417b0648d07d4515eba34faf003561/movie_600x337.jpg?t=1731612183",
+            'video': "https://video.akamai.steamstatic.com/store_trailers/236390/786225/5873395ea47652020ae8bb9c91951653bee7a1cb/1750496755/hls_264_master.m3u8?t=1731612183",
           },
         ]
     },

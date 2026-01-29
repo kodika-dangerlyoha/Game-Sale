@@ -420,8 +420,9 @@ const get_temp_notification_html = (status, message, id) => {
             </div>`
 }
 
-const get_notification_html = (status, message) => {
-    return `<div class="header__notification__grid__notification notification_${status}">
+const get_notification_html = (status, message, viewed, id) => {
+    const class_view = viewed ? '' : 'header__notification__grid__notification_new';
+    return `<div class="header__notification__grid__notification notification_${status} ${class_view}" data-id="${id}">
                 <div class="header__notification__grid__notification__point txt">
                     <div class="header__notification__grid__notification__point__circle header__notification__grid__notification__point__circle_${status}"></div>
                 </div>

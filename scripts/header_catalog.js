@@ -1,28 +1,53 @@
 function update_favorite_counter_header() {
     let cookie = JSON.parse(document.cookie);
     let favorite_list = cookie.favorite_list;
-    let length_list = favorite_list.length;
-    const counter = document.querySelector('#header_favorite_counter');
-    // const number = counter.querySelector('.header__nav__button__counter__number');
+    // let length_list = favorite_list.length;
+    update_counter(favorite_list.length, 'favorite');
+    // const counter = document.querySelector('#header_favorite_counter');
+    // // const number = counter.querySelector('.header__nav__button__counter__number');
 
-    console.log(length_list);
+    // console.log(length_list);
     
-    if (length_list === 0) {
-        if (!document.querySelector('#header_favorite_counter.header__nav__button__counter_hidden')) {
+    // if (length_list === 0) {
+    //     if (!document.querySelector('#header_favorite_counter.header__nav__button__counter_hidden')) {
+    //         counter.classList.add('header__nav__button__counter_hidden');
+    //     }
+    // }
+    // else if (length_list > 9) {
+    //     if (document.querySelector('#header_favorite_counter.header__nav__button__counter_hidden')) {
+    //         counter.classList.remove('header__nav__button__counter_hidden');
+    //     }
+    //     counter.innerHTML = '<div class="header__nav__button__counter__number txt">9+</div>';
+    // }
+    // else {
+    //     if (document.querySelector('#header_favorite_counter.header__nav__button__counter_hidden')) {
+    //         counter.classList.remove('header__nav__button__counter_hidden');
+    //     }
+    //     counter.innerHTML = `<div class="header__nav__button__counter__number txt">${length_list}</div>`;
+    // }
+}
+
+function update_counter(value, title) {
+    const counter = document.querySelector(`#header_${title}_counter`);
+    const counter_hidden = document.querySelector(`#header_${title}_counter.header__nav__button__counter_hidden`);
+    // const number = counter.querySelector('.header__nav__button__counter__number');
+    
+    if (value === 0) {
+        if (!counter_hidden) {
             counter.classList.add('header__nav__button__counter_hidden');
         }
     }
-    else if (length_list > 9) {
-        if (document.querySelector('#header_favorite_counter.header__nav__button__counter_hidden')) {
+    else if (value > 9) {
+        if (counter_hidden) {
             counter.classList.remove('header__nav__button__counter_hidden');
         }
         counter.innerHTML = '<div class="header__nav__button__counter__number txt">9+</div>';
     }
     else {
-        if (document.querySelector('#header_favorite_counter.header__nav__button__counter_hidden')) {
+        if (counter_hidden) {
             counter.classList.remove('header__nav__button__counter_hidden');
         }
-        counter.innerHTML = `<div class="header__nav__button__counter__number txt">${length_list}</div>`;
+        counter.innerHTML = `<div class="header__nav__button__counter__number txt">${value}</div>`;
     }
 }
 
@@ -113,7 +138,8 @@ function open_header_basket() {
         document.getElementById('header_button_notification').classList.remove('header__nav__button_active');
         setTimeout(() => notification.style.display = "none", 160);
     }
-    document.querySelector('#temporary_notification').style.right = '330px';
+    // document.querySelector('#temporary_notification').style.right = '330px';
+    document.querySelector('#temporary_notification').style.display = 'none';
     const header_basket = document.querySelector('.header__basket');
     header_basket.style.display = "block";
     document.querySelector('#header_basket_button').classList.add('header__nav__buttonBasket_active');
@@ -125,7 +151,8 @@ function close_header_basket() {
     header_basket.classList.remove('header__basket_active');
     document.querySelector('#header_basket_button').classList.remove('header__nav__buttonBasket_active');
     setTimeout(() => header_basket.style.display = "none", 160);
-    document.querySelector('#temporary_notification').style.right = '15px';
+    // document.querySelector('#temporary_notification').style.right = '15px';
+    document.querySelector('#temporary_notification').style.display = 'block';
 }
 
 function toggle_header_basket() {
@@ -163,6 +190,7 @@ make_catalog_navs();
 // ----------------------- Поиск get post 
 
 const search_input = document.querySelector('#search-input');
+const search_button = document.querySelector('#search-button');
 
 function search_to_catalog(value) {
     // Создание параметров
@@ -180,6 +208,8 @@ search_input.addEventListener('keydown', (evt) => {
         search_to_catalog(evt.target.value);
     }
 });
+
+search_button.addEventListener('click', () => search_to_catalog(search_input.value));
 
 
 // ----------------------- Открытиие меню каталога в шапке 

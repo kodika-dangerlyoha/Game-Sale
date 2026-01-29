@@ -34,7 +34,7 @@
 					<div class="header__searchBlock__bg__bottom"></div>
 				</div> -->
 				<input type="text" title="Поиск" id="search-input">
-				<button class="header__searchBlock__button" title="Поиск" type="button">
+				<button class="header__searchBlock__button" title="Поиск" type="button" id="search-button">
 					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 					</svg>
@@ -54,6 +54,9 @@
 				</a>
 				<button type="button" title="Уведомления" class="header__nav__button" id="header_button_notification" onclick="open_notifications()">
 					<img src="img/icons/main/bell64.png" alt="">
+					<div class="header__nav__button__counter header__nav__button__counter_hidden" id="header_notification_counter">
+						<div class="header__nav__button__counter__number txt"></div>
+					</div>
 				</button>
 				<button type="button" title="Корзина" class="header__nav__buttonBasket header__nav__buttonBasket_closed" id="header_basket_button" onclick="toggle_header_basket()">
 					<img src="img/icons/main/basket64.png" alt="">
@@ -254,6 +257,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="header__notification">
 			<div class="header__notification__header">
 				<div class="header__notification__header__title txt">Уведомления</div>
@@ -290,8 +294,7 @@
 				</div> -->
 			</div>
 		</div>
-
-		<div class="header__notification_temporary header__notification_temporary" id="temporary_notification">
+		<div class="header__notification_temporary" id="temporary_notification">
 			<div class="header__notification_temporary__grid" id="grid_temporary_notification">
 			</div>
 		</div>
@@ -522,9 +525,9 @@
 	<script type="text/javascript" src="scripts/makeContentFunctions.js"></script>
 	<script type="text/javascript" src="scripts/carousel.js"></script>
 	<script type="text/javascript" src="scripts/script.js"></script>
-	<script type="text/javascript" src="scripts/notification.js"></script>
 	<script type="text/javascript" src="scripts/header_bg.js"></script>
 	<script type="text/javascript" src="scripts/header_catalog.js"></script>
+	<script type="text/javascript" src="scripts/notification.js"></script>
 	<script type="text/javascript" src="scripts/script_index.js"></script>
 </body>
 </html>

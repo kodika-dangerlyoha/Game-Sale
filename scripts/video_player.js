@@ -1,4 +1,5 @@
-let current_volume = 0;
+let current_volume = 0.5;
+let temp_volume = 0.5;
 let value = 0;
 let video;
 let volume;
@@ -17,7 +18,7 @@ function handle_mouse_click_volume(e) {
 }
 
 function handle_mouse_move_volume(e) {
-    document.querySelector('.videoIF__volume__mouse').style.width = e.offsetX * 100 / volume.clientWidth + "%";
+    document.querySelector('.videoIF__volume__race__mouse').style.width = e.offsetX * 100 / volume.clientWidth + "%";
     if (dragging) {
         current_volume = e.offsetX / volume.clientWidth;
         update_volume();
@@ -79,17 +80,31 @@ function handle_mouse_enter_hoverTime() {
 // -------- Function -------- 
 
 function update_volume() {
-    const videoIF_volume_block =  document.querySelector('.videoIF__volume')
-    if (current_volume < 0.15) {
+    const videoIF_volume_block = document.querySelector('.videoIF__volume');
+
+    if (current_volume < 0.05) {
         current_volume = 0;
         videoIF_volume_block?.classList.add('videoIF__volume_muted');
     }
     else {
         videoIF_volume_block?.classList.remove('videoIF__volume_muted');
     }
+
     video.volume = current_volume;
-    document.querySelector('.videoIF__volume__num').innerHTML = Math.round(current_volume * 100);
-    document.querySelector('.videoIF__volume__value').style.width = current_volume * 100 + "%";
+    document.querySelector('.videoIF__volume__race__num').innerHTML = Math.round(current_volume * 100);
+    document.querySelector('.videoIF__volume__race__value').style.width = current_volume * 100 + "%";
+}
+
+function toggle_volume() {
+    // current_volume === 0 ? current_volume = 0.5 : current_volume = 0;
+    if (current_volume !== 0) {
+        temp_volume = current_volume;
+        current_volume = 0;
+    }
+    else {
+        current_volume = temp_volume;
+    }
+    update_volume();
 }
 
 function get_video() {
@@ -97,7 +112,7 @@ function get_video() {
     race = document.querySelector('.videoIF__race');
     race_width = race.offsetWidth;
     time_point_hover = document.querySelector('.videoIF__race__time__point_hover');
-    volume = document.querySelector('.videoIF__volume__forMouse');
+    volume = document.querySelector('.videoIF__volume__race__forMouse');
     time_curr_block = document.querySelector('.videoIF__race__time__point_current');
     time_all_block = document.querySelector('.videoIF__race__time__point_all');
 
