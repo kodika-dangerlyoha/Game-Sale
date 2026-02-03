@@ -193,6 +193,7 @@
                     overflow-y: auto;
                     width: 100%;
                     transition: .1s;
+                    scroll-behavior: smooth;
                     &::-webkit-scrollbar {
                         height: 10px;
                         width: 10px; // Добавляем ширину для вертикального скроллбара
@@ -240,7 +241,6 @@
                             scrollbar-face-color: rgba(255, 255, 255, 0.3);
                         }
                     }
-        
                 }
                 &__screenshotsIF {
                     display: flex;
@@ -424,7 +424,7 @@
         }
     }
     &__info {
-        width: 400px;
+        width: 510px;
         height: 494px;
         align-self: flex-end;
         border-radius: 20px;
@@ -456,7 +456,13 @@
         &__category {
             display: flex;
             gap: 7px;
-            flex-wrap: wrap;
+            // flex-wrap: wrap;
+            border-radius: 13px;
+            overflow-y: auto;
+            width: 100%;
+            transition: .1s;
+            scroll-behavior: smooth;
+            @include base.style-webkit_scrollbar_hidden;
             &__nav {
                 background-color: rgba(0, 0, 0, 0.2);
                 position: relative;

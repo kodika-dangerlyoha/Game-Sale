@@ -14,26 +14,78 @@ let games = [
         'small_description': "War Thunder – самая масштабная бесплатная кроссплатформенная многопользовательская онлайн-игра, посвященная боевой технике самых разных войн и конфликтов – с начала XX века и до наших дней. Авиация, наземные силы и флот сражаются вместе в одном бою.",
         'editions': [
             {
-                'title': "Cold War 2: First Edition",
-                'newPrice': 5000,
-                'oldPrice': 5500,
-                'link': "",
-                'img': "img/banners/farmsim.png",
+              'title': "Cold War 2: First Edition",
+              'newPrice': 5000,
+              'oldPrice': 5500,
+              'link': "",
+              'img': "img/banners/farmsim.png",
             },
             {
-                'title': "Cold War 2: Bronze Edition",
-                'newPrice': 5200,
-                'oldPrice': 5600,
-                'link': "",
-                'img': "img/banners/farmsim.png",
+              'title': "Cold War 2: Bronze Edition",
+              'newPrice': 5200,
+              'oldPrice': 5600,
+              'link': "",
+              'img': "img/banners/farmsim.png",
             },
             {
-                'title': "Cold War 2: Gold Edition",
-                'newPrice': 5000,
-                'oldPrice': 7000,
-                'link': "",
-                'img': "img/banners/farmsim.png",
+              'title': "Cold War 2: Gold Edition",
+              'newPrice': 5000,
+              'oldPrice': 7000,
+              'link': "",
+              'img': "img/banners/farmsim.png",
             },
+        ],
+        'dlc': [
+          {
+            'title': "Cold War 2: First Edition",
+            'newPrice': 5000,
+            'oldPrice': 5500,
+          },
+          {
+            'title': "Tuyew JHo",
+            'newPrice': 1400,
+            'oldPrice': 1800,
+          },
+          {
+            'title': "Gold",
+            'newPrice': 300,
+            'oldPrice': 550,
+          },
+          {
+            'title': "Very you water",
+            'newPrice': 5000,
+            'oldPrice': 5500,
+          },
+          {
+            'title': "Cold War 2: First Edition",
+            'newPrice': 10400,
+            'oldPrice': 12500,
+          },
+          {
+            'title': "Cold War 2: First Edition",
+            'newPrice': 25,
+            'oldPrice': 5500,
+          },
+          {
+            'title': "Cold War 2: First Edition",
+            'newPrice': 5000,
+            'oldPrice': 5500,
+          },
+          {
+            'title': "Cold War 2: First Edition",
+            'newPrice': 5000,
+            'oldPrice': 5500,
+          },
+          {
+            'title': "Cold War 2: First Edition",
+            'newPrice': 5000,
+            'oldPrice': 5500,
+          },
+          {
+            'title': "Cold War 2: First Edition",
+            'newPrice': 5000,
+            'oldPrice': 5500,
+          },
         ],
         'description': `
         <h2>Об этой игре</h2> An entirely new experience from the makers of the ‘The Forest’
@@ -122,6 +174,30 @@ let games = [
             'name': "Головоломка",
             'link': ""
           },
+          {
+            'name': "Шутер",
+            'link': ""
+          },
+          {
+            'name': "Хоррор",
+            'link': ""
+          },
+          {
+            'name': "Головоломка",
+            'link': ""
+          },
+          {
+            'name': "Шутер",
+            'link': ""
+          },
+          {
+            'name': "Хоррор",
+            'link': ""
+          },
+          {
+            'name': "Головоломка",
+            'link': ""
+          },
         ],
         'genres': ["shooter", "horror"],
         'status': "new",
@@ -130,7 +206,7 @@ let games = [
         'developer': "Gaijin Entertainment",
         'date': "23.04.2018",
         'preOrder': "03.04.2026",
-        'dls': false,
+        'isDls': false,
         'screenshots': [
           'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236390/ss_3801dc6ae62e793aee2f073c2ac755c85edf0bb7.1920x1080.jpg?t=1756824022',
           'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236390/ss_15343f845523e07d5fc51c6208f362b7bcaa1fbe.1920x1080.jpg?t=1756824022',

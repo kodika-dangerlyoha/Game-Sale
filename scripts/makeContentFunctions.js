@@ -72,7 +72,8 @@ function makeOffers_index() {
 }
 
 function makeSimilar_gameCard() {
-    document.querySelector('#similar #content').innerHTML += games_list.reduce((summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
+    document.querySelector('#similar #similar-similar').innerHTML += games_list.reduce((summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
+    document.querySelector('#similar #similar-series').innerHTML += games_list.reduce((summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
 }
 
 function makeCatalog_catalog() {
@@ -120,19 +121,20 @@ function makeCatalog_catalog() {
     div.innerHTML = blockSiteHTML;
 }
 
-function make_editions() {
-    // let editionList = "";
-    
-    // get_editions().forEach(edition => {
-    //     editionList += get_edition_game_html(
-    //         edition, 
-    //         Math.round((edition.oldPrice - edition.newPrice) / edition.oldPrice * 100)
-    //     )
-    // });
+function make_additions(game) {
+    make_editions();
+    make_dlc(game);
+}
 
-    document.querySelector('#edition #edition_grid').innerHTML += editions.reduce((summ_game, edition) => summ_game + get_edition_game_html(edition, Math.round((edition.oldPrice - edition.newPrice) / edition.oldPrice * 100)), "");
-    document.getElementsByClassName('editions__grid__edition')[0].classList.add('editions__grid__edition_active');
-    // document.getElementsByClassName('editions__grid__edition__info__percent')[0].classList.add('editions__grid__edition__percent_active');
+function make_editions() {
+    document.querySelector('#additions-editions .additions__side__grid').innerHTML += editions.reduce(
+        (summ_game, edition) => summ_game + get_edition_game_html(edition, Math.round((edition.oldPrice - edition.newPrice) / edition.oldPrice * 100)), "");
+    document.getElementsByClassName('edition')[0].classList.add('edition_active');
+}
+
+function make_dlc(game) {
+    document.querySelector('#additions-dlc .additions__side__grid').innerHTML += game.dlc.reduce(
+        (summ_game, dlc) => summ_game + get_dlc_html(dlc), "");
 }
 
 function make_regions_list(selected, str) {
@@ -196,7 +198,7 @@ function make_game_card_info(game) {
     // document.querySelector('#game_info').innerHTML = gameList;
 
     make_mainInfo(game);
-    make_editions();
+    make_additions(game);
     make_desscription();
     makeSimilar_gameCard();
 

@@ -8,14 +8,22 @@ let screenshots_count = 0;
 let video_count = 0;
 let this_count = 0;
 
-const scroll_horizontal = document.querySelector('#interface_scroll_horizontal');
 
-scroll_horizontal.addEventListener('wheel', (e) => {
-    console.log('scroll');
-    e.preventDefault(); // Отменяем вертикальный скролл
-    scroll_horizontal.scrollLeft += e.deltaY; // deltaY - вертикальное движение колеса
-    console.log(scroll_horizontal.scrollLeft);
-});
+function add_horizontal_scroll(el) {
+    el.addEventListener('wheel', (e) => {
+        console.log('scroll');
+        e.preventDefault(); // Отменяем вертикальный скролл
+        el.scrollLeft += e.deltaY; // deltaY - вертикальное движение колеса
+        console.log(el.scrollLeft);
+    });
+}
+
+const scroll_horizontal = document.querySelector('#interface_scroll_horizontal');
+const scroll_categories = document.querySelector('#game_categories');
+add_horizontal_scroll(scroll_horizontal);
+add_horizontal_scroll(scroll_categories);
+
+
 
 // const scroll_horizontal = document.querySelector('#interface_scroll_horizontal');
 // let target = scroll_horizontal.scrollLeft;
@@ -222,5 +230,16 @@ function toggle_fullScreen() {
 
 function change_img_fullScreen(link) {
     document.querySelector('#fullScreen_img').src = link;
-    document.querySelector('#game_banner').src = link;
+    // document.querySelector('#game_banner').src = link;
+}
+
+
+// ------------ 
+
+function change_similar_sections(title) {
+    document.querySelector('.similar__grid_active')?.classList.remove('similar__grid_active');
+    document.querySelector('.similar__header__nav_active')?.classList.remove('similar__header__nav_active');
+
+    document.querySelector(`#similar_nav-${title}`).classList.add('similar__header__nav_active');
+    document.querySelector(`#similar-${title}`).classList.add('similar__grid_active');
 }

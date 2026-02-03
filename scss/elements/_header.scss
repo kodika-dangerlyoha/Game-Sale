@@ -716,7 +716,8 @@
                 }
                 &_new {
                     // @include base.style-main_active;
-                    border-color: base.$clr-blue_light;
+                    // border-color: base.$clr-blue_light;
+                    border-color: rgba(1, 162, 255, .8);
                 }
             }
             &__nothing {
