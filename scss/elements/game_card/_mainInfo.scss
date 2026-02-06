@@ -401,7 +401,7 @@
                     }
                 }
                 &_hidden {
-                    transform: translateY(102px) !important;
+                    transform: translateY(calc(100% - 45px)) !important;
                 }
             }
             &:hover {
@@ -412,6 +412,89 @@
                 transform: translateY(0px);
             }
         }
+
+        &_fullscreen {
+            border-radius: 0;
+            border: none;
+        }
+        &_fullscreen &{
+            // &__visual {
+
+            // }
+            &__interface {
+                pointer-events: none;
+                &__top {
+                    display: none;
+                }
+                &__bottom {
+                    pointer-events: all;
+                    padding-top: 150px;
+                    opacity: .7;
+                    transform: translateY(calc(100% - 205px));
+                    &__screenshotsIF {
+                        padding-left: 20px;
+                        padding-right: 20px;
+                        margin-bottom: 20px;
+                        &__arrows {
+                            display: flex;
+                            gap: 10px;
+                            &__arrow {
+                                width: 45px;
+                                height: 45px;
+                                padding: 13px;
+                            }
+                        }
+                        &__buttonFullScreenBlock {
+                            &__button {
+                                height: 45px;
+                                width: 45px;
+                                padding: 11px;
+                            }
+                        }
+                    }
+                    &__medialist {
+                        gap: 20px;
+                        padding-bottom: 20px;
+                        padding-left: 20px;
+                        padding-right: 20px;
+                        &__media {
+                            //width: 140px; // 1,7 120 204
+                            //height: 82px;
+                            height: 120px;
+                            width: 204px;
+                            border-radius: 15px;
+                            &__playButton {
+                                &__icon {
+                                    height: 55px;
+                                    width: 55px;
+                                    padding: 14px;
+                                    & > svg {
+                                        transform: translateX(.5px);
+                                        height: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &_hidden {
+                        opacity: 0;
+                        transform: translateY(calc(100% - 205px)) !important;
+                    }
+                    // &:hover &__bottom {
+                    //     opacity: 1;
+                    //     transform: translateY(0px);
+                    // }
+                }
+                // &:hover {
+                //     background-color: rgba(0, 0, 0, 0);
+                // }
+                // &:hover &__bottom {
+                //     opacity: 0;
+                //     transform: translateY(20px);
+                // }
+            }
+        }
+
 
         &_loading {
             animation: loading_block 1.5s ease infinite;

@@ -556,3 +556,17 @@ const get_fullScreen_button = (link) => {
                 </svg>
             </button>`
 }
+
+// -------- authors -------- 
+
+const get_author_html = (author) => {
+    return `<a href="${author.link}" class="authors__grid__author">
+                <div class="authors__grid__author__logo">
+                    <img src="${author.logo}" alt="" crossorigin="anonymous">
+                </div>
+                <div class="authors__grid__author__info txt">
+                    <div class="authors__grid__author__info__title">${author.title}</div>
+                    <div class="authors__grid__author__info__count">${author.count_games} Игр</div>
+                </div>
+            </a>`
+}

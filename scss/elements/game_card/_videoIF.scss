@@ -10,6 +10,7 @@
     margin-bottom: 10px;
     animation: open .25s base.$tf-main 1;
     &__button {
+        flex-shrink: 0;
         height: 35px;
         width: 35px;
         padding: 8px;
@@ -26,7 +27,8 @@
         }
     }
     &__raceBlock {
-        width: calc(100% - 245px);
+        // width: calc(100% - 245px);
+        flex-grow: 1;
         display: flex;
         flex-direction: column;
         gap: 5px;
@@ -102,6 +104,7 @@
         
         display: flex;
         align-items: center;
+        flex-shrink: 0;
         &__race {
             height: 100%;
             width: 100%;
@@ -244,5 +247,78 @@
     }
     &_hidden {
         display: none;
+    }
+}
+
+.mainInfo__banner_fullscreen .videoIF {
+    gap: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    &__button {
+        height: 45px;
+        width: 45px;
+        padding: 10px;
+    }
+    &__raceBlock {
+        // width: calc(100% - 500px);
+        // width: calc(1fr - 120px);
+        gap: 5px;
+        height: 45px;
+    }
+    &__race {
+        width: 100%;
+        height: 18px;
+        border-radius: 9px;
+        &__mouse {
+            border-radius: 9px;
+        }
+        &__value {
+            border-radius: 9px;
+        }
+        &__time {
+            &__point {
+                font-size: 14px;
+                &_hover {
+                    padding: 2px 5px;
+                    border-radius: 7px;
+                }
+            }
+        }
+    }
+    &__volume {
+        height: 45px;
+        width: 150px;
+        &__race {
+            height: 100%;
+            width: 100%;
+            padding-left: 10px;
+            border-radius: 22.5px;
+            &__mouse {
+                border-radius: 6px;
+            }
+            &__value {
+                border-radius: 6px;
+            }
+            &__forMouse {
+            }
+            &__num {
+                font-size: 14px;
+            }
+        }
+        &__icon {
+            width: 45px;
+            height: 45px;
+            margin-right: 5px;
+            & svg {
+                height: 24px;
+            }
+        }
+    }
+    &__playButton {
+        padding: 13px;
+    }
+    &__buttonTglScrList {
+        padding: 4px;
     }
 }

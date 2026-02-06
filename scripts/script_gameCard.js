@@ -1,4 +1,5 @@
 make_game_card_info(games[0]);
+set_top_img_paralax(550);
 
 const for_scroll = document.querySelector('.forScroll');
 const header_center = document.querySelector('#centerHeader_gameCard');
@@ -103,11 +104,11 @@ const observer = new IntersectionObserver((entries) => {
 // Начинаем наблюдать за элементом
 observer.observe(document.querySelector('#main_info'));
 
-window.addEventListener("scroll", function(){
-    document.querySelector('.bigImgBlock').style.transform = "translateY(" + (this.scrollY) / 2 + "px)";
-    for_scroll.style.opacity = (this.scrollY) / 300;
-    for_scroll.style.transform = "translateY(" + (this.scrollY) / 2 + "px)";
-});
+// window.addEventListener("scroll", function(){
+//     document.querySelector('.bigImgBlock').style.transform = "translateY(" + (this.scrollY) / 2 + "px)";
+//     for_scroll.style.opacity = (this.scrollY) / 300;
+//     for_scroll.style.transform = "translateY(" + (this.scrollY) / 2 + "px)";
+// });
 
 function make_mediaList(game) {
     let mediaList_html = "";
@@ -181,7 +182,7 @@ function change_media(this_treiler, id, link) {
         document.querySelector(`.screenshot-${id}`).classList.add('mainInfo__banner__interface__bottom__medialist__media_active');
         this_count = id;
         game_visual_inner = get_pic_gameCard_html(link);
-        change_img_fullScreen(link);
+        // change_img_fullScreen(link);
         document.querySelector('.mainInfo__banner__interface__bottom__screenshotsIF').classList.remove('mainInfo__banner__interface__bottom__screenshotsIF_hidden');
         document.querySelector('.videoIF').classList.add('videoIF_hidden');
 
@@ -215,23 +216,40 @@ function toggle_screenshots_list() {
 
 // -------- Картинка во весь экран --------
 
-function toggle_fullScreen() {
-    const active = document.querySelector('.fullScreen_active');
-    const block = document.querySelector('.fullScreen');
-    if (active) {
-        block.classList.remove('fullScreen_active');
-        document.body.style.overflow = 'auto';
+// function toggle_fullScreen() {
+//     const active = document.querySelector('.fullScreen_active');
+//     const block = document.querySelector('.fullScreen');
+//     if (active) {
+//         block.classList.remove('fullScreen_active');
+//         document.body.style.overflow = 'auto';
+//     }
+//     else {
+//         block.classList.add('fullScreen_active');
+//         document.body.style.overflow = 'hidden';
+//     }
+// }
+
+const player = document.querySelector('#player');
+
+async function toggle_fullScreen() {
+    if (!document.fullscreenElement) {
+        await player.requestFullscreen();
+        player.classList.add('mainInfo__banner_fullscreen');
+        return
     }
-    else {
-        block.classList.add('fullScreen_active');
-        document.body.style.overflow = 'hidden';
-    }
+    document.exitFullscreen();
 }
 
-function change_img_fullScreen(link) {
-    document.querySelector('#fullScreen_img').src = link;
-    // document.querySelector('#game_banner').src = link;
-}
+document.addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement) {
+        player.classList.remove('mainInfo__banner_fullscreen');
+    }
+});
+
+// function change_img_fullScreen(link) {
+//     document.querySelector('#fullScreen_img').src = link;
+//     // document.querySelector('#game_banner').src = link;
+// }
 
 
 // ------------ 

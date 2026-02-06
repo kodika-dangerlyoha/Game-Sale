@@ -179,8 +179,7 @@ function make_game_card_info(game) {
     document.getElementById('price_game').innerHTML = `${game.newPrice}₽ <span>${game.oldPrice} ₽</span>`;
     document.getElementById('title_game').innerHTML = game.name;
 
-    document.getElementById('game_banner').src = game.bigBanner;
-    document.getElementById('game_banner').alt = game.name;
+    document.querySelector('#top_img_paralax_block img').src = game.bigBanner;
     // document.getElementById('treiler').src = games[0].treilerSrc;
     // document.getElementById('visual_main_screenshot').style.backgroundImage = `url('${game.imgH}')`;
     // document.getElementById('game_img').alt = games[0].name;

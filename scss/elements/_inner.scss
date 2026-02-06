@@ -20,8 +20,8 @@
         width: 1605px;
     }
     &_catalog {
-        padding-top: 100px;
         width: 1405px;
+        padding-top: 100px;
     }
 
     &_game {
@@ -31,5 +31,18 @@
     &_index {
         width: 1605px;
         padding-top: 100px;
+    }
+    &_authors {
+        width: 1405px;
+        padding-top: 100px;
+    }
+
+    &_w1405p100 {
+        width: 1405px;
+        padding-top: 100px;
+    }
+    &_w1220p150 {
+        width: 1220px;
+        padding-top: 150px;
     }
 }

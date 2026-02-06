@@ -1,6 +1,8 @@
 @use "default/def";
 @use "default/animation";
+// ~ 
 @use "fonts/fonts";
+// ~ 
 @use "elements/inner";
 @use "elements/header";
 @use "elements/footer";
@@ -9,26 +11,35 @@
 @use "elements/gameH";
 @use "elements/blockButtonMore";
 @use "elements/inputList";
+@use "elements/topImgParalaxBlock";
+// ~ Index
 @use "elements/index/carousel";
 @use "elements/index/salesHits";
 @use "elements/index/banner";
 @use "elements/index/games";
 @use "elements/index/offers";
+// ~ Game card
 @use "elements/game_card/miniGameCard";
-@use "elements/game_card/bigImgBlock";
-@use "elements/game_card/forScroll";
 @use "elements/game_card/mainInfo";
 @use "elements/game_card/additions";
 @use "elements/game_card/editions";
 @use "elements/game_card/information";
 @use "elements/game_card/similar";
-@use "elements/game_card/fullScreen";
 @use "elements/game_card/videoIF";
+// ~ Profile
 @use "elements/profile/profile";
 @use "elements/profile/settings";
 @use "elements/profile/more";
 @use "elements/profile/purchase";
+// ~ Catalog
 @use "elements/catalog/formFilters";
+// ~ Basket
 @use "elements/basket/basketContainer";
+// ~ Favorite
 @use "elements/favorite/favorite";
+// ~ Authors
+@use "elements/authors/authors";
+// ~ Series
+@use "elements/series/series";
+// ~ Adaptation
 @use "adaptation/adaptation";

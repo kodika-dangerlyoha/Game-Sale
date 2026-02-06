@@ -1,0 +1,77 @@
+@use '../../default/base';
+
+.series {
+    &__head {
+        width: 100%;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        font-weight: 700;
+        padding-top: 50px;
+        text-shadow: 0 0 50px rgba(0, 0, 0, .55);
+        margin-bottom: 20px;
+        & > span {
+            font-size: 36px;
+        }
+        & > h2 {
+            font-size: 96px;
+        }
+    }
+    &__about {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        &__block {
+            max-height: 1000px;
+            padding: 20px 23px;
+            overflow: hidden;
+            border-radius: 20px;
+            transition: .2s;
+            @include base.style-main_base;
+            & > h3 {
+                font-size: 24px;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+            & > p {
+                font-size: 18px;
+                margin-bottom: 10px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &__buttonBlock {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: .2s;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background: linear-gradient(to top, base.$clr-main_body, transparent);
+            & > button {
+                height: 50px;
+                width: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+                font-size: 20px;
+                @include base.style-main_click;
+            }
+        }
+        &_hidden &{
+            &__block {
+                max-height: 300px;
+            }
+            &__buttonBlock {
+                margin-top: -60px;
+            }
+        }
+    }
+}

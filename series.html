@@ -15,7 +15,7 @@
 				<img src="img/logos/logo.png" alt="">
 			</a>
 		</div>
-		<div class="header__center">
+		<div class="header__center" id="centerHeader_gameCard">
 			<button type="button" title="кнопка открыть закрыть каталог" class="header__buttonCatalog" onclick="open_catalogNavs()">
 				<svg viewBox="0 -0.5 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -67,7 +67,7 @@
 				</button>
 			</nav>
 		</div>
-		<div class="header__catalog">
+        <div class="header__catalog">
 			<div class="inner inner_main">
 				<div class="header__catalog__navs">
 					<div class="header__catalog__navs__genres">
@@ -81,7 +81,7 @@
 					<div class="header__catalog__navs__authors">
 						<div class="header__catalog__head txt">
 							<div class="header__catalog__head__title">Издатели и разработчики</div>
-							<a href="authors.html" class="header__catalog__head__more txt">Показать все</a>
+							<div class="header__catalog__head__more">Показать все</div>
 						</div>
 						<div class="header__catalog__navs__authors__list" id="list_authors_HC">
 						</div>
@@ -219,15 +219,13 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="header__basket">
 			<div class="header__basket__head txt">
 				<div class="header__basket__head__title">Корзина</div>
 				<a href="basket.html" class="header__basket__head__link">К оплате</a>
 			</div>
 			<div class="header__basket__grid" id="header_basket_grid">
-				<!-- <div class="header__basket__grid__nothing">
-					<div>Тут пусто</div>
-				</div> -->
 				<div class="header__basket__grid__game">
 					<div class="header__basket__grid__game__top">
 						<a href="#" class="header__basket__grid__game__title txt">Title game 3</a>
@@ -294,163 +292,49 @@
 				</div> -->
 			</div>
 		</div>
-		<div class="header__notification_temporary" id="temporary_notification">
+		<div class="header__notification_temporary header__notification_temporary" id="temporary_notification">
 			<div class="header__notification_temporary__grid" id="grid_temporary_notification">
 			</div>
 		</div>
 	</header>
-
+    
 	<div class="blackoutBlock fixed-zero" onclick="open_catalogNavs()"></div>
-	
+
 	<main id="main">
-		<div class="inner inner_index">
-			<section class="carousel">
-				<h2 class="hidden">Карусель</h2>
-				<div class="carousel__gridBG" id="carousel_grid_bg"></div>
-				
-				<div class="carousel__buttons">
-					<button type="button" title="button" class="carousel__buttons__button carousel__buttons__button_disactive" onclick="scroll_carousel(false)" id="carousel_button_left" disabled>
-						<img src="img/icons/main/arrRight32.png" alt="">
-					</button>
-					<button type="button" title="button2" class="carousel__buttons__button" onclick="scroll_carousel(true)" id="carousel_button_right">
-						<img src="img/icons/main/arrRight32.png" alt="">
-					</button>
-				</div>
-				<div class="carousel__grid" id="grid_banners"></div>
-				
-			</section>
-			<section class="salesHits salesHits_loading loadingContent" id="salesHits">
-				<h2 class="hidden">Лидеры продаж</h2>
-				<div class="games__head">
-					<h2 class="txt">Хиты продаж</h2>
-					<div class="blockButtonMore">
-						<div class="blockButtonMore__button txt">
-							<span>Показать еще</span>
-							<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
-							</svg>
-						</div>
-					</div>
-				</div>
-				<!-- <div class="loadingBlock flex-center">
-					<div class="loadingBlock__point"></div>
-					<div class="loadingBlock__point"></div>
-					<div class="loadingBlock__point"></div>
-				</div> -->
-				<div class="salesHits__games" id="salesHits_content">
-				</div>
-			</section>
-			<section class="games">
-				<div class="games__head">
-					<h2 class="txt">Новинки</h2>
-					<div class="blockButtonMore">
-					<div class="blockButtonMore__button txt">
-						<span>Показать еще</span>
-						<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
-						</svg>
-					</div>
-				</div>
-				</div>
-				<div class="games__grid" id="offers_grid_new">
-
-				</div>
-				<section class="banner">
-					<h2 class="hidden">Баннер</h2>
-					<div class="banner__game">
-						<div class="banner__game__imgBlock">
-							<img src="img/banners/image 10.png" alt="">
-						</div>
-						<div class="banner__game__interaction">
-							<div class="banner__game__interaction__info">
-								<a href="game.html" class="banner__game__interaction__info__link"></a>
-								<div class="banner__game__interaction__info__title txt">Call Of Duty: Warzone 2</div>
-								<div class="carousel__banner__interaction__info__shopInfo">
-									<div class="carousel__banner__interaction__info__shopInfo__buttons">
-										<div class="carousel__banner__interaction__info__shopInfo__buttons__button carousel__banner__interaction__info__shopInfo__buttons__button_basket">
-											<img src="img/icons/main/basket32.png" alt="">
-										</div>
-										<div class="carousel__banner__interaction__info__shopInfo__buttons__button carousel__banner__interaction__info__shopInfo__buttons__button_favorite">
-											<img src="img/icons/main/heart32.png" alt="">
-										</div>
-									</div>
-									<div class="carousel__banner__interaction__info__shopInfo__priceTag">
-										<div class="carousel__banner__interaction__info__shopInfo__priceTag__prices">
-											<div class="carousel__banner__interaction__info__shopInfo__priceTag__prices__oldPrice txt">5120 ₽</div>
-											<div class="carousel__banner__interaction__info__shopInfo__priceTag__prices__newPrice txt">4599 ₽</div>
-										</div>
-										<div class="carousel__banner__interaction__info__shopInfo__priceTag__discount flex-center txt">10%</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-			</section>
-			<section class="games">
-				<div class="games__head">
-					<h2 class="txt">Ожидаемое</h2>
-					<div class="blockButtonMore">
-						<div class="blockButtonMore__button txt">
-							<span>Показать еще</span>
-							<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
-							</svg>
-						</div>
-					</div>
-				</div>
-				<div class="games__grid" id="offers_grid_expected">
-
-				</div>
-				<section class="banner">
-					<h2 class="hidden">Баннер</h2>
-					<div class="banner__game">
-						<div class="banner__game__imgBlock">
-							<img src="img/banners/b3.png" alt="">
-						</div>
-						<div class="banner__game__interaction">
-							<div class="banner__game__interaction__info">
-								<a href="game.html" class="banner__game__interaction__info__link"></a>
-								<div class="banner__game__interaction__info__title txt">Call Of Duty: Warzone 2</div>
-								<div class="carousel__banner__interaction__info__shopInfo">
-									<div class="carousel__banner__interaction__info__shopInfo__buttons">
-										<div class="carousel__banner__interaction__info__shopInfo__buttons__button carousel__banner__interaction__info__shopInfo__buttons__button_basket">
-											<img src="img/icons/main/basket32.png" alt="">
-										</div>
-										<div class="carousel__banner__interaction__info__shopInfo__buttons__button carousel__banner__interaction__info__shopInfo__buttons__button_favorite">
-											<img src="img/icons/main/heart32.png" alt="">
-										</div>
-									</div>
-									<div class="carousel__banner__interaction__info__shopInfo__priceTag">
-										<div class="carousel__banner__interaction__info__shopInfo__priceTag__prices">
-											<div class="carousel__banner__interaction__info__shopInfo__priceTag__prices__oldPrice txt">5120 ₽</div>
-											<div class="carousel__banner__interaction__info__shopInfo__priceTag__prices__newPrice txt">4599 ₽</div>
-										</div>
-										<div class="carousel__banner__interaction__info__shopInfo__priceTag__discount flex-center txt">10%</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-			</section>
-			<section class="games">
-				<div class="games__head">
-					<h2 class="txt">Наш выбор</h2>
-					<div class="blockButtonMore">
-					<div class="blockButtonMore__button txt">
-						<span>Показать еще</span>
-						<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
-						</svg>
-					</div>
-				</div>
-				</div>
-				<div class="games__grid" id="offers_grid_ourChoice">
-
-				</div>
-			</section>
-		</div>
+        <div class="topImgParalaxBlock" id="top_img_paralax_block"><img src="img/banners/52nahuy.jpg" alt=""></div>
+        <div class="inner inner_w1220p150">
+            <section class="series__head txt">
+                <span class="flex-center">Серия игр</span>
+                <h2 class="flex-center">Assassin’s Creed</h2>
+            </section>
+            <section class="series__about series__about_hidden">
+                <div class="series__about__block txt">
+                    <h3>Титулованная серия впервые на ПК</h3>
+                    <p>Первая часть серии в своё время вышла на консолях прошлого поколения, 
+                        собрала уйму наград и благополучно миновала просторы ПК, чем вызвала массу негодования 
+                        и скорби в игровом сообществе. Вторая часть следует курсом, взятым ещё при выпуске GTA V, 
+                        когда спустя год после релиза, улучшенная версия игры появляется на ПК, чтобы предстать во всей своей технологической красе.</p>
+                    <p>События Red Dead Redemption 2 разворачиваются в Америке образца 1899 года. 
+                        Эпоха Дикого Запада подходит к концу. Главный герой - Артур Морган, бандит, 
+                        скрывается от правосудия вместе с членами своей банды после неудачного ограбления банка. 
+                        По пятам за героем следуют федеральные агенты, внутри банды растут противоречия. 
+                        Артуру предстоит выбрать, что для него важнее: его банда, которая его вырастила или же собственные идеалы.</p>
+                    <p>События Red Dead Redemption 2 разворачиваются в Америке образца 1899 года. 
+                    Эпоха Дикого Запада подходит к концу. Главный герой - Артур Морган, бандит, 
+                    скрывается от правосудия вместе с членами своей банды после неудачного ограбления банка. 
+                    По пятам за героем следуют федеральные агенты, внутри банды растут противоречия. 
+                    Артуру предстоит выбрать, что для него важнее: его банда, которая его вырастила или же собственные идеалы.</p>
+                    <p>События Red Dead Redemption 2 разворачиваются в Америке образца 1899 года. 
+                    Эпоха Дикого Запада подходит к концу. Главный герой - Артур Морган, бандит, 
+                    скрывается от правосудия вместе с членами своей банды после неудачного ограбления банка. 
+                    По пятам за героем следуют федеральные агенты, внутри банды растут противоречия. 
+                    Артуру предстоит выбрать, что для него важнее: его банда, которая его вырастила или же собственные идеалы.</p>
+                </div>
+                <div class="series__about__buttonBlock">
+                    <button class="txt" type="button" onclick="toggle_series_about()">+</button>
+                </div>
+            </section>
+        </div>
 	</main>
 	
 	<footer class="footer">
@@ -518,16 +402,14 @@
         </div>
     </footer>
 
-	<script type="text/javascript" src="scripts/cookie.js"></script>
 	<script type="text/javascript" src="scripts/lists.js"></script>
 	<script type="text/javascript" src="elements/elements.js"></script>
-	<script type="text/javascript" src="scripts/color-thief.min.js"></script>
 	<script type="text/javascript" src="scripts/makeContentFunctions.js"></script>
-	<script type="text/javascript" src="scripts/carousel.js"></script>
 	<script type="text/javascript" src="scripts/script.js"></script>
-	<script type="text/javascript" src="scripts/header_bg.js"></script>
-	<script type="text/javascript" src="scripts/header_catalog.js"></script>
-	<script type="text/javascript" src="scripts/notification.js"></script>
-	<script type="text/javascript" src="scripts/script_index.js"></script>
+    <script type="text/javascript" src="scripts/header_bg.js"></script>
+    <script type="text/javascript" src="scripts/header_catalog.js"></script>
+    <script type="text/javascript" src="scripts/top_img_paralax.js"></script>
+    <script type="text/javascript" src="scripts/notification.js"></script>
+	<script type="text/javascript" src="scripts/script_series.js"></script>
 </body>
 </html>

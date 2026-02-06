@@ -809,42 +809,72 @@ let genres = [
 let authors = [  
   {
     'id': 'p1',
-    'title': 'Activison'
+    'title': 'Activison',
+    'logo': "https://avatars.fastly.steamstatic.com/4f1187c11ad41f8aa58b9109efd52c2f8bca9918_full.jpg",
+    'count_games': "3",
+    'link': ""
   },
   {
     'id': 'p2',
-    'title': 'Ubisoft'
+    'title': 'Ubisoft',
+    'logo': "https://avatars.fastly.steamstatic.com/2b2486ae5a70d69c55f020ce8384d04646ddba4e_full.jpg",
+    'count_games': "23",
+    'link': ""
   },
   {
     'id': 'p3',
-    'title': 'Gaijin'
+    'title': 'Gaijin',
+    'logo': "https://avatars.fastly.steamstatic.com/330261b8aeaf4428f15ee511a0a20c3d8153c432_full.jpg",
+    'count_games': "5",
+    'link': ""
   },
   {
     'id': 'p4',
-    'title': 'Lesta'
+    'title': 'Lesta',
+    'logo': "https://avatars.fastly.steamstatic.com/6b62a91eb5a093261d8831d1908717bab0d687e9_full.jpg",
+    'count_games': "3",
+    'link': ""
   },
   {
     'id': 'p5',
-    'title': 'Pimpuk'
+    'title': 'YGYg gyug ygYGg jhrcuhhg',
+    'logo': "https://avatars.fastly.steamstatic.com/d83a1786f23929deb5f20326f128bbc13a9a1e85_full.jpg",
+    'count_games': "12",
+    'link': ""
   },
   {
     'id': 'p6',
-    'title': 'Arnold'
+    'title': 'Arnold',
+    'logo': "https://avatars.fastly.steamstatic.com/6b62a91eb5a093261d8831d1908717bab0d687e9_full.jpg",
+    'count_games': "104",
+    'link': ""
   },
   {
     'id': 'p7',
-    'title': 'Shwarczeneger'
+    'title': 'Shwarczeneger',
+    'logo': "https://avatars.fastly.steamstatic.com/d83a1786f23929deb5f20326f128bbc13a9a1e85_full.jpg",
+    'count_games': "650",
+    'link': ""
   },
   {
     'id': 'p8',
-    'title': 'Haisenberg'
+    'title': 'Haisenberg',
+    'logo': "https://avatars.fastly.steamstatic.com/7ba781b5f0b8a99d4cc0b0b0dcaa22df73db7db2_full.jpg",
+    'count_games': "1",
+    'link': ""
   },
   {
     'id': 'p9',
-    'title': 'Kakostavitugol'
+    'title': 'Kakostavitugol',
+    'logo': "https://avatars.fastly.steamstatic.com/97ea9619ba3076b8549c1484bef9308a67f0c64d_full.jpg",
+    'count_games': "2",
+    'link': ""
   },
   {
     'id': 'p10',
-    'title': 'Sladki Snov'
+    'title': 'Sladki Snov',
+    'logo': "https://avatars.fastly.steamstatic.com/6b62a91eb5a093261d8831d1908717bab0d687e9_full.jpg",
+    'count_games': "18",
+    'link': ""
   },
 ]
