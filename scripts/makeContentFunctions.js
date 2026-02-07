@@ -10,7 +10,7 @@ function getGames() {
 // -----------------------
 
 function getGames_for_salesHits() {
-    return games.slice(0, 5);
+    return games.slice(0, 6);
 }
 
 function getGames_similar() {
@@ -66,9 +66,9 @@ function makeOffers_index() {
     document.querySelector('#offers_grid_new').innerHTML += games_list.filter(({status}) => status == "new").reduce(
         (summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
     document.querySelector('#offers_grid_expected').innerHTML += games_list.filter(({status}) => status == "expected").reduce(
-        (summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");;
+        (summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
     document.querySelector('#offers_grid_ourChoice').innerHTML += games_list.filter(({status}) => status == "ourChoice").reduce(
-        (summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");;
+        (summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
 }
 
 function makeSimilar_gameCard() {

@@ -60,15 +60,32 @@ function update_notification() {
         document.querySelector('#grid_notification').innerHTML = `<div class="header__notification__grid__nothing flex-center txt">
                                                                         <div>Нет уведомлений</div>
                                                                     </div>`;
+        if (document.querySelector('#profile_notification_grid')) {
+            document.querySelector('#profile_notification_grid').innerHTML = `<div class="header__notification__grid__nothing flex-center txt">
+                                                                        <div>Нет уведомлений</div>
+                                                                    </div>`;
+        }
     }
 
     else {
         let notification_html = "";
-        list_notifications.forEach(elem => {
+        const list_notifications_small = list_notifications.slice(0, 10);
+
+        list_notifications_small.forEach(elem => {
             notification_html += get_notification_html(elem.status, elem.message, elem.viewed, elem.id);
             if (!elem.viewed) unviewed_count++;
         })
+
         document.querySelector('#grid_notification').innerHTML = notification_html;
+
+        if (document.querySelector('#profile_notification')) {
+            notification_html = "";
+            list_notifications.forEach(elem => {
+                notification_html += get_notification_html(elem.status, elem.message, elem.viewed, elem.id);
+            })
+            document.querySelector('#profile_notification_grid').innerHTML = notification_html;
+            document.querySelector('.pNotification__header__counter').innerHTML = list_notifications.length;
+        }
     }
 
     update_counter(unviewed_count, 'notification');

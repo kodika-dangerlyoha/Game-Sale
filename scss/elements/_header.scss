@@ -737,6 +737,8 @@
         right: 15px;
         width: 300px;
         transition: 0.15s;
+        max-height: 500px;
+        overflow: hidden;
 
         display: block;
         visibility: hidden;

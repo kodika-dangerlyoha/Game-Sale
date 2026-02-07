@@ -33,8 +33,8 @@
 					<div class="header__searchBlock__bg__top"></div>
 					<div class="header__searchBlock__bg__bottom"></div>
 				</div> -->
-				<input type="text" title="Поиск">
-				<button class="header__searchBlock__button" title="Поиск" type="button">
+				<input type="text" title="Поиск" id="search-input">
+				<button class="header__searchBlock__button" title="Поиск" type="button" id="search-button">
 					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 					</svg>
@@ -301,83 +301,96 @@
 
 	<main id="main">
 		<div class="inner inner_profile">
-            <section class="profile">
-                <div class="profile__left">
-                    <div class="profile__avatar"><img src="img/pic/avatars/4135772dda9fabaa7e37b0428374dab7.jpg" alt=""></div>
-                    <div class="profile__info">
-                        <div class="profile__info__nickname txt">
-                            <span>+W ХЛОООРКА (бустер)</span>
-                            <div class="profile__info__nickname__steamLink">
-                                <svg viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.6599 0.674316C14.2629 0.674316 12.3072 2.67093 12.2887 5.13235L9.56635 9.15087C8.80691 9.08003 8.1519 9.24196 7.5729 9.60557L1.07325 6.39596C-0.392348 8.63835 1.07325 10.88 1.07325 10.88L6.04976 13.2063C6.36803 14.7171 7.68018 15.8549 9.23245 15.8549C10.9204 15.8549 12.3192 14.5197 12.4727 12.8195L16.6635 9.66557C19.0675 9.66557 21.0233 7.65811 21.0233 5.1685L21.0226 5.16777C21.0233 2.68972 19.0675 0.674316 16.6599 0.674316ZM9.23245 14.9607C8.31103 14.9607 7.5182 14.4272 7.11539 13.6487L8.29256 14.1308C9.27081 14.5458 10.3826 14.0513 10.7734 13.0436C10.9624 12.5622 10.957 12.0243 10.7582 11.5469C10.5594 11.0695 10.1834 10.6914 9.71198 10.4947L8.71455 10.0798C8.88445 10.0403 9.05818 10.0204 9.23245 10.0205C10.5631 10.0205 11.6287 11.1186 11.6287 12.4899C11.6287 13.8612 10.5631 14.96 9.23245 14.96V14.9607ZM16.6642 8.18076C15.0458 8.18076 13.7308 6.83692 13.7308 5.16922C13.7308 3.50875 15.0423 2.15768 16.6642 2.15768C18.2712 2.15768 19.5861 3.50947 19.5861 5.16922C19.5861 6.84125 18.2704 8.1851 16.6642 8.18076ZM16.672 2.75189C15.3797 2.75189 14.3333 3.83116 14.3333 5.16199C14.3333 6.49282 15.3762 7.57209 16.672 7.57209C17.9564 7.57209 19.0107 6.49716 19.0107 5.16199C19.0107 3.82682 17.9564 2.75189 16.672 2.75189Z" fill="white"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="profile__info__points">
-                            <div class="profile__info__points__point txt">
-                                <span>ID:</span>#434667
-                            </div>
-                            <div class="profile__info__points__point txt">
-                                <span>Регион:</span>RU
-                            </div>
-                            <div class="profile__info__points__point txt">
-                                <span>На сайте с:</span>06.03.2022
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="profile__right">
-                    <button class="txt" type="button">Выйти</button>
-                </div>
-            </section>
-            <section class="settings">
-                <form class="txt" action="" name="form_profile">
-                    <div class="settings__left">
-                        <div class="settings__conf">
-                            <label for="">
-                                <span>Трейд ссылка</span>
-                                <div>?</div>
-                            </label>
-                            <input class="txt" type="text" name="inp-traid_link" title="inp-traid_link" placeholder="https://www.faceit.com/ru/players/ppr1zers">
-                        </div>
-                        <div class="settings__conf">
-                            <label for="">
-                                <span>Регион</span>
-                                <div>?</div>
-                            </label>
-							<div class="settings__conf__regionInput">
-								<input class="txt" type="text" name="inp-region" title="inp-region" value="RU (Россия)" id="inp-region">
-								<div class="settings__conf__regionInput__regions">
-									<div class="settings__conf__regionInput__regions__header" onclick="toggle_region_list()">
-										<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
+			<div class="topic">
+				<section class="profile">
+					<div class="profile__top">
+						<div class="profile__left">
+							<div class="profile__avatar"><img src="img/pic/avatars/4135772dda9fabaa7e37b0428374dab7.jpg" alt=""></div>
+							<div class="profile__info">
+								<div class="profile__info__nickname txt">
+									<span>+W ХЛОООРКА (бустер)</span>
+									<div class="profile__info__nickname__steamLink">
+										<svg viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M16.6599 0.674316C14.2629 0.674316 12.3072 2.67093 12.2887 5.13235L9.56635 9.15087C8.80691 9.08003 8.1519 9.24196 7.5729 9.60557L1.07325 6.39596C-0.392348 8.63835 1.07325 10.88 1.07325 10.88L6.04976 13.2063C6.36803 14.7171 7.68018 15.8549 9.23245 15.8549C10.9204 15.8549 12.3192 14.5197 12.4727 12.8195L16.6635 9.66557C19.0675 9.66557 21.0233 7.65811 21.0233 5.1685L21.0226 5.16777C21.0233 2.68972 19.0675 0.674316 16.6599 0.674316ZM9.23245 14.9607C8.31103 14.9607 7.5182 14.4272 7.11539 13.6487L8.29256 14.1308C9.27081 14.5458 10.3826 14.0513 10.7734 13.0436C10.9624 12.5622 10.957 12.0243 10.7582 11.5469C10.5594 11.0695 10.1834 10.6914 9.71198 10.4947L8.71455 10.0798C8.88445 10.0403 9.05818 10.0204 9.23245 10.0205C10.5631 10.0205 11.6287 11.1186 11.6287 12.4899C11.6287 13.8612 10.5631 14.96 9.23245 14.96V14.9607ZM16.6642 8.18076C15.0458 8.18076 13.7308 6.83692 13.7308 5.16922C13.7308 3.50875 15.0423 2.15768 16.6642 2.15768C18.2712 2.15768 19.5861 3.50947 19.5861 5.16922C19.5861 6.84125 18.2704 8.1851 16.6642 8.18076ZM16.672 2.75189C15.3797 2.75189 14.3333 3.83116 14.3333 5.16199C14.3333 6.49282 15.3762 7.57209 16.672 7.57209C17.9564 7.57209 19.0107 6.49716 19.0107 5.16199C19.0107 3.82682 17.9564 2.75189 16.672 2.75189Z" fill="white"/>
 										</svg>
 									</div>
-									<div class="settings__conf__regionInput__regions__inner">
-										<div class="settings__conf__regionInput__regions__inner__search">
-											<input class="txt" type="text" name="inp_search_region" title="inp-search_region" placeholder="Поиск">
-										</div>
-										<div class="settings__conf__regionInput__regions__inner__list txt" id="regions_list">
-											<!-- <div class="settings__conf__regionInput__regions__inner__list__region" onclick="change_region('KZ')">KZ (Казахстан)</div>
-											<div class="settings__conf__regionInput__regions__inner__list__region" onclick="change_region('LV')">LV (Латвия)</div>
-											<div class="settings__conf__regionInput__regions__inner__list__region" onclick="change_region('RO')">RO (Румыния)</div>
-											<div class="settings__conf__regionInput__regions__inner__list__region" onclick="change_region('TR')">TR (Турция)</div>
-											<div class="settings__conf__regionInput__regions__inner__list__region" onclick="change_region('US')">US (США)</div>
-											<div class="settings__conf__regionInput__regions__inner__list__region" onclick="change_region('EN')">EN (Англия)</div> -->
+								</div>
+								<div class="profile__info__points">
+									<div class="profile__info__points__point txt">
+										<span>ID:</span>#434667
+									</div>
+									<div class="profile__info__points__point txt">
+										<span>Регион:</span>RU
+									</div>
+									<div class="profile__info__points__point txt">
+										<span>На сайте с:</span>06.03.2022
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="profile__right">
+							<button class="txt" type="button">Выйти</button>
+						</div>
+					</div>
+					<section class="settings">
+						<form class="txt" action="" name="form_profile">
+							<div class="settings__left">
+								<div class="settings__conf">
+									<label for="">
+										<span>Трейд ссылка</span>
+										<div>?</div>
+									</label>
+									<input class="txt" type="text" name="inp-traid_link" title="inp-traid_link" placeholder="https://www.faceit.com/ru/players/ppr1zers">
+								</div>
+								<div class="settings__conf">
+									<label for="">
+										<span>Регион</span>
+										<div>?</div>
+									</label>
+									<div class="settings__conf__regionInput">
+										<input class="txt" type="text" name="inp-region" title="inp-region" value="RU (Россия)" id="inp-region">
+										<div class="settings__conf__regionInput__regions">
+											<div class="settings__conf__regionInput__regions__header" onclick="toggle_region_list()">
+												<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
+												</svg>
+											</div>
+											<div class="settings__conf__regionInput__regions__inner">
+												<div class="settings__conf__regionInput__regions__inner__search">
+													<input class="txt" type="text" name="inp_search_region" title="inp-search_region" placeholder="Поиск">
+												</div>
+												<div class="settings__conf__regionInput__regions__inner__list txt" id="regions_list">
+													<!-- <div class="settings__conf__regionInput__regions__inner__list__region" onclick="change_region('KZ')">KZ (Казахстан)</div>
+													<div class="settings__conf__regionInput__regions__inner__list__region" onclick="change_region('LV')">LV (Латвия)</div>
+													<div class="settings__conf__regionInput__regions__inner__list__region" onclick="change_region('RO')">RO (Румыния)</div>
+													<div class="settings__conf__regionInput__regions__inner__list__region" onclick="change_region('TR')">TR (Турция)</div>
+													<div class="settings__conf__regionInput__regions__inner__list__region" onclick="change_region('US')">US (США)</div>
+													<div class="settings__conf__regionInput__regions__inner__list__region" onclick="change_region('EN')">EN (Англия)</div> -->
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-                        </div>
-                    </div>
-                    <div class="settings__right">
-                        <div class="settings__buttons">
-                            <button class="settings__buttons__button settings__buttons__button_back txt" type="button">Отменить</button>
-                            <button class="settings__buttons__button settings__buttons__button_save txt">Сохранить</button>
-                        </div>
-                    </div>
-                </form>
-            </section>
+							<div class="settings__right">
+								<div class="settings__buttons">
+									<button class="settings__buttons__button settings__buttons__button_back txt" type="button">Отменить</button>
+									<button class="settings__buttons__button settings__buttons__button_save txt">Сохранить</button>
+								</div>
+							</div>
+						</form>
+					</section>
+				</section>
+				<section class="pNotification" id="profile_notification">
+					<div class="pNotification__header">
+						<div class="pNotification__header__title txt">Уведомления</div>
+						<div class="pNotification__header__counter txt"></div>
+					</div>
+					<div class="pNotification__grid" id="profile_notification_grid">
+
+					</div>
+				</section>
+			</div>
 			<section class="more">
 				<div class="more__header">
 					<div class="more__header__nav" id="more_nav-forU" onclick="change_more_sections('forU')">

@@ -3,10 +3,7 @@
 .settings {
     position: relative;
     z-index: 3;
-    @include base.style-main_base;
     padding: 20px;
-    border-radius: 25px;
-    margin-bottom: 40px;
     & > form {
         width: 100%;
         display: flex;

@@ -1,5 +1,5 @@
 make_game_card_info(games[0]);
-set_top_img_paralax(550);
+set_top_img_paralax(550, 1);
 
 const for_scroll = document.querySelector('.forScroll');
 const header_center = document.querySelector('#centerHeader_gameCard');

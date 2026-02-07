@@ -9,6 +9,7 @@
 @use "elements/blackoutBlock";
 @use "elements/gameV";
 @use "elements/gameH";
+@use "elements/switch";
 @use "elements/blockButtonMore";
 @use "elements/inputList";
 @use "elements/topImgParalaxBlock";
@@ -41,5 +42,7 @@
 @use "elements/authors/authors";
 // ~ Series
 @use "elements/series/series";
+// ~ Author
+@use "elements/author/author";
 // ~ Adaptation
 @use "adaptation/adaptation";

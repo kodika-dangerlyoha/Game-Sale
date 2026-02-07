@@ -303,43 +303,47 @@
 	<main id="main">
         <div class="topImgParalaxBlock" id="top_img_paralax_block"><img src="img/banners/big.png" alt=""></div>
         <div class="inner inner_w1220p150">
-            <section class="series__head txt">
-                <span class="flex-center">Серия игр</span>
-                <h2 class="flex-center">Assassin’s Creed</h2>
-            </section>
-            <section class="series__about series__about_hidden">
-                <div class="series__about__block txt">
+            <section class="author__top">
+                <div class="author__top__head">
+                    <div class="author__top__head__left">
+                        <div class="author__top__head__left__logo flex-center"><img src="https://avatars.fastly.steamstatic.com/7ba781b5f0b8a99d4cc0b0b0dcaa22df73db7db2_full.jpg" alt=""></div>
+                        <div class="author__top__head__left__title txt">
+                            <span>Издатель</span>
+                            <h2>Ubisoft</h2>
+                        </div>
+                    </div>
+                    <div class="author__top__head__right">
+                        <div class="author__top__head__right__count txt">20 Игр</div>
+                    </div>
+                </div>
+                <div class="author__top__about txt">
                     <h3>Титулованная серия впервые на ПК</h3>
-                    <p>Первая часть серии в своё время вышла на консолях прошлого поколения, 
-                        собрала уйму наград и благополучно миновала просторы ПК, чем вызвала массу негодования 
-                        и скорби в игровом сообществе. Вторая часть следует курсом, взятым ещё при выпуске GTA V, 
-                        когда спустя год после релиза, улучшенная версия игры появляется на ПК, чтобы предстать во всей своей технологической красе.</p>
+                    <p>Первая часть серии в своё время вышла на консолях прошлого поколения, собрала уйму наград и благополучно миновала просторы ПК, 
+                        чем вызвала массу негодования и скорби в игровом сообществе. Вторая часть следует курсом, взятым ещё при выпуске GTA V, когда 
+                        спустя год после релиза, улучшенная версия игры появляется на ПК, чтобы предстать во всей своей технологической красе.</p>
                     <p>События Red Dead Redemption 2 разворачиваются в Америке образца 1899 года. 
                         Эпоха Дикого Запада подходит к концу. Главный герой - Артур Морган, бандит, 
                         скрывается от правосудия вместе с членами своей банды после неудачного ограбления банка. 
-                        По пятам за героем следуют федеральные агенты, внутри банды растут противоречия. 
-                        Артуру предстоит выбрать, что для него важнее: его банда, которая его вырастила или же собственные идеалы.</p>
-                    <p>События Red Dead Redemption 2 разворачиваются в Америке образца 1899 года. 
-                    Эпоха Дикого Запада подходит к концу. Главный герой - Артур Морган, бандит, 
-                    скрывается от правосудия вместе с членами своей банды после неудачного ограбления банка. 
-                    По пятам за героем следуют федеральные агенты, внутри банды растут противоречия. 
-                    Артуру предстоит выбрать, что для него важнее: его банда, которая его вырастила или же собственные идеалы.</p>
-                    <p>События Red Dead Redemption 2 разворачиваются в Америке образца 1899 года. 
-                    Эпоха Дикого Запада подходит к концу. Главный герой - Артур Морган, бандит, 
-                    скрывается от правосудия вместе с членами своей банды после неудачного ограбления банка. 
-                    По пятам за героем следуют федеральные агенты, внутри банды растут противоречия. 
-                    Артуру предстоит выбрать, что для него важнее: его банда, которая его вырастила или же собственные идеалы.</p>
-                </div>
-                <div class="series__about__buttonBlock">
-                    <button class="txt" type="button" onclick="toggle_series_about()">+</button>
+                        По пятам за героем следуют федеральные агенты, внутри банды растут противоречия. Артуру предстоит выбрать, 
+                        что для него важнее: его банда, которая его вырастила или же собственные идеалы.</p>
                 </div>
             </section>
-			<section class="series__games">
-				<div class="series__games__head"><h2 class="txt">Игры серии</h2></div>
-				<div class="series__games__grid" id="series_grid">
-
-				</div>
-			</section>
+            <section class="author__games" id="switch_section-author">
+                <div class="switch__head">
+                    <div class="switch__head__point switch__head__point_active" data-title="all" id="switch_point-all" onclick="switch_section('all', 'author__games__grid_active')">
+						<div class="switch__head__point__text txt">Все игры</div>
+					</div>
+                    <div class="switch__head__point" data-title="new" id="switch_point-new" onclick="switch_section('new', 'author__games__grid_active')">
+						<div class="switch__head__point__text txt">Новинки</div>
+					</div>
+                    <div class="switch__head__point" data-title="pop" id="switch_point-pop" onclick="switch_section('pop', 'author__games__grid_active')">
+						<div class="switch__head__point__text txt">Популярные</div>
+					</div>
+                </div>
+                <div class="author__games__grid switch__content author__games__grid_active" id="switch_content-all"></div>
+                <div class="author__games__grid switch__content" id="switch_content-new"></div>
+                <div class="author__games__grid switch__content" id="switch_content-pop"></div>
+            </section>
         </div>
 	</main>
 	
@@ -412,10 +416,11 @@
 	<script type="text/javascript" src="elements/elements.js"></script>
 	<script type="text/javascript" src="scripts/makeContentFunctions.js"></script>
 	<script type="text/javascript" src="scripts/script.js"></script>
+	<script type="text/javascript" src="scripts/switch_section.js"></script>
     <script type="text/javascript" src="scripts/header_bg.js"></script>
     <script type="text/javascript" src="scripts/header_catalog.js"></script>
     <script type="text/javascript" src="scripts/top_img_paralax.js"></script>
     <script type="text/javascript" src="scripts/notification.js"></script>
-	<script type="text/javascript" src="scripts/script_series.js"></script>
+	<script type="text/javascript" src="scripts/app_author.js"></script>
 </body>
 </html>

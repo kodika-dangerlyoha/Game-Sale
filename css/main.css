@@ -1032,6 +1032,8 @@ label {
   right: 15px;
   width: 300px;
   transition: 0.15s;
+  max-height: 500px;
+  overflow: hidden;
   display: block;
   visibility: hidden;
   opacity: 1;
@@ -1695,6 +1697,53 @@ label {
   text-shadow: 0 0 10px rgb(39, 39, 39);
 }
 
+.switch__head {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+.switch__head__point {
+  position: relative;
+  padding: 12px 16px 12px 16px;
+  cursor: pointer;
+  border-radius: 23px;
+  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.switch__head__point:hover {
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
+}
+.switch__head__point:active {
+  transform: scale(0.95);
+}
+.switch__head__point__text {
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.switch__head__point_active {
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
+}
+.switch__head__point_active:hover {
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
+}
+.switch__head__point:active {
+  transform: scale(0.95);
+}
+.switch__content {
+  animation: open_offers_games 0.5s ease 1;
+}
+
 .blockButtonMore {
   display: flex;
   justify-content: end;
@@ -2023,7 +2072,7 @@ label {
   overflow: hidden;
 }
 .topImgParalaxBlock > img {
-  width: 100%;
+  min-width: 100%;
   min-height: 100%;
 }
 
@@ -4377,17 +4426,29 @@ label {
   padding: 4px;
 }
 
+.topic {
+  display: flex;
+  align-items: start;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
 .profile {
+  border-radius: 25px;
+  flex-grow: 1;
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+}
+.profile__top {
+  border-radius: 24px 24px 0 0;
   padding: 20px;
-  border-radius: 25px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 .profile__left {
   display: flex;
@@ -4477,17 +4538,128 @@ label {
   margin-right: 5px;
 }
 
-.settings {
-  position: relative;
-  z-index: 3;
+.pNotification {
+  width: 350px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  overflow: hidden;
+  max-height: 247px;
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+}
+.pNotification__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 13px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.pNotification__header__link {
+  color: rgb(200, 200, 200);
+  font-size: 12px;
+  transition: 0.15s;
+  cursor: pointer;
+}
+.pNotification__header__link:hover {
+  color: rgb(1, 162, 255);
+}
+.pNotification__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  overflow: auto;
+  max-height: 211px;
+}
+.pNotification__grid::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+}
+.pNotification__grid::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.15); /* Цвет фона трека */
+  border-radius: 10px;
+}
+.pNotification__grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15); /* Цвет ползунка */
+  border-radius: 10px;
+}
+.pNotification__grid::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.pNotification__grid__notification {
+  border-radius: 10px;
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+}
+.pNotification__grid__notification__point {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pNotification__grid__notification__point__circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgb(1, 162, 255);
+}
+.pNotification__grid__notification__point__circle_error {
+  background-color: rgb(170, 22, 22);
+}
+.pNotification__grid__notification__point__circle_nothing {
+  background-color: rgb(255, 255, 255);
+}
+.pNotification__grid__notification__point__smile {
+  font-size: 14px;
+  transform: rotate(90deg);
+}
+.pNotification__grid__notification__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgb(245, 245, 245);
+}
+.pNotification__grid__notification__text > span {
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+}
+.pNotification__grid__notification__buttonClose {
+  position: absolute;
+  right: 0px;
+  bottom: auto;
+  top: 0px;
+  left: auto;
+  width: 20px;
+  height: 20px;
+  padding: 6px;
+  border-radius: 50%;
+  background-color: red;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.pNotification__grid__notification__buttonClose > img {
+  width: 100%;
+}
+.pNotification__grid__notification_new {
+  border-color: rgba(1, 162, 255, 0.8);
+}
+.pNotification__grid__nothing {
+  height: 25px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
+.settings {
+  position: relative;
+  z-index: 3;
   padding: 20px;
-  border-radius: 25px;
-  margin-bottom: 40px;
 }
 .settings > form {
   width: 100%;
@@ -6074,7 +6246,7 @@ label {
   display: flex;
   flex-direction: column;
   font-weight: 700;
-  padding-top: 50px;
+  padding-top: 0px;
   text-shadow: 0 0 50px rgba(0, 0, 0, 0.55);
   margin-bottom: 20px;
 }
@@ -6088,13 +6260,15 @@ label {
   position: relative;
   z-index: 2;
   width: 100%;
+  margin-bottom: 20px;
+  transition: 0.4s;
 }
 .series__about__block {
   max-height: 1000px;
   padding: 20px 23px;
   overflow: hidden;
   border-radius: 20px;
-  transition: 0.2s;
+  transition: 0.4s;
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
@@ -6147,9 +6321,99 @@ label {
 .series__about__buttonBlock > button:active {
   transform: scale(0.95);
 }
+.series__about_hidden {
+  margin-bottom: 50px;
+}
 .series__about_hidden .series__about__block {
-  max-height: 300px;
+  max-height: 150px;
 }
 .series__about_hidden .series__about__buttonBlock {
   margin-top: -60px;
+}
+.series__games__head {
+  margin-bottom: 20px;
+}
+.series__games__grid {
+  display: grid;
+  grid-gap: 35px;
+  grid-template-columns: repeat(3, minmax(0px, 1fr));
+}
+
+.author__top {
+  position: relative;
+  z-index: 2;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  background-color: rgba(50, 50, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.author__top__head {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+}
+.author__top__head__left {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.author__top__head__left__logo {
+  height: 150px;
+  padding-right: 30px;
+  margin-right: 30px;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+.author__top__head__left__logo > img {
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 20px;
+}
+.author__top__head__left__title {
+  display: flex;
+  flex-direction: column;
+}
+.author__top__head__left__title > span {
+  font-size: 30px;
+  color: rgb(200, 200, 200);
+}
+.author__top__head__left__title > h2 {
+  font-size: 72px;
+  font-weight: 700;
+}
+.author__top__head__right {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.author__top__head__right__count {
+  font-size: 24px;
+}
+.author__top__about {
+  padding: 30px;
+}
+.author__top__about > h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.author__top__about > p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.author__top__about > p:last-child {
+  margin-bottom: 0;
+}
+.author__games__grid {
+  display: grid;
+  grid-gap: 35px;
+  grid-template-columns: repeat(3, minmax(0px, 1fr));
+  display: none;
+}
+.author__games__grid_active {
+  display: grid;
 }/*# sourceMappingURL=main.css.map */
