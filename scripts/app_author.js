@@ -19,6 +19,7 @@ function make_author_games() {
     document.querySelector('#switch_content-all').innerHTML = games_all;
     document.querySelector('#switch_content-new').innerHTML = games_new;
     document.querySelector('#switch_content-pop').innerHTML = games_pop;
+    document.querySelector('#switch_point-all span').innerHTML = list_all.length;
 }
 
 make_author_games();

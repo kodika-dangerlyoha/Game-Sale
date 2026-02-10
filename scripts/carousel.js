@@ -4,19 +4,19 @@ function get_carousel_bannet_list_request() {
     return games_list.filter(game_info => game_info.carousel === true);
 }
 
-let game_info = {
-    'carusel': [
-        {
-            'id': 1,
-        },
-        {
-            'id': 2,
-        },
-        {
-            'id': 3,
-        },
-    ],
-}
+// let game_info = {
+//     'carusel': [
+//         {
+//             'id': 1,
+//         },
+//         {
+//             'id': 2,
+//         },
+//         {
+//             'id': 3,
+//         },
+//     ],
+// }
 
 function make_carousel() {
     let carusel_html = document.querySelector('#grid_banners');
@@ -37,11 +37,11 @@ function scroll_carousel(bool) {
     let carusel_items = document.querySelectorAll('.carousel__banner');
     let carusel_bg = document.querySelectorAll('.carousel__gridBG__bg');
 
-    let btl = document.querySelector('#carousel_button_left')
-    let btr = document.querySelector('#carousel_button_right')
+    let btl = document.querySelector('#carousel_button_left');
+    let btr = document.querySelector('#carousel_button_right');
 
-    btl.disabled = true
-    btr.disabled = true
+    btl.disabled = true;
+    btr.disabled = true;
 
     document.querySelector('.carousel__gridBG__bg_active').classList.remove('carousel__gridBG__bg_active');
 
@@ -59,14 +59,14 @@ function scroll_carousel(bool) {
                 `${count === 0 ? 'margin-left: 0' : ''};
                 z-index: ${carousel_banner_list.length - count + 1};
                 transform: scale(${1 - count * 0.05});
-                }`
+                }`;
             html_elem.getElementsByTagName('a')[0].style = `${count === 0 ? 'display: block' : 'display: none'}`;
 
             carusel_bg[i].setAttribute('order', count);
             if (count == 0) {
                 carusel_bg[i].classList.add('carousel__gridBG__bg_active');
             }
-            i++
+            i++;
         })
     }
 
@@ -85,7 +85,7 @@ function scroll_carousel(bool) {
                 `${count === 0 ? 'margin-left: 0' : ''};
                 z-index: ${carousel_banner_list.length - count + 1};
                 transform: scale(${1 - count * 0.05});
-                }`
+                }`;
             html_elem.getElementsByTagName('a')[0].style = `${count === 0 ? 'display: block' : 'display: none'}`;
 
 
@@ -93,7 +93,7 @@ function scroll_carousel(bool) {
             if (count == 0) {
                 carusel_bg[i].classList.add('carousel__gridBG__bg_active');
             }
-            i++
+            i++;
         })
     } 
     
@@ -103,17 +103,17 @@ function scroll_carousel(bool) {
 
     setTimeout(() => {
         if (Number(carusel_items[0].getAttribute('order')) >= 0){
-            btl.disabled = true
-            btr.disabled = false
+            btl.disabled = true;
+            btr.disabled = false;
             btl.classList.add('carousel__buttons__button_disactive');
         } else if (Number(carusel_items[carusel_items.length - 1].getAttribute('order')) === 0){
-            btl.disabled = false
-            btr.disabled = true
+            btl.disabled = false;
+            btr.disabled = true;
             btr.classList.add('carousel__buttons__button_disactive');
         }
         else {
-            btl.disabled = false
-            btr.disabled = false
+            btl.disabled = false;
+            btr.disabled = false;
         }
-    }, 505)
+    }, 505);
 }

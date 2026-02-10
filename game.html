@@ -494,7 +494,7 @@
 						<div class="mainInfo__interaction__right">
 							<div class="mainInfo__interaction__prices txt">
 								<div class="mainInfo__interaction__prices__old">1570₽</div>
-								<div class="mainInfo__interaction__prices__new">1235₽</div>
+								<div class="mainInfo__interaction__prices__new"><span id="region_price">Ru</span>1235₽</div>
 							</div>
 							<div class="mainInfo__interaction__discount txt">52%</div>
 						</div>
@@ -611,19 +611,19 @@
 					</div>
 				</div>
 			</section>
-			<section class="similar similar_loading loadingContent" id="similar">
-				<div class="similar__header">
-					<div class="similar__header__nav similar__header__nav_active" id="similar_nav-similar" onclick="change_similar_sections('similar')">
-						<div class="similar__header__nav__text txt">Похожие</div>
+			<section class="similar similar_loading loadingContent" id="switch_section-game">
+				<div class="switch__head">
+					<div class="switch__head__point switch__head__point_active" data-title="similar" id="switch_point-similar" onclick="switch_section('similar', 'similar__grid_active')">
+						<div class="switch__head__point__text txt">Похожие</div>
 					</div>
-					<div class="similar__header__nav" id="similar_nav-series" onclick="change_similar_sections('series')">
-						<div class="similar__header__nav__text txt">Игры серии</div>
+					<div class="switch__head__point" data-title="series" id="switch_point-series" onclick="switch_section('series', 'similar__grid_active')">
+						<div class="switch__head__point__text txt">Игры серии</div>
 					</div>
 				</div>
-				<div class="similar__grid similar__grid_active gridHorizontalGames" id="similar-similar">
+				<div class="similar__grid switch__content similar__grid_active" id="switch_content-similar">
 					
 				</div>
-				<div class="similar__grid gridHorizontalGames" id="similar-series">
+				<div class="similar__grid switch__content" id="switch_content-series">
 					
 				</div>
 			</section>
@@ -704,6 +704,7 @@
     <script type="text/javascript" src="scripts/notification.js"></script>
 	<script type="text/javascript" src="scripts/video_player.js"></script>
 	<script type="text/javascript" src="scripts/top_img_paralax.js"></script>
+	<script type="text/javascript" src="scripts/switch_section.js"></script>
 	<script type="text/javascript" src="scripts/script_gameCard.js"></script>
 </body>
 </html>

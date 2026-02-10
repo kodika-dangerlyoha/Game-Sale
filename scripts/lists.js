@@ -878,3 +878,10 @@ let authors = [
     'link': ""
   },
 ]
+
+let user = {
+    'id': 1,
+    'region': 'Ru',
+    'nickname': 'ladn0!',
+    'avatar_link': 'https://avatars.fastly.steamstatic.com/bb608759e4948526190e2af763b31fe4d78233a7_full.jpg',
+}

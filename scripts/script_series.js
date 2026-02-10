@@ -1,15 +1,14 @@
 set_top_img_paralax(416, 0.6);
 
 function toggle_series_about() {
-    const about = document.querySelector('.series__about');
-    const button = about.querySelector('.series__about__buttonBlock button');
-    if (document.querySelector('.series__about_hidden')) {
-        about.classList.remove('series__about_hidden');
-        button.innerHTML = '-';
-        return
-    }
-    about.classList.add('series__about_hidden');
-    button.innerHTML = '+';
+    // const about = document.querySelector('.series__about');
+    // if (document.querySelector('.series__about_hidden')) {
+    //     about.classList.remove('series__about_hidden');
+    //     return
+    // }
+    // about.classList.add('series__about_hidden');
+
+    document.querySelector('.series__about').classList.toggle('series__about_hidden');
 }
 
 function make_series() {

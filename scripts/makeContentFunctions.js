@@ -72,8 +72,8 @@ function makeOffers_index() {
 }
 
 function makeSimilar_gameCard() {
-    document.querySelector('#similar #similar-similar').innerHTML += games_list.reduce((summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
-    document.querySelector('#similar #similar-series').innerHTML += games_list.reduce((summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
+    document.querySelector('#switch_section-game #switch_content-similar').innerHTML += games_list.reduce((summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
+    document.querySelector('#switch_section-game #switch_content-series').innerHTML += games_list.reduce((summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
 }
 
 function makeCatalog_catalog() {

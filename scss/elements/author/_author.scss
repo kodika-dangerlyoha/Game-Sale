@@ -11,7 +11,6 @@
             border-bottom: 1px solid rgba(255, 255, 255, .2);
             display: flex;
             align-items: center;
-            justify-content: space-between;
             padding: 30px;
             &__left {
                 display: flex;
@@ -39,14 +38,6 @@
                         font-size: 72px;
                         font-weight: 700;
                     }
-                }
-            }
-            &__right {
-                display: flex;
-                align-items: center;
-                justify-content: end;
-                &__count {
-                    font-size: 24px;
                 }
             }
         }
