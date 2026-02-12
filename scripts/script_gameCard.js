@@ -1,116 +1,10 @@
 make_game_card_info(games[0]);
 set_top_img_paralax(550, 1);
 
-const for_scroll = document.querySelector('.forScroll');
-const header_center = document.querySelector('#centerHeader_gameCard');
-const mini_game_card = document.querySelector('.miniGameCard');
-const main_info = document.querySelector('.mainInfo');
-let screenshots_count = 0;
-let video_count = 0;
-let this_count = 0;
-
-
-function add_horizontal_scroll(el) {
-    el.addEventListener('wheel', (e) => {
-        console.log('scroll');
-        e.preventDefault(); // Отменяем вертикальный скролл
-        el.scrollLeft += e.deltaY; // deltaY - вертикальное движение колеса
-        console.log(el.scrollLeft);
-    });
-}
-
-const scroll_horizontal = document.querySelector('#interface_scroll_horizontal');
-const scroll_categories = document.querySelector('#game_categories');
-add_horizontal_scroll(scroll_horizontal);
-add_horizontal_scroll(scroll_categories);
-
-
-
-// const scroll_horizontal = document.querySelector('#interface_scroll_horizontal');
-// let target = scroll_horizontal.scrollLeft;
-
-// const maxScroll = scroll_horizontal.scrollWidth - scroll_horizontal.clientWidth;
-// const minScroll = 0;
-
-// scroll_horizontal.addEventListener('wheel', (e) => {
-//     e.preventDefault();
-//     target += e.deltaY;
-//     if (target < minScroll) target = minScroll;
-//     if (target > maxScroll) target = maxScroll;
-
-//     console.log(target);
-//     // Запускаем плавную прокрутку
-//     smoothScrollTo(target);
-// }, { passive: false });
-
-// function smoothScrollTo(targetPosition) {
-//     const start = scroll_horizontal.scrollLeft;
-//     const change = targetPosition - start;
-//     const duration = 100; // мс
-//     let startTime = null;
-    
-//     function animate(currentTime) {
-//         if (!startTime) startTime = currentTime;
-//         const elapsed = currentTime - startTime;
-//         const progress = Math.min(elapsed / duration, 1);
-        
-//         // Простая линейная анимация
-//         // Для лучшего эффекта используйте ease-функции из примера 3
-//         scroll_horizontal.scrollLeft = start + (change * progress);
-        
-//         if (progress < 1) {
-//             requestAnimationFrame(animate);
-//         }
-//     }
-    
-//     requestAnimationFrame(animate);
-// }
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            mini_game_card.style.display = "flex";
-            header_center.classList.add('header__center_hidden');
-
-            setTimeout(() => {
-                header_center.style.display = "none";
-            }, 50);
-            
-            setTimeout(() => {
-                mini_game_card.classList.add('miniGameCard_show');
-                main_info.classList.add('mainInfo_hidden');
-            }, 60);
-        } 
-        else {
-            header_center.style.display = "flex";
-            mini_game_card.classList.remove('miniGameCard_show');
-            main_info.classList.remove('mainInfo_hidden');
-            
-            setTimeout(() => {
-                mini_game_card.style.display = "none";
-            }, 200)
-
-            setTimeout(() => {
-                header_center.classList.remove('header__center_hidden');
-            }, 210)
-        }
-    });
-}, {
-    root: null, // отслеживаем относительно viewport
-    threshold: 0, // срабатывает при любом пересечении
-    rootMargin: '-100px 0px 0px 0px' // top, right, bottom, left
-});
-
-// Начинаем наблюдать за элементом
-observer.observe(document.querySelector('#main_info'));
-
-// window.addEventListener("scroll", function(){
-//     document.querySelector('.bigImgBlock').style.transform = "translateY(" + (this.scrollY) / 2 + "px)";
-//     for_scroll.style.opacity = (this.scrollY) / 300;
-//     for_scroll.style.transform = "translateY(" + (this.scrollY) / 2 + "px)";
-// });
-
 function make_mediaList(game) {
+    let screenshots_count = 0;
+    let video_count = 0;
+    // let this_count = 0;
     let mediaList_html = "";
     let i = 0;
     
@@ -150,6 +44,127 @@ function make_mediaList(game) {
 }
 
 make_mediaList(games[0]);
+
+// const for_scroll = document.querySelector('.forScroll');
+const header_center = document.querySelector('#centerHeader_gameCard');
+const mini_game_card = document.querySelector('.miniGameCard');
+const main_info = document.querySelector('.mainInfo');
+
+// function check_element_overflow(container, content) {
+//     const container_rect = container.getBoundingClientRect();
+//     const content_rect = content.getBoundingClientRect();
+    
+//     return {
+//         top: content_rect.top < container_rect.top,
+//         right: content_rect.right > container_rect.right,
+//         bottom: content_rect.bottom > container_rect.bottom,
+//         left: content_rect.left < container_rect.left
+//     };
+// }
+
+const container = document.querySelector('#game_categories');
+const content_right = container.querySelectorAll('a')[container.querySelectorAll('a').length - 1];
+const content_left = container.querySelectorAll('a')[0];
+const scroll_media_banner = document.querySelector('#interface_scroll_horizontal');
+const scroll_categories = document.querySelector('#game_categories');
+
+function update_scroll_shadows(element, overflow) {
+    element.classList.remove('mainInfo__info__category_shadowLeft', 'mainInfo__info__category_shadowRight', 'mainInfo__info__category_shadowAll');
+    
+    if (overflow.right && overflow.left) {
+        element.classList.remove('mainInfo__info__category_shadowLeft', 'mainInfo__info__category_shadowRight');
+        element.classList.add('mainInfo__info__category_shadowAll');
+    }
+    else if (overflow.right && !overflow.left) {
+        element.classList.remove('mainInfo__info__category_shadowRight', 'mainInfo__info__category_shadowAll');
+        element.classList.add('mainInfo__info__category_shadowLeft');
+    }
+    else if (!overflow.right && overflow.left){
+        element.classList.remove('mainInfo__info__category_shadowLeft', 'mainInfo__info__category_shadowAll');
+        element.classList.add('mainInfo__info__category_shadowRight');
+    }
+}
+
+function check_element_overflow_cat() {
+    const container_rect = container.getBoundingClientRect();
+    const content_rect_right = content_right.getBoundingClientRect();
+    const content_rect_left = content_left.getBoundingClientRect();
+    
+    return {
+        right: content_rect_right.right > container_rect.right,
+        left: content_rect_left.left < container_rect.left
+    };
+}
+
+function horizontal_scroll(evt) {
+    evt.preventDefault();
+    evt.currentTarget.scrollLeft += evt.deltaY;
+}  
+
+function horizontal_scroll_wShadow(evt) {
+    evt.preventDefault();
+    const elem = evt.currentTarget;
+    elem.scrollLeft += evt.deltaY;
+
+    setTimeout(() => {
+        const overflow = check_element_overflow_cat();
+        console.log(elem);
+        update_scroll_shadows(elem, overflow);
+    }, 500);
+}
+
+function add_horizontal_scroll(el) {
+    const type = el.dataset.scrolltype;
+    if (type == "shadow") {
+        el.addEventListener('wheel', (evt) => horizontal_scroll_wShadow(evt));
+    }
+    else if (type == "def") {
+        el.addEventListener('wheel', (evt) => horizontal_scroll(evt));
+    }
+}
+
+update_scroll_shadows(container, check_element_overflow_cat());
+add_horizontal_scroll(scroll_media_banner);
+add_horizontal_scroll(scroll_categories);
+
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            mini_game_card.style.display = "flex";
+            header_center.classList.add('header__center_hidden');
+
+            setTimeout(() => {
+                header_center.style.display = "none";
+            }, 50);
+            
+            setTimeout(() => {
+                mini_game_card.classList.add('miniGameCard_show');
+                main_info.classList.add('mainInfo_hidden');
+            }, 60);
+        } 
+        else {
+            header_center.style.display = "flex";
+            mini_game_card.classList.remove('miniGameCard_show');
+            main_info.classList.remove('mainInfo_hidden');
+            
+            setTimeout(() => {
+                mini_game_card.style.display = "none";
+            }, 200)
+
+            setTimeout(() => {
+                header_center.classList.remove('header__center_hidden');
+            }, 210)
+        }
+    });
+}, {
+    root: null, // отслеживаем относительно viewport
+    threshold: 0, // срабатывает при любом пересечении
+    rootMargin: '-100px 0px 0px 0px' // top, right, bottom, left
+});
+
+// Начинаем наблюдать за элементом
+observer.observe(document.querySelector('#main_info'));
 
 function change_media(this_treiler, id, link) {
     const active_block = document.querySelector('.mainInfo__banner__interface__bottom__medialist__media_active');
@@ -216,19 +231,6 @@ function toggle_screenshots_list() {
 
 // -------- Картинка во весь экран --------
 
-// function toggle_fullScreen() {
-//     const active = document.querySelector('.fullScreen_active');
-//     const block = document.querySelector('.fullScreen');
-//     if (active) {
-//         block.classList.remove('fullScreen_active');
-//         document.body.style.overflow = 'auto';
-//     }
-//     else {
-//         block.classList.add('fullScreen_active');
-//         document.body.style.overflow = 'hidden';
-//     }
-// }
-
 const player = document.querySelector('#player');
 
 async function toggle_fullScreen() {
@@ -245,12 +247,6 @@ document.addEventListener('fullscreenchange', () => {
         player.classList.remove('mainInfo__banner_fullscreen');
     }
 });
-
-// function change_img_fullScreen(link) {
-//     document.querySelector('#fullScreen_img').src = link;
-//     // document.querySelector('#game_banner').src = link;
-// }
-
 
 // ------------ 
 

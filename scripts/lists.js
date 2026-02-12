@@ -810,70 +810,70 @@ let authors = [
   {
     'id': 'p1',
     'title': 'Activison',
-    'logo': "https://avatars.fastly.steamstatic.com/4f1187c11ad41f8aa58b9109efd52c2f8bca9918_full.jpg",
+    'logo': "https://static.gabestore.ru/category/MFRPev40n9ctX_iYhWb9HT0p6tsJ1bCa.png",
     'count_games': "3",
     'link': ""
   },
   {
     'id': 'p2',
     'title': 'Ubisoft',
-    'logo': "https://avatars.fastly.steamstatic.com/2b2486ae5a70d69c55f020ce8384d04646ddba4e_full.jpg",
+    'logo': "https://static.gabestore.ru/category/OEOxXYDZ-NhNK3g5ImnO0SBSnx5wJKIk.png",
     'count_games': "23",
     'link': ""
   },
   {
     'id': 'p3',
     'title': 'Gaijin',
-    'logo': "https://avatars.fastly.steamstatic.com/330261b8aeaf4428f15ee511a0a20c3d8153c432_full.jpg",
+    'logo': "https://static.gabestore.ru/category/NxvgXKP6vcfTT-Ocgna7UwkPfAYzq_li.png",
     'count_games': "5",
     'link': ""
   },
   {
     'id': 'p4',
     'title': 'Lesta',
-    'logo': "https://avatars.fastly.steamstatic.com/6b62a91eb5a093261d8831d1908717bab0d687e9_full.jpg",
+    'logo': "https://static.gabestore.ru/category/xPCGcQy4X-IpYkr4g85dHe9M0DaSDfhY.png",
     'count_games': "3",
     'link': ""
   },
   {
     'id': 'p5',
     'title': 'YGYg gyug ygYGg jhrcuhhg',
-    'logo': "https://avatars.fastly.steamstatic.com/d83a1786f23929deb5f20326f128bbc13a9a1e85_full.jpg",
+    'logo': "https://static.gabestore.ru/category/GZ8XT8poX8OltmJiJdY21wWksc3U3KXS.png",
     'count_games': "12",
     'link': ""
   },
   {
     'id': 'p6',
     'title': 'Arnold',
-    'logo': "https://avatars.fastly.steamstatic.com/6b62a91eb5a093261d8831d1908717bab0d687e9_full.jpg",
+    'logo': "https://static.gabestore.ru/category/PUnX_DQ0i3tffctkgIalyO61PJ2uNIeD.png",
     'count_games': "104",
     'link': ""
   },
   {
     'id': 'p7',
     'title': 'Shwarczeneger',
-    'logo': "https://avatars.fastly.steamstatic.com/d83a1786f23929deb5f20326f128bbc13a9a1e85_full.jpg",
+    'logo': "https://static.gabestore.ru/category/AwlsFXhdWHRyUxzQGcKaijSQ6XdcZm0A.png",
     'count_games': "650",
     'link': ""
   },
   {
     'id': 'p8',
     'title': 'Haisenberg',
-    'logo': "https://avatars.fastly.steamstatic.com/7ba781b5f0b8a99d4cc0b0b0dcaa22df73db7db2_full.jpg",
+    'logo': "https://static.gabestore.ru/category/GZ8XT8poX8OltmJiJdY21wWksc3U3KXS.png",
     'count_games': "1",
     'link': ""
   },
   {
     'id': 'p9',
     'title': 'Kakostavitugol',
-    'logo': "https://avatars.fastly.steamstatic.com/97ea9619ba3076b8549c1484bef9308a67f0c64d_full.jpg",
+    'logo': "https://static.gabestore.ru/category/GZ8XT8poX8OltmJiJdY21wWksc3U3KXS.png",
     'count_games': "2",
     'link': ""
   },
   {
     'id': 'p10',
     'title': 'Sladki Snov',
-    'logo': "https://avatars.fastly.steamstatic.com/6b62a91eb5a093261d8831d1908717bab0d687e9_full.jpg",
+    'logo': "https://static.gabestore.ru/category/GZ8XT8poX8OltmJiJdY21wWksc3U3KXS.png",
     'count_games': "18",
     'link': ""
   },
@@ -883,5 +883,5 @@ let user = {
     'id': 1,
     'region': 'Ru',
     'nickname': 'ladn0!',
-    'avatar_link': 'https://avatars.fastly.steamstatic.com/bb608759e4948526190e2af763b31fe4d78233a7_full.jpg',
+    'avatar_link': 'https://static.gabestore.ru/category/OEOxXYDZ-NhNK3g5ImnO0SBSnx5wJKIk.png',
 }

@@ -544,69 +544,39 @@
         &__category {
             display: flex;
             gap: 7px;
-            // flex-wrap: wrap;
             border-radius: 13px;
             overflow-y: auto;
             width: 100%;
-            transition: .1s;
+            transition: .2s;
             scroll-behavior: smooth;
+            border-right: 1px solid transparent;
+            border-left: 1px solid transparent;
             @include base.style-webkit_scrollbar_hidden;
-            &__nav {
-                background-color: rgba(0, 0, 0, 0.2);
-                position: relative;
-                z-index: 2;
-                border-radius: 7px;
-                height: 36px;
-                width: 36px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: 2px solid rgba(255, 255, 255, 0);
-                transition: 0.15s;
-                cursor: pointer;
-                & img {
-                    width: 24px;
-                    filter: invert(1);
-                }
-                &__forHover {
-                    visibility: hidden;
-                    position: absolute;
-                    left: -100px;
-                    right: -100px;
-                    top: 42px;
-                    display: flex;
-                    justify-content: center;
-                    opacity: 0;
-                    transition: 0.15s;
-                    &__text {
-                        border-radius: 7px;
-                        background-color: rgb(67, 67, 67);
-                        padding: 5px;
-                        border: 2px solid rgba(255, 255, 255, 0.2);
-                        font-size: 14px;
-                        font-weight: 300;
-                    }
-                }
-                &:hover &__forHover{
-                    opacity: 1;
-                    visibility: visible;
-                }
-                &:hover { 
-                    z-index: 5;
-                    border: 2px solid rgba(255, 255, 255, 0.2);
-                }
-            }
             &__point {
-                @include base.style-main_click;
                 border-radius: 13px;
                 padding: 3px 10px;
                 font-size: 13px;
                 text-align: center;
                 cursor: pointer;
+                @include base.style-main_click;
+                box-shadow: 0 0 0 0 transparent;
                 & > span {
                     color: rgb(200, 200, 200);
                     margin-right: 5px;
                 }   
+            }
+            &_shadowAll {
+                border-right-color: rgba(255, 255, 255, .5);
+                border-left-color: rgba(255, 255, 255, .5);
+                box-shadow: inset 10px 0px 10px -10px rgba(0, 0, 0, 1), inset -10px 0px 10px -10px rgba(0, 0, 0, 1);
+            }
+            &_shadowLeft {
+                border-right-color: rgba(255, 255, 255, .5);
+                box-shadow: inset -10px 0px 10px -10px rgba(0, 0, 0, 1);
+            }
+            &_shadowRight {
+                border-left-color: rgba(255, 255, 255, .5);
+                box-shadow: inset 10px 0px 10px -10px rgba(0, 0, 0, 1);
             }
         }
         &__about {
