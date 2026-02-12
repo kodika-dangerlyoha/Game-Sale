@@ -106,12 +106,15 @@
     max-height: 247px;
     @include base.style-main_base;
     &__header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 7px 13px;
         background-color: rgba(255, 255, 255, .05);
         border-bottom: 1px solid rgba(255, 255, 255, .1);
+        &__top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 7px 13px;
+            border-bottom: 1px solid rgba(255, 255, 255, .1);
+        }
         &__title {
 
         }
@@ -124,6 +127,18 @@
                 color: base.$clr-blue_light;
             }
         }
+        &__filter {
+            padding: 5px;
+            display: flex;
+            gap: 5px;
+            &__point {
+                font-size: 12px;
+                padding: 3px 7px;
+                border-radius: 8px;
+                @include base.style-main_click;
+                // box-shadow: none;
+            }
+        }
     }
     &__grid {
         display: flex;
@@ -131,7 +146,7 @@
         gap: 5px;
         padding: 10px;
         overflow: auto;
-        max-height: calc(247px - 36px);
+        max-height: calc(247px - 70px);
         @include base.style-webkit_scrollbar;
         &__notification {
             border-radius: 10px;

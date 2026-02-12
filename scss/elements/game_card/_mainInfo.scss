@@ -76,9 +76,45 @@
                 font-weight: 700;
                 font-size: 28px;
                 & > span {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 3px;
                     transform: translateY(-3px);
                     font-size: 20px;
                     color: rgb(200, 200, 200);
+                    & > span {
+                        color: rgb(150, 150, 150);
+                        font-size: 14px;
+                        font-weight: 200;
+
+                        // border-radius: 50%;
+                        // width: 16px;
+                        // height: 16px;
+                        // display: flex;
+                        // align-items: center;
+                        // justify-content: center;
+                        // @include base.style-main;
+                    }
+                    & > div {
+                        opacity: 0;
+                        width: max-content;
+                        position: absolute;
+                        top: -30px;
+                        padding: 5px 7px;
+                        font-size: 12px;
+                        // transform: translateX(-25%);
+                        transition: .2s;
+                        -webkit-backdrop-filter: blur(5px);
+                        backdrop-filter: blur(5px);
+                        border-radius: 8px;
+                        pointer-events: none;
+                        @include base.style-main;
+                    }
+                    &:hover > div{
+                        opacity: 1;
+                    }
                 }
             }
         }

@@ -419,6 +419,20 @@ label {
   gap: 10px;
   margin-right: 5px;
 }
+.header__nav__region {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  line-height: 18px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.header__nav__region > span {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(180, 180, 180);
+}
 .header__nav__button {
   height: 45px;
   width: 45px;
@@ -2859,9 +2873,39 @@ label {
   font-size: 28px;
 }
 .mainInfo__interaction__prices__new > span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
   transform: translateY(-3px);
   font-size: 20px;
   color: rgb(200, 200, 200);
+}
+.mainInfo__interaction__prices__new > span > span {
+  color: rgb(150, 150, 150);
+  font-size: 14px;
+  font-weight: 200;
+}
+.mainInfo__interaction__prices__new > span > div {
+  opacity: 0;
+  width: -moz-max-content;
+  width: max-content;
+  position: absolute;
+  top: -30px;
+  padding: 5px 7px;
+  font-size: 12px;
+  transition: 0.2s;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+}
+.mainInfo__interaction__prices__new > span:hover > div {
+  opacity: 1;
 }
 .mainInfo__interaction__discount {
   font-size: 20px;
@@ -4492,11 +4536,14 @@ label {
   backdrop-filter: blur(10px);
 }
 .pNotification__header {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.pNotification__header__top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 7px 13px;
-  background-color: rgba(255, 255, 255, 0.05);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .pNotification__header__link {
@@ -4508,13 +4555,35 @@ label {
 .pNotification__header__link:hover {
   color: rgb(1, 162, 255);
 }
+.pNotification__header__filter {
+  padding: 5px;
+  display: flex;
+  gap: 5px;
+}
+.pNotification__header__filter__point {
+  font-size: 12px;
+  padding: 3px 7px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.pNotification__header__filter__point:hover {
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
+}
+.pNotification__header__filter__point:active {
+  transform: scale(0.95);
+}
 .pNotification__grid {
   display: flex;
   flex-direction: column;
   gap: 5px;
   padding: 10px;
   overflow: auto;
-  max-height: 211px;
+  max-height: 177px;
 }
 .pNotification__grid::-webkit-scrollbar {
   width: 8px;

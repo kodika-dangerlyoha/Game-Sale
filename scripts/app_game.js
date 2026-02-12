@@ -129,34 +129,32 @@ add_horizontal_scroll(scroll_categories);
 
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            mini_game_card.style.display = "flex";
-            header_center.classList.add('header__center_hidden');
+    if (!entries[0].isIntersecting) {
+        mini_game_card.style.display = "flex";
+        header_center.classList.add('header__center_hidden');
 
-            setTimeout(() => {
-                header_center.style.display = "none";
-            }, 50);
-            
-            setTimeout(() => {
-                mini_game_card.classList.add('miniGameCard_show');
-                main_info.classList.add('mainInfo_hidden');
-            }, 60);
-        } 
-        else {
-            header_center.style.display = "flex";
-            mini_game_card.classList.remove('miniGameCard_show');
-            main_info.classList.remove('mainInfo_hidden');
-            
-            setTimeout(() => {
-                mini_game_card.style.display = "none";
-            }, 200)
+        setTimeout(() => {
+            header_center.style.display = "none";
+        }, 50);
+        
+        setTimeout(() => {
+            mini_game_card.classList.add('miniGameCard_show');
+            main_info.classList.add('mainInfo_hidden');
+        }, 60);
+    } 
+    else {
+        header_center.style.display = "flex";
+        mini_game_card.classList.remove('miniGameCard_show');
+        main_info.classList.remove('mainInfo_hidden');
+        
+        setTimeout(() => {
+            mini_game_card.style.display = "none";
+        }, 200)
 
-            setTimeout(() => {
-                header_center.classList.remove('header__center_hidden');
-            }, 210)
-        }
-    });
+        setTimeout(() => {
+            header_center.classList.remove('header__center_hidden');
+        }, 210)
+    }
 }, {
     root: null, // отслеживаем относительно viewport
     threshold: 0, // срабатывает при любом пересечении
@@ -247,13 +245,3 @@ document.addEventListener('fullscreenchange', () => {
         player.classList.remove('mainInfo__banner_fullscreen');
     }
 });
-
-// ------------ 
-
-function change_similar_sections(title) {
-    document.querySelector('.similar__grid_active')?.classList.remove('similar__grid_active');
-    document.querySelector('.similar__header__nav_active')?.classList.remove('similar__header__nav_active');
-
-    document.querySelector(`#similar_nav-${title}`).classList.add('similar__header__nav_active');
-    document.querySelector(`#similar-${title}`).classList.add('similar__grid_active');
-}

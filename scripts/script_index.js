@@ -11,4 +11,4 @@ function get_game_banner() {
 }
 
 make_index();
-update_basket_button();
+// update_basket_button();
