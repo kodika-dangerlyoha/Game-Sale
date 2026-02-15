@@ -64,9 +64,11 @@
             }
         }
     }
+    &__series {
+        margin-bottom: 50px;
+    }
     &__games {
         &__grid {
-            @include base.grid(35px, 3);
             display: none;
             &_active {
                 display: grid;

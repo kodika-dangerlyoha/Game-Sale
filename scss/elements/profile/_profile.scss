@@ -84,15 +84,33 @@
             align-items: center;
             gap: 10px;
             &__point {
-                @include base.style-main;
                 border-radius: 13px;
                 padding: 3px 10px;
                 font-size: 14px;
-                text-align: center;
+                display: flex;
+                align-items: center;
+                @include base.style-main;
                 & > span {
                     color: rgb(200, 200, 200);
                     margin-right: 5px;
-                }   
+                }
+                &__button {
+                    height: 19px;
+                    width: 19px;
+                    padding: 2px;
+                    cursor: pointer;
+                    margin-left: 5px;
+                    margin-right: -5px;
+                    opacity: .6;
+                    transition: .15s;
+                    & > svg {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
             }
         }
     }

@@ -140,26 +140,19 @@ const get_series_card_html = (series) => {
     //     dls_html = `<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>`;
     // }
 
-    return `<article class="gameH game_${series.id}">
-                <a href = "${series.link}" class="gameH__banner">
-                    <div class="gameH__banner__imgBlock"><img src="${series.imgH}" alt="${series.name}"></div>
-                    <div class="gameH__banner__info txt">
-                        <div class="gameH__banner__info__left">
-                            <div class="gameH__banner__info__point gameH__banner__info__point_more gameH__banner__info__point_preOrder">Серия игр</div>
-                        </div>
-                        <div class="gameH__banner__info__right">
-                        </div>
-                    </div>
+    return `<article class="seriesCard game_${series.id}">
+                <a href = "${series.link}" class="seriesCard__banner">
+                    <div class="seriesCard__banner__imgBlock"><img src="${series.imgH}" alt="${series.name}"></div>
                 </a>
-                <div class="gameH__info">
-                    <div class="gameH__info__left">
-                        <div class="gameH__info__name txt">${series.name}</div>
+                <div class="seriesCard__info">
+                    <div class="seriesCard__info__left">
+                        <div class="seriesCard__info__name txt">${series.name}</div>
                     </div>
-                    <div class="gameH__info__right">
-                        <div class="gameH__info__countGames txt">${series.gamesCount}₽</div>
-                        <div class="gameH__info__buttons">
-                            <div class="gameH__info__buttons__button _buttonFavorite">
-                                <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+                    <div class="seriesCard__info__right">
+                        <div class="seriesCard__info__countGames txt"><span> Игр в серии:</span> ${series.games.length}</div>
+                        <div class="seriesCard__info__buttons">
+                            <div class="seriesCard__info__buttons__button _buttonFavorite">
+                                <div class="seriesCard__info__buttons__button__forHover seriesCard__info__buttons__button__forHover_red absolute-zero"></div>
                                 <img src="img/icons/main/like64.png" alt="">
                             </div>
                         </div>

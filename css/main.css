@@ -1713,6 +1713,155 @@ label {
   text-shadow: 0 0 10px rgb(39, 39, 39);
 }
 
+.seriesCard {
+  display: block;
+}
+.seriesCard__banner {
+  height: 222px;
+  display: block;
+  position: relative;
+  border-radius: 15px;
+  background-size: cover;
+  transition: 0.15s;
+  cursor: pointer;
+  overflow: hidden;
+  animation-timing-function: cubic-bezier(0, 0, 0, 0.75);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.seriesCard__banner__imgBlock {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 1;
+  transition: 0.15s;
+}
+.seriesCard__banner__imgBlock > img {
+  border-radius: 10px;
+  height: 100%;
+}
+.seriesCard__info {
+  position: relative;
+  padding-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  transition: 0.15s;
+}
+.seriesCard__info__left {
+  min-width: 0;
+}
+.seriesCard__info__right {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+  min-width: -moz-max-content;
+  min-width: max-content;
+}
+.seriesCard__info__name {
+  position: relative;
+  z-index: 1;
+  font-family: robotoFlex, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.seriesCard__info__countGames {
+  position: relative;
+  z-index: 2;
+  font-family: robotoFlex, sans-serif;
+  font-weight: 700;
+  transition: 0.15s;
+}
+.seriesCard__info__countGames > span {
+  font-weight: 400;
+  color: rgb(200, 200, 200);
+}
+.seriesCard__info__buttons {
+  z-index: 2;
+  display: flex;
+  justify-content: end;
+  gap: 5px;
+  opacity: 0;
+  transform: translateY(-15px);
+  max-width: 0;
+  overflow: hidden;
+  transition: 0.15s;
+}
+.seriesCard__info__buttons__button {
+  position: relative;
+  height: 35px;
+  width: 35px;
+  z-index: 2;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.15s;
+}
+.seriesCard__info__buttons__button img {
+  height: 18px;
+  filter: invert(1);
+}
+.seriesCard__info__buttons__button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.seriesCard__info__buttons__button:hover {
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
+}
+.seriesCard__info__buttons__button:active {
+  transform: scale(0.95);
+}
+.seriesCard_open {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.seriesCard_open:nth-child(1) {
+  transition-delay: 0s;
+}
+.seriesCard_open:nth-child(2) {
+  transition-delay: 0.05s;
+}
+.seriesCard_open:nth-child(3) {
+  transition-delay: 0.1s;
+}
+.seriesCard_open:nth-child(4) {
+  transition-delay: 0.2s;
+}
+.seriesCard_open:nth-child(5) {
+  transition-delay: 0.25s;
+}
+.seriesCard:hover .seriesCard__banner {
+  transform: scale(1.05);
+}
+.seriesCard:hover .seriesCard__info {
+  transform: translateY(7px);
+}
+.seriesCard:hover .seriesCard__info__right {
+  margin-left: 0px;
+}
+.seriesCard:hover .seriesCard__info__buttons {
+  opacity: 1;
+  transform: translateY(0px);
+  max-width: 200px;
+}
+.seriesCard:hover .seriesCard__info__price {
+  transform: translateX(0);
+  text-shadow: 0 0 10px rgb(39, 39, 39);
+}
+
 .switch__head {
   display: flex;
   align-items: center;
@@ -1767,6 +1916,72 @@ label {
 }
 .switch__content {
   animation: open_offers_games 0.5s ease 1;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.heading > h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+.heading > button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 10px 10px 14px;
+  border-radius: 25px;
+  transition: 0.2s;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.heading > button:hover {
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
+}
+.heading > button:active {
+  transform: scale(0.95);
+}
+.heading > button > span {
+  display: block;
+  font-family: robotoFlex, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  transition: 0.2s;
+}
+.heading > button > svg {
+  margin-left: 5px;
+  height: 24px;
+  opacity: 0.8;
+  transform: translateY(1px) translateX(0px);
+  transition: 0.15s;
+}
+.heading > button:hover > svg {
+  opacity: 0;
+  transform: translateY(1px) translateX(20px);
+}
+.heading > button:hover > span {
+  transform: translateX(13px);
+}
+.heading > button:active {
+  transform: scale(0.95);
+}
+
+.griding_3InRow {
+  display: grid;
+  grid-gap: 35px;
+  grid-template-columns: repeat(3, minmax(0px, 1fr));
+}
+.griding_4InRow {
+  display: grid;
+  grid-gap: 35px;
+  grid-template-columns: repeat(4, minmax(0px, 1fr));
 }
 
 .blockButtonMore {
@@ -2346,24 +2561,6 @@ label {
   padding: 40px 0 35px 0;
   width: 100%;
 }
-.salesHits__bg {
-  top: 35px;
-  left: -20px;
-  right: -20px;
-  z-index: 1;
-  background: linear-gradient(to bottom, rgba(39, 39, 39, 0.8), rgb(39, 39, 39));
-  backdrop-filter: blur(100px);
-  transform: rotate(2deg);
-  border-top: 2px solid rgb(255, 255, 255);
-}
-.salesHits h3 {
-  position: relative;
-  z-index: 2;
-  margin-bottom: 30px;
-  font-size: 24px;
-  font-weight: 600;
-  font-family: robotoFlex, sans-serif;
-}
 .salesHits__games {
   position: relative;
   z-index: 2;
@@ -2517,23 +2714,7 @@ label {
   margin: auto;
   margin-bottom: 50px;
 }
-.games__head {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.games__head > h2 {
-  font-size: 24px;
-  font-weight: 600;
-  font-family: robotoFlex, sans-serif;
-}
 .games__grid {
-  display: grid;
-  grid-gap: 35px;
-  grid-template-columns: repeat(4, minmax(0px, 1fr));
-  align-items: center;
-  justify-content: space-between;
   margin-bottom: 50px;
 }
 
@@ -4507,17 +4688,35 @@ label {
   gap: 10px;
 }
 .profile__info__points__point {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   border-radius: 13px;
   padding: 3px 10px;
   font-size: 14px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
 }
 .profile__info__points__point > span {
   color: rgb(200, 200, 200);
   margin-right: 5px;
+}
+.profile__info__points__point__button {
+  height: 19px;
+  width: 19px;
+  padding: 2px;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-right: -5px;
+  opacity: 0.6;
+  transition: 0.15s;
+}
+.profile__info__points__point__button > svg {
+  width: 100%;
+  height: 100%;
+}
+.profile__info__points__point__button:hover {
+  opacity: 1;
 }
 
 .pNotification {
@@ -6412,10 +6611,10 @@ label {
 .author__top__about > p:last-child {
   margin-bottom: 0;
 }
+.author__series {
+  margin-bottom: 50px;
+}
 .author__games__grid {
-  display: grid;
-  grid-gap: 35px;
-  grid-template-columns: repeat(3, minmax(0px, 1fr));
   display: none;
 }
 .author__games__grid_active {

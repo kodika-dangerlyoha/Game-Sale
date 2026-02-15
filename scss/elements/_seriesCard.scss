@@ -28,65 +28,6 @@
                 height: 100%;
             }
         }
-        // &__discount {
-        //     position: absolute;
-        //     z-index: 4;
-        //     bottom: 8px;
-        //     right: 8px;
-        //     padding: 5px 8px 5px 8px;
-        //     border-radius: 7px;
-        //     cursor: pointer;
-        //     transition: .15s;
-        //     opacity: 1;
-        //     font-family: base.$fnt-all;
-        //     font-size: 15px;
-        //     font-weight: 700;
-        //     @include base.style-percentBlock;
-        //     -webkit-backdrop-filter: blur(10px);
-        //     backdrop-filter: blur(10px);
-        // }
-        &__info {
-            position: absolute;
-            z-index: 4;
-            bottom: 8px;
-            right: 8px;
-            left: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            // &__left {
-
-            // }
-            &__right {
-                display: flex;
-                justify-content: end;
-                gap: 5px;
-            }
-            &__point {
-                padding: 5px 8px;
-                border-radius: 7px;
-                cursor: pointer;
-                opacity: 1;
-                font-family: base.$fnt-all;
-                font-size: 15px;
-                -webkit-backdrop-filter: blur(10px);
-                backdrop-filter: blur(10px);
-                transition: .15s;
-                // &_discount {
-                //     font-weight: 700;
-                //     @include base.style-percentBlock;
-                // }
-                // &_preOrder {
-                //     & > span {
-                //         font-weight: 700;
-                //         margin-right: 7px;
-                //     }
-                // }
-                &_more {
-                    @include base.style-main;
-                }
-            }
-        }
     }
     &__info {
         position: relative;
@@ -123,6 +64,10 @@
             font-weight: 700;
             // transform: translateX(-100%);
             transition: 0.15s;
+            & > span {
+                font-weight: 400;
+                color: rgb(200, 200, 200);
+            }
         }
         &__buttons {
             z-index: 2;
@@ -157,45 +102,6 @@
         }
     }
 
-    // &_headerCatalog &{
-    //     &__banner {
-    //         height: 173px;
-    //         &__info {
-    //             &__point {
-    //                 font-size: 14px;
-    //                 padding: 4px 7px;
-    //             }
-    //         }
-    //     }
-    //     &__info {
-    //         &__right {
-    //             gap: 7px;
-    //         }
-    //         &__name {
-    //             font-size: 15px;
-    //         }
-    //         &__price {
-    //             font-size: 15px;
-    //         }
-    //         &__buttons {
-    //             background: transparent;
-    //             &__button {
-    //                 height: 30px;
-    //                 width: 30px;
-    //                 border-radius: 6px;
-    //                 & img {
-    //                     height: 17px;
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-    // &_headerCatalog {
-    //     opacity: 0;
-    //     transform: translateY(-10px);
-    //     transition: transform .4s, opacity .4s;
-    // }
-
     &_open {
         // transition: .2s;
         opacity: 1;
@@ -220,21 +126,6 @@
     &:hover &{
         &__banner {
             transform: scale(1.05);
-            &__info__point {
-                opacity: 0;
-            }
-            // &__videoBlock {
-            //     opacity: 1;
-            //     transition-delay: 1s;
-            //     & video {
-            //         display: block;
-            //         transition-delay: 1s;
-            //     }
-            // }
-            &__imgBlock {
-                opacity: 0;
-                transition-delay: 1s;
-            }
         }
         &__info {
             transform: translateY(7px);

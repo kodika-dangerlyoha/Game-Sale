@@ -634,6 +634,81 @@ let games = [
     },
 ]
 
+let series = [
+  {
+    'id': 1,
+    'name': "FarCry",
+    'link': "series.html",
+    'imgH': "img/banners/1.jpg",
+    'bigBanner': "img/banners/b3.png",        
+    'genres': ["shooter", "g3"],
+    'status': "ourChoice",
+    'publisher': "",
+    'developer': "",
+    'games': [1, 3]
+  },
+  {
+    'id': 2,
+    'name': "FarCry",
+    'link': "series.html",
+    'imgH': "img/banners/2.jpg",
+    'bigBanner': "img/banners/b3.png",        
+    'genres': ["shooter", "g3"],
+    'status': "ourChoice",
+    'publisher': "",
+    'developer': "",
+    'games': [13, 5, 2]
+  },
+  {
+    'id': 3,
+    'name': "FarCry",
+    'link': "series.html",
+    'imgH': "img/banners/3.jpg",
+    'bigBanner': "img/banners/b3.png",        
+    'genres': ["shooter", "g3"],
+    'status': "ourChoice",
+    'publisher': "",
+    'developer': "",
+    'games': [6, 7, 8]
+  },
+  {
+    'id': 4,
+    'name': "FarCry",
+    'link': "series.html",
+    'imgH': "img/banners/4.jpg",
+    'bigBanner': "img/banners/b3.png",        
+    'genres': ["shooter", "g3"],
+    'status': "ourChoice",
+    'publisher': "",
+    'developer': "",
+    'games': [6, 7, 8]
+  },
+  {
+    'id': 5,
+    'name': "FarCry",
+    'link': "series.html",
+    'imgH': "img/banners/5.jpg",
+    'bigBanner': "img/banners/b3.png",        
+    'genres': ["shooter", "g3"],
+    'status': "ourChoice",
+    'publisher': "",
+    'developer': "",
+    'games': [7, 14, 17, 15, 19]
+  },
+  {
+    'id': 6,
+    'name': "FarCry",
+    'link': "series.html",
+    'imgH': "img/banners/1.jpg",
+    'bigBanner': "img/banners/b3.png",        
+    'genres': ["shooter", "g3"],
+    'status': "ourChoice",
+    'publisher': "",
+    'developer': "",
+    'games': [11, 9]
+  },
+]
+
 let basketProducts = [
     {
         'id': 0,
