@@ -884,4 +884,5 @@ let user = {
     'region': 'Ru',
     'nickname': 'ladn0!',
     'avatar_link': 'https://static.gabestore.ru/category/OEOxXYDZ-NhNK3g5ImnO0SBSnx5wJKIk.png',
+    'trade_link': ''
 }

@@ -269,7 +269,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-top: none;
   border-left: none;
@@ -333,7 +332,6 @@ label {
   background-color: rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.2);
   border-radius: 23px;
-  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   box-sizing: border-box;
   padding-left: 20px;
@@ -381,7 +379,6 @@ label {
   border-radius: 50%;
   box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.2);
   background-color: rgba(255, 255, 255, 0.15);
-  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   transition: 0.15s;
   cursor: pointer;
@@ -611,9 +608,6 @@ label {
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
   cursor: pointer;
-  border-radius: 10px;
-  padding: 5px;
-  overflow: hidden;
 }
 .header__catalog__navs__genres__list__genre:hover {
   background-color: rgba(1, 162, 255, 0.25);
@@ -621,6 +615,11 @@ label {
 }
 .header__catalog__navs__genres__list__genre:active {
   transform: scale(0.95);
+}
+.header__catalog__navs__genres__list__genre {
+  border-radius: 10px;
+  padding: 5px;
+  overflow: hidden;
 }
 .header__catalog__navs__genres__list__genre__icon {
   position: relative;
@@ -659,8 +658,6 @@ label {
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
   cursor: pointer;
-  border-radius: 10px;
-  overflow: hidden;
 }
 .header__catalog__navs__authors__list__author:hover {
   background-color: rgba(1, 162, 255, 0.25);
@@ -668,6 +665,10 @@ label {
 }
 .header__catalog__navs__authors__list__author:active {
   transform: scale(0.95);
+}
+.header__catalog__navs__authors__list__author {
+  border-radius: 10px;
+  overflow: hidden;
 }
 .header__catalog__navs__authors__list__author__img {
   position: relative;
@@ -753,7 +754,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 .header__basket__head {
@@ -928,7 +928,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 .header__notification__header {
@@ -1069,7 +1068,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 .header__notification_temporary__grid__notification__point {
@@ -1145,7 +1143,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-left: none;
   border-right: none;
@@ -1210,7 +1207,6 @@ label {
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.05);
 }
 .footer__head > button:hover {
   background-color: rgba(1, 162, 255, 0.25);
@@ -1218,6 +1214,9 @@ label {
 }
 .footer__head > button:active {
   transform: scale(0.95);
+}
+.footer__head > button {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 .footer__body__links {
   display: flex;
@@ -1251,9 +1250,6 @@ label {
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.05);
-  cursor: pointer;
-  transition: 0.2s;
 }
 .footer__body__links__contacts a:hover {
   background-color: rgba(1, 162, 255, 0.25);
@@ -1261,6 +1257,11 @@ label {
 }
 .footer__body__links__contacts a:active {
   transform: scale(0.95);
+}
+.footer__body__links__contacts a {
+  background-color: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: 0.2s;
 }
 .footer__body__links__contacts a > img {
   height: 23px;
@@ -1348,7 +1349,6 @@ label {
   font-weight: 700;
   background-color: rgba(1, 162, 255, 0.4);
   border: 1px solid rgb(1, 162, 255);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 .gameV__info {
@@ -1409,15 +1409,17 @@ label {
   cursor: pointer;
   overflow: hidden;
   transition: 0.15s;
+}
+.gameV__info__buttons__button img {
+  height: 18px;
+  filter: invert(1);
+}
+.gameV__info__buttons__button {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
   cursor: pointer;
-}
-.gameV__info__buttons__button img {
-  height: 18px;
-  filter: invert(1);
 }
 .gameV__info__buttons__button:hover {
   background-color: rgba(1, 162, 255, 0.25);
@@ -1508,7 +1510,6 @@ label {
   font-weight: 700;
   background-color: rgba(1, 162, 255, 0.4);
   border: 1px solid rgb(1, 162, 255);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 .gameH__banner__info {
@@ -1533,7 +1534,6 @@ label {
   opacity: 1;
   font-family: robotoFlex, sans-serif;
   font-size: 15px;
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   transition: 0.15s;
 }
@@ -1609,15 +1609,17 @@ label {
   cursor: pointer;
   overflow: hidden;
   transition: 0.15s;
+}
+.gameH__info__buttons__button img {
+  height: 18px;
+  filter: invert(1);
+}
+.gameH__info__buttons__button {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
   cursor: pointer;
-}
-.gameH__info__buttons__button img {
-  height: 18px;
-  filter: invert(1);
 }
 .gameH__info__buttons__button:hover {
   background-color: rgba(1, 162, 255, 0.25);
@@ -1783,7 +1785,6 @@ label {
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
   cursor: pointer;
-  transition: 0.2s;
 }
 .blockButtonMore__button:hover {
   background-color: rgba(1, 162, 255, 0.25);
@@ -1791,6 +1792,9 @@ label {
 }
 .blockButtonMore__button:active {
   transform: scale(0.95);
+}
+.blockButtonMore__button {
+  transition: 0.2s;
 }
 .blockButtonMore__button > span {
   display: block;
@@ -1916,7 +1920,6 @@ label {
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   background-color: rgba(68, 68, 68, 0.8);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-top: none;
   padding-top: 7px;
@@ -2119,7 +2122,6 @@ label {
   height: 55px;
   padding: 16px;
   background-color: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   border-radius: 50%;
   transition: 0.15s;
@@ -2252,7 +2254,6 @@ label {
   display: flex;
   justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
@@ -2275,15 +2276,17 @@ label {
   border-radius: 50%;
   transition: 0.15s;
   cursor: pointer;
+}
+.carousel__banner__interaction__info__shopInfo__buttons__button > img {
+  width: 100%;
+  filter: invert(1);
+}
+.carousel__banner__interaction__info__shopInfo__buttons__button {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
   cursor: pointer;
-}
-.carousel__banner__interaction__info__shopInfo__buttons__button > img {
-  width: 100%;
-  filter: invert(1);
 }
 .carousel__banner__interaction__info__shopInfo__buttons__button:hover {
   background-color: rgba(1, 162, 255, 0.25);
@@ -2349,7 +2352,6 @@ label {
   right: -20px;
   z-index: 1;
   background: linear-gradient(to bottom, rgba(39, 39, 39, 0.8), rgb(39, 39, 39));
-  -webkit-backdrop-filter: blur(100px);
   backdrop-filter: blur(100px);
   transform: rotate(2deg);
   border-top: 2px solid rgb(255, 255, 255);
@@ -2424,7 +2426,6 @@ label {
   display: flex;
   justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
@@ -2447,15 +2448,17 @@ label {
   border-radius: 50%;
   transition: 0.15s;
   cursor: pointer;
+}
+.banner__game__interaction__info__shopInfo__buttons__button > img {
+  width: 100%;
+  filter: invert(1);
+}
+.banner__game__interaction__info__shopInfo__buttons__button {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
   cursor: pointer;
-}
-.banner__game__interaction__info__shopInfo__buttons__button > img {
-  width: 100%;
-  filter: invert(1);
 }
 .banner__game__interaction__info__shopInfo__buttons__button:hover {
   background-color: rgba(1, 162, 255, 0.25);
@@ -2555,7 +2558,6 @@ label {
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
   cursor: pointer;
-  transition: 0.2s;
 }
 .offers__head__nav:hover {
   background-color: rgba(1, 162, 255, 0.25);
@@ -2563,6 +2565,9 @@ label {
 }
 .offers__head__nav:active {
   transform: scale(0.95);
+}
+.offers__head__nav {
+  transition: 0.2s;
 }
 .offers__head__nav__text {
   font-size: 16px;
@@ -2608,11 +2613,13 @@ label {
   background-color: rgba(255, 255, 255, 0.05);
   box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(40, 40, 40, 0.7);
-  transition: 0.2s;
 }
 .offers__blockButtonMore__button:hover {
   box-shadow: inset 0px -30px 30px -30px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
   border: 1px solid rgba(1, 162, 255, 0.7);
+}
+.offers__blockButtonMore__button {
+  transition: 0.2s;
 }
 .offers__blockButtonMore__button img {
   margin-left: 5px;
@@ -2811,7 +2818,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 .mainInfo__interaction__button {
@@ -2896,7 +2902,6 @@ label {
   padding: 5px 7px;
   font-size: 12px;
   transition: 0.2s;
-  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   border-radius: 8px;
   pointer-events: none;
@@ -2990,7 +2995,6 @@ label {
   border-radius: 7px;
   font-family: robotoFlex, sans-serif;
   font-size: 15px;
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   transition: 0.15s;
   background-color: rgba(255, 255, 255, 0.1);
@@ -3081,7 +3085,6 @@ label {
   height: 35px;
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   border-radius: 50%;
   transition: 0.15s;
@@ -3129,7 +3132,6 @@ label {
   width: 35px;
   padding: 8px;
   background-color: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   border-radius: 50%;
   transition: 0.15s;
@@ -3197,7 +3199,6 @@ label {
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   background-color: rgba(0, 0, 0, 0.5);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   padding: 14px;
   display: flex;
@@ -3334,7 +3335,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.3);
   transition: 0.2s;
@@ -3377,7 +3377,6 @@ label {
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
   cursor: pointer;
-  box-shadow: 0 0 0 0 transparent;
 }
 .mainInfo__info__category__point:hover {
   background-color: rgba(1, 162, 255, 0.25);
@@ -3385,6 +3384,9 @@ label {
 }
 .mainInfo__info__category__point:active {
   transform: scale(0.95);
+}
+.mainInfo__info__category__point {
+  box-shadow: 0 0 0 0 transparent;
 }
 .mainInfo__info__category__point > span {
   color: rgb(200, 200, 200);
@@ -3489,7 +3491,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 .additions__side__header {
@@ -3586,7 +3587,6 @@ label {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   transition: 0.2s;
 }
@@ -3634,11 +3634,13 @@ label {
 }
 .edition_active .edition__info {
   cursor: default;
-  background-color: rgba(1, 162, 255, 0.4);
-  border: 1px solid rgb(1, 162, 255);
 }
 .edition_active .edition__info * {
   cursor: default;
+}
+.edition_active .edition__info {
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
 }
 .edition_active:hover .edition__imgBlock {
   transform: scale(1);
@@ -3762,7 +3764,6 @@ label {
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
   cursor: pointer;
-  transition: 0.2s;
 }
 .editions__header__nav:hover {
   background-color: rgba(1, 162, 255, 0.25);
@@ -3770,6 +3771,9 @@ label {
 }
 .editions__header__nav:active {
   transform: scale(0.95);
+}
+.editions__header__nav {
+  transition: 0.2s;
 }
 .editions__header__nav__text {
   font-size: 16px;
@@ -3820,7 +3824,6 @@ label {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   transition: 0.2s;
 }
@@ -3867,11 +3870,13 @@ label {
 }
 .editions__grid__edition_active .editions__grid__edition__info {
   cursor: default;
-  background-color: rgba(1, 162, 255, 0.4);
-  border: 1px solid rgb(1, 162, 255);
 }
 .editions__grid__edition_active .editions__grid__edition__info * {
   cursor: default;
+}
+.editions__grid__edition_active .editions__grid__edition__info {
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
 }
 .editions__grid__edition_active:hover .editions__grid__edition__imgBlock {
   transform: translateY(0px);
@@ -3938,7 +3943,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   padding: 10px 20px 20px 20px;
   border-radius: 20px;
@@ -3995,7 +3999,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   padding: 10px 20px 20px 20px;
   border-radius: 20px;
@@ -4062,7 +4065,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 20px;
@@ -4111,7 +4113,6 @@ label {
   width: 35px;
   padding: 8px;
   background-color: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   border-radius: 50%;
   transition: 0.15s;
@@ -4148,7 +4149,6 @@ label {
   width: 100%;
   height: 12px;
   border-radius: 6px;
-  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -4191,7 +4191,6 @@ label {
   padding: 2px 5px;
   border-radius: 5px;
   left: 50%;
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   opacity: 0;
   transition: opacity 0.15s, transform 0.2s;
@@ -4217,7 +4216,6 @@ label {
 .videoIF__volume__race {
   height: 100%;
   width: 100%;
-  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -4424,7 +4422,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 .profile__top {
@@ -4532,7 +4529,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 .pNotification__header {
@@ -4782,14 +4778,14 @@ label {
   padding-left: 7px;
   animation: open 0.25s cubic-bezier(0, 0, 0, 0.75) 1;
 }
-.settings__conf__regionInput__regions__inner__search {
-  margin-bottom: 5px;
-}
 .settings__conf__regionInput__regions__inner__search > input {
   height: 40px;
   font-size: 14px;
   border-radius: 10px;
   padding-left: 14px;
+}
+.settings__conf__regionInput__regions__inner__search {
+  margin-bottom: 5px;
 }
 .settings__conf__regionInput__regions__inner__list {
   display: flex;
@@ -4879,7 +4875,6 @@ label {
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
   cursor: pointer;
-  transition: 0.2s;
 }
 .more__header__nav:hover {
   background-color: rgba(1, 162, 255, 0.25);
@@ -4887,6 +4882,9 @@ label {
 }
 .more__header__nav:active {
   transform: scale(0.95);
+}
+.more__header__nav {
+  transition: 0.2s;
 }
 .more__header__nav__text {
   font-size: 16px;
@@ -4929,7 +4927,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 .purchase__header__bg {
@@ -5026,7 +5023,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 .purchase__gamelist__game__bg {
@@ -5185,10 +5181,6 @@ label {
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  width: 100%;
 }
 .formFilters__menuButtons__allFilters:hover {
   background-color: rgba(1, 162, 255, 0.25);
@@ -5196,6 +5188,12 @@ label {
 }
 .formFilters__menuButtons__allFilters:active {
   transform: scale(0.95);
+}
+.formFilters__menuButtons__allFilters {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
 }
 .formFilters__menuButtons__allFilters > svg {
   height: 25px;
@@ -5275,7 +5273,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 .basketContainer__gameList__games__game {
@@ -5509,7 +5506,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 .basketContainer__info__totalBlock form {
@@ -5944,11 +5940,9 @@ label {
   color: rgb(1, 162, 255);
 }
 .basketContainer__info__totalBlock__agreeBlock_notification {
-  padding: 8px;
-  margin-bottom: -16px;
+  margin-bottom: 0px;
   border-radius: 7px;
-  border: 3px solid rgb(134, 58, 58);
-  transform: scale(1.05);
+  box-shadow: 0 0 0 3px rgb(134, 58, 58);
 }
 .basketContainer__info__totalBlock__basketBlock {
   min-height: 260px;
@@ -6274,7 +6268,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 .series__about__block > h3 {
@@ -6307,7 +6300,6 @@ label {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   font-size: 20px;
   transition: 0.2s;
@@ -6362,7 +6354,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 .author__top__head {
@@ -6382,9 +6373,16 @@ label {
   margin-right: 30px;
   border-right: 1px solid rgba(255, 255, 255, 0.3);
 }
-.author__top__head__left__logo > img {
-  max-height: 100%;
-  max-width: 100%;
+.author__top__head__left__logo__imgBlock {
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.author__top__head__left__logo__imgBlock > img {
+  height: 100%;
   border-radius: 20px;
 }
 .author__top__head__left__title {
