@@ -82,20 +82,20 @@
 
 @keyframes show_notification {
     0% {
-        visibility: visible;
-    }
-    10% {
-        opacity: 1;
-    }
-    80% {
-        opacity: 1;
-    }
-    90% {
         opacity: 0;
+        transform: translateY(-10px);
+    }
+    3% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    97% {
+        opacity: 1;
+        transform: translateY(0px);
     }
     100% {
-        visibility: hidden;
-        display: none;
+        opacity: 0;
+        transform: translateY(-10px);
     }
 }
 

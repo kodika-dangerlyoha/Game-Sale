@@ -308,7 +308,7 @@
                 <h2 class="flex-center">Assassin’s Creed</h2>
             </section>
             <section class="series__about series__about_hidden">
-                <div class="series__about__block txt">
+                <div class="series__about__block txt" onclick="toggle_series_about()">
                     <h3>Титулованная серия впервые на ПК</h3>
                     <p>Первая часть серии в своё время вышла на консолях прошлого поколения, 
                         собрала уйму наград и благополучно миновала просторы ПК, чем вызвала массу негодования 
@@ -330,6 +330,7 @@
                     По пятам за героем следуют федеральные агенты, внутри банды растут противоречия. 
                     Артуру предстоит выбрать, что для него важнее: его банда, которая его вырастила или же собственные идеалы.</p>
                 </div>
+				<div class="series__about__gradient" onclick="toggle_series_about()"></div>
                 <div class="series__about__buttonBlock">
                     <button class="txt" type="button" onclick="toggle_series_about()" title="открыть\расскрыть">
 						<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -339,7 +340,6 @@
                 </div>
             </section>
 			<section class="series__games">
-				<div class="series__games__head"><h2 class="txt">Игры серии</h2></div>
 				<div class="series__games__grid" id="series_grid">
 
 				</div>
@@ -412,6 +412,7 @@
         </div>
     </footer>
 
+	<script type="text/javascript" src="scripts/cookie.js"></script>
 	<script type="text/javascript" src="scripts/lists.js"></script>
 	<script type="text/javascript" src="elements/elements.js"></script>
 	<script type="text/javascript" src="scripts/makeContentFunctions.js"></script>

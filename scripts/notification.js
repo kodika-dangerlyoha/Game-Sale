@@ -141,18 +141,38 @@ function view_notification(el) {
     // el.classList.remove('header__notification__grid__notification_new');
 }
 
+function show_temp_notification(status, message, id_notification) {
+    document.querySelector('#grid_temporary_notification').innerHTML = get_temp_notification_html(status, message, id_notification);
+
+    setTimeout(() => {
+        const temp_notification = document.querySelector(`#grid_temporary_notification #${id_notification}`);
+        if (temp_notification) {
+            temp_notification.remove();
+        }
+    }, 5000);
+}
+
+// function show_last_notification() {
+//     const last_notification = list_notifications[0];
+
+//     document.querySelector('#grid_temporary_notification').innerHTML = get_temp_notification_html(last_notification.status, last_notification.message, last_notification.id_notification);
+
+//     setTimeout(() => {
+//         const temp_notification = document.querySelector(`#grid_temporary_notification #${last_notification.id_notification}`);
+//         if (temp_notification) {
+//             temp_notification.remove();
+//         }
+//     }, 5000);
+// }
+
 function add_notification(message, status) {
     // list_notifications.unshift({'status': status, 'message': message});
     const id_notification = generateId();
     list_notifications.unshift({'id': id_notification, 'status': status, 'message': message, 'viewed': false});
     localStorage.notifications = JSON.stringify(list_notifications);
     update_notification();
-
-    const notification_id = `notification${document.querySelectorAll('.header__notification_temporary__grid__notification').length}`;
-    document.querySelector('#grid_temporary_notification').innerHTML += get_temp_notification_html(status, message, notification_id);
-    setTimeout(() => {
-        document.querySelector(`#grid_temporary_notification #${notification_id}`).remove();
-    }, 5000)
+    show_temp_notification(status, message, id_notification);
+    // const notification_id = `notification${document.querySelectorAll('.header__notification_temporary__grid__notification').length}`;
     // show_temporary_notification();
 }
 

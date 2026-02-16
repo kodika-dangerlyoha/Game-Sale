@@ -758,13 +758,13 @@
         right: 15px;
         width: 300px;
         transition: 0.15s;
-        max-height: 500px;
-        overflow: hidden;
+        // max-height: 500px;
+        // overflow: hidden;
 
         display: block;
-        visibility: hidden;
+        visibility: visible;
         opacity: 1;
-        transform: translateY(-10px);
+        transform: translateY(0px);
         &__grid {
             display: flex;
             flex-direction: column;
@@ -777,8 +777,7 @@
                 padding: 8px;
                 display: flex;
                 gap: 8px;
-                opacity: 0;
-                transition-delay: 5s;
+                opacity: 1;
                 animation: show_notification 5s ease-out 1;
                 @include base.style-main_base;
                 &__point {
