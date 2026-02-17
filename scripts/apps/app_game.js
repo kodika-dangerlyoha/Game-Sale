@@ -1,9 +1,12 @@
 make_game_card_info(games[0]);
 set_top_img_paralax(550, 1);
 
+let screenshots_count = 0;
+let video_count = 0;
+
 function make_mediaList(game) {
-    let screenshots_count = 0;
-    let video_count = 0;
+    screenshots_count = 0;
+    video_count = 0;
     // let this_count = 0;
     let mediaList_html = "";
     let i = 0;
