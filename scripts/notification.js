@@ -102,28 +102,6 @@ function update_notification() {
     update_counter(check_unviewed_count(), 'notification');
 }
 
-function open_notifications() {
-    const temp_notification = document.querySelector('#temporary_notification');
-    const notification = document.querySelector('.header__notification');
-    const notification_button = document.getElementById('header_button_notification');
-    if (!document.querySelector('.header__notification_active')) {
-        if (document.querySelector('.header__basket').classList.contains('header__basket_active')) {
-            close_header_basket();
-        }
-        // temp_notification.style.right = '330px';
-        temp_notification.style.display = 'none';
-        notification.style.display = "block";
-        notification_button.classList.add('header__nav__button_active');
-        setTimeout(() => notification.classList.add('header__notification_active'), 10);
-        return
-    }
-    notification.classList.remove('header__notification_active');
-    notification_button.classList.remove('header__nav__button_active');
-    // temp_notification.style.right = '15px';
-    temp_notification.style.display = 'block';
-    setTimeout(() => notification.style.display = "none", 160);
-}
-
 function view_notification(el) {
     const id = el.dataset.id;
     list_notifications.forEach(el => {

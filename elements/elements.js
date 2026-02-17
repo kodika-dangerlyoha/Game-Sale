@@ -129,17 +129,6 @@ const get_vertical_game_html = (game, discount) => {
 // -------- series card -------- 
 
 const get_series_card_html = (series) => {
-    // let preOrder_html = "";
-    // let dls_html = "";
-
-    // if (game.preOrder != "") {
-    //     preOrder_html = `<div class="gameH__banner__info__point gameH__banner__info__point_more gameH__banner__info__point_preOrder"><span>Предзаказ</span>${game.preOrder}</div>`;
-    // }
-
-    // if (game.dls) {
-    //     dls_html = `<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>`;
-    // }
-
     return `<article class="seriesCard game_${series.id}">
                 <a href = "${series.link}" class="seriesCard__banner">
                     <div class="seriesCard__banner__imgBlock"><img src="${series.imgH}" alt="${series.name}"></div>
@@ -354,6 +343,19 @@ const get_basket_game_html = (game) => {
                     </div>
                 </div>
             </div>`
+}
+
+const get_games_section_head_series = () => {
+    return `<div class="switch__head__point switch__head__point_active" data-title="similar" id="switch_point-similar" onclick="switch_section('similar', 'similar__grid_active')">
+                <div class="switch__head__point__text txt">Похожие</div>
+            </div>
+            <div class="switch__head__point" data-title="series" id="switch_point-series" onclick="switch_section('series', 'similar__grid_active')">
+                <div class="switch__head__point__text txt">Игры серии</div>
+            </div>`;
+}
+
+const get_games_section_head_noSeries = () => {
+    return `<h2 class="txt">Похожие</h2>`;
 }
 
 // -------------------

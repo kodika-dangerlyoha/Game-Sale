@@ -754,7 +754,7 @@
     }
     &__notification_temporary {
         position: absolute;
-        top: 100px;
+        top: 90px;
         right: 15px;
         width: 300px;
         transition: 0.15s;
@@ -842,6 +842,36 @@
             visibility: visible;
             opacity: 1;
             transform: translateY(0px);
+        }
+    }
+    &__authBlock {
+        position: absolute;
+        top: 90px;
+        right: 15px;
+        transition: 0.15s;
+        border-radius: 20px;
+        // animation: show_header_auth_block .2s base.$tf-main 1;
+        overflow: hidden;
+        @include base.style-main_base;
+        & > h4 {
+            font-weight: 700;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, .05);
+        }
+        & > a {
+            display: block;
+            padding: 10px;
+            text-align: center;
+            color: rgb(200, 200, 200);
+            transition: .2s;
+            cursor: pointer;
+            &:hover {
+                color: base.$clr-blue_light;
+            }
+        }
+        &_hidden {
+            opacity: 0;
+            transform: translateY(-10px);
         }
     }
 }

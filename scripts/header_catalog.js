@@ -132,29 +132,31 @@ function update_header_basket() {
 }
 
 function open_header_basket() {
-    if (document.querySelector('.header__notification_active')) {
-        const notification = document.querySelector('.header__notification');
-        notification.classList.remove('header__notification_active');
-        document.getElementById('header_button_notification').classList.remove('header__nav__button_active');
-        setTimeout(() => notification.style.display = "none", 160);
-    }
+    close_header_blocks();
+    // if (document.querySelector('.header__notification_active')) {
+    //     const notification = document.querySelector('.header__notification');
+    //     notification.classList.remove('header__notification_active');
+    //     document.getElementById('header_button_notification').classList.remove('header__nav__button_active');
+    //     setTimeout(() => notification.style.display = "none", 160);
+    // }
     // document.querySelector('#temporary_notification').style.right = '330px';
-    document.querySelector('#temporary_notification').style.display = 'none';
+    // document.querySelector('#temporary_notification').style.display = 'none';
     const header_basket = document.querySelector('.header__basket');
     header_basket.style.display = "block";
     document.querySelector('#header_basket_button').classList.add('header__nav__buttonBasket_active');
-    setTimeout(() => header_basket.classList.add('header__basket_active') = "none", 10);
+    setTimeout(() => header_basket.classList.add('header__basket_active'), 10);
 }
-
 function close_header_basket() {
+    if (!document.querySelector('.header__basket_active')) return;
+
     const header_basket = document.querySelector('.header__basket');
     header_basket.classList.remove('header__basket_active');
     document.querySelector('#header_basket_button').classList.remove('header__nav__buttonBasket_active');
     setTimeout(() => header_basket.style.display = "none", 160);
     // document.querySelector('#temporary_notification').style.right = '15px';
-    document.querySelector('#temporary_notification').style.display = 'block';
+    // document.querySelector('#temporary_notification').style.display = 'block';
+    open_temp_notification();
 }
-
 function toggle_header_basket() {
     if (document.querySelector('.header__basket').classList.contains('header__basket_active')) {
         close_header_basket();
@@ -162,6 +164,77 @@ function toggle_header_basket() {
     else {
         open_header_basket();
     }
+}
+
+function open_auth_block() {
+    close_header_blocks();
+
+    const header_authBlock = document.querySelector('.header__authBlock');
+    header_authBlock.style.display = 'block';
+    document.querySelector('#header_profile_button').classList.add('header__nav__button_active');
+    setTimeout(() => {
+        header_authBlock.classList.remove('header__authBlock_hidden');
+    }, 10);
+}
+function close_auth_block() {
+    if (document.querySelector('.header__authBlock_hidden')) return;
+
+    const header_authBlock = document.querySelector('.header__authBlock');
+    header_authBlock.classList.add('header__authBlock_hidden');
+    document.querySelector('#header_profile_button').classList.remove('header__nav__button_active');
+    setTimeout(() => {
+        header_authBlock.style.display = 'none';
+    }, 200);
+    open_temp_notification();
+}
+function toggle_auth_block() {
+    if (document.querySelector('.header__authBlock_hidden')) {
+        open_auth_block();
+        return;
+    }
+    close_auth_block();
+}
+
+function close_temp_notification() {
+    document.querySelector('#temporary_notification').style.display = 'none';
+}
+function open_temp_notification() {
+    document.querySelector('#temporary_notification').style.display = 'block';
+}
+
+function toggle_notifications() {
+    if (!document.querySelector('.header__notification_active')) {
+        open_notifications();
+        return;
+    }
+    close_notifications();
+}
+function open_notifications() {
+    close_header_blocks();
+    const notification = document.querySelector('.header__notification');
+    // const notification_button = document.getElementById('header_button_notification');
+    
+    notification.style.display = "block";
+    document.getElementById('header_button_notification').classList.add('header__nav__button_active');
+    setTimeout(() => notification.classList.add('header__notification_active'), 10);
+}
+function close_notifications() {
+    if (!document.querySelector('.header__notification_active')) return;
+
+    const notification = document.querySelector('.header__notification');
+    // const notification_button = document.getElementById('header_button_notification');
+
+    notification.classList.remove('header__notification_active');
+    document.getElementById('header_button_notification').classList.remove('header__nav__button_active');
+    open_temp_notification();
+    setTimeout(() => notification.style.display = "none", 160);
+}
+
+function close_header_blocks() {
+    close_auth_block();
+    close_header_basket();
+    close_notifications();
+    close_temp_notification();
 }
 
 update_header_basket();

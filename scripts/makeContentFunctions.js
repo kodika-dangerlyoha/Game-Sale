@@ -71,9 +71,18 @@ function makeOffers_index() {
         (summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
 }
 
-function makeSimilar_gameCard() {
+function makeSimilar_gameCard(game) {
+    const games_section_head = document.querySelector('#switch_section-game .switch__head');
+
+    if (game.series) {
+        games_section_head.innerHTML = get_games_section_head_series();
+        document.querySelector('#switch_section-game #switch_content-similar').innerHTML += games_list.reduce((summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
+        document.querySelector('#switch_section-game #switch_content-series').innerHTML += games_list.reduce((summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
+        return
+    }
+    games_section_head.classList = "heading heading_center";
+    games_section_head.innerHTML = get_games_section_head_noSeries();
     document.querySelector('#switch_section-game #switch_content-similar').innerHTML += games_list.reduce((summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
-    document.querySelector('#switch_section-game #switch_content-series').innerHTML += games_list.reduce((summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
 }
 
 function makeCatalog_catalog() {
@@ -199,7 +208,7 @@ function make_game_card_info(game) {
     make_mainInfo(game);
     make_additions(game);
     make_desscription();
-    makeSimilar_gameCard();
+    makeSimilar_gameCard(game);
 
     document.querySelectorAll('.loadingContent').forEach(elem => {
         if (elem.classList[1].search('_loading')) {
@@ -207,7 +216,7 @@ function make_game_card_info(game) {
         }
         elem.classList.add('open_content');
         elem.classList.remove('loadingContent');
-    })
+    });
 
     document.querySelectorAll('.loadingBlock').forEach(elem => elem.remove('loadingBlock'));
 

@@ -9,6 +9,7 @@ let games = [
         'treilerSrc': "video/50.MP4",
         'bigBanner': "img/banners/wt2.png",
         'bigBanner_blur': "img/banners/blur/wt2_blur.png",
+        'series': false,
         'newPrice': 4599,
         'oldPrice': 5120,
         'small_description': "War Thunder – самая масштабная бесплатная кроссплатформенная многопользовательская онлайн-игра, посвященная боевой технике самых разных войн и конфликтов – с начала XX века и до наших дней. Авиация, наземные силы и флот сражаются вместе в одном бою.",
@@ -247,6 +248,7 @@ let games = [
         'dls': false,
         'publisher': "",
         'developer': "",
+        'series': "FarCry",
     },
     {
         'id': 2,
@@ -266,6 +268,7 @@ let games = [
         'dls': true,
         'publisher': "Activision",
         'developer': "Activision",
+        'series': false,
     },
     {
         'id': 3,
@@ -954,9 +957,10 @@ let authors = [
   },
 ]
 
-let user = {
+let auth_user = {
     'id': 1,
     'region': 'Ru',
+    'currency': 'RUB',
     'nickname': 'ladn0!',
     'avatar_link': 'https://static.gabestore.ru/category/OEOxXYDZ-NhNK3g5ImnO0SBSnx5wJKIk.png',
     'trade_link': ''
