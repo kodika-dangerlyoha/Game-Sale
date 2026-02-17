@@ -51,44 +51,6 @@ function update_counter(value, title) {
     }
 }
 
-// function update_basket_button() {
-//     const header_basket_button = document.querySelector('#header_basket_button');
-//     let count_game = 0;
-    
-//     let cookie = JSON.parse(document.cookie);
-//     let basket_list = cookie.basket_list;
-
-//     count_game = basket_list.length;
-
-//     if (count_game === 0) {
-//         header_basket_button.querySelector('#header_basket_price').innerHTML = "0 ₽";
-//         header_basket_button.querySelector('#header_basket_counter').innerHTML = "0 Игр";
-//         header_basket_button.classList.add('header__nav__buttonBasket_closed');
-//     }
-//     else {
-//         let price = 0;
-
-//         let basket_list_infos = [];
-//         games.forEach(info => {
-//             if (contains(basket_list, info.id)) {
-//                 console.log(basket_list_infos[info.id]);
-//                 console.log(info);
-//                 basket_list_infos[info.id] = info;
-//             }
-//         });
-
-//         basket_list_infos.forEach(game => {
-//             price += game.newPrice;
-//         });
-
-//         header_basket_button.querySelector('#header_basket_price').innerHTML = `${price} ₽`;
-//         header_basket_button.querySelector('#header_basket_counter').innerHTML = `${count_game} Игр`;
-//         if (header_basket_button.classList.contains('header__nav__buttonBasket_closed')) {
-//             header_basket_button.classList.remove('header__nav__buttonBasket_closed');
-//         }
-//     }
-// }
-
 function update_header_basket() {
     let cookie = JSON.parse(document.cookie);
     let basket_list = cookie.basket_list;
@@ -166,35 +128,6 @@ function toggle_header_basket() {
     }
 }
 
-function open_auth_block() {
-    close_header_blocks();
-
-    const header_authBlock = document.querySelector('.header__authBlock');
-    header_authBlock.style.display = 'block';
-    document.querySelector('#header_profile_button').classList.add('header__nav__button_active');
-    setTimeout(() => {
-        header_authBlock.classList.remove('header__authBlock_hidden');
-    }, 10);
-}
-function close_auth_block() {
-    if (document.querySelector('.header__authBlock_hidden')) return;
-
-    const header_authBlock = document.querySelector('.header__authBlock');
-    header_authBlock.classList.add('header__authBlock_hidden');
-    document.querySelector('#header_profile_button').classList.remove('header__nav__button_active');
-    setTimeout(() => {
-        header_authBlock.style.display = 'none';
-    }, 200);
-    open_temp_notification();
-}
-function toggle_auth_block() {
-    if (document.querySelector('.header__authBlock_hidden')) {
-        open_auth_block();
-        return;
-    }
-    close_auth_block();
-}
-
 function close_temp_notification() {
     document.querySelector('#temporary_notification').style.display = 'none';
 }
@@ -231,7 +164,6 @@ function close_notifications() {
 }
 
 function close_header_blocks() {
-    close_auth_block();
     close_header_basket();
     close_notifications();
     close_temp_notification();
