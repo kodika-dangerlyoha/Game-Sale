@@ -1,83 +1,78 @@
-class Form_il {
-    all_inputList = [];
-
-    constructor(selector) {
-        this.form_il = document.querySelector(selector);
+class Input_list {
+    point_actions = {
+        'multiple': (parent, value, point) => this.change_multiple(parent, value, point),
+        'single': (parent, value, point) => this.change_single(parent, value, point),
+        'interval': () => this.change_interval(),
     }
 
-    register(inputList) {
-        this.all_inputList.push(inputList);
+    close(el) {
+        el.classList.remove('inputList_open');
     }
 
-    close_all_except(current_inputList) {
-        this.all_inputList.forEach(inputList => {
-            if (inputList !== current_inputList) {
-                inputList.close();
-            }
-        });
-    }
-}   
-
-class InputList {
-    constructor(selector, type, form_il) {
-        this.$inputList = document.querySelector(selector);
-        this.type = type;
-        this.init();
-        this.form_il = form_il;
-
-        this.form_il.register(this);
+    open(el) {
+        el.classList.add('inputList_open');
     }
 
-    init() {
-        this.$inputList.querySelector('.inputList__list__header').addEventListener('click', () => this.toggle());
-        if (this.type === 'radio') {
-            this.$inputList.querySelectorAll('.inputList__list__body__points__point').forEach(point => {
-                point.addEventListener('click', () => this.change_value_radio());
-            })
-        }
-        else if (this.type === 'checkbox') {
-            this.$inputList.querySelectorAll('.inputList__list__body__points__point').forEach(point => {
-                point.addEventListener('click', () => this.change_value_checkbox());
-            })
-        }
-    }
-
-    toggle() {
-        console.log('toggle');
-        this.form_il.close_all_except(this);
-        if(this.$inputList.classList.contains('inputList_open')) {
-            this.close();
+    toggle(el) {
+        if (el.classList.contains('inputList_open')) {
+            this.close(el);
         }
         else {
-            this.open();
+            this.open(el);
         }
     }
 
-    open() {
-        this.$inputList.classList.add('inputList_open');
-        console.log('open');
+    change_multiple(parent, value, point) {
+        const input = parent.querySelector('input[inp_type="value"]');
+        const arr = input.value.split(', ');
+        console.log(point);
+
+        if (arr.includes(value)) {
+            arr.splice(arr.indexOf(value), 1);
+            point.classList.remove('inputList__body__list__point_active');
+        }
+        else {
+            arr.unshift(value);
+            point.classList.add('inputList__body__list__point_active');
+        }
+
+        input.value = arr.filter(el => el !== '').join(', ');
+        parent.querySelector('.inputList__header__left__value').innerHTML = input.value;
     }
 
-    close() {
-        this.$inputList.classList.remove('inputList_open');
-        console.log('close');
+    change_single(parent, value, point) {
+        parent.querySelector('input[inp_type="value"]').value = value;
+        parent.querySelector('.inputList__header__left__value').innerHTML = value;
+
+        const active_point = parent.querySelector('.inputList__body__list__point_active');
+        if (active_point) {
+            if (active_point == point) {
+                parent.querySelector('input[inp_type="value"]').value = "";
+                parent.querySelector('.inputList__header__left__value').innerHTML = "";
+                active_point.classList.remove('inputList__body__list__point_active');
+                return
+            }
+            active_point.classList.remove('inputList__body__list__point_active');
+        }
+
+        point.classList.add('inputList__body__list__point_active');
     }
 
-    change_value_checkbox() {
+    change_interval() {
 
     }
-    change_value_radio() {
 
+    click(evt) {
+        const trg = evt.target;
+        const parent = trg.closest('.inputList');
+        if (trg.dataset.title == "header") {
+            this.toggle(parent);
+        }
+        else if (trg.dataset.title == "point") {
+            this.point_actions[parent.dataset.type](parent, trg.dataset.value, trg.closest('.inputList__body__list__point'));
+        }
     }
 }
-
-class InputList_point {
-
-    change_value() {
-
-    }
-}
-
 
 const toggle_list = (id) => {
     const e_open = document.querySelector('.inputList_open');

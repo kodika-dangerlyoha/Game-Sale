@@ -1,8 +1,9 @@
 // -------- game card -------- 
 
-const get_horizont_game_html = (game, discount) => {
+const get_horizont_game_html = (game) => {
     let preOrder_html = "";
     let dls_html = "";
+
 
     if (game.preOrder != "") {
         preOrder_html = `<div class="gameH__banner__info__point gameH__banner__info__point_more gameH__banner__info__point_preOrder"><span>Предзаказ</span>${game.preOrder}</div>`;
@@ -24,7 +25,7 @@ const get_horizont_game_html = (game, discount) => {
                         </div>
                         <div class="gameH__banner__info__right">
                             ${dls_html}
-                            <div class="gameH__banner__info__point gameH__banner__info__point_discount">${discount}%</div>
+                            <div class="gameH__banner__info__point gameH__banner__info__point_discount">${Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)}%</div>
                         </div>
                     </div>
                 </a>
@@ -135,10 +136,12 @@ const get_series_card_html = (series) => {
                 </a>
                 <div class="seriesCard__info">
                     <div class="seriesCard__info__left">
-                        <div class="seriesCard__info__name txt">${series.name}</div>
+                        <div class="seriesCard__info__name txt">${series.name} | ${series.games.length} Игр</div>
                     </div>
                     <div class="seriesCard__info__right">
-                        <div class="seriesCard__info__countGames txt"><span> Игр в серии:</span> ${series.games.length}</div>
+                        <div class="seriesCard__info__years txt">
+                            2001-2023
+                        </div>
                         <div class="seriesCard__info__buttons">
                             <div class="seriesCard__info__buttons__button _buttonFavorite">
                                 <div class="seriesCard__info__buttons__button__forHover seriesCard__info__buttons__button__forHover_red absolute-zero"></div>
@@ -236,12 +239,12 @@ const get_banner_game_html = (game, discount) => {
 
 // -------- Game Page --------
 
-const get_edition_game_html = (edition, discount) => {
+const get_edition_game_html = (edition) => {
     return `<a href="${edition.link}" class="edition">
                 <div class="edition__imgBlock"><img src="${edition.img}" alt="${edition.title}"></div>
                 <div class="edition__info">
                     <div class="edition__info__title txt">${edition.title}</div>
-                    <div class="edition__info__price txt"><span>${edition.newPrice} ₽</span><div class="edition__info__price__percent">${discount}%</div></div>
+                    <div class="edition__info__price txt"><span>${edition.newPrice} ₽</span><div class="edition__info__price__percent">${Math.round((edition.oldPrice - edition.newPrice) / edition.oldPrice * 100)}%</div></div>
                 </div>
             </a>`
 }

@@ -129,10 +129,10 @@ function toggle_header_basket() {
 }
 
 function close_temp_notification() {
-    document.querySelector('#temporary_notification').style.display = 'none';
+    document.querySelector('#temporary_notification').style.visibility = 'hidden';
 }
 function open_temp_notification() {
-    document.querySelector('#temporary_notification').style.display = 'block';
+    document.querySelector('#temporary_notification').style.visibility = 'visible';
 }
 
 function toggle_notifications() {

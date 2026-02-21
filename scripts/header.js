@@ -350,7 +350,7 @@ const get_header_html = (page, check_auth_user) => {
 function make_header() {
     const page = window.location.pathname;
 
-    document.querySelector('header').innerHTML = get_header_html(page, false);
+    document.querySelector('header').innerHTML = get_header_html(page, true);
 }
 
 make_header();

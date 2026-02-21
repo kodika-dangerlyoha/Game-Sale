@@ -1,47 +1,8 @@
-// let notification_list = get_notification_list_request();
-
-// function get_notification_list_request() {
-//     const notification_list = JSON.parse(document.cookie).notification_list;
-
-//     return notification_list.reduce((summ_notification, notification_info) => summ_notification + get_notification_html(notification_info.type, notification_info.value), "");;
-// }
-
-// function create_new_notification() {
-//     make_notification()
-// }
-
-// function set_notifacation_request(type, value) {
-//     let cookie = JSON.parse(document.cookie);
-//     let notifacation_info = {
-//         'type': type,
-//         'value': value,
-//     }
-//     cookie.notification_list.push(notifacation_info);
-//     document.cookie = JSON.stringify(cookie);
-//     console.log(document.cookie);
-
-//     notification_list = get_notification_list_request();
-//     make_notification();
-// }
-
-// function make_notification() {
-//     if (notification_list == "") {
-//         notification_list = `<div class="header__notification__grid__notification notification_nothing">
-//                                 <div class="header__notification__grid__notification__point txt">
-//                                     <div class="header__notification__grid__notification__point__smile">:(</div>
-//                                 </div>
-//                                 <div class="header__notification__grid__notification__text txt">Нет новый уведомлений</div>
-//                             </div>`
-//     }
-//     document.querySelector('#grid_notification').innerHTML = notification_list;
-// }
-
 function generateId() {
     return Date.now().toString(36) + Math.random().toString(36).slice(2);
 }
 
 let list_notifications = [];
-// let unviewed_count = 0;
 
 function check_unviewed_count() {
     let i = 0;
@@ -144,14 +105,11 @@ function show_temp_notification(status, message, id_notification) {
 // }
 
 function add_notification(message, status) {
-    // list_notifications.unshift({'status': status, 'message': message});
     const id_notification = generateId();
     list_notifications.unshift({'id': id_notification, 'status': status, 'message': message, 'viewed': false});
     localStorage.notifications = JSON.stringify(list_notifications);
     update_notification();
     show_temp_notification(status, message, id_notification);
-    // const notification_id = `notification${document.querySelectorAll('.header__notification_temporary__grid__notification').length}`;
-    // show_temporary_notification();
 }
 
 init_notification();

@@ -9,12 +9,12 @@ function make_author_games() {
     let series_html = "";
 
     list.forEach(game => {
-        games_new += get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100));
-        games_pop += get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100));
+        games_new += get_horizont_game_html(game);
+        games_pop += get_horizont_game_html(game);
     });
 
     list_all.forEach(game => {
-        games_all += get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100));
+        games_all += get_horizont_game_html(game);
     });
 
     series.forEach(el => {

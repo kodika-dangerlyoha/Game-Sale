@@ -44,7 +44,7 @@
             display: flex;
             justify-content: end;
             align-items: center;
-            gap: 10px;
+            gap: 7px;
             min-width: max-content;
             // min-width: 0;
             // margin-left: -50px;
@@ -56,18 +56,13 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-        }
-        &__countGames {
-            position: relative;
-            z-index: 2;
-            font-family: base.$fnt-all;
-            font-weight: 700;
-            // transform: translateX(-100%);
-            transition: 0.15s;
             & > span {
-                font-weight: 400;
                 color: rgb(200, 200, 200);
             }
+        }
+        &__years {
+            font-size: 14px;
+            color: rgb(200, 200, 200);
         }
         &__buttons {
             z-index: 2;
@@ -82,8 +77,8 @@
             transition: 0.15s;
             &__button {
                 position: relative;
-                height: 35px;
-                width: 35px;
+                height: 32px;
+                width: 32px;
                 z-index: 2;
                 border-radius: 7px;
                 display: flex;
@@ -133,17 +128,9 @@
                 margin-left: 0px;
             }
             &__buttons {
-                // margin-left: 0px;
                 opacity: 1;
                 transform: translateY(0px);
                 max-width: 200px;
-                &__button {
-                    // transform: scale(1);
-                }
-            }
-            &__price {
-                transform: translateX(0);
-                text-shadow: 0 0 10px base.$clr-main_body;
             }
         }
     }

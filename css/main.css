@@ -254,6 +254,10 @@ label {
   width: 1405px;
   padding-top: 100px;
 }
+.inner_w1605p100 {
+  width: 1605px;
+  padding-top: 100px;
+}
 .inner_w1220p150 {
   width: 1220px;
   padding-top: 150px;
@@ -504,6 +508,7 @@ label {
   gap: 7px;
   padding-right: 11px;
   padding-left: 13px;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
 }
 .header__nav__buttonBasket {
   height: 45px;
@@ -1616,8 +1621,8 @@ label {
 }
 .gameH__info__buttons__button {
   position: relative;
-  height: 35px;
-  width: 35px;
+  height: 32px;
+  width: 32px;
   z-index: 2;
   border-radius: 7px;
   display: flex;
@@ -1776,7 +1781,7 @@ label {
   display: flex;
   justify-content: end;
   align-items: center;
-  gap: 10px;
+  gap: 7px;
   min-width: -moz-max-content;
   min-width: max-content;
 }
@@ -1788,15 +1793,11 @@ label {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.seriesCard__info__countGames {
-  position: relative;
-  z-index: 2;
-  font-family: robotoFlex, sans-serif;
-  font-weight: 700;
-  transition: 0.15s;
+.seriesCard__info__name > span {
+  color: rgb(200, 200, 200);
 }
-.seriesCard__info__countGames > span {
-  font-weight: 400;
+.seriesCard__info__years {
+  font-size: 14px;
   color: rgb(200, 200, 200);
 }
 .seriesCard__info__buttons {
@@ -1812,8 +1813,8 @@ label {
 }
 .seriesCard__info__buttons__button {
   position: relative;
-  height: 35px;
-  width: 35px;
+  height: 32px;
+  width: 32px;
   z-index: 2;
   border-radius: 7px;
   display: flex;
@@ -1873,10 +1874,6 @@ label {
   opacity: 1;
   transform: translateY(0px);
   max-width: 200px;
-}
-.seriesCard:hover .seriesCard__info__price {
-  transform: translateX(0);
-  text-shadow: 0 0 10px rgb(39, 39, 39);
 }
 
 .switch__head {
@@ -2058,269 +2055,178 @@ label {
 
 .inputList {
   height: 40px;
-  position: relative;
-  z-index: 2;
-  width: 100%;
-}
-.inputList input {
-  display: block;
-  box-sizing: border-box;
-  height: 40px;
-  width: 100%;
   border-radius: 12px;
-  font-size: 14px;
-  outline: none;
-  cursor: text;
-  transition: 0.1s;
-}
-.inputList > input {
   position: relative;
   z-index: 1;
-  background: none;
-  visibility: hidden;
+  width: 250px;
 }
-.inputList__list {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 3;
-}
-.inputList__list__header {
+.inputList__header {
   position: relative;
-  z-index: 2;
-  height: 40px;
-  cursor: pointer;
-  transition: 0.2s;
-  border-radius: 12px;
+  height: inherit;
+  padding: 5px 10px;
   display: flex;
   align-items: center;
-  padding-left: 12px;
-  gap: 5px;
-  overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.1);
+  justify-content: space-between;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+  background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  background-color: rgb(61, 61, 61);
+  backdrop-filter: blur(10px);
 }
-.inputList__list__header__title {
+.inputList__header > * {
   position: relative;
-  z-index: 3;
-  font-size: 14px;
-  cursor: pointer;
-  min-width: -moz-max-content;
-  min-width: max-content;
-}
-.inputList__list__header__values {
-  position: relative;
-  font-size: 14px;
-  color: rgb(1, 162, 255);
   z-index: 1;
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  cursor: pointer;
 }
-.inputList__list__header__bg {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
+.inputList__header__left {
+  font-size: 14px;
+  display: flex;
+  min-width: 0;
+}
+.inputList__header__left__title {
+  font-weight: 700;
+}
+.inputList__header__left__value {
+  margin-left: 5px;
+  color: rgb(1, 162, 255);
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.inputList__header__icon {
   display: flex;
   align-items: center;
-  justify-content: end;
-  padding-right: 12px;
-  background: linear-gradient(to right, transparent 60%, rgb(61, 61, 61) 80%);
+  justify-content: center;
 }
-.inputList__list__header__bg > svg {
-  position: relative;
-  height: 24px;
-  transform: rotate(90deg);
+.inputList__header__icon > svg {
+  width: 22px;
+  height: 22px;
   transition: 0.2s;
-  z-index: 3;
+  transform: rotate(90deg);
 }
-.inputList__list__header:hover {
-  background-color: rgb(70, 70, 70);
+.inputList__header__click {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 5;
+  cursor: pointer;
 }
-.inputList__list__body {
-  display: none;
-  position: relative;
-  z-index: 1;
+.inputList__header:hover {
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
+}
+.inputList__body {
+  position: absolute;
+  top: 40px;
   width: 100%;
   border-radius: 0px 0px 12px 12px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  background-color: rgba(68, 68, 68, 0.8);
+  overflow: hidden;
+  transition: 0.2s;
   backdrop-filter: blur(10px);
-  border-top: none;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  padding-right: 7px;
-  padding-left: 7px;
-  animation: open 0.25s cubic-bezier(0, 0, 0, 0.75) 1;
-}
-.inputList__list__body__search {
-  margin-bottom: 5px;
-}
-.inputList__list__body__search > input {
-  height: 35px;
-  font-size: 14px;
-  border-radius: 10px;
-  padding-left: 14px;
+  max-height: 0px;
+  opacity: 0;
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
 }
-.inputList__list__body__search > input:focus {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
+.inputList__body__search {
+  padding: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-.inputList__list__body__numbers {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin-bottom: 5px;
-}
-.inputList__list__body__numbers > input {
-  width: 50%;
-  height: 35px;
+.inputList__body__search > input {
+  display: block;
   font-size: 14px;
-  border-radius: 10px;
-  padding-left: 14px;
+  border-radius: 5px;
+  padding: 2px 5px;
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
 }
-.inputList__list__body__numbers > input:focus {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
+.inputList__body__search > input:focus {
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
 }
-.inputList__list__body__numbers__separator {
-  width: 12px;
-  height: 4px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 2px;
-}
-.inputList__list__body__points {
+.inputList__body__list {
+  max-height: 164px;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-height: 210px;
+  gap: 5px;
+  padding: 5px;
+  padding-bottom: 7px;
   overflow: auto;
 }
-.inputList__list__body__points::-webkit-scrollbar {
-  width: 8px;
-  height: 10px;
+.inputList__body__list::-webkit-scrollbar {
+  width: 0;
 }
-.inputList__list__body__points::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.15); /* Цвет фона трека */
-  border-radius: 10px;
-}
-.inputList__list__body__points::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15); /* Цвет ползунка */
-  border-radius: 10px;
-}
-.inputList__list__body__points::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-.inputList__list__body__points__point {
+.inputList__body__list__point {
   position: relative;
-  padding-left: 8px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.15s;
-  border: 1px solid transparent;
-}
-.inputList__list__body__points__point__checkBlock {
-  position: absolute;
-  z-index: 1;
-  left: -8px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px;
-  height: 20px;
+  padding: 2px 5px;
   border-radius: 5px;
-  opacity: 0;
-  transition: 0.2s;
-  transition-timing-function: cubic-bezier(0, 0, 0, 0.75);
-  background-color: rgba(1, 162, 255, 0.4);
-  border: 1px solid rgb(1, 162, 255);
-  box-shadow: 5px 0 15px rgb(1, 162, 255);
-}
-.inputList__list__body__points__point__value {
-  position: relative;
-  z-index: 2;
-  display: block;
-  transition: 0.15s;
-  transition-timing-function: cubic-bezier(0, 0, 0, 0.75);
   font-size: 14px;
-}
-.inputList__list__body__points__point:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-.inputList__list__body__points__point_hidden {
-  height: 0;
-  opacity: 0;
-  padding: 0;
-  overflow: hidden;
-  border: 0px solid transparent;
-}
-.inputList__list__body__points__point_check .inputList__list__body__points__point__value {
-  padding-left: 10px;
-}
-.inputList__list__body__points__point_check .inputList__list__body__points__point__checkBlock {
-  opacity: 1;
-  left: 5px;
-}
-.inputList__list__body__points__point_active {
-  background-color: rgba(1, 162, 255, 0.4);
-  border: 1px solid rgb(1, 162, 255);
-  cursor: default;
-}
-.inputList__list__body__points__point_active:hover {
-  background-color: rgba(1, 162, 255, 0.4);
-  border: 1px solid rgb(1, 162, 255);
-}
-.inputList__list__body__button {
-  width: 100%;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-size: 14px;
-  text-align: center;
-  border-radius: 8px;
+  display: flex;
+  align-items: center;
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
   cursor: pointer;
 }
-.inputList__list__body__button:hover {
+.inputList__body__list__point:hover {
   background-color: rgba(1, 162, 255, 0.25);
   border: 1px solid rgba(1, 162, 255, 0.6);
 }
-.inputList__list__body__button:active {
+.inputList__body__list__point:active {
   transform: scale(0.95);
 }
-.inputList_open .inputList__list__header {
-  border-radius: 12px 12px 0px 0px;
+.inputList__body__list__point__click {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
 }
-.inputList_open .inputList__list__header__bg > svg {
-  transform: rotate(270deg);
+.inputList__body__list__point__mark {
+  position: relative;
+  z-index: 1;
+  height: 10px;
+  width: 0;
+  margin-right: 0;
+  transition: 0.2s;
+  border-radius: 2px;
+  background-color: rgb(1, 162, 255);
 }
-.inputList_open .inputList__list__body {
-  display: block;
+.inputList__body__list__point__title {
+  position: relative;
+  z-index: 1;
+}
+.inputList__body__list__point_active {
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
+}
+.inputList > input {
+  display: none;
 }
 .inputList_open {
-  z-index: 4;
+  z-index: 3;
 }
-.inputList_open > input {
+.inputList_open .inputList__header {
   border-radius: 12px 12px 0px 0px;
+}
+.inputList_open .inputList__header__icon > svg {
+  transform: rotate(-90deg);
+}
+.inputList_open .inputList__body {
+  max-height: 200px;
+  opacity: 1;
+}
+.inputList_multiple .inputList__body__list__point_active > .inputList__body__list__point__mark {
+  width: 4px;
+  margin-right: 5px;
 }
 
 .topImgParalaxBlock {

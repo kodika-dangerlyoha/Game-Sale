@@ -38,37 +38,12 @@ function makeOffers_index() {
     let gameList_expected = "";
     let gameList_ourChoice = "";
 
-    // gameList += basket_game_list.reduce((summ_game, game) => summ_game + get_basket_game_html(game), "");
-    // gameList += basket_game_list.reduce((summ_game, game) => summ_game + get_basket_game_html(game), "");
-    // gameList += basket_game_list.reduce((summ_game, game) => summ_game + get_basket_game_html(game), "");
-    
-    // games_list.forEach(game => {
-    //     gameList_new += get_horizont_game_html(
-    //         game, 
-    //         Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)
-    //     )
-    // });
-    // games_list.forEach(game => {
-    //     gameList_expected += get_horizont_game_html(
-    //         game, 
-    //         Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)
-    //     )
-    // });
-    // games_list.forEach(game => {
-    //     gameList_ourChoice += get_horizont_game_html(
-    //         game, 
-    //         Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)
-    //     )
-    // });
-
-    // records.filter(({gender}) => gender === 'BOYS').reduce((sum, record) => sum + record.value)
-
     document.querySelector('#offers_grid_new').innerHTML += games_list.filter(({status}) => status == "new").reduce(
-        (summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
+        (summ_game, game) => summ_game + get_horizont_game_html(game), "");
     document.querySelector('#offers_grid_expected').innerHTML += games_list.filter(({status}) => status == "expected").reduce(
-        (summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
+        (summ_game, game) => summ_game + get_horizont_game_html(game), "");
     document.querySelector('#offers_grid_ourChoice').innerHTML += games_list.filter(({status}) => status == "ourChoice").reduce(
-        (summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
+        (summ_game, game) => summ_game + get_horizont_game_html(game), "");
 }
 
 function makeSimilar_gameCard(game) {
@@ -76,59 +51,59 @@ function makeSimilar_gameCard(game) {
 
     if (game.series) {
         games_section_head.innerHTML = get_games_section_head_series();
-        document.querySelector('#switch_section-game #switch_content-similar').innerHTML += games_list.reduce((summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
-        document.querySelector('#switch_section-game #switch_content-series').innerHTML += games_list.reduce((summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
+        document.querySelector('#switch_section-game #switch_content-similar').innerHTML += games_list.reduce((summ_game, game) => summ_game + get_horizont_game_html(game), "");
+        document.querySelector('#switch_section-game #switch_content-series').innerHTML += games_list.reduce((summ_game, game) => summ_game + get_horizont_game_html(game), "");
         return
     }
     games_section_head.classList = "heading heading_center";
     games_section_head.innerHTML = get_games_section_head_noSeries();
-    document.querySelector('#switch_section-game #switch_content-similar').innerHTML += games_list.reduce((summ_game, game) => summ_game + get_horizont_game_html(game, Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)), "");
+    document.querySelector('#switch_section-game #switch_content-similar').innerHTML += games_list.reduce((summ_game, game) => summ_game + get_horizont_game_html(game), "");
 }
 
-function makeCatalog_catalog() {
-    let div = document.querySelector('#catalog');
-    div.innerHTML = "";
+// function makeCatalog_catalog() {
+//     let div = document.querySelector('#catalog');
+//     div.innerHTML = "";
 
-    function addGame() {
-        let grid = document.createElement('div');
+//     function addGame() {
+//         let grid = document.createElement('div');
         
-        getGames().forEach(game => {
-                let discount = Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100);
-                let blockSiteHTML = ` <div class="catalog__grid__game__banner">
-                                            <img src="${game.imgW}" alt="">
-                                            <div class="catalog__grid__game__banner__discount">
-                                                <div class="catalog__grid__game__banner__discount__inner txt">${discount}%</div>
-                                            </div>
-                                        </div>
-                                        <div class="catalog__grid__game__info">
-                                            <div class="catalog__grid__game__info__buttons">
-                                                <div class="catalog__grid__game__info__buttons__button">
-                                                    <div class="catalog__grid__game__info__buttons__button__forHover catalog__grid__game__info__buttons__button__forHover_blue absolute-zero"></div>
-                                                    <img src="img/icons/basket64.png" alt="">
-                                                </div>
-                                                <div class="catalog__grid__game__info__buttons__button">
-                                                    <div class="catalog__grid__game__info__buttons__button__forHover catalog__grid__game__info__buttons__button__forHover_red absolute-zero"></div>
-                                                    <img src="img/icons/like64.png" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="catalog__grid__game__info__name txt">${game.name}</div>
-                                            <div class="catalog__grid__game__info__price txt">${game.newPrice} ₽</div>
-                                        </div>`;
+//         getGames().forEach(game => {
+//                 let discount = Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100);
+//                 let blockSiteHTML = ` <div class="catalog__grid__game__banner">
+//                                             <img src="${game.imgW}" alt="">
+//                                             <div class="catalog__grid__game__banner__discount">
+//                                                 <div class="catalog__grid__game__banner__discount__inner txt">${discount}%</div>
+//                                             </div>
+//                                         </div>
+//                                         <div class="catalog__grid__game__info">
+//                                             <div class="catalog__grid__game__info__buttons">
+//                                                 <div class="catalog__grid__game__info__buttons__button">
+//                                                     <div class="catalog__grid__game__info__buttons__button__forHover catalog__grid__game__info__buttons__button__forHover_blue absolute-zero"></div>
+//                                                     <img src="img/icons/basket64.png" alt="">
+//                                                 </div>
+//                                                 <div class="catalog__grid__game__info__buttons__button">
+//                                                     <div class="catalog__grid__game__info__buttons__button__forHover catalog__grid__game__info__buttons__button__forHover_red absolute-zero"></div>
+//                                                     <img src="img/icons/like64.png" alt="">
+//                                                 </div>
+//                                             </div>
+//                                             <div class="catalog__grid__game__info__name txt">${game.name}</div>
+//                                             <div class="catalog__grid__game__info__price txt">${game.newPrice} ₽</div>
+//                                         </div>`;
                                         
-                let div = document.createElement('div');
-                div.classList.add("catalog__grid__game");
-                div.innerHTML = blockSiteHTML;
-                grid.append(div);
-        });
-        return grid.innerHTML;
-    }
+//                 let div = document.createElement('div');
+//                 div.classList.add("catalog__grid__game");
+//                 div.innerHTML = blockSiteHTML;
+//                 grid.append(div);
+//         });
+//         return grid.innerHTML;
+//     }
 
-    let blockSiteHTML = `<div class="catalog__grid">
-                            ${addGame()}
-                        </div>`;
+//     let blockSiteHTML = `<div class="catalog__grid">
+//                             ${addGame()}
+//                         </div>`;
 
-    div.innerHTML = blockSiteHTML;
-}
+//     div.innerHTML = blockSiteHTML;
+// }
 
 function make_additions(game) {
     make_editions();
@@ -136,14 +111,29 @@ function make_additions(game) {
 }
 
 function make_editions() {
-    document.querySelector('#additions-editions .additions__side__grid').innerHTML += editions.reduce(
-        (summ_game, edition) => summ_game + get_edition_game_html(edition, Math.round((edition.oldPrice - edition.newPrice) / edition.oldPrice * 100)), "");
+    let inner_html = "";
+    editions.forEach(el => {
+        inner_html += get_edition_game_html(el);
+    });
+
+    document.querySelector('#additions-editions .additions__side__grid').innerHTML = inner_html;
+
+    // document.querySelector('#additions-editions .additions__side__grid').innerHTML += editions.reduce(
+    //     (summ_game, edition) => summ_game + get_edition_game_html(edition, Math.round((edition.oldPrice - edition.newPrice) / edition.oldPrice * 100)), "");
     document.getElementsByClassName('edition')[0].classList.add('edition_active');
 }
 
 function make_dlc(game) {
-    document.querySelector('#additions-dlc .additions__side__grid').innerHTML += game.dlc.reduce(
-        (summ_game, dlc) => summ_game + get_dlc_html(dlc), "");
+    let inner_html = "";
+
+    game.dlc.forEach(el => {
+        inner_html += get_dlc_html(el);
+    });
+
+    document.querySelector('#additions-dlc .additions__side__grid').innerHTML = inner_html;
+
+    // document.querySelector('#additions-dlc .additions__side__grid').innerHTML += game.dlc.reduce(
+    //     (summ_game, dlc) => summ_game + get_dlc_html(dlc), "");
 }
 
 function make_regions_list(selected, str) {
@@ -230,10 +220,7 @@ function makeSalesHits_index() {
     let gameList = "";
     
     getGames_for_salesHits().forEach(game => {
-        gameList += get_vertical_game_html(
-            game, 
-            Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)
-        )
+        gameList += get_vertical_game_html(game);
     });
 
     document.querySelector('#salesHits #salesHits_content').innerHTML = gameList;

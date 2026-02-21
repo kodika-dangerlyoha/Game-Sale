@@ -302,490 +302,157 @@
 	<div class="blackoutBlock fixed-zero" onclick="open_catalogNavs()"></div>
 	
 	<main id="main">
-		<div class="inner inner_w1405p100">
-            <form class="formFilters" action="" name="form_filter">
-				<div class="formFilters__row">
-					<div class="formFilters__sortingBlock">
-						<div class="formFilters__sortingBlock__icon" onclick="toggle_direction_sorting()">
-							<svg class="formFilters__sortingBlock__icon__svg formFilters__sortingBlock__icon__svg_topToBottom" width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<rect class="_r_top" width="19" height="3" rx="1.5" fill="white"/>
-								<rect y="6" width="13" height="3" rx="1.5" fill="white"/>
-								<rect class="_r_bottom"  y="12" width="7" height="3" rx="1.5" fill="white"/>
-							</svg>
-						</div>
-						<div class="inputList" id="inputList-sorting">
-							<input class="txt" type="text" name="inp-sorting" title="inp-sorting" value="Жанрыни5тгт" id="inp-sorting">
-							<div class="inputList__list">
-								<div class="inputList__list__header">
-									<div class="inputList__list__header__title txt">Сортировка</div>
-									<!-- <div class="inputList__list__header__values txt"></div> -->
-									<div class="inputList__list__header__bg">
-										<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
-										</svg>
-									</div>
-								</div>
-								<div class="inputList__list__body">
-									<div class="inputList__list__body__search">
-										<input class="txt" type="text" name="inp_search_sorting" title="inp-search_sorting" placeholder="Поиск">
-									</div>
-									<div class="inputList__list__body__points txt" id="inputList_points-sorting">
-									</div>
-								</div>
+		<div class="inner inner_w1605p100">
+            <form class="filters" action="" name="form_filter">
+				<div class="filters__row">
+					<div class="inputList inputList_single txt" data-title="test1" data-type="single" id="test1">
+						<input type="text" title="values" inp_type="value" value="">
+						<div class="inputList__header">
+							<div class="inputList__header__click" data-title="header"></div>
+							<div class="inputList__header__left">
+								<div class="inputList__header__left__title">Название</div>
+								<div class="inputList__header__left__value"></div>
+							</div>
+							<div class="inputList__header__icon">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
+								</svg>
 							</div>
 						</div>
-					</div>
-					<div class="inputList" id="inputList-genres">
-						<input class="txt" type="text" name="inp-genres" title="inp-genres" value="Жанрыни5тгт" id="inp-genres">
-						<div class="inputList__list">
-							<div class="inputList__list__header" onclick="toggle_list('genres')">
-								<div class="inputList__list__header__title txt">Жанры</div>
-								<div class="inputList__list__header__values txt"></div>
-								<div class="inputList__list__header__bg">
-									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
-									</svg>
-								</div>
+						<div class="inputList__body">
+							<div class="inputList__body__search">
+								<input type="text" title="search_filter" class="txt" placeholder="Поиск" inp_type="search"></input>
 							</div>
-							<div class="inputList__list__body">
-								<div class="inputList__list__body__search">
-									<input class="txt" type="text" name="inp_search_genres" title="inp-search_genres" placeholder="Поиск">
+							<div class="inputList__body__list">
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-value="value_1" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">Поинт</div>
 								</div>
-								<div class="inputList__list__body__points txt" id="inputList_points-genres">
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-value="value_2" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">Поинт</div>
 								</div>
-							</div>
-						</div>
-					</div>
-					<div class="inputList" id="inputList-prices">
-						<input class="txt" type="text" name="inp-prices" title="inp-prices" value="Жанрыни5тгт" id="inp-prices">
-						<div class="inputList__list">
-							<div class="inputList__list__header" onclick="toggle_list('prices')">
-								<div class="inputList__list__header__title txt">Цена</div>
-								<div class="inputList__list__header__values txt">0 - 9999 ₽</div>
-								<div class="inputList__list__header__bg">
-									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
-									</svg>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-value="value_3" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">Поинт</div>
 								</div>
-							</div>
-							<div class="inputList__list__body">
-								<div class="inputList__list__body__numbers">
-									<input class="txt" type="number" name="inp_num_min_price" placeholder="От" value="0">
-									<div class="inputList__list__body__numbers__separator"></div>
-									<input class="txt" type="number" name="inp_num_max_price" placeholder="До" value="9999">
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">Поинт</div>
 								</div>
-								<div class="inputList__list__body__points txt" id="inputList_points-prices">
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">Поинт</div>
+								</div>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">Поинт</div>
+								</div>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">Поинт</div>
+								</div>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">Поинт</div>
+								</div>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">Поинт</div>
+								</div>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">Поинт</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="inputList" id="inputList-date">
-						<input class="txt" type="text" name="inp-date" title="inp-date" value="Жанрыни5тгт" id="inp-date">
-						<div class="inputList__list">
-							<div class="inputList__list__header" onclick="toggle_list('date')">
-								<div class="inputList__list__header__title txt">Год выпуска</div>
-								<div class="inputList__list__header__values txt">1800 - 2030</div>
-								<div class="inputList__list__header__bg">
-									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
-									</svg>
-								</div>
+					<div class="inputList inputList_multiple txt" data-title="test2" data-type="multiple" id="test2">
+						<input type="text" title="values" inp_type="value" value="">
+						<div class="inputList__header">
+							<div class="inputList__header__click" data-title="header"></div>
+							<div class="inputList__header__left">
+								<div class="inputList__header__left__title">Название</div>
+								<div class="inputList__header__left__value"></div>
 							</div>
-							<div class="inputList__list__body">
-								<div class="inputList__list__body__numbers">
-									<input class="txt" type="number" name="inp_num_min_date" placeholder="От" value="1800">
-									<div class="inputList__list__body__numbers__separator"></div>
-									<input class="txt" type="number" name="inp_num_max_date" placeholder="До" value="2030">
-								</div>
-								<button type="button" class="inputList__list__body__button txt" onclick="set_value_date()">Применить</button>
+							<div class="inputList__header__icon">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
+								</svg>
 							</div>
 						</div>
-					</div>
-					<div class="formFilters__menuButtons">
-						<button type="button" class="formFilters__menuButtons__allFilters txt" title="кнопка все фильтры" onclick="toggle_subRow()">
-							<svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-									<g transform="translate(-1200.000000, 0.000000)">
-										<g transform="translate(1200.000000, 0.000000)">
-											<path d="M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5934901,23.257841 L12.5819402,23.2595131 L12.5108777,23.2950439 L12.4918791,23.2987469 L12.4918791,23.2987469 L12.4767152,23.2950439 L12.4056548,23.2595131 C12.3958229,23.2563662 12.3870493,23.2590235 12.3821421,23.2649074 L12.3780323,23.275831 L12.360941,23.7031097 L12.3658947,23.7234994 L12.3769048,23.7357139 L12.4804777,23.8096931 L12.4953491,23.8136134 L12.4953491,23.8136134 L12.5071152,23.8096931 L12.6106902,23.7357139 L12.6232938,23.7196733 L12.6232938,23.7196733 L12.6266527,23.7031097 L12.609561,23.275831 C12.6075724,23.2657013 12.6010112,23.2592993 12.5934901,23.257841 L12.5934901,23.257841 Z M12.8583906,23.1452862 L12.8445485,23.1473072 L12.6598443,23.2396597 L12.6498822,23.2499052 L12.6498822,23.2499052 L12.6471943,23.2611114 L12.6650943,23.6906389 L12.6699349,23.7034178 L12.6699349,23.7034178 L12.678386,23.7104931 L12.8793402,23.8032389 C12.8914285,23.8068999 12.9022333,23.8029875 12.9078286,23.7952264 L12.9118235,23.7811639 L12.8776777,23.1665331 C12.8752882,23.1545897 12.8674102,23.1470016 12.8583906,23.1452862 L12.8583906,23.1452862 Z M12.1430473,23.1473072 C12.1332178,23.1423925 12.1221763,23.1452606 12.1156365,23.1525954 L12.1099173,23.1665331 L12.0757714,23.7811639 C12.0751323,23.7926639 12.0828099,23.8018602 12.0926481,23.8045676 L12.108256,23.8032389 L12.3092106,23.7104931 L12.3186497,23.7024347 L12.3186497,23.7024347 L12.3225043,23.6906389 L12.340401,23.2611114 L12.337245,23.2485176 L12.337245,23.2485176 L12.3277531,23.2396597 L12.1430473,23.1473072 Z" fill-rule="nonzero">
-											</path>
-											<path d="M18,4 C18,3.44772 17.5523,3 17,3 C16.4477,3 16,3.44772 16,4 L16,5 L4,5 C3.44772,5 3,5.44772 3,6 C3,6.55228 3.44772,7 4,7 L16,7 L16,8 C16,8.55228 16.4477,9 17,9 C17.5523,9 18,8.55228 18,8 L18,7 L20,7 C20.5523,7 21,6.55228 21,6 C21,5.44772 20.5523,5 20,5 L18,5 L18,4 Z M4,11 C3.44772,11 3,11.4477 3,12 C3,12.5523 3.44772,13 4,13 L6,13 L6,14 C6,14.5523 6.44772,15 7,15 C7.55228,15 8,14.5523 8,14 L8,13 L20,13 C20.5523,13 21,12.5523 21,12 C21,11.4477 20.5523,11 20,11 L8,11 L8,10 C8,9.44772 7.55228,9 7,9 C6.44772,9 6,9.44772 6,10 L6,11 L4,11 Z M3,18 C3,17.4477 3.44772,17 4,17 L16,17 L16,16 C16,15.4477 16.4477,15 17,15 C17.5523,15 18,15.4477 18,16 L18,17 L20,17 C20.5523,17 21,17.4477 21,18 C21,18.5523 20.5523,19 20,19 L18,19 L18,20 C18,20.5523 17.5523,21 17,21 C16.4477,21 16,20.5523 16,20 L16,19 L4,19 C3.44772,19 3,18.5523 3,18 Z" fill="#fff">
-											</path>
-										</g>
-									</g>
-								</g>
-							</svg>
-							<span>Все фильтры</span>
-						</button>
-						<button type="button" class="formFilters__menuButtons__reset txt" title="кнопка сбросить" onclick="reset_all_filters()">Сбросить</button>
-					</div>
-				</div>
-				<div class="formFilters__row formFilters__row_sub formFilters__row_hidden">
-					<div class="inputList" id="inputList-theme">
-						<input class="txt" type="text" name="inp-theme" title="inp-theme" value="Teмы" id="inp-theme">
-						<div class="inputList__list">
-							<div class="inputList__list__header" onclick="toggle_list('theme')">
-								<div class="inputList__list__header__title txt">Темы</div>
-								<div class="inputList__list__header__values txt"></div>
-								<div class="inputList__list__header__bg">
-									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
-									</svg>
-								</div>
+						<div class="inputList__body">
+							<div class="inputList__body__search">
+								<input type="text" title="search_filter" class="txt" placeholder="Поиск" inp_type="search"></input>
 							</div>
-							<div class="inputList__list__body">
-								<div class="inputList__list__body__search">
-									<input class="txt" type="text" name="inp_search_theme" title="inp-search_theme" placeholder="Поиск">
+							<div class="inputList__body__list">
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-value="value_1" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">Поинт</div>
 								</div>
-								<div class="inputList__list__body__points txt" id="inputList_points-theme">
-									<div class="inputList__list__body__points__point" onclick="change_value_list('', '')">По умолчанию</div>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-value="value_2" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">Поинт</div>
 								</div>
-							</div>
-						</div>
-					</div>
-					<div class="inputList" id="inputList-developers">
-						<input class="txt" type="text" name="inp-developers" title="inp-developers" value="RU (Россия)" id="inp-developers">
-						<div class="inputList__list">
-							<div class="inputList__list__header" onclick="toggle_list('developers')">
-								<div class="inputList__list__header__title txt">Разработчики</div>
-								<div class="inputList__list__header__values txt"></div>
-								<div class="inputList__list__header__bg">
-									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
-									</svg>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-value="value_3" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">Поинт</div>
 								</div>
-							</div>
-							<div class="inputList__list__body">
-								<div class="inputList__list__body__search">
-									<input class="txt" type="text" name="inp_search_developers" title="inp-search_developers" placeholder="Поиск">
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">Поинт</div>
 								</div>
-								<div class="inputList__list__body__points txt" id="inputList_points-developers">
-									<div class="inputList__list__body__points__point" onclick="change_value_list('', '')">По умолчанию</div>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">Поинт</div>
 								</div>
-							</div>
-						</div>
-					</div>
-					<div class="inputList" id="inputList-publisher">
-						<input class="txt" type="text" name="inp-publisher" title="inp-publisher" value="RU (Россия)" id="inp-publisher">
-						<div class="inputList__list">
-							<div class="inputList__list__header" onclick="toggle_list('publisher')">
-								<div class="inputList__list__header__title txt">Издатели</div>
-								<div class="inputList__list__header__values txt"></div>
-								<div class="inputList__list__header__bg">
-									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
-									</svg>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">Поинт</div>
 								</div>
-							</div>
-							<div class="inputList__list__body">
-								<div class="inputList__list__body__search">
-									<input class="txt" type="text" name="inp_search_publisher" title="inp-search_publisher" placeholder="Поиск">
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">Поинт</div>
 								</div>
-								<div class="inputList__list__body__points txt" id="inputList_points-publisher">
-									<div class="inputList__list__body__points__point" onclick="change_value_list('', '')">По умолчанию</div>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">Поинт</div>
 								</div>
-							</div>
-						</div>
-					</div>
-					<div class="inputList" id="inputList-gameMethods">
-						<input class="txt" type="text" name="inp-gameMethods" title="inp-gameMethods" value="RU (Россия)" id="inp-gameMethods">
-						<div class="inputList__list">
-							<div class="inputList__list__header" onclick="toggle_list('gameMethods')">
-								<div class="inputList__list__header__title txt">Способы игры</div>
-								<div class="inputList__list__header__values txt"></div>
-								<div class="inputList__list__header__bg">
-									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
-									</svg>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">Поинт</div>
 								</div>
-							</div>
-							<div class="inputList__list__body">
-								<div class="inputList__list__body__search">
-									<input class="txt" type="text" name="inp_search_gameMethods" title="inp-search_gameMethods" placeholder="Поиск">
-								</div>
-								<div class="inputList__list__body__points txt" id="inputList_points-gameMethods">
-									<div class="inputList__list__body__points__point" onclick="change_value_list('', '')">По умолчанию</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="inputList" id="inputList-gameSeries">
-						<input class="txt" type="text" name="inp-gameSeries" title="inp-gameSeries" value="RU (Россия)" id="inp-gameSeries">
-						<div class="inputList__list">
-							<div class="inputList__list__header" onclick="toggle_list('gameSeries')">
-								<div class="inputList__list__header__title txt">Серии игр</div>
-								<div class="inputList__list__header__values txt"></div>
-								<div class="inputList__list__header__bg">
-									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
-									</svg>
-								</div>
-							</div>
-							<div class="inputList__list__body">
-								<div class="inputList__list__body__search">
-									<input class="txt" type="text" name="inp_search_gameSeries" title="inp-search_gameSeries" placeholder="Поиск">
-								</div>
-								<div class="inputList__list__body__points txt" id="inputList_points-gameSeries">
-									<div class="inputList__list__body__points__point" onclick="change_value_list('', '')">По умолчанию</div>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">Поинт</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
             </form>
-			<section class="games">
-				<div class="games__grid" id="offers_grid_new">
+			<section class="catalog griding_4InRow" id="catalog_grid">
 
-					<article class="gameH">
-					<a href="game.html" class="gameH__banner">
-						<div class="gameH__banner__glass"></div>
-						<div class="gameH__banner__imgBlock"><img src="img/banners/farmsim.png" alt="Call Of Duty: Cold War 2"></div>
-						<div class="gameH__banner__videoBlock">
-							<video src="video/50.MP4" autoplay="" loop="" muted="">
-						</video></div>
-						<div class="gameH__banner__info txt">
-							<div class="gameH__banner__info__left">
-								<div class="gameH__banner__info__point gameH__banner__info__point_more gameH__banner__info__point_preOrder"><span>Предзаказ</span>03.04.2026</div>
-							</div>
-							<div class="gameH__banner__info__right">
-								
-								<div class="gameH__banner__info__point gameH__banner__info__point_discount">10%</div>
-							</div>
-						</div>
-					</a>
-					<div class="gameH__info">
-						<div class="gameH__info__buttons">
-							<div class="gameH__info__buttons__button">
-								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
-								<img src="img/icons/main/basket64.png" alt="">
-							</div>
-							<div class="gameH__info__buttons__button">
-								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
-								<img src="img/icons/main/like64.png" alt="">
-							</div>
-						</div>
-						<div class="gameH__info__name txt">Call Of Duty: Cold War 2</div>
-						<div class="gameH__info__price txt">4599₽</div>
-					</div>
-				</article><article class="gameH">
-					<a href="game.html" class="gameH__banner">
-						<div class="gameH__banner__glass"></div>
-						<div class="gameH__banner__imgBlock"><img src="img/banners/4.jpg" alt="Ghosts"></div>
-						<div class="gameH__banner__videoBlock">
-							<video src="video/2.MP4" autoplay="" loop="" muted="">
-						</video></div>
-						<div class="gameH__banner__info txt">
-							<div class="gameH__banner__info__left">
-								<div class="gameH__banner__info__point gameH__banner__info__point_more gameH__banner__info__point_preOrder"><span>Предзаказ</span>03.04.2026</div>
-							</div>
-							<div class="gameH__banner__info__right">
-								
-								<div class="gameH__banner__info__point gameH__banner__info__point_discount">22%</div>
-							</div>
-						</div>
-					</a>
-					<div class="gameH__info">
-						<div class="gameH__info__buttons">
-							<div class="gameH__info__buttons__button">
-								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
-								<img src="img/icons/main/basket64.png" alt="">
-							</div>
-							<div class="gameH__info__buttons__button">
-								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
-								<img src="img/icons/main/like64.png" alt="">
-							</div>
-						</div>
-						<div class="gameH__info__name txt">Ghosts</div>
-						<div class="gameH__info__price txt">1255₽</div>
-					</div>
-				</article><article class="gameH">
-					<a href="" class="gameH__banner">
-						<div class="gameH__banner__glass"></div>
-						<div class="gameH__banner__imgBlock"><img src="img/banners/5.jpg" alt="Drill Aviasion"></div>
-						<div class="gameH__banner__videoBlock">
-							<video src="video/4.MP4" autoplay="" loop="" muted="">
-						</video></div>
-						<div class="gameH__banner__info txt">
-							<div class="gameH__banner__info__left">
-								
-							</div>
-							<div class="gameH__banner__info__right">
-								<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>
-								<div class="gameH__banner__info__point gameH__banner__info__point_discount">8%</div>
-							</div>
-						</div>
-					</a>
-					<div class="gameH__info">
-						<div class="gameH__info__buttons">
-							<div class="gameH__info__buttons__button">
-								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
-								<img src="img/icons/main/basket64.png" alt="">
-							</div>
-							<div class="gameH__info__buttons__button">
-								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
-								<img src="img/icons/main/like64.png" alt="">
-							</div>
-						</div>
-						<div class="gameH__info__name txt">Drill Aviasion</div>
-						<div class="gameH__info__price txt">3678₽</div>
-					</div>
-				</article><article class="gameH">
-					<a href="" class="gameH__banner">
-						<div class="gameH__banner__glass"></div>
-						<div class="gameH__banner__imgBlock"><img src="img/banners/9.jpg" alt="Call Of Duty: Cold War 2"></div>
-						<div class="gameH__banner__videoBlock">
-							<video src="video/IMG_6148.MP4" autoplay="" loop="" muted="">
-						</video></div>
-						<div class="gameH__banner__info txt">
-							<div class="gameH__banner__info__left">
-								
-							</div>
-							<div class="gameH__banner__info__right">
-								<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>
-								<div class="gameH__banner__info__point gameH__banner__info__point_discount">4%</div>
-							</div>
-						</div>
-					</a>
-					<div class="gameH__info">
-						<div class="gameH__info__buttons">
-							<div class="gameH__info__buttons__button">
-								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
-								<img src="img/icons/main/basket64.png" alt="">
-							</div>
-							<div class="gameH__info__buttons__button">
-								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
-								<img src="img/icons/main/like64.png" alt="">
-							</div>
-						</div>
-						<div class="gameH__info__name txt">Call Of Duty: Cold War 2</div>
-						<div class="gameH__info__price txt">6700₽</div>
-					</div>
-				</article><article class="gameH">
-					<a href="" class="gameH__banner">
-						<div class="gameH__banner__glass"></div>
-						<div class="gameH__banner__imgBlock"><img src="img/banners/11.jpg" alt="On The Run 2"></div>
-						<div class="gameH__banner__videoBlock">
-							<video src="video/IMG_6148.MP4" autoplay="" loop="" muted="">
-						</video></div>
-						<div class="gameH__banner__info txt">
-							<div class="gameH__banner__info__left">
-								
-							</div>
-							<div class="gameH__banner__info__right">
-								
-								<div class="gameH__banner__info__point gameH__banner__info__point_discount">23%</div>
-							</div>
-						</div>
-					</a>
-					<div class="gameH__info">
-						<div class="gameH__info__buttons">
-							<div class="gameH__info__buttons__button">
-								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
-								<img src="img/icons/main/basket64.png" alt="">
-							</div>
-							<div class="gameH__info__buttons__button">
-								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
-								<img src="img/icons/main/like64.png" alt="">
-							</div>
-						</div>
-						<div class="gameH__info__name txt">On The Run 2</div>
-						<div class="gameH__info__price txt">2344₽</div>
-					</div>
-				</article><article class="gameH">
-					<a href="game.html" class="gameH__banner">
-						<div class="gameH__banner__glass"></div>
-						<div class="gameH__banner__imgBlock"><img src="img/banners/4.jpg" alt="Ghosts"></div>
-						<div class="gameH__banner__videoBlock">
-							<video src="video/2.MP4" autoplay="" loop="" muted="">
-						</video></div>
-						<div class="gameH__banner__info txt">
-							<div class="gameH__banner__info__left">
-								
-							</div>
-							<div class="gameH__banner__info__right">
-								<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>
-								<div class="gameH__banner__info__point gameH__banner__info__point_discount">22%</div>
-							</div>
-						</div>
-					</a>
-					<div class="gameH__info">
-						<div class="gameH__info__buttons">
-							<div class="gameH__info__buttons__button">
-								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
-								<img src="img/icons/main/basket64.png" alt="">
-							</div>
-							<div class="gameH__info__buttons__button">
-								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
-								<img src="img/icons/main/like64.png" alt="">
-							</div>
-						</div>
-						<div class="gameH__info__name txt">Ghosts</div>
-						<div class="gameH__info__price txt">1255₽</div>
-					</div>
-				</article><article class="gameH">
-					<a href="" class="gameH__banner">
-						<div class="gameH__banner__glass"></div>
-						<div class="gameH__banner__imgBlock"><img src="img/banners/5.jpg" alt="Drill Aviasion"></div>
-						<div class="gameH__banner__videoBlock">
-							<video src="video/4.MP4" autoplay="" loop="" muted="">
-						</video></div>
-						<div class="gameH__banner__info txt">
-							<div class="gameH__banner__info__left">
-								
-							</div>
-							<div class="gameH__banner__info__right">
-								<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>
-								<div class="gameH__banner__info__point gameH__banner__info__point_discount">8%</div>
-							</div>
-						</div>
-					</a>
-					<div class="gameH__info">
-						<div class="gameH__info__buttons">
-							<div class="gameH__info__buttons__button">
-								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
-								<img src="img/icons/main/basket64.png" alt="">
-							</div>
-							<div class="gameH__info__buttons__button">
-								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
-								<img src="img/icons/main/like64.png" alt="">
-							</div>
-						</div>
-						<div class="gameH__info__name txt">Drill Aviasion</div>
-						<div class="gameH__info__price txt">3678₽</div>
-					</div>
-				</article><article class="gameH">
-					<a href="" class="gameH__banner">
-						<div class="gameH__banner__glass"></div>
-						<div class="gameH__banner__imgBlock"><img src="img/banners/11.jpg" alt="On The Run 2"></div>
-						<div class="gameH__banner__videoBlock">
-							<video src="video/IMG_6148.MP4" autoplay="" loop="" muted="">
-						</video></div>
-						<div class="gameH__banner__info txt">
-							<div class="gameH__banner__info__left">
-								
-							</div>
-							<div class="gameH__banner__info__right">
-								
-								<div class="gameH__banner__info__point gameH__banner__info__point_discount">23%</div>
-							</div>
-						</div>
-					</a>
-					<div class="gameH__info">
-						<div class="gameH__info__buttons">
-							<div class="gameH__info__buttons__button">
-								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
-								<img src="img/icons/main/basket64.png" alt="">
-							</div>
-							<div class="gameH__info__buttons__button">
-								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
-								<img src="img/icons/main/like64.png" alt="">
-							</div>
-						</div>
-						<div class="gameH__info__name txt">On The Run 2</div>
-						<div class="gameH__info__price txt">2344₽</div>
-					</div>
-				</article>
-			</div>
 			</section>
 		</div>
 	</main>
@@ -866,6 +533,6 @@
 	<script type="text/javascript" src="scripts/header_catalog.js"></script>
 	<script type="text/javascript" src="scripts/notification.js"></script>
 	<script type="text/javascript" src="scripts/input_list.js"></script>
-	<script type="text/javascript" src="scripts/catalog.js"></script>
+	<script type="text/javascript" src="scripts/apps/app_catalog.js"></script>
 </body>
 </html>
