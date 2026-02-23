@@ -22,7 +22,7 @@ function make_catalog_games(arr) {
 const il = new Input_list;
 
 document.querySelectorAll('.inputList').forEach(el => {
-    el.addEventListener('click', evt => il.click(evt));
+    il.init(el);
 });
 
 // make_catalog_games(games);

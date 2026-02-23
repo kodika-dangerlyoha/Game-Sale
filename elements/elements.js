@@ -153,7 +153,7 @@ const get_series_card_html = (series) => {
             </article>`
 };
 
-// --------  --------
+// --------  -------- 
 
 const get_banner_html = (count, game_info, carousel_banner_list, discount) => {
     return `<div class = "carousel__banner" order = ${count} game_id = '${game_info.id}' style = "${count === 0 ? 'margin-left: 0' : ''};
