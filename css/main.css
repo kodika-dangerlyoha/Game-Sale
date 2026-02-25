@@ -2106,6 +2106,39 @@ label {
   transition: 0.2s;
   transform: rotate(90deg);
 }
+.inputList__header__reset {
+  position: absolute;
+  z-index: 6;
+  right: 30px;
+  padding: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.2s;
+}
+.inputList__header__reset > svg {
+  position: relative;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+.inputList__header__reset > svg > path {
+  transition: 0.2s;
+}
+.inputList__header__reset__click {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+.inputList__header__reset:hover > svg > path {
+  stroke: rgb(1, 162, 255);
+}
 .inputList__header__click {
   position: absolute;
   top: 0;
@@ -2118,6 +2151,9 @@ label {
 .inputList__header:hover {
   background-color: rgba(1, 162, 255, 0.25);
   border: 1px solid rgba(1, 162, 255, 0.6);
+}
+.inputList__header:hover .inputList__header__reset {
+  opacity: 1;
 }
 .inputList__body {
   position: absolute;

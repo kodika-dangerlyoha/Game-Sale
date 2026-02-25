@@ -313,6 +313,42 @@ $-border_radius: 12px;
                 transform: rotate(90deg);
             }
         }
+        &__reset {
+            position: absolute;
+            z-index: 6;
+            right: 30px;
+            padding: 2px;
+            // background-color: rgba(255, 255, 255, .1);
+            // border: 1px solid rgba(255, 255, 255, .2);
+            // border-radius: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: .2s;
+            & > svg {
+                position: relative;
+                z-index: 1;
+                width: 24px;
+                height: 24px;
+                & > path {
+                    transition: .2s;
+                }
+            }
+            &__click {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                z-index: 2;
+            }
+            &:hover > svg > path{
+                stroke: base.$clr-blue_light;
+            }
+        }
         &__click {
             position: absolute;
             top: 0; right: 0;
@@ -322,6 +358,11 @@ $-border_radius: 12px;
         }
         &:hover {
             @include base.style-main_hover;
+        }
+        &:hover &{
+            &__reset {
+                opacity: 1;
+            }
         }
     }
     &__body {

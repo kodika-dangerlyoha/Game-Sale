@@ -9,6 +9,22 @@ class Input_list {
         }
     }
 
+    // - 1 Без actions = {} 
+
+    //- 2 
+    // actions = {
+    //     'header': (info) => this.toggle(info.parent),
+    //     'point': (info) => this.point_actions[info.parent.dataset.type](info.parent, info.value, info.point),
+    //     'reset': (info) => this.reset_actions[info.parent.dataset.type](info.parent)
+    // }
+
+    //- 3 
+    actions = {
+        'header': (parent, point, value) => this.toggle(parent),
+        'point': (parent, point, value) => this.point_actions[parent.dataset.type](parent, value, point),
+        'reset': (parent, point, value) => this.reset_actions[parent.dataset.type](parent)
+    }
+
     point_actions = {
         'multiple': (parent, value, point) => this.change_multiple(parent, value, point),
         'single': (parent, value, point) => this.change_single(parent, value, point),
@@ -18,6 +34,12 @@ class Input_list {
     input_actions = {
         'search': (parent) => this.search(parent),
         'interval': (parent) => this.change_interval_inputs(parent)
+    }
+
+    reset_actions = {
+        'single': (parent) => this.reset_single(parent),
+        'multiple': (parent) => this.reset_multiple(parent),
+        'interval': (parent) => this.reset_interval(parent)
     }
 
     close(el) {
@@ -34,6 +56,32 @@ class Input_list {
         }
         else {
             this.open(el);
+        }
+    }
+
+    reset_multiple(parent) {
+        parent.querySelector('input[inp_type="value"]').value = [];
+        parent.querySelector('.inputList__header__left__value').innerHTML = '';
+        const active_points = parent.querySelectorAll('.inputList__body__list__point_active');
+        if (active_points) {
+            active_points.forEach(el => el.classList.remove('inputList__body__list__point_active'));
+        }
+    }
+
+    reset_single(parent) {
+        parent.querySelector('input[inp_type="value"]').value = '';
+        parent.querySelector('.inputList__header__left__value').innerHTML = '';
+        const active_point = parent.querySelector('.inputList__body__list__point_active');
+        if (active_point) {
+            active_point.classList.remove('inputList__body__list__point_active');
+        }
+    }
+
+    reset_interval(parent) {
+        this.update_interval(parent, ['', '']);
+        const active_point = parent.querySelector('.inputList__body__list__point_active');
+        if (active_point) {
+            active_point.classList.remove('inputList__body__list__point_active');
         }
     }
 
@@ -126,14 +174,32 @@ class Input_list {
     }
 
     click(evt) {
+        // - 3 
         const trg = evt.target;
-        const parent = trg.closest('.inputList');
-        if (trg.dataset.title == "header") {
-            this.toggle(parent);
-        }
-        else if (trg.dataset.title == "point") {
-            this.point_actions[parent.dataset.type](parent, trg.dataset.value, trg.closest('.inputList__body__list__point'));
-        }
+        this.actions[trg.dataset.title](trg.closest('.inputList'), trg.closest('.inputList__body__list__point'), trg.dataset.value);
+
+        // - 2 
+        // const trg = evt.target;
+        // const info = {
+        //     'parent': trg.closest('.inputList'),
+        //     'point': trg.closest('.inputList__body__list__point'),
+        //     'value': trg.dataset.value,
+        // }
+        // this.actions[trg.dataset.title](info);
+
+        // - 1 
+        // const trg = evt.target;
+        // const data = trg.dataset;
+        // const parent = trg.closest('.inputList');
+        // if (data.title == "header") {
+        //     this.toggle(parent);
+        // }
+        // else if (data.title == "point") {
+        //     this.point_actions[parent.dataset.type](parent, data.value, trg.closest('.inputList__body__list__point'));
+        // }
+        // else if (data.title == "reset") {
+        //     this.reset_actions[parent.dataset.type](parent);
+        // }
     }
 
     input(evt) {
@@ -141,177 +207,3 @@ class Input_list {
         this.input_actions[trg.dataset.type](trg.closest('.inputList'));
     }
 }
-
-// const toggle_list = (id) => {
-//     const e_open = document.querySelector('.inputList_open');
-//     const e_this = document.querySelector(`#inputList-${id}`);
-    
-//     if (e_open && e_open != e_this) {
-//         e_open.classList.remove('inputList_open'); 
-//     }
-//     e_this.classList.toggle('inputList_open');
-// }
-
-// -------- Нажатия на point в выпадающем списке -------- 
-
-// const change_value_list = (id, value, type, i) => {
-//     console.log(type);
-//     if (type === 'radio') {
-//         change_radio_value_list(id, value, i);
-//         return
-//     }
-//     else if (type === 'checkbox') {
-//         console.log("haha");
-//         change_chekbox_value_list(id, i, value);
-//     }
-//     // else if (type == 'number') {
-//     //     change_number_value_list(id, value);
-//     // }
-// }
-
-// const change_chekbox_value_list = (id, i, value) => {
-//     console.log("haha");
-//     document.querySelector(`#inputList_points-${id} .inputList_point-${i}`).classList.toggle('inputList__list__body__points__point_check');
-    
-//     // ! КАК КОНСТ ПЕРЕМЕННАЯ МАССИВА МЕНЯЕТСЯ? И КАК МЕНЯЕТСЯ МАССИВ
-//     const values = filter_values[id];
-
-//     const e_index = values.indexOf(value);
-
-//     if (e_index !== -1) {
-//         values.splice(e_index, 1);
-//     } 
-//     else {
-//         values.push(value);
-//     }
-
-//     // filter_values[id] = values;
-//     console.log(values);
-//     console.log(filter_values[id]);
-
-//     const str = [...values].join(', ');
-//     document.querySelector(`#inputList-${id} .inputList__list__header__values`).innerHTML = str;
-// }
-
-// const change_radio_value_list = (id, value, i) => {
-//     filter_values[id] = value;
-//     // console.log(filter_values[id]);
-//     document.querySelector(`#inputList-${id} .inputList__list__header__title`).innerHTML = filter_values[id];
-
-//     document.querySelector(`#inputList-${id} .inputList__list__body__points__point_active`)?.classList.remove('inputList__list__body__points__point_active');
-//     document.querySelector(`#inputList-${id} .inputList_point-${i}`).classList.add('inputList__list__body__points__point_active');
-// }
-
-// const change_number_value_list = (value_min, value_max) => {
-//     inp_num_min_price.value = value_min;
-//     inp_num_max_price.value = value_max;
-//     update_value_price();
-// }
-
-// function toggle_element(array, element) {
-//     const e_index = array.indexOf(element);
-
-//     if (e_index !== -1) {
-//         array.splice(e_index, 1);
-//         console.log(array);
-//     } 
-//     else {
-//         array.push(element);
-//         console.log(array);
-//     }
-// } inp_search_region.addEventListener('input', () => make_regions_list(selected_region, inp_search_region.value));
-
-// e.full_title.toLowerCase().includes(str.toLowerCase())
-
-// -------- Поиск -------- 
-
-// function search_point(value, id) {
-//     document.querySelectorAll(`#inputList_points-${id} .inputList__list__body__points__point .inputList__list__body__points__point__value`).forEach(e => {
-//         console.log(`${e.innerHTML} - ${value}`);
-//         if (!e.innerHTML.toLowerCase().includes(value.toLowerCase())) {
-//             e.parentElement.classList.add('inputList__list__body__points__point_hidden');
-//         }
-
-//         else {
-//             e.parentElement.classList.remove('inputList__list__body__points__point_hidden');
-//         }
-//     })
-// }
-
-// -------- Значения "От - До" -------- 
-
-// ~ Цена
-
-// function check_value_price(value) {
-//     value = Number(value);
-//     if (value > MAX_PRICE) {
-//         value = MAX_PRICE;
-//     }
-//     else if (value < MIN_PRICE) {
-//         value = MIN_PRICE;
-//     }
-//     return value;
-// }
-
-// function update_value_price() {
-//     filter_values['prices'].min = inp_num_min_price.value;
-//     filter_values['prices'].max = inp_num_max_price.value;
-//     document.querySelector(`#inputList-prices .inputList__list__header__values`).innerHTML = `${filter_values['prices'].min} - ${filter_values['prices'].max} ₽`;
-// }
-
-// function change_price_min() {
-//     let value = check_value_price(inp_num_min_price.value);
-//     inp_num_min_price.value = value;
-//     if (value >= inp_num_max_price.value) {
-//         inp_num_max_price.value = check_value_price(value + 1);
-//     }
-//     update_value_price();
-// }
-
-// function change_price_max() {
-//     let value = check_value_price(inp_num_max_price.value);
-//     inp_num_max_price.value = value;
-//     if (value <= inp_num_min_price.value) {
-//         inp_num_min_price.value = check_value_price(value - 1);
-//     }
-//     update_value_price();
-// }
-
-// ~ Дата
-
-// function set_value_date() {
-//     inp_num_max_date.value = check_value_date(inp_num_max_date.value);
-//     inp_num_min_date.value = check_value_date(inp_num_min_date.value);
-//     update_value_date();
-// }
-
-// function check_value_date(value) {
-//     value = Number(value);
-//     if (value > MAX_YEAR) {
-//         value = MAX_YEAR;
-//     }
-//     else if (value < MIN_YEAR) {
-//         value = MIN_YEAR;
-//     }
-//     return value;
-// }
-
-// function update_value_date() {
-//     filter_values['date'].min = inp_num_min_date.value;
-//     filter_values['date'].max = inp_num_max_date.value;
-//     document.querySelector(`#inputList-date .inputList__list__header__values`).innerHTML = `${filter_values['date'].min} - ${filter_values['date'].max}`;
-// }
-
-// function change_date_min() {
-//     let value = Number(inp_num_min_date.value);
-//     if (value >= inp_num_max_date.value) {
-//         inp_num_max_date.value = value + 1;
-//     }
-// }
-
-// function change_date_max() {
-//     let value = Number(inp_num_max_date.value);
-//     if (value <= inp_num_min_date.value) {
-//         inp_num_min_date.value = value - 1;
-//     }
-// }
