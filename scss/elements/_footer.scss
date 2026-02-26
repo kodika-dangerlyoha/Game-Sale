@@ -1,8 +1,7 @@
 @use '../default/base';
 
 .footer {
-    background-color: rgba(255, 255, 255, .01);
-    @include base.style_main_base;
+    @include base.style_main_base_47;
     border-left: none;
     border-right: none;
     border-bottom: none;

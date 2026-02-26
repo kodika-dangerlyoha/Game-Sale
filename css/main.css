@@ -290,6 +290,7 @@ label {
   opacity: 0;
   transition: 0.5s;
   overflow: hidden;
+  will-change: opacity, bottom;
 }
 .header__bg_profile {
   opacity: 1;
@@ -776,10 +777,10 @@ label {
   overflow: hidden;
   opacity: 0;
   transform: translateY(-10px);
+  will-change: opacity, transform;
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
 }
 .header__basket__head {
   display: flex;
@@ -950,10 +951,10 @@ label {
   overflow: hidden;
   opacity: 0;
   transform: translateY(-10px);
+  will-change: opacity, transform;
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
 }
 .header__notification__header {
   display: flex;
@@ -1090,7 +1091,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
 }
 .header__notification_temporary__grid__notification__point {
   display: flex;
@@ -1161,11 +1161,9 @@ label {
 }
 
 .footer {
-  background-color: rgba(255, 255, 255, 0.01);
-  background-color: rgba(50, 50, 50, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgb(47, 47, 47);
+  border: 1px solid rgb(78, 78, 78);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
   border-left: none;
   border-right: none;
   border-bottom: none;
@@ -1907,12 +1905,24 @@ label {
 .switch__head__point:active {
   transform: scale(0.95);
 }
+.switch__head__point__click {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+}
 .switch__head__point__text {
+  position: relative;
+  z-index: 1;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
 }
 .switch__head__point > span {
+  position: relative;
+  z-index: 1;
   font-size: 14px;
   cursor: pointer;
   transform: translateY(1px);
@@ -2058,7 +2068,7 @@ label {
   border-radius: 12px;
   position: relative;
   z-index: 1;
-  width: 250px;
+  min-width: 220px;
 }
 .inputList__header {
   position: relative;
@@ -2070,10 +2080,9 @@ label {
   border-radius: 12px;
   cursor: pointer;
   transition: 0.2s;
-  background-color: rgba(50, 50, 50, 0.75);
+  background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
 }
 .inputList__header > * {
   position: relative;
@@ -2162,12 +2171,12 @@ label {
   border-radius: 0px 0px 12px 12px;
   overflow: hidden;
   transition: 0.2s;
-  backdrop-filter: blur(10px);
   max-height: 0px;
   opacity: 0;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  border-top: none;
 }
 .inputList__body__search {
   padding: 5px;
@@ -2255,8 +2264,6 @@ label {
   max-height: 164px;
   display: flex;
   flex-direction: column;
-  padding: 5px;
-  padding-bottom: 0px;
   overflow: auto;
 }
 .inputList__body__list::-webkit-scrollbar {
@@ -2270,7 +2277,7 @@ label {
   display: flex;
   align-items: center;
   max-height: 50px;
-  margin-bottom: 5px;
+  margin: 2.5px 5px 2.5px 5px;
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
@@ -2283,6 +2290,15 @@ label {
 }
 .inputList__body__list__point:active {
   transform: scale(0.95);
+}
+.inputList__body__list__point {
+  background-color: rgb(60, 60, 60);
+}
+.inputList__body__list__point:first-child {
+  margin-top: 5px;
+}
+.inputList__body__list__point:last-child {
+  margin-bottom: 5px;
 }
 .inputList__body__list__point__click {
   position: absolute;
@@ -2318,6 +2334,8 @@ label {
   pointer-events: none;
   padding: 0;
   margin: 0;
+  margin-bottom: 0;
+  margin-top: 0;
   overflow: hidden;
 }
 .inputList > input {
@@ -2349,6 +2367,7 @@ label {
   right: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   overflow: hidden;
+  will-change: height, opacity;
 }
 .topImgParalaxBlock > img {
   min-width: 100%;
@@ -2438,6 +2457,7 @@ label {
   left: 0;
   transition: 1s;
   opacity: 0;
+  will-change: opacity;
 }
 .carousel__gridBG__bg > img {
   width: 100%;
@@ -2456,6 +2476,7 @@ label {
   position: relative;
   z-index: 2;
   overflow: hidden;
+  will-change: transform, opacity, z-index, margin-left;
 }
 .carousel__banner__imgBlock {
   width: 100%;
@@ -2514,6 +2535,7 @@ label {
   width: 350px;
   position: relative;
   z-index: 3;
+  will-change: backdrop-filter;
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
@@ -2594,14 +2616,10 @@ label {
 }
 
 .salesHits {
-  position: relative;
-  z-index: 10;
   padding: 40px 0 35px 0;
   width: 100%;
 }
 .salesHits__games {
-  position: relative;
-  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2872,6 +2890,7 @@ label {
   justify-content: space-between;
   align-items: center;
   transition: 0.2s;
+  will-change: opacity, transform;
 }
 .miniGameCard__left {
   display: flex;
@@ -3014,9 +3033,9 @@ label {
   gap: 10px;
   flex-wrap: wrap;
   margin-bottom: 20px;
-  transform: translateY(0px) scale(1);
-  opacity: 1;
-  transition: 0.2s;
+}
+.mainInfo > * {
+  will-change: opacity, transform;
 }
 .mainInfo__left {
   width: 700px;
@@ -3037,7 +3056,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
 }
 .mainInfo__interaction__button {
   height: 60px;
@@ -3372,6 +3390,12 @@ label {
   width: 100%;
   height: 100%;
 }
+.mainInfo__banner__interface__bottom__screenshotsIF__buttonFullScreenBlock__button__entry {
+  display: block;
+}
+.mainInfo__banner__interface__bottom__screenshotsIF__buttonFullScreenBlock__button__exit {
+  display: none;
+}
 .mainInfo__banner__interface__bottom__screenshotsIF_hidden {
   display: none;
 }
@@ -3509,6 +3533,12 @@ label {
   width: 45px;
   padding: 11px;
 }
+.mainInfo__banner_fullscreen .mainInfo__banner__interface__bottom__screenshotsIF__buttonFullScreenBlock__button__entry {
+  display: none;
+}
+.mainInfo__banner_fullscreen .mainInfo__banner__interface__bottom__screenshotsIF__buttonFullScreenBlock__button__exit {
+  display: block;
+}
 .mainInfo__banner_fullscreen .mainInfo__banner__interface__bottom__medialist {
   gap: 20px;
   padding-bottom: 20px;
@@ -3554,7 +3584,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
   box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.3);
   transition: 0.2s;
 }
@@ -3710,7 +3739,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
 }
 .additions__side__header {
   display: flex;
@@ -4162,7 +4190,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
   padding: 10px 20px 20px 20px;
   border-radius: 20px;
 }
@@ -4218,7 +4245,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
   padding: 10px 20px 20px 20px;
   border-radius: 20px;
   display: flex;
@@ -4284,7 +4310,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 20px;
 }
@@ -4557,6 +4582,12 @@ label {
 .videoIF__buttonTglScrList_closed > svg {
   transform: rotate(270deg);
 }
+.videoIF__buttonFullScreen__entry {
+  display: block;
+}
+.videoIF__buttonFullScreen__exit {
+  display: none;
+}
 .videoIF_hidden {
   display: none;
 }
@@ -4627,6 +4658,12 @@ label {
 .mainInfo__banner_fullscreen .videoIF__buttonTglScrList {
   padding: 4px;
 }
+.mainInfo__banner_fullscreen .videoIF__buttonFullScreen__entry {
+  display: none;
+}
+.mainInfo__banner_fullscreen .videoIF__buttonFullScreen__exit {
+  display: block;
+}
 
 .topic {
   display: flex;
@@ -4641,7 +4678,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
 }
 .profile__top {
   border-radius: 24px 24px 0 0;
@@ -4766,7 +4802,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
 }
 .pNotification__header {
   background-color: rgba(255, 255, 255, 0.05);
@@ -5164,7 +5199,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
 }
 .purchase__header__bg {
   position: absolute;
@@ -5260,7 +5294,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
 }
 .purchase__gamelist__game__bg {
   position: absolute;
@@ -5489,9 +5522,81 @@ label {
   fill: rgb(1, 162, 255);
 }
 
+.filters {
+  margin-bottom: 30px;
+}
 .filters__row {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0px;
+  transition: 0.3s;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(5, minmax(0px, 1fr));
+}
+.filters__row__buttons {
+  height: 40px;
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 5px;
+}
+.filters__row__buttons__toggle {
+  height: 100%;
+  padding-right: 10px;
+  border-radius: 12px;
+  width: 70%;
+  min-width: 125px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.filters__row__buttons__toggle:hover {
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
+}
+.filters__row__buttons__toggle:active {
+  transform: scale(0.95);
+}
+.filters__row__buttons__toggle > svg {
+  height: 22px;
+  width: 22px;
+}
+.filters__row__buttons__reset {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.filters__row__buttons__reset:hover {
+  color: rgb(1, 162, 255);
+}
+.filters__row_second {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.2s;
+  max-height: 0px;
+  opacity: 0;
+  margin-bottom: 0;
+}
+.filters_all .filters__row {
+  margin-bottom: 10px;
+}
+.filters_all .filters__row__buttons__toggle {
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
+}
+.filters_all .filters__row_second {
+  max-height: 40px;
+  overflow: visible;
+  opacity: 1;
 }
 
 .basketContainer {
@@ -5515,7 +5620,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
 }
 .basketContainer__gameList__games__game {
   position: relative;
@@ -5748,7 +5852,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
 }
 .basketContainer__info__totalBlock form {
   display: none;
@@ -6511,7 +6614,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
 }
 .series__about__block > h3 {
   font-size: 24px;
@@ -6603,7 +6705,6 @@ label {
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
 }
 .author__top__head {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);

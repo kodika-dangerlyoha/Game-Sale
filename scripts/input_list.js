@@ -9,16 +9,6 @@ class Input_list {
         }
     }
 
-    // - 1 Без actions = {} 
-
-    //- 2 
-    // actions = {
-    //     'header': (info) => this.toggle(info.parent),
-    //     'point': (info) => this.point_actions[info.parent.dataset.type](info.parent, info.value, info.point),
-    //     'reset': (info) => this.reset_actions[info.parent.dataset.type](info.parent)
-    // }
-
-    //- 3 
     actions = {
         'header': (parent, point, value) => this.toggle(parent),
         'point': (parent, point, value) => this.point_actions[parent.dataset.type](parent, value, point),
@@ -59,6 +49,10 @@ class Input_list {
         }
     }
 
+    reset_all_filters(form) {
+        form.querySelectorAll('.inputList').forEach( parent => this.reset_actions[parent.dataset.type](parent) );
+    }
+
     reset_multiple(parent) {
         parent.querySelector('input[inp_type="value"]').value = [];
         parent.querySelector('.inputList__header__left__value').innerHTML = '';
@@ -88,7 +82,6 @@ class Input_list {
     change_multiple(parent, value, point) {
         const input = parent.querySelector('input[inp_type="value"]');
         const arr = input.value.split(', ');
-        console.log(point);
 
         if (arr.includes(value)) {
             arr.splice(arr.indexOf(value), 1);
@@ -174,32 +167,8 @@ class Input_list {
     }
 
     click(evt) {
-        // - 3 
         const trg = evt.target;
         this.actions[trg.dataset.title](trg.closest('.inputList'), trg.closest('.inputList__body__list__point'), trg.dataset.value);
-
-        // - 2 
-        // const trg = evt.target;
-        // const info = {
-        //     'parent': trg.closest('.inputList'),
-        //     'point': trg.closest('.inputList__body__list__point'),
-        //     'value': trg.dataset.value,
-        // }
-        // this.actions[trg.dataset.title](info);
-
-        // - 1 
-        // const trg = evt.target;
-        // const data = trg.dataset;
-        // const parent = trg.closest('.inputList');
-        // if (data.title == "header") {
-        //     this.toggle(parent);
-        // }
-        // else if (data.title == "point") {
-        //     this.point_actions[parent.dataset.type](parent, data.value, trg.closest('.inputList__body__list__point'));
-        // }
-        // else if (data.title == "reset") {
-        //     this.reset_actions[parent.dataset.type](parent);
-        // }
     }
 
     input(evt) {

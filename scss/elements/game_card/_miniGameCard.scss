@@ -13,7 +13,7 @@
     justify-content: space-between;
     align-items: center;
     transition: 0.2s;
-    
+    will-change: opacity, transform;
     &__left {
         display: flex;
         align-items: center;

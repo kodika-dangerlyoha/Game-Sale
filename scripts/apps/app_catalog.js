@@ -25,11 +25,14 @@ document.querySelectorAll('.inputList').forEach(el => {
     il.init(el);
 });
 
+function reset_all() {
+    il.reset_all_filters(document.querySelector('.filters'));
+}
+
 // make_catalog_games(games);
 
 // -------- Откртие / закрытие второй строки фильтров -------- 
 
-function toggle_subRow() {
-    document.querySelector('.formFilters__row_sub').classList.toggle('formFilters__row_hidden');
-    document.querySelector('.formFilters__menuButtons__allFilters').classList.toggle('formFilters__menuButtons__allFilters_active');
+function toggle_filters_row() {
+    document.querySelector('.filters').classList.toggle('filters_all');
 }

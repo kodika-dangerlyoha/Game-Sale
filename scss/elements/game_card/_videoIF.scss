@@ -245,6 +245,14 @@
             }
         }
     }
+    &__buttonFullScreen {
+        &__entry {
+            display: block;
+        }
+        &__exit {
+            display: none;
+        }
+    }
     &_hidden {
         display: none;
     }
@@ -320,5 +328,13 @@
     }
     &__buttonTglScrList {
         padding: 4px;
+    }
+    &__buttonFullScreen {
+        &__entry {
+            display: none;
+        }
+        &__exit {
+            display: block;
+        }
     }
 }

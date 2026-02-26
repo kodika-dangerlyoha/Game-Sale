@@ -53,18 +53,6 @@ const header_center = document.querySelector('#centerHeader_gameCard');
 const mini_game_card = document.querySelector('.miniGameCard');
 const main_info = document.querySelector('.mainInfo');
 
-// function check_element_overflow(container, content) {
-//     const container_rect = container.getBoundingClientRect();
-//     const content_rect = content.getBoundingClientRect();
-    
-//     return {
-//         top: content_rect.top < container_rect.top,
-//         right: content_rect.right > container_rect.right,
-//         bottom: content_rect.bottom > container_rect.bottom,
-//         left: content_rect.left < container_rect.left
-//     };
-// }
-
 const container = document.querySelector('#game_categories');
 const content_right = container.querySelectorAll('a')[container.querySelectorAll('a').length - 1];
 const content_left = container.querySelectorAll('a')[0];
@@ -248,3 +236,9 @@ document.addEventListener('fullscreenchange', () => {
         player.classList.remove('mainInfo__banner_fullscreen');
     }
 });
+
+// ---------------- 
+
+const ss = new Switch_Section;
+
+ss.init(document.querySelector('#switch_section-game'));

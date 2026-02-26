@@ -18,7 +18,6 @@ function make_author_games() {
     });
 
     series.forEach(el => {
-        console.log('sss');
         series_html += get_series_card_html(el);
     });
 
@@ -30,3 +29,6 @@ function make_author_games() {
 }
 
 make_author_games();
+
+const ss = new Switch_Section;
+ss.init(document.querySelector('#switch_section-author'));

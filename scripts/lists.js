@@ -9,7 +9,7 @@ let games = [
         'treilerSrc': "video/50.MP4",
         'bigBanner': "img/banners/wt2.png",
         'bigBanner_blur': "img/banners/blur/wt2_blur.png",
-        'series': false,
+        'series': true,
         'newPrice': 4599,
         'oldPrice': 5120,
         'small_description': "War Thunder – самая масштабная бесплатная кроссплатформенная многопользовательская онлайн-игра, посвященная боевой технике самых разных войн и конфликтов – с начала XX века и до наших дней. Авиация, наземные силы и флот сражаются вместе в одном бою.",

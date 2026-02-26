@@ -349,10 +349,12 @@ const get_basket_game_html = (game) => {
 }
 
 const get_games_section_head_series = () => {
-    return `<div class="switch__head__point switch__head__point_active" data-title="similar" id="switch_point-similar" onclick="switch_section('similar', 'similar__grid_active')">
+    return `<div class="switch__head__point switch__head__point_active" id="switch_point-similar">
+                <div class="switch__head__point__click" data-section="similar"></div>
                 <div class="switch__head__point__text txt">Похожие</div>
             </div>
-            <div class="switch__head__point" data-title="series" id="switch_point-series" onclick="switch_section('series', 'similar__grid_active')">
+            <div class="switch__head__point" id="switch_point-series">
+                <div class="switch__head__point__click" data-section="series"></div>
                 <div class="switch__head__point__text txt">Игры серии</div>
             </div>`;
 }
