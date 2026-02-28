@@ -20,7 +20,7 @@
         border-radius: 50%;
         transition: .15s;
         cursor: pointer;
-        @include base.style-main_click;
+        @include base.style-main_transparent_click;
         & > svg {
             width: 100%;
             height: 100%;
@@ -44,7 +44,7 @@
         border-radius: 6px;
         -webkit-backdrop-filter: blur(3px);
         backdrop-filter: blur(3px);
-        @include base.style-main;
+        @include base.style-main_transparent;
         overflow: hidden;
         &__mouse {
             opacity: 0;
@@ -84,7 +84,7 @@
                     opacity: 0;
                     transition: opacity .15s, transform .2s;
                     transform: translateX(-50%);
-                    @include base.style-main;
+                    @include base.style-main_transparent;
                     &_active {
                         opacity: 1;
                     }
@@ -110,7 +110,7 @@
             width: 100%;
             -webkit-backdrop-filter: blur(3px);
             backdrop-filter: blur(3px);
-            @include base.style-main;
+            @include base.style-main_transparent;
             overflow: hidden;
             padding-left: 7px;
             padding-right: 10px;

@@ -10,9 +10,6 @@
     gap: 10px;
     flex-wrap: wrap;
     margin-bottom: 20px;
-    & > * {
-        will-change: opacity, transform;
-    }
     &__left {
         width: 700px;
         transition: 0.2s;
@@ -204,7 +201,7 @@
                     -webkit-backdrop-filter: blur(10px);
                     backdrop-filter: blur(10px);
                     transition: .15s;
-                    @include base.style-main;
+                    @include base.style-main_transparent;
                     background-color: rgba(0, 0, 0, .3);
                     &_steam {
                         background-color: base.$clr-steam_transparent;
@@ -306,7 +303,7 @@
                             border-radius: 50%;
                             transition: .15s;
                             cursor: pointer;
-                            @include base.style-main_click;
+                            @include base.style-main_transparent_click;
                             & > img {
                                 width: 100%;
                                 filter: invert(1);
@@ -324,7 +321,7 @@
                                 cursor: default;
                                 opacity: 0.5;
                                 &:hover {
-                                    @include base.style-main;
+                                    @include base.style-main_transparent;
                                 }
                                 &:active {
                                     transform: scale(1);
@@ -343,7 +340,7 @@
                             border-radius: 50%;
                             transition: .15s;
                             cursor: pointer;
-                            @include base.style-main_click;
+                            @include base.style-main_transparent_click;
                             & > svg {
                                 width: 100%;
                                 height: 100%;
@@ -556,7 +553,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        @include base.style-main_base;
+        @include base.style-main_base_transparent;
         box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.3);
         transition: 0.2s;
         &__top {

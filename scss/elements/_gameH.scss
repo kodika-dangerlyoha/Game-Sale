@@ -103,7 +103,7 @@
                     }
                 }
                 &_more {
-                    @include base.style-main;
+                    @include base.style-main_transparent;
                 }
             }
         }

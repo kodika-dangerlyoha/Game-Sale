@@ -1,15 +1,11 @@
 @use '../../default/base';
 
 .salesHits {
-    // position: relative;
-    // z-index: 10;
-    // height: 550px;
+    position: relative;
+    z-index: 2;
     padding: 40px 0 35px 0;
     width: 100%;
-    // overflow: hidden;
     &__games {
-        // position: relative;
-        // z-index: 2;
         display: flex;
         align-items: center;
         justify-content: space-between;

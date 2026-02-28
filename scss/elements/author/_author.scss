@@ -6,7 +6,7 @@
         z-index: 2;
         border-radius: 20px;
         margin-bottom: 40px;
-        @include base.style-main_base;
+        @include base.style-main_base_transparent;
         &__head {
             border-bottom: 1px solid rgba(255, 255, 255, .2);
             display: flex;
@@ -68,6 +68,18 @@
         margin-bottom: 50px;
     }
     &__games {
+        & .switch__head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            &__left {
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                gap: 10px;
+            }
+        }
         &__grid {
             display: none;
             &_active {

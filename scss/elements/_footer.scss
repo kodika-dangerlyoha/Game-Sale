@@ -1,7 +1,7 @@
 @use '../default/base';
 
 .footer {
-    @include base.style_main_base_47;
+    @include base.style_main_base;
     border-left: none;
     border-right: none;
     border-bottom: none;
@@ -63,12 +63,6 @@
             transition: .2s;
             @include base.style-main_click;
             background-color: rgba(255, 255, 255, .05);
-            // &:hover {
-            //     background-color: base.$clr-gray_47_hover;
-            // }
-            // &:active {
-            //     transform: scale(0.98);
-            // }
         }
     }
     &__body {

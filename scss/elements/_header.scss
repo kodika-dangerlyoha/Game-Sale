@@ -17,7 +17,7 @@
         left: 0;
         z-index: 1;
 
-        @include base.style-main_base_blur;
+        @include base.style-main_base_transparent;
         border: {
             top: none;
             left: none;
@@ -26,7 +26,6 @@
         opacity: 0;
         transition: 0.5s;
         overflow: hidden;
-        will-change: opacity, bottom;
         &_profile {
             opacity: 1;
         }
@@ -149,7 +148,7 @@
         transition: 0.15s;
         cursor: pointer;
         margin-right: 10px;
-        @include base.style-main_click;
+        @include base.style-main_transparent_click;
         // &:hover {
         //     background-color: base.$clr-blue_light;
         // }
@@ -201,7 +200,7 @@
             transition: 0.15s;
             position: relative;
             cursor: pointer;
-            @include base.style-main_click;
+            @include base.style-main_transparent_click;
             & > img {
                 width: 100%;
                 filter: invert(1);
@@ -261,7 +260,7 @@
             position: relative;
             overflow: hidden;
             cursor: pointer;
-            @include base.style-main_click;
+            @include base.style-main_transparent_click;
             & > img {
                 height: 100%;
                 filter: invert(1);
@@ -313,7 +312,7 @@
             align-items: center;
             font-size: 16px;
             margin-bottom: 10px;
-            @include base.style-main;
+            @include base.style-main_transparent;
             height: 45px;
             padding-left: 15px;
             border-radius: 10px;
@@ -347,7 +346,7 @@
                         display: flex;
                         align-items: center;
                         gap: 10px;
-                        @include base.style-main_click;
+                        @include base.style-main_transparent_click;
                         border-radius: 10px;
                         padding: 5px;
                         overflow: hidden;
@@ -399,7 +398,7 @@
                         align-items: center;
                         justify-content: center;
                         gap: 5px;
-                        @include base.style-main_click;
+                        @include base.style-main_transparent_click;
                         border-radius: 10px;
                         overflow: hidden;
                         &__img {
