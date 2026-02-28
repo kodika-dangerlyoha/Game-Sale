@@ -3,268 +3,6 @@
 $-height: 40px;
 $-border_radius: 12px;
 
-// .inputList {
-//     height: $-main-height;
-//     position: relative;
-//     z-index: 2;
-//     width: 100%;
-//     & input {
-//         display: block;
-//         box-sizing: border-box;
-//         height: $-main-height;
-//         width: 100%;
-//         border-radius: $-main-border_radius;
-//         // @include base.style-main;
-//         font-size: 14px;
-//         outline: none;
-//         cursor: text;
-//         transition: 0.1s;
-//         // &:focus {
-//         //     @include base.style-main_hover;
-//         // }
-//     }
-//     & > input {
-//         position: relative;
-//         z-index: 1;
-//         background: none;
-//         visibility: hidden;
-//     }
-//     &__list {
-//         position: absolute;
-//         top: 0;
-//         bottom: 0;
-//         right: 0;
-//         left: 0;
-//         z-index: 3;
-//         &__header {
-//             position: relative;
-//             z-index: 2;
-//             height: $-main-height;
-//             cursor: pointer;
-//             // background-color: transparent;
-//             transition: .2s;
-//             border-radius: $-main-border_radius;
-//             display: flex;
-//             align-items: center;
-//             padding-left: 12px;
-//             gap: 5px;
-//             overflow: hidden;
-//             @include base.style-main;
-//             background-color: rgb(61, 61, 61);
-//             &__title {
-//                 position: relative;
-//                 z-index: 3;
-//                 font-size: 14px;
-//                 cursor: pointer;
-//                 min-width: max-content;
-//             }
-//             &__values {
-//                 position: relative;
-//                 font-size: 14px;
-//                 color: base.$clr-blue_light;
-//                 z-index: 1;
-//                 width: 100%;
-//                 overflow: hidden;
-//                 white-space: nowrap;
-//                 cursor: pointer;
-//             }
-//             &__bg {
-//                 position: absolute;
-//                 top: 0;
-//                 bottom: 0;
-//                 left: 0;
-//                 right: 0;
-//                 z-index: 2;
-//                 display: flex;
-//                 align-items: center;
-//                 justify-content: end;
-//                 padding-right: 12px;
-//                 background: linear-gradient(to right, transparent 60%, rgb(61, 61, 61) 80%);
-//                 & > svg {
-//                     position: relative;
-//                     height: 24px;
-//                     transform: rotate(90deg);
-//                     transition: .2s;
-//                     z-index: 3;
-//                 }
-//             }
-//             &:hover {
-//                 background-color: rgb(70, 70, 70);
-//             }
-//         }
-//         &__body {
-//             display: none;
-//             position: relative;
-//             z-index: 1;
-//             width: 100%;
-//             border-radius: 0px 0px $-main-border_radius $-main-border_radius;
-//             @include base.style-main;
-//             background-color: rgba(68, 68, 68, .8);
-//             -webkit-backdrop-filter: blur(10px);
-//             backdrop-filter: blur(10px);
-//             border-top: none;
-//             padding-top: 7px;
-//             padding-bottom: 7px;
-//             padding-right: 7px;
-//             padding-left: 7px;
-//             animation: open .25s base.$tf-main 1;
-//             &__search {
-//                 margin-bottom: 5px;
-//                 & > input {
-//                     height: 35px;
-//                     font-size: 14px;
-//                     border-radius: 10px;
-//                     padding-left: 14px;
-//                     @include base.style-main;
-//                     &:focus {
-//                         @include base.style-main_hover;
-//                     }
-//                 }
-//             }
-//             &__numbers {
-//                 display: flex;
-//                 align-items: center;
-//                 gap: 5px;
-//                 margin-bottom: 5px;
-//                 & > input {
-//                     width: 50%;
-//                     height: 35px;
-//                     font-size: 14px;
-//                     border-radius: 10px;
-//                     padding-left: 14px;
-//                     @include base.style-main;
-//                     &:focus {
-//                         @include base.style-main_hover;
-//                     }
-//                 }
-//                 &__separator {
-//                     width: 12px;
-//                     height: 4px;
-//                     background-color: rgba(255, 255, 255, 1);
-//                     border-radius: 2px;
-//                 }
-//             }
-//             &__points {
-//                 display: flex;
-//                 flex-direction: column;
-//                 width: 100%;
-//                 max-height: 210px;
-//                 overflow: auto;
-
-//                 // scrollbar-width: thin; /* auto | thin | none */
-//                 // scrollbar-color: rgba(255, 255, 255, .15) rgba(0, 0, 0, .15);
-//                 // &::-webkit-scrollbar {
-//                 //     width: 8px;
-//                 // }
-//                 // &::-webkit-scrollbar-track {
-//                 //     background: rgba(0, 0, 0, .15); /* Цвет фона трека */
-//                 //     border-radius: 10px;
-//                 // }
-//                 // &::-webkit-scrollbar-thumb {
-//                 //     background: rgba(255, 255, 255, .15); /* Цвет ползунка */
-//                 //     border-radius: 10px;
-//                 //     &:hover {
-//                 //         background: rgba(255, 255, 255, .2);
-//                 //     }
-//                 // }
-//                 @include base.style-webkit_scrollbar;
-//                 &__point {
-//                     position: relative;
-//                     padding-left: 8px;
-//                     padding-top: 5px;
-//                     padding-bottom: 5px;
-//                     border-radius: 8px;
-//                     cursor: pointer;
-//                     transition: .15s;
-//                     border: 1px solid transparent;
-//                     &__checkBlock {
-//                         position: absolute;
-//                         z-index: 1;
-//                         left: -8px;
-//                         top: 50%;
-//                         transform: translateY(-50%);
-//                         width: 4px;
-//                         height: 20px;
-//                         border-radius: 5px;
-//                         opacity: 0;
-//                         transition: .2s;
-//                         transition-timing-function: base.$tf-main;
-//                         @include base.style-main_active;
-//                         box-shadow: 5px 0 15px base.$clr-blue_light;
-//                     }
-//                     &__value {
-//                         position: relative;
-//                         z-index: 2;
-//                         display: block;
-//                         transition: .15s;
-//                         transition-timing-function: base.$tf-main;
-//                         font-size: 14px;
-//                     }
-//                     &:hover {
-//                         // background-color: #555;
-//                         background-color: rgba(255, 255, 255, .1);
-//                     }
-//                     &_hidden {
-//                         // display: none;
-//                         height: 0;
-//                         opacity: 0;
-//                         padding: 0;
-//                         overflow: hidden;
-//                         border: 0px solid transparent;
-//                         // transform: translateY(20px);
-//                     }
-//                     &_check &{
-//                         &__value {
-//                             padding-left: 10px;
-//                             // color: base.$clr-blue_light;
-//                         }
-//                         &__checkBlock {
-//                             opacity: 1;
-//                             left: 5px;
-//                         }
-//                     }
-//                     &_active {
-//                         @include base.style-main_active;
-//                         cursor: default;
-//                         &:hover {
-//                             @include base.style-main_active;
-//                         }
-//                     }
-//                 }
-//             }
-//             &__button {
-//                 width: 100%;
-//                 padding-top: 5px;
-//                 padding-bottom: 5px;
-//                 font-size: 14px;
-//                 text-align: center;
-//                 border-radius: 8px;
-//                 @include base.style-main_click;
-//             }
-//         }
-//     }
-
-//     &_open &{
-//         &__list {
-//             &__header {
-//                 border-radius: $-main-border_radius $-main-border_radius 0px 0px;
-//                 &__bg > svg {
-//                     transform: rotate(270deg);
-//                 }
-//             }
-//             &__body {
-//                 display: block;
-//             }
-//         }
-//     }
-//     &_open {
-//         z-index: 4;
-//         & > input {
-//             border-radius: $-main-border_radius $-main-border_radius 0px 0px;
-//         }
-//     }
-// }
-
 .inputList {
     height: $-height;
     border-radius: $-border_radius;
@@ -272,6 +10,7 @@ $-border_radius: 12px;
     z-index: 1;
     min-width: 220px;
     &__header {
+        max-width: 100%;
         position: relative;
         height: inherit;
         padding: 5px 10px;
@@ -292,6 +31,7 @@ $-border_radius: 12px;
             min-width: 0;
             &__title {
                 font-weight: 700;
+                min-width: max-content;
             }
             &__value {
                 margin-left: 5px;
@@ -362,6 +102,11 @@ $-border_radius: 12px;
         &:hover &{
             &__reset {
                 opacity: 1;
+            }
+            &__left {
+                &__value {
+                    padding-right: 24px;
+                }
             }
         }
     }
@@ -489,6 +234,27 @@ $-border_radius: 12px;
                 &__title {
                     position: relative;
                     z-index: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    // &__text {
+
+                    // }
+                    & ._sorting {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        & > svg {
+                            width: 14px;
+                            height: 14px;
+                        }
+                        // &_onTop {
+                        //     transform: rotate(0deg);
+                        // }
+                        &_onBottom {
+                            transform: rotate(180deg);
+                        }
+                    }
                 }
                 &_active {
                     @include base.style-main_active;

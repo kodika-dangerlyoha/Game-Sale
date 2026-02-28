@@ -2070,6 +2070,7 @@ label {
   min-width: 220px;
 }
 .inputList__header {
+  max-width: 100%;
   position: relative;
   height: inherit;
   padding: 5px 10px;
@@ -2094,6 +2095,8 @@ label {
 }
 .inputList__header__left__title {
   font-weight: 700;
+  min-width: -moz-max-content;
+  min-width: max-content;
 }
 .inputList__header__left__value {
   margin-left: 5px;
@@ -2162,6 +2165,9 @@ label {
 }
 .inputList__header:hover .inputList__header__reset {
   opacity: 1;
+}
+.inputList__header:hover .inputList__header__left__value {
+  padding-right: 24px;
 }
 .inputList__body {
   position: absolute;
@@ -2320,6 +2326,21 @@ label {
 .inputList__body__list__point__title {
   position: relative;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.inputList__body__list__point__title ._sorting {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inputList__body__list__point__title ._sorting > svg {
+  width: 14px;
+  height: 14px;
+}
+.inputList__body__list__point__title ._sorting_onBottom {
+  transform: rotate(180deg);
 }
 .inputList__body__list__point_active {
   background-color: rgba(1, 162, 255, 0.4);

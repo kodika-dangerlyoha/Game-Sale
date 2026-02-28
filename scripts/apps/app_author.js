@@ -32,3 +32,6 @@ make_author_games();
 
 const ss = new Switch_Section;
 ss.init(document.querySelector('#switch_section-author'));
+
+const il = new Input_list;
+il.init(document.querySelector('#sorting'));

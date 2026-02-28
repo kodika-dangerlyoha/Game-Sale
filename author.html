@@ -354,7 +354,154 @@
 							<div class="switch__head__point__text txt">Популярные</div>
 						</div>
 					</div>
-                    <div class="inputList"></div>
+                    <div class="inputList inputList_single txt" data-title="sorting" data-type="single" id="sorting">
+						<input type="text" title="values" inp_type="value" value="">
+						<div class="inputList__header">
+							<div class="inputList__header__click" data-title="header"></div>
+							<div class="inputList__header__left">
+								<div class="inputList__header__left__title">Сортировка</div>
+								<div class="inputList__header__left__value"></div>
+							</div>
+							<div class="inputList__header__icon">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
+								</svg>
+							</div>
+							<div class="inputList__header__reset">
+								<div class="inputList__header__reset__click" data-title="reset"></div>
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M16 8L8 16M8.00001 8L16 16" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</div>
+						</div>
+						<div class="inputList__body">
+							<div class="inputList__body__search">
+								<input type="text" title="search_filter" class="txt" placeholder="Поиск" inp_type="search" data-type="search"></input>
+							</div>
+							<div class="inputList__body__list">
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-value="По цене" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">
+										<div class="inputList__body__list__point__title">По цене</div>
+										<span class="_sorting _sorting_onTop">
+											<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M7.33199 7.68464C6.94146 8.07517 6.3083 8.07517 5.91777 7.68464C5.52725 7.29412 5.52725 6.66095 5.91777 6.27043L10.5834 1.60483C11.3644 0.823781 12.6308 0.82378 13.4118 1.60483L18.0802 6.27327C18.4707 6.66379 18.4707 7.29696 18.0802 7.68748C17.6897 8.078 17.0565 8.078 16.666 7.68748L13 4.02145V21.9999C13 22.5522 12.5523 22.9999 12 22.9999C11.4477 22.9999 11 22.5522 11 21.9999V4.01666L7.33199 7.68464Z" fill="#fff"/>
+											</svg>
+										</span>
+									</div>
+								</div>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-value="По цене" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">
+										<div class="inputList__body__list__point__title">По цене</div>
+										<span class="_sorting _sorting_onBottom">
+											<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M7.33199 7.68464C6.94146 8.07517 6.3083 8.07517 5.91777 7.68464C5.52725 7.29412 5.52725 6.66095 5.91777 6.27043L10.5834 1.60483C11.3644 0.823781 12.6308 0.82378 13.4118 1.60483L18.0802 6.27327C18.4707 6.66379 18.4707 7.29696 18.0802 7.68748C17.6897 8.078 17.0565 8.078 16.666 7.68748L13 4.02145V21.9999C13 22.5522 12.5523 22.9999 12 22.9999C11.4477 22.9999 11 22.5522 11 21.9999V4.01666L7.33199 7.68464Z" fill="#fff"/>
+											</svg>
+										</span>
+									</div>
+								</div>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-value="Дата выхода" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">
+										<div class="inputList__body__list__point__title">Дата выхода</div>
+										<span class="_sorting _sorting_onTop">
+											<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M7.33199 7.68464C6.94146 8.07517 6.3083 8.07517 5.91777 7.68464C5.52725 7.29412 5.52725 6.66095 5.91777 6.27043L10.5834 1.60483C11.3644 0.823781 12.6308 0.82378 13.4118 1.60483L18.0802 6.27327C18.4707 6.66379 18.4707 7.29696 18.0802 7.68748C17.6897 8.078 17.0565 8.078 16.666 7.68748L13 4.02145V21.9999C13 22.5522 12.5523 22.9999 12 22.9999C11.4477 22.9999 11 22.5522 11 21.9999V4.01666L7.33199 7.68464Z" fill="#fff"/>
+											</svg>
+										</span>
+									</div>
+								</div>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-value="Дата выхода" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">
+										<div class="inputList__body__list__point__title">Дата выхода</div>
+										<span class="_sorting _sorting_onBottom">
+											<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M7.33199 7.68464C6.94146 8.07517 6.3083 8.07517 5.91777 7.68464C5.52725 7.29412 5.52725 6.66095 5.91777 6.27043L10.5834 1.60483C11.3644 0.823781 12.6308 0.82378 13.4118 1.60483L18.0802 6.27327C18.4707 6.66379 18.4707 7.29696 18.0802 7.68748C17.6897 8.078 17.0565 8.078 16.666 7.68748L13 4.02145V21.9999C13 22.5522 12.5523 22.9999 12 22.9999C11.4477 22.9999 11 22.5522 11 21.9999V4.01666L7.33199 7.68464Z" fill="#fff"/>
+											</svg>
+										</span>
+									</div>
+								</div>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-value="Название" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">
+										<div class="inputList__body__list__point__title">Название</div>
+										<span class="_sorting _sorting_onTop">
+											<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M7.33199 7.68464C6.94146 8.07517 6.3083 8.07517 5.91777 7.68464C5.52725 7.29412 5.52725 6.66095 5.91777 6.27043L10.5834 1.60483C11.3644 0.823781 12.6308 0.82378 13.4118 1.60483L18.0802 6.27327C18.4707 6.66379 18.4707 7.29696 18.0802 7.68748C17.6897 8.078 17.0565 8.078 16.666 7.68748L13 4.02145V21.9999C13 22.5522 12.5523 22.9999 12 22.9999C11.4477 22.9999 11 22.5522 11 21.9999V4.01666L7.33199 7.68464Z" fill="#fff"/>
+											</svg>
+										</span>
+									</div>
+								</div>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-value="Название" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">
+										<div class="inputList__body__list__point__title">Название</div>
+										<span class="_sorting _sorting_onBottom">
+											<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M7.33199 7.68464C6.94146 8.07517 6.3083 8.07517 5.91777 7.68464C5.52725 7.29412 5.52725 6.66095 5.91777 6.27043L10.5834 1.60483C11.3644 0.823781 12.6308 0.82378 13.4118 1.60483L18.0802 6.27327C18.4707 6.66379 18.4707 7.29696 18.0802 7.68748C17.6897 8.078 17.0565 8.078 16.666 7.68748L13 4.02145V21.9999C13 22.5522 12.5523 22.9999 12 22.9999C11.4477 22.9999 11 22.5522 11 21.9999V4.01666L7.33199 7.68464Z" fill="#fff"/>
+											</svg>
+										</span>
+									</div>
+								</div>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-value="Скидка" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">
+										<div class="inputList__body__list__point__title">Скидка</div>
+										<span class="_sorting _sorting_onTop">
+											<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M7.33199 7.68464C6.94146 8.07517 6.3083 8.07517 5.91777 7.68464C5.52725 7.29412 5.52725 6.66095 5.91777 6.27043L10.5834 1.60483C11.3644 0.823781 12.6308 0.82378 13.4118 1.60483L18.0802 6.27327C18.4707 6.66379 18.4707 7.29696 18.0802 7.68748C17.6897 8.078 17.0565 8.078 16.666 7.68748L13 4.02145V21.9999C13 22.5522 12.5523 22.9999 12 22.9999C11.4477 22.9999 11 22.5522 11 21.9999V4.01666L7.33199 7.68464Z" fill="#fff"/>
+											</svg>
+										</span>
+									</div>
+								</div>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-value="Скидка" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">
+										<div class="inputList__body__list__point__title">Скидка</div>
+										<span class="_sorting _sorting_onBottom">
+											<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M7.33199 7.68464C6.94146 8.07517 6.3083 8.07517 5.91777 7.68464C5.52725 7.29412 5.52725 6.66095 5.91777 6.27043L10.5834 1.60483C11.3644 0.823781 12.6308 0.82378 13.4118 1.60483L18.0802 6.27327C18.4707 6.66379 18.4707 7.29696 18.0802 7.68748C17.6897 8.078 17.0565 8.078 16.666 7.68748L13 4.02145V21.9999C13 22.5522 12.5523 22.9999 12 22.9999C11.4477 22.9999 11 22.5522 11 21.9999V4.01666L7.33199 7.68464Z" fill="#fff"/>
+											</svg>
+										</span>
+									</div>
+								</div>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-value="Оценка критиков" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">
+										<div class="inputList__body__list__point__title">Оценка критиков</div>
+										<span class="_sorting _sorting_onTop">
+											<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M7.33199 7.68464C6.94146 8.07517 6.3083 8.07517 5.91777 7.68464C5.52725 7.29412 5.52725 6.66095 5.91777 6.27043L10.5834 1.60483C11.3644 0.823781 12.6308 0.82378 13.4118 1.60483L18.0802 6.27327C18.4707 6.66379 18.4707 7.29696 18.0802 7.68748C17.6897 8.078 17.0565 8.078 16.666 7.68748L13 4.02145V21.9999C13 22.5522 12.5523 22.9999 12 22.9999C11.4477 22.9999 11 22.5522 11 21.9999V4.01666L7.33199 7.68464Z" fill="#fff"/>
+											</svg>
+										</span>
+									</div>
+								</div>
+								<div class="inputList__body__list__point">
+									<div class="inputList__body__list__point__click" data-value="Оценка критиков" data-title="point"></div>
+									<div class="inputList__body__list__point__mark"></div>
+									<div class="inputList__body__list__point__title">
+										<div class="inputList__body__list__point__title">Оценка критиков</div>
+										<span class="_sorting _sorting_onBottom">
+											<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M7.33199 7.68464C6.94146 8.07517 6.3083 8.07517 5.91777 7.68464C5.52725 7.29412 5.52725 6.66095 5.91777 6.27043L10.5834 1.60483C11.3644 0.823781 12.6308 0.82378 13.4118 1.60483L18.0802 6.27327C18.4707 6.66379 18.4707 7.29696 18.0802 7.68748C17.6897 8.078 17.0565 8.078 16.666 7.68748L13 4.02145V21.9999C13 22.5522 12.5523 22.9999 12 22.9999C11.4477 22.9999 11 22.5522 11 21.9999V4.01666L7.33199 7.68464Z" fill="#fff"/>
+											</svg>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
                 </div>
                 <div class="author__games__grid griding_3InRow switch__content author__games__grid_active" id="switch_content-all"></div>
                 <div class="author__games__grid griding_3InRow switch__content" id="switch_content-new"></div>
@@ -434,6 +581,7 @@
 	<script type="text/javascript" src="scripts/script.js"></script>
 	<script type="text/javascript" src="scripts/header.js"></script>
 	<script type="text/javascript" src="scripts/switch_section.js"></script>
+	<script type="text/javascript" src="scripts/input_list.js"></script>
     <script type="text/javascript" src="scripts/header_bg.js"></script>
     <script type="text/javascript" src="scripts/header_catalog.js"></script>
     <script type="text/javascript" src="scripts/top_img_paralax.js"></script>
