@@ -2,28 +2,33 @@
 
 $clr-main_body: rgba(39, 39, 39, 1);
 
+// ~ blue
 $clr-blue_light: rgba(1, 162, 255, 1);
 $clr-blue_light_transparent: rgba(1, 162, 255, .4);
 $clr-blue_light_hover: rgba(1, 162, 255, .25);
 $clr-blue_light_hover_border: rgba(1, 162, 255, .6);
 $clr-blue_dark: rgba(1, 74, 255, 1);
+
+// ~ red
 $clr-red: rgb(204, 30, 30);
+$clr-red_light: rgb(255, 106, 106);
 $clr-red_close: rgb(170, 22, 22);
-$clr-gray_light: rgba(45, 45, 45, 1);
 
-$clr-grad_blue_0: linear-gradient(to bottom, rgba(1, 162, 255, 0), rgba(1, 74, 255, 0));
-// $clr-grad_blue_100: linear-gradient(to bottom, rgba(1, 162, 255, 1), rgba(1, 74, 255, 1));
-$clr-grad_blue_100: linear-gradient(to top, rgba(1, 162, 255, .8), rgba(1, 162, 255, .2));
-$clr-grad_blue_100_2: linear-gradient(to top, rgba(1, 162, 255, 1), rgba(1, 162, 255, .5));
-// $clr-grad_blue_100: linear-gradient(to top, rgba(1, 162, 255, .8), rgba(1, 74, 255, .3));
-$clr-grad_red: linear-gradient(to bottom, rgba(255, 73, 73, 1), rgba(167, 0, 0, 1));
-
+// ~ gray
 $clr-gray_dark: rgb(27, 27, 27);
 $clr-gray_37: rgb(33, 33, 33);
 $clr-gray_43: rgb(43, 43, 43);
 $clr-gray_47_hover: rgb(47, 47, 47);
 $clr-gray_55: rgb(55, 55, 55);
+$clr-gray_light: rgba(45, 45, 45, 1);
 
+// ~ gradient
+$clr-grad_blue_0: linear-gradient(to bottom, rgba(1, 162, 255, 0), rgba(1, 74, 255, 0));
+$clr-grad_blue_100: linear-gradient(to top, rgba(1, 162, 255, .8), rgba(1, 162, 255, .2));
+$clr-grad_blue_100_2: linear-gradient(to top, rgba(1, 162, 255, 1), rgba(1, 162, 255, .5));
+$clr-grad_red: linear-gradient(to bottom, rgba(255, 73, 73, 1), rgba(167, 0, 0, 1));
+
+// ~ more
 $clr-steam_transparent: rgba(29, 117, 218, 0.8);
 $clr-metacritic_green: rgba(27, 214, 89, 0.8);
 

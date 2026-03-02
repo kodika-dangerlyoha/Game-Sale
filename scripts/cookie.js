@@ -2,11 +2,17 @@ if (document.cookie == '') {
     document.cookie = '{"basket_list": [], "favorite_list": [], "notification_list": []}';
 }
 
-function cl(elem) {
-    console.log(elem);
-}
+function get_basket_list() {
+    const basket_list = JSON.parse(document.cookie).basket_list;
 
-cl(document.cookie);
+    let basket_list_infos = [];
+    games.forEach(info => {
+        if (contains(basket_list, info.id)) {
+            basket_list_infos[info.id] = info;
+        }
+    })
+    return basket_list_infos;
+}
 
 function add_game_basket_request(game_id, game_name, type) {
     if (type == 'add_basket') {
@@ -107,51 +113,3 @@ function delete_game_in_favorite(game_id, game_name) {
         // updateBasket();
     }
 }
-
-
-
-// let notification_list = get_notification_list_request();
-
-// function get_notification_list_request() {
-//     const notification_list = JSON.parse(document.cookie).notification_list;
-
-//     return notification_list.reduce((summ_notification, notification_info) => summ_notification + get_notification_html(notification_info.type, notification_info.value), "");;
-// }
-
-// const notification_types = {
-//     "error": 'Произошла ошибка',
-//     "nothing": 'Нет новый уведомлений',
-//     "game": 'Игра <span>${game_name}</span> добавлена в корзину',
-// }
-
-// function create_new_notification() {
-//     make_notification()
-// }
-
-// function set_notifacation_request(type, value) {
-//     let cookie = JSON.parse(document.cookie);
-//     let notifacation_info = {
-//         'type': type,
-//         'value': value,
-//     }
-//     cookie.notification_list.push(notifacation_info);
-//     document.cookie = JSON.stringify(cookie);
-//     console.log(document.cookie);
-
-//     notification_list = get_notification_list_request();
-//     make_notification();
-// }
-
-// function make_notification() {
-//     if (notification_list == "") {
-//         notification_list = `<div class="header__notification__grid__notification notification_nothing">
-//                                 <div class="header__notification__grid__notification__point txt">
-//                                     <div class="header__notification__grid__notification__point__smile">:(</div>
-//                                 </div>
-//                                 <div class="header__notification__grid__notification__text txt">Нет новый уведомлений</div>
-//                             </div>`
-//     }
-//     document.querySelector('#grid_notification').innerHTML = notification_list;
-// }
-
-// make_notification()

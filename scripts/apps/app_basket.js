@@ -46,7 +46,7 @@ function make_basket() {
     }
 
     make_basket_info();
-    document.querySelector('#basket_games_list').innerHTML += basket_list.reduce((summ_game, game) => summ_game + get_basket_game_html(game), "");
+    document.querySelector('#basket_games_list').innerHTML += basket_list.reduce((summ_game, game) => summ_game + get_lineGames_html(game, 'basket'), "");
 }
 
 // function updateBasket() {

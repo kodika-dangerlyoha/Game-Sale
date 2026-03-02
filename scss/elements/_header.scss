@@ -507,7 +507,7 @@
         opacity: 0;
         transform: translateY(-10px);
         will-change: opacity, transform;
-        @include base.style-main_base;
+        @include base.style-main_base_transparent;
         &__head {
             display: flex;
             align-items: center;
@@ -538,7 +538,7 @@
             @include base.style-webkit_scrollbar;
             &__game {
                 border-radius: 10px;
-                @include base.style_main;
+                @include base.style-main_transparent;
                 &__top {
                     padding: 6px;
                     display: flex;
@@ -553,9 +553,6 @@
                     justify-content: space-between;
                     background-color: rgba(0, 0, 0, .1);
                     border-top: 1px solid rgba(255, 255, 255, .2);
-                    // &__left {
-                    //     display: flex;
-                    // }
                     &__link {
                         color: rgb(200, 200, 200);
                         font-weight: 300;
@@ -671,7 +668,7 @@
         opacity: 0;
         transform: translateY(-10px);
         will-change: opacity, transform;
-        @include base.style-main_base;
+        @include base.style-main_base_transparent;
         &__header {
             display: flex;
             align-items: center;
@@ -705,7 +702,7 @@
                 padding: 8px;
                 display: flex;
                 gap: 8px;
-                @include base.style-main;
+                @include base.style-main_transparent;
                 &__point {
                     @include base.flex-center;
                     &__circle {
