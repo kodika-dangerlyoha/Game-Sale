@@ -14,17 +14,32 @@ function get_basket_list() {
     return basket_list_infos;
 }
 
-function add_game_basket_request(game_id, game_name, type) {
+function game_in_basket(game_id) {
+    get_basket_list().forEach(id => {
+        if (id === game_id) return true;
+    });
+    return false;
+}
+
+function toggle_game_basket(game_id, game_title) {
+    if (game_in_basket(game_id)) {
+        delete_game_basket(game_id, game_title);
+        return
+    }
+    add_game_basket(game_id, game_title);
+}
+
+function basket_request(game_title, type) {
     if (type == 'add_basket') {
         return {
             'status': true,
-            'messege': `Игра <span>${game_name}</span> добавлена в корзину`
+            'messege': `Игра <span>${game_title}</span> добавлена в корзину`
         }
     }
     else if (type == 'delete_basket') {
         return {
             'status': true,
-            'messege': `Игра <span>${game_name}</span> удалена из корзины`
+            'messege': `Игра <span>${game_title}</span> удалена из корзины`
         }
     }
     else if (type == '') {
@@ -36,32 +51,47 @@ function add_game_basket_request(game_id, game_name, type) {
     else if (type == 'delete_favorite') {
         return {
             'status': true,
-            'messege': `Игра <span>${game_name}</span> удалена из избранного`
+            'messege': `Игра <span>${game_title}</span> удалена из избранного`
         }
     }
     else if (type == 'add_favorite') {
         return {
             'status': true,
-            'messege': `Игра <span>${game_name}</span> добавлена в избранное`
+            'messege': `Игра <span>${game_title}</span> добавлена в избранное`
         }
     }
 }
 
-function add_game_basket(game_id, game_name) {
-    let cookie = JSON.parse(document.cookie);
-    let basket_list = cookie.basket_list;
+// function add_game_basket(game_id, game_name) {
+//     let cookie = JSON.parse(document.cookie);
+//     let basket_list = cookie.basket_list;
 
-    if (basket_list.find(info => info == game_id) === undefined) {
-        cookie.basket_list.push(game_id);
-        document.cookie = JSON.stringify(cookie);
-        const answer = add_game_basket_request(game_id, game_name, 'add_basket');
-        add_notification(answer.messege, answer.status);
-        update_header_basket();
-        // updateBasket();
-    }
-    else {
-        delete_game_in_basket(game_id, game_name);
-    }
+//     if (basket_list.find(info => info == game_id) === undefined) {
+//         cookie.basket_list.push(game_id);
+//         document.cookie = JSON.stringify(cookie);
+//         const answer = basket_request(game_id, game_name, 'add_basket');
+//         add_notification(answer.messege, answer.status);
+//         update_header_basket();
+//         // updateBasket();
+//     }
+//     else {
+//         delete_game_in_basket(game_id, game_name);
+//     }
+// }
+
+function add_game_basket(game_id, game_title) {
+    let cookie = JSON.parse(document.cookie);
+    cookie.basket_list.push(game_id);
+    document.cookie = JSON.stringify(cookie);
+
+    const answer = basket_request(game_title, 'add_basket');
+    add_notification(answer.messege, answer.status);
+
+    update_header_basket();
+}
+
+function delete_game_basket(game_id, game_title) {
+    let cookie = JSON.parse(document.cookie);
 }
 
 function delete_game_in_basket(game_id, game_name) {
@@ -74,7 +104,7 @@ function delete_game_in_basket(game_id, game_name) {
         })
         cookie.basket_list = basket_list;
         document.cookie = JSON.stringify(cookie);
-        const answer = add_game_basket_request(game_id, game_name, 'delete_basket');
+        const answer = basket_request(game_id, game_name, 'delete_basket');
         add_notification(answer.messege, answer.status);
         update_header_basket();
         // updateBasket();

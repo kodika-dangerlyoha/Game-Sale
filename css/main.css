@@ -6635,6 +6635,7 @@ label {
 }
 .favorite__basket__block__info {
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 .favorite__basket__block__info__point {
   display: flex;
@@ -6656,6 +6657,26 @@ label {
 .favorite__basket__block__info__point_total .favorite__basket__block__info__point__value {
   font-size: 20px;
   font-weight: 600;
+}
+.favorite__basket__block__button {
+  display: block;
+  padding: 15px 0px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
+  font-weight: 700;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.favorite__basket__block__button:hover {
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
+}
+.favorite__basket__block__button:active {
+  transform: scale(0.95);
 }
 .favorite__empty {
   display: none;
