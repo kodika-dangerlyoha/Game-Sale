@@ -13,7 +13,7 @@ const get_horizont_game_html = (game) => {
         dls_html = `<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>`;
     }
 
-    return `<article class="gameH game_${game.id}">
+    return `<article class="gameH game_${game.id}" data-game_id="${game.id}">
                 <a href = "${game.link}" class="gameH__banner">
                     <div class="gameH__banner__imgBlock"><img src="${game.imgH}" alt="${game.name}"></div>
                     <div class="gameH__banner__videoBlock">
@@ -36,14 +36,14 @@ const get_horizont_game_html = (game) => {
                     <div class="gameH__info__right">
                         <div class="gameH__info__price txt">${game.newPrice}₽</div>
                         <div class="gameH__info__buttons">
-                            <div class="gameH__info__buttons__button _buttonBasket">
+                            <button type="button" data-button="basket" class="gameH__info__buttons__button _buttonBasket" onclick="toggle_game_basket(${game.id}, '${game.name}')">
                                 <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
                                 <img src="img/icons/main/basket64.png" alt="">
-                            </div>
-                            <div class="gameH__info__buttons__button _buttonFavorite">
+                            </button>
+                            <button type="button" data-button="favorite" class="gameH__info__buttons__button _buttonFavorite" onclick="toggle_game_favorite(${game.id}, '${game.name}')">
                                 <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
                                 <img src="img/icons/main/like64.png" alt="">
-                            </div>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ const get_horizont_game_headerCatalog_html = (game, discount) => {
         dls_html = `<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>`;
     }
 
-    return `<article class = "gameH gameH_headerCatalog">
+    return `<article class="gameH gameH_headerCatalog" data-game_id="${game.id}">
                 <a href = "${game.link}" class="gameH__banner">
                     <div class="gameH__banner__imgBlock"><img src="${game.imgH}" alt="${game.name}"></div>
                     <div class="gameH__banner__videoBlock">
@@ -85,14 +85,14 @@ const get_horizont_game_headerCatalog_html = (game, discount) => {
                     <div class="gameH__info__right">
                         <div class="gameH__info__price txt">${game.newPrice}₽</div>
                         <div class="gameH__info__buttons">
-                            <div class="gameH__info__buttons__button _buttonBasket">
+                            <button type="button" data-button="basket" class="gameH__info__buttons__button _buttonBasket">
                                 <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
                                 <img src="img/icons/main/basket64.png" alt="">
-                            </div>
-                            <div class="gameH__info__buttons__button _buttonFavorite">
+                            </button>
+                            <button type="button" data-button="favorite" class="gameH__info__buttons__button _buttonFavorite">
                                 <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
                                 <img src="img/icons/main/like64.png" alt="">
-                            </div>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -100,7 +100,7 @@ const get_horizont_game_headerCatalog_html = (game, discount) => {
 };
 
 const get_vertical_game_html = (game, discount) => {
-    return `<article class="gameV game_${game.id}">
+    return `<article class="gameV game_${game.id}" data-game_id="${game.id}">
                 <a href = "${game.link}" class="gameV__banner">
                     <div class="gameV__banner__glass"></div>
                     <img src="${game.imgW}" alt="${game.name}">
@@ -113,14 +113,14 @@ const get_vertical_game_html = (game, discount) => {
                     <div class="gameV__info__right">
                         <div class="gameV__info__price txt">${game.newPrice}₽</div>
                         <div class="gameV__info__buttons">
-                            <div class="gameV__info__buttons__button _buttonBasket" onclick="add_game_basket(${game.id}, '${game.name}')">
+                            <button type="button" data-button="basket" class="gameV__info__buttons__button _buttonBasket" onclick="toggle_game_basket(${game.id}, '${game.name}')">
                                 <div class="gameV__info__buttons__button__forHover gameV__info__buttons__button__forHover_blue absolute-zero"></div>
                                 <img src="img/icons/main/basket64.png" alt="">
-                            </div>
-                            <div class="gameV__info__buttons__button _buttonFavorite" onclick="add_game_favorite(${game.id}, '${game.name}')">
+                            </button>
+                            <button type="button" data-button="favorite" class="gameV__info__buttons__button _buttonFavorite" onclick="toggle_game_favorite(${game.id}, '${game.name}')">
                                 <div class="gameV__info__buttons__button__forHover gameV__info__buttons__button__forHover_red absolute-zero"></div>
                                 <img src="img/icons/main/like64.png" alt="">
-                            </div>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -156,7 +156,7 @@ const get_series_card_html = (series) => {
 // --------  -------- 
 
 const get_banner_html = (count, game_info, carousel_banner_list, discount) => {
-    return `<div class = "carousel__banner" order = ${count} game_id = '${game_info.id}' style = "${count === 0 ? 'margin-left: 0' : ''};
+    return `<div class="carousel__banner" data-game_id="${game_info.id}" order = ${count} game_id = '${game_info.id}' style = "${count === 0 ? 'margin-left: 0' : ''};
                                                                                                     z-index: ${carousel_banner_list.length - count + 1};
                                                                                                     transform: scale(${1 - count * 0.05});
                                                                                                     filter: blur(${count}px);
@@ -221,7 +221,7 @@ const get_carousel_game_html = (n, game, discount) => {
 }
 
 const get_banner_game_html = (game, discount) => {
-    return `<div class="bannerSecond__imgBlock absolute-zero">
+    return `<div class="bannerSecond__imgBlock absolute-zero" data-game_id="${game.id}">
                 <img src="${game.bigBanner}" alt="">
             </div>
             <div class="bannerSecond__info">
@@ -352,18 +352,18 @@ const get_basket_game_html = (game) => {
 
 const get_lineGames_html = (game, page) => {
     const buttons = {
-        'basket': `<button type="button" class="lineGames__game__right__buttons__button lineGames__game__right__buttons__button_red" title="Удалить из избранного">
+        'basket': `<button type="button" main_button data-button="del_basket" class="lineGames__game__right__buttons__button lineGames__game__right__buttons__button_red" title="Удалить из корзины" onclick="toggle_game_basket(${game.id}, '${game.name}'), update_basket_info()">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16 8L8 16M8.00001 8L16 16" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>`,
-        'favorite': `<button type="button" class="lineGames__game__right__buttons__button lineGames__game__right__buttons__button_red" title="Удалить из избранного">
+        'favorite': `<button type="button" main_button data-button="del_favorite" class="lineGames__game__right__buttons__button lineGames__game__right__buttons__button_red" title="Удалить из избранного" onclick="toggle_game_favorite(${game.id}, '${game.name}')">
                         <svg width="28" height="21" viewBox="0 0 28 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M22.1485 1.77087C19.5473 0.551821 16.2594 1.2991 14.4215 3.47773L22.1485 1.77087ZM14.4215 3.47773C12.5865 1.2991 9.31075 0.552764 6.69358 1.76993L6.68981 1.77182C5.05478 2.54174 3.81885 3.92686 3.33108 5.71298C2.84425 7.4991 3.13012 9.5862 4.33681 11.7384C5.95956 14.6473 8.78241 16.8515 13.2478 20.3378L13.8394 20.8002C14.0052 20.9297 14.2096 21.0001 14.4201 21.0001C14.6305 21.0001 14.8349 20.9297 15.0008 20.8002L15.5923 20.3378C20.0568 16.8524 22.8796 14.6483 24.5024 11.7403C25.7195 9.58904 26.0119 7.50098 25.5251 5.71298C25.0364 3.92403 23.7929 2.53986 22.1485 1.77087M21.3493 3.47868C19.1586 2.45305 16.2726 3.43905 15.2782 5.61485C15.203 5.77931 15.0821 5.91871 14.93 6.01645C14.7779 6.11419 14.6009 6.16616 14.4201 6.16616C14.2393 6.16616 14.0623 6.11419 13.9101 6.01645C13.758 5.91871 13.6372 5.77931 13.562 5.61485C12.5685 3.43999 9.70323 2.45211 7.49081 3.47962C6.32374 4.02971 5.48406 4.99117 5.15102 6.21022C4.81892 7.43022 4.96893 9.00876 5.98315 10.8166L5.98409 10.8185C7.38797 13.3349 9.84663 15.2852 14.4205 18.8593C18.9935 15.2852 21.4522 13.3349 22.8561 10.8185L22.8589 10.8128C23.8825 9.00498 24.0363 7.42739 23.7042 6.21022C23.3721 4.99306 22.5287 4.03065 21.3503 3.47962H21.3484L21.3493 3.47868Z" fill="white"/>
                             <rect x="1.29883" width="30.6523" height="2.39213" rx="1.19607" transform="rotate(32.8906 1.29883 0)" fill="white"/>
                         </svg>
                     </button>
-                    <button type="button" class="lineGames__game__right__buttons__button lineGames__game__right__buttons__button_red lineGames__game__right__buttons__button_active" title="Туггл в корзину">
+                    <button type="button" data-button="basket" class="lineGames__game__right__buttons__button lineGames__game__right__buttons__button_red" title="Туггл в корзину" onclick="toggle_game_basket(${game.id}, '${game.name}')">
                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_3535_388)">
                                 <path d="M17.9657 15.297H7.44611C6.20274 15.297 5.13652 14.4095 4.91081 13.1868L2.88636 2.38933C2.79857 2.00033 2.44748 1.71898 2.048 1.71898H0.859367C0.384739 1.71898 0 1.33424 0 0.859611C0 0.384983 0.384739 0.000244141 0.859367 0.000244141H2.048C3.25562 0.000244141 4.31583 0.857333 4.56887 2.03815L4.57325 2.05985L4.79939 3.26579H21.1404C21.6694 3.26579 22.0757 3.74102 21.9881 4.26644L20.5087 13.1427C20.3007 14.3909 19.2312 15.297 17.9657 15.297ZM5.12161 4.98457L6.60054 12.8724C6.67625 13.2824 7.03164 13.5782 7.44611 13.5782H17.9657C18.3875 13.5782 18.744 13.2763 18.8134 12.8602L20.126 4.98457H5.12161ZM8.03143 11.1563L7.39614 7.71882C7.18959 6.60147 8.87945 6.28763 9.08626 7.40644L9.72154 10.8439C9.92809 11.9614 8.23836 12.2761 8.03143 11.1563ZM15.6619 10.8588L16.2351 7.4213C16.4219 6.30073 18.1176 6.58162 17.9304 7.70399L17.3572 11.1415C17.167 12.2823 15.4763 11.972 15.6619 10.8588Z" fill="#fff"/>
@@ -380,19 +380,31 @@ const get_lineGames_html = (game, page) => {
                     </button>`
     }
 
-    return `<div class="lineGames__game" gameId="${game.id}">
+    let preOrder_html = "";
+    let dlc_html = "";
+
+
+    if (game.preOrder != "") {
+        preOrder_html = `<div class="lineGames__game__left__nameBlock__preOrder txt">Предзаказ<span>${game.preOrder}</span></div>`;
+    }
+
+    if (game.dls) {
+        dlc_html = `<div class="lineGames__game__left__imgBlock__dlc txt">DLC</div>`;
+    }
+
+    return `<article class="lineGames__game" data-game_id="${game.id}">
                 <div class="lineGames__game__forHover">
-                    <div class="lineGames__game__forHover__bg lineGames__game__forHover__bg_blue" bgBlueId="${game.id}"></div>
-                    <div class="lineGames__game__forHover__bg lineGames__game__forHover__bg_red" bgRedId="${game.id}"></div>
+                    <div class="lineGames__game__forHover__bg lineGames__game__forHover__bg_blue"></div>
+                    <div class="lineGames__game__forHover__bg lineGames__game__forHover__bg_red"></div>
                 </div>
                 <div class="lineGames__game__left">
                     <div class="lineGames__game__left__imgBlock">
                         <img src="${game.imgH}" alt="${game.name}">
-                        <div class="lineGames__game__left__imgBlock__dlc txt">DLC</div>
+                        ${dlc_html}
                     </div>
                     <div class="lineGames__game__left__nameBlock">
                         <a href="${game.link}" class="lineGames__game__left__nameBlock__name txt">${game.name}</a>
-                        <div class="lineGames__game__left__nameBlock__preOrder txt">Предзаказ</div>
+                        ${preOrder_html}
                         <a href="${game.steamLink}" class="lineGames__game__left__nameBlock__linkPlatform txt">Страница в Steam</a>
                     </div>
                 </div>
@@ -402,7 +414,7 @@ const get_lineGames_html = (game, page) => {
                         ${buttons[page]}
                     </div>
                 </div>
-            </div>`
+            </article>`
 }
 
 const get_games_section_head_series = () => {
@@ -426,7 +438,7 @@ const get_header_basket_game = (game) => {
     return `<div class="header__basket__grid__game" gameId="${game.id}">
                 <div class="header__basket__grid__game__top">
                     <a href="${game.link}" class="header__basket__grid__game__title txt">${game.name}</a>
-                    <div type="button" class="header__basket__grid__game__delete flex-center" onclick="delete_game_basket(${game.id}, '${game.name}')">
+                    <div type="button" class="header__basket__grid__game__delete flex-center" onclick="toggle_game_basket(${game.id}, '${game.name}')">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16 8L8 16M8.00001 8L16 16" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -453,10 +465,10 @@ const get_header_basket_game = (game) => {
 }
 
 const get_small_game = (game) => {
-    return `<div class="header__basket__grid__game" gameId="${game.id}">
+    return `<article class="header__basket__grid__game" gameId="${game.id}" data-game_id="${game.id}">
                 <div class="header__basket__grid__game__top">
                     <a href="${game.link}" class="header__basket__grid__game__title txt">${game.name}</a>
-                    <div type="button" class="header__basket__grid__game__delete flex-center" onclick="delete_game_basket(${game.id}, '${game.name}')">
+                    <div type="button" class="header__basket__grid__game__delete flex-center" onclick="toggle_game_basket(${game.id}, '${game.name}')">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16 8L8 16M8.00001 8L16 16" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -479,7 +491,7 @@ const get_small_game = (game) => {
                         </svg>
                     </a>
                 </div>
-            </div>`
+            </article>`
 }
 
 const get_carousel_banner_html = (game, discount, cout) => {

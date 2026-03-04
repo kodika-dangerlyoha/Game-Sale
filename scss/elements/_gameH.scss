@@ -165,12 +165,15 @@
                 cursor: pointer;
                 overflow: hidden;
                 // transform: scale(0);
-                transition: 0.15s;
+                // transition: 0.15s;
+                @include base.style-main_click;
                 & img {
                     height: 18px;
                     filter: invert(1);
                 }
-                @include base.style-main_click;
+                &_active {
+                    @include base.style-main_active;
+                }
             }
         }
     }

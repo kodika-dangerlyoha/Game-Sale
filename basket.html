@@ -304,77 +304,10 @@
             <div class="basketContainer basketContainer_empty" id="basket_container">
 				<div class="basketContainer__gameList" id="basket_gameList">
 					<h2 class="basketContainer__h2 txt">Корзина</h2>
-					<div class="basketContainer__gameList__games" id="basket_games_list">
-						<div class="basketContainer__gameList__games__bg absolute-zero" id="basket_games_list_bg"></div>
-						<div class="basketContainer__gameList__games__border"></div>
-						<div class="basketContainer__gameList__games__empty" id="gameList_emptyBlock">
-							<img src="img/icons/sad.png" alt="">
-							<div class="basketContainer__gameList__games__empty__text txt">Корзина пуста</div>
-							<a href="index.html" class="basketContainer__gameList__games__empty__exitButton txt">Вернуться к покупкам</a>
-						</div>
-						<!-- <div class="basketContainer__gameList__games__bg absolute-zero" id="basket_games_list_bg"></div>
-						<div class="basketContainer__gameList__games__border"></div>
-						<div class="basketContainer__gameList__games__empty" id="gameList_emptyBlock">
-							<img src="img/icons/sad.png" alt="">
-							<div class="basketContainer__gameList__games__empty__text txt">Корзина пуста</div>
-							<a href="index.html" class="basketContainer__gameList__games__empty__exitButton txt">Вернуться к покупкам</a>
-						</div> -->
-						
-						<!-- <div class="basketContainer__gameList__games__game">
-							<div class="basketContainer__gameList__games__game__forHover">
-								<div class="basketContainer__gameList__games__game__forHover__bg basketContainer__gameList__games__game__forHover__bg_blue"></div>
-								<div class="basketContainer__gameList__games__game__forHover__bg basketContainer__gameList__games__game__forHover__bg_red"></div>
-							</div>
-							<div class="basketContainer__gameList__games__game__left">
-								<div class="basketContainer__gameList__games__game__left__imgBlock">
-									<img src="img/banners/farmsim.png" alt="">
-								</div>
-								<div class="basketContainer__gameList__games__game__left__nameBlock">
-									<div class="basketContainer__gameList__games__game__left__nameBlock__name">
-										<div class="basketContainer__gameList__games__game__left__nameBlock__name__platformImg">
-											<img src="img/icons/steamIcon29.png" alt="">
-										</div>
-										<a href="" class="basketContainer__gameList__games__game__left__nameBlock__name__text txt">Call Of Thunder 2</a>
-									</div>
-									<a href="" class="basketContainer__gameList__games__game__left__nameBlock__linkPlatform txt">Игра в Steam</a>
-								</div>
-							</div>
-							<div class="basketContainer__gameList__games__game__right">
-								<div class="basketContainer__gameList__games__game__right__price txt">1499 ₽</div>
-								<div class="basketContainer__gameList__games__game__right__closeBlock" onclick="deleteGame_from_basket(0)" onmouseover="hover_close_basket(0)" onmouseout="unhover_close_basket(0)">
-									<img src="img/icons/cross2_32.png" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="basketContainer__gameList__games__game basketContainer__gameList__games__game_lastGame">
-							<div class="basketContainer__gameList__games__game__forHover">
-								<div class="basketContainer__gameList__games__game__forHover__bg basketContainer__gameList__games__game__forHover__bg_blue"></div>
-								<div class="basketContainer__gameList__games__game__forHover__bg basketContainer__gameList__games__game__forHover__bg_red"></div>
-							</div>
-							<div class="basketContainer__gameList__games__game__left">
-								<div class="basketContainer__gameList__games__game__left__imgBlock">
-									<img src="img/banners/farmsim.png" alt="">
-								</div>
-								<div class="basketContainer__gameList__games__game__left__nameBlock">
-									<div class="basketContainer__gameList__games__game__left__nameBlock__name">
-										<div class="basketContainer__gameList__games__game__left__nameBlock__name__platformImg">
-											<img src="img/icons/steamIcon29.png" alt="">
-										</div>
-										<a href="" class="basketContainer__gameList__games__game__left__nameBlock__name__text txt">Call Of Thunder 2</a>
-									</div>
-									<a href="" class="basketContainer__gameList__games__game__left__nameBlock__linkPlatform txt">Игра в Steam</a>
-								</div>
-							</div>
-							<div class="basketContainer__gameList__games__game__right">
-								<div class="basketContainer__gameList__games__game__right__price txt">1499 ₽</div>
-								<div class="basketContainer__gameList__games__game__right__closeBlock" onclick="deleteGame_from_basket(1)" onmouseover="hover_close_basket(1)" onmouseout="unhover_close_basket(1)">
-									<img src="img/icons/cross2_32.png" alt="">
-								</div>
-							</div>
-						</div> -->
+					<div class="lineGames" id="basket_games_list">
 					</div>
 				</div>
-				<div class="basketContainer__info basketContainer__info_hidden" id="basket_info">
+				<div class="basketContainer__info" id="basket_info">
 					<h2 class="basketContainer__h2 txt" id="basketInfo_h2">Итого</h2>
 					<div class="basketContainer__info__totalBlock">
 						<form class="basketContainer__info__totalBlock__basketBlock" action="" name="buy">
@@ -534,6 +467,10 @@
 					</div>
 					<a href="index.html" class="basketContainer__info__exitButton txt" id="exit_button">Вернуться к покупкам</a>
 				</div>
+				<div class="basketContainer__empty txt">
+					<span>Вы еще не добавили ни одну игру в корзину</span>
+					<a href="index.html">Перейти на главную страницу</a>
+                </div>
 			</div>
 		</div>
 	</main>
@@ -612,6 +549,7 @@
 	<script type="text/javascript" src="scripts/header_bg.js"></script>
 	<script type="text/javascript" src="scripts/header_catalog.js"></script>
 	<script type="text/javascript" src="scripts/notification.js"></script>
+	<script type="text/javascript" src="scripts/lineGames.js"></script>
 	<script type="text/javascript" src="scripts/apps/app_basket.js"></script>
 </body>
 </html>

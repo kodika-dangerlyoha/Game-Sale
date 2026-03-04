@@ -33,19 +33,6 @@ function get_basket_game_list() {
     return basketProducts;
 }
 
-function makeOffers_index() {
-    // let gameList_new = "";
-    let gameList_expected = "";
-    let gameList_ourChoice = "";
-
-    document.querySelector('#offers_grid_new').innerHTML += games_list.filter(({status}) => status == "new").reduce(
-        (summ_game, game) => summ_game + get_horizont_game_html(game), "");
-    document.querySelector('#offers_grid_expected').innerHTML += games_list.filter(({status}) => status == "expected").reduce(
-        (summ_game, game) => summ_game + get_horizont_game_html(game), "");
-    document.querySelector('#offers_grid_ourChoice').innerHTML += games_list.filter(({status}) => status == "ourChoice").reduce(
-        (summ_game, game) => summ_game + get_horizont_game_html(game), "");
-}
-
 function makeSimilar_gameCard(game) {
     const games_section_head = document.querySelector('#switch_section-game .switch__head');
 
@@ -152,7 +139,7 @@ function make_desscription() {
 }
 
 function make_mainInfo(game) {
-    document.querySelector('#game_img_right').src = game.imgH;
+    document.querySelector('#game_img_right').src = game.img_header;
     document.querySelector('#game_title').innerHTML = game.name;
     // document.querySelector('#game_title_top').innerHTML = game.name;
     document.querySelector('#game_smallDescription').innerHTML = game.small_description;
@@ -224,6 +211,20 @@ function makeSalesHits_index() {
     });
 
     document.querySelector('#salesHits #salesHits_content').innerHTML = gameList;
+    update_buttons(document.querySelector('#salesHits_content'));
+}
+
+function makeOffers_index() {
+    // let gameList_new = "";
+    let gameList_expected = "";
+    let gameList_ourChoice = "";
+
+    document.querySelector('#offers_grid_new').innerHTML += games_list.filter(({status}) => status == "new").reduce(
+        (summ_game, game) => summ_game + get_horizont_game_html(game), "");
+    document.querySelector('#offers_grid_expected').innerHTML += games_list.filter(({status}) => status == "expected").reduce(
+        (summ_game, game) => summ_game + get_horizont_game_html(game), "");
+    document.querySelector('#offers_grid_ourChoice').innerHTML += games_list.filter(({status}) => status == "ourChoice").reduce(
+        (summ_game, game) => summ_game + get_horizont_game_html(game), "");
 }
 
 function makeBanner_index(game_info) {

@@ -1,112 +1,30 @@
 const bank_list = get_bank_list_request();
 let buyForm = document.forms.buy;
-let basket_list = get_basket_list_request();
+let basket_list = get_basket_list();
+const container = document.querySelector('.basketContainer');
 
-function get_basket_list_request() {
-    const basket_list = JSON.parse(document.cookie).basket_list;
-
-    let basket_list_infos = [];
-    games.forEach(info => {
-        if (contains(basket_list, info.id)) {
-            basket_list_infos[info.id] = info;
-        }
-    })
-    return basket_list_infos;
-}
-
-function update_basket_list() {
-    basket_list = get_basket_list_request();
+function update_basket_info() {
+    basket_list = get_basket_list();
+    if (basket_list.length === 0) { container.classList.add('basketContainer_empty'); return } 
+    make_basket_info();
 }
 
 function make_basket_info() {
-    update_basket_list()
-    const new_price = basket_list.reduce((b, a) => b + a.newPrice, 0);
-    const old_price = basket_list.reduce((b, a) => b + a.oldPrice, 0);
-
-    document.getElementById('basket_newPrice').innerText = `${new_price} ₽`;
-    document.getElementById('basket_oldPrice').innerText = `${old_price} ₽`;
-    document.getElementById('basket_discount').innerText = `${Math.round((old_price - new_price) / old_price * 100)}%`;
-
-    if (document.querySelector('.basketContainer__info_hidden') && document.querySelector('.basketContainer_empty')) {
-        document.querySelector('#basket_info').classList.remove('basketContainer__info_hidden');
-        document.querySelector('#basket_container').classList.remove('basketContainer_empty');
-    }
+    const new_price = basket_list.reduce((acc, game) => acc + game.newPrice, 0);
+    const old_price = basket_list.reduce((acc, game) => acc + game.oldPrice, 0);
+    container.querySelector('#basket_newPrice').innerText = `${new_price} ₽`;
+    container.querySelector('#basket_oldPrice').innerText = `${old_price} ₽`;
+    container.querySelector('#basket_discount').innerText = `${Math.round((old_price - new_price) / old_price * 100)}%`;
 }
 
 function make_basket() {
-    // let gameListInfo = get_basket_game_list();
-
-    if (!basket_list.length) {
-        setTimeout(() => {
-            document.querySelector('#gameList_emptyBlock').classList.add('basketContainer__gameList__games__empty_active');
-            document.querySelector('#basket_info').classList.add('basketContainer__info_hidden');
-            document.querySelector('#basket_container').classList.add('basketContainer_empty');
-        }, 200)
-        return
+    if (basket_list.length === 0) {
+        if (container.classList.contains('basketContainer_empty')) { return }
+        container.classList.add('basketContainer_empty'); return
     }
-
+    if (container.classList.contains('basketContainer_empty')) container.classList.remove('basketContainer_empty');
     make_basket_info();
-    document.querySelector('#basket_games_list').innerHTML += basket_list.reduce((summ_game, game) => summ_game + get_lineGames_html(game, 'basket'), "");
-}
-
-// function updateBasket() {
-//     let basketGrid = document.getElementById("basketGrid");
-//     let basket_list = JSON.parse(basket_list_string).basket_list;
-//     if (basket_list.length == 0) {
-//         priceInBasket.textContent = "0р";
-//         amountGameInBasket.textContent = "0";
-//         let noContentNotificationBasket = document.getElementById("noContentNotificationBasket");
-//         noContentNotificationBasket.style.display = "flex";
-//     }
-//     else {
-//         let summPrices = 0;
-//         const gamesInfo = getInfoGames();
-//         gamesInfo.forEach(function(gameInfo) {
-//             noContentNotificationBasket.style.display = "none";
-//             let blockGameHTML = `<div class="content__mainContent__category__flex__gameGeneretionAccount__inner">
-//                                     <img src="${gameInfo.imgLink}" class="content__mainContent__category__flex__gameGeneretionAccount__inner__bg"></img>
-//                                     <div class="content__mainContent__category__flex__gameGeneretionAccount__inner__bg_video"><video src="${gameInfo.trailerLink}" loop="loop" autoplay muted></video></div>
-//                                     <div class="content__mainContent__category__flex__gameGeneretionAccount__inner__bottomInfo">
-//                                         <div class="content__mainContent__category__flex__gameGeneretionAccount__inner__bottomInfo__left">
-//                                             <div class="content__mainContent__category__flex__gameGeneretionAccount__inner__bottomInfo__left__priceNew txt">${gameInfo.newPrice}р</div>
-//                                             <div class="content__mainContent__category__flex__gameGeneretionAccount__inner__bottomInfo__left__priceOld txt">${gameInfo.oldPrice}р</div>
-//                                         </div>
-//                                         <div class="content__mainContent__category__flex__gameGeneretionAccount__inner__bottomInfo__right">
-//                                             <button class="content__mainContent__category__flex__gameGeneretionAccount__inner__bottomInfo__right__button" onclick="deleteGameInBasket(gameList[${gameInfo.id}])"><img src="img/icons/minus16.png" alt=""></button>
-//                                             <a href="${gameInfo.gameLink}" class="content__mainContent__category__flex__gameGeneretionAccount__inner__bottomInfo__right__button"><img src="img/icons/link16.png" alt=""></a>
-//                                         </div>
-//                                     </div>
-//                                 </div>`;
-//             let div = document.createElement('div');
-//             div.classList.add("content__mainContent__category__flex__gameGeneretionAccount");
-//             div.innerHTML = blockGameHTML;
-//             div.id = "gameInBasket" + gameInfo.id;
-
-
-//             basketGrid.append(div);
-//             summPrices += gameInfo.newPrice;
-//         })
-
-//         priceInBasket.textContent = summPrices + "р";
-//         amountGameInBasket.textContent = gameBasket.length.toString();
-//     }
-// }
-
-function delete_basket_request(id) {
-    // delete basketProducts[basketProducts.findIndex(game => game.id == id)];
-    basketProducts.splice(basketProducts.findIndex(game => game.id == id), 1);
-}
-
-function delete_game_basket(game_id, game_name) {
-    update_basket_list();
-    delete_game_in_basket(game_id, game_name);
-    delete_basket_request(game_id);
-    make_basket_info();
-    document.querySelector(`[gameId$="${game_id}"]`).classList.add('basketContainer__gameList__games__game_hidden');
-    if (basket_list.length == 0) {
-        make_basket();
-    }
-    // document.querySelectorAll('.basketContainer__gameList__games__game')[n].classList.add('basketContainer__gameList__games__game_hidden');
+    container.querySelector('#basket_games_list').innerHTML += basket_list.reduce((summ_game, game) => summ_game + get_lineGames_html(game, 'basket'), "");
 }
 
 function open_alert(notification_list) {
@@ -239,7 +157,7 @@ function get_bank_list_request() {
         "00005": "Mastercard",
     };
 }
-// от n избавляться
+
 function choose_bank(bank_id) {
     document.querySelectorAll('.basketContainer__info__totalBlock__paymentMethods__body__bank_active').forEach(elem => {
         elem.classList.remove('basketContainer__info__totalBlock__paymentMethods__body__bank_active');
@@ -264,17 +182,6 @@ function basket_checkBox_click() {
     checkMark.classList.add('basketContainer__info__totalBlock__agreeBlock__checkBox_active');
 }
 
-// сделать с id вместо n
-function hover_close_basket(status, game_id) { 
-    if (status) {
-        document.querySelector(`[bgBlueId$="${game_id}"]`).style.opacity = "0";
-        document.querySelector(`[bgRedId$="${game_id}"]`).style.opacity = "1";
-        return
-    }
-    document.querySelector(`[bgBlueId$="${game_id}"]`).style.opacity = "1";
-    document.querySelector(`[bgRedId$="${game_id}"]`).style.opacity = "0";
-}
-
 function open_payment_methods_handler() {
     // const active_nav = document.querySelector('.basketContainer__info__totalBlock__nav_active');
     // if (active_nav) {
@@ -287,3 +194,4 @@ function open_payment_methods_handler() {
 }
 
 make_basket();
+init_hover(document.querySelector('#basket_games_list'));

@@ -33,7 +33,10 @@ function update_favorite_basket() {
 }
 
 function make_favorite_games() {
-    document.querySelector('#favorite_grid').innerHTML += favorite_list.reduce((summ_game, game) => summ_game + get_lineGames_html(game, 'favorite'), "");
+    const grid = document.querySelector('#favorite_grid');
+    grid.innerHTML += favorite_list.reduce((summ_game, game) => summ_game + get_lineGames_html(game, 'favorite'), "");
+    update_buttons(grid);
+    init_hover(grid);
 }
 
 function make_favorite() {
