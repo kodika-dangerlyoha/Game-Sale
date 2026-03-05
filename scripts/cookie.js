@@ -2,27 +2,57 @@ if (document.cookie == '') {
     document.cookie = '{"basket_list": [], "favorite_list": [], "notification_list": []}';
 }
 
-function update_buttons_solo(article) {
-    const basket = get_basket_list_id();
-    const favorite = get_favorite_list_id();
-    if (basket.includes(article.dataset.gameID)) update_button(article, 'basket');
-    if (favorite.includes(article.dataset.gameID)) update_button(article, 'favorite');
-}
+function add_event_upd_buttons(buttons, parent, type) {
+    const actions = {
+        'all': (button) => button.addEventListener('click', () => update_buttons(parent)),
+        'solo': (button) => button.addEventListener('click', () => update_buttons_solo(parent)),
+    }
 
-function update_buttons(parent) {
-    const basket = get_basket_list_id();
-    const favorite = get_favorite_list_id();
-    parent.querySelectorAll('article').forEach(article => {
-        if (basket.includes( Number(article.dataset.game_id) )) update_button(article, 'basket');
-        if (favorite.includes( Number(article.dataset.game_id) )) update_button(article, 'favorite');
+    buttons.forEach(button => {
+        actions[type](button);
     });
 }
 
-function update_button(parent, type) {
+function update_buttons_solo(article) {
+    const basket = get_basket_list_id();
+    const favorite = get_favorite_list_id();
+    if (basket.includes(article.dataset.game_id)) update_button(article, 'basket');
+    if (favorite.includes(article.dataset.game_id)) update_button(article, 'favorite');
+}
+
+const actions_upd_buttons = {
+    'basket': (parent) => update_buttons_basket(parent),
+    'favorite': (parent) => update_buttons_favorite(parent)
+}
+
+function update_buttons(parent, type) {
+    if (!parent) { console.log('parent invalid'); return }
+    actions_upd_buttons[type](parent);
+}
+
+function update_buttons_basket(parent) {
+    const basket = get_basket_list_id();
+    parent.querySelectorAll('article').forEach(article => {
+        update_button( article, 'basket', basket.includes(Number(article.dataset.game_id)) );
+    });
+}
+
+function update_buttons_favorite(parent) {
+    const favorite = get_favorite_list_id();
+    parent.querySelectorAll('article').forEach(article => {
+        update_button( article, 'favorite', favorite.includes(Number(article.dataset.game_id)) );
+    });
+}
+
+function update_button(parent, type, include) {
     const button = parent.querySelector(`button[data-button="${type}"]`);
     if (!button) return
     const first_class = button.classList[0];
-    button.classList.add(`${first_class}_active`);
+
+    if (include) { button.classList.add(`${first_class}_active`); }
+    else {
+        if (button.classList.contains(`${first_class}_active`)) { button.classList.remove(`${first_class}_active`); }
+    }
 }
 
 function cookie_request(game_title, type) {
@@ -79,32 +109,25 @@ function game_in_basket(game_id) {
 }
 
 function toggle_game_basket(game_id, game_title) {
-    console.log(game_in_basket(game_id));
-    if (game_in_basket(game_id)) {
-        delete_game_basket(game_id, game_title);
-        return
-    }
-    add_game_basket(game_id, game_title);
+    if (game_in_basket(game_id)) { delete_game_basket(game_id); }
+    else { add_game_basket(game_id); }
+    
+    // ! const answer = cookie_request(game_title, 'add_basket'); всегда add_basket 
+    add_notification(answer.messege, answer.status);
+    update_header_basket();
+    update_buttons(document, 'basket');
 }
 
-function add_game_basket(game_id, game_title) {
+function add_game_basket(game_id) {
     let cookie = JSON.parse(document.cookie);
     cookie.basket_list.push(game_id);
     document.cookie = JSON.stringify(cookie);
-
-    const answer = cookie_request(game_title, 'add_basket');
-    add_notification(answer.messege, answer.status);
-    update_header_basket();
 }
 
-function delete_game_basket(game_id, game_title) {
+function delete_game_basket(game_id) {
     let cookie = JSON.parse(document.cookie);
     cookie.basket_list.splice(cookie.basket_list.indexOf(game_id), 1);
     document.cookie = JSON.stringify(cookie);
-
-    const answer = cookie_request(game_title, 'delete_basket');
-    add_notification(answer.messege, answer.status);
-    update_header_basket();
 }
 
 function get_favorite_list() {
@@ -128,30 +151,23 @@ function game_in_favorite(game_id) {
 }
 
 function toggle_game_favorite(game_id, game_title) {
-    console.log(game_in_favorite(game_id));
-    if (game_in_favorite(game_id)) {
-        delete_game_favorite(game_id, game_title);
-        return
-    }
-    add_game_favorite(game_id, game_title);
-}
-
-function add_game_favorite(game_id, game_title) {
-    let cookie = JSON.parse(document.cookie);
-    cookie.favorite_list.push(game_id);
-    document.cookie = JSON.stringify(cookie);
+    if (game_in_favorite(game_id)) { delete_game_favorite(game_id); }
+    else { add_game_favorite(game_id); }
 
     const answer = cookie_request(game_title, 'add_favorite');
     add_notification(answer.messege, answer.status);
     update_favorite_counter_header();
+    update_buttons(document, 'favorite');
 }
 
-function delete_game_favorite(game_id, game_title) {
+function add_game_favorite(game_id) {
+    let cookie = JSON.parse(document.cookie);
+    cookie.favorite_list.push(game_id);
+    document.cookie = JSON.stringify(cookie);
+}
+
+function delete_game_favorite(game_id) {
     let cookie = JSON.parse(document.cookie);
     cookie.favorite_list.splice(cookie.favorite_list.indexOf(game_id), 1);
     document.cookie = JSON.stringify(cookie);
-
-    const answer = cookie_request(game_title, 'delete_favorite');
-    add_notification(answer.messege, answer.status);
-    update_favorite_counter_header();
 }

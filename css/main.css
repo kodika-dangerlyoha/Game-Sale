@@ -914,6 +914,7 @@ label {
   height: 20px;
   border-radius: 50%;
   transition: 0.15s;
+  padding: 0;
   cursor: pointer;
 }
 .header__basket__grid__game__delete > svg {
@@ -2789,12 +2790,6 @@ label {
   border-radius: 50%;
   transition: 0.15s;
   cursor: pointer;
-}
-.carousel__banner__interaction__info__shopInfo__buttons__button > img {
-  width: 100%;
-  filter: invert(1);
-}
-.carousel__banner__interaction__info__shopInfo__buttons__button {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
@@ -2807,6 +2802,14 @@ label {
 }
 .carousel__banner__interaction__info__shopInfo__buttons__button:active {
   transform: scale(0.95);
+}
+.carousel__banner__interaction__info__shopInfo__buttons__button > img {
+  width: 100%;
+  filter: invert(1);
+}
+.carousel__banner__interaction__info__shopInfo__buttons__button_active {
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
 }
 .carousel__banner__interaction__info__shopInfo__priceTag {
   display: flex;
@@ -6726,6 +6729,18 @@ label {
 }
 .favorite__basket__block__button:active {
   transform: scale(0.95);
+}
+.favorite__basket__block__fill {
+  display: block;
+}
+.favorite__basket__block__empty {
+  display: none;
+}
+.favorite__basket__block_empty .favorite__basket__block__fill {
+  display: none;
+}
+.favorite__basket__block_empty .favorite__basket__block__empty {
+  display: block;
 }
 .favorite__empty {
   display: none;

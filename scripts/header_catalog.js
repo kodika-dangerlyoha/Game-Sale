@@ -69,7 +69,7 @@ function update_header_basket() {
     });
 
     basket_list_infos.forEach(game => {
-        games_html += get_header_basket_game(game);
+        games_html += get_small_game(game);
         price += game.newPrice;
     })
 

@@ -151,33 +151,17 @@
                             width: 55px;
                             height: 55px;
                             padding: 12px;
-                            // background-color: rgba(255, 255, 255, 0.1);
-                            // border: 1px solid rgba(255, 255, 255, 0.3);
                             border-radius: 50%;
                             transition: .15s;
                             cursor: pointer;
+                            @include base.style-main_transparent_click;
                             & > img {
                                 width: 100%;
                                 filter: invert(1);
                             }
-                            // &:hover {
-                            //     background-color: rgba(255, 255, 255, 0.2);
-                            // }
-                            // &:hover img {
-                            //     animation: header_nav_hover .25s ease-out 1;
-                            // }
-                            // &:active {
-                            //     transform: scale(0.95);
-                            // }
-                            // &_active.banner__interaction__info__shopInfo__buttons__button_favorite {
-                            //     // background-color: base.$lightRed;
-                            //     // ! background: base.$redGradient;
-                            // }
-                            // &_active.banner__interaction__info__shopInfo__buttons__button_basket {
-                            //     // background-color: base.$lightBlue;
-                            //     // ! background: base.$mainGradient_100;
-                            // }
-                            @include base.style-main_transparent_click;
+                            &_active {
+                                @include base.style-main_active;
+                            }
                         }
                     }
                     &__priceTag {

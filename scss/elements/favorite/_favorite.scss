@@ -333,6 +333,20 @@
                 text-align: center;
                 @include base.style-primaryBTN;
             }
+            &__fill {
+                display: block;
+            }
+            &__empty {
+                display: none;
+            }
+            &_empty &{
+                &__fill {
+                    display: none;
+                }
+                &__empty {
+                    display: block;
+                }
+            }
         }
     }
     &__empty {

@@ -211,7 +211,6 @@ function makeSalesHits_index() {
     });
 
     document.querySelector('#salesHits #salesHits_content').innerHTML = gameList;
-    update_buttons(document.querySelector('#salesHits_content'));
 }
 
 function makeOffers_index() {
@@ -254,6 +253,8 @@ function make_index() {
     makeSalesHits_index();
     makeOffers_index();
     // makeBanner_index(games[3]);
+    update_buttons(document, 'basket');
+    update_buttons(document, 'favorite');
 
     document.querySelectorAll('.loadingContent').forEach(elem => {
         if (elem.classList[1].search('_loading')) {
