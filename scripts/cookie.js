@@ -109,25 +109,29 @@ function game_in_basket(game_id) {
 }
 
 function toggle_game_basket(game_id, game_title) {
-    if (game_in_basket(game_id)) { delete_game_basket(game_id); }
-    else { add_game_basket(game_id); }
+    if (game_in_basket(game_id)) { delete_game_basket(game_id, game_title); }
+    else { add_game_basket(game_id, game_title); }
     
-    // ! const answer = cookie_request(game_title, 'add_basket'); всегда add_basket 
-    add_notification(answer.messege, answer.status);
-    update_header_basket();
+    update_header_basket(LO_pathname);
     update_buttons(document, 'basket');
 }
 
-function add_game_basket(game_id) {
+function add_game_basket(game_id, game_title) {
     let cookie = JSON.parse(document.cookie);
     cookie.basket_list.push(game_id);
     document.cookie = JSON.stringify(cookie);
+
+    const answer = cookie_request(game_title, 'add_basket');
+    add_notification(answer.messege, answer.status);
 }
 
-function delete_game_basket(game_id) {
+function delete_game_basket(game_id, game_title) {
     let cookie = JSON.parse(document.cookie);
     cookie.basket_list.splice(cookie.basket_list.indexOf(game_id), 1);
     document.cookie = JSON.stringify(cookie);
+
+    const answer = cookie_request(game_title, 'delete_basket');
+    add_notification(answer.messege, answer.status);
 }
 
 function get_favorite_list() {
@@ -151,8 +155,8 @@ function game_in_favorite(game_id) {
 }
 
 function toggle_game_favorite(game_id, game_title) {
-    if (game_in_favorite(game_id)) { delete_game_favorite(game_id); }
-    else { add_game_favorite(game_id); }
+    if (game_in_favorite(game_id)) { delete_game_favorite(game_id, game_title); }
+    else { add_game_favorite(game_id, game_title); }
 
     const answer = cookie_request(game_title, 'add_favorite');
     add_notification(answer.messege, answer.status);
@@ -160,14 +164,20 @@ function toggle_game_favorite(game_id, game_title) {
     update_buttons(document, 'favorite');
 }
 
-function add_game_favorite(game_id) {
+function add_game_favorite(game_id, game_title) {
     let cookie = JSON.parse(document.cookie);
     cookie.favorite_list.push(game_id);
     document.cookie = JSON.stringify(cookie);
+
+    const answer = cookie_request(game_title, 'add_favorite');
+    add_notification(answer.messege, answer.status);
 }
 
-function delete_game_favorite(game_id) {
+function delete_game_favorite(game_id, game_title) {
     let cookie = JSON.parse(document.cookie);
     cookie.favorite_list.splice(cookie.favorite_list.indexOf(game_id), 1);
     document.cookie = JSON.stringify(cookie);
+
+    const answer = cookie_request(game_title, 'delete_favorite');
+    add_notification(answer.messege, answer.status);
 }

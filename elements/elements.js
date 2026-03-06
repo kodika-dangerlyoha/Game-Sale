@@ -464,11 +464,22 @@ const get_header_basket_game = (game) => {
             </div>`
 }
 
-const get_small_game = (game) => {
+const get_small_game = (game, page) => {
+    const onclick = {
+        '/favorite.html': `toggle_game_basket(${game.id}, '${game.name}'), update_favorite_basket('/favorite.html')`,
+        '/profile.html': `toggle_game_basket(${game.id}, '${game.name}')`,
+        '/author.html': `toggle_game_basket(${game.id}, '${game.name}')`,
+        '/authors.html': `toggle_game_basket(${game.id}, '${game.name}')`,
+        '/basket.html': `toggle_game_basket(${game.id}, '${game.name}')`,
+        '/catalog.html': `toggle_game_basket(${game.id}, '${game.name}')`,
+        '/series.html': `toggle_game_basket(${game.id}, '${game.name}')`,
+        '/index.html': `toggle_game_basket(${game.id}, '${game.name}')`,
+    }
+
     return `<article class="header__basket__grid__game" gameId="${game.id}" data-game_id="${game.id}">
                 <div class="header__basket__grid__game__top">
                     <a href="${game.link}" class="header__basket__grid__game__title txt">${game.name}</a>
-                    <button type="button" data-button="del_basket" class="header__basket__grid__game__delete flex-center" onclick="toggle_game_basket(${game.id}, '${game.name}')">
+                    <button type="button" data-button="del_basket" class="header__basket__grid__game__delete flex-center" onclick="${onclick[page]}">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16 8L8 16M8.00001 8L16 16" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
