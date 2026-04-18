@@ -253,10 +253,8 @@ function make_index() {
     makeSalesHits_index();
     makeOffers_index();
     // makeBanner_index(games[3]);
-    update_buttons(document, 'basket');
-    update_buttons(document, 'favorite');
-    update_marks(document, 'favorite');
-    update_marks(document, 'basket');
+    update_buttons(document);
+    update_marks(document);
 
     document.querySelectorAll('.loadingContent').forEach(elem => {
         if (elem.classList[1].search('_loading')) {

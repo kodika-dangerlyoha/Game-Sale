@@ -75,12 +75,18 @@ const get_horizont_game_headerCatalog_html = (game, discount) => {
                         <video src="${game.treilerSrc}" autoplay loop muted>
                     </div>
                     <div class="gameH__banner__info txt">
-                        <div class="gameH__banner__info__left">
-                            ${preOrder_html}
+                        <div class="gameH__banner__info__top">
+                            <div class="gameH__banner__info__point gameH__banner__info__point_mark gameH__banner__info__point_hidden" data-mark="basket"><img src="img/icons/main/basket64.png" alt=""></div>
+                            <div class="gameH__banner__info__point gameH__banner__info__point_mark gameH__banner__info__point_hidden" data-mark="favorite"><img src="img/icons/main/like64.png" alt=""></div>
                         </div>
-                        <div class="gameH__banner__info__right">
-                            ${dls_html}
-                            <div class="gameH__banner__info__point gameH__banner__info__point_discount">${discount}%</div>
+                        <div class="gameH__banner__info__bottom">
+                            <div class="gameH__banner__info__left">
+                                ${preOrder_html}
+                            </div>
+                            <div class="gameH__banner__info__right">
+                                ${dls_html}
+                                <div class="gameH__banner__info__point gameH__banner__info__point_discount">${Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)}%</div>
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -91,11 +97,11 @@ const get_horizont_game_headerCatalog_html = (game, discount) => {
                     <div class="gameH__info__right">
                         <div class="gameH__info__price txt">${game.newPrice}₽</div>
                         <div class="gameH__info__buttons">
-                            <button type="button" data-button="basket" class="gameH__info__buttons__button _buttonBasket">
+                            <button type="button" data-button="basket" class="gameH__info__buttons__button _buttonBasket" onclick="toggle_game_basket(${game.id}, '${game.name}')">
                                 <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
                                 <img src="img/icons/main/basket64.png" alt="">
                             </button>
-                            <button type="button" data-button="favorite" class="gameH__info__buttons__button _buttonFavorite">
+                            <button type="button" data-button="favorite" class="gameH__info__buttons__button _buttonFavorite" onclick="toggle_game_favorite(${game.id}, '${game.name}')">
                                 <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
                                 <img src="img/icons/main/like64.png" alt="">
                             </button>

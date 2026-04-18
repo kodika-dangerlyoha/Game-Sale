@@ -617,10 +617,13 @@ function get_games_for_header_games(category) {
 }
 
 function make_game_list_header(category) {
+    const game_grid = document.querySelector('#catalog_game_list');
     const game_list_header = get_games_for_header_games(category);
     let game_list_html = "";
-    game_list_header.forEach(e => { game_list_html += get_horizont_game_headerCatalog_html(e, Math.round((e.oldPrice - e.newPrice) / e.oldPrice * 100)); })
-    document.querySelector('#catalog_game_list').innerHTML = game_list_html;
+    game_list_header.forEach(e => { game_list_html += get_horizont_game_headerCatalog_html(e, Math.round((e.oldPrice - e.newPrice) / e.oldPrice * 100)); });
+    game_grid.innerHTML = game_list_html;
+    update_buttons(game_grid);
+    update_marks(game_grid)
 
     if (document.querySelector('.header__catalog__navs__nav_active')) {
         document.querySelector('.header__catalog__navs__nav_active').classList.remove('header__catalog__navs__nav_active');

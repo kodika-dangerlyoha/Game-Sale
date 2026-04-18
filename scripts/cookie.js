@@ -33,16 +33,19 @@ if (document.cookie == '') {
 //     if (favorite.includes(article.dataset.game_id)) update_button(article, 'favorite');
 // }
 
+// ~ Кнопки 
+
 const actions_upd_buttons = {
     'basket': (parent) => update_buttons_basket(parent),
     'favorite': (parent) => update_buttons_favorite(parent)
 }
 
-// ~ Кнопки 
-
-function update_buttons(parent, type) {
+function update_buttons(parent) {
     if (!parent) { console.log('parent invalid'); return }
-    actions_upd_buttons[type](parent);
+    // actions_upd_buttons['basket'](parent);
+    // actions_upd_buttons['favorite'](parent);
+    update_buttons_basket(parent);
+    update_buttons_favorite(parent);
 }
 
 function update_buttons_basket(parent) {
@@ -77,9 +80,11 @@ const actions_upd_marks = {
     'favorite': (parent) => update_marks_favorite(parent)
 }
 
-function update_marks(parent, type) {
+function update_marks(parent) {
     if (!parent) { console.log('parent invalid'); return }
-    actions_upd_marks[type](parent);
+    // actions_upd_marks[type](parent);
+    update_marks_basket(parent);
+    update_marks_favorite(parent);
 }
 
 function update_marks_basket(parent) {
@@ -166,8 +171,8 @@ function toggle_game_basket(game_id, game_title) {
     else { add_game_basket(game_id, game_title); }
     
     update_header_basket(LO_pathname);
-    update_buttons(document, 'basket');
-    update_marks(document, 'basket');
+    update_buttons_basket(document);
+    update_marks_basket(document);
 }
 
 function add_game_basket(game_id, game_title) {
@@ -215,8 +220,8 @@ function toggle_game_favorite(game_id, game_title) {
     const answer = cookie_request(game_title, 'add_favorite');
     add_notification(answer.messege, answer.status);
     update_favorite_counter_header();
-    update_buttons(document, 'favorite');
-    update_marks(document, 'favorite');
+    update_buttons_favorite(document);
+    update_marks_favorite(document);
 }
 
 function add_game_favorite(game_id, game_title) {
