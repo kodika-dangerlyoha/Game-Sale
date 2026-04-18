@@ -68,15 +68,25 @@
         &__info {
             position: absolute;
             z-index: 4;
+            top: 8px;
             bottom: 8px;
             right: 8px;
             left: 8px;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: space-between;
-            // &__left {
-
-            // }
+            cursor: pointer;
+            &__top {
+                display: flex;
+                align-items: center;
+                justify-content: right;
+                gap: 5px;
+            }
+            &__bottom {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
             &__right {
                 display: flex;
                 justify-content: end;
@@ -102,8 +112,22 @@
                         margin-right: 7px;
                     }
                 }
+                &_mark {
+                    padding: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    @include base.style-percentBlock;
+                    & > img {
+                        height: 18px;
+                        filter: invert(1);
+                    }
+                }
                 &_more {
                     @include base.style-main_transparent;
+                }
+                &_hidden {
+                    display: none;
                 }
             }
         }

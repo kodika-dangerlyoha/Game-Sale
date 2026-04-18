@@ -2,28 +2,43 @@ if (document.cookie == '') {
     document.cookie = '{"basket_list": [], "favorite_list": [], "notification_list": []}';
 }
 
-function add_event_upd_buttons(buttons, parent, type) {
-    const actions = {
-        'all': (button) => button.addEventListener('click', () => update_buttons(parent)),
-        'solo': (button) => button.addEventListener('click', () => update_buttons_solo(parent)),
-    }
+// - update basket and favorite 
 
-    buttons.forEach(button => {
-        actions[type](button);
-    });
-}
+// function add_event_upd_buttons(buttons, parent, type) {
+//     const actions = {
+//         'all': (button) => button.addEventListener('click', () => update_buttons(parent)),
+//         'solo': (button) => button.addEventListener('click', () => update_buttons_solo(parent)),
+//     }
 
-function update_buttons_solo(article) {
-    const basket = get_basket_list_id();
-    const favorite = get_favorite_list_id();
-    if (basket.includes(article.dataset.game_id)) update_button(article, 'basket');
-    if (favorite.includes(article.dataset.game_id)) update_button(article, 'favorite');
-}
+//     buttons.forEach(button => {
+//         actions[type](button);
+//     });
+// }
+
+// function add_event_upd_marks(buttons, parent, type) {
+//     const actions = {
+//         'all': (button) => button.addEventListener('click', () => update_buttons(parent)),
+//         'solo': (button) => button.addEventListener('click', () => update_buttons_solo(parent)),
+//     }
+
+//     buttons.forEach(button => {
+//         actions[type](button);
+//     });
+// }
+
+// function update_buttons_solo(article) {
+//     const basket = get_basket_list_id();
+//     const favorite = get_favorite_list_id();
+//     if (basket.includes(article.dataset.game_id)) update_button(article, 'basket');
+//     if (favorite.includes(article.dataset.game_id)) update_button(article, 'favorite');
+// }
 
 const actions_upd_buttons = {
     'basket': (parent) => update_buttons_basket(parent),
     'favorite': (parent) => update_buttons_favorite(parent)
 }
+
+// ~ Кнопки 
 
 function update_buttons(parent, type) {
     if (!parent) { console.log('parent invalid'); return }
@@ -54,6 +69,44 @@ function update_button(parent, type, include) {
         if (button.classList.contains(`${first_class}_active`)) { button.classList.remove(`${first_class}_active`); }
     }
 }
+
+// ~ Метки 
+
+const actions_upd_marks = {
+    'basket': (parent) => update_marks_basket(parent),
+    'favorite': (parent) => update_marks_favorite(parent)
+}
+
+function update_marks(parent, type) {
+    if (!parent) { console.log('parent invalid'); return }
+    actions_upd_marks[type](parent);
+}
+
+function update_marks_basket(parent) {
+    const basket = get_basket_list_id();
+    parent.querySelectorAll('article').forEach(article => {
+        update_mark( article, 'basket', basket.includes(Number(article.dataset.game_id)) );
+    });
+}
+
+function update_marks_favorite(parent) {
+    const favorite = get_favorite_list_id();
+    parent.querySelectorAll('article').forEach(article => {
+        update_mark( article, 'favorite', favorite.includes(Number(article.dataset.game_id)) );
+    });
+}
+
+function update_mark(parent, type, include) {
+    const mark = parent.querySelector(`div[data-mark="${type}"]`);
+    if (!mark) return;
+
+    if (include) { 
+        if (mark.classList.contains('gameH__banner__info__point_hidden')) { mark.classList.remove('gameH__banner__info__point_hidden'); }
+    }
+    else { mark.classList.add('gameH__banner__info__point_hidden') }
+}
+
+// - - - - - - - - -                                                   
 
 function cookie_request(game_title, type) {
     if (type == 'add_basket') {
@@ -114,6 +167,7 @@ function toggle_game_basket(game_id, game_title) {
     
     update_header_basket(LO_pathname);
     update_buttons(document, 'basket');
+    update_marks(document, 'basket');
 }
 
 function add_game_basket(game_id, game_title) {
@@ -162,6 +216,7 @@ function toggle_game_favorite(game_id, game_title) {
     add_notification(answer.messege, answer.status);
     update_favorite_counter_header();
     update_buttons(document, 'favorite');
+    update_marks(document, 'favorite');
 }
 
 function add_game_favorite(game_id, game_title) {

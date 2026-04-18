@@ -17,7 +17,7 @@ function make_favorite_basket() {
     let total_price = 0;
 
     basket_list.forEach(game => {
-        inner_html += get_small_game(game, 'favorite');
+        inner_html += get_small_game(game, '/favorite.html');
         full_price += game.oldPrice;
         total_price += game.newPrice;
     });

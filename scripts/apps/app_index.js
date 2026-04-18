@@ -11,4 +11,5 @@ function get_game_banner() {
 }
 
 make_index();
+init_lazyImg(document.querySelectorAll('img[data-lazy_src]'));
 // update_basket_button();

@@ -1534,9 +1534,22 @@ label {
 .gameH__banner__info {
   position: absolute;
   z-index: 4;
+  top: 8px;
   bottom: 8px;
   right: 8px;
   left: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.gameH__banner__info__top {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 5px;
+}
+.gameH__banner__info__bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1565,10 +1578,25 @@ label {
   font-weight: 700;
   margin-right: 7px;
 }
+.gameH__banner__info__point_mark {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
+}
+.gameH__banner__info__point_mark > img {
+  height: 18px;
+  filter: invert(1);
+}
 .gameH__banner__info__point_more {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+}
+.gameH__banner__info__point_hidden {
+  display: none;
 }
 .gameH__info {
   position: relative;
@@ -2041,6 +2069,8 @@ label {
   z-index: 2;
   display: flex;
   align-items: center;
+  flex-grow: 0;
+  min-width: 0;
   transition: 0.3s;
 }
 .lineGames__game__left__imgBlock {
@@ -2066,11 +2096,18 @@ label {
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
 }
 .lineGames__game__left__nameBlock {
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 .lineGames__game__left__nameBlock__name {
+  min-width: 0;
+  max-width: 100%;
+  flex-grow: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
@@ -2112,6 +2149,9 @@ label {
   z-index: 2;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
+  min-width: -moz-max-content;
+  min-width: max-content;
   transition: 0.3s;
 }
 .lineGames__game__right__price {
@@ -2336,6 +2376,56 @@ label {
   transition: 0.2s;
   transform: rotate(90deg);
 }
+.inputList__header__adIcons {
+  position: absolute;
+  z-index: 6;
+  right: 30px;
+  padding: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  opacity: 0;
+  max-width: 0px;
+  overflow: hidden;
+  transition: 0.2s;
+}
+.inputList__header__adIcons__icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inputList__header__adIcons__icon > svg {
+  position: relative;
+  z-index: 1;
+}
+.inputList__header__adIcons__icon > svg > path {
+  transition: 0.2s;
+}
+.inputList__header__adIcons__icon:first-child > svg {
+  width: 14px;
+  height: 14px;
+}
+.inputList__header__adIcons__icon:last-child > svg {
+  width: 24px;
+  height: 24px;
+}
+.inputList__header__adIcons__icon__click {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+.inputList__header__adIcons__icon:last-child:hover > svg > path {
+  stroke: rgb(1, 162, 255);
+}
+.inputList__header__adIcons__icon:first-child:hover > svg {
+  fill: rgb(1, 162, 255);
+}
 .inputList__header__reset {
   position: absolute;
   z-index: 6;
@@ -2384,6 +2474,11 @@ label {
 }
 .inputList__header:hover .inputList__header__reset {
   opacity: 1;
+}
+.inputList__header:hover .inputList__header__adIcons {
+  opacity: 1;
+  max-width: -moz-max-content;
+  max-width: max-content;
 }
 .inputList__header:hover .inputList__header__left__value {
   padding-right: 24px;

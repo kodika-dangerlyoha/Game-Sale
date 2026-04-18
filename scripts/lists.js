@@ -8,7 +8,7 @@ let games = [
         'imgH': "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236390/5783e91669463a35ec3510de429107c5913047f7/capsule_616x353.jpg",
         'imgW': "img/banners/img1.png",
         'treilerSrc': "video/50.MP4",
-        'bigBanner': "img/banners/wt2.png",
+        'bigBanner': "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236390/1fbdb7b4bd72aeb3f63bab4e334c199892335e66/library_hero.jpg",
         'bigBanner_blur': "img/banners/blur/wt2_blur.png",
         'series': true,
         'newPrice': 4599,

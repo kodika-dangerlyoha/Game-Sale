@@ -15,17 +15,23 @@ const get_horizont_game_html = (game) => {
 
     return `<article class="gameH game_${game.id}" data-game_id="${game.id}">
                 <a href = "${game.link}" class="gameH__banner">
-                    <div class="gameH__banner__imgBlock"><img src="${game.imgH}" alt="${game.name}"></div>
+                    <div class="gameH__banner__imgBlock"><img src="" data-lazy_src="${game.imgH}" alt="${game.name}"></div>
                     <div class="gameH__banner__videoBlock">
                         <video src="${game.treilerSrc}" autoplay loop muted>
                     </div>
                     <div class="gameH__banner__info txt">
-                        <div class="gameH__banner__info__left">
-                            ${preOrder_html}
+                        <div class="gameH__banner__info__top">
+                            <div class="gameH__banner__info__point gameH__banner__info__point_mark gameH__banner__info__point_hidden" data-mark="basket"><img src="img/icons/main/basket64.png" alt=""></div>
+                            <div class="gameH__banner__info__point gameH__banner__info__point_mark gameH__banner__info__point_hidden" data-mark="favorite"><img src="img/icons/main/like64.png" alt=""></div>
                         </div>
-                        <div class="gameH__banner__info__right">
-                            ${dls_html}
-                            <div class="gameH__banner__info__point gameH__banner__info__point_discount">${Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)}%</div>
+                        <div class="gameH__banner__info__bottom">
+                            <div class="gameH__banner__info__left">
+                                ${preOrder_html}
+                            </div>
+                            <div class="gameH__banner__info__right">
+                                ${dls_html}
+                                <div class="gameH__banner__info__point gameH__banner__info__point_discount">${Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)}%</div>
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -104,7 +110,7 @@ const get_vertical_game_html = (game, discount) => {
                 <a href = "${game.link}" class="gameV__banner">
                     <div class="gameV__banner__glass"></div>
                     <img src="${game.imgW}" alt="${game.name}">
-                    <div class="gameV__banner__discount txt">${discount}%</div>
+                    <div class="gameV__banner__discount txt">${Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)}%</div>
                 </a>
                 <div class="gameV__info">
                     <div class="gameV__info__left">

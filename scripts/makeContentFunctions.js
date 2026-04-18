@@ -255,6 +255,8 @@ function make_index() {
     // makeBanner_index(games[3]);
     update_buttons(document, 'basket');
     update_buttons(document, 'favorite');
+    update_marks(document, 'favorite');
+    update_marks(document, 'basket');
 
     document.querySelectorAll('.loadingContent').forEach(elem => {
         if (elem.classList[1].search('_loading')) {
