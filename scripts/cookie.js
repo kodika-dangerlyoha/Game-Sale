@@ -36,22 +36,19 @@ function update_button(button, include) {
 
 function update_marks(parent) {
     if (!parent) { console.log('parent invalid'); return }
-    // actions_upd_marks[type](parent);
     update_marks_basket(parent);
     update_marks_favorite(parent);
 }
 
 function update_marks_basket(parent) {
-    const basket = get_basket_list_id();
     parent.querySelectorAll('article').forEach(article => {
-        update_mark( article, 'basket', basket.includes(Number(article.dataset.game_id)) );
+        update_mark( article, 'basket', get_basket_list_id().includes(Number(article.dataset.game_id)) );
     });
 }
 
 function update_marks_favorite(parent) {
-    const favorite = get_favorite_list_id();
     parent.querySelectorAll('article').forEach(article => {
-        update_mark( article, 'favorite', favorite.includes(Number(article.dataset.game_id)) );
+        update_mark( article, 'favorite', get_favorite_list_id().includes(Number(article.dataset.game_id)) );
     });
 }
 
