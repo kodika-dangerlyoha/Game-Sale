@@ -5,7 +5,6 @@ class Switch_Section {
         parent.querySelector('.switch__head').addEventListener('click', evt => this.click(evt));
         this.active_class = `${parent.querySelectorAll('.switch__content')[0].classList[0]}_active`;
         this.parent = parent;
-        // console.log(this.active_class, this.parent);
     }
 
     click(evt) {

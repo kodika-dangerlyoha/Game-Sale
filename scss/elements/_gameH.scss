@@ -131,6 +131,9 @@
                 }
             }
         }
+        &:active {
+            transform: scale(.975) !important;
+        }
     }
     &__info {
         position: relative;

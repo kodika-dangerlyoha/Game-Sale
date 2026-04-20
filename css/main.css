@@ -1598,6 +1598,9 @@ label {
 .gameH__banner__info__point_hidden {
   display: none;
 }
+.gameH__banner:active {
+  transform: scale(0.975) !important;
+}
 .gameH__info {
   position: relative;
   padding-top: 5px;

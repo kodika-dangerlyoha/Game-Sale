@@ -42,11 +42,11 @@ const get_horizont_game_html = (game) => {
                     <div class="gameH__info__right">
                         <div class="gameH__info__price txt">${game.newPrice}₽</div>
                         <div class="gameH__info__buttons">
-                            <button type="button" data-button="basket" class="gameH__info__buttons__button _buttonBasket" onclick="toggle_game_basket(${game.id}, '${game.name}')">
+                            <button type="button" data-button="basket" data-game_id="${game.id}" class="gameH__info__buttons__button _buttonBasket" onclick="toggle_game_basket(${game.id}, '${game.name}')">
                                 <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
                                 <img src="img/icons/main/basket64.png" alt="">
                             </button>
-                            <button type="button" data-button="favorite" class="gameH__info__buttons__button _buttonFavorite" onclick="toggle_game_favorite(${game.id}, '${game.name}')">
+                            <button type="button" data-button="favorite" data-game_id="${game.id}" class="gameH__info__buttons__button _buttonFavorite" onclick="toggle_game_favorite(${game.id}, '${game.name}')">
                                 <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
                                 <img src="img/icons/main/like64.png" alt="">
                             </button>
@@ -97,11 +97,11 @@ const get_horizont_game_headerCatalog_html = (game, discount) => {
                     <div class="gameH__info__right">
                         <div class="gameH__info__price txt">${game.newPrice}₽</div>
                         <div class="gameH__info__buttons">
-                            <button type="button" data-button="basket" class="gameH__info__buttons__button _buttonBasket" onclick="toggle_game_basket(${game.id}, '${game.name}')">
+                            <button type="button" data-button="basket" data-game_id="${game.id}" class="gameH__info__buttons__button _buttonBasket" onclick="toggle_game_basket(${game.id}, '${game.name}')">
                                 <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
                                 <img src="img/icons/main/basket64.png" alt="">
                             </button>
-                            <button type="button" data-button="favorite" class="gameH__info__buttons__button _buttonFavorite" onclick="toggle_game_favorite(${game.id}, '${game.name}')">
+                            <button type="button" data-button="favorite" data-game_id="${game.id}" class="gameH__info__buttons__button _buttonFavorite" onclick="toggle_game_favorite(${game.id}, '${game.name}')">
                                 <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
                                 <img src="img/icons/main/like64.png" alt="">
                             </button>
@@ -125,11 +125,11 @@ const get_vertical_game_html = (game, discount) => {
                     <div class="gameV__info__right">
                         <div class="gameV__info__price txt">${game.newPrice}₽</div>
                         <div class="gameV__info__buttons">
-                            <button type="button" data-button="basket" class="gameV__info__buttons__button _buttonBasket" onclick="toggle_game_basket(${game.id}, '${game.name}')">
+                            <button type="button" data-button="basket" data-game_id="${game.id}" class="gameV__info__buttons__button _buttonBasket" onclick="toggle_game_basket(${game.id}, '${game.name}')">
                                 <div class="gameV__info__buttons__button__forHover gameV__info__buttons__button__forHover_blue absolute-zero"></div>
                                 <img src="img/icons/main/basket64.png" alt="">
                             </button>
-                            <button type="button" data-button="favorite" class="gameV__info__buttons__button _buttonFavorite" onclick="toggle_game_favorite(${game.id}, '${game.name}')">
+                            <button type="button" data-button="favorite" data-game_id="${game.id}" class="gameV__info__buttons__button _buttonFavorite" onclick="toggle_game_favorite(${game.id}, '${game.name}')">
                                 <div class="gameV__info__buttons__button__forHover gameV__info__buttons__button__forHover_red absolute-zero"></div>
                                 <img src="img/icons/main/like64.png" alt="">
                             </button>
@@ -183,10 +183,10 @@ const get_banner_html = (count, game_info, carousel_banner_list, discount) => {
                         <div class="carousel__banner__interaction__info__title txt">${game_info.name}</div>
                         <div class="carousel__banner__interaction__info__shopInfo">
                             <div class="carousel__banner__interaction__info__shopInfo__buttons">
-                                <button type="button" data-button="basket" class="carousel__banner__interaction__info__shopInfo__buttons__button carousel__banner__interaction__info__shopInfo__buttons__button_basket">
+                                <button type="button" data-button="basket" data-game_id="${game_info.id}" class="carousel__banner__interaction__info__shopInfo__buttons__button carousel__banner__interaction__info__shopInfo__buttons__button_basket">
                                     <img src="img/icons/main/basket32.png" alt="">
                                 </button>
-                                <button type="button" data-button="favorite" class="carousel__banner__interaction__info__shopInfo__buttons__button carousel__banner__interaction__info__shopInfo__buttons__button_favorite">
+                                <button type="button" data-button="favorite" data-game_id="${game_info.id}" class="carousel__banner__interaction__info__shopInfo__buttons__button carousel__banner__interaction__info__shopInfo__buttons__button_favorite">
                                     <img src="img/icons/main/heart32.png" alt="">
                                 </button>
                             </div>

@@ -37,7 +37,8 @@ function update_favorite_games() {
 function make_favorite_games() {
     const grid = document.querySelector('#favorite_grid');
     grid.innerHTML += favorite_list.reduce((summ_game, game) => summ_game + get_lineGames_html(game, 'favorite'), "");
-    update_buttons_basket(grid);
+    // update_buttons_basket(grid);
+    update_buttons_type(grid, 'basket');
     init_hover(grid);
 }
 
