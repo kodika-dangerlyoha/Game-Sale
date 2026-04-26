@@ -1,3 +1,6 @@
+const ss = new Switch_Section;
+const il = new Input_list;
+
 set_top_img_paralax(416, 1);
 
 function make_author_games() {
@@ -30,8 +33,5 @@ function make_author_games() {
 
 make_author_games();
 
-const ss = new Switch_Section;
 ss.init(document.querySelector('#switch_section-author'));
-
-const il = new Input_list;
 il.init(document.querySelector('#sorting'));

@@ -1327,19 +1327,13 @@ label {
 }
 
 .gameV {
-  width: 280px;
-  height: 341.4634146341px;
-  margin-bottom: 35px;
+  display: block;
 }
 .gameV__banner {
   display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 100%;
   position: relative;
   border-radius: 15px;
   overflow: hidden;
-  background-size: cover;
   background-color: rgb(55, 55, 55);
   transition: 0.15s;
   animation-timing-function: cubic-bezier(0, 0, 0, 0.75);
@@ -1348,6 +1342,7 @@ label {
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 .gameV__banner img {
+  display: block;
   position: relative;
   z-index: 1;
   width: 100%;
@@ -1448,7 +1443,7 @@ label {
   border: 1px solid rgb(1, 162, 255);
 }
 .gameV:hover .gameV__banner {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 .gameV:hover .gameV__info {
   transform: translateY(10px);
@@ -1470,11 +1465,9 @@ label {
   display: block;
 }
 .gameH__banner {
-  height: 222px;
   display: block;
   position: relative;
   border-radius: 15px;
-  background-size: cover;
   transition: 0.15s;
   cursor: pointer;
   overflow: hidden;
@@ -1483,18 +1476,15 @@ label {
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 .gameH__banner__imgBlock {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  width: 100%;
   z-index: 2;
   opacity: 1;
   transition: 0.15s;
 }
 .gameH__banner__imgBlock > img {
+  display: block;
   border-radius: 10px;
-  height: 100%;
+  width: 100%;
 }
 .gameH__banner__videoBlock {
   display: flex;
@@ -2498,9 +2488,10 @@ label {
   transition: 0.2s;
   max-height: 0px;
   opacity: 0;
-  background-color: rgb(47, 47, 47);
-  border: 1px solid rgb(78, 78, 78);
+  background-color: rgba(50, 50, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
   border-top: none;
 }
 .inputList__body__search {
@@ -2513,8 +2504,8 @@ label {
   border-radius: 5px;
   padding: 2px 5px;
   cursor: text;
-  background-color: rgb(68, 68, 68);
-  border: 1px solid rgb(96, 96, 96);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
 }
 .inputList__body__search > input:focus {
@@ -2603,8 +2594,8 @@ label {
   align-items: center;
   max-height: 50px;
   margin: 2.5px 5px 2.5px 5px;
-  background-color: rgb(68, 68, 68);
-  border: 1px solid rgb(96, 96, 96);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
   cursor: pointer;
@@ -2615,9 +2606,6 @@ label {
 }
 .inputList__body__list__point:active {
   transform: scale(0.95);
-}
-.inputList__body__list__point {
-  background-color: rgb(60, 60, 60);
 }
 .inputList__body__list__point:first-child {
   margin-top: 5px;
@@ -2714,6 +2702,42 @@ label {
   min-height: 100%;
 }
 
+.rocket {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  height: 52px;
+  width: 52px;
+  padding: 7px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.2s;
+  backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.rocket:hover {
+  background-color: rgba(1, 162, 255, 0.25);
+  border: 1px solid rgba(1, 162, 255, 0.6);
+}
+.rocket:active {
+  transform: scale(0.95);
+}
+.rocket_show {
+  opacity: 1;
+  transform: scale(1);
+}
+.rocket > svg {
+  transform: rotate(-90deg);
+}
+
 .carousel {
   display: flex;
   width: 100%;
@@ -2783,10 +2807,11 @@ label {
 }
 .carousel__gridBG {
   position: absolute;
-  right: -100px;
-  bottom: -100px;
-  top: -100px;
-  left: -100px;
+  right: 0px;
+  bottom: 0px;
+  top: 0px;
+  left: 0px;
+  min-width: 0;
   z-index: 1;
 }
 .carousel__gridBG__bg {
@@ -2797,9 +2822,12 @@ label {
   left: 0;
   transition: 1s;
   opacity: 0;
+  min-width: 0;
   will-change: opacity;
+  transform: scale(1.1);
 }
 .carousel__gridBG__bg > img {
+  min-width: 0;
   width: 100%;
   height: 100%;
 }
@@ -2815,7 +2843,6 @@ label {
   animation-timing-function: cubic-bezier(0, 0, 0, 0.75);
   position: relative;
   z-index: 2;
-  overflow: hidden;
   will-change: transform, opacity, z-index, margin-left;
 }
 .carousel__banner__imgBlock {
@@ -2967,6 +2994,7 @@ label {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .banner__game {
@@ -3110,7 +3138,7 @@ label {
 }
 
 .games {
-  width: 1605px;
+  width: 100%;
   margin: auto;
   margin-bottom: 50px;
 }
@@ -5864,6 +5892,8 @@ label {
 }
 
 .filters {
+  position: relative;
+  z-index: 2;
   margin-bottom: 30px;
 }
 .filters__row {
@@ -5938,6 +5968,11 @@ label {
   max-height: 40px;
   overflow: visible;
   opacity: 1;
+}
+
+.catalog {
+  position: relative;
+  z-index: 1;
 }
 
 .basketContainer {
@@ -7160,4 +7195,15 @@ label {
 }
 .author__games__grid_active {
   display: grid;
+}
+
+@media (max-width: 1680px) {
+  .inner_w1605p100 {
+    width: 1405px;
+  }
+  .griding_4InRow {
+    display: grid;
+    grid-gap: 35px;
+    grid-template-columns: repeat(3, minmax(0px, 1fr));
+  }
 }/*# sourceMappingURL=main.css.map */

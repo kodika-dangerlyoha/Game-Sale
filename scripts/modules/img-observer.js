@@ -9,7 +9,8 @@ const imgObserver = new IntersectionObserver((entries, observer) => {
     threshold: 0 
 });
 
-function init_lazyImg(imgs) {
+function init_lazyImg(parent) {
+    const imgs = parent.querySelectorAll('img[data-lazy_src]')
     imgs.forEach(img => { imgObserver.observe(img) });
 }
 

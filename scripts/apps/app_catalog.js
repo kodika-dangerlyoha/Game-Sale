@@ -1,3 +1,10 @@
+// import { init_lazyImg } from '../modules/img-observer.js';
+// import { Input_list } from '../modules/modules.js';
+
+// const IL = new Input_list;
+const IL = new Input_list;
+const ROCKET = new Rocket;
+
 // --------------------- Получение паарметров из url 
 
 // Получить все параметры
@@ -7,8 +14,22 @@ const urlParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlParams.entries());
 console.log(params);
 
-params.title ? search_input.value = params.title : search_input.value = '';
+if (params.title) {
+    search_input.value = params.title;
+    set_filter_title(params.title);
+}
+else {
+    search_input.value = '';
+}
+
+// params.title ? search_input.value = params.title : search_input.value;
 // document.querySelector('#search-input').value = params.title;
+
+////////////////// ----- 
+
+function get_catalog_games(filters) {
+
+}
 
 function make_catalog_games(arr) {
     let inner_html = "";
@@ -17,16 +38,20 @@ function make_catalog_games(arr) {
     });
 
     document.querySelector('#catalog_grid').innerHTML = inner_html;
+    update_buttons(document);
+    update_marks(document);
 }
 
-const il = new Input_list;
+make_catalog_games(games);
+init_lazyImg(document);
+ROCKET.init(document.querySelector('#rocket'));
 
 document.querySelectorAll('.inputList').forEach(el => {
-    il.init(el);
+    IL.init(el);
 });
 
 function reset_all() {
-    il.reset_all_filters(document.querySelector('.filters'));
+    IL.reset_all_filters(document.querySelector('.filters'));
 }
 
 // make_catalog_games(games);

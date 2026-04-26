@@ -1,5 +1,17 @@
 let carousel_banner_list = get_carousel_bannet_list_request();
 
+const colorThief = new ColorThief();
+
+// function dominant_color(img) {
+//     img.crossOrigin = 'Anonymous';
+//     img.addEventListener('load', function() {
+//         // Получаем доминирующий цвет [R, G, B]
+//         const dominantColor = colorThief.getColor(img);
+//         console.log('Самый частый цвет (RGB):', dominantColor);
+//     });
+//     return dominantColor;
+// }
+
 function get_carousel_bannet_list_request() {
     return games_list.filter(game_info => game_info.carousel === true);
 }
@@ -26,16 +38,26 @@ function make_carousel() {
     carousel_banner_list.forEach(game_info => {
         const discount = Math.round((game_info.oldPrice - game_info.newPrice) / game_info.oldPrice * 100)
         carusel_html.innerHTML += get_banner_html(count, game_info, carousel_banner_list, discount);
-        carousel_bg_html.innerHTML += get_banner_bg_html(count, game_info);
+        // carousel_bg_html.innerHTML += get_banner_bg_html(count, game_info);
         count += 1;
     });
 }
 
 make_carousel();
 
+// document.querySelectorAll('.carousel__banner__imgBlock img').forEach(img => {
+//     img.crossOrigin = 'Anonymous';
+//     img.addEventListener('load', function() {
+//         // Получаем доминирующий цвет [R, G, B]
+//         const dominantColor = colorThief.getColor(img);
+//         img.closest('.carousel__banner__imgBlock').style.boxShadow = `0 0 150px -50px rgba(${dominantColor}, 1)`;
+//         console.log('Самый частый цвет (RGB):', dominantColor);
+//     });
+// })
+
 function scroll_carousel(bool) {
     let carusel_items = document.querySelectorAll('.carousel__banner');
-    let carusel_bg = document.querySelectorAll('.carousel__gridBG__bg');
+    // let carusel_bg = document.querySelectorAll('.carousel__gridBG__bg');
 
     let btl = document.querySelector('#carousel_button_left');
     let btr = document.querySelector('#carousel_button_right');
@@ -43,7 +65,7 @@ function scroll_carousel(bool) {
     btl.disabled = true;
     btr.disabled = true;
 
-    document.querySelector('.carousel__gridBG__bg_active').classList.remove('carousel__gridBG__bg_active');
+    // document.querySelector('.carousel__gridBG__bg_active').classList.remove('carousel__gridBG__bg_active');
 
     if (bool) {
         let i = 0;
@@ -62,10 +84,10 @@ function scroll_carousel(bool) {
                 }`;
             html_elem.getElementsByTagName('a')[0].style = `${count === 0 ? 'display: block' : 'display: none'}`;
 
-            carusel_bg[i].setAttribute('order', count);
-            if (count == 0) {
-                carusel_bg[i].classList.add('carousel__gridBG__bg_active');
-            }
+            // carusel_bg[i].setAttribute('order', count);
+            // if (count == 0) {
+            //     carusel_bg[i].classList.add('carousel__gridBG__bg_active');
+            // }
             i++;
         })
     }
@@ -89,10 +111,10 @@ function scroll_carousel(bool) {
             html_elem.getElementsByTagName('a')[0].style = `${count === 0 ? 'display: block' : 'display: none'}`;
 
 
-            carusel_bg[i].setAttribute('order', count);
-            if (count == 0) {
-                carusel_bg[i].classList.add('carousel__gridBG__bg_active');
-            }
+            // carusel_bg[i].setAttribute('order', count);
+            // if (count == 0) {
+            //     carusel_bg[i].classList.add('carousel__gridBG__bg_active');
+            // }
             i++;
         })
     } 

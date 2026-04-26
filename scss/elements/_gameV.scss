@@ -1,16 +1,17 @@
 @use '../default/base';
 
 .gameV {
-    @include base.game_banner_size(280px);
-    margin-bottom: 35px;
+    // @include base.game_banner_size(280px);
+    // margin-bottom: 35px;
+    display: block;
     &__banner {
         display: block;
-        object-fit: cover;
-        height: 100%;
+        // object-fit: cover;
+        // height: 100%;
         position: relative;
         border-radius: 15px;
         overflow: hidden;
-        background-size: cover;
+        // background-size: cover;
         background-color: rgb(55, 55, 55);
         transition: 0.15s;
         animation-timing-function: base.$tf-main;
@@ -18,6 +19,7 @@
         box-shadow: 0 0 15px rgba(0, 0, 0, .2);
         border: 1px solid rgba(255, 255, 255, .15);
         & img {
+            display: block;
             position: relative;
             z-index: 1;
             width: 100%;
@@ -39,25 +41,6 @@
             -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
         }
-        // &__discount {
-        //     position: absolute;
-        //     bottom: 0px;
-        //     left: 0;
-        //     padding: 4px 4px 0 0;
-        //     border-radius: 0 14px 0 14px;
-        //     background-color: base.$clr-main_body;
-        //     cursor: pointer;
-        //     z-index: 2;
-        //     &__inner {
-        //         padding: 5px 10px 5px 10px;
-        //         border-radius: 0 10px 0 10px;
-        //         background: base.$clr-grad_blue_100;
-        //         font-family: base.$fnt-all;
-        //         font-size: 15px;
-        //         font-weight: 700;
-        //         cursor: pointer;
-        //     }
-        // }
     }
     &__info {
         position: relative;
@@ -133,7 +116,7 @@
 
     &:hover &{
         &__banner {
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
         &__info {
             transform: translateY(10px);

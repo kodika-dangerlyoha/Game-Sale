@@ -1,4 +1,32 @@
-class Input_list {
+export class Lazy_img {
+    imgObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            const trg = entry.target;
+            if (entry.isIntersecting) { trg.src = trg.dataset.lazy_src; }
+            else { trg.src = ''; }
+        });
+    }, {
+        rootMargin: '200px 0px 100px 0px',
+        threshold: 0 
+    });
+
+    init(parent) {
+        const imgs = parent.querySelectorAll('img[data-lazy_src]')
+        imgs.forEach(img => { this.imgObserver.observe(img) });
+    }
+
+    delete(parent) {
+        const imgs = parent.querySelectorAll('img[data-lazy_src]')
+        imgs.forEach(img => { this.imgObserver.unobserve(img) });
+    }
+
+    update(parent) {
+        this.delete(imgs);
+        this.init(imgs);
+    }
+}
+
+export class Input_list {
     init(el) {
         el.addEventListener('click', evt => this.click(evt));
         if (el.dataset.type == 'interval') {
@@ -81,7 +109,7 @@ class Input_list {
 
     change_multiple(parent, value, point) {
         const input = parent.querySelector('input[inp_type="value"]');
-        const arr = input.value.split(', ');
+        const arr = input.value.split(', ').filter(el => el !== '');
 
         if (arr.includes(value)) {
             arr.splice(arr.indexOf(value), 1);
@@ -92,7 +120,8 @@ class Input_list {
             point.classList.add('inputList__body__list__point_active');
         }
 
-        input.value = arr.filter(el => el !== '').join(', ');
+        input.value = arr.join(', ');
+        // set_filter(parent.dataset.filter, parent.dataset.title, arr);
         parent.querySelector('.inputList__header__left__value').innerHTML = input.value;
     }
 
@@ -168,11 +197,49 @@ class Input_list {
 
     click(evt) {
         const trg = evt.target;
-        this.actions[trg.dataset.title](trg.closest('.inputList'), trg.closest('.inputList__body__list__point'), trg.dataset.value);
+        const point = trg.closest('.inputList__body__list__point');
+        let value;
+        if (point) { value = point.querySelector('.inputList__body__list__point__title').innerHTML; }
+        
+        this.actions[trg.dataset.title](trg.closest('.inputList'), point, value);
     }
 
     input(evt) {
         const trg = evt.target;
         this.input_actions[trg.dataset.type](trg.closest('.inputList'));
+    }
+}
+
+export function set_top_img_paralax(max_height, max_opacity) {
+    const img_block = document.querySelector('.topImgParalaxBlock');
+    img_block.style.height = `${max_height}px`;
+    img_block.style.opacity = `${max_opacity}`;
+
+    window.addEventListener("scroll", function(){
+        const page_scroll = window.scrollY;
+        img_block.style.height = `${max_height + (page_scroll / 5)}px`;
+        img_block.style.opacity = `${max_opacity - (page_scroll / 400)}`;
+    });
+}
+
+export class Switch_Section {
+    active_class = '';
+    parent;
+    init(parent) {
+        parent.querySelector('.switch__head').addEventListener('click', evt => this.click(evt));
+        this.active_class = `${parent.querySelectorAll('.switch__content')[0].classList[0]}_active`;
+        this.parent = parent;
+    }
+
+    click(evt) {
+        const trg = evt.target;
+        if (trg.classList.contains('switch__head__point__click')) {
+            const title = trg.dataset.section;
+            this.parent.querySelector(`.${this.active_class}`)?.classList.remove(this.active_class);
+            this.parent.querySelector('.switch__head__point_active').classList.remove('switch__head__point_active');
+
+            this.parent.querySelector(`#switch_point-${title}`).classList.add('switch__head__point_active');
+            this.parent.querySelector(`#switch_content-${title}`).classList.add(this.active_class);
+        }
     }
 }

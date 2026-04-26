@@ -1,0 +1,10 @@
+@use '../default/base';
+
+@media (max-width: 1680px) { 
+    .inner_w1605p100 {
+        width: 1405px;
+    }
+    .griding_4InRow{
+        @include base.grid(35px, 3);
+    }
+}

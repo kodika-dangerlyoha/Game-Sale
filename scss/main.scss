@@ -17,6 +17,7 @@
 @use "elements/blockButtonMore";
 @use "elements/inputList";
 @use "elements/topImgParalaxBlock";
+@use "elements/rocket";
 // ~ Index
 @use "elements/index/carousel";
 @use "elements/index/salesHits";
@@ -38,6 +39,7 @@
 @use "elements/profile/purchase";
 // ~ Catalog
 @use "elements/catalog/formFilters";
+@use "elements/catalog/catalog";
 // ~ Basket
 @use "elements/basket/basketContainer";
 // ~ Favorite

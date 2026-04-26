@@ -305,7 +305,7 @@
 		<div class="inner inner_w1605p100">
             <form class="filters" action="" name="form_filter">
 				<div class="filters__row">
-					<div class="inputList inputList_single txt" data-title="sorting" data-type="single" id="sorting">
+					<div class="inputList inputList_single txt" data-filter="sorting" data-title="sorting" data-type="single" id="sorting">
 						<input type="text" title="values" inp_type="value" value="">
 						<div class="inputList__header">
 							<div class="inputList__header__click" data-title="header"></div>
@@ -366,7 +366,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="inputList inputList_multiple txt" data-title="genres" data-type="multiple" id="genres">
+					<div class="inputList inputList_multiple txt" data-filter="filters" data-title="genres" data-type="multiple" id="genres">
 						<input type="text" title="values" inp_type="value" value="">
 						<div class="inputList__header">
 							<div class="inputList__header__click" data-title="header"></div>
@@ -444,7 +444,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="inputList inputList_interval txt" data-title="prices" data-type="interval" id="prices">
+					<div class="inputList inputList_interval txt" data-filter="filters" data-title="prices" data-type="interval" id="prices">
 						<!-- <input type="text" title="values" inp_type="value" value=""> -->
 						<div class="inputList__header">
 							<div class="inputList__header__click" data-title="header"></div>
@@ -497,7 +497,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="inputList inputList_interval txt" data-title="years" data-type="interval" id="years">
+					<div class="inputList inputList_interval txt" data-filter="filters" data-title="years" data-type="interval" id="years">
 						<!-- <input type="text" title="values" inp_type="value" value=""> -->
 						<div class="inputList__header">
 							<div class="inputList__header__click" data-title="header"></div>
@@ -580,7 +580,7 @@
 					</div>
 				</div>
 				<div class="filters__row filters__row_second">
-					<div class="inputList inputList_multiple txt" data-title="themes" data-type="multiple" id="themes">
+					<div class="inputList inputList_multiple txt" data-filter="filters" data-title="themes" data-type="multiple" id="themes">
 						<input type="text" title="values" inp_type="value" value="">
 						<div class="inputList__header">
 							<div class="inputList__header__click" data-title="header"></div>
@@ -658,7 +658,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="inputList inputList_multiple txt" data-title="developers" data-type="multiple" id="developers">
+					<div class="inputList inputList_multiple txt" data-filter="filters" data-title="developers" data-type="multiple" id="developers">
 						<input type="text" title="values" inp_type="value" value="">
 						<div class="inputList__header">
 							<div class="inputList__header__click" data-title="header"></div>
@@ -736,7 +736,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="inputList inputList_multiple txt" data-title="publishers" data-type="multiple" id="publishers">
+					<div class="inputList inputList_multiple txt" data-filter="filters" data-title="publishers" data-type="multiple" id="publishers">
 						<input type="text" title="values" inp_type="value" value="">
 						<div class="inputList__header">
 							<div class="inputList__header__click" data-title="header"></div>
@@ -814,7 +814,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="inputList inputList_multiple txt" data-title="way_game" data-type="multiple" id="way_game">
+					<div class="inputList inputList_multiple txt" data-filter="filters" data-title="way_game" data-type="multiple" id="way_game">
 						<input type="text" title="values" inp_type="value" value="">
 						<div class="inputList__header">
 							<div class="inputList__header__click" data-title="header"></div>
@@ -892,7 +892,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="inputList inputList_multiple txt" data-title="series" data-type="multiple" id="series">
+					<div class="inputList inputList_multiple txt" data-filter="filters" data-title="series" data-type="multiple" id="series">
 						<input type="text" title="values" inp_type="value" value="">
 						<div class="inputList__header">
 							<div class="inputList__header__click" data-title="header"></div>
@@ -977,6 +977,12 @@
 			</section>
 		</div>
 	</main>
+
+	<div class="rocket" id="rocket">
+		<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
+		</svg>
+	</div>
 	
 	<footer class="footer">
         <div class="inner inner_footer inner_oneSec">
@@ -1051,7 +1057,10 @@
 	<script type="text/javascript" src="scripts/script.js"></script>
 	<script type="text/javascript" src="scripts/header.js"></script>
 	<script type="text/javascript" src="scripts/notification.js"></script>
-	<script type="text/javascript" src="scripts/input_list.js"></script>
+	<script type="text/javascript" src="scripts/filter.js"></script>
+	<script type="text/javascript" src="scripts/modules/input_list.js"></script>
+	<script type="text/javascript" src="scripts/modules/img-observer.js"></script>
+	<script type="text/javascript" src="scripts/modules/rocket.js"></script>
 	<script type="text/javascript" src="scripts/apps/app_catalog.js"></script>
 </body>
 </html>

@@ -57,15 +57,19 @@
         position: relative;
     }
     &__gridBG {
-        @include base.pos_absolute(-100px, -100px, -100px, -100px);
+        @include base.pos_absolute(0px, 0px, 0px, 0px);
+        min-width: 0;
         z-index: 1;
         &__bg {
             @include base.absolute-zero;
             transition: 1s;
             opacity: 0;
+            min-width: 0;
             will-change: opacity;
+            transform: scale(1.1);
             // filter: blur(50px);
             & > img {
+                min-width: 0;
                 width: 100%;
                 height: 100%;
             }
@@ -83,7 +87,7 @@
         animation-timing-function: base.$tf-main;
         position: relative;
         z-index: 2;
-        overflow: hidden;
+        // overflow: hidden;
         will-change: transform, opacity, z-index, margin-left;
         &__imgBlock {
             width: 100%;

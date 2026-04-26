@@ -101,6 +101,8 @@
 }
 
 .filters {
+    position: relative;
+    z-index: 2;
     margin-bottom: 30px;
     &__row {
         position: relative;
