@@ -17,7 +17,10 @@ const get_horizont_game_html = (game) => {
                 <a href = "${game.link}" class="gameH__banner">
                     <div class="gameH__banner__imgBlock"><img src="" data-lazy_src="${game.imgH}" alt="${game.name}"></div>
                     <div class="gameH__banner__videoBlock">
-                        <video src="${game.treilerSrc}" autoplay loop muted>
+                        <video autoplay loop muted>
+                            <source src="${game.treiler_micro_webm}" type="video/webm">
+                            <source src="${game.treiler_micro_mp4}" type="video/mp4">
+                        </video>
                     </div>
                     <div class="gameH__banner__info txt">
                         <div class="gameH__banner__info__top">
@@ -72,7 +75,10 @@ const get_horizont_game_headerCatalog_html = (game, discount) => {
                 <a href = "${game.link}" class="gameH__banner">
                     <div class="gameH__banner__imgBlock"><img src="${game.imgH}" alt="${game.name}"></div>
                     <div class="gameH__banner__videoBlock">
-                        <video src="${game.treilerSrc}" autoplay loop muted>
+                        <video autoplay loop muted>
+                            <source src="${game.treiler_micro_webm}" type="video/webm">
+                            <source src="${game.treiler_micro_mp4}" type="video/mp4">
+                        </video>
                     </div>
                     <div class="gameH__banner__info txt">
                         <div class="gameH__banner__info__top">

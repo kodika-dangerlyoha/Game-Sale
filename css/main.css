@@ -1501,7 +1501,7 @@ label {
   transition: 0.15s;
 }
 .gameH__banner__videoBlock video {
-  width: 100%;
+  height: 100%;
   display: none;
 }
 .gameH__banner__discount {
@@ -1668,9 +1668,6 @@ label {
 .gameH__info__buttons__button_active {
   background-color: rgba(1, 162, 255, 0.4);
   border: 1px solid rgb(1, 162, 255);
-}
-.gameH_headerCatalog .gameH__banner {
-  height: 173px;
 }
 .gameH_headerCatalog .gameH__banner__info__point {
   font-size: 14px;
@@ -2991,9 +2988,9 @@ label {
   width: 100%;
 }
 .salesHits__games {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-gap: 35px;
+  grid-template-columns: repeat(5, minmax(0px, 1fr));
   width: 100%;
 }
 
