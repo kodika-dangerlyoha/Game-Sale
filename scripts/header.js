@@ -422,6 +422,7 @@ function update_header_opacity() {
 }
 
 // Основной обработчик - используем passive для производительности
+window.addEventListener('touchmove', update_header_opacity, { passive: true });
 window.addEventListener('scroll', update_header_opacity, { passive: true });
 
 // Для iOS Safari - обработка окончания инерции

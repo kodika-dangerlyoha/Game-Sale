@@ -5,6 +5,10 @@ body {
 	margin: 0;
     overflow-y: scroll; /* Всегда показываем скроллбар */
     // overscroll-behavior: none; /* Запрещаем прокрутку */ // ! не работает на ios < 16
+  	/* Set explicit height (critical for iOS) */
+	height: 100vh; 
+	/* Enable momentum scrolling and event firing */
+	-webkit-overflow-scrolling: touch; 
 }
 
 a {

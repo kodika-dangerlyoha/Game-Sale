@@ -3,6 +3,10 @@ body {
   background-color: rgb(39, 39, 39);
   margin: 0;
   overflow-y: scroll; /* Всегда показываем скроллбар */
+  /* Set explicit height (critical for iOS) */
+  height: 100vh;
+  /* Enable momentum scrolling and event firing */
+  -webkit-overflow-scrolling: touch;
 }
 
 a {
