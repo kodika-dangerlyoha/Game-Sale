@@ -401,17 +401,44 @@ const header_bg = document.querySelector('#header__bg');
 
 let header_bg_visible = false;
 
-window.addEventListener('scroll', function() {
-    scrollTop = window.pageYOffset;
-    if (scrollTop == 0) {
+function update_header_opacity() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop <= 0) {
         header_bg.style.opacity = "0";
         header_bg_visible = false;
-    }
+    } 
     else {
         header_bg.style.opacity = "1";
         header_bg_visible = true;
     }
+    
+    // Для iPhone — проверка в консоли
+    console.log('ScrollTop:', scrollTop, 'Opacity:', header_bg.style.opacity);
+}
+
+window.addEventListener('scroll', update_header_opacity);
+
+// Дополнительно для iOS Safari (из-за инерции)
+window.addEventListener('touchmove', update_header_opacity, { passive: true });
+window.addEventListener('touchend', function() {
+    setTimeout(update_header_opacity, 50);
 });
+
+// Также на всякий случай при загрузке
+window.addEventListener('load', update_header_opacity);
+
+// window.addEventListener('scroll', function() {
+//     scrollTop = window.pageYOffset;
+//     if (scrollTop == 0) {
+//         header_bg.style.opacity = "0";
+//         header_bg_visible = false;
+//     }
+//     else {
+//         header_bg.style.opacity = "1";
+//         header_bg_visible = true;
+//     }
+// });
 
 // --------- mobile 
 
