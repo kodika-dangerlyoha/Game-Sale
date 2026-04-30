@@ -400,9 +400,7 @@ make_header();
 
     // const header_bg = document.querySelector('#header__bg');
     
-    document.addEventListener('DOMContentLoaded', function() {
         const header_bg = document.querySelector('#header__bg');
-        if (!header_bg) return;
         
         let lastScrollTop = 0;
         
@@ -424,7 +422,6 @@ make_header();
         // Проверяем каждые 100мс (неэффективно, но для теста)
         alert(header_bg.classList);
         console.log(header_bg);
-    });
 
 // document.addEventListener('DOMContentLoaded', function() {
 //     const header_bg = document.querySelector('#header__bg');
