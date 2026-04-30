@@ -412,11 +412,11 @@ function update_header_opacity() {
     console.log('ScrollTop:', scrollTop);
     
     if (scrollTop <= 0) {
-        header_bg.classList.remove('header__bg_noTransparent');
+        document.querySelector('#header__bg').classList.remove('header__bg_noTransparent');
         header_bg_visible = false;
     } 
     else {
-        header_bg.classList.add('header__bg_noTransparent');
+        document.querySelector('#header__bg').classList.add('header__bg_noTransparent');
         header_bg_visible = true;
     }
 }
@@ -458,13 +458,13 @@ function open_section(title) {
     if (open_section) { open_section.classList.remove('header__mobile__section_open'); }
     
     document.querySelector(`.header__mobile__${title}`).classList.add('header__mobile__section_open');
-    header_bg.classList.add('header__bg_noTransparent');
+    document.querySelector('#header__bg').classList.add('header__bg_noTransparent');
 }
 
 function close_section() {
     document.querySelector('.header__mobile__section_open').classList.remove('header__mobile__section_open'); 
     document.querySelector('.header__mobile__main').classList.add('header__mobile__section_open');
-    header_bg.classList.remove('header__bg_noTransparent');
+    document.querySelector('#header__bg').classList.remove('header__bg_noTransparent');
 }
 
 // --------- basket + notification 
