@@ -422,7 +422,8 @@ make_header();
         }
         
         // Проверяем каждые 100мс (неэффективно, но для теста)
-        setInterval(checkScroll, 100);
+        alert(header_bg.classList);
+        console.log(header_bg);
     });
 
 // document.addEventListener('DOMContentLoaded', function() {
