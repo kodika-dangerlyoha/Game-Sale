@@ -160,6 +160,7 @@
         opacity: 0;
         transition: 0.5s;
         overflow: hidden;
+        will-change: opacity;
         &_noTransparent {
             opacity: 1;
         }

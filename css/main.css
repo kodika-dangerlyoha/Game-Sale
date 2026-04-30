@@ -425,6 +425,7 @@ label {
   opacity: 0;
   transition: 0.5s;
   overflow: hidden;
+  will-change: opacity;
 }
 .header__bg_noTransparent {
   opacity: 1;

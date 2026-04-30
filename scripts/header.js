@@ -412,10 +412,10 @@ make_header();
                 lastScrollTop = currentScroll;
                 
                 if (currentScroll > 10) {
-                    header_bg.style.backgroundColor = 'black'; // ваш цвет
+                    header_bg.classList.add('header__bg_noTransparent') // ваш цвет
                     console.log('скролл есть, меняем', currentScroll);
                 } else {
-                    header_bg.style.backgroundColor = 'transparent';
+                    header_bg.classList.remove('header__bg_noTransparent');
                     console.log('вверху', currentScroll);
                 }
             }
