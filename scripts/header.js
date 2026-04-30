@@ -433,7 +433,7 @@ window.addEventListener('scroll', update_header_opacity, { passive: true });
 
 // При загрузке страницы
 update_header_opacity();
-header_bg.classList.add('header__bg_noTransparent');
+document.querySelector('#header__bg').classList.add('header__bg_noTransparent');
 
 // Также на событие resize (может меняться высота адресной строки в iOS)
 // window.addEventListener('resize', update_header_opacity);
