@@ -5,9 +5,6 @@
         width: 1400px;
         display: block;
     }
-    &_footer {
-        max-width: 1905px;
-    }
     &_profile {
         width: 1200px;
         padding-top: 120px;
@@ -35,7 +32,14 @@
     &_basket {
         width: 1405px;
     }
-    
+
+    &_footer {
+        max-width: 1905px;
+        min-width: 0;
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+
     &_w1405p100 {
         width: 1405px;
     }

@@ -21,6 +21,12 @@ function makeSalesHits_index() {
     });
 
     document.querySelector('#salesHits #salesHits_content').innerHTML = gameList;
+    if (window.innerWidth < 827) {
+        document.querySelectorAll('#salesHits_content article')[4].style.display = 'none';
+    }
+    else {
+        document.querySelectorAll('#salesHits_content article')[4].style.display = 'block';
+    }
 }
 
 function makeOffers_index() {

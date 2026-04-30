@@ -32,15 +32,28 @@ function get_carousel_bannet_list_request() {
 
 function make_carousel() {
     let carusel_html = document.querySelector('#grid_banners');
-    let carousel_bg_html = document.querySelector('#carousel_grid_bg');
+    let list_html = "";
+    // let carousel_bg_html = document.querySelector('#carousel_grid_bg');
     let count = 0;
 
     carousel_banner_list.forEach(game_info => {
-        const discount = Math.round((game_info.oldPrice - game_info.newPrice) / game_info.oldPrice * 100)
-        carusel_html.innerHTML += get_banner_html(count, game_info, carousel_banner_list, discount);
+        list_html += get_banner_html(count, game_info, carousel_banner_list);
         // carousel_bg_html.innerHTML += get_banner_bg_html(count, game_info);
         count += 1;
     });
+
+    document.querySelector('#grid_banners').innerHTML = list_html;
+
+    if (window.innerWidth < 551) {
+        document.querySelectorAll('.carousel__banner__imgBlock img').forEach(img => {
+            img.src = img.dataset.v;
+        });
+    }
+    else {
+        document.querySelectorAll('.carousel__banner__imgBlock img').forEach(img => {
+            img.src = img.dataset.h;
+        });
+    }
 }
 
 make_carousel();

@@ -4,7 +4,37 @@ function contains(arr, elem) {
 
 // ----------------------- footer всегда снизу
 
-document.querySelector("#main").style.minHeight = `${window.innerHeight - 331}px`;
+document.querySelector('main').style.minHeight = `${window.innerHeight - 331}px`;
+
+// ----- Адаптация 
+
+let resizeTimeout;
+
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        if (window.innerWidth < 827) {
+            document.querySelectorAll('#salesHits_content article')[4].style.display = 'none';
+        }
+        else {
+            document.querySelectorAll('#salesHits_content article')[4].style.display = 'block';
+        }
+
+        if (window.innerWidth < 551) {
+            console.log(document.querySelectorAll('.carousel__banner__imgBlock img'));
+            document.querySelectorAll('.carousel__banner__imgBlock img').forEach(img => {
+                img.src = img.dataset.v;
+            });
+        }
+        else {
+            document.querySelectorAll('.carousel__banner__imgBlock img').forEach(img => {
+                img.src = img.dataset.h;
+            });
+        }
+        console.log('Ширина:', window.innerWidth);
+        console.log('Высота:', window.innerHeight);
+    }, 250);
+});
 
 // ----------------------- Смена категории игр в offers 
 

@@ -117,12 +117,23 @@ const get_horizont_game_headerCatalog_html = (game, discount) => {
             </article>`
 };
 
-const get_vertical_game_html = (game, discount) => {
+const get_vertical_game_html = (game) => {
     return `<article class="gameV game_${game.id}" data-game_id="${game.id}">
                 <a href = "${game.link}" class="gameV__banner">
-                    <div class="gameV__banner__glass"></div>
                     <img src="${game.imgW}" alt="${game.name}">
-                    <div class="gameV__banner__discount txt">${Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)}%</div>
+                    <div class="gameV__banner__info txt">
+                        <div class="gameH__banner__info__top">
+                            <div class="gameH__banner__info__point gameH__banner__info__point_mark gameH__banner__info__point_hidden" data-mark="basket"><img src="img/icons/main/basket64.png" alt=""></div>
+                            <div class="gameH__banner__info__point gameH__banner__info__point_mark gameH__banner__info__point_hidden" data-mark="favorite"><img src="img/icons/main/like64.png" alt=""></div>
+                        </div>
+                        <div class="gameH__banner__info__bottom">
+                            <div class="gameH__banner__info__left">
+                            </div>
+                            <div class="gameH__banner__info__right">
+                                <div class="gameH__banner__info__point gameH__banner__info__point_discount">${Math.round((game.oldPrice - game.newPrice) / game.oldPrice * 100)}%</div>
+                            </div>
+                        </div>
+                    </div>
                 </a>
                 <div class="gameV__info">
                     <div class="gameV__info__left">
@@ -173,36 +184,33 @@ const get_series_card_html = (series) => {
 
 // --------  -------- 
 
-const get_banner_html = (count, game_info, carousel_banner_list, discount) => {
+const get_banner_html = (count, game_info, carousel_banner_list) => {
     return `<article class="carousel__banner" data-game_id="${game_info.id}" order = ${count} game_id = '${game_info.id}' style = "${count === 0 ? 'margin-left: 0' : ''};
                                                                                                     z-index: ${carousel_banner_list.length - count + 1};
                                                                                                     transform: scale(${1 - count * 0.05});
                                                                                                     filter: blur(${count}px);
                                                                                                     }">
                 <div class="carousel__banner__imgBlock">
-                <div class="carousel__banner__imgBlock__glass"></div>
-                    <img src="${game_info.bigBanner}" alt="">
+                    <img src="${game_info.bigBanner}" data-h="${game_info.bigBanner}" data-v="${game_info.banner_vert}" alt="">
                 </div>
+                <a href="${game_info.link}" class="carousel__banner__link" style = "${count === 0 ? 'display: block' : 'display: none'}"></a>
                 <div class="carousel__banner__interaction">
-                    <div class="carousel__banner__interaction__info">
-                        <a href="${game_info.link}" class="carousel__banner__interaction__info__link" style = "${count === 0 ? 'display: block' : 'display: none'}"></a>
-                        <div class="carousel__banner__interaction__info__title txt">${game_info.name}</div>
-                        <div class="carousel__banner__interaction__info__shopInfo">
-                            <div class="carousel__banner__interaction__info__shopInfo__buttons">
-                                <button type="button" data-button="basket" data-game_id="${game_info.id}" onclick="toggle_game_basket(${game_info.id}, '${game_info.name}')" class="carousel__banner__interaction__info__shopInfo__buttons__button">
-                                    <img src="img/icons/main/basket32.png" alt="">
-                                </button>
-                                <button type="button" data-button="favorite" data-game_id="${game_info.id}" onclick="toggle_game_favorite(${game_info.id}, '${game_info.name}')" class="carousel__banner__interaction__info__shopInfo__buttons__button">
-                                    <img src="img/icons/main/heart32.png" alt="">
-                                </button>
+                    <div class="carousel__banner__interaction__title txt">${game_info.name}</div>
+                    <div class="carousel__banner__interaction__shopInfo">
+                        <div class="carousel__banner__interaction__shopInfo__buttons">
+                            <button type="button" data-button="basket" data-game_id="${game_info.id}" onclick="toggle_game_basket(${game_info.id}, '${game_info.name}')" class="carousel__banner__interaction__shopInfo__buttons__button">
+                                <img src="img/icons/main/basket32.png" alt="">
+                            </button>
+                            <button type="button" data-button="favorite" data-game_id="${game_info.id}" onclick="toggle_game_favorite(${game_info.id}, '${game_info.name}')" class="carousel__banner__interaction__shopInfo__buttons__button">
+                                <img src="img/icons/main/heart32.png" alt="">
+                            </button>
+                        </div>
+                        <div class="carousel__banner__interaction__shopInfo__priceTag">
+                            <div class="carousel__banner__interaction__shopInfo__priceTag__prices">
+                                <div class="carousel__banner__interaction__shopInfo__priceTag__prices__oldPrice txt">${game_info.oldPrice} ₽</div>
+                                <div class="carousel__banner__interaction__shopInfo__priceTag__prices__newPrice txt">${game_info.newPrice} ₽</div>
                             </div>
-                            <div class="carousel__banner__interaction__info__shopInfo__priceTag">
-                                <div class="carousel__banner__interaction__info__shopInfo__priceTag__prices">
-                                    <div class="carousel__banner__interaction__info__shopInfo__priceTag__prices__oldPrice txt">${game_info.oldPrice} ₽</div>
-                                    <div class="carousel__banner__interaction__info__shopInfo__priceTag__prices__newPrice txt">${game_info.newPrice} ₽</div>
-                                </div>
-                                <div class="carousel__banner__interaction__info__shopInfo__priceTag__discount flex-center txt">${discount}%</div>
-                            </div>
+                            <div class="carousel__banner__interaction__shopInfo__priceTag__discount flex-center txt">${Math.round((game_info.oldPrice - game_info.newPrice) / game_info.oldPrice * 100)}%</div>
                         </div>
                     </div>
                 </div>

@@ -2,9 +2,11 @@
 
 .footer {
     @include base.style_main_base;
-    border-left: none;
-    border-right: none;
-    border-bottom: none;
+    border: {
+        left: none;
+        right: none;
+        bottom: none;
+    }
     margin-top: 50px;
     & > .inner {
         padding-top: 25px;

@@ -50,13 +50,80 @@ const get_header_html = (page, check_auth_user) => {
         button_profile = `<a href="profile.html" title="Профиль" class="header__nav__button ${active_profile}">
                                 <img src="img/icons/main/user64.png" alt="">
                             </a>`;
-        currency_block = `<div class="header__nav__region txt" id="header_valuta">
+        currency_block = `<div class="header__nav__region txt" id="header_valuta_mobile">
                                 ${auth_user.currency}
                                 <span>Валюта</span>
                             </div>`;
     }
 
     return `<div class="header__bg ${header_bg_class}" id="header__bg"></div>
+                <div class="header__mobile">
+                    <div class="header__mobile__main header__mobile__section header__mobile__section_open">
+                        <div class="header__mobile__main__left">
+                            <a href="index.html" class="header__logo">
+                                <img src="img/logos/logo.png" alt="">
+                            </a>
+                        </div>
+                        <div class="header__mobile__main__right">
+                            <input type="text" title="Поиск" id="search-input-mobile_second">
+                            <button title="search_button" class="header__nav__button" type="button" onclick="open_section('search')">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <button title="burger_button" class="header__nav__button" type="button" onclick="open_section('navs')">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 18L20 18" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M4 12L20 12" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M4 6L20 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="header__mobile__navs header__mobile__section">
+                        ${currency_block}
+                        ${button_profile}
+                        <a href="favorite.html" title="Избранное" class="header__nav__button ${active_favorite}" id="header_favorite_button_mobile">
+                            <img src="img/icons/main/like64.png" alt="">
+                            <div class="header__nav__button__counter header__nav__button__counter_hidden" id="header_favorite_counter_mobile">
+                                <div class="header__nav__button__counter__number txt">9+</div>
+                            </div>
+                        </a>
+                        <button type="button" title="Уведомления" class="header__nav__button" id="header_button_notification_mobile" onclick="toggle_notifications()">
+                            <img src="img/icons/main/bell64.png" alt="">
+                            <div class="header__nav__button__counter header__nav__button__counter_hidden" id="header_notification_counter_mobile">
+                                <div class="header__nav__button__counter__number txt"></div>
+                            </div>
+                        </button>
+                        <button type="button" title="Корзина" class="header__nav__buttonBasket header__nav__buttonBasket_closed" id="header_basket_button_mobile" onclick="toggle_header_basket()">
+                            <img src="img/icons/main/basket64.png" alt="">
+                            <div class="header__nav__buttonBasket__info txt">
+                                <div class="header__nav__buttonBasket__info__value" id="header_basket_price">0 ₽</div>
+                                <div class="header__nav__buttonBasket__info__value" id="header_basket_counter">0 Игр</div>
+                            </div>
+                        </button>
+                        <button type="button" title="close" class="header__nav__button" onclick="close_section()">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 8L8 16M8.00001 8L16 16" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="header__mobile__search header__mobile__section">
+                        <input type="text" title="Поиск" id="search-input-mobile">
+                        <button class="header__nav__button" title="Поиск" type="button" id="search-button-mobile">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button type="button" title="close" class="header__nav__button" onclick="close_section()">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 8L8 16M8.00001 8L16 16" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="header__pc">
+                </div>
                 <div class="header__left">
                     <a href="index.html" class="header__logo">
                         <img src="img/logos/logo.png" alt="">
@@ -345,6 +412,20 @@ window.addEventListener('scroll', function() {
         header_bg_visible = true;
     }
 });
+
+// --------- mobile 
+
+function open_section(title) {
+    const open_section = document.querySelector('.header__mobile__section_open');
+    if (open_section) { open_section.classList.remove('header__mobile__section_open'); }
+    
+    document.querySelector(`.header__mobile__${title}`).classList.add('header__mobile__section_open');
+}
+
+function close_section() {
+    document.querySelector('.header__mobile__section_open').classList.remove('header__mobile__section_open'); 
+    document.querySelector('.header__mobile__main').classList.add('header__mobile__section_open');
+}
 
 // --------- basket + notification 
 

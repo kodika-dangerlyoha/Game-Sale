@@ -240,6 +240,8 @@ document.addEventListener('fullscreenchange', () => {
 
 // ---------------- 
 
+init_lazyImg(document)
+
 const ss = new Switch_Section;
 
 ss.init(document.querySelector('#switch_section-game'));
