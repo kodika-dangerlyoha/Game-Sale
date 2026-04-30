@@ -8,6 +8,12 @@ document.querySelector('main').style.minHeight = `${window.innerHeight - 331}px`
 
 // ----- Адаптация 
 
+if (window.innerWidth < 827) {
+    document.querySelectorAll('.gameH__banner__videoBlock video source').forEach(el => {
+        el.src = "";
+    })
+}
+
 let resizeTimeout;
 
 window.addEventListener('resize', () => {
