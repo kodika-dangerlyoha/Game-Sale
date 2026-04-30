@@ -398,7 +398,6 @@ make_header();
 
 // ----------------------- Изменение фона шапки при скролле 
 
-document.addEventListener('DOMContentLoaded', function() {
     const header_bg = document.querySelector('#header__bg');
     
     // Создаем невидимый элемент в начале страницы
@@ -422,7 +421,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { threshold: 0 });
     
     observer.observe(sentinel);
-});
 
 // document.addEventListener('DOMContentLoaded', function() {
 //     const header_bg = document.querySelector('#header__bg');
