@@ -425,16 +425,16 @@ function update_header_opacity() {
 window.addEventListener('scroll', update_header_opacity, { passive: true });
 
 // Для iOS Safari - обработка окончания инерции
-window.addEventListener('touchend', update_header_opacity);
+// window.addEventListener('touchend', update_header_opacity);
 
 // Дополнительно для iOS Safari при touchmove
-window.addEventListener('touchmove', update_header_opacity, { passive: true });
+// window.addEventListener('touchmove', update_header_opacity, { passive: true });
 
 // При загрузке страницы
 update_header_opacity();
 
 // Также на событие resize (может меняться высота адресной строки в iOS)
-window.addEventListener('resize', update_header_opacity);
+// window.addEventListener('resize', update_header_opacity);
 
 
 // window.addEventListener('scroll', function() {
