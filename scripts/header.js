@@ -397,14 +397,17 @@ function make_header() {
 make_header();
 
 // ----------------------- Изменение фона шапки при скролле 
+
 document.addEventListener('DOMContentLoaded', function() {
     const header_bg = document.querySelector('#header__bg');
 
     let header_bg_visible = false;
 
     function update_header_opacity() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        console.log(window.pageYOffset, document.documentElement.scrollTop);
+        // РАБОЧИЙ метод для iPhone
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || window.scrollY || 0;
+        
+        console.log('ScrollTop:', scrollTop);
         
         if (scrollTop <= 0) {
             header_bg.classList.remove('header__bg_noTransparent');
@@ -414,22 +417,71 @@ document.addEventListener('DOMContentLoaded', function() {
             header_bg.classList.add('header__bg_noTransparent');
             header_bg_visible = true;
         }
-        
-        // Для iPhone — проверка в консоли
-        console.log('ScrollTop:', scrollTop, 'Opacity:', header_bg.style.opacity);
     }
 
-    window.addEventListener('scroll', update_header_opacity);
-
-    // Дополнительно для iOS Safari (из-за инерции)
-    window.addEventListener('touchmove', update_header_opacity, { passive: true });
+    // Основной обработчик - используем passive для производительности
+    window.addEventListener('scroll', update_header_opacity, { passive: true });
+    
+    // Для iOS Safari - обработка окончания инерции
     window.addEventListener('touchend', function() {
+        // Небольшая задержка для корректного определения позиции после инерции
         setTimeout(update_header_opacity, 50);
     });
+    
+    // Дополнительно для iOS Safari при touchmove
+    let ticking = false;
+    window.addEventListener('touchmove', function() {
+        if (!ticking) {
+            requestAnimationFrame(function() {
+                update_header_opacity();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
 
-    // Также на всякий случай при загрузке
-    window.addEventListener('load', update_header_opacity);
-})
+    // При загрузке страницы
+    update_header_opacity();
+    
+    // Также на событие resize (может меняться высота адресной строки в iOS)
+    window.addEventListener('resize', function() {
+        setTimeout(update_header_opacity, 100);
+    });
+});
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const header_bg = document.querySelector('#header__bg');
+
+//     let header_bg_visible = false;
+
+//     function update_header_opacity() {
+//         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//         console.log(window.pageYOffset, document.documentElement.scrollTop);
+        
+//         if (scrollTop <= 0) {
+//             header_bg.classList.remove('header__bg_noTransparent');
+//             header_bg_visible = false;
+//         } 
+//         else {
+//             header_bg.classList.add('header__bg_noTransparent');
+//             header_bg_visible = true;
+//         }
+        
+//         // Для iPhone — проверка в консоли
+//         console.log('ScrollTop:', scrollTop, 'Opacity:', header_bg.style.opacity);
+//     }
+
+//     window.addEventListener('scroll', update_header_opacity);
+
+//     // Дополнительно для iOS Safari (из-за инерции)
+//     window.addEventListener('touchmove', update_header_opacity, { passive: true });
+//     window.addEventListener('touchend', function() {
+//         setTimeout(update_header_opacity, 50);
+//     });
+
+//     // Также на всякий случай при загрузке
+//     window.addEventListener('load', update_header_opacity);
+// })
 
 
 // window.addEventListener('scroll', function() {
