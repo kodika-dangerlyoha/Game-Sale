@@ -148,6 +148,8 @@
         right: 0;
         left: 0;
         z-index: 1;
+        -webkit-transform: translateZ(0); /* Включить аппаратное ускорение */
+        transform: translateZ(0);
 
         @include base.style-main_base_transparent;
         border: {

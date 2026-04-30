@@ -413,7 +413,8 @@ label {
   bottom: 0px;
   right: 0;
   left: 0;
-  z-index: 1;
+  z-index: 1; /* Включить аппаратное ускорение */
+  transform: translateZ(0);
   background-color: rgba(50, 50, 50, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
