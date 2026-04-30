@@ -60,5 +60,4 @@ function make_index() {
 }
 
 make_index();
-init_lazyImg(document);
 // init_lazyImg(document);

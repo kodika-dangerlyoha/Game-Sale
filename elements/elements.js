@@ -15,7 +15,7 @@ const get_horizont_game_html = (game) => {
 
     return `<article class="gameH game_${game.id}" data-game_id="${game.id}">
                 <a href = "${game.link}" class="gameH__banner">
-                    <div class="gameH__banner__imgBlock"><img src="" data-lazy_src="${game.imgH}" alt="${game.name}"></div>
+                    <div class="gameH__banner__imgBlock"><img src="${game.imgH}" data-lazy_src="${game.imgH}" alt="${game.name}"></div>
                     <div class="gameH__banner__videoBlock">
                         <video autoplay loop muted>
                             <source src="${game.treiler_micro_webm}" type="video/webm">
