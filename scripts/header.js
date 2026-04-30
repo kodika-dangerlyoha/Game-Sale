@@ -458,11 +458,13 @@ function open_section(title) {
     if (open_section) { open_section.classList.remove('header__mobile__section_open'); }
     
     document.querySelector(`.header__mobile__${title}`).classList.add('header__mobile__section_open');
+    header_bg.classList.add('header__bg_noTransparent');
 }
 
 function close_section() {
     document.querySelector('.header__mobile__section_open').classList.remove('header__mobile__section_open'); 
     document.querySelector('.header__mobile__main').classList.add('header__mobile__section_open');
+    header_bg.classList.remove('header__bg_noTransparent');
 }
 
 // --------- basket + notification 
