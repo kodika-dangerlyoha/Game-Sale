@@ -158,6 +158,9 @@
         opacity: 0;
         transition: 0.5s;
         overflow: hidden;
+        &_noTransparent {
+            opacity: 1;
+        }
         &_profile {
             opacity: 1;
         }

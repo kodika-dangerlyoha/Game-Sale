@@ -425,6 +425,9 @@ label {
   transition: 0.5s;
   overflow: hidden;
 }
+.header__bg_noTransparent {
+  opacity: 1;
+}
 .header__bg_profile {
   opacity: 1;
 }
