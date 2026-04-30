@@ -429,7 +429,7 @@ window.addEventListener('scroll', update_header_opacity, { passive: true });
 // window.addEventListener('touchend', update_header_opacity);
 
 // Дополнительно для iOS Safari при touchmove
-// window.addEventListener('touchmove', update_header_opacity, { passive: true });
+window.addEventListener('touchmove', update_header_opacity, { passive: true });
 
 // При загрузке страницы
 update_header_opacity();
