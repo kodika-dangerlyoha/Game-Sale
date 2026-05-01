@@ -261,7 +261,7 @@ document.addEventListener('fullscreenchange', () => {
 
 // ---------------- 
 
-init_lazyImg(document)
+// init_lazyImg(document);
 
 const ss = new Switch_Section;
 
