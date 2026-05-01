@@ -1,5 +1,5 @@
 if (document.cookie == '') {
-    document.cookie = '{"basket_list": [], "favorite_list": [], "notification_list": []}';
+    document.cookie = '{"basket_list": [], "favorite_list": [], "notification_list": []}; SameSite=Lax; Secure';
 }
 
 // - update basket and favorite 
