@@ -65,7 +65,7 @@ const get_header_html = (page, check_auth_user) => {
                             </a>
                         </div>
                         <div class="header__mobile__main__right">
-                            <input type="text" title="Поиск" id="search-input-mobile_second">
+                            <input type="text" title="Поиск" id="search-input-mobile_second" placeholder="Найти игру">
                             <button title="search_button" class="header__nav__button" type="button" onclick="open_section('search')">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -147,7 +147,7 @@ const get_header_html = (page, check_auth_user) => {
                             <div class="header__searchBlock__bg__top"></div>
                             <div class="header__searchBlock__bg__bottom"></div>
                         </div> -->
-                        <input type="text" title="Поиск" id="search-input">
+                        <input type="text" title="Поиск" id="search-input" placeholder="Найти игру">
                         <button class="header__searchBlock__button" title="Поиск" type="button" id="search-button">
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

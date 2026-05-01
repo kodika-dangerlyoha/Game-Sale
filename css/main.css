@@ -2012,7 +2012,7 @@ label {
 .gameH_open:nth-child(5) {
   transition-delay: 0.25s;
 }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .gameH:hover .gameH__banner {
     transform: scale(1.05);
   }
@@ -7915,39 +7915,6 @@ label {
     transform: translateY(-10px);
     transition: transform 0.4s, opacity 0.4s;
   }
-  .gameH:hover .gameH__banner {
-    transform: scale(1.05);
-  }
-  .gameH:hover .gameH__banner__info__point {
-    opacity: 0;
-  }
-  .gameH:hover .gameH__banner__videoBlock {
-    opacity: 1;
-    transition-delay: 1s;
-  }
-  .gameH:hover .gameH__banner__videoBlock video {
-    display: block;
-    transition-delay: 1s;
-  }
-  .gameH:hover .gameH__banner__imgBlock {
-    opacity: 0;
-    transition-delay: 1s;
-  }
-  .gameH:hover .gameH__info {
-    transform: translateY(7px);
-  }
-  .gameH:hover .gameH__info__right {
-    margin-left: 0px;
-  }
-  .gameH:hover .gameH__info__buttons {
-    opacity: 1;
-    transform: translateY(0px);
-    max-width: 200px;
-  }
-  .gameH:hover .gameH__info__price {
-    transform: translateX(0);
-    text-shadow: 0 0 10px rgb(39, 39, 39);
-  }
 }
 @media (max-width: 950px) {
   .inner_w1605p100 {
@@ -8071,12 +8038,6 @@ label {
     margin-left: 5px;
     height: 20px;
     transform: translateY(1px) translateX(0px);
-  }
-  .heading > button:hover > svg {
-    transform: translateY(1px) translateX(20px);
-  }
-  .heading > button:hover > span {
-    transform: translateX(13px);
   }
 }
 @media (max-width: 650px) {
@@ -8204,12 +8165,6 @@ label {
     margin-left: 5px;
     height: 16px;
     transform: translateY(1px) translateX(0px);
-  }
-  .heading > button:hover > svg {
-    transform: translateY(1px) translateX(20px);
-  }
-  .heading > button:hover > span {
-    transform: translateX(13px);
   }
 }
 @media (max-width: 550px) {

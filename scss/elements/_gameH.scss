@@ -306,7 +306,7 @@
         }
     }
 
-    @media (hover: hover) {
+    @media (hover: hover) and (pointer: fine) {
         &:hover &{
             &__banner {
                 transform: scale(1.05);
