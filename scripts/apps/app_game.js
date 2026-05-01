@@ -1,7 +1,3 @@
-make_game_card_info(games[0]);
-set_top_img_paralax(550, 1);
-update_buttons(document);
-
 let screenshots_count = 0;
 let video_count = 0;
 
@@ -47,7 +43,10 @@ function make_mediaList(game) {
     }
 }
 
+make_game_card_info(games[0]);
 make_mediaList(games[0]);
+set_top_img_paralax(550, 1);
+update_buttons(document);
 
 // const for_scroll = document.querySelector('.forScroll');
 const header_center = document.querySelector('#centerHeader_gameCard');
