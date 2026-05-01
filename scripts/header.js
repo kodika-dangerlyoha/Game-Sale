@@ -407,7 +407,7 @@ let header_bg_visible = false;
 
 function update_header_opacity() {
     // РАБОЧИЙ метод для iPhone
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || window.scrollY || 0;
+    let scrollTop = window.pageYOffset || window.scrollY;
     
     console.log('ScrollTop:', scrollTop);
     
@@ -702,7 +702,7 @@ const open_catalogNavs = () => {
 
     scrollTop = window.pageYOffset;
     if (document.querySelector('.header_open')) {
-        header_bg.style.opacity = "1";
+        header_bg.classList.add('header__bg_noTransparent');
         header_bg_visible = true;
         const w = getScrollbarWidth();
         document.body.style.overflow = 'hidden';
@@ -714,11 +714,11 @@ const open_catalogNavs = () => {
         document.body.style.paddingRight = '';
         header.style.paddingRight = '15px';
         if (window.pageYOffset == 0) {
-            header_bg.style.opacity = "0";
+            header_bg.classList.remove('header__bg_noTransparent');
             header_bg_visible = false;
         }
         else {
-            header_bg.style.opacity = "1";
+            header_bg.classList.add('header__bg_noTransparent');
             header_bg_visible = true;
         }
     }

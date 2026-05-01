@@ -119,33 +119,55 @@ update_scroll_shadows(container, check_element_overflow_cat());
 add_horizontal_scroll(scroll_media_banner);
 add_horizontal_scroll(scroll_categories);
 
+function open_miniGameCard() {
+    mini_game_card.style.display = "flex";
+    header_center.classList.add('header__center_hidden');
 
-const observer = new IntersectionObserver((entries) => {
-    if (!entries[0].isIntersecting) {
-        mini_game_card.style.display = "flex";
-        header_center.classList.add('header__center_hidden');
+    if (window.innerWidth < 1087) {
+        document.querySelector('.header__mobile').style.width = '0';
+        document.querySelector('.header__mobile').style.overflow = 'hidden';
+    }
 
-        setTimeout(() => {
-            header_center.style.display = "none";
-        }, 50);
-        
-        setTimeout(() => {
-            mini_game_card.classList.add('miniGameCard_show');
-            main_info.classList.add('mainInfo_hidden');
-        }, 60);
-    } 
-    else {
+    setTimeout(() => {
+        header_center.style.display = "none";
+    }, 50);
+    
+    setTimeout(() => {
+        mini_game_card.classList.add('miniGameCard_show');
+        main_info.classList.add('mainInfo_hidden');
+    }, 60);
+}
+
+function close_miniGameCard() {
+    if (window.innerWidth > 1086) {
         header_center.style.display = "flex";
-        mini_game_card.classList.remove('miniGameCard_show');
-        main_info.classList.remove('mainInfo_hidden');
-        
-        setTimeout(() => {
-            mini_game_card.style.display = "none";
-        }, 200)
+    }
+    
+    mini_game_card.classList.remove('miniGameCard_show');
+    main_info.classList.remove('mainInfo_hidden');
 
+    if (window.innerWidth < 1087) {
+        document.querySelector('.header__mobile').style.width = '100%';
+        document.querySelector('.header__mobile').style.overflow = 'visible';
+    }
+    
+    setTimeout(() => {
+        mini_game_card.style.display = "none";
+    }, 200)
+
+    if (window.innerWidth > 1086) {
         setTimeout(() => {
             header_center.classList.remove('header__center_hidden');
         }, 210)
+    }
+}
+
+const observer = new IntersectionObserver((entries) => {
+    if (!entries[0].isIntersecting) {
+        open_miniGameCard();
+    } 
+    else {
+        close_miniGameCard();
     }
 }, {
     root: null, // отслеживаем относительно viewport

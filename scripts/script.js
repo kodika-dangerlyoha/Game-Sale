@@ -19,24 +19,29 @@ let resizeTimeout;
 window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
-        if (window.innerWidth < 827) {
-            document.querySelectorAll('#salesHits_content article')[4].style.display = 'none';
+        if (document.querySelector('#salesHits_content')) {
+            if (window.innerWidth < 827) {
+                document.querySelectorAll('#salesHits_content article')[4].style.display = 'none';
+            }
+            else {
+                document.querySelectorAll('#salesHits_content article')[4].style.display = 'block';
+            }
         }
-        else {
-            document.querySelectorAll('#salesHits_content article')[4].style.display = 'block';
+        
+        if (document.querySelector('.carousel')) {
+            if (window.innerWidth < 551) {
+                console.log(document.querySelectorAll('.carousel__banner__imgBlock img'));
+                document.querySelectorAll('.carousel__banner__imgBlock img').forEach(img => {
+                    img.src = img.dataset.v;
+                });
+            }
+            else {
+                document.querySelectorAll('.carousel__banner__imgBlock img').forEach(img => {
+                    img.src = img.dataset.h;
+                });
+            }
         }
-
-        if (window.innerWidth < 551) {
-            console.log(document.querySelectorAll('.carousel__banner__imgBlock img'));
-            document.querySelectorAll('.carousel__banner__imgBlock img').forEach(img => {
-                img.src = img.dataset.v;
-            });
-        }
-        else {
-            document.querySelectorAll('.carousel__banner__imgBlock img').forEach(img => {
-                img.src = img.dataset.h;
-            });
-        }
+        
         console.log('Ширина:', window.innerWidth);
         console.log('Высота:', window.innerHeight);
     }, 250);
