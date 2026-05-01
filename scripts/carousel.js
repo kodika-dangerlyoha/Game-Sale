@@ -1,6 +1,6 @@
 let carousel_banner_list = get_carousel_bannet_list_request();
 
-const colorThief = new ColorThief();
+// const colorThief = new ColorThief();
 
 // function dominant_color(img) {
 //     img.crossOrigin = 'Anonymous';
