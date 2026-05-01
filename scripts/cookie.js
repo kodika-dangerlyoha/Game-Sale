@@ -169,8 +169,8 @@ function toggle_game_favorite(game_id, game_title) {
     if (game_in_favorite(game_id)) { delete_game_favorite(game_id, game_title); }
     else { add_game_favorite(game_id, game_title); }
 
-    const answer = cookie_request(game_title, 'add_favorite');
-    add_notification(answer.messege, answer.status);
+    // const answer = cookie_request(game_title, 'add_favorite');
+    // add_notification(answer.messege, answer.status);
     update_favorite_counter_header();
     // update_buttons_favorite(document);
     update_buttons_type(document, 'favorite');

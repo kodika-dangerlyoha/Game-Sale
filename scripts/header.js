@@ -411,7 +411,7 @@ function update_header_opacity() {
     
     console.log('ScrollTop:', scrollTop);
     
-    if (scrollTop <= 0) {
+    if (scrollTop == 0) {
         document.querySelector('#header__bg').classList.remove('header__bg_noTransparent');
         header_bg_visible = false;
     } 
@@ -433,7 +433,6 @@ window.addEventListener('touchmove', update_header_opacity, { passive: true });
 
 // При загрузке страницы
 update_header_opacity();
-document.querySelector('#header__bg').classList.add('header__bg_noTransparent');
 
 // Также на событие resize (может меняться высота адресной строки в iOS)
 // window.addEventListener('resize', update_header_opacity);
@@ -458,13 +457,13 @@ function open_section(title) {
     if (open_section) { open_section.classList.remove('header__mobile__section_open'); }
     
     document.querySelector(`.header__mobile__${title}`).classList.add('header__mobile__section_open');
-    document.querySelector('#header__bg').classList.add('header__bg_noTransparent');
+    // document.querySelector('#header__bg').classList.add('header__bg_noTransparent');
 }
 
 function close_section() {
     document.querySelector('.header__mobile__section_open').classList.remove('header__mobile__section_open'); 
     document.querySelector('.header__mobile__main').classList.add('header__mobile__section_open');
-    document.querySelector('#header__bg').classList.remove('header__bg_noTransparent');
+    // document.querySelector('#header__bg').classList.remove('header__bg_noTransparent');
 }
 
 // --------- basket + notification 

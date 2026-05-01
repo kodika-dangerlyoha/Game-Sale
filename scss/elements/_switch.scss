@@ -43,12 +43,16 @@
             }
             &_active {
                 @include base.style-main_active;
-                &:hover {
-                    @include base.style-main_active;
+                @media (hover: hover) {
+                    &:hover {
+                        @include base.style-main_active;
+                    }
                 }
             }
-            &:active {
-                transform: scale(.95);
+            @media (hover: hover) {
+                &:active {
+                    transform: scale(.95);
+                }
             }
         }
     }

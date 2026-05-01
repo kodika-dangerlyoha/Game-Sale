@@ -118,19 +118,21 @@
         }
     }
 
-    &:hover &{
-        &__banner {
-            transform: scale(1.05);
-        }
-        &__info {
-            transform: translateY(7px);
-            &__right {
-                margin-left: 0px;
+    @media (hover: hover) {
+        &:hover &{
+            &__banner {
+                transform: scale(1.05);
             }
-            &__buttons {
-                opacity: 1;
-                transform: translateY(0px);
-                max-width: 200px;
+            &__info {
+                transform: translateY(7px);
+                &__right {
+                    margin-left: 0px;
+                }
+                &__buttons {
+                    opacity: 1;
+                    transform: translateY(0px);
+                    max-width: 200px;
+                }
             }
         }
     }

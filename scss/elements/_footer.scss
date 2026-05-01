@@ -47,8 +47,10 @@
                 cursor: pointer;
                 padding-left: 12px;
                 padding-right: 12px;
-                &:hover {
-                    color: base.$clr-blue_light;
+                @media (hover: hover) {
+                    &:hover {
+                        color: base.$clr-blue_light;
+                    }
                 }
             }
         }

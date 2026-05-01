@@ -59,8 +59,10 @@
                                 font-weight: 600;
                                 cursor: pointer;
                                 transition: 0.15s;
-                                &:hover {
-                                    color: base.$clr-blue_light;
+                                @media (hover: hover) {
+                                    &:hover {
+                                        color: base.$clr-blue_light;
+                                    }
                                 }
                             }
                         }
@@ -79,11 +81,13 @@
                                 transition: 0.15s;
                                 transform: translateY(1px);
                             }
-                            &:hover {
-                                color: base.$clr-blue_light;
-                            }
-                            &:hover > svg {
-                                stroke: base.$clr-blue_light;
+                            @media (hover: hover) {
+                                &:hover {
+                                    color: base.$clr-blue_light;
+                                }
+                                &:hover > svg {
+                                    stroke: base.$clr-blue_light;
+                                }
                             }
                         }
                     }
@@ -121,14 +125,16 @@
                             height: 100%;
                             transition: 0.2s;
                         }
-                        &:hover svg{
-                            transform: rotate(90deg) scale(0.75);
-                        }
-                        &:hover {
-                            background-color: base.$clr-red_close;
-                        }
-                        &:active svg{
-                            transform: rotate(90deg) scale(0.35);
+                        @media (hover: hover) {
+                            &:hover svg{
+                                transform: rotate(90deg) scale(0.75);
+                            }
+                            &:hover {
+                                background-color: base.$clr-red_close;
+                            }
+                            &:active svg{
+                                transform: rotate(90deg) scale(0.35);
+                            }
                         }
                         &_hidden {
                             margin-left: 0px;
@@ -169,8 +175,10 @@
                         }
                     }
                 }
-                &:hover &__forHover{
-                    opacity: 1;
+                @media (hover: hover) {
+                    &:hover &__forHover{
+                        opacity: 1;
+                    }
                 }
                 &_hidden {
                     max-height: 0px;
@@ -220,8 +228,10 @@
                     padding: 0;
                     cursor: pointer;
                     transition: 0.15s;
-                    &:hover {
-                        color: base.$clr-blue_light;
+                    @media (hover: hover) {
+                        &:hover {
+                            color: base.$clr-blue_light;
+                        }
                     }
                 }
                 &_active {
@@ -426,12 +436,14 @@
                                         transform: scale(0.9);
                                     }
                                 }
-                                &:hover {
-                                    transform: scale(0.98);
-                                    background: rgb(71, 71, 71);
-                                }
-                                &:active {
-                                    transform: scale(0.95);
+                                @media (hover: hover) {
+                                    &:hover {
+                                        transform: scale(0.98);
+                                        background: rgb(71, 71, 71);
+                                    }
+                                    &:active {
+                                        transform: scale(0.95);
+                                    }
                                 }
                                 &_active {
                                     border: 2px solid rgba(150, 150, 150, 1);
@@ -459,8 +471,10 @@
                     filter: invert(0.8);
                     transform: rotate(90deg);
                 }
-                &:hover {
-                    border: 2px solid #6C6C6C;
+                @media (hover: hover) {
+                    &:hover {
+                        border: 2px solid #6C6C6C;
+                    }
                 }
             }
             &__paymentMethods {
@@ -540,8 +554,10 @@
                             // border: 2px solid rgba(150, 150, 150, 1);
                             cursor: default;
                             @include base.style-main_active;
-                            &:hover {
-                                @include base.style-main_active;
+                            @media (hover: hover) {
+                                &:hover {
+                                    @include base.style-main_active;
+                                }
                             }
                         }
                     }
@@ -628,11 +644,13 @@
                     opacity: 0;
                     transition: 0.15s;
                 }
-                &:hover &__forHover{
-                    opacity: 1;
-                }
-                &:active {
-                    transform: scale(0.98);
+                @media (hover: hover) {
+                    &:hover &__forHover{
+                        opacity: 1;
+                    }
+                    &:active {
+                        transform: scale(0.98);
+                    }
                 }
             }
             &__agreeBlock {
@@ -670,8 +688,10 @@
                         opacity: 1;
                         transform: translate(0px);
                     }
-                    &:hover {
-                        border-color: base.$clr-blue_light;
+                    @media (hover: hover) {
+                        &:hover {
+                            border-color: base.$clr-blue_light;
+                        }
                     }
                 }
                 &__label {
@@ -682,8 +702,10 @@
                         text-decoration: underline;
                         color: rgb(255, 255, 255);
                         transition: 0.15s;
-                        &:hover {
-                            color: base.$clr-blue_light;
+                        @media (hover: hover) {
+                            &:hover {
+                                color: base.$clr-blue_light;
+                            }
                         }
                     }
                 }
@@ -739,12 +761,15 @@
             font-weight: 500;
             cursor: pointer;
             transition: 0.15s;
-            &:hover {
-                background: rgb(47, 47, 47);
+            @media (hover: hover) {
+                &:hover {
+                    background: rgb(47, 47, 47);
+                }
+                &:active {
+                    transform: scale(0.95);
+                }
             }
-            &:active {
-                transform: scale(0.95);
-            }
+            
             &_hidden {
                 transform: scale(0);
                 visibility: hidden;
@@ -785,8 +810,10 @@
             margin: auto;
             padding: 5px;
             transition: .2s;
-            &:hover {
-                color: base.$clr-blue_light;
+            @media (hover: hover) {
+                &:hover {
+                    color: base.$clr-blue_light;
+                }
             }
         }
     }

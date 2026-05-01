@@ -14,7 +14,7 @@ const get_horizont_game_html = (game) => {
     }
 
     return `<article class="gameH game_${game.id}" data-game_id="${game.id}">
-                <a href = "${game.link}" class="gameH__banner">
+                <div class="gameH__banner">
                     <div class="gameH__banner__imgBlock"><img src="${game.imgH}" data-lazy_src="${game.imgH}" alt="${game.name}"></div>
                     <div class="gameH__banner__videoBlock">
                         <video autoplay loop muted>
@@ -23,9 +23,18 @@ const get_horizont_game_html = (game) => {
                         </video>
                     </div>
                     <div class="gameH__banner__info txt">
+                        <a href="${game.link}" class="gameH__banner__info__link"></a>
                         <div class="gameH__banner__info__top">
                             <div class="gameH__banner__info__point gameH__banner__info__point_mark gameH__banner__info__point_hidden" data-mark="basket"><img src="img/icons/main/basket64.png" alt=""></div>
                             <div class="gameH__banner__info__point gameH__banner__info__point_mark gameH__banner__info__point_hidden" data-mark="favorite"><img src="img/icons/main/like64.png" alt=""></div>
+                            <button type="button" data-button="basket" data-game_id="${game.id}" class="gameH__info__buttons__button_mobile _buttonBasket" onclick="toggle_game_basket(${game.id}, '${game.name}')">
+                                <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+                                <img src="img/icons/main/basket64.png" alt="">
+                            </button>
+                            <button type="button" data-button="favorite" data-game_id="${game.id}" class="gameH__info__buttons__button_mobile _buttonFavorite" onclick="toggle_game_favorite(${game.id}, '${game.name}')">
+                                <div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+                                <img src="img/icons/main/like64.png" alt="">
+                            </button>
                         </div>
                         <div class="gameH__banner__info__bottom">
                             <div class="gameH__banner__info__left">
@@ -37,7 +46,7 @@ const get_horizont_game_html = (game) => {
                             </div>
                         </div>
                     </div>
-                </a>
+                </div>
                 <div class="gameH__info">
                     <div class="gameH__info__left">
                         <div class="gameH__info__name txt">${game.name}</div>
@@ -182,7 +191,7 @@ const get_series_card_html = (series) => {
             </article>`
 };
 
-// --------  -------- 
+// -------- carousel -------- 
 
 const get_banner_html = (count, game_info, carousel_banner_list) => {
     return `<article class="carousel__banner" data-game_id="${game_info.id}" order = ${count} game_id = '${game_info.id}' style = "${count === 0 ? 'margin-left: 0' : ''};
@@ -221,6 +230,37 @@ const get_banner_bg_html = (count, game_info) => {
     return `<div class="carousel__gridBG__bg ${count === 0 ? 'carousel__gridBG__bg_active' : ''}" order = "${count}">
                 <img src="${game_info.bigBanner_blur}" alt="">
             </div>`
+}
+
+// ------- bannerGame 
+
+const get_bannerGame_html = (game_info) => {
+    return `<article class="gameBanner" data-game_id="${game_info.id}">
+                <div class="gameBanner__imgBlock">
+                    <img src="${game_info.bigBanner}" data-h="${game_info.bigBanner}" data-v="${game_info.banner_vert}" alt="">
+                </div>
+                <a href="${game_info.link}" class="gameBanner__link"></a>
+                <div class="gameBanner__interaction">
+                    <div class="gameBanner__interaction__title txt">${game_info.name}</div>
+                    <div class="gameBanner__interaction__shopInfo">
+                        <div class="gameBanner__interaction__shopInfo__buttons">
+                            <button type="button" data-button="basket" data-game_id="${game_info.id}" onclick="toggle_game_basket(${game_info.id}, '${game_info.name}')" class="gameBanner__interaction__shopInfo__buttons__button">
+                                <img src="img/icons/main/basket32.png" alt="">
+                            </button>
+                            <button type="button" data-button="favorite" data-game_id="${game_info.id}" onclick="toggle_game_favorite(${game_info.id}, '${game_info.name}')" class="gameBanner__interaction__shopInfo__buttons__button">
+                                <img src="img/icons/main/heart32.png" alt="">
+                            </button>
+                        </div>
+                        <div class="gameBanner__interaction__shopInfo__priceTag">
+                            <div class="gameBanner__interaction__shopInfo__priceTag__prices">
+                                <div class="gameBanner__interaction__shopInfo__priceTag__prices__oldPrice txt">${game_info.oldPrice} ₽</div>
+                                <div class="gameBanner__interaction__shopInfo__priceTag__prices__newPrice txt">${game_info.newPrice} ₽</div>
+                            </div>
+                            <div class="gameBanner__interaction__shopInfo__priceTag__discount flex-center txt">${Math.round((game_info.oldPrice - game_info.newPrice) / game_info.oldPrice * 100)}%</div>
+                        </div>
+                    </div>
+                </div>
+            </article>`
 }
 
 // const get_carousel_game_html = (n, game, discount) => {

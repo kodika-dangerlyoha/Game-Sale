@@ -1,20 +1,20 @@
-// -------- colors --------
+// -------- Colors -------- 
 
 $clr-main_body: rgba(39, 39, 39, 1);
 
-// ~ blue
+// ~ Blue
 $clr-blue_light: rgba(1, 162, 255, 1);
 $clr-blue_light_transparent: rgba(1, 162, 255, .4);
 $clr-blue_light_hover: rgba(1, 162, 255, .25);
 $clr-blue_light_hover_border: rgba(1, 162, 255, .6);
 $clr-blue_dark: rgba(1, 74, 255, 1);
 
-// ~ red
+// ~ Red
 $clr-red: rgb(204, 30, 30);
 $clr-red_light: rgb(255, 106, 106);
 $clr-red_close: rgb(170, 22, 22);
 
-// ~ gray
+// ~ Gray
 $clr-gray_dark: rgb(27, 27, 27);
 $clr-gray_37: rgb(33, 33, 33);
 $clr-gray_43: rgb(43, 43, 43);
@@ -22,23 +22,23 @@ $clr-gray_47_hover: rgb(47, 47, 47);
 $clr-gray_55: rgb(55, 55, 55);
 $clr-gray_light: rgba(45, 45, 45, 1);
 
-// ~ gradient
+// ~ Gradient
 $clr-grad_blue_0: linear-gradient(to bottom, rgba(1, 162, 255, 0), rgba(1, 74, 255, 0));
 $clr-grad_blue_100: linear-gradient(to top, rgba(1, 162, 255, .8), rgba(1, 162, 255, .2));
 $clr-grad_blue_100_2: linear-gradient(to top, rgba(1, 162, 255, 1), rgba(1, 162, 255, .5));
 $clr-grad_red: linear-gradient(to bottom, rgba(255, 73, 73, 1), rgba(167, 0, 0, 1));
 
-// ~ more
+// ~ More
 $clr-steam_transparent: rgba(29, 117, 218, 0.8);
 $clr-metacritic_green: rgba(27, 214, 89, 0.8);
 
-// -------- timing function -------- 
+// -------- Timing Function -------- 
 
 $tf-main: cubic-bezier(0, 0, 0, 0.75);
 
 // $lightGray: rgba(45, 45, 45, 1);
 
-// -------- styles -------- 
+// -------- Styles -------- 
 // ~ Glass
 
 $clr-blue_light_glassShadow: rgba(1, 162, 255, .7);
@@ -62,42 +62,7 @@ $shadow_light: inset -1px 0 0 0 rgba(255, 255, 255, .25);
     // background-color: rgba(255, 255, 255, .1);
 }
 
-@mixin style-glass_game {
-    box-shadow:$shadow_out,  
-    inset -1px 0 0 0 rgba(82, 98, 112, 0.5), 
-    inset 1px 0 0 0 rgba(82, 98, 112, 0.5), 
-    inset 0 1px 0 0 rgba(255, 255, 255, .5), 
-    inset 0 -1px 0 0 rgba(255, 255, 255, .5);  
-    border: 1px solid rgba(40, 40, 40, .7);
-}
-
-@mixin style-glass_banner {
-    box-shadow:$shadow_out,  
-    inset -1px 0 0 0 rgba(82, 98, 112, 0.5), 
-    inset 1px 0 0 0 rgba(82, 98, 112, 0.5), 
-    inset 0 1px 0 0 rgba(255, 255, 255, .5), 
-    inset 0 -1px 0 0 rgba(255, 255, 255, .5);  
-    border: 1px solid rgba(40, 40, 40, .7);
-}
-
-@mixin style-glass_hover_style {
-    box-shadow: inset 0px -30px 30px -30px $clr-blue_light_glassShadow, 
-    $shadow_out, 
-    inset -1px 0 0 0 rgba(82, 98, 112, 0.5), 
-    inset 1px 0 0 0 rgba(82, 98, 112, 0.5), 
-    inset 0 1px 0 0 $clr-blue_light_glassShadow, 
-    inset 0 -1px 0 0 $clr-blue_light_glassShadow;
-    border: 1px solid $clr-blue_light_glassShadow;
-}
-
-@mixin style-glass_hover {
-    @include style-glass;
-    &:hover {
-        @include style-glass_hover_style;
-    }
-}
-
-// ~ Gray on glass
+// ~ Main style
 
 @mixin style-main_transparent {
     // background: linear-gradient(to top, rgba(255, 255, 255, .15), rgba(255, 255, 255, .05));
@@ -134,12 +99,6 @@ $shadow_light: inset -1px 0 0 0 rgba(255, 255, 255, .25);
     // box-shadow: 0 5px 15px -2px rgba(0, 0, 0, .2);
 }
 
-// @mixin style-main_base_47 {
-//     background-color: rgb(47, 47, 47);
-//     border: 1px solid rgb(78, 78, 78);
-//     box-shadow: 0 5px 15px -2px rgba(0, 0, 0, .2);
-// }
-
 @mixin style-main_active {
     background-color: $clr-blue_light_transparent;
     border: 1px solid $clr-blue_light;
@@ -154,12 +113,13 @@ $shadow_light: inset -1px 0 0 0 rgba(255, 255, 255, .25);
     @include style-main;
     transition: .2s;
     cursor: pointer;
-    
-    &:hover {
-        @include style-main_hover;
-    }
-    &:active {
-        transform: scale(.95)
+    @media (hover: hover) {
+        &:hover {
+            @include style-main_hover;
+        }
+        &:active {
+            transform: scale(.95)
+        }
     }
 }
 
@@ -167,20 +127,23 @@ $shadow_light: inset -1px 0 0 0 rgba(255, 255, 255, .25);
     @include style-main_transparent;
     transition: .2s;
     cursor: pointer;
-    
-    &:hover {
-        @include style-main_hover;
-    }
-    &:active {
-        transform: scale(.95)
+    @media (hover: hover) {
+        &:hover {
+            @include style-main_hover;
+        }
+        &:active {
+            transform: scale(.95)
+        }
     }
 }
 
 @mixin style-main_mouse {
     @include style-main_transparent;
     transition: .2s;
-    &:hover {
-        @include style-main_hover;
+    @media (hover: hover) {
+        &:hover {
+            @include style-main_hover;
+        }
     }
 }
 
@@ -192,12 +155,14 @@ $shadow_light: inset -1px 0 0 0 rgba(255, 255, 255, .25);
     font-weight: 700;
     transition: .2s;
     cursor: pointer;
-    
-    &:hover {
-        @include style-main_hover;
-    }
-    &:active {
-        transform: scale(.95)
+
+    @media (hover: hover) {
+        &:hover {
+            @include style-main_hover;
+        }
+        &:active {
+            transform: scale(.95)
+        }
     }
 }
 
@@ -235,8 +200,10 @@ $shadow_light: inset -1px 0 0 0 rgba(255, 255, 255, .25);
     &::-webkit-scrollbar-thumb {
         background: rgba(255, 255, 255, .15); /* Цвет ползунка */
         border-radius: 10px;
-        &:hover {
-            background: rgba(255, 255, 255, .2);
+        @media (hover: hover) {
+            &:hover {
+                background: rgba(255, 255, 255, .2);
+            }
         }
     }
 }
@@ -248,11 +215,11 @@ $shadow_light: inset -1px 0 0 0 rgba(255, 255, 255, .25);
     }
 }
 
-// -------- fonts --------
+// -------- fonts -------- 
 
 $fnt-all: robotoFlex, sans-serif;
 
-// -------- mixins --------
+// -------- mixins -------- 
 
 // $shadow_light_b: inset -1px 0 0 0px rgba(80, 176, 255, .25);
 // $shadow_border_b: inset 0 0 0 1px rgba(80, 176, 255, 0.2);
@@ -289,5 +256,3 @@ $fnt-all: robotoFlex, sans-serif;
     width: $w;
     height: calc($w / 0.82);
 }
-
-// ! 173px

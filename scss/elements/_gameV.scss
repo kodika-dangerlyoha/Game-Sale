@@ -169,27 +169,29 @@
         }
     }
 
-    &:hover &{
-        &__banner {
-            transform: scale(1.02);
-        }
-        &__info {
-            transform: translateY(10px);
-            &__right {
-                margin-left: 0px;
+    @media (hover: hover) {
+        &:hover &{
+            &__banner {
+                transform: scale(1.02);
             }
-            &__buttons {
-                // margin-left: 0px;
-                opacity: 1;
-                transform: translateY(0px);
-                max-width: 200px;
-                // &__button {
-                    // transform: scale(1);
-                // }
-            }
-            &__price {
-                transform: translateX(0);
-                text-shadow: 0 0 10px base.$clr-main_body;
+            &__info {
+                transform: translateY(10px);
+                &__right {
+                    margin-left: 0px;
+                }
+                &__buttons {
+                    // margin-left: 0px;
+                    opacity: 1;
+                    transform: translateY(0px);
+                    max-width: 200px;
+                    // &__button {
+                        // transform: scale(1);
+                    // }
+                }
+                &__price {
+                    transform: translateX(0);
+                    text-shadow: 0 0 10px base.$clr-main_body;
+                }
             }
         }
     }

@@ -72,6 +72,14 @@
             flex-direction: column;
             justify-content: space-between;
             cursor: pointer;
+            &__link {
+                position: absolute;
+                top: -8px;
+                bottom: -8px;
+                right: -8px;
+                left: -8px;
+                z-index: 2;
+            }
             &__top {
                 display: flex;
                 align-items: center;
@@ -89,6 +97,8 @@
                 gap: 5px;
             }
             &__point {
+                position: relative;
+                z-index: 1;
                 padding: 5px 8px;
                 border-radius: 7px;
                 cursor: pointer;
@@ -118,6 +128,9 @@
                         height: 18px;
                         filter: invert(1);
                     }
+                    @media (pointer: coarse) {
+                        display: none;
+                    }
                 }
                 &_more {
                     @include base.style-main_transparent;
@@ -127,8 +140,10 @@
                 }
             }
         }
-        &:active {
-            transform: scale(.975) !important;
+        @media (hover: hover) {
+            &:active {
+                transform: scale(.975) !important;
+            }
         }
     }
     &__info {
@@ -197,6 +212,33 @@
                 &_active {
                     @include base.style-main_active;
                 }
+                @media (pointer: coarse) {
+                    &_mobile {
+                        position: relative;
+                        height: 32px;
+                        width: 32px;
+                        z-index: 3;
+                        border-radius: 7px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        overflow: hidden;
+                        @include base.style-main_base_transparent;
+                        & img {
+                            height: 18px;
+                            filter: invert(1);
+                        }
+                        &_active {
+                            @include base.style-main_active;
+                        }
+                    }
+                }
+                @media (hover: hover) {
+                    &_mobile {
+                        display: none;
+                    }
+                }
             }
         }
     }
@@ -264,42 +306,44 @@
         }
     }
 
-    &:hover &{
-        &__banner {
-            transform: scale(1.05);
-            &__info__point {
-                opacity: 0;
-            }
-            &__videoBlock {
-                opacity: 1;
-                transition-delay: 1s;
-                & video {
-                    display: block;
+    @media (hover: hover) {
+        &:hover &{
+            &__banner {
+                transform: scale(1.05);
+                &__info__point {
+                    opacity: 0;
+                }
+                &__videoBlock {
+                    opacity: 1;
+                    transition-delay: 1s;
+                    & video {
+                        display: block;
+                        transition-delay: 1s;
+                    }
+                }
+                &__imgBlock {
+                    opacity: 0;
                     transition-delay: 1s;
                 }
             }
-            &__imgBlock {
-                opacity: 0;
-                transition-delay: 1s;
-            }
-        }
-        &__info {
-            transform: translateY(7px);
-            &__right {
-                margin-left: 0px;
-            }
-            &__buttons {
-                // margin-left: 0px;
-                opacity: 1;
-                transform: translateY(0px);
-                max-width: 200px;
-                &__button {
-                    // transform: scale(1);
+            &__info {
+                transform: translateY(7px);
+                &__right {
+                    margin-left: 0px;
                 }
-            }
-            &__price {
-                transform: translateX(0);
-                text-shadow: 0 0 10px base.$clr-main_body;
+                &__buttons {
+                    // margin-left: 0px;
+                    opacity: 1;
+                    transform: translateY(0px);
+                    max-width: 200px;
+                    &__button {
+                        // transform: scale(1);
+                    }
+                }
+                &__price {
+                    transform: translateX(0);
+                    text-shadow: 0 0 10px base.$clr-main_body;
+                }
             }
         }
     }

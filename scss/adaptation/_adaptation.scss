@@ -310,6 +310,70 @@
         }
     }
 
+    .gameBanner {
+        &__interaction {
+            left: 20px;
+            bottom: 20px;
+            &__title {
+                font-size: 20px;
+            }
+            &__shopInfo {
+                border-radius: 20px;
+                padding: 10px;
+                width: auto;
+                gap: 40px;
+                &__buttons {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    &__button {
+                        width: 35px;
+                        height: 35px;
+                        padding: 8px;
+                    }
+                }
+                &__priceTag {
+                    display: flex;
+                    gap: 10px;
+                    &__prices {
+                        display: flex;
+                        align-items: end;
+                        justify-content: center;
+                        flex-direction: column;
+                        gap: 0px;
+                        &__newPrice {
+                            font-size: 16px;
+                        }
+                        &__oldPrice {
+                            font-size: 13px;
+                        }
+                    }
+                    &__discount {
+                        border-radius: 10px;
+                        height: 100%;
+                        font-size: 18px;
+                        font-weight: 500;
+                        padding: {
+                            left: 10px;
+                            right: 10px;
+                        }
+                    }
+                }
+                &_dark {
+                    border: 1px solid rgba(255, 255, 255, 0.5);
+                    background-color: rgba(0, 0, 0, 0.2);
+                }
+                &_dark &__buttons__button {
+                    border: 1px solid rgba(255, 255, 255, 0.5);
+                    background-color: rgba(255, 255, 255, 0.15);
+                }
+                &_dark &__priceTag__discount {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+            }
+        }
+    }
+
     .gameH {
         &__banner {
             &__videoBlock {
@@ -520,6 +584,58 @@
             }
         }
     }
+
+    .gameBanner {
+        &__interaction {
+            &__title {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+            &__shopInfo {
+                border-radius: 20px;
+                padding: 8px;
+                gap: 35px;
+                &__buttons {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    &__button {
+                        width: 35px;
+                        height: 35px;
+                        padding: 8px;
+                    }
+                }
+                &__priceTag {
+                    display: flex;
+                    gap: 10px;
+                    &__prices {
+                        display: flex;
+                        align-items: end;
+                        justify-content: center;
+                        flex-direction: column;
+                        gap: 0px;
+                        &__newPrice {
+                            // font-size: 16px;
+                            font-size: 16px;
+                        }
+                        &__oldPrice {
+                            font-size: 12px;
+                        }
+                    }
+                    &__discount {
+                        border-radius: 10px;
+                        height: 100%;
+                        font-size: 16px;
+                        font-weight: 500;
+                        padding: {
+                            left: 10px;
+                            right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 826px) {
@@ -529,6 +645,30 @@
     .salesHits {
         &__games {
             @include base.grid(15px, 4);
+        }
+    }
+    .heading {
+        margin-bottom: 16px;
+        & > h2 {
+            font-size: 20px;
+        }
+        & > button {
+            padding: 8px 8px 8px 12px;
+            border-radius: 25px;
+            & > span {
+                font-size: 13px;
+            }
+            & > svg {
+                margin-left: 5px;
+                height: 20px;
+                transform: translateY(1px) translateX(0px);
+            }
+            &:hover > svg{
+                transform: translateY(1px) translateX(20px);
+            }
+            &:hover > span{
+                transform: translateX(13px);
+            }
         }
     }
 }
@@ -600,11 +740,85 @@
             }
         }
     }
-}
 
-// @media (max-width: 555px) {
-    
-// }
+    .gameBanner {
+        &__interaction {
+            left: 10px;
+            bottom: 10px;
+            &__title {
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+            &__shopInfo {
+                border-radius: 20px;
+                padding: 8px;
+                gap: 35px;
+                &__buttons {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    &__button {
+                        width: 35px;
+                        height: 35px;
+                        padding: 8px;
+                    }
+                }
+                &__priceTag {
+                    display: flex;
+                    gap: 10px;
+                    &__prices {
+                        display: flex;
+                        align-items: end;
+                        justify-content: center;
+                        flex-direction: column;
+                        gap: 0px;
+                        &__newPrice {
+                            // font-size: 16px;
+                            font-size: 16px;
+                        }
+                        &__oldPrice {
+                            font-size: 12px;
+                        }
+                    }
+                    &__discount {
+                        border-radius: 10px;
+                        height: 100%;
+                        font-size: 16px;
+                        font-weight: 500;
+                        padding: {
+                            left: 10px;
+                            right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .heading {
+        margin-bottom: 14px;
+        & > h2 {
+            font-size: 18px;
+        }
+        & > button {
+            padding: 6px 6px 6px 10px;
+            border-radius: 25px;
+            & > span {
+                font-size: 11px;
+            }
+            & > svg {
+                margin-left: 5px;
+                height: 16px;
+                transform: translateY(1px) translateX(0px);
+            }
+            &:hover > svg{
+                transform: translateY(1px) translateX(20px);
+            }
+            &:hover > span{
+                transform: translateX(13px);
+            }
+        }
+    }
+}
 
 @media (max-width: 550px) {
     .inner_w1605p100 {
@@ -637,6 +851,19 @@
                     font-size: 18px;
                     margin-bottom: 8px;
                 }
+            }
+        }
+    }
+
+    .gameBanner {
+        &__interaction {
+            left: 10px;
+            bottom: 10px;
+            max-width: calc(100% - 20px);
+            &__title {
+                // max-width: 221px;
+                font-size: 18px;
+                margin-bottom: 8px;
             }
         }
     }

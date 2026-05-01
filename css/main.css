@@ -340,9 +340,11 @@ label {
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
 }
-.header__mobile__main__right > input:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
+@media (hover: hover) {
+  .header__mobile__main__right > input:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
 }
 .header__mobile__main__right > input:focus {
   background-color: rgba(1, 162, 255, 0.4);
@@ -391,9 +393,11 @@ label {
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
 }
-.header__mobile__search > input:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
+@media (hover: hover) {
+  .header__mobile__search > input:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
 }
 .header__mobile__search > input:focus {
   background-color: rgba(1, 162, 255, 0.4);
@@ -504,9 +508,11 @@ label {
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
 }
-.header__searchBlock > input:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
+@media (hover: hover) {
+  .header__searchBlock > input:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
 }
 .header__searchBlock > input:focus {
   background-color: rgba(1, 162, 255, 0.4);
@@ -526,8 +532,10 @@ label {
   transition: 0.15s;
   transform: translateX(-100%);
 }
-.header__searchBlock__button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+@media (hover: hover) {
+  .header__searchBlock__button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
 }
 .header__buttonCatalog {
   height: 45px;
@@ -546,23 +554,29 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.header__buttonCatalog:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
+@media (hover: hover) {
+  .header__buttonCatalog:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .header__buttonCatalog:active {
+    transform: scale(0.95);
+  }
 }
-.header__buttonCatalog:active {
-  transform: scale(0.95);
-}
-.header__buttonCatalog:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .header__buttonCatalog:active {
+    transform: scale(0.95);
+  }
 }
 .header__buttonCatalog_active {
   background-color: rgba(1, 162, 255, 0.4);
   border: 1px solid rgb(1, 162, 255);
 }
-.header__buttonCatalog_active:hover {
-  background-color: rgba(1, 162, 255, 0.4);
-  border: 1px solid rgb(1, 162, 255);
+@media (hover: hover) {
+  .header__buttonCatalog_active:hover {
+    background-color: rgba(1, 162, 255, 0.4);
+    border: 1px solid rgb(1, 162, 255);
+  }
 }
 .header__nav {
   position: relative;
@@ -602,12 +616,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.header__nav__button:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.header__nav__button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .header__nav__button:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .header__nav__button:active {
+    transform: scale(0.95);
+  }
 }
 .header__nav__button > img {
   width: 100%;
@@ -638,9 +654,11 @@ label {
   background-color: rgba(1, 162, 255, 0.4);
   border: 1px solid rgb(1, 162, 255);
 }
-.header__nav__button_active:hover {
-  background-color: rgba(1, 162, 255, 0.4);
-  border: 1px solid rgb(1, 162, 255);
+@media (hover: hover) {
+  .header__nav__button_active:hover {
+    background-color: rgba(1, 162, 255, 0.4);
+    border: 1px solid rgb(1, 162, 255);
+  }
 }
 .header__nav__button_auth {
   width: auto;
@@ -672,12 +690,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.header__nav__buttonBasket:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.header__nav__buttonBasket:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .header__nav__buttonBasket:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .header__nav__buttonBasket:active {
+    transform: scale(0.95);
+  }
 }
 .header__nav__buttonBasket > img {
   height: 100%;
@@ -709,9 +729,11 @@ label {
   background-color: rgba(1, 162, 255, 0.4);
   border: 1px solid rgb(1, 162, 255);
 }
-.header__nav__buttonBasket_active:hover {
-  background-color: rgba(1, 162, 255, 0.4);
-  border: 1px solid rgb(1, 162, 255);
+@media (hover: hover) {
+  .header__nav__buttonBasket_active:hover {
+    background-color: rgba(1, 162, 255, 0.4);
+    border: 1px solid rgb(1, 162, 255);
+  }
 }
 .header__catalog {
   position: absolute;
@@ -750,8 +772,10 @@ label {
   padding-left: 15px;
   transition: 0.15s;
 }
-.header__catalog__head__more:hover {
-  opacity: 1;
+@media (hover: hover) {
+  .header__catalog__head__more:hover {
+    opacity: 1;
+  }
 }
 .header__catalog__navs {
   display: flex;
@@ -777,12 +801,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.header__catalog__navs__genres__list__genre:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.header__catalog__navs__genres__list__genre:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .header__catalog__navs__genres__list__genre:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .header__catalog__navs__genres__list__genre:active {
+    transform: scale(0.95);
+  }
 }
 .header__catalog__navs__genres__list__genre {
   border-radius: 10px;
@@ -827,12 +853,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.header__catalog__navs__authors__list__author:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.header__catalog__navs__authors__list__author:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .header__catalog__navs__authors__list__author:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .header__catalog__navs__authors__list__author:active {
+    transform: scale(0.95);
+  }
 }
 .header__catalog__navs__authors__list__author {
   border-radius: 10px;
@@ -863,17 +891,19 @@ label {
 .header__catalog__navs__nav_active .header__catalog__navs__indicator {
   opacity: 0;
 }
-.header__catalog__navs__nav:hover .header__catalog__navs__indicator {
-  transition: 0.6s;
-  width: 100%;
-}
-.header__catalog__navs__nav_active:hover {
-  background-color: rgba(1, 162, 255, 0.4);
-  border: 1px solid rgb(1, 162, 255);
-}
-.header__catalog__navs__nav_active:hover .header__catalog__navs__indicator {
-  width: 100%;
-  opacity: 0;
+@media (hover: hover) {
+  .header__catalog__navs__nav:hover .header__catalog__navs__indicator {
+    transition: 0.6s;
+    width: 100%;
+  }
+  .header__catalog__navs__nav_active:hover {
+    background-color: rgba(1, 162, 255, 0.4);
+    border: 1px solid rgb(1, 162, 255);
+  }
+  .header__catalog__navs__nav_active:hover .header__catalog__navs__indicator {
+    width: 100%;
+    opacity: 0;
+  }
 }
 .header__catalog__navs__indicator {
   position: absolute;
@@ -939,8 +969,10 @@ label {
   transition: 0.15s;
   cursor: pointer;
 }
-.header__basket__head__link:hover {
-  color: rgb(1, 162, 255);
+@media (hover: hover) {
+  .header__basket__head__link:hover {
+    color: rgb(1, 162, 255);
+  }
 }
 .header__basket__grid {
   display: flex;
@@ -962,8 +994,10 @@ label {
   background: rgba(255, 255, 255, 0.15); /* Цвет ползунка */
   border-radius: 10px;
 }
-.header__basket__grid::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+@media (hover: hover) {
+  .header__basket__grid::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
 }
 .header__basket__grid__game {
   border-radius: 10px;
@@ -1002,11 +1036,13 @@ label {
   transition: 0.15s;
   transform: translateY(1px);
 }
-.header__basket__grid__game__bottom__link:hover {
-  color: rgb(1, 162, 255);
-}
-.header__basket__grid__game__bottom__link:hover > svg {
-  stroke: rgb(1, 162, 255);
+@media (hover: hover) {
+  .header__basket__grid__game__bottom__link:hover {
+    color: rgb(1, 162, 255);
+  }
+  .header__basket__grid__game__bottom__link:hover > svg {
+    stroke: rgb(1, 162, 255);
+  }
 }
 .header__basket__grid__game__point {
   padding: 2px 5px;
@@ -1040,8 +1076,10 @@ label {
   text-overflow: ellipsis;
   cursor: pointer;
 }
-.header__basket__grid__game__title:hover {
-  color: rgb(1, 162, 255);
+@media (hover: hover) {
+  .header__basket__grid__game__title:hover {
+    color: rgb(1, 162, 255);
+  }
 }
 .header__basket__grid__game__prices {
   display: flex;
@@ -1067,11 +1105,13 @@ label {
 .header__basket__grid__game__delete > svg {
   height: 100%;
 }
-.header__basket__grid__game__delete:hover {
-  background-color: rgb(170, 22, 22);
-}
-.header__basket__grid__game__delete:active {
-  transform: scale(0.8);
+@media (hover: hover) {
+  .header__basket__grid__game__delete:hover {
+    background-color: rgb(170, 22, 22);
+  }
+  .header__basket__grid__game__delete:active {
+    transform: scale(0.8);
+  }
 }
 .header__basket__grid__nothing {
   height: 25px;
@@ -1115,8 +1155,10 @@ label {
   transition: 0.15s;
   cursor: pointer;
 }
-.header__notification__header__link:hover {
-  color: rgb(1, 162, 255);
+@media (hover: hover) {
+  .header__notification__header__link:hover {
+    color: rgb(1, 162, 255);
+  }
 }
 .header__notification__grid {
   display: flex;
@@ -1138,8 +1180,10 @@ label {
   background: rgba(255, 255, 255, 0.15); /* Цвет ползунка */
   border-radius: 10px;
 }
-.header__notification__grid::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+@media (hover: hover) {
+  .header__notification__grid::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
 }
 .header__notification__grid__notification {
   border-radius: 10px;
@@ -1355,8 +1399,10 @@ label {
   padding-left: 12px;
   padding-right: 12px;
 }
-.footer__head__nav > a:hover {
-  color: rgb(1, 162, 255);
+@media (hover: hover) {
+  .footer__head__nav > a:hover {
+    color: rgb(1, 162, 255);
+  }
 }
 .footer__head > button {
   border-radius: 22px;
@@ -1373,12 +1419,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.footer__head > button:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.footer__head > button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .footer__head > button:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .footer__head > button:active {
+    transform: scale(0.95);
+  }
 }
 .footer__head > button {
   background-color: rgba(255, 255, 255, 0.05);
@@ -1416,12 +1464,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.footer__body__links__contacts a:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.footer__body__links__contacts a:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .footer__body__links__contacts a:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .footer__body__links__contacts a:active {
+    transform: scale(0.95);
+  }
 }
 .footer__body__links__contacts a {
   background-color: rgba(255, 255, 255, 0.05);
@@ -1615,12 +1665,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.gameV__info__buttons__button:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.gameV__info__buttons__button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .gameV__info__buttons__button:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .gameV__info__buttons__button:active {
+    transform: scale(0.95);
+  }
 }
 .gameV__info__buttons__button img {
   height: 18px;
@@ -1630,23 +1682,25 @@ label {
   background-color: rgba(1, 162, 255, 0.4);
   border: 1px solid rgb(1, 162, 255);
 }
-.gameV:hover .gameV__banner {
-  transform: scale(1.02);
-}
-.gameV:hover .gameV__info {
-  transform: translateY(10px);
-}
-.gameV:hover .gameV__info__right {
-  margin-left: 0px;
-}
-.gameV:hover .gameV__info__buttons {
-  opacity: 1;
-  transform: translateY(0px);
-  max-width: 200px;
-}
-.gameV:hover .gameV__info__price {
-  transform: translateX(0);
-  text-shadow: 0 0 10px rgb(39, 39, 39);
+@media (hover: hover) {
+  .gameV:hover .gameV__banner {
+    transform: scale(1.02);
+  }
+  .gameV:hover .gameV__info {
+    transform: translateY(10px);
+  }
+  .gameV:hover .gameV__info__right {
+    margin-left: 0px;
+  }
+  .gameV:hover .gameV__info__buttons {
+    opacity: 1;
+    transform: translateY(0px);
+    max-width: 200px;
+  }
+  .gameV:hover .gameV__info__price {
+    transform: translateX(0);
+    text-shadow: 0 0 10px rgb(39, 39, 39);
+  }
 }
 
 .gameH {
@@ -1721,6 +1775,14 @@ label {
   justify-content: space-between;
   cursor: pointer;
 }
+.gameH__banner__info__link {
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+  right: -8px;
+  left: -8px;
+  z-index: 2;
+}
 .gameH__banner__info__top {
   display: flex;
   align-items: center;
@@ -1738,6 +1800,8 @@ label {
   gap: 5px;
 }
 .gameH__banner__info__point {
+  position: relative;
+  z-index: 1;
   padding: 5px 8px;
   border-radius: 7px;
   cursor: pointer;
@@ -1768,6 +1832,11 @@ label {
   height: 18px;
   filter: invert(1);
 }
+@media (pointer: coarse) {
+  .gameH__banner__info__point_mark {
+    display: none;
+  }
+}
 .gameH__banner__info__point_more {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -1776,8 +1845,10 @@ label {
 .gameH__banner__info__point_hidden {
   display: none;
 }
-.gameH__banner:active {
-  transform: scale(0.975) !important;
+@media (hover: hover) {
+  .gameH__banner:active {
+    transform: scale(0.975) !important;
+  }
 }
 .gameH__info {
   position: relative;
@@ -1842,12 +1913,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.gameH__info__buttons__button:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.gameH__info__buttons__button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .gameH__info__buttons__button:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .gameH__info__buttons__button:active {
+    transform: scale(0.95);
+  }
 }
 .gameH__info__buttons__button img {
   height: 18px;
@@ -1856,6 +1929,37 @@ label {
 .gameH__info__buttons__button_active {
   background-color: rgba(1, 162, 255, 0.4);
   border: 1px solid rgb(1, 162, 255);
+}
+@media (pointer: coarse) {
+  .gameH__info__buttons__button_mobile {
+    position: relative;
+    height: 32px;
+    width: 32px;
+    z-index: 3;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: rgba(50, 50, 50, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+  }
+  .gameH__info__buttons__button_mobile img {
+    height: 18px;
+    filter: invert(1);
+  }
+  .gameH__info__buttons__button_mobile_active {
+    background-color: rgba(1, 162, 255, 0.4);
+    border: 1px solid rgb(1, 162, 255);
+  }
+}
+@media (hover: hover) {
+  .gameH__info__buttons__button_mobile {
+    display: none;
+  }
 }
 .gameH_headerCatalog .gameH__banner__info__point {
   font-size: 14px;
@@ -1908,38 +2012,40 @@ label {
 .gameH_open:nth-child(5) {
   transition-delay: 0.25s;
 }
-.gameH:hover .gameH__banner {
-  transform: scale(1.05);
-}
-.gameH:hover .gameH__banner__info__point {
-  opacity: 0;
-}
-.gameH:hover .gameH__banner__videoBlock {
-  opacity: 1;
-  transition-delay: 1s;
-}
-.gameH:hover .gameH__banner__videoBlock video {
-  display: block;
-  transition-delay: 1s;
-}
-.gameH:hover .gameH__banner__imgBlock {
-  opacity: 0;
-  transition-delay: 1s;
-}
-.gameH:hover .gameH__info {
-  transform: translateY(7px);
-}
-.gameH:hover .gameH__info__right {
-  margin-left: 0px;
-}
-.gameH:hover .gameH__info__buttons {
-  opacity: 1;
-  transform: translateY(0px);
-  max-width: 200px;
-}
-.gameH:hover .gameH__info__price {
-  transform: translateX(0);
-  text-shadow: 0 0 10px rgb(39, 39, 39);
+@media (hover: hover) {
+  .gameH:hover .gameH__banner {
+    transform: scale(1.05);
+  }
+  .gameH:hover .gameH__banner__info__point {
+    opacity: 0;
+  }
+  .gameH:hover .gameH__banner__videoBlock {
+    opacity: 1;
+    transition-delay: 1s;
+  }
+  .gameH:hover .gameH__banner__videoBlock video {
+    display: block;
+    transition-delay: 1s;
+  }
+  .gameH:hover .gameH__banner__imgBlock {
+    opacity: 0;
+    transition-delay: 1s;
+  }
+  .gameH:hover .gameH__info {
+    transform: translateY(7px);
+  }
+  .gameH:hover .gameH__info__right {
+    margin-left: 0px;
+  }
+  .gameH:hover .gameH__info__buttons {
+    opacity: 1;
+    transform: translateY(0px);
+    max-width: 200px;
+  }
+  .gameH:hover .gameH__info__price {
+    transform: translateX(0);
+    text-shadow: 0 0 10px rgb(39, 39, 39);
+  }
 }
 
 .seriesCard {
@@ -2042,12 +2148,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.seriesCard__info__buttons__button:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.seriesCard__info__buttons__button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .seriesCard__info__buttons__button:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .seriesCard__info__buttons__button:active {
+    transform: scale(0.95);
+  }
 }
 .seriesCard_open {
   opacity: 1;
@@ -2068,19 +2176,21 @@ label {
 .seriesCard_open:nth-child(5) {
   transition-delay: 0.25s;
 }
-.seriesCard:hover .seriesCard__banner {
-  transform: scale(1.05);
-}
-.seriesCard:hover .seriesCard__info {
-  transform: translateY(7px);
-}
-.seriesCard:hover .seriesCard__info__right {
-  margin-left: 0px;
-}
-.seriesCard:hover .seriesCard__info__buttons {
-  opacity: 1;
-  transform: translateY(0px);
-  max-width: 200px;
+@media (hover: hover) {
+  .seriesCard:hover .seriesCard__banner {
+    transform: scale(1.05);
+  }
+  .seriesCard:hover .seriesCard__info {
+    transform: translateY(7px);
+  }
+  .seriesCard:hover .seriesCard__info__right {
+    margin-left: 0px;
+  }
+  .seriesCard:hover .seriesCard__info__buttons {
+    opacity: 1;
+    transform: translateY(0px);
+    max-width: 200px;
+  }
 }
 
 .switch__head {
@@ -2107,12 +2217,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.switch__head__point:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.switch__head__point:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .switch__head__point:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .switch__head__point:active {
+    transform: scale(0.95);
+  }
 }
 .switch__head__point__click {
   position: absolute;
@@ -2140,12 +2252,16 @@ label {
   background-color: rgba(1, 162, 255, 0.4);
   border: 1px solid rgb(1, 162, 255);
 }
-.switch__head__point_active:hover {
-  background-color: rgba(1, 162, 255, 0.4);
-  border: 1px solid rgb(1, 162, 255);
+@media (hover: hover) {
+  .switch__head__point_active:hover {
+    background-color: rgba(1, 162, 255, 0.4);
+    border: 1px solid rgb(1, 162, 255);
+  }
 }
-.switch__head__point:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .switch__head__point:active {
+    transform: scale(0.95);
+  }
 }
 .switch__content {
   animation: open_offers_games 0.5s ease 1;
@@ -2174,12 +2290,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.heading > button:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.heading > button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .heading > button:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .heading > button:active {
+    transform: scale(0.95);
+  }
 }
 .heading > button > span {
   display: block;
@@ -2195,15 +2313,17 @@ label {
   transform: translateY(1px) translateX(0px);
   transition: 0.15s;
 }
-.heading > button:hover > svg {
-  opacity: 0;
-  transform: translateY(1px) translateX(20px);
-}
-.heading > button:hover > span {
-  transform: translateX(13px);
-}
-.heading > button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .heading > button:hover > svg {
+    opacity: 0;
+    transform: translateY(1px) translateX(20px);
+  }
+  .heading > button:hover > span {
+    transform: translateX(13px);
+  }
+  .heading > button:active {
+    transform: scale(0.95);
+  }
 }
 .heading_center {
   justify-content: center;
@@ -2294,8 +2414,10 @@ label {
   cursor: pointer;
   transition: 0.15s;
 }
-.lineGames__game__left__nameBlock__name:hover {
-  color: rgb(1, 162, 255);
+@media (hover: hover) {
+  .lineGames__game__left__nameBlock__name:hover {
+    color: rgb(1, 162, 255);
+  }
 }
 .lineGames__game__left__nameBlock__preOrder {
   border-radius: 5px;
@@ -2322,8 +2444,10 @@ label {
   align-items: center;
   gap: 5px;
 }
-.lineGames__game__left__nameBlock__linkPlatform:hover {
-  color: rgb(1, 162, 255);
+@media (hover: hover) {
+  .lineGames__game__left__nameBlock__linkPlatform:hover {
+    color: rgb(1, 162, 255);
+  }
 }
 .lineGames__game__right {
   position: relative;
@@ -2371,19 +2495,23 @@ label {
 .lineGames__game__right__buttons__button > svg {
   height: 100%;
 }
-.lineGames__game__right__buttons__button_red:hover {
-  background-color: rgb(170, 22, 22);
-  border-color: rgb(255, 106, 106);
-}
-.lineGames__game__right__buttons__button_blue:hover {
-  background-color: rgb(1, 162, 255);
+@media (hover: hover) {
+  .lineGames__game__right__buttons__button_red:hover {
+    background-color: rgb(170, 22, 22);
+    border-color: rgb(255, 106, 106);
+  }
+  .lineGames__game__right__buttons__button_blue:hover {
+    background-color: rgb(1, 162, 255);
+  }
 }
 .lineGames__game__right__buttons__button_active {
   background-color: rgba(1, 162, 255, 0.4);
   border: 1px solid rgb(1, 162, 255);
 }
-.lineGames__game__right__buttons__button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .lineGames__game__right__buttons__button:active {
+    transform: scale(0.95);
+  }
 }
 .lineGames__game__right__closeBlock {
   background-color: rgba(161, 40, 40, 0);
@@ -2391,14 +2519,16 @@ label {
   transition: 0.2s;
   margin-left: 10px;
 }
-.lineGames__game__right__closeBlock:hover svg {
-  transform: rotate(90deg) scale(0.75);
-}
-.lineGames__game__right__closeBlock:hover {
-  background-color: rgb(170, 22, 22);
-}
-.lineGames__game__right__closeBlock:active svg {
-  transform: rotate(90deg) scale(0.35);
+@media (hover: hover) {
+  .lineGames__game__right__closeBlock:hover svg {
+    transform: rotate(90deg) scale(0.75);
+  }
+  .lineGames__game__right__closeBlock:hover {
+    background-color: rgb(170, 22, 22);
+  }
+  .lineGames__game__right__closeBlock:active svg {
+    transform: rotate(90deg) scale(0.35);
+  }
 }
 .lineGames__game__right__closeBlock_hidden {
   margin-left: 0px;
@@ -2446,8 +2576,10 @@ label {
 .lineGames__game:last-child {
   border-bottom: none;
 }
-.lineGames__game:hover .lineGames__game__forHover {
-  opacity: 1;
+@media (hover: hover) {
+  .lineGames__game:hover .lineGames__game__forHover {
+    opacity: 1;
+  }
 }
 
 .blockButtonMore {
@@ -2467,12 +2599,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.blockButtonMore__button:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.blockButtonMore__button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .blockButtonMore__button:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .blockButtonMore__button:active {
+    transform: scale(0.95);
+  }
 }
 .blockButtonMore__button {
   transition: 0.2s;
@@ -2491,15 +2625,17 @@ label {
   transform: translateY(1px) translateX(0px);
   transition: 0.15s;
 }
-.blockButtonMore__button:hover > svg {
-  opacity: 0;
-  transform: translateY(1px) translateX(20px);
-}
-.blockButtonMore__button:hover > span {
-  transform: translateX(13px);
-}
-.blockButtonMore__button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .blockButtonMore__button:hover > svg {
+    opacity: 0;
+    transform: translateY(1px) translateX(20px);
+  }
+  .blockButtonMore__button:hover > span {
+    transform: translateX(13px);
+  }
+  .blockButtonMore__button:active {
+    transform: scale(0.95);
+  }
 }
 
 .inputList {
@@ -2601,11 +2737,13 @@ label {
   left: 0;
   z-index: 2;
 }
-.inputList__header__adIcons__icon:last-child:hover > svg > path {
-  stroke: rgb(1, 162, 255);
-}
-.inputList__header__adIcons__icon:first-child:hover > svg {
-  fill: rgb(1, 162, 255);
+@media (hover: hover) {
+  .inputList__header__adIcons__icon:last-child:hover > svg > path {
+    stroke: rgb(1, 162, 255);
+  }
+  .inputList__header__adIcons__icon:first-child:hover > svg {
+    fill: rgb(1, 162, 255);
+  }
 }
 .inputList__header__reset {
   position: absolute;
@@ -2637,8 +2775,10 @@ label {
   left: 0;
   z-index: 2;
 }
-.inputList__header__reset:hover > svg > path {
-  stroke: rgb(1, 162, 255);
+@media (hover: hover) {
+  .inputList__header__reset:hover > svg > path {
+    stroke: rgb(1, 162, 255);
+  }
 }
 .inputList__header__click {
   position: absolute;
@@ -2649,20 +2789,22 @@ label {
   z-index: 5;
   cursor: pointer;
 }
-.inputList__header:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.inputList__header:hover .inputList__header__reset {
-  opacity: 1;
-}
-.inputList__header:hover .inputList__header__adIcons {
-  opacity: 1;
-  max-width: -moz-max-content;
-  max-width: max-content;
-}
-.inputList__header:hover .inputList__header__left__value {
-  padding-right: 24px;
+@media (hover: hover) {
+  .inputList__header:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .inputList__header:hover .inputList__header__reset {
+    opacity: 1;
+  }
+  .inputList__header:hover .inputList__header__adIcons {
+    opacity: 1;
+    max-width: -moz-max-content;
+    max-width: max-content;
+  }
+  .inputList__header:hover .inputList__header__left__value {
+    padding-right: 24px;
+  }
 }
 .inputList__body {
   position: absolute;
@@ -2754,12 +2896,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.inputList__body__interval__button:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.inputList__body__interval__button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .inputList__body__interval__button:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .inputList__body__interval__button:active {
+    transform: scale(0.95);
+  }
 }
 .inputList__body__list {
   max-height: 164px;
@@ -2785,12 +2929,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.inputList__body__list__point:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.inputList__body__list__point:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .inputList__body__list__point:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .inputList__body__list__point:active {
+    transform: scale(0.95);
+  }
 }
 .inputList__body__list__point:first-child {
   margin-top: 5px;
@@ -2908,12 +3054,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.rocket:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.rocket:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .rocket:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .rocket:active {
+    transform: scale(0.95);
+  }
 }
 .rocket_show {
   opacity: 1;
@@ -2956,12 +3104,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.carousel__buttons__button:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.carousel__buttons__button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .carousel__buttons__button:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .carousel__buttons__button:active {
+    transform: scale(0.95);
+  }
 }
 .carousel__buttons__button > img {
   width: 100%;
@@ -2973,20 +3123,24 @@ label {
 .carousel__buttons__button:nth-child(2) img {
   transform: translateX(1.5px);
 }
-.carousel__buttons__button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .carousel__buttons__button:active {
+    transform: scale(0.95);
+  }
 }
 .carousel__buttons__button_disactive {
   cursor: default;
   opacity: 0.5;
 }
-.carousel__buttons__button_disactive:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
-}
-.carousel__buttons__button_disactive:active {
-  transform: scale(1);
+@media (hover: hover) {
+  .carousel__buttons__button_disactive:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
+  }
+  .carousel__buttons__button_disactive:active {
+    transform: scale(1);
+  }
 }
 .carousel__grid {
   width: 100%;
@@ -3081,7 +3235,9 @@ label {
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   padding: 15px;
-  width: 350px;
+  gap: 20px;
+  max-width: -moz-max-content;
+  max-width: max-content;
   position: relative;
   z-index: 3;
   will-change: backdrop-filter;
@@ -3106,12 +3262,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.carousel__banner__interaction__shopInfo__buttons__button:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.carousel__banner__interaction__shopInfo__buttons__button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .carousel__banner__interaction__shopInfo__buttons__button:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .carousel__banner__interaction__shopInfo__buttons__button:active {
+    transform: scale(0.95);
+  }
 }
 .carousel__banner__interaction__shopInfo__buttons__button > img {
   width: 100%;
@@ -3124,6 +3282,7 @@ label {
 .carousel__banner__interaction__shopInfo__priceTag {
   display: flex;
   gap: 10px;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.85);
 }
 .carousel__banner__interaction__shopInfo__priceTag__prices {
   display: flex;
@@ -3187,38 +3346,40 @@ label {
   width: 100%;
 }
 
-.banner__game {
-  position: relative;
+.gameBanner {
+  width: 100%;
+  min-height: -moz-max-content;
+  min-height: max-content;
+  height: auto;
   box-sizing: border-box;
-  overflow: hidden;
-  border-radius: 24px;
-  box-shadow: 0 0 15px rgb(25, 25, 25);
+  position: relative;
 }
-.banner__game__imgBlock {
+.gameBanner__imgBlock {
+  position: relative;
+  z-index: 1;
   width: 100%;
   border-radius: 25px;
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  position: relative;
-  z-index: 2;
 }
-.banner__game__imgBlock > img {
+.gameBanner__imgBlock > img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   display: block;
+  transition: 0.3s;
 }
-.banner__game__interaction {
-  position: relative;
+.gameBanner__interaction {
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
   z-index: 3;
-  transform: translateY(-100%);
-  padding-left: 25px;
-  padding-bottom: 25px;
-  margin-bottom: -159px;
+  max-width: -moz-max-content;
+  max-width: max-content;
 }
-.banner__game__interaction__info {
-  display: inline-block;
-}
-.banner__game__interaction__info__title {
+.gameBanner__interaction__title {
   font-family: robotoFlex;
   font-size: 28px;
   font-weight: 700;
@@ -3228,16 +3389,7 @@ label {
   position: relative;
   z-index: 1;
 }
-.banner__game__interaction__info__link {
-  position: absolute;
-  top: -1000px;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 2;
-  display: block;
-}
-.banner__game__interaction__info__shopInfo {
+.gameBanner__interaction__shopInfo {
   display: flex;
   justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.1);
@@ -3248,83 +3400,95 @@ label {
   width: 350px;
   position: relative;
   z-index: 3;
-  background-color: rgb(68, 68, 68);
-  border: 1px solid rgb(96, 96, 96);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
 }
-.banner__game__interaction__info__shopInfo__buttons {
+.gameBanner__interaction__shopInfo__buttons {
   display: flex;
   gap: 10px;
 }
-.banner__game__interaction__info__shopInfo__buttons__button {
+.gameBanner__interaction__shopInfo__buttons__button {
   width: 55px;
   height: 55px;
   padding: 12px;
   border-radius: 50%;
   transition: 0.15s;
   cursor: pointer;
-}
-.banner__game__interaction__info__shopInfo__buttons__button > img {
-  width: 100%;
-  filter: invert(1);
-}
-.banner__game__interaction__info__shopInfo__buttons__button {
-  background-color: rgb(68, 68, 68);
-  border: 1px solid rgb(96, 96, 96);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
   cursor: pointer;
 }
-.banner__game__interaction__info__shopInfo__buttons__button:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
+@media (hover: hover) {
+  .gameBanner__interaction__shopInfo__buttons__button:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .gameBanner__interaction__shopInfo__buttons__button:active {
+    transform: scale(0.95);
+  }
 }
-.banner__game__interaction__info__shopInfo__buttons__button:active {
-  transform: scale(0.95);
+.gameBanner__interaction__shopInfo__buttons__button > img {
+  width: 100%;
+  filter: invert(1);
 }
-.banner__game__interaction__info__shopInfo__priceTag {
+.gameBanner__interaction__shopInfo__buttons__button_active {
+  background-color: rgba(1, 162, 255, 0.4);
+  border: 1px solid rgb(1, 162, 255);
+}
+.gameBanner__interaction__shopInfo__priceTag {
   display: flex;
   gap: 10px;
 }
-.banner__game__interaction__info__shopInfo__priceTag__prices {
+.gameBanner__interaction__shopInfo__priceTag__prices {
   display: flex;
   align-items: end;
   justify-content: center;
   flex-direction: column;
   gap: 0px;
 }
-.banner__game__interaction__info__shopInfo__priceTag__prices__newPrice {
+.gameBanner__interaction__shopInfo__priceTag__prices__newPrice {
   font-size: 26px;
   font-weight: 700;
   margin-top: -2px;
 }
-.banner__game__interaction__info__shopInfo__priceTag__prices__oldPrice {
+.gameBanner__interaction__shopInfo__priceTag__prices__oldPrice {
   font-size: 16px;
   font-weight: 400;
   color: rgb(200, 200, 200);
   text-decoration: line-through;
 }
-.banner__game__interaction__info__shopInfo__priceTag__discount {
+.gameBanner__interaction__shopInfo__priceTag__discount {
   border-radius: 10px;
   height: 100%;
   font-size: 22px;
   font-weight: 500;
   padding-left: 15px;
   padding-right: 15px;
-  background-color: rgb(68, 68, 68);
-  border: 1px solid rgb(96, 96, 96);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
 }
-.banner__game__interaction__info__shopInfo_dark {
+.gameBanner__interaction__shopInfo_dark {
   border: 1px solid rgba(255, 255, 255, 0.5);
   background-color: rgba(0, 0, 0, 0.2);
 }
-.banner__game__interaction__info__shopInfo_dark .banner__game__interaction__info__shopInfo__buttons__button {
+.gameBanner__interaction__shopInfo_dark .gameBanner__interaction__shopInfo__buttons__button {
   border: 1px solid rgba(255, 255, 255, 0.5);
   background-color: rgba(255, 255, 255, 0.15);
 }
-.banner__game__interaction__info__shopInfo_dark .banner__game__interaction__info__shopInfo__priceTag__discount {
+.gameBanner__interaction__shopInfo_dark .gameBanner__interaction__shopInfo__priceTag__discount {
   background-color: rgba(255, 255, 255, 0.2);
+}
+.gameBanner__link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
 }
 
 .games {
@@ -3358,12 +3522,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.offers__head__nav:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.offers__head__nav:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .offers__head__nav:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .offers__head__nav:active {
+    transform: scale(0.95);
+  }
 }
 .offers__head__nav {
   transition: 0.2s;
@@ -3410,14 +3576,6 @@ label {
   padding: 12px 16px 12px 16px;
   border-radius: 21px;
   background-color: rgba(255, 255, 255, 0.05);
-  box-shadow: inset 0 -20px 20px -20px rgba(255, 255, 255, 0.4), inset 0 30px 30px -30px rgba(0, 0, 0, 0.1), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(57, 68, 78, 0.5), inset 1px 0 0 0 rgba(57, 68, 78, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(40, 40, 40, 0.7);
-}
-.offers__blockButtonMore__button:hover {
-  box-shadow: inset 0px -30px 30px -30px rgba(1, 162, 255, 0.7), 0 5px 15px -2px rgba(0, 0, 0, 0.2), inset -1px 0 0 0 rgba(82, 98, 112, 0.5), inset 1px 0 0 0 rgba(82, 98, 112, 0.5), inset 0 1px 0 0 rgba(1, 162, 255, 0.7), inset 0 -1px 0 0 rgba(1, 162, 255, 0.7);
-  border: 1px solid rgba(1, 162, 255, 0.7);
-}
-.offers__blockButtonMore__button {
   transition: 0.2s;
 }
 .offers__blockButtonMore__button img {
@@ -3505,12 +3663,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.miniGameCard__right__button:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.miniGameCard__right__button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .miniGameCard__right__button:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .miniGameCard__right__button:active {
+    transform: scale(0.95);
+  }
 }
 .miniGameCard__right__button img {
   height: 26px;
@@ -3542,12 +3702,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.miniGameCard__right__buttonBuy:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.miniGameCard__right__buttonBuy:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .miniGameCard__right__buttonBuy:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .miniGameCard__right__buttonBuy:active {
+    transform: scale(0.95);
+  }
 }
 .miniGameCard__right__buttonBuy .-text {
   position: relative;
@@ -3629,12 +3791,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.mainInfo__interaction__button:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.mainInfo__interaction__button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .mainInfo__interaction__button:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .mainInfo__interaction__button:active {
+    transform: scale(0.95);
+  }
 }
 .mainInfo__interaction__button > img {
   height: 100%;
@@ -3890,12 +4054,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.mainInfo__banner__interface__bottom__screenshotsIF__arrows__arrow:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.mainInfo__banner__interface__bottom__screenshotsIF__arrows__arrow:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .mainInfo__banner__interface__bottom__screenshotsIF__arrows__arrow:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .mainInfo__banner__interface__bottom__screenshotsIF__arrows__arrow:active {
+    transform: scale(0.95);
+  }
 }
 .mainInfo__banner__interface__bottom__screenshotsIF__arrows__arrow > img {
   width: 100%;
@@ -3937,12 +4103,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.mainInfo__banner__interface__bottom__screenshotsIF__buttonFullScreenBlock__button:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.mainInfo__banner__interface__bottom__screenshotsIF__buttonFullScreenBlock__button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .mainInfo__banner__interface__bottom__screenshotsIF__buttonFullScreenBlock__button:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .mainInfo__banner__interface__bottom__screenshotsIF__buttonFullScreenBlock__button:active {
+    transform: scale(0.95);
+  }
 }
 .mainInfo__banner__interface__bottom__screenshotsIF__buttonFullScreenBlock__button > svg {
   width: 100%;
@@ -4185,12 +4353,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.mainInfo__info__category__point:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.mainInfo__info__category__point:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .mainInfo__info__category__point:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .mainInfo__info__category__point:active {
+    transform: scale(0.95);
+  }
 }
 .mainInfo__info__category__point {
   box-shadow: 0 0 0 0 transparent;
@@ -4337,8 +4507,10 @@ label {
   background: rgba(255, 255, 255, 0.15); /* Цвет ползунка */
   border-radius: 10px;
 }
-.additions__side__grid::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+@media (hover: hover) {
+  .additions__side__grid::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
 }
 .additions__side__grid_dlc {
   display: flex;
@@ -4518,12 +4690,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.dlc__right__buttons__button:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.dlc__right__buttons__button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .dlc__right__buttons__button:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .dlc__right__buttons__button:active {
+    transform: scale(0.95);
+  }
 }
 .dlc__right__buttons__button > img {
   height: 100%;
@@ -4571,12 +4745,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.editions__header__nav:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.editions__header__nav:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .editions__header__nav:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .editions__header__nav:active {
+    transform: scale(0.95);
+  }
 }
 .editions__header__nav {
   transition: 0.2s;
@@ -4926,12 +5102,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.videoIF__button:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.videoIF__button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .videoIF__button:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .videoIF__button:active {
+    transform: scale(0.95);
+  }
 }
 .videoIF__button > svg {
   width: 100%;
@@ -5266,12 +5444,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.profile__right > button:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.profile__right > button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .profile__right > button:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .profile__right > button:active {
+    transform: scale(0.95);
+  }
 }
 .profile__avatar {
   width: 85px;
@@ -5397,12 +5577,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.pNotification__header__filter__point:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.pNotification__header__filter__point:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .pNotification__header__filter__point:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .pNotification__header__filter__point:active {
+    transform: scale(0.95);
+  }
 }
 .pNotification__grid {
   display: flex;
@@ -5424,8 +5606,10 @@ label {
   background: rgba(255, 255, 255, 0.15); /* Цвет ползунка */
   border-radius: 10px;
 }
-.pNotification__grid::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+@media (hover: hover) {
+  .pNotification__grid::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
 }
 .pNotification__grid__notification {
   border-radius: 10px;
@@ -5666,12 +5850,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.settings__buttons__button_save:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.settings__buttons__button_save:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .settings__buttons__button_save:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .settings__buttons__button_save:active {
+    transform: scale(0.95);
+  }
 }
 .settings__buttons__button_back {
   background-color: rgb(68, 68, 68);
@@ -5680,12 +5866,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.settings__buttons__button_back:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.settings__buttons__button_back:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .settings__buttons__button_back:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .settings__buttons__button_back:active {
+    transform: scale(0.95);
+  }
 }
 
 .more__header {
@@ -5707,12 +5895,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.more__header__nav:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.more__header__nav:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .more__header__nav:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .more__header__nav:active {
+    transform: scale(0.95);
+  }
 }
 .more__header__nav {
   transition: 0.2s;
@@ -6011,12 +6201,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.formFilters__menuButtons__allFilters:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.formFilters__menuButtons__allFilters:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .formFilters__menuButtons__allFilters:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .formFilters__menuButtons__allFilters:active {
+    transform: scale(0.95);
+  }
 }
 .formFilters__menuButtons__allFilters {
   display: flex;
@@ -6042,8 +6234,10 @@ label {
   width: 70px;
   transition: 0.15s;
 }
-.formFilters__menuButtons__reset:hover {
-  color: rgb(1, 162, 255);
+@media (hover: hover) {
+  .formFilters__menuButtons__reset:hover {
+    color: rgb(1, 162, 255);
+  }
 }
 .formFilters__sortingBlock {
   height: 40px;
@@ -6077,8 +6271,10 @@ label {
 .formFilters__sortingBlock__icon__svg_BottomToTop > ._r_bottom {
   width: 19px;
 }
-.formFilters__sortingBlock__icon:hover rect {
-  fill: rgb(1, 162, 255);
+@media (hover: hover) {
+  .formFilters__sortingBlock__icon:hover rect {
+    fill: rgb(1, 162, 255);
+  }
 }
 
 .filters {
@@ -6116,12 +6312,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.filters__row__buttons__toggle:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.filters__row__buttons__toggle:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .filters__row__buttons__toggle:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .filters__row__buttons__toggle:active {
+    transform: scale(0.95);
+  }
 }
 .filters__row__buttons__toggle > svg {
   height: 22px;
@@ -6135,8 +6333,10 @@ label {
   justify-content: center;
   cursor: pointer;
 }
-.filters__row__buttons__reset:hover {
-  color: rgb(1, 162, 255);
+@media (hover: hover) {
+  .filters__row__buttons__reset:hover {
+    color: rgb(1, 162, 255);
+  }
 }
 .filters__row_second {
   position: relative;
@@ -6232,8 +6432,10 @@ label {
   cursor: pointer;
   transition: 0.15s;
 }
-.basketContainer__gameList__games__game__left__nameBlock__name__text:hover {
-  color: rgb(1, 162, 255);
+@media (hover: hover) {
+  .basketContainer__gameList__games__game__left__nameBlock__name__text:hover {
+    color: rgb(1, 162, 255);
+  }
 }
 .basketContainer__gameList__games__game__left__nameBlock__linkPlatform {
   color: rgb(153, 153, 153);
@@ -6251,11 +6453,13 @@ label {
   transition: 0.15s;
   transform: translateY(1px);
 }
-.basketContainer__gameList__games__game__left__nameBlock__linkPlatform:hover {
-  color: rgb(1, 162, 255);
-}
-.basketContainer__gameList__games__game__left__nameBlock__linkPlatform:hover > svg {
-  stroke: rgb(1, 162, 255);
+@media (hover: hover) {
+  .basketContainer__gameList__games__game__left__nameBlock__linkPlatform:hover {
+    color: rgb(1, 162, 255);
+  }
+  .basketContainer__gameList__games__game__left__nameBlock__linkPlatform:hover > svg {
+    stroke: rgb(1, 162, 255);
+  }
 }
 .basketContainer__gameList__games__game__right {
   position: relative;
@@ -6292,14 +6496,16 @@ label {
   height: 100%;
   transition: 0.2s;
 }
-.basketContainer__gameList__games__game__right__closeBlock:hover svg {
-  transform: rotate(90deg) scale(0.75);
-}
-.basketContainer__gameList__games__game__right__closeBlock:hover {
-  background-color: rgb(170, 22, 22);
-}
-.basketContainer__gameList__games__game__right__closeBlock:active svg {
-  transform: rotate(90deg) scale(0.35);
+@media (hover: hover) {
+  .basketContainer__gameList__games__game__right__closeBlock:hover svg {
+    transform: rotate(90deg) scale(0.75);
+  }
+  .basketContainer__gameList__games__game__right__closeBlock:hover {
+    background-color: rgb(170, 22, 22);
+  }
+  .basketContainer__gameList__games__game__right__closeBlock:active svg {
+    transform: rotate(90deg) scale(0.35);
+  }
 }
 .basketContainer__gameList__games__game__right__closeBlock_hidden {
   margin-left: 0px;
@@ -6338,8 +6544,10 @@ label {
   background: linear-gradient(to right, transparent, rgba(255, 0, 0, 0.23));
   opacity: 0;
 }
-.basketContainer__gameList__games__game:hover .basketContainer__gameList__games__game__forHover {
-  opacity: 1;
+@media (hover: hover) {
+  .basketContainer__gameList__games__game:hover .basketContainer__gameList__games__game__forHover {
+    opacity: 1;
+  }
 }
 .basketContainer__gameList__games__game_hidden {
   max-height: 0px;
@@ -6390,8 +6598,10 @@ label {
   cursor: pointer;
   transition: 0.15s;
 }
-.basketContainer__gameList__games__empty > a:hover {
-  color: rgb(1, 162, 255);
+@media (hover: hover) {
+  .basketContainer__gameList__games__empty > a:hover {
+    color: rgb(1, 162, 255);
+  }
 }
 .basketContainer__gameList__games__empty_active {
   max-height: 1000px;
@@ -6592,12 +6802,14 @@ label {
 .basketContainer__info__totalBlock__nav__floatBlock_paymentMethods__grid__bank_visa img {
   transform: scale(0.9);
 }
-.basketContainer__info__totalBlock__nav__floatBlock_paymentMethods__grid__bank:hover {
-  transform: scale(0.98);
-  background: rgb(71, 71, 71);
-}
-.basketContainer__info__totalBlock__nav__floatBlock_paymentMethods__grid__bank:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .basketContainer__info__totalBlock__nav__floatBlock_paymentMethods__grid__bank:hover {
+    transform: scale(0.98);
+    background: rgb(71, 71, 71);
+  }
+  .basketContainer__info__totalBlock__nav__floatBlock_paymentMethods__grid__bank:active {
+    transform: scale(0.95);
+  }
 }
 .basketContainer__info__totalBlock__nav__floatBlock_paymentMethods__grid__bank_active {
   border: 2px solid rgb(150, 150, 150);
@@ -6621,8 +6833,10 @@ label {
   filter: invert(0.8);
   transform: rotate(90deg);
 }
-.basketContainer__info__totalBlock__nav:hover {
-  border: 2px solid #6C6C6C;
+@media (hover: hover) {
+  .basketContainer__info__totalBlock__nav:hover {
+    border: 2px solid #6C6C6C;
+  }
 }
 .basketContainer__info__totalBlock__paymentMethods {
   background-color: rgb(68, 68, 68);
@@ -6671,12 +6885,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.basketContainer__info__totalBlock__paymentMethods__body__bank:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.basketContainer__info__totalBlock__paymentMethods__body__bank:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .basketContainer__info__totalBlock__paymentMethods__body__bank:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .basketContainer__info__totalBlock__paymentMethods__body__bank:active {
+    transform: scale(0.95);
+  }
 }
 .basketContainer__info__totalBlock__paymentMethods__body__bank img {
   height: 25px;
@@ -6699,9 +6915,11 @@ label {
   background-color: rgba(1, 162, 255, 0.4);
   border: 1px solid rgb(1, 162, 255);
 }
-.basketContainer__info__totalBlock__paymentMethods__body__bank_active:hover {
-  background-color: rgba(1, 162, 255, 0.4);
-  border: 1px solid rgb(1, 162, 255);
+@media (hover: hover) {
+  .basketContainer__info__totalBlock__paymentMethods__body__bank_active:hover {
+    background-color: rgba(1, 162, 255, 0.4);
+    border: 1px solid rgb(1, 162, 255);
+  }
 }
 .basketContainer__info__totalBlock__paymentMethods_active {
   max-height: 200px;
@@ -6769,12 +6987,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.basketContainer__info__totalBlock__buyButton:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.basketContainer__info__totalBlock__buyButton:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .basketContainer__info__totalBlock__buyButton:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .basketContainer__info__totalBlock__buyButton:active {
+    transform: scale(0.95);
+  }
 }
 .basketContainer__info__totalBlock__buyButton__text {
   font-size: 18px;
@@ -6791,11 +7011,13 @@ label {
   opacity: 0;
   transition: 0.15s;
 }
-.basketContainer__info__totalBlock__buyButton:hover .basketContainer__info__totalBlock__buyButton__forHover {
-  opacity: 1;
-}
-.basketContainer__info__totalBlock__buyButton:active {
-  transform: scale(0.98);
+@media (hover: hover) {
+  .basketContainer__info__totalBlock__buyButton:hover .basketContainer__info__totalBlock__buyButton__forHover {
+    opacity: 1;
+  }
+  .basketContainer__info__totalBlock__buyButton:active {
+    transform: scale(0.98);
+  }
 }
 .basketContainer__info__totalBlock__agreeBlock {
   display: flex;
@@ -6834,8 +7056,10 @@ label {
   opacity: 1;
   transform: translate(0px);
 }
-.basketContainer__info__totalBlock__agreeBlock__checkBox:hover {
-  border-color: rgb(1, 162, 255);
+@media (hover: hover) {
+  .basketContainer__info__totalBlock__agreeBlock__checkBox:hover {
+    border-color: rgb(1, 162, 255);
+  }
 }
 .basketContainer__info__totalBlock__agreeBlock__label {
   color: #999;
@@ -6847,8 +7071,10 @@ label {
   color: rgb(255, 255, 255);
   transition: 0.15s;
 }
-.basketContainer__info__totalBlock__agreeBlock__label a:hover {
-  color: rgb(1, 162, 255);
+@media (hover: hover) {
+  .basketContainer__info__totalBlock__agreeBlock__label a:hover {
+    color: rgb(1, 162, 255);
+  }
 }
 .basketContainer__info__totalBlock__agreeBlock_notification {
   margin-bottom: 0px;
@@ -6892,11 +7118,13 @@ label {
   cursor: pointer;
   transition: 0.15s;
 }
-.basketContainer__info__exitButton:hover {
-  background: rgb(47, 47, 47);
-}
-.basketContainer__info__exitButton:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .basketContainer__info__exitButton:hover {
+    background: rgb(47, 47, 47);
+  }
+  .basketContainer__info__exitButton:active {
+    transform: scale(0.95);
+  }
 }
 .basketContainer__info__exitButton_hidden {
   transform: scale(0);
@@ -6941,8 +7169,10 @@ label {
   padding: 5px;
   transition: 0.2s;
 }
-.basketContainer__empty > a:hover {
-  color: rgb(1, 162, 255);
+@media (hover: hover) {
+  .basketContainer__empty > a:hover {
+    color: rgb(1, 162, 255);
+  }
 }
 .basketContainer_empty .basketContainer__gameList {
   display: none;
@@ -7008,8 +7238,10 @@ label {
   background: rgba(255, 255, 255, 0.15); /* Цвет ползунка */
   border-radius: 10px;
 }
-.favorite__basket__block__games::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+@media (hover: hover) {
+  .favorite__basket__block__games::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
 }
 .favorite__basket__block__info {
   margin-top: 10px;
@@ -7049,12 +7281,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.favorite__basket__block__button:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.favorite__basket__block__button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .favorite__basket__block__button:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .favorite__basket__block__button:active {
+    transform: scale(0.95);
+  }
 }
 .favorite__basket__block__fill {
   display: block;
@@ -7095,8 +7329,10 @@ label {
   padding: 5px;
   transition: 0.2s;
 }
-.favorite__empty > a:hover {
-  color: rgb(1, 162, 255);
+@media (hover: hover) {
+  .favorite__empty > a:hover {
+    color: rgb(1, 162, 255);
+  }
 }
 .favorite_empty .favorite__empty {
   display: block;
@@ -7136,12 +7372,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.authors__grid__author:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.authors__grid__author:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .authors__grid__author:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .authors__grid__author:active {
+    transform: scale(0.95);
+  }
 }
 .authors__grid__author__logo {
   min-height: 0;
@@ -7265,12 +7503,14 @@ label {
   transition: 0.2s;
   cursor: pointer;
 }
-.series__about__buttonBlock > button:hover {
-  background-color: rgba(1, 162, 255, 0.25);
-  border: 1px solid rgba(1, 162, 255, 0.6);
-}
-.series__about__buttonBlock > button:active {
-  transform: scale(0.95);
+@media (hover: hover) {
+  .series__about__buttonBlock > button:hover {
+    background-color: rgba(1, 162, 255, 0.25);
+    border: 1px solid rgba(1, 162, 255, 0.6);
+  }
+  .series__about__buttonBlock > button:active {
+    transform: scale(0.95);
+  }
 }
 .series__about__buttonBlock > button > svg {
   transition: 0.2s;
@@ -7521,6 +7761,65 @@ label {
   .carousel__banner__interaction__shopInfo_dark .carousel__banner__interaction__shopInfo__priceTag__discount {
     background-color: rgba(255, 255, 255, 0.2);
   }
+  .gameBanner__interaction {
+    left: 20px;
+    bottom: 20px;
+  }
+  .gameBanner__interaction__title {
+    font-size: 20px;
+  }
+  .gameBanner__interaction__shopInfo {
+    border-radius: 20px;
+    padding: 10px;
+    width: auto;
+    gap: 40px;
+  }
+  .gameBanner__interaction__shopInfo__buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .gameBanner__interaction__shopInfo__buttons__button {
+    width: 35px;
+    height: 35px;
+    padding: 8px;
+  }
+  .gameBanner__interaction__shopInfo__priceTag {
+    display: flex;
+    gap: 10px;
+  }
+  .gameBanner__interaction__shopInfo__priceTag__prices {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0px;
+  }
+  .gameBanner__interaction__shopInfo__priceTag__prices__newPrice {
+    font-size: 16px;
+  }
+  .gameBanner__interaction__shopInfo__priceTag__prices__oldPrice {
+    font-size: 13px;
+  }
+  .gameBanner__interaction__shopInfo__priceTag__discount {
+    border-radius: 10px;
+    height: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .gameBanner__interaction__shopInfo_dark {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .gameBanner__interaction__shopInfo_dark .gameBanner__interaction__shopInfo__buttons__button {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  .gameBanner__interaction__shopInfo_dark .gameBanner__interaction__shopInfo__priceTag__discount {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
   .gameH__banner__videoBlock {
     display: none;
     align-items: center;
@@ -7699,6 +7998,50 @@ label {
     padding-left: 10px;
     padding-right: 10px;
   }
+  .gameBanner__interaction__title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .gameBanner__interaction__shopInfo {
+    border-radius: 20px;
+    padding: 8px;
+    gap: 35px;
+  }
+  .gameBanner__interaction__shopInfo__buttons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .gameBanner__interaction__shopInfo__buttons__button {
+    width: 35px;
+    height: 35px;
+    padding: 8px;
+  }
+  .gameBanner__interaction__shopInfo__priceTag {
+    display: flex;
+    gap: 10px;
+  }
+  .gameBanner__interaction__shopInfo__priceTag__prices {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0px;
+  }
+  .gameBanner__interaction__shopInfo__priceTag__prices__newPrice {
+    font-size: 16px;
+  }
+  .gameBanner__interaction__shopInfo__priceTag__prices__oldPrice {
+    font-size: 12px;
+  }
+  .gameBanner__interaction__shopInfo__priceTag__discount {
+    border-radius: 10px;
+    height: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 @media (max-width: 826px) {
   .griding_4InRow {
@@ -7710,6 +8053,30 @@ label {
     display: grid;
     grid-gap: 15px;
     grid-template-columns: repeat(4, minmax(0px, 1fr));
+  }
+  .heading {
+    margin-bottom: 16px;
+  }
+  .heading > h2 {
+    font-size: 20px;
+  }
+  .heading > button {
+    padding: 8px 8px 8px 12px;
+    border-radius: 25px;
+  }
+  .heading > button > span {
+    font-size: 13px;
+  }
+  .heading > button > svg {
+    margin-left: 5px;
+    height: 20px;
+    transform: translateY(1px) translateX(0px);
+  }
+  .heading > button:hover > svg {
+    transform: translateY(1px) translateX(20px);
+  }
+  .heading > button:hover > span {
+    transform: translateX(13px);
   }
 }
 @media (max-width: 650px) {
@@ -7772,6 +8139,78 @@ label {
     padding-left: 10px;
     padding-right: 10px;
   }
+  .gameBanner__interaction {
+    left: 10px;
+    bottom: 10px;
+  }
+  .gameBanner__interaction__title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  .gameBanner__interaction__shopInfo {
+    border-radius: 20px;
+    padding: 8px;
+    gap: 35px;
+  }
+  .gameBanner__interaction__shopInfo__buttons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .gameBanner__interaction__shopInfo__buttons__button {
+    width: 35px;
+    height: 35px;
+    padding: 8px;
+  }
+  .gameBanner__interaction__shopInfo__priceTag {
+    display: flex;
+    gap: 10px;
+  }
+  .gameBanner__interaction__shopInfo__priceTag__prices {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0px;
+  }
+  .gameBanner__interaction__shopInfo__priceTag__prices__newPrice {
+    font-size: 16px;
+  }
+  .gameBanner__interaction__shopInfo__priceTag__prices__oldPrice {
+    font-size: 12px;
+  }
+  .gameBanner__interaction__shopInfo__priceTag__discount {
+    border-radius: 10px;
+    height: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .heading {
+    margin-bottom: 14px;
+  }
+  .heading > h2 {
+    font-size: 18px;
+  }
+  .heading > button {
+    padding: 6px 6px 6px 10px;
+    border-radius: 25px;
+  }
+  .heading > button > span {
+    font-size: 11px;
+  }
+  .heading > button > svg {
+    margin-left: 5px;
+    height: 16px;
+    transform: translateY(1px) translateX(0px);
+  }
+  .heading > button:hover > svg {
+    transform: translateY(1px) translateX(20px);
+  }
+  .heading > button:hover > span {
+    transform: translateX(13px);
+  }
 }
 @media (max-width: 550px) {
   .inner_w1605p100 {
@@ -7801,6 +8240,15 @@ label {
     max-width: calc(100% - 20px);
   }
   .carousel__banner__interaction__title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  .gameBanner__interaction {
+    left: 10px;
+    bottom: 10px;
+    max-width: calc(100% - 20px);
+  }
+  .gameBanner__interaction__title {
     font-size: 18px;
     margin-bottom: 8px;
   }
@@ -7910,7 +8358,12 @@ label {
     box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.2);
     transition: 0.2s;
     cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: 0.2s;
   }
+}
+@media (max-width: 434px) and (hover: hover) {
   .footer__body__links__contacts a:hover {
     background-color: rgba(1, 162, 255, 0.25);
     border: 1px solid rgba(1, 162, 255, 0.6);
@@ -7918,11 +8371,8 @@ label {
   .footer__body__links__contacts a:active {
     transform: scale(0.95);
   }
-  .footer__body__links__contacts a {
-    background-color: rgba(255, 255, 255, 0.05);
-    cursor: pointer;
-    transition: 0.2s;
-  }
+}
+@media (max-width: 434px) {
   .footer__body__links__contacts a > img {
     height: 23px;
   }

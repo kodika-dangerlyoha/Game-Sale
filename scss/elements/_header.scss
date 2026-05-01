@@ -254,22 +254,13 @@
             cursor: pointer;
             
             border-radius: 50%;
-            // background-color: rgba(1, 162, 255, 0);
             transition: 0.15s;
             transform: translateX(-100%);
-            &:hover {
-                background-color: rgba(255, 255, 255, .2);
-                // @include base.style-glass_hover_style;
+            @media (hover: hover) {
+                &:hover {
+                    background-color: rgba(255, 255, 255, .2);
+                }
             }
-            // & > img {
-            //     display: block;
-            //     width: 18px;
-            //     height: 18px;
-            //     filter: invert(1);
-            // }
-            // &:hover {
-            //     background-color: rgba(1, 162, 255, 1);
-            // }
         }
     }
     &__buttonCatalog {
@@ -280,23 +271,23 @@
         box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.2);
         //! background-color: rgba(186, 186, 186, 0.5);
         background-color: rgba(255, 255, 255, 0.15);
-        // border: 1px solid rgba(186, 186, 186, 0.6);
         -webkit-backdrop-filter: blur(5px);
         backdrop-filter: blur(5px);
         transition: 0.15s;
         cursor: pointer;
         margin-right: 10px;
         @include base.style-main_transparent_click;
-        // &:hover {
-        //     background-color: base.$clr-blue_light;
-        // }
-        &:active {
-            transform: scale(.95);
+        @media (hover: hover) {
+            &:active {
+                transform: scale(.95);
+            }
         }
         &_active {
             @include base.style-main_active;
-            &:hover {
-                @include base.style-main_active;
+            @media (hover: hover) {
+                &:hover {
+                    @include base.style-main_active;
+                }
             }
         }
     }
@@ -369,8 +360,10 @@
             }
             &_active {
                 @include base.style-main_active;
-                &:hover {
-                    @include base.style-main_active;
+                @media (hover: hover) {
+                    &:hover {
+                        @include base.style-main_active;
+                    }
                 }
             }
             &_auth {
@@ -428,8 +421,10 @@
             }
             &_active {
                 @include base.style-main_active;
-                &:hover {
-                    @include base.style-main_active;
+                @media (hover: hover) {
+                    &:hover {
+                        @include base.style-main_active;
+                    }
                 }
             }
         }
@@ -466,8 +461,10 @@
                 padding-right: 15px;
                 padding-left: 15px;
                 transition: .15s;
-                &:hover {
-                    opacity: 1;
+                @media (hover: hover) {
+                    &:hover {
+                        opacity: 1;
+                    }
                 }
             }
         }
@@ -584,15 +581,17 @@
                         opacity: 0;
                     }
                 }
-                &:hover .header__catalog__navs__indicator {
-                    transition: .6s;
-                    width: 100%;
-                }
-                &_active:hover{
-                    @include base.style-main_active;
-                    .header__catalog__navs__indicator {
+                @media (hover: hover) {
+                    &:hover .header__catalog__navs__indicator {
+                        transition: .6s;
                         width: 100%;
-                        opacity: 0;
+                    }
+                    &_active:hover{
+                        @include base.style-main_active;
+                        .header__catalog__navs__indicator {
+                            width: 100%;
+                            opacity: 0;
+                        }
                     }
                 }
             }
@@ -661,8 +660,10 @@
                 font-size: 12px;
                 transition: .15s;
                 cursor: pointer;
-                &:hover {
-                    color: base.$clr-blue_light;
+                @media (hover: hover) {
+                    &:hover {
+                        color: base.$clr-blue_light;
+                    }
                 }
             }
         }
@@ -706,11 +707,13 @@
                             transition: 0.15s;
                             transform: translateY(1px);
                         }
-                        &:hover {
-                            color: base.$clr-blue_light;
-                        }
-                        &:hover > svg {
-                            stroke: base.$clr-blue_light;
+                        @media (hover: hover) {
+                            &:hover {
+                                color: base.$clr-blue_light;
+                            }
+                            &:hover > svg {
+                                stroke: base.$clr-blue_light;
+                            }
                         }
                     }
                 }
@@ -744,8 +747,10 @@
                     overflow: hidden;
                     text-overflow: ellipsis;
                     cursor: pointer;
-                    &:hover {
-                        color: base.$clr-blue_light;
+                    @media (hover: hover) {
+                        &:hover {
+                            color: base.$clr-blue_light;
+                        }
                     }
                 }
                 &__prices {
@@ -774,11 +779,13 @@
                     & > svg {
                         height: 100%;
                     }
-                    &:hover {
-                        background-color: base.$clr-red_close;
-                    }
-                    &:active {
-                        transform: scale(.8);
+                    @media (hover: hover) {
+                        &:hover {
+                            background-color: base.$clr-red_close;
+                        }
+                        &:active {
+                            transform: scale(.8);
+                        }
                     }
                 }
             }
@@ -823,8 +830,10 @@
                 font-size: 12px;
                 transition: .15s;
                 cursor: pointer;
-                &:hover {
-                    color: base.$clr-blue_light;
+                @media (hover: hover) {
+                    &:hover {
+                        color: base.$clr-blue_light;
+                    }
                 }
             }
         }

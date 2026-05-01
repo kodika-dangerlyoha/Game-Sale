@@ -69,8 +69,10 @@
                     font-weight: 600;
                     cursor: pointer;
                     transition: 0.15s;
-                    &:hover {
-                        color: base.$clr-blue_light;
+                    @media (hover: hover) {
+                        &:hover {
+                            color: base.$clr-blue_light;
+                        }
                     }
                 }
                 &__preOrder {
@@ -95,8 +97,10 @@
                     display: flex;
                     align-items: center;
                     gap: 5px;
-                    &:hover {
-                        color: base.$clr-blue_light;
+                    @media (hover: hover) {
+                        &:hover {
+                            color: base.$clr-blue_light;
+                        }
                     }
                 }
             }
@@ -143,18 +147,22 @@
                     & > svg {
                         height: 100%;
                     }
-                    &_red:hover {
-                        background-color: base.$clr-red_close;
-                        border-color: base.$clr-red_light;
-                    }
-                    &_blue:hover {
-                        background-color: base.$clr-blue_light;
+                    @media (hover: hover) {
+                        &_red:hover {
+                            background-color: base.$clr-red_close;
+                            border-color: base.$clr-red_light;
+                        }
+                        &_blue:hover {
+                            background-color: base.$clr-blue_light;
+                        }
                     }
                     &_active {
                         @include base.style-main_active;
                     }
-                    &:active {
-                        transform: scale(.95);
+                    @media (hover: hover) {
+                        &:active {
+                            transform: scale(.95);
+                        }
                     }
                 }
             }
@@ -163,15 +171,16 @@
                 cursor: pointer;
                 transition: 0.2s;
                 margin-left: 10px;
-                
-                &:hover svg{
-                    transform: rotate(90deg) scale(0.75);
-                }
-                &:hover {
-                    background-color: base.$clr-red_close;
-                }
-                &:active svg{
-                    transform: rotate(90deg) scale(0.35);
+                @media (hover: hover) {
+                    &:hover svg{
+                        transform: rotate(90deg) scale(0.75);
+                    }
+                    &:hover {
+                        background-color: base.$clr-red_close;
+                    }
+                    &:active svg{
+                        transform: rotate(90deg) scale(0.35);
+                    }
                 }
                 &_hidden {
                     margin-left: 0px;
@@ -223,8 +232,10 @@
         &:last-child {
             border-bottom: none;
         }
-        &:hover &__forHover{
-            opacity: 1;
+        @media (hover: hover) {
+            &:hover &__forHover{
+                opacity: 1;
+            }
         }
     }
 }

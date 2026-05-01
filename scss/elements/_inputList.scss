@@ -95,18 +95,14 @@ $-border_radius: 12px;
                     left: 0;
                     z-index: 2;
                 }
-                &:last-child:hover > svg > path{
-                    stroke: base.$clr-blue_light;
+                @media (hover: hover) {
+                    &:last-child:hover > svg > path{
+                        stroke: base.$clr-blue_light;
+                    }
+                    &:first-child:hover > svg{
+                        fill: base.$clr-blue_light;
+                    }
                 }
-                &:first-child:hover > svg{
-                    fill: base.$clr-blue_light;
-                }
-                // &:hover > svg{
-                //     fill: base.$clr-blue_light;
-                // }
-                // &:hover > svg > path{
-                //     stroke: base.$clr-blue_light;
-                // }
             }
         }
         &__reset {
@@ -138,8 +134,10 @@ $-border_radius: 12px;
                 left: 0;
                 z-index: 2;
             }
-            &:hover > svg > path{
-                stroke: base.$clr-blue_light;
+            @media (hover: hover) {
+                &:hover > svg > path{
+                    stroke: base.$clr-blue_light;
+                }
             }
         }
         &__click {
@@ -149,20 +147,22 @@ $-border_radius: 12px;
             z-index: 5;
             cursor: pointer;
         }
-        &:hover {
-            @include base.style-main_hover;
-        }
-        &:hover &{
-            &__reset {
-                opacity: 1;
+        @media (hover: hover) {
+            &:hover {
+                @include base.style-main_hover;
             }
-            &__adIcons {
-                opacity: 1;
-                max-width: max-content;
-            }
-            &__left {
-                &__value {
-                    padding-right: 24px;
+            &:hover &{
+                &__reset {
+                    opacity: 1;
+                }
+                &__adIcons {
+                    opacity: 1;
+                    max-width: max-content;
+                }
+                &__left {
+                    &__value {
+                        padding-right: 24px;
+                    }
                 }
             }
         }

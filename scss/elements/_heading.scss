@@ -33,15 +33,17 @@
             transform: translateY(1px) translateX(0px);
             transition: 0.15s;
         }
-        &:hover > svg{
-            opacity: 0;
-            transform: translateY(1px) translateX(20px);
-        }
-        &:hover > span{
-            transform: translateX(13px);
-        }
-        &:active {
-            transform: scale(.95);
+        @media (hover: hover) {
+            &:hover > svg{
+                opacity: 0;
+                transform: translateY(1px) translateX(20px);
+            }
+            &:hover > span{
+                transform: translateX(13px);
+            }
+            &:active {
+                transform: scale(.95);
+            }
         }
     }
     &_center {
