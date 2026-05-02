@@ -731,6 +731,31 @@
     .inner_w1220p150 {
         width: 92%;
     }
+    .mainInfo {
+        &__left {
+            width: 100%;
+            transition: 0.2s;
+        }
+        &__banner {
+            height: auto;
+            &__visual {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &__imgBlock {
+                    width: 100%;
+                    height: auto;
+                    aspect-ratio: 16 / 9;
+                }
+                & > video {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 576px) {
@@ -854,6 +879,290 @@
                 display: flex;
                 align-items: center;
                 gap: 10px;
+            }
+        }
+        &__banner {
+            &__interface {
+                &__top {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    right: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    transition: .2s;
+                    &__rating {
+                        display: flex;
+                        gap: 10px;
+                    }
+                    &__point {
+                        display: flex;
+                        gap: 5px;
+                        align-items: center;
+                        padding: 5px 8px;
+                        border-radius: 7px;
+                        font-family: base.$fnt-all;
+                        font-size: 15px;
+                        -webkit-backdrop-filter: blur(10px);
+                        backdrop-filter: blur(10px);
+                        transition: .15s;
+                        @include base.style-main_transparent;
+                        background-color: rgba(0, 0, 0, .3);
+                        &_steam {
+                            background-color: base.$clr-steam_transparent;
+                        }
+                        &_metacritic {
+                            background-color: base.$clr-metacritic_green;
+                        }
+                        &__key {
+                            font-weight: 700;
+                        }
+                        // &__value {
+                        // }
+                    }
+                    &_hidden {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                    }
+                }
+                &__bottom {
+                    position: absolute;
+                    bottom: 0px;
+                    left: 0px;
+                    right: 0px;
+                    background: linear-gradient(to top, rgba(0, 0, 0, .5), transparent);
+                    opacity: 0;
+                    transform: translateY(20px);
+                    transition: .2s;
+                    &__scroll {
+                        overflow-y: auto;
+                        width: 100%;
+                        transition: .1s;
+                        scroll-behavior: smooth;
+                        &::-webkit-scrollbar {
+                            height: 10px;
+                            width: 10px; // Добавляем ширину для вертикального скроллбара
+                        }
+
+                        &::-webkit-scrollbar-track {
+                            background: rgba(92, 92, 92, 0.8);
+                            border-radius: 10px;
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                            background: rgba(255, 255, 255, 0.2);
+                            border-radius: 10px;
+                            border: 2px solid transparent;
+                            background-clip: content-box;
+                            
+                            &:hover {
+                                background: rgba(255, 255, 255, 0.3);
+                                background-clip: content-box;
+                            }
+                            
+                            &:active {
+                                background: rgba(255, 255, 255, 0.4);
+                                background-clip: content-box;
+                            }
+                        }
+
+                        // Стили для Firefox
+                        & {
+                            scrollbar-width: thin; // auto | thin | none
+                            scrollbar-color: rgba(255, 255, 255, 0.2) rgba(92, 92, 92, 0.8);
+                        }
+
+                        // Стили для Internet Explorer и старых версий Edge
+                        & {
+                            // Цвет трека
+                            scrollbar-base-color: rgba(92, 92, 92, 0.8);
+                            scrollbar-face-color: rgba(255, 255, 255, 0.2);
+                            scrollbar-track-color: rgba(92, 92, 92, 0.8);
+                            scrollbar-arrow-color: rgba(255, 255, 255, 0.2);
+                            scrollbar-shadow-color: rgba(255, 255, 255, 0.2);
+                            
+                            // Изменение цвета при наведении
+                            &:hover {
+                                scrollbar-face-color: rgba(255, 255, 255, 0.3);
+                            }
+                        }
+                    }
+                    &__screenshotsIF {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        margin-bottom: 10px;
+                        animation: open_invert .25s base.$tf-main 1;
+                        &__arrows {
+                            display: flex;
+                            gap: 7px;
+                            &__arrow {
+                                width: 35px;
+                                height: 35px;
+                                padding: 10px;
+                                background-color: rgba(255, 255, 255, 0.1);
+                                -webkit-backdrop-filter: blur(3px);
+                                backdrop-filter: blur(3px);
+                                border-radius: 50%;
+                                transition: .15s;
+                                cursor: pointer;
+                                @include base.style-main_transparent_click;
+                                & > img {
+                                    width: 100%;
+                                    filter: invert(1);
+                                }
+                                &:nth-child(1) img {
+                                    transform: rotate(180deg) translateX(1px);
+                                }
+                                &:nth-child(2) img {
+                                    transform: translateX(1px);
+                                }
+                                &:active {
+                                    transform: scale(0.95);
+                                }
+                                &_disactive {
+                                    cursor: default;
+                                    opacity: 0.5;
+                                    &:hover {
+                                        @include base.style-main_transparent;
+                                    }
+                                    &:active {
+                                        transform: scale(1);
+                                    }
+                                }
+                            }
+                        }
+                        &__buttonFullScreenBlock {
+                            &__button {
+                                height: 35px;
+                                width: 35px;
+                                padding: 8px;
+                                background-color: rgba(255, 255, 255, 0.1);
+                                -webkit-backdrop-filter: blur(3px);
+                                backdrop-filter: blur(3px);
+                                border-radius: 50%;
+                                transition: .15s;
+                                cursor: pointer;
+                                @include base.style-main_transparent_click;
+                                & > svg {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                                &__entry {
+                                    display: block;
+                                }
+                                &__exit {
+                                    display: none;
+                                }
+                            }
+                        }
+                        &_hidden {
+                            display: none;
+                        }
+                    }
+                    &__medialist {
+                        display: flex;
+                        width: max-content;
+                        gap: 10px;
+                        padding-bottom: 10px;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        &__media {
+                            position: relative;
+                            width: 108px;
+                            height: 64px;
+                            border-radius: 10px;
+                            // background-color: rgba(255, 255, 255, .5);
+                            border: 2px solid transparent;
+                            display: flex;
+                            align-items: center;
+                            overflow: hidden;
+                            transition: .2s;
+                            cursor: pointer;
+                            & > * {
+                                width: 100%;
+                            }
+                            &__playButton {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                right: 0;
+                                left: 0;
+                                z-index: 2;
+                                &__icon {
+                                    height: 45px;
+                                    width: 45px;
+                                    border-radius: 50%;
+                                    @include base.style-main;
+                                    background-color: rgba(0, 0, 0, .5);
+                                    -webkit-backdrop-filter: blur(10px);
+                                    backdrop-filter: blur(10px);
+                                    padding: 14px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    transition: .2s;
+                                    & > svg {
+                                        transform: translateX(.5px);
+                                        height: 100%;
+                                    }
+                                }
+                            }
+                            &__screenshot {
+                                width: 100%;
+                                height: 100%;
+                                background-size: cover; /* или contain */
+                                background-position: center;
+                                background-repeat: no-repeat;
+                            }
+                            &__preview {
+                                position: relative;
+                                z-index: 1;
+                                width: 100%;
+                                height: 100%;
+                                background-size: cover; /* или contain */
+                                background-position: center;
+                                background-repeat: no-repeat;
+                            }
+                            &:hover {
+                                transform: scale(1.05);
+                            }
+                            &:active {
+                                transform: scale(.95);
+                            }
+                            &_active {
+                                border-color: base.$clr-blue_light;
+                                &:hover {
+                                    transform: scale(1);
+                                }
+                                &:active {
+                                    transform: scale(1);
+                                }
+                            }
+                            &_active &{
+                                &__playButton__icon {
+                                    @include base.style-main_active;
+                                }
+                            }
+                        }
+                    }
+                    &_hidden {
+                        transform: translateY(calc(100% - 45px)) !important;
+                    }
+                }
+                &:hover {
+                    background-color: rgba(0, 0, 0, .3);
+                }
+                &:hover &__bottom {
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
             }
         }
     }
